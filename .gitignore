@@ -1,0 +1,41 @@
+# ---- Not in the repository (see README.md) ----
+# ShapeNetPart data: download it (data/README.md)
+data/*
+!data/README.md
+
+# Python and editor files
+__pycache__/
+*.pyc
+*.code-workspace
+
+# Figures: the plot scripts make them again
+figures/
+
+# ---- log/: keep only small records, skip checkpoints and large results ----
+log/**
+!log/**/
+# training records of every run
+!log/part_seg/**/config.json
+!log/part_seg/**/metrics_per_epoch.csv
+!log/part_seg/**/per_category_miou.csv
+!log/part_seg/**/sample_counts.csv
+!log/part_seg/**/logs/*.txt
+!log/part_seg/**/RUN_COMPLETE
+# XAI study: identity and checks of each study
+!log/part_seg/**/explain/full-exp/**/manifest.json
+!log/part_seg/**/explain/full-exp/**/correctness.json
+# analysis and the two explorers
+!log/part_seg/full-exp/xai-analysis/offline_metrics.csv
+!log/part_seg/full-exp/xai-analysis/xai_explorer/**
+!log/part_seg/training_explorer/**
+# the explorer tests use paths on the author's computer
+log/part_seg/full-exp/xai-analysis/xai_explorer/tests/
+log/part_seg/training_explorer/tests/
+# A6000 run logs, smoke runs and the removed report pages stay out
+log/part_seg/full-exp/launches/
+log/part_seg/full-exp/environment-checks/
+log/part_seg/full-exp/review/
+log/part_seg/full-exp/comparisons/
+log/part_seg/**/smoke/
+log/part_seg/**/smoke_exact/
+log/part_seg/**/workflow/

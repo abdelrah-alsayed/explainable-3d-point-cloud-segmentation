@@ -1,0 +1,862 @@
+2026-06-20 10:37:00,176 - Model - INFO - PARAMETER ...
+2026-06-20 10:37:00,176 - Model - INFO - Namespace(model='pointnet2_part_seg_msg', batch_size=16, epoch=100, learning_rate=0.001, gpu='0', optimizer='Adam', log_dir='parts2_cap312/Knife/seed_1000', decay_rate=0.0001, npoint=2048, step_size=20, lr_decay=0.5, seed=1000, categories=['Knife'], samples_per_category=312, subset_seed=0, test_samples_per_category=80, test_subset_seed=0, full_parts_only=False, num_parts=2)
+2026-06-20 10:37:00,231 - Model - INFO - The number of training data is: 312
+2026-06-20 10:37:00,231 - Model - INFO - The number of test data is: 80
+2026-06-20 10:37:00,458 - Model - INFO - No existing model, starting training from scratch...
+2026-06-20 10:37:00,669 - Model - INFO - Epoch 1 (1/100):
+2026-06-20 10:37:00,669 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:37:05,518 - Model - INFO - Train accuracy is: 0.70667
+2026-06-20 10:37:06,474 - Model - INFO - eval mIoU of Knife          0.451609
+2026-06-20 10:37:06,474 - Model - INFO - Epoch 1 test Accuracy: 0.633264  Class avg mIOU: 0.451609   Inctance avg mIOU: 0.451609
+2026-06-20 10:37:06,475 - Model - INFO - Save model...
+2026-06-20 10:37:06,475 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:37:06,508 - Model - INFO - Saving model....
+2026-06-20 10:37:06,508 - Model - INFO - Best accuracy is: 0.63326
+2026-06-20 10:37:06,508 - Model - INFO - Best class avg mIOU is: 0.45161
+2026-06-20 10:37:06,508 - Model - INFO - Best inctance avg mIOU is: 0.45161
+2026-06-20 10:37:06,508 - Model - INFO - Epoch 2 (2/100):
+2026-06-20 10:37:06,508 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:37:11,027 - Model - INFO - Train accuracy is: 0.88134
+2026-06-20 10:37:11,999 - Model - INFO - eval mIoU of Knife          0.359230
+2026-06-20 10:37:11,999 - Model - INFO - Epoch 2 test Accuracy: 0.568311  Class avg mIOU: 0.359230   Inctance avg mIOU: 0.359230
+2026-06-20 10:37:12,000 - Model - INFO - Best accuracy is: 0.63326
+2026-06-20 10:37:12,000 - Model - INFO - Best class avg mIOU is: 0.45161
+2026-06-20 10:37:12,000 - Model - INFO - Best inctance avg mIOU is: 0.45161
+2026-06-20 10:37:12,000 - Model - INFO - Epoch 3 (3/100):
+2026-06-20 10:37:12,000 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:37:16,496 - Model - INFO - Train accuracy is: 0.89240
+2026-06-20 10:37:17,476 - Model - INFO - eval mIoU of Knife          0.694299
+2026-06-20 10:37:17,476 - Model - INFO - Epoch 3 test Accuracy: 0.818872  Class avg mIOU: 0.694299   Inctance avg mIOU: 0.694299
+2026-06-20 10:37:17,476 - Model - INFO - Save model...
+2026-06-20 10:37:17,476 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:37:17,523 - Model - INFO - Saving model....
+2026-06-20 10:37:17,523 - Model - INFO - Best accuracy is: 0.81887
+2026-06-20 10:37:17,523 - Model - INFO - Best class avg mIOU is: 0.69430
+2026-06-20 10:37:17,523 - Model - INFO - Best inctance avg mIOU is: 0.69430
+2026-06-20 10:37:17,523 - Model - INFO - Epoch 4 (4/100):
+2026-06-20 10:37:17,523 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:37:22,033 - Model - INFO - Train accuracy is: 0.89443
+2026-06-20 10:37:23,006 - Model - INFO - eval mIoU of Knife          0.822180
+2026-06-20 10:37:23,006 - Model - INFO - Epoch 4 test Accuracy: 0.902954  Class avg mIOU: 0.822180   Inctance avg mIOU: 0.822180
+2026-06-20 10:37:23,006 - Model - INFO - Save model...
+2026-06-20 10:37:23,006 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:37:23,052 - Model - INFO - Saving model....
+2026-06-20 10:37:23,052 - Model - INFO - Best accuracy is: 0.90295
+2026-06-20 10:37:23,053 - Model - INFO - Best class avg mIOU is: 0.82218
+2026-06-20 10:37:23,053 - Model - INFO - Best inctance avg mIOU is: 0.82218
+2026-06-20 10:37:23,053 - Model - INFO - Epoch 5 (5/100):
+2026-06-20 10:37:23,053 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:37:27,546 - Model - INFO - Train accuracy is: 0.89545
+2026-06-20 10:37:28,524 - Model - INFO - eval mIoU of Knife          0.822440
+2026-06-20 10:37:28,524 - Model - INFO - Epoch 5 test Accuracy: 0.906543  Class avg mIOU: 0.822440   Inctance avg mIOU: 0.822440
+2026-06-20 10:37:28,524 - Model - INFO - Save model...
+2026-06-20 10:37:28,524 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:37:28,571 - Model - INFO - Saving model....
+2026-06-20 10:37:28,572 - Model - INFO - Best accuracy is: 0.90654
+2026-06-20 10:37:28,572 - Model - INFO - Best class avg mIOU is: 0.82244
+2026-06-20 10:37:28,572 - Model - INFO - Best inctance avg mIOU is: 0.82244
+2026-06-20 10:37:28,572 - Model - INFO - Epoch 6 (6/100):
+2026-06-20 10:37:28,572 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:37:33,068 - Model - INFO - Train accuracy is: 0.90846
+2026-06-20 10:37:34,033 - Model - INFO - eval mIoU of Knife          0.838509
+2026-06-20 10:37:34,034 - Model - INFO - Epoch 6 test Accuracy: 0.914520  Class avg mIOU: 0.838509   Inctance avg mIOU: 0.838509
+2026-06-20 10:37:34,034 - Model - INFO - Save model...
+2026-06-20 10:37:34,034 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:37:34,081 - Model - INFO - Saving model....
+2026-06-20 10:37:34,081 - Model - INFO - Best accuracy is: 0.91452
+2026-06-20 10:37:34,081 - Model - INFO - Best class avg mIOU is: 0.83851
+2026-06-20 10:37:34,081 - Model - INFO - Best inctance avg mIOU is: 0.83851
+2026-06-20 10:37:34,081 - Model - INFO - Epoch 7 (7/100):
+2026-06-20 10:37:34,081 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:37:38,593 - Model - INFO - Train accuracy is: 0.90603
+2026-06-20 10:37:39,546 - Model - INFO - eval mIoU of Knife          0.833096
+2026-06-20 10:37:39,546 - Model - INFO - Epoch 7 test Accuracy: 0.910760  Class avg mIOU: 0.833096   Inctance avg mIOU: 0.833096
+2026-06-20 10:37:39,546 - Model - INFO - Best accuracy is: 0.91452
+2026-06-20 10:37:39,546 - Model - INFO - Best class avg mIOU is: 0.83851
+2026-06-20 10:37:39,546 - Model - INFO - Best inctance avg mIOU is: 0.83851
+2026-06-20 10:37:39,546 - Model - INFO - Epoch 8 (8/100):
+2026-06-20 10:37:39,546 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:37:44,080 - Model - INFO - Train accuracy is: 0.90789
+2026-06-20 10:37:45,033 - Model - INFO - eval mIoU of Knife          0.824906
+2026-06-20 10:37:45,033 - Model - INFO - Epoch 8 test Accuracy: 0.903320  Class avg mIOU: 0.824906   Inctance avg mIOU: 0.824906
+2026-06-20 10:37:45,033 - Model - INFO - Best accuracy is: 0.91452
+2026-06-20 10:37:45,033 - Model - INFO - Best class avg mIOU is: 0.83851
+2026-06-20 10:37:45,034 - Model - INFO - Best inctance avg mIOU is: 0.83851
+2026-06-20 10:37:45,034 - Model - INFO - Epoch 9 (9/100):
+2026-06-20 10:37:45,034 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:37:49,527 - Model - INFO - Train accuracy is: 0.90579
+2026-06-20 10:37:50,476 - Model - INFO - eval mIoU of Knife          0.844476
+2026-06-20 10:37:50,477 - Model - INFO - Epoch 9 test Accuracy: 0.918201  Class avg mIOU: 0.844476   Inctance avg mIOU: 0.844476
+2026-06-20 10:37:50,477 - Model - INFO - Save model...
+2026-06-20 10:37:50,477 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:37:50,523 - Model - INFO - Saving model....
+2026-06-20 10:37:50,523 - Model - INFO - Best accuracy is: 0.91820
+2026-06-20 10:37:50,524 - Model - INFO - Best class avg mIOU is: 0.84448
+2026-06-20 10:37:50,524 - Model - INFO - Best inctance avg mIOU is: 0.84448
+2026-06-20 10:37:50,524 - Model - INFO - Epoch 10 (10/100):
+2026-06-20 10:37:50,524 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:37:55,071 - Model - INFO - Train accuracy is: 0.91911
+2026-06-20 10:37:56,054 - Model - INFO - eval mIoU of Knife          0.791358
+2026-06-20 10:37:56,054 - Model - INFO - Epoch 10 test Accuracy: 0.884290  Class avg mIOU: 0.791358   Inctance avg mIOU: 0.791358
+2026-06-20 10:37:56,054 - Model - INFO - Best accuracy is: 0.91820
+2026-06-20 10:37:56,054 - Model - INFO - Best class avg mIOU is: 0.84448
+2026-06-20 10:37:56,054 - Model - INFO - Best inctance avg mIOU is: 0.84448
+2026-06-20 10:37:56,054 - Model - INFO - Epoch 11 (11/100):
+2026-06-20 10:37:56,054 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:38:00,556 - Model - INFO - Train accuracy is: 0.90902
+2026-06-20 10:38:01,518 - Model - INFO - eval mIoU of Knife          0.848245
+2026-06-20 10:38:01,518 - Model - INFO - Epoch 11 test Accuracy: 0.920410  Class avg mIOU: 0.848245   Inctance avg mIOU: 0.848245
+2026-06-20 10:38:01,518 - Model - INFO - Save model...
+2026-06-20 10:38:01,518 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:38:01,564 - Model - INFO - Saving model....
+2026-06-20 10:38:01,565 - Model - INFO - Best accuracy is: 0.92041
+2026-06-20 10:38:01,565 - Model - INFO - Best class avg mIOU is: 0.84824
+2026-06-20 10:38:01,565 - Model - INFO - Best inctance avg mIOU is: 0.84824
+2026-06-20 10:38:01,565 - Model - INFO - Epoch 12 (12/100):
+2026-06-20 10:38:01,565 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:38:06,069 - Model - INFO - Train accuracy is: 0.91741
+2026-06-20 10:38:07,032 - Model - INFO - eval mIoU of Knife          0.819042
+2026-06-20 10:38:07,032 - Model - INFO - Epoch 12 test Accuracy: 0.901971  Class avg mIOU: 0.819042   Inctance avg mIOU: 0.819042
+2026-06-20 10:38:07,032 - Model - INFO - Best accuracy is: 0.92041
+2026-06-20 10:38:07,032 - Model - INFO - Best class avg mIOU is: 0.84824
+2026-06-20 10:38:07,032 - Model - INFO - Best inctance avg mIOU is: 0.84824
+2026-06-20 10:38:07,032 - Model - INFO - Epoch 13 (13/100):
+2026-06-20 10:38:07,032 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:38:11,539 - Model - INFO - Train accuracy is: 0.91630
+2026-06-20 10:38:12,520 - Model - INFO - eval mIoU of Knife          0.830062
+2026-06-20 10:38:12,520 - Model - INFO - Epoch 13 test Accuracy: 0.909814  Class avg mIOU: 0.830062   Inctance avg mIOU: 0.830062
+2026-06-20 10:38:12,520 - Model - INFO - Best accuracy is: 0.92041
+2026-06-20 10:38:12,520 - Model - INFO - Best class avg mIOU is: 0.84824
+2026-06-20 10:38:12,520 - Model - INFO - Best inctance avg mIOU is: 0.84824
+2026-06-20 10:38:12,520 - Model - INFO - Epoch 14 (14/100):
+2026-06-20 10:38:12,520 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:38:17,047 - Model - INFO - Train accuracy is: 0.92064
+2026-06-20 10:38:18,026 - Model - INFO - eval mIoU of Knife          0.848767
+2026-06-20 10:38:18,026 - Model - INFO - Epoch 14 test Accuracy: 0.922235  Class avg mIOU: 0.848767   Inctance avg mIOU: 0.848767
+2026-06-20 10:38:18,026 - Model - INFO - Save model...
+2026-06-20 10:38:18,026 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:38:18,075 - Model - INFO - Saving model....
+2026-06-20 10:38:18,075 - Model - INFO - Best accuracy is: 0.92224
+2026-06-20 10:38:18,075 - Model - INFO - Best class avg mIOU is: 0.84877
+2026-06-20 10:38:18,075 - Model - INFO - Best inctance avg mIOU is: 0.84877
+2026-06-20 10:38:18,075 - Model - INFO - Epoch 15 (15/100):
+2026-06-20 10:38:18,075 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:38:22,590 - Model - INFO - Train accuracy is: 0.91356
+2026-06-20 10:38:23,548 - Model - INFO - eval mIoU of Knife          0.818421
+2026-06-20 10:38:23,548 - Model - INFO - Epoch 15 test Accuracy: 0.905750  Class avg mIOU: 0.818421   Inctance avg mIOU: 0.818421
+2026-06-20 10:38:23,549 - Model - INFO - Best accuracy is: 0.92224
+2026-06-20 10:38:23,549 - Model - INFO - Best class avg mIOU is: 0.84877
+2026-06-20 10:38:23,549 - Model - INFO - Best inctance avg mIOU is: 0.84877
+2026-06-20 10:38:23,549 - Model - INFO - Epoch 16 (16/100):
+2026-06-20 10:38:23,549 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:38:28,028 - Model - INFO - Train accuracy is: 0.91459
+2026-06-20 10:38:28,995 - Model - INFO - eval mIoU of Knife          0.827321
+2026-06-20 10:38:28,995 - Model - INFO - Epoch 16 test Accuracy: 0.906537  Class avg mIOU: 0.827321   Inctance avg mIOU: 0.827321
+2026-06-20 10:38:28,995 - Model - INFO - Best accuracy is: 0.92224
+2026-06-20 10:38:28,995 - Model - INFO - Best class avg mIOU is: 0.84877
+2026-06-20 10:38:28,996 - Model - INFO - Best inctance avg mIOU is: 0.84877
+2026-06-20 10:38:28,996 - Model - INFO - Epoch 17 (17/100):
+2026-06-20 10:38:28,996 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:38:33,492 - Model - INFO - Train accuracy is: 0.92155
+2026-06-20 10:38:34,457 - Model - INFO - eval mIoU of Knife          0.851165
+2026-06-20 10:38:34,457 - Model - INFO - Epoch 17 test Accuracy: 0.923102  Class avg mIOU: 0.851165   Inctance avg mIOU: 0.851165
+2026-06-20 10:38:34,457 - Model - INFO - Save model...
+2026-06-20 10:38:34,457 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:38:34,503 - Model - INFO - Saving model....
+2026-06-20 10:38:34,503 - Model - INFO - Best accuracy is: 0.92310
+2026-06-20 10:38:34,503 - Model - INFO - Best class avg mIOU is: 0.85117
+2026-06-20 10:38:34,503 - Model - INFO - Best inctance avg mIOU is: 0.85117
+2026-06-20 10:38:34,503 - Model - INFO - Epoch 18 (18/100):
+2026-06-20 10:38:34,503 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:38:39,005 - Model - INFO - Train accuracy is: 0.91730
+2026-06-20 10:38:39,973 - Model - INFO - eval mIoU of Knife          0.849720
+2026-06-20 10:38:39,973 - Model - INFO - Epoch 18 test Accuracy: 0.921014  Class avg mIOU: 0.849720   Inctance avg mIOU: 0.849720
+2026-06-20 10:38:39,973 - Model - INFO - Best accuracy is: 0.92310
+2026-06-20 10:38:39,973 - Model - INFO - Best class avg mIOU is: 0.85117
+2026-06-20 10:38:39,973 - Model - INFO - Best inctance avg mIOU is: 0.85117
+2026-06-20 10:38:39,973 - Model - INFO - Epoch 19 (19/100):
+2026-06-20 10:38:39,973 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:38:44,474 - Model - INFO - Train accuracy is: 0.92283
+2026-06-20 10:38:45,427 - Model - INFO - eval mIoU of Knife          0.843403
+2026-06-20 10:38:45,427 - Model - INFO - Epoch 19 test Accuracy: 0.916718  Class avg mIOU: 0.843403   Inctance avg mIOU: 0.843403
+2026-06-20 10:38:45,427 - Model - INFO - Best accuracy is: 0.92310
+2026-06-20 10:38:45,427 - Model - INFO - Best class avg mIOU is: 0.85117
+2026-06-20 10:38:45,427 - Model - INFO - Best inctance avg mIOU is: 0.85117
+2026-06-20 10:38:45,427 - Model - INFO - Epoch 20 (20/100):
+2026-06-20 10:38:45,427 - Model - INFO - Learning rate:0.001000
+2026-06-20 10:38:49,918 - Model - INFO - Train accuracy is: 0.92456
+2026-06-20 10:38:50,897 - Model - INFO - eval mIoU of Knife          0.854775
+2026-06-20 10:38:50,897 - Model - INFO - Epoch 20 test Accuracy: 0.924310  Class avg mIOU: 0.854775   Inctance avg mIOU: 0.854775
+2026-06-20 10:38:50,897 - Model - INFO - Save model...
+2026-06-20 10:38:50,897 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:38:50,943 - Model - INFO - Saving model....
+2026-06-20 10:38:50,944 - Model - INFO - Best accuracy is: 0.92431
+2026-06-20 10:38:50,944 - Model - INFO - Best class avg mIOU is: 0.85478
+2026-06-20 10:38:50,944 - Model - INFO - Best inctance avg mIOU is: 0.85478
+2026-06-20 10:38:50,944 - Model - INFO - Epoch 21 (21/100):
+2026-06-20 10:38:50,944 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:38:55,452 - Model - INFO - Train accuracy is: 0.93262
+2026-06-20 10:38:56,415 - Model - INFO - eval mIoU of Knife          0.855831
+2026-06-20 10:38:56,415 - Model - INFO - Epoch 21 test Accuracy: 0.926001  Class avg mIOU: 0.855831   Inctance avg mIOU: 0.855831
+2026-06-20 10:38:56,415 - Model - INFO - Save model...
+2026-06-20 10:38:56,415 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:38:56,462 - Model - INFO - Saving model....
+2026-06-20 10:38:56,462 - Model - INFO - Best accuracy is: 0.92600
+2026-06-20 10:38:56,462 - Model - INFO - Best class avg mIOU is: 0.85583
+2026-06-20 10:38:56,462 - Model - INFO - Best inctance avg mIOU is: 0.85583
+2026-06-20 10:38:56,462 - Model - INFO - Epoch 22 (22/100):
+2026-06-20 10:38:56,462 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:39:00,973 - Model - INFO - Train accuracy is: 0.93377
+2026-06-20 10:39:01,934 - Model - INFO - eval mIoU of Knife          0.854682
+2026-06-20 10:39:01,935 - Model - INFO - Epoch 22 test Accuracy: 0.924805  Class avg mIOU: 0.854682   Inctance avg mIOU: 0.854682
+2026-06-20 10:39:01,935 - Model - INFO - Best accuracy is: 0.92600
+2026-06-20 10:39:01,935 - Model - INFO - Best class avg mIOU is: 0.85583
+2026-06-20 10:39:01,935 - Model - INFO - Best inctance avg mIOU is: 0.85583
+2026-06-20 10:39:01,935 - Model - INFO - Epoch 23 (23/100):
+2026-06-20 10:39:01,935 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:39:06,417 - Model - INFO - Train accuracy is: 0.93311
+2026-06-20 10:39:07,383 - Model - INFO - eval mIoU of Knife          0.857901
+2026-06-20 10:39:07,383 - Model - INFO - Epoch 23 test Accuracy: 0.927246  Class avg mIOU: 0.857901   Inctance avg mIOU: 0.857901
+2026-06-20 10:39:07,383 - Model - INFO - Save model...
+2026-06-20 10:39:07,383 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:39:07,430 - Model - INFO - Saving model....
+2026-06-20 10:39:07,430 - Model - INFO - Best accuracy is: 0.92725
+2026-06-20 10:39:07,430 - Model - INFO - Best class avg mIOU is: 0.85790
+2026-06-20 10:39:07,430 - Model - INFO - Best inctance avg mIOU is: 0.85790
+2026-06-20 10:39:07,430 - Model - INFO - Epoch 24 (24/100):
+2026-06-20 10:39:07,430 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:39:11,928 - Model - INFO - Train accuracy is: 0.93436
+2026-06-20 10:39:12,908 - Model - INFO - eval mIoU of Knife          0.859869
+2026-06-20 10:39:12,908 - Model - INFO - Epoch 24 test Accuracy: 0.926312  Class avg mIOU: 0.859869   Inctance avg mIOU: 0.859869
+2026-06-20 10:39:12,908 - Model - INFO - Save model...
+2026-06-20 10:39:12,908 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:39:12,954 - Model - INFO - Saving model....
+2026-06-20 10:39:12,954 - Model - INFO - Best accuracy is: 0.92725
+2026-06-20 10:39:12,954 - Model - INFO - Best class avg mIOU is: 0.85987
+2026-06-20 10:39:12,954 - Model - INFO - Best inctance avg mIOU is: 0.85987
+2026-06-20 10:39:12,954 - Model - INFO - Epoch 25 (25/100):
+2026-06-20 10:39:12,954 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:39:17,457 - Model - INFO - Train accuracy is: 0.93609
+2026-06-20 10:39:18,420 - Model - INFO - eval mIoU of Knife          0.858942
+2026-06-20 10:39:18,420 - Model - INFO - Epoch 25 test Accuracy: 0.926807  Class avg mIOU: 0.858942   Inctance avg mIOU: 0.858942
+2026-06-20 10:39:18,421 - Model - INFO - Best accuracy is: 0.92725
+2026-06-20 10:39:18,421 - Model - INFO - Best class avg mIOU is: 0.85987
+2026-06-20 10:39:18,421 - Model - INFO - Best inctance avg mIOU is: 0.85987
+2026-06-20 10:39:18,421 - Model - INFO - Epoch 26 (26/100):
+2026-06-20 10:39:18,421 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:39:22,915 - Model - INFO - Train accuracy is: 0.93765
+2026-06-20 10:39:23,898 - Model - INFO - eval mIoU of Knife          0.852023
+2026-06-20 10:39:23,898 - Model - INFO - Epoch 26 test Accuracy: 0.922131  Class avg mIOU: 0.852023   Inctance avg mIOU: 0.852023
+2026-06-20 10:39:23,898 - Model - INFO - Best accuracy is: 0.92725
+2026-06-20 10:39:23,898 - Model - INFO - Best class avg mIOU is: 0.85987
+2026-06-20 10:39:23,898 - Model - INFO - Best inctance avg mIOU is: 0.85987
+2026-06-20 10:39:23,898 - Model - INFO - Epoch 27 (27/100):
+2026-06-20 10:39:23,898 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:39:28,397 - Model - INFO - Train accuracy is: 0.94094
+2026-06-20 10:39:29,357 - Model - INFO - eval mIoU of Knife          0.847722
+2026-06-20 10:39:29,357 - Model - INFO - Epoch 27 test Accuracy: 0.920721  Class avg mIOU: 0.847722   Inctance avg mIOU: 0.847722
+2026-06-20 10:39:29,357 - Model - INFO - Best accuracy is: 0.92725
+2026-06-20 10:39:29,357 - Model - INFO - Best class avg mIOU is: 0.85987
+2026-06-20 10:39:29,357 - Model - INFO - Best inctance avg mIOU is: 0.85987
+2026-06-20 10:39:29,358 - Model - INFO - Epoch 28 (28/100):
+2026-06-20 10:39:29,358 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:39:33,850 - Model - INFO - Train accuracy is: 0.93891
+2026-06-20 10:39:34,820 - Model - INFO - eval mIoU of Knife          0.858004
+2026-06-20 10:39:34,820 - Model - INFO - Epoch 28 test Accuracy: 0.927258  Class avg mIOU: 0.858004   Inctance avg mIOU: 0.858004
+2026-06-20 10:39:34,820 - Model - INFO - Best accuracy is: 0.92726
+2026-06-20 10:39:34,820 - Model - INFO - Best class avg mIOU is: 0.85987
+2026-06-20 10:39:34,820 - Model - INFO - Best inctance avg mIOU is: 0.85987
+2026-06-20 10:39:34,820 - Model - INFO - Epoch 29 (29/100):
+2026-06-20 10:39:34,820 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:39:39,304 - Model - INFO - Train accuracy is: 0.93841
+2026-06-20 10:39:40,277 - Model - INFO - eval mIoU of Knife          0.861260
+2026-06-20 10:39:40,277 - Model - INFO - Epoch 29 test Accuracy: 0.928888  Class avg mIOU: 0.861260   Inctance avg mIOU: 0.861260
+2026-06-20 10:39:40,277 - Model - INFO - Save model...
+2026-06-20 10:39:40,278 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:39:40,351 - Model - INFO - Saving model....
+2026-06-20 10:39:40,351 - Model - INFO - Best accuracy is: 0.92889
+2026-06-20 10:39:40,351 - Model - INFO - Best class avg mIOU is: 0.86126
+2026-06-20 10:39:40,351 - Model - INFO - Best inctance avg mIOU is: 0.86126
+2026-06-20 10:39:40,351 - Model - INFO - Epoch 30 (30/100):
+2026-06-20 10:39:40,351 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:39:44,857 - Model - INFO - Train accuracy is: 0.93722
+2026-06-20 10:39:45,827 - Model - INFO - eval mIoU of Knife          0.844350
+2026-06-20 10:39:45,827 - Model - INFO - Epoch 30 test Accuracy: 0.917712  Class avg mIOU: 0.844350   Inctance avg mIOU: 0.844350
+2026-06-20 10:39:45,827 - Model - INFO - Best accuracy is: 0.92889
+2026-06-20 10:39:45,827 - Model - INFO - Best class avg mIOU is: 0.86126
+2026-06-20 10:39:45,827 - Model - INFO - Best inctance avg mIOU is: 0.86126
+2026-06-20 10:39:45,827 - Model - INFO - Epoch 31 (31/100):
+2026-06-20 10:39:45,827 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:39:50,319 - Model - INFO - Train accuracy is: 0.93907
+2026-06-20 10:39:51,293 - Model - INFO - eval mIoU of Knife          0.859869
+2026-06-20 10:39:51,293 - Model - INFO - Epoch 31 test Accuracy: 0.927612  Class avg mIOU: 0.859869   Inctance avg mIOU: 0.859869
+2026-06-20 10:39:51,293 - Model - INFO - Best accuracy is: 0.92889
+2026-06-20 10:39:51,294 - Model - INFO - Best class avg mIOU is: 0.86126
+2026-06-20 10:39:51,294 - Model - INFO - Best inctance avg mIOU is: 0.86126
+2026-06-20 10:39:51,294 - Model - INFO - Epoch 32 (32/100):
+2026-06-20 10:39:51,294 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:39:55,804 - Model - INFO - Train accuracy is: 0.94216
+2026-06-20 10:39:56,758 - Model - INFO - eval mIoU of Knife          0.861083
+2026-06-20 10:39:56,759 - Model - INFO - Epoch 32 test Accuracy: 0.927905  Class avg mIOU: 0.861083   Inctance avg mIOU: 0.861083
+2026-06-20 10:39:56,759 - Model - INFO - Best accuracy is: 0.92889
+2026-06-20 10:39:56,759 - Model - INFO - Best class avg mIOU is: 0.86126
+2026-06-20 10:39:56,759 - Model - INFO - Best inctance avg mIOU is: 0.86126
+2026-06-20 10:39:56,759 - Model - INFO - Epoch 33 (33/100):
+2026-06-20 10:39:56,759 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:40:01,275 - Model - INFO - Train accuracy is: 0.93865
+2026-06-20 10:40:02,242 - Model - INFO - eval mIoU of Knife          0.863455
+2026-06-20 10:40:02,242 - Model - INFO - Epoch 33 test Accuracy: 0.931293  Class avg mIOU: 0.863455   Inctance avg mIOU: 0.863455
+2026-06-20 10:40:02,242 - Model - INFO - Save model...
+2026-06-20 10:40:02,242 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:40:02,289 - Model - INFO - Saving model....
+2026-06-20 10:40:02,290 - Model - INFO - Best accuracy is: 0.93129
+2026-06-20 10:40:02,290 - Model - INFO - Best class avg mIOU is: 0.86345
+2026-06-20 10:40:02,290 - Model - INFO - Best inctance avg mIOU is: 0.86345
+2026-06-20 10:40:02,290 - Model - INFO - Epoch 34 (34/100):
+2026-06-20 10:40:02,290 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:40:06,797 - Model - INFO - Train accuracy is: 0.94332
+2026-06-20 10:40:07,773 - Model - INFO - eval mIoU of Knife          0.859787
+2026-06-20 10:40:07,773 - Model - INFO - Epoch 34 test Accuracy: 0.927100  Class avg mIOU: 0.859787   Inctance avg mIOU: 0.859787
+2026-06-20 10:40:07,773 - Model - INFO - Best accuracy is: 0.93129
+2026-06-20 10:40:07,773 - Model - INFO - Best class avg mIOU is: 0.86345
+2026-06-20 10:40:07,773 - Model - INFO - Best inctance avg mIOU is: 0.86345
+2026-06-20 10:40:07,773 - Model - INFO - Epoch 35 (35/100):
+2026-06-20 10:40:07,773 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:40:12,270 - Model - INFO - Train accuracy is: 0.94283
+2026-06-20 10:40:13,244 - Model - INFO - eval mIoU of Knife          0.866303
+2026-06-20 10:40:13,244 - Model - INFO - Epoch 35 test Accuracy: 0.932288  Class avg mIOU: 0.866303   Inctance avg mIOU: 0.866303
+2026-06-20 10:40:13,245 - Model - INFO - Save model...
+2026-06-20 10:40:13,245 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:40:13,291 - Model - INFO - Saving model....
+2026-06-20 10:40:13,291 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:40:13,291 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:40:13,291 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:40:13,291 - Model - INFO - Epoch 36 (36/100):
+2026-06-20 10:40:13,291 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:40:17,802 - Model - INFO - Train accuracy is: 0.94522
+2026-06-20 10:40:18,785 - Model - INFO - eval mIoU of Knife          0.840124
+2026-06-20 10:40:18,785 - Model - INFO - Epoch 36 test Accuracy: 0.916437  Class avg mIOU: 0.840124   Inctance avg mIOU: 0.840124
+2026-06-20 10:40:18,785 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:40:18,785 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:40:18,785 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:40:18,785 - Model - INFO - Epoch 37 (37/100):
+2026-06-20 10:40:18,785 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:40:23,276 - Model - INFO - Train accuracy is: 0.94202
+2026-06-20 10:40:24,265 - Model - INFO - eval mIoU of Knife          0.858849
+2026-06-20 10:40:24,265 - Model - INFO - Epoch 37 test Accuracy: 0.926630  Class avg mIOU: 0.858849   Inctance avg mIOU: 0.858849
+2026-06-20 10:40:24,265 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:40:24,265 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:40:24,265 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:40:24,265 - Model - INFO - Epoch 38 (38/100):
+2026-06-20 10:40:24,265 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:40:28,786 - Model - INFO - Train accuracy is: 0.94141
+2026-06-20 10:40:29,768 - Model - INFO - eval mIoU of Knife          0.862907
+2026-06-20 10:40:29,768 - Model - INFO - Epoch 38 test Accuracy: 0.929376  Class avg mIOU: 0.862907   Inctance avg mIOU: 0.862907
+2026-06-20 10:40:29,768 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:40:29,768 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:40:29,768 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:40:29,768 - Model - INFO - Epoch 39 (39/100):
+2026-06-20 10:40:29,768 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:40:34,252 - Model - INFO - Train accuracy is: 0.93944
+2026-06-20 10:40:35,228 - Model - INFO - eval mIoU of Knife          0.849028
+2026-06-20 10:40:35,228 - Model - INFO - Epoch 39 test Accuracy: 0.921924  Class avg mIOU: 0.849028   Inctance avg mIOU: 0.849028
+2026-06-20 10:40:35,228 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:40:35,228 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:40:35,228 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:40:35,228 - Model - INFO - Epoch 40 (40/100):
+2026-06-20 10:40:35,228 - Model - INFO - Learning rate:0.000500
+2026-06-20 10:40:39,754 - Model - INFO - Train accuracy is: 0.94382
+2026-06-20 10:40:40,735 - Model - INFO - eval mIoU of Knife          0.840049
+2026-06-20 10:40:40,735 - Model - INFO - Epoch 40 test Accuracy: 0.915436  Class avg mIOU: 0.840049   Inctance avg mIOU: 0.840049
+2026-06-20 10:40:40,735 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:40:40,735 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:40:40,735 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:40:40,736 - Model - INFO - Epoch 41 (41/100):
+2026-06-20 10:40:40,736 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:40:45,239 - Model - INFO - Train accuracy is: 0.95018
+2026-06-20 10:40:46,203 - Model - INFO - eval mIoU of Knife          0.845999
+2026-06-20 10:40:46,203 - Model - INFO - Epoch 41 test Accuracy: 0.919751  Class avg mIOU: 0.845999   Inctance avg mIOU: 0.845999
+2026-06-20 10:40:46,203 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:40:46,203 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:40:46,203 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:40:46,203 - Model - INFO - Epoch 42 (42/100):
+2026-06-20 10:40:46,203 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:40:50,694 - Model - INFO - Train accuracy is: 0.95042
+2026-06-20 10:40:51,651 - Model - INFO - eval mIoU of Knife          0.863513
+2026-06-20 10:40:51,651 - Model - INFO - Epoch 42 test Accuracy: 0.930310  Class avg mIOU: 0.863513   Inctance avg mIOU: 0.863513
+2026-06-20 10:40:51,651 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:40:51,651 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:40:51,651 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:40:51,651 - Model - INFO - Epoch 43 (43/100):
+2026-06-20 10:40:51,651 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:40:56,166 - Model - INFO - Train accuracy is: 0.95565
+2026-06-20 10:40:57,129 - Model - INFO - eval mIoU of Knife          0.854703
+2026-06-20 10:40:57,129 - Model - INFO - Epoch 43 test Accuracy: 0.924609  Class avg mIOU: 0.854703   Inctance avg mIOU: 0.854703
+2026-06-20 10:40:57,129 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:40:57,130 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:40:57,130 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:40:57,130 - Model - INFO - Epoch 44 (44/100):
+2026-06-20 10:40:57,130 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:41:01,629 - Model - INFO - Train accuracy is: 0.95228
+2026-06-20 10:41:02,598 - Model - INFO - eval mIoU of Knife          0.851518
+2026-06-20 10:41:02,598 - Model - INFO - Epoch 44 test Accuracy: 0.923627  Class avg mIOU: 0.851518   Inctance avg mIOU: 0.851518
+2026-06-20 10:41:02,598 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:41:02,598 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:41:02,598 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:41:02,598 - Model - INFO - Epoch 45 (45/100):
+2026-06-20 10:41:02,598 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:41:07,105 - Model - INFO - Train accuracy is: 0.95184
+2026-06-20 10:41:08,096 - Model - INFO - eval mIoU of Knife          0.863004
+2026-06-20 10:41:08,096 - Model - INFO - Epoch 45 test Accuracy: 0.928906  Class avg mIOU: 0.863004   Inctance avg mIOU: 0.863004
+2026-06-20 10:41:08,096 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:41:08,096 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:41:08,096 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:41:08,096 - Model - INFO - Epoch 46 (46/100):
+2026-06-20 10:41:08,096 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:41:12,584 - Model - INFO - Train accuracy is: 0.95193
+2026-06-20 10:41:13,555 - Model - INFO - eval mIoU of Knife          0.859094
+2026-06-20 10:41:13,555 - Model - INFO - Epoch 46 test Accuracy: 0.927612  Class avg mIOU: 0.859094   Inctance avg mIOU: 0.859094
+2026-06-20 10:41:13,555 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:41:13,555 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:41:13,555 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:41:13,556 - Model - INFO - Epoch 47 (47/100):
+2026-06-20 10:41:13,556 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:41:18,054 - Model - INFO - Train accuracy is: 0.95643
+2026-06-20 10:41:19,042 - Model - INFO - eval mIoU of Knife          0.860558
+2026-06-20 10:41:19,042 - Model - INFO - Epoch 47 test Accuracy: 0.928436  Class avg mIOU: 0.860558   Inctance avg mIOU: 0.860558
+2026-06-20 10:41:19,043 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:41:19,043 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:41:19,043 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:41:19,043 - Model - INFO - Epoch 48 (48/100):
+2026-06-20 10:41:19,043 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:41:23,546 - Model - INFO - Train accuracy is: 0.95451
+2026-06-20 10:41:24,524 - Model - INFO - eval mIoU of Knife          0.860513
+2026-06-20 10:41:24,524 - Model - INFO - Epoch 48 test Accuracy: 0.928363  Class avg mIOU: 0.860513   Inctance avg mIOU: 0.860513
+2026-06-20 10:41:24,524 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:41:24,524 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:41:24,524 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:41:24,524 - Model - INFO - Epoch 49 (49/100):
+2026-06-20 10:41:24,524 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:41:29,005 - Model - INFO - Train accuracy is: 0.95152
+2026-06-20 10:41:29,968 - Model - INFO - eval mIoU of Knife          0.853746
+2026-06-20 10:41:29,969 - Model - INFO - Epoch 49 test Accuracy: 0.924121  Class avg mIOU: 0.853746   Inctance avg mIOU: 0.853746
+2026-06-20 10:41:29,969 - Model - INFO - Best accuracy is: 0.93229
+2026-06-20 10:41:29,969 - Model - INFO - Best class avg mIOU is: 0.86630
+2026-06-20 10:41:29,969 - Model - INFO - Best inctance avg mIOU is: 0.86630
+2026-06-20 10:41:29,969 - Model - INFO - Epoch 50 (50/100):
+2026-06-20 10:41:29,969 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:41:34,471 - Model - INFO - Train accuracy is: 0.95515
+2026-06-20 10:41:35,452 - Model - INFO - eval mIoU of Knife          0.866823
+2026-06-20 10:41:35,452 - Model - INFO - Epoch 50 test Accuracy: 0.932544  Class avg mIOU: 0.866823   Inctance avg mIOU: 0.866823
+2026-06-20 10:41:35,452 - Model - INFO - Save model...
+2026-06-20 10:41:35,452 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:41:35,498 - Model - INFO - Saving model....
+2026-06-20 10:41:35,498 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:41:35,498 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:41:35,498 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:41:35,498 - Model - INFO - Epoch 51 (51/100):
+2026-06-20 10:41:35,498 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:41:40,009 - Model - INFO - Train accuracy is: 0.95588
+2026-06-20 10:41:40,978 - Model - INFO - eval mIoU of Knife          0.862564
+2026-06-20 10:41:40,978 - Model - INFO - Epoch 51 test Accuracy: 0.930176  Class avg mIOU: 0.862564   Inctance avg mIOU: 0.862564
+2026-06-20 10:41:40,978 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:41:40,978 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:41:40,978 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:41:40,978 - Model - INFO - Epoch 52 (52/100):
+2026-06-20 10:41:40,978 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:41:45,476 - Model - INFO - Train accuracy is: 0.95337
+2026-06-20 10:41:46,447 - Model - INFO - eval mIoU of Knife          0.851803
+2026-06-20 10:41:46,447 - Model - INFO - Epoch 52 test Accuracy: 0.923828  Class avg mIOU: 0.851803   Inctance avg mIOU: 0.851803
+2026-06-20 10:41:46,447 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:41:46,447 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:41:46,447 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:41:46,447 - Model - INFO - Epoch 53 (53/100):
+2026-06-20 10:41:46,447 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:41:50,952 - Model - INFO - Train accuracy is: 0.95770
+2026-06-20 10:41:51,930 - Model - INFO - eval mIoU of Knife          0.854653
+2026-06-20 10:41:51,930 - Model - INFO - Epoch 53 test Accuracy: 0.924841  Class avg mIOU: 0.854653   Inctance avg mIOU: 0.854653
+2026-06-20 10:41:51,930 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:41:51,930 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:41:51,930 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:41:51,930 - Model - INFO - Epoch 54 (54/100):
+2026-06-20 10:41:51,930 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:41:56,466 - Model - INFO - Train accuracy is: 0.95158
+2026-06-20 10:41:57,434 - Model - INFO - eval mIoU of Knife          0.859356
+2026-06-20 10:41:57,434 - Model - INFO - Epoch 54 test Accuracy: 0.928326  Class avg mIOU: 0.859356   Inctance avg mIOU: 0.859356
+2026-06-20 10:41:57,435 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:41:57,435 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:41:57,435 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:41:57,435 - Model - INFO - Epoch 55 (55/100):
+2026-06-20 10:41:57,435 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:42:01,912 - Model - INFO - Train accuracy is: 0.95723
+2026-06-20 10:42:02,861 - Model - INFO - eval mIoU of Knife          0.855101
+2026-06-20 10:42:02,862 - Model - INFO - Epoch 55 test Accuracy: 0.924994  Class avg mIOU: 0.855101   Inctance avg mIOU: 0.855101
+2026-06-20 10:42:02,862 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:42:02,862 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:42:02,862 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:42:02,862 - Model - INFO - Epoch 56 (56/100):
+2026-06-20 10:42:02,862 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:42:07,368 - Model - INFO - Train accuracy is: 0.95799
+2026-06-20 10:42:08,350 - Model - INFO - eval mIoU of Knife          0.856258
+2026-06-20 10:42:08,350 - Model - INFO - Epoch 56 test Accuracy: 0.926636  Class avg mIOU: 0.856258   Inctance avg mIOU: 0.856258
+2026-06-20 10:42:08,350 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:42:08,350 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:42:08,350 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:42:08,350 - Model - INFO - Epoch 57 (57/100):
+2026-06-20 10:42:08,350 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:42:12,852 - Model - INFO - Train accuracy is: 0.95483
+2026-06-20 10:42:13,799 - Model - INFO - eval mIoU of Knife          0.855755
+2026-06-20 10:42:13,799 - Model - INFO - Epoch 57 test Accuracy: 0.926074  Class avg mIOU: 0.855755   Inctance avg mIOU: 0.855755
+2026-06-20 10:42:13,799 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:42:13,799 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:42:13,799 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:42:13,799 - Model - INFO - Epoch 58 (58/100):
+2026-06-20 10:42:13,799 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:42:18,288 - Model - INFO - Train accuracy is: 0.95727
+2026-06-20 10:42:19,274 - Model - INFO - eval mIoU of Knife          0.859985
+2026-06-20 10:42:19,274 - Model - INFO - Epoch 58 test Accuracy: 0.928778  Class avg mIOU: 0.859985   Inctance avg mIOU: 0.859985
+2026-06-20 10:42:19,274 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:42:19,274 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:42:19,274 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:42:19,274 - Model - INFO - Epoch 59 (59/100):
+2026-06-20 10:42:19,274 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:42:23,767 - Model - INFO - Train accuracy is: 0.95827
+2026-06-20 10:42:24,744 - Model - INFO - eval mIoU of Knife          0.853196
+2026-06-20 10:42:24,744 - Model - INFO - Epoch 59 test Accuracy: 0.924249  Class avg mIOU: 0.853196   Inctance avg mIOU: 0.853196
+2026-06-20 10:42:24,744 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:42:24,744 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:42:24,744 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:42:24,744 - Model - INFO - Epoch 60 (60/100):
+2026-06-20 10:42:24,744 - Model - INFO - Learning rate:0.000250
+2026-06-20 10:42:29,249 - Model - INFO - Train accuracy is: 0.95599
+2026-06-20 10:42:30,223 - Model - INFO - eval mIoU of Knife          0.851470
+2026-06-20 10:42:30,223 - Model - INFO - Epoch 60 test Accuracy: 0.923584  Class avg mIOU: 0.851470   Inctance avg mIOU: 0.851470
+2026-06-20 10:42:30,223 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:42:30,223 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:42:30,223 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:42:30,223 - Model - INFO - Epoch 61 (61/100):
+2026-06-20 10:42:30,223 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:42:34,705 - Model - INFO - Train accuracy is: 0.95735
+2026-06-20 10:42:35,667 - Model - INFO - eval mIoU of Knife          0.861391
+2026-06-20 10:42:35,667 - Model - INFO - Epoch 61 test Accuracy: 0.928717  Class avg mIOU: 0.861391   Inctance avg mIOU: 0.861391
+2026-06-20 10:42:35,667 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:42:35,667 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:42:35,667 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:42:35,667 - Model - INFO - Epoch 62 (62/100):
+2026-06-20 10:42:35,668 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:42:40,158 - Model - INFO - Train accuracy is: 0.95776
+2026-06-20 10:42:41,116 - Model - INFO - eval mIoU of Knife          0.858907
+2026-06-20 10:42:41,117 - Model - INFO - Epoch 62 test Accuracy: 0.927252  Class avg mIOU: 0.858907   Inctance avg mIOU: 0.858907
+2026-06-20 10:42:41,117 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:42:41,117 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:42:41,117 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:42:41,117 - Model - INFO - Epoch 63 (63/100):
+2026-06-20 10:42:41,117 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:42:45,637 - Model - INFO - Train accuracy is: 0.96179
+2026-06-20 10:42:46,609 - Model - INFO - eval mIoU of Knife          0.863545
+2026-06-20 10:42:46,610 - Model - INFO - Epoch 63 test Accuracy: 0.930133  Class avg mIOU: 0.863545   Inctance avg mIOU: 0.863545
+2026-06-20 10:42:46,610 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:42:46,610 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:42:46,610 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:42:46,610 - Model - INFO - Epoch 64 (64/100):
+2026-06-20 10:42:46,610 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:42:51,112 - Model - INFO - Train accuracy is: 0.96205
+2026-06-20 10:42:52,084 - Model - INFO - eval mIoU of Knife          0.858604
+2026-06-20 10:42:52,084 - Model - INFO - Epoch 64 test Accuracy: 0.927045  Class avg mIOU: 0.858604   Inctance avg mIOU: 0.858604
+2026-06-20 10:42:52,084 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:42:52,084 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:42:52,084 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:42:52,084 - Model - INFO - Epoch 65 (65/100):
+2026-06-20 10:42:52,084 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:42:56,567 - Model - INFO - Train accuracy is: 0.96062
+2026-06-20 10:42:57,535 - Model - INFO - eval mIoU of Knife          0.858479
+2026-06-20 10:42:57,536 - Model - INFO - Epoch 65 test Accuracy: 0.927338  Class avg mIOU: 0.858479   Inctance avg mIOU: 0.858479
+2026-06-20 10:42:57,536 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:42:57,536 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:42:57,536 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:42:57,536 - Model - INFO - Epoch 66 (66/100):
+2026-06-20 10:42:57,536 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:43:02,050 - Model - INFO - Train accuracy is: 0.96310
+2026-06-20 10:43:03,021 - Model - INFO - eval mIoU of Knife          0.858949
+2026-06-20 10:43:03,021 - Model - INFO - Epoch 66 test Accuracy: 0.927618  Class avg mIOU: 0.858949   Inctance avg mIOU: 0.858949
+2026-06-20 10:43:03,021 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:43:03,021 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:43:03,021 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:43:03,021 - Model - INFO - Epoch 67 (67/100):
+2026-06-20 10:43:03,021 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:43:07,541 - Model - INFO - Train accuracy is: 0.96256
+2026-06-20 10:43:08,512 - Model - INFO - eval mIoU of Knife          0.846121
+2026-06-20 10:43:08,512 - Model - INFO - Epoch 67 test Accuracy: 0.920343  Class avg mIOU: 0.846121   Inctance avg mIOU: 0.846121
+2026-06-20 10:43:08,513 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:43:08,513 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:43:08,513 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:43:08,513 - Model - INFO - Epoch 68 (68/100):
+2026-06-20 10:43:08,513 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:43:13,037 - Model - INFO - Train accuracy is: 0.96428
+2026-06-20 10:43:13,996 - Model - INFO - eval mIoU of Knife          0.862074
+2026-06-20 10:43:13,996 - Model - INFO - Epoch 68 test Accuracy: 0.930090  Class avg mIOU: 0.862074   Inctance avg mIOU: 0.862074
+2026-06-20 10:43:13,996 - Model - INFO - Best accuracy is: 0.93254
+2026-06-20 10:43:13,996 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:43:13,996 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:43:13,996 - Model - INFO - Epoch 69 (69/100):
+2026-06-20 10:43:13,996 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:43:18,506 - Model - INFO - Train accuracy is: 0.96287
+2026-06-20 10:43:19,480 - Model - INFO - eval mIoU of Knife          0.866278
+2026-06-20 10:43:19,480 - Model - INFO - Epoch 69 test Accuracy: 0.932562  Class avg mIOU: 0.866278   Inctance avg mIOU: 0.866278
+2026-06-20 10:43:19,481 - Model - INFO - Best accuracy is: 0.93256
+2026-06-20 10:43:19,481 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:43:19,481 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:43:19,481 - Model - INFO - Epoch 70 (70/100):
+2026-06-20 10:43:19,481 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:43:23,971 - Model - INFO - Train accuracy is: 0.96262
+2026-06-20 10:43:24,942 - Model - INFO - eval mIoU of Knife          0.858446
+2026-06-20 10:43:24,942 - Model - INFO - Epoch 70 test Accuracy: 0.926904  Class avg mIOU: 0.858446   Inctance avg mIOU: 0.858446
+2026-06-20 10:43:24,942 - Model - INFO - Best accuracy is: 0.93256
+2026-06-20 10:43:24,942 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:43:24,942 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:43:24,942 - Model - INFO - Epoch 71 (71/100):
+2026-06-20 10:43:24,942 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:43:29,465 - Model - INFO - Train accuracy is: 0.96372
+2026-06-20 10:43:30,429 - Model - INFO - eval mIoU of Knife          0.864801
+2026-06-20 10:43:30,429 - Model - INFO - Epoch 71 test Accuracy: 0.931775  Class avg mIOU: 0.864801   Inctance avg mIOU: 0.864801
+2026-06-20 10:43:30,430 - Model - INFO - Best accuracy is: 0.93256
+2026-06-20 10:43:30,430 - Model - INFO - Best class avg mIOU is: 0.86682
+2026-06-20 10:43:30,430 - Model - INFO - Best inctance avg mIOU is: 0.86682
+2026-06-20 10:43:30,430 - Model - INFO - Epoch 72 (72/100):
+2026-06-20 10:43:30,430 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:43:34,955 - Model - INFO - Train accuracy is: 0.96568
+2026-06-20 10:43:35,940 - Model - INFO - eval mIoU of Knife          0.867857
+2026-06-20 10:43:35,941 - Model - INFO - Epoch 72 test Accuracy: 0.933105  Class avg mIOU: 0.867857   Inctance avg mIOU: 0.867857
+2026-06-20 10:43:35,941 - Model - INFO - Save model...
+2026-06-20 10:43:35,941 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:43:35,987 - Model - INFO - Saving model....
+2026-06-20 10:43:35,987 - Model - INFO - Best accuracy is: 0.93311
+2026-06-20 10:43:35,987 - Model - INFO - Best class avg mIOU is: 0.86786
+2026-06-20 10:43:35,987 - Model - INFO - Best inctance avg mIOU is: 0.86786
+2026-06-20 10:43:35,987 - Model - INFO - Epoch 73 (73/100):
+2026-06-20 10:43:35,987 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:43:40,480 - Model - INFO - Train accuracy is: 0.96257
+2026-06-20 10:43:41,464 - Model - INFO - eval mIoU of Knife          0.861633
+2026-06-20 10:43:41,464 - Model - INFO - Epoch 73 test Accuracy: 0.930267  Class avg mIOU: 0.861633   Inctance avg mIOU: 0.861633
+2026-06-20 10:43:41,464 - Model - INFO - Best accuracy is: 0.93311
+2026-06-20 10:43:41,464 - Model - INFO - Best class avg mIOU is: 0.86786
+2026-06-20 10:43:41,464 - Model - INFO - Best inctance avg mIOU is: 0.86786
+2026-06-20 10:43:41,464 - Model - INFO - Epoch 74 (74/100):
+2026-06-20 10:43:41,464 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:43:45,931 - Model - INFO - Train accuracy is: 0.96642
+2026-06-20 10:43:46,901 - Model - INFO - eval mIoU of Knife          0.865854
+2026-06-20 10:43:46,901 - Model - INFO - Epoch 74 test Accuracy: 0.932202  Class avg mIOU: 0.865854   Inctance avg mIOU: 0.865854
+2026-06-20 10:43:46,902 - Model - INFO - Best accuracy is: 0.93311
+2026-06-20 10:43:46,902 - Model - INFO - Best class avg mIOU is: 0.86786
+2026-06-20 10:43:46,902 - Model - INFO - Best inctance avg mIOU is: 0.86786
+2026-06-20 10:43:46,902 - Model - INFO - Epoch 75 (75/100):
+2026-06-20 10:43:46,902 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:43:51,385 - Model - INFO - Train accuracy is: 0.96374
+2026-06-20 10:43:52,367 - Model - INFO - eval mIoU of Knife          0.862919
+2026-06-20 10:43:52,367 - Model - INFO - Epoch 75 test Accuracy: 0.930035  Class avg mIOU: 0.862919   Inctance avg mIOU: 0.862919
+2026-06-20 10:43:52,367 - Model - INFO - Best accuracy is: 0.93311
+2026-06-20 10:43:52,367 - Model - INFO - Best class avg mIOU is: 0.86786
+2026-06-20 10:43:52,367 - Model - INFO - Best inctance avg mIOU is: 0.86786
+2026-06-20 10:43:52,367 - Model - INFO - Epoch 76 (76/100):
+2026-06-20 10:43:52,367 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:43:56,869 - Model - INFO - Train accuracy is: 0.96448
+2026-06-20 10:43:57,840 - Model - INFO - eval mIoU of Knife          0.857663
+2026-06-20 10:43:57,840 - Model - INFO - Epoch 76 test Accuracy: 0.926727  Class avg mIOU: 0.857663   Inctance avg mIOU: 0.857663
+2026-06-20 10:43:57,840 - Model - INFO - Best accuracy is: 0.93311
+2026-06-20 10:43:57,840 - Model - INFO - Best class avg mIOU is: 0.86786
+2026-06-20 10:43:57,840 - Model - INFO - Best inctance avg mIOU is: 0.86786
+2026-06-20 10:43:57,840 - Model - INFO - Epoch 77 (77/100):
+2026-06-20 10:43:57,840 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:44:02,338 - Model - INFO - Train accuracy is: 0.96458
+2026-06-20 10:44:03,287 - Model - INFO - eval mIoU of Knife          0.865345
+2026-06-20 10:44:03,287 - Model - INFO - Epoch 77 test Accuracy: 0.931403  Class avg mIOU: 0.865345   Inctance avg mIOU: 0.865345
+2026-06-20 10:44:03,287 - Model - INFO - Best accuracy is: 0.93311
+2026-06-20 10:44:03,287 - Model - INFO - Best class avg mIOU is: 0.86786
+2026-06-20 10:44:03,287 - Model - INFO - Best inctance avg mIOU is: 0.86786
+2026-06-20 10:44:03,287 - Model - INFO - Epoch 78 (78/100):
+2026-06-20 10:44:03,287 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:44:07,808 - Model - INFO - Train accuracy is: 0.96226
+2026-06-20 10:44:08,788 - Model - INFO - eval mIoU of Knife          0.856503
+2026-06-20 10:44:08,788 - Model - INFO - Epoch 78 test Accuracy: 0.926007  Class avg mIOU: 0.856503   Inctance avg mIOU: 0.856503
+2026-06-20 10:44:08,788 - Model - INFO - Best accuracy is: 0.93311
+2026-06-20 10:44:08,788 - Model - INFO - Best class avg mIOU is: 0.86786
+2026-06-20 10:44:08,788 - Model - INFO - Best inctance avg mIOU is: 0.86786
+2026-06-20 10:44:08,788 - Model - INFO - Epoch 79 (79/100):
+2026-06-20 10:44:08,788 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:44:13,272 - Model - INFO - Train accuracy is: 0.96409
+2026-06-20 10:44:14,257 - Model - INFO - eval mIoU of Knife          0.864355
+2026-06-20 10:44:14,257 - Model - INFO - Epoch 79 test Accuracy: 0.931604  Class avg mIOU: 0.864355   Inctance avg mIOU: 0.864355
+2026-06-20 10:44:14,258 - Model - INFO - Best accuracy is: 0.93311
+2026-06-20 10:44:14,258 - Model - INFO - Best class avg mIOU is: 0.86786
+2026-06-20 10:44:14,258 - Model - INFO - Best inctance avg mIOU is: 0.86786
+2026-06-20 10:44:14,258 - Model - INFO - Epoch 80 (80/100):
+2026-06-20 10:44:14,258 - Model - INFO - Learning rate:0.000125
+2026-06-20 10:44:18,742 - Model - INFO - Train accuracy is: 0.96378
+2026-06-20 10:44:19,709 - Model - INFO - eval mIoU of Knife          0.859087
+2026-06-20 10:44:19,709 - Model - INFO - Epoch 80 test Accuracy: 0.928265  Class avg mIOU: 0.859087   Inctance avg mIOU: 0.859087
+2026-06-20 10:44:19,710 - Model - INFO - Best accuracy is: 0.93311
+2026-06-20 10:44:19,710 - Model - INFO - Best class avg mIOU is: 0.86786
+2026-06-20 10:44:19,710 - Model - INFO - Best inctance avg mIOU is: 0.86786
+2026-06-20 10:44:19,710 - Model - INFO - Epoch 81 (81/100):
+2026-06-20 10:44:19,710 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:44:24,202 - Model - INFO - Train accuracy is: 0.96671
+2026-06-20 10:44:25,170 - Model - INFO - eval mIoU of Knife          0.865126
+2026-06-20 10:44:25,170 - Model - INFO - Epoch 81 test Accuracy: 0.931476  Class avg mIOU: 0.865126   Inctance avg mIOU: 0.865126
+2026-06-20 10:44:25,171 - Model - INFO - Best accuracy is: 0.93311
+2026-06-20 10:44:25,171 - Model - INFO - Best class avg mIOU is: 0.86786
+2026-06-20 10:44:25,171 - Model - INFO - Best inctance avg mIOU is: 0.86786
+2026-06-20 10:44:25,171 - Model - INFO - Epoch 82 (82/100):
+2026-06-20 10:44:25,171 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:44:29,644 - Model - INFO - Train accuracy is: 0.96431
+2026-06-20 10:44:30,618 - Model - INFO - eval mIoU of Knife          0.859418
+2026-06-20 10:44:30,618 - Model - INFO - Epoch 82 test Accuracy: 0.927734  Class avg mIOU: 0.859418   Inctance avg mIOU: 0.859418
+2026-06-20 10:44:30,618 - Model - INFO - Best accuracy is: 0.93311
+2026-06-20 10:44:30,618 - Model - INFO - Best class avg mIOU is: 0.86786
+2026-06-20 10:44:30,618 - Model - INFO - Best inctance avg mIOU is: 0.86786
+2026-06-20 10:44:30,618 - Model - INFO - Epoch 83 (83/100):
+2026-06-20 10:44:30,618 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:44:35,153 - Model - INFO - Train accuracy is: 0.96480
+2026-06-20 10:44:36,120 - Model - INFO - eval mIoU of Knife          0.863839
+2026-06-20 10:44:36,120 - Model - INFO - Epoch 83 test Accuracy: 0.931458  Class avg mIOU: 0.863839   Inctance avg mIOU: 0.863839
+2026-06-20 10:44:36,120 - Model - INFO - Best accuracy is: 0.93311
+2026-06-20 10:44:36,120 - Model - INFO - Best class avg mIOU is: 0.86786
+2026-06-20 10:44:36,120 - Model - INFO - Best inctance avg mIOU is: 0.86786
+2026-06-20 10:44:36,120 - Model - INFO - Epoch 84 (84/100):
+2026-06-20 10:44:36,120 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:44:40,616 - Model - INFO - Train accuracy is: 0.96536
+2026-06-20 10:44:41,558 - Model - INFO - eval mIoU of Knife          0.872577
+2026-06-20 10:44:41,558 - Model - INFO - Epoch 84 test Accuracy: 0.936407  Class avg mIOU: 0.872577   Inctance avg mIOU: 0.872577
+2026-06-20 10:44:41,559 - Model - INFO - Save model...
+2026-06-20 10:44:41,559 - Model - INFO - Saving at log/part_seg/parts2_cap312/Knife/seed_1000/checkpoints/best_model.pth
+2026-06-20 10:44:41,606 - Model - INFO - Saving model....
+2026-06-20 10:44:41,606 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:44:41,606 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:44:41,606 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:44:41,606 - Model - INFO - Epoch 85 (85/100):
+2026-06-20 10:44:41,606 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:44:46,115 - Model - INFO - Train accuracy is: 0.96657
+2026-06-20 10:44:47,079 - Model - INFO - eval mIoU of Knife          0.864812
+2026-06-20 10:44:47,079 - Model - INFO - Epoch 85 test Accuracy: 0.931866  Class avg mIOU: 0.864812   Inctance avg mIOU: 0.864812
+2026-06-20 10:44:47,079 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:44:47,080 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:44:47,080 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:44:47,080 - Model - INFO - Epoch 86 (86/100):
+2026-06-20 10:44:47,080 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:44:51,607 - Model - INFO - Train accuracy is: 0.96781
+2026-06-20 10:44:52,583 - Model - INFO - eval mIoU of Knife          0.860539
+2026-06-20 10:44:52,583 - Model - INFO - Epoch 86 test Accuracy: 0.928699  Class avg mIOU: 0.860539   Inctance avg mIOU: 0.860539
+2026-06-20 10:44:52,583 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:44:52,583 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:44:52,583 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:44:52,583 - Model - INFO - Epoch 87 (87/100):
+2026-06-20 10:44:52,583 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:44:57,084 - Model - INFO - Train accuracy is: 0.96657
+2026-06-20 10:44:58,052 - Model - INFO - eval mIoU of Knife          0.868334
+2026-06-20 10:44:58,052 - Model - INFO - Epoch 87 test Accuracy: 0.933594  Class avg mIOU: 0.868334   Inctance avg mIOU: 0.868334
+2026-06-20 10:44:58,052 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:44:58,052 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:44:58,052 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:44:58,052 - Model - INFO - Epoch 88 (88/100):
+2026-06-20 10:44:58,052 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:45:02,540 - Model - INFO - Train accuracy is: 0.96624
+2026-06-20 10:45:03,514 - Model - INFO - eval mIoU of Knife          0.864421
+2026-06-20 10:45:03,515 - Model - INFO - Epoch 88 test Accuracy: 0.930988  Class avg mIOU: 0.864421   Inctance avg mIOU: 0.864421
+2026-06-20 10:45:03,515 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:45:03,515 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:45:03,515 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:45:03,515 - Model - INFO - Epoch 89 (89/100):
+2026-06-20 10:45:03,515 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:45:08,027 - Model - INFO - Train accuracy is: 0.96753
+2026-06-20 10:45:08,989 - Model - INFO - eval mIoU of Knife          0.865278
+2026-06-20 10:45:08,989 - Model - INFO - Epoch 89 test Accuracy: 0.932037  Class avg mIOU: 0.865278   Inctance avg mIOU: 0.865278
+2026-06-20 10:45:08,989 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:45:08,989 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:45:08,989 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:45:08,989 - Model - INFO - Epoch 90 (90/100):
+2026-06-20 10:45:08,989 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:45:13,475 - Model - INFO - Train accuracy is: 0.96843
+2026-06-20 10:45:14,440 - Model - INFO - eval mIoU of Knife          0.865570
+2026-06-20 10:45:14,440 - Model - INFO - Epoch 90 test Accuracy: 0.931805  Class avg mIOU: 0.865570   Inctance avg mIOU: 0.865570
+2026-06-20 10:45:14,440 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:45:14,440 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:45:14,440 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:45:14,440 - Model - INFO - Epoch 91 (91/100):
+2026-06-20 10:45:14,440 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:45:18,950 - Model - INFO - Train accuracy is: 0.96685
+2026-06-20 10:45:19,926 - Model - INFO - eval mIoU of Knife          0.858872
+2026-06-20 10:45:19,926 - Model - INFO - Epoch 91 test Accuracy: 0.927625  Class avg mIOU: 0.858872   Inctance avg mIOU: 0.858872
+2026-06-20 10:45:19,926 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:45:19,926 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:45:19,926 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:45:19,926 - Model - INFO - Epoch 92 (92/100):
+2026-06-20 10:45:19,926 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:45:24,412 - Model - INFO - Train accuracy is: 0.96545
+2026-06-20 10:45:25,383 - Model - INFO - eval mIoU of Knife          0.864317
+2026-06-20 10:45:25,383 - Model - INFO - Epoch 92 test Accuracy: 0.930951  Class avg mIOU: 0.864317   Inctance avg mIOU: 0.864317
+2026-06-20 10:45:25,383 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:45:25,383 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:45:25,383 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:45:25,383 - Model - INFO - Epoch 93 (93/100):
+2026-06-20 10:45:25,383 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:45:29,902 - Model - INFO - Train accuracy is: 0.96821
+2026-06-20 10:45:30,880 - Model - INFO - eval mIoU of Knife          0.861888
+2026-06-20 10:45:30,880 - Model - INFO - Epoch 93 test Accuracy: 0.929553  Class avg mIOU: 0.861888   Inctance avg mIOU: 0.861888
+2026-06-20 10:45:30,880 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:45:30,880 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:45:30,880 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:45:30,880 - Model - INFO - Epoch 94 (94/100):
+2026-06-20 10:45:30,880 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:45:35,357 - Model - INFO - Train accuracy is: 0.96845
+2026-06-20 10:45:36,337 - Model - INFO - eval mIoU of Knife          0.864651
+2026-06-20 10:45:36,337 - Model - INFO - Epoch 94 test Accuracy: 0.931061  Class avg mIOU: 0.864651   Inctance avg mIOU: 0.864651
+2026-06-20 10:45:36,337 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:45:36,337 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:45:36,337 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:45:36,337 - Model - INFO - Epoch 95 (95/100):
+2026-06-20 10:45:36,337 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:45:40,848 - Model - INFO - Train accuracy is: 0.96616
+2026-06-20 10:45:41,811 - Model - INFO - eval mIoU of Knife          0.862614
+2026-06-20 10:45:41,811 - Model - INFO - Epoch 95 test Accuracy: 0.930170  Class avg mIOU: 0.862614   Inctance avg mIOU: 0.862614
+2026-06-20 10:45:41,811 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:45:41,811 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:45:41,811 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:45:41,811 - Model - INFO - Epoch 96 (96/100):
+2026-06-20 10:45:41,811 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:45:46,307 - Model - INFO - Train accuracy is: 0.96817
+2026-06-20 10:45:47,282 - Model - INFO - eval mIoU of Knife          0.863497
+2026-06-20 10:45:47,282 - Model - INFO - Epoch 96 test Accuracy: 0.931158  Class avg mIOU: 0.863497   Inctance avg mIOU: 0.863497
+2026-06-20 10:45:47,282 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:45:47,283 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:45:47,283 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:45:47,283 - Model - INFO - Epoch 97 (97/100):
+2026-06-20 10:45:47,283 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:45:51,779 - Model - INFO - Train accuracy is: 0.96782
+2026-06-20 10:45:52,749 - Model - INFO - eval mIoU of Knife          0.856883
+2026-06-20 10:45:52,749 - Model - INFO - Epoch 97 test Accuracy: 0.927234  Class avg mIOU: 0.856883   Inctance avg mIOU: 0.856883
+2026-06-20 10:45:52,749 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:45:52,749 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:45:52,749 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:45:52,749 - Model - INFO - Epoch 98 (98/100):
+2026-06-20 10:45:52,749 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:45:57,243 - Model - INFO - Train accuracy is: 0.96906
+2026-06-20 10:45:58,204 - Model - INFO - eval mIoU of Knife          0.868979
+2026-06-20 10:45:58,204 - Model - INFO - Epoch 98 test Accuracy: 0.934540  Class avg mIOU: 0.868979   Inctance avg mIOU: 0.868979
+2026-06-20 10:45:58,204 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:45:58,204 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:45:58,204 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:45:58,204 - Model - INFO - Epoch 99 (99/100):
+2026-06-20 10:45:58,204 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:46:02,686 - Model - INFO - Train accuracy is: 0.96762
+2026-06-20 10:46:03,664 - Model - INFO - eval mIoU of Knife          0.865567
+2026-06-20 10:46:03,664 - Model - INFO - Epoch 99 test Accuracy: 0.931177  Class avg mIOU: 0.865567   Inctance avg mIOU: 0.865567
+2026-06-20 10:46:03,664 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:46:03,664 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:46:03,664 - Model - INFO - Best inctance avg mIOU is: 0.87258
+2026-06-20 10:46:03,664 - Model - INFO - Epoch 100 (100/100):
+2026-06-20 10:46:03,664 - Model - INFO - Learning rate:0.000063
+2026-06-20 10:46:08,168 - Model - INFO - Train accuracy is: 0.96837
+2026-06-20 10:46:09,138 - Model - INFO - eval mIoU of Knife          0.864113
+2026-06-20 10:46:09,138 - Model - INFO - Epoch 100 test Accuracy: 0.930951  Class avg mIOU: 0.864113   Inctance avg mIOU: 0.864113
+2026-06-20 10:46:09,138 - Model - INFO - Best accuracy is: 0.93641
+2026-06-20 10:46:09,138 - Model - INFO - Best class avg mIOU is: 0.87258
+2026-06-20 10:46:09,138 - Model - INFO - Best inctance avg mIOU is: 0.87258

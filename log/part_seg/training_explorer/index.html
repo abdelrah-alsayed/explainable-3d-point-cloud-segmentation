@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PointNet++ Training Explorer</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpolyline points='1,14 5,8 9,10 15,2' fill='none' stroke='%234b3fae' stroke-width='2.4'/%3E%3C/svg%3E">
+<script src="data/fonts.js"></script>
+<style>
+/* Same look as the XAI explorer: settings column on the left, results on the right. */
+:root {
+  --bg: #f3f4f6; --surface: #ffffff; --ink: #1a2130; --muted: #5c6677; --line: #d8dce3;
+  --accent: #4b3fae; --accent-soft: #ecebfa; --good: #1a7f4b; --bad: #b2182b;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-code: "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101319; --surface: #171b23; --ink: #e7eaf0; --muted: #9aa3b2; --line: #2a303b;
+    --accent: #a59cff; --accent-soft: #25223f; --good: #4cc38a; --bad: #e0475a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101319; --surface: #171b23; --ink: #e7eaf0; --muted: #9aa3b2; --line: #2a303b;
+  --accent: #a59cff; --accent-soft: #25223f; --good: #4cc38a; --bad: #e0475a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 14px/1.45 var(--font-body); padding-inline: 16px; padding-block: 16px 40px; }
+h1 { font-size: 20px; font-weight: 600; margin: 0; text-wrap: balance; }
+h2 { font-size: 13px; font-weight: 600; margin: 0; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.app { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 16px; }
+header.top { margin: 0 0 14px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+header.top p { margin: 0; color: var(--muted); }
+.theme-pick { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.theme-pick .seg button { font-size: 12px; padding: 3px 8px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; min-width: 0; }
+aside.panel { align-self: start; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); display: flex; flex-direction: column; gap: 12px; max-height: calc(100vh - 24px); overflow: auto; }
+.step { display: grid; gap: 5px; }
+.step > .lbl { font-size: 12px; font-weight: 600; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; }
+.seg { display: flex; flex-wrap: wrap; gap: 4px; }
+.seg.col { flex-direction: column; align-items: stretch; }
+.seg.col button { text-align: left; display: flex; justify-content: space-between; gap: 8px; }
+.seg button { font: inherit; font-size: 13px; padding: 5px 9px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 6px; cursor: pointer; }
+.seg button:hover { border-color: var(--accent); }
+.seg button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.seg button:disabled { opacity: .4; cursor: not-allowed; }
+.seg button small { opacity: .75; font-family: var(--font-data); margin-left: 4px; }
+.seg button i.sw { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: 0; }
+.fixed { font-family: var(--font-data); font-size: 13px; padding: 5px 9px; border: 1px dashed var(--line); border-radius: 6px; color: var(--muted); }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.hint { font-size: 12px; color: var(--muted); margin: 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 2px 0; width: 100%; }
+main { display: grid; gap: 16px; min-width: 0; }
+.path { font-family: var(--font-data); font-size: 12.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 6px; }
+.path b { color: var(--ink); font-weight: 500; }
+.path span.sep { opacity: .5; }
+.legend { display: flex; align-items: center; gap: 8px; font-family: var(--font-data); font-size: 12px; color: var(--muted); margin-top: 8px; flex-wrap: wrap; }
+.legend .chip { display: inline-flex; align-items: center; gap: 5px; margin-right: 8px; }
+.legend .chip i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.note { font-size: 12.5px; color: var(--muted); margin: 0; }
+.note.warn { color: var(--ink); }
+table.top { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+table.top th { text-align: left; color: var(--muted); font-weight: 500; border-bottom: 1px solid var(--line); padding: 3px 6px; vertical-align: bottom; }
+table.top td { padding: 4px 6px; border-bottom: 1px solid var(--line); font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+table.top td.t { font-family: var(--font-body); }
+table.top td.r, table.top th.r { text-align: right; }
+table.top tr:hover td { background: var(--accent-soft); }
+table.top tr.sel td { background: var(--accent-soft); }
+table.top.nowrap td, table.top.nowrap th { white-space: nowrap; }
+.chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+.chart svg.small { max-width: 620px; }
+.chart text { fill: var(--muted); font: 11px var(--font-data); }
+.twocol { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 16px; }
+.loading { padding: 40px; text-align: center; color: var(--muted); }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.tabs button { font: inherit; font-size: 14px; font-weight: 500; padding: 8px 14px; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--muted); cursor: pointer; border-radius: 0; }
+.tabs button[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--accent); background: none; }
+.step.off { opacity: .4; pointer-events: none; }
+.panel .chart-body { margin-top: 10px; }
+.panel > .note { margin-top: 4px; }
+.metrics { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12.5px; margin-top: 8px; }
+.metrics span { color: var(--muted); }
+.metrics b { font-family: var(--font-data); font-weight: 500; color: var(--ink); }
+table.heat { border-collapse: separate; border-spacing: 3px; font-size: 12.5px; }
+table.heat th { font-weight: 500; color: var(--muted); padding: 2px 6px; text-align: center; vertical-align: bottom; }
+table.heat th.r { text-align: right; vertical-align: middle; }
+table.heat td { font-family: var(--font-data); text-align: center; padding: 6px 8px; border-radius: 4px; min-width: 62px; }
+table.heat td.cell { cursor: pointer; }
+table.heat td.cell:hover { outline: 2px solid var(--accent); }
+table.heat td.empty { color: var(--line); cursor: default; }
+table.heat.conf td { min-width: 50px; padding: 5px 6px; }
+table.heat.conf th { white-space: nowrap; }
+table.heat.conf th.corner { font-size: 11px; text-align: left; line-height: 1.3; }
+.conf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); gap: 14px; }
+.conf-grid > div { min-width: 0; }
+.conf-grid .note { margin-bottom: 4px; font-weight: 600; color: var(--ink); }
+.scroll-x { overflow-x: auto; max-width: 100%; }
+.wide { grid-column: 1 / -1; }
+.panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.save { font: inherit; font-size: 12px; padding: 3px 9px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); border-radius: 6px; cursor: pointer; white-space: nowrap; }
+.save:hover { border-color: var(--accent); color: var(--ink); }
+.link { font: inherit; font-weight: 600; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; text-align: left; }
+.glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.glance div { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; }
+.glance b { display: block; font: 600 20px var(--font-data); }
+.glance span { font-size: 12px; color: var(--muted); }
+.findings { margin: 6px 0 0; padding-left: 18px; display: grid; gap: 4px; font-size: 13.5px; }
+.pos { color: var(--good); } .neg { color: var(--bad); }
+.hist-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); grid-auto-flow: row dense; gap: 12px; }
+.hist-grid > div { border: 1px solid var(--line); border-radius: 6px; padding: 8px; min-width: 0; }
+.hist-grid > div.span { grid-column: 1 / -1; }
+.hist-grid .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 4px; }
+.hist-grid > div.on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+code { font-family: var(--font-code); font-size: 12px; }
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; }
+  aside.panel { position: static; max-height: none; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>PointNet++ Training Explorer</h1>
+  <p>Part segmentation on ShapeNetPart · training curves and test results · saved results only</p>
+  <div class="theme-pick"><span class="hint" id="h-font">Font</span><div class="seg" id="c-font"></div><span class="hint">Theme</span><div class="seg" id="c-theme"></div></div>
+</header>
+<div class="app">
+  <aside class="panel" aria-label="Settings">
+    <div class="step" id="s-exp"><div class="lbl"><span>Experiment</span></div><div class="seg col" id="c-exp"></div><p class="hint" id="h-exp"></p></div>
+    <div class="step" id="s-cat"><div class="lbl"><span>Category</span></div><div class="seg" id="c-cat"></div><p class="hint" id="h-cat"></p></div>
+    <div class="step" id="s-seed"><div class="lbl"><span>Seed</span></div><div class="seg" id="c-seed"></div></div>
+    <hr>
+    <div class="step" id="s-curve"><div class="lbl"><span>Curves</span></div><div class="seg" id="c-curve"></div></div>
+    <div class="step" id="s-seedview"><div class="lbl"><span>Runs with 10 seeds</span></div><div class="seg" id="c-seedview"></div></div>
+  </aside>
+  <main><div class="tabs" id="tabs"></div><div id="main" style="display:grid;gap:16px;min-width:0"><div class="panel loading">Loading data…</div></div></main>
+</div>
+
+<script src="data/train.js"></script>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const T = window.TRAIN_DATA;
+const FONT_SETS = window.FONT_SETS || {};
+const TABS = [["overview", "Overview"], ["dataset", "Dataset"], ["run", "One run"], ["compare", "Compare runs"], ["singlejoint", "Single vs joint"], ["seeds", "Seeds"], ["test", "Test results"]];
+const SEED_EXPS = ["parts2_cap312", "parts3_cap626", "parts4_cap596", "parts4_cap740"];
+const SHORT = { full_parts_per_category: "single", full_parts_joint_model: "joint", "full-dataset": "full data", mechanical_joint: "mech. joint",
+  parts2_cap312: "2 parts", parts3_cap626: "3 parts", parts4_cap596: "4 parts", parts4_cap740: "740 shapes" };
+const EXP_COLOR = { full_parts_per_category: "#5b4fc4", full_parts_joint_model: "#d9711c", "full-dataset": "#2e8b57", mechanical_joint: "#9c6b30",
+  parts2_cap312: "#2c7fb8", parts3_cap626: "#c23b5a", parts4_cap596: "#17a2a2", parts4_cap740: "#7b8a1e" };
+const MODEL_COLOR = { single: EXP_COLOR.full_parts_per_category, joint: EXP_COLOR.full_parts_joint_model };
+const TEST_CATS = T ? Object.keys(T.test) : [];
+const S = { tab: "overview", exp: "full_parts_per_category", category: "Airplane", seed: 42, curve: "raw", seedview: "band", theme: "light", dshist: "count", font: "plex" };
+try { Object.assign(S, JSON.parse(localStorage.getItem("train-explorer-v1") || "{}")); } catch (e) {}
+
+/* ================= data helpers ================= */
+const RUNS = T ? T.runs : [];
+const EXP = id => T.experiments.find(e => e.id === id);
+const ALL_CATS = [...new Set(RUNS.flatMap(r => r.categories))].sort();
+const runsOf = (exp, cat) => RUNS.filter(r => r.exp === exp && (!cat || r.categories.includes(cat)));
+const catsOf = exp => [...new Set(runsOf(exp).flatMap(r => r.categories))].sort();
+const expsOf = cat => T.experiments.map(e => e.id).filter(e => runsOf(e, cat).length);
+const multi = r => r.categories.length > 1;
+/* test mIoU of one category at every epoch: the log for runs with several categories, else the class mIoU (= the category) */
+const catCurve = (r, cat) => multi(r) ? r.cat_series[cat] : r.series.test_class_avg_iou;
+const singleRun = cat => runsOf("full_parts_per_category", cat)[0];
+const jointRun = () => runsOf("full_parts_joint_model")[0];
+const gpuName = r => (r.env.gpu || "?").replace("NVIDIA ", "").replace(" 12GB", "");
+const hours = r => r.series.epoch_time_seconds.reduce((a, b) => a + b, 0) / 3600;
+function withinEpoch(r, tol = 0.005) { const s = r.series.test_instance_avg_iou, b = s[r.best_epoch - 1]; return s.findIndex(v => v >= b - tol) + 1; }
+function seedGroups() {
+  const out = [];
+  for (const e of SEED_EXPS) for (const c of catsOf(e)) { const rs = runsOf(e, c); out.push({ exp: e, cat: c, runs: rs, vals: rs.map(r => r.best_cat[c]) }); }
+  return out;
+}
+
+/* ================= small maths ================= */
+const mean = a => { const f = a.filter(Number.isFinite); return f.length ? f.reduce((x, y) => x + y, 0) / f.length : NaN; };
+const quantile = (s, q) => { const h = (s.length - 1) * q, i = Math.floor(h); return i + 1 < s.length ? s[i] + (h - i) * (s[i + 1] - s[i]) : s[i]; };
+const median = a => { const s = a.filter(Number.isFinite).sort((x, y) => x - y); return s.length ? quantile(s, 0.5) : NaN; };
+const sd = a => { const f = a.filter(Number.isFinite), m = mean(f); return f.length > 1 ? Math.sqrt(f.reduce((x, v) => x + (v - m) ** 2, 0) / (f.length - 1)) : 0; };
+const fmt = (v, n = 3) => { if (v === null || v === undefined || Number.isNaN(v)) return "–"; const s = Number(v).toFixed(n); return /^-0(\.0*)?$/.test(s) ? s.slice(1) : s; };   // never "-0.00"
+const sgn = (v, n = 3) => (v > 0 && fmt(v, n) !== fmt(0, n) ? "+" : "") + fmt(v, n);
+const fmtInt = v => Number(v).toLocaleString("en-US");
+function ranks(a) { const idx = a.map((v, i) => i).sort((x, y) => a[x] - a[y]), r = new Array(a.length); let i = 0; while (i < idx.length) { let j = i; while (j + 1 < idx.length && a[idx[j + 1]] === a[idx[i]]) j++; for (let k = i; k <= j; k++) r[idx[k]] = (i + j) / 2; i = j + 1; } return r; }
+function spearman(a, b) { const ra = ranks(a), rb = ranks(b), ma = mean(ra), mb = mean(rb); let n = 0, da = 0, db = 0; for (let i = 0; i < a.length; i++) { n += (ra[i] - ma) * (rb[i] - mb); da += (ra[i] - ma) ** 2; db += (rb[i] - mb) ** 2; } return n / Math.sqrt(da * db); }
+/* centred moving average over w epochs (shorter at the ends); missing values are skipped */
+function smooth(a, w = 5) { if (S.curve !== "smooth") return a; const h = Math.floor(w / 2); return a.map((_, i) => mean(a.slice(Math.max(0, i - h), i + h + 1).filter(v => v !== null))); }
+const pts = a => a.map((v, i) => [i + 1, v]).filter(p => p[1] !== null && Number.isFinite(p[1]));
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+
+/* ================= colours ================= */
+function css(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+function hexRgb(h) { h = h.replace("#", ""); if (h.length === 3) h = h.split("").map(c => c + c).join(""); const n = parseInt(h, 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; }
+function palette() { const p = {}; for (const k of ["bg", "surface", "ink", "muted", "line", "accent", "good", "bad"]) p[k] = css("--" + k); return p; }
+
+/* ================= SVG charts ================= */
+function niceStep(span, n = 4) {
+  const raw = (span || 1) / n, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  for (const m of [1, 2, 2.5, 5, 10]) if (m * mag >= raw * 0.999) return m * mag;
+  return 10 * mag;
+}
+function ticksIn(lo, hi, n = 4) {
+  const st = niceStep(hi - lo, n), out = [];
+  for (let v = Math.ceil(lo / st - 1e-9) * st; v <= hi + st * 1e-9; v += st) out.push(Math.abs(v) < st * 1e-9 ? 0 : v);
+  return out;
+}
+function tickDec(lo, hi, n = 4) { const st = niceStep(hi - lo, n); for (let d = 0; d < 7; d++) if (Math.abs(Math.round(st * 10 ** d) - st * 10 ** d) < 1e-6) return d; return 4; }
+/* axis range: a little padding, then widened to round values; never-negative values never get a negative axis */
+function niceRange(vals, padFrac = 0.06, incl = null, n = 4) {
+  const fin = vals.filter(Number.isFinite);
+  let lo = Math.min(...fin), hi = Math.max(...fin);
+  if (incl !== null) { lo = Math.min(lo, incl); hi = Math.max(hi, incl); }
+  if (!Number.isFinite(lo)) { lo = 0; hi = 1; }
+  const nonNeg = lo >= 0, pad = (hi - lo) * padFrac || Math.abs(hi) * 0.1 || 0.1;
+  lo -= pad; hi += pad;
+  const st = niceStep(hi - lo, 2 * n); lo = Math.floor(lo / st + 1e-9) * st; hi = Math.ceil(hi / st - 1e-9) * st;
+  if (nonNeg && lo < 0) lo = 0;
+  return [lo, hi];
+}
+/* every axis includes 0: a range above 0 starts at 0 (its top rounded up to the next tick, so the top line has a label);
+   a range below 0 ends at 0 */
+function fromZero(lo, hi, n = 4) {
+  if (lo > 0) { const st = niceStep(hi, n); return [0, Math.ceil(hi / st - 1e-9) * st]; }
+  if (hi < 0) { const st = niceStep(-lo, n); return [Math.floor(lo / st + 1e-9) * st, 0]; }
+  return [lo, hi];
+}
+/* y range of curves: every value, and 0 (every chart's axes start at 0) */
+function curveRange(series, cap1 = false) {
+  const vals = [];
+  for (const se of series) { (se.pts || []).forEach(q => vals.push(q[1])); (se.band || []).forEach(q => vals.push(q[1], q[2])); }
+  let [lo, hi] = niceRange(vals, 0.06, 0);
+  if (cap1 && hi > 1) hi = 1;
+  return [lo, hi];
+}
+let clipN = 0;
+/* line chart: series {pts:[[x,y]], color, dash, w, opacity} or {band:[[x,lo,hi]], color} or {dots:[[x,y,title]], color};
+   vlines [{x, color, dash, label}]; hover(x) -> text for an invisible column at every whole x */
+function lineChart(o) {
+  { const [x0, x1] = o.xmin > 0 ? [0, o.xmax] : [o.xmin, o.xmax], [y0, y1] = fromZero(o.ylo, o.yhi); o = { ...o, xmin: x0, xmax: x1, ylo: y0, yhi: y1 }; }   // both axes start at 0
+  const W = o.W || 560, H = o.H || 290, L = 56, R = 14, T = o.vlabels ? 22 : 12, B = 42, id = "clip" + (++clipN);
+  const x = v => L + (v - o.xmin) / ((o.xmax - o.xmin) || 1) * (W - L - R), y = v => T + (o.yhi - v) / ((o.yhi - o.ylo) || 1) * (H - T - B);
+  const nd = tickDec(o.ylo, o.yhi), xd = tickDec(o.xmin, o.xmax, 6);
+  let s = `<svg ${o.wide ? "" : 'class="small"'} viewBox="0 0 ${W} ${H}" data-xlo="${o.xmin}" data-ylo="${o.ylo}" role="img" aria-label="${o.ylab} against ${o.xlab}">`;
+  s += `<defs><clipPath id="${id}"><rect x="${L}" y="${T - 3}" width="${W - L - R}" height="${H - T - B + 6}"/></clipPath></defs>`;
+  for (const v of ticksIn(o.ylo, o.yhi)) s += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="${o.pal.line}" stroke-width="0.8"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(o.yfmt ? o.yfmt(v) : v, nd)}</text>`;
+  for (const v of ticksIn(o.xmin, o.xmax, 6)) s += `<text x="${x(v)}" y="${H - 24}" text-anchor="middle">${fmt(v, xd)}</text>`;
+  s += `<text x="${(L + W - R) / 2}" y="${H - 5}" text-anchor="middle">${o.xlab}</text>`;
+  s += `<text transform="translate(12 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle">${o.ylab}</text>`;
+  if (o.zero && o.ylo < 0 && o.yhi > 0) s += `<line x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}" stroke="${o.pal.muted}" stroke-width="1"/>`;
+  if (o.hover) for (let v = Math.ceil(o.xmin); v <= o.xmax; v++) { const t = o.hover(v); if (t) s += `<rect x="${x(v - 0.5)}" y="${T}" width="${Math.max(0.5, x(v + 0.5) - x(v - 0.5))}" height="${H - T - B}" fill="transparent"><title>${esc(t)}</title></rect>`; }
+  for (const v of o.vlines || []) {
+    s += `<line x1="${x(v.x)}" x2="${x(v.x)}" y1="${T}" y2="${H - B}" stroke="${v.color}" stroke-width="${v.w || 1}" ${v.dash ? `stroke-dasharray="${v.dash}"` : ""} opacity="${v.opacity || 1}" pointer-events="none"/>`;
+    if (v.label) s += `<text x="${x(v.x)}" y="${T - 7}" text-anchor="middle" style="fill:${v.color}">${v.label}</text>`;
+  }
+  s += `<g clip-path="url(#${id})">`;
+  for (const se of o.series) {
+    if (se.band) s += `<polygon points="${se.band.map(p => `${x(p[0])},${y(p[2])}`).concat(se.band.slice().reverse().map(p => `${x(p[0])},${y(p[1])}`)).join(" ")}" fill="${se.color}" opacity="${se.opacity || 0.18}" pointer-events="none"/>`;
+    if (se.pts) s += `<polyline points="${se.pts.map(([a, b]) => `${x(a)},${y(b)}`).join(" ")}" fill="none" stroke="${se.color}" stroke-width="${se.w || 2}" ${se.dash ? 'stroke-dasharray="6 5"' : ""} opacity="${se.opacity || 1}" stroke-linejoin="round" pointer-events="none"/>`;
+  }
+  s += `</g>`;
+  for (const se of o.series) if (se.dots) for (const [a, b, t] of se.dots) if (b >= o.ylo && b <= o.yhi) s += `<circle cx="${x(a)}" cy="${y(b)}" r="${se.r || 4}" fill="${se.color}" stroke="${o.pal.surface}" stroke-width="1.2">${t ? `<title>${esc(t)}</title>` : ""}</circle>`;
+  return s + "</svg>";
+}
+/* dot strip: columns of dots with a median bar; cols [{label, sub, values, color, titles}] */
+function stripChart(cols, o) {
+  { const [y0, y1] = fromZero(o.ylo, o.yhi, 5); o = { ...o, ylo: y0, yhi: y1 }; }   // the value axis starts at 0
+  const L = o.L || 56, W = Math.max(360, (o.cw || 70) * cols.length + L + 14), H = o.H || 300, R = 12, T = 14, B = 52, cw = (W - L - R) / cols.length;
+  const y = v => T + (o.yhi - v) / ((o.yhi - o.ylo) || 1) * (H - T - B), nd = tickDec(o.ylo, o.yhi, 5);
+  let s = `<svg viewBox="0 0 ${W} ${H}" style="max-width:${W * 1.25}px" data-ylo="${o.ylo}" role="img" aria-label="${o.ylab}">`;
+  for (const v of ticksIn(o.ylo, o.yhi, 5)) s += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="${o.pal.line}" stroke-width="${v === 0 && o.zero ? 1.4 : 0.8}"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${o.signed ? sgn(v, nd) : fmt(v, nd)}</text>`;
+  s += `<text transform="translate(12 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle">${o.ylab}</text>`;
+  cols.forEach((c, k) => {
+    const cx = L + cw * (k + 0.5), vals = c.values.filter(Number.isFinite), md = median(vals), nd2 = o.nd ?? 3;
+    const clip = v => Math.max(o.ylo, Math.min(o.yhi, v));
+    c.values.forEach((v, i) => { if (!Number.isFinite(v)) return; const j = vals.length > 1 ? ((i * 0.618034) % 1 - 0.5) * cw * 0.55 : 0; s += `<circle cx="${cx + j}" cy="${y(clip(v))}" r="${o.r || 3}" fill="${c.color}" opacity="${o.opacity || 0.7}"><title>${esc((c.titles ? c.titles[i] + ": " : "") + fmt(v, 4))}</title></circle>`; });
+    if (Number.isFinite(md) && vals.length > 1) s += `<line x1="${cx - cw * 0.34}" x2="${cx + cw * 0.34}" y1="${y(clip(md))}" y2="${y(clip(md))}" stroke="${o.pal.ink}" stroke-width="2.2"/>`;
+    if (Number.isFinite(md) && o.medLabel !== false) s += `<text x="${cx}" y="${y(clip(md)) - 7}" text-anchor="middle" stroke="${o.pal.surface}" stroke-width="3" paint-order="stroke" style="fill:${o.pal.ink}">${o.signed ? sgn(md, nd2) : fmt(md, nd2)}</text>`;
+    s += `<text x="${cx}" y="${H - 30}" text-anchor="middle" style="fill:${o.pal.ink}">${c.label}</text>`;
+    if (c.sub) s += `<text x="${cx}" y="${H - 15}" text-anchor="middle">${c.sub}</text>`;
+    s += `<text x="${cx}" y="${H - 2}" text-anchor="middle">n=${vals.length}</text>`;
+  });
+  return s + "</svg>";
+}
+function scatterChart(points, o) {
+  { const [x0, x1] = fromZero(o.xlo, o.xhi), [y0, y1] = fromZero(o.ylo, o.yhi); o = { ...o, xlo: x0, xhi: x1, ylo: y0, yhi: y1 }; }   // both axes start at 0
+  const W = o.W || 400, H = o.H || 340, L = 56, R = 12, T = 12, B = 42;
+  const x = v => L + (v - o.xlo) / ((o.xhi - o.xlo) || 1) * (W - L - R), y = v => T + (o.yhi - v) / ((o.yhi - o.ylo) || 1) * (H - T - B);
+  const nx = tickDec(o.xlo, o.xhi), ny = tickDec(o.ylo, o.yhi);
+  let s = `<svg viewBox="0 0 ${W} ${H}" style="max-width:${o.maxw || 460}px" data-xlo="${o.xlo}" data-ylo="${o.ylo}" role="img" aria-label="${o.ylab} against ${o.xlab}">`;
+  for (const v of ticksIn(o.ylo, o.yhi)) s += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="${o.pal.line}" stroke-width="0.7"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v, ny)}</text>`;
+  for (const v of ticksIn(o.xlo, o.xhi)) s += `<text x="${x(v)}" y="${H - 24}" text-anchor="middle">${fmt(v, nx)}</text>`;
+  if (o.diag) { const a = Math.max(o.xlo, o.ylo), b = Math.min(o.xhi, o.yhi); s += `<line x1="${x(a)}" y1="${y(a)}" x2="${x(b)}" y2="${y(b)}" stroke="${o.pal.muted}" stroke-width="1.3" stroke-dasharray="4 4"/>`; }
+  s += `<text x="${(L + W - R) / 2}" y="${H - 5}" text-anchor="middle">${o.xlab}</text><text transform="translate(12 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle">${o.ylab}</text>`;
+  for (const p of points) s += `<circle cx="${x(p.x)}" cy="${y(p.y)}" r="${o.r || 4}" fill="${p.color || o.pal.accent}" opacity="${o.opacity || 0.8}"><title>${esc(p.title || "")}</title></circle>`;
+  return s + "</svg>";
+}
+function histChart(series, o) {
+  const bw = (o.hi - o.lo) / (o.bins || 20); o = { ...o, lo: Math.min(0, o.lo) };   // the x axis starts at 0; the bin width stays
+  const W = 560, H = 260, L = 50, R = 12, T = 12, B = 42, bins = Math.round((o.hi - o.lo) / bw);
+  const counts = series.map(se => { const c = new Array(bins).fill(0); se.values.forEach(v => { const k = Math.min(bins - 1, Math.max(0, Math.floor((v - o.lo) / bw))); c[k]++; }); return c; });
+  const cmax = Math.max(1, ...counts.flat()), ystep = Math.max(1, niceStep(cmax, 4)), ymax = Math.ceil(cmax / ystep) * ystep;
+  const x = v => L + (v - o.lo) / (o.hi - o.lo) * (W - L - R), y = v => T + (ymax - v) / ymax * (H - T - B);
+  const n = series.length, sub = (x(o.lo + bw) - x(o.lo) - 2) / n;
+  let s = `<svg class="small" viewBox="0 0 ${W} ${H}" data-xlo="${o.lo}" data-ylo="0" role="img" aria-label="${o.xlab} histogram">`;
+  for (let v = 0; v <= ymax; v += ystep) s += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="${o.pal.line}" stroke-width="0.7"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${v}</text>`;
+  for (const v of ticksIn(o.lo, o.hi)) s += `<text x="${x(v)}" y="${H - 24}" text-anchor="middle">${fmt(v, tickDec(o.lo, o.hi))}</text>`;
+  s += `<text x="${(L + W - R) / 2}" y="${H - 5}" text-anchor="middle">${o.xlab}</text><text transform="translate(12 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle">${o.ylab || "objects"}</text>`;
+  counts.forEach((c, j) => c.forEach((k, b) => { if (k) s += `<rect x="${x(o.lo + b * bw) + 1 + j * sub}" y="${y(k)}" width="${Math.max(1, sub)}" height="${y(0) - y(k)}" fill="${series[j].color}" opacity="0.85"><title>${esc(series[j].name)}: ${k} objects with ${fmt(o.lo + b * bw, 2)}–${fmt(o.lo + (b + 1) * bw, 2)}</title></rect>`; }));
+  return s + "</svg>";
+}
+/* label placement for scatter plots: each label tries four spots and takes the first that touches no other label or dot */
+function placeLabels(items, xmin = -Infinity, xmax = Infinity) {
+  const placed = [], out = [];
+  for (const p of [...items].sort((a, b) => a.x - b.x)) {
+    const w = p.text.length * 7, spots = [{ x: p.x + 9, y: p.y - 7, a: "start" }, { x: p.x + 9, y: p.y + 16, a: "start" }, { x: p.x - 9 - w, y: p.y - 7, a: "end" }, { x: p.x - 9 - w, y: p.y + 16, a: "end" }];
+    const others = items.filter(d => d !== p);
+    const spot = spots.find(b => b.x >= xmin && b.x + w <= xmax && !placed.some(q => b.x < q.x + q.w + 6 && q.x < b.x + w + 6 && b.y - 12 < q.y && q.y - 12 < b.y)
+                              && !others.some(d => d.x > b.x - 6 && d.x < b.x + w + 6 && d.y > b.y - 16 && d.y < b.y + 5)) || spots[0];
+    placed.push({ x: spot.x, y: spot.y, w }); out.push({ p, x: spot.a === "end" ? p.x - 9 : p.x + 9, y: spot.y, a: spot.a });
+  }
+  return out;
+}
+function panel(title, note, body, cls = "") { const s = document.createElement("section"); s.className = "panel chart " + cls; s.innerHTML = `<div class="panel-head"><h2>${title}</h2></div>${note ? `<p class="note">${note}</p>` : ""}<div class="chart-body">${body}</div>`; return s; }
+function legend(items) { return `<div class="legend">${items.map(([c, l, dash]) => `<span class="chip"><i style="background:${c};${dash ? "border-radius:0;height:3px;width:16px" : ""}"></i>${l}</span>`).join("")}</div>`; }
+function metricsRow(items) { return `<div class="metrics">${items.map(([l, v]) => `<span>${l} <b>${v}</b></span>`).join("")}</div>`; }
+function glance(items) { return `<div class="glance">${items.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("")}</div>`; }
+const epochX = n => ({ xmin: 1, xmax: n, xlab: "epoch" });
+
+/* ================= saving a panel as an image (same as the XAI explorer) ================= */
+function downloadCanvas(canvas, name) {
+  canvas.toBlob(blob => {
+    const a = document.createElement("a"), url = URL.createObjectURL(blob);
+    a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+  }, "image/png");
+}
+function svgImage(svg) {
+  const vb = svg.viewBox.baseVal, w = vb.width, h = vb.height, clone = svg.cloneNode(true);
+  clone.setAttribute("xmlns", "http://www.w3.org/2000/svg"); clone.setAttribute("width", w); clone.setAttribute("height", h); clone.removeAttribute("style"); clone.removeAttribute("class");
+  const src = svg.querySelectorAll("*"), dst = clone.querySelectorAll("*");
+  src.forEach((el, i) => {
+    const cs = getComputedStyle(el), t = dst[i];
+    if (el.tagName === "text") { t.setAttribute("fill", cs.fill); t.setAttribute("font-family", cs.fontFamily); t.setAttribute("font-size", cs.fontSize); t.setAttribute("font-weight", cs.fontWeight); }
+    t.removeAttribute("style");
+  });
+  // an SVG drawn as an image cannot see the page fonts: put the faces of the chosen font inside it
+  const fs = FONT_SETS[S.font]; if (fs && fs.svg) { const st = document.createElementNS("http://www.w3.org/2000/svg", "style"); st.textContent = fs.svg; clone.insertBefore(st, clone.firstChild); }
+  const url = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+  return new Promise((ok, bad) => { const img = new Image(); img.onload = () => ok({ img, w, h }); img.onerror = bad; img.src = url; });
+}
+function collectBlocks(el, out = []) {
+  for (const c of el.children) {
+    const cl = c.classList, tag = c.tagName.toLowerCase();
+    if (cl.contains("seg") || cl.contains("save") || tag === "button" || cl.contains("panel-head")) continue;
+    if (tag === "svg") out.push({ kind: "svg", el: c });
+    else if (tag === "table") out.push({ kind: "table", el: c });
+    else if (cl.contains("legend")) out.push({ kind: "legend", items: [...c.querySelectorAll(".chip")].map(ch => ({ color: getComputedStyle(ch.querySelector("i")).backgroundColor, text: ch.textContent.trim() })) });
+    else if (cl.contains("metrics")) out.push({ kind: "text", text: [...c.children].map(x => x.textContent.trim().replace(/\s+/g, " ")).filter(Boolean).join("   ·   "), muted: false });
+    else if (cl.contains("note") && !c.querySelector("svg,table")) out.push({ kind: "text", text: c.textContent.trim().replace(/\s+/g, " "), muted: true });
+    else collectBlocks(c, out);
+  }
+  return out;
+}
+function tableCanvas(table, scale) {
+  const tr = table.getBoundingClientRect(), c = document.createElement("canvas");
+  c.width = Math.ceil(tr.width * scale); c.height = Math.ceil(tr.height * scale);
+  const ctx = c.getContext("2d"); ctx.scale(scale, scale);
+  for (const cell of table.querySelectorAll("th, td")) {
+    const r = cell.getBoundingClientRect(), cs = getComputedStyle(cell), x = r.left - tr.left, y = r.top - tr.top, bg = cs.backgroundColor;
+    if (bg && bg !== "transparent" && !/rgba\(.*,\s*0\)$/.test(bg)) { ctx.fillStyle = bg; ctx.fillRect(x, y, r.width, r.height); }
+    const bw = parseFloat(cs.borderBottomWidth);
+    if (bw > 0 && cs.borderBottomStyle !== "none") { ctx.strokeStyle = cs.borderBottomColor; ctx.lineWidth = bw; ctx.beginPath(); ctx.moveTo(x, y + r.height); ctx.lineTo(x + r.width, y + r.height); ctx.stroke(); }
+    const text = cell.textContent.trim().replace(/\s+/g, " "); if (!text) continue;
+    ctx.fillStyle = cs.color; ctx.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`; ctx.textBaseline = "middle";
+    const al = cs.textAlign, pl = parseFloat(cs.paddingLeft), pr = parseFloat(cs.paddingRight);
+    ctx.textAlign = al === "center" ? "center" : al === "right" || al === "end" ? "right" : "left";
+    ctx.fillText(text, ctx.textAlign === "center" ? x + r.width / 2 : ctx.textAlign === "right" ? x + r.width - pr : x + pl, y + r.height / 2);
+  }
+  return { img: c, w: tr.width, h: tr.height };
+}
+function wrapText(ctx, text, maxW) {
+  const words = text.split(" "), lines = []; let line = "";
+  for (const w of words) { const t = line ? line + " " + w : w; if (ctx.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t; }
+  if (line) lines.push(line); return lines;
+}
+async function exportRegion(el, title, name) {
+  const blocks = collectBlocks(el); if (!blocks.some(b => b.kind === "svg" || b.kind === "table")) return;
+  await Promise.all(["400 12px", "600 15px"].flatMap(w => [css("--font-body"), css("--font-data")].map(f => document.fonts.load(`${w} ${f}`))));   // canvas text needs loaded fonts
+  const pal = palette(), pad = 24, gap = 12, scale = 2;
+  for (const b of blocks) {
+    if (b.kind === "svg") { const r = b.el.getBoundingClientRect(); const i = await svgImage(b.el); b.img = i.img; b.w = r.width; b.h = r.height; }
+    if (b.kind === "table") Object.assign(b, tableCanvas(b.el, scale));
+  }
+  const m = document.createElement("canvas").getContext("2d"), body = css("--font-body"), data = css("--font-data");
+  m.font = "12px " + data;
+  const legendW = Math.max(0, ...blocks.filter(b => b.kind === "legend").map(b => b.items.reduce((a, it) => a + 25 + m.measureText(it.text).width, 0)));
+  const W = Math.max(480, Math.min(legendW, 1400), ...blocks.filter(b => b.w).map(b => b.w)) + 2 * pad;
+  for (const b of blocks) if (b.kind === "text") { m.font = "12.5px " + (b.muted ? body : data); b.lines = wrapText(m, b.text, W - 2 * pad); b.h = b.lines.length * 18; }
+  for (const b of blocks) if (b.kind === "legend") {   // a legend wraps onto more lines when it is wider than the image
+    let x = 0, rows = 1; for (const it of b.items) { const w = 25 + m.measureText(it.text).width; if (x + w > W - 2 * pad && x > 0) { rows++; x = 0; } it.row = rows - 1; it.x = x; x += w; }
+    b.h = rows * 20;
+  }
+  const titleLines = (() => { m.font = "600 15px " + body; return wrapText(m, title, W - 2 * pad); })();
+  const H = pad + titleLines.length * 21 + gap + blocks.reduce((a, b) => a + b.h + gap, 0) + pad - gap;
+  const c = document.createElement("canvas"); c.width = Math.ceil(W * scale); c.height = Math.ceil(H * scale);
+  const ctx = c.getContext("2d"); ctx.scale(scale, scale); ctx.fillStyle = pal.surface; ctx.fillRect(0, 0, W, H);
+  let y = pad; ctx.textBaseline = "top";
+  ctx.fillStyle = pal.ink; ctx.font = "600 15px " + body; for (const l of titleLines) { ctx.fillText(l, pad, y); y += 21; } y += gap;
+  for (const b of blocks) {
+    if (b.kind === "svg" || b.kind === "table") ctx.drawImage(b.img, pad, y, b.w, b.h);
+    else if (b.kind === "text") { ctx.fillStyle = b.muted ? pal.muted : pal.ink; ctx.font = "12.5px " + (b.muted ? body : data); b.lines.forEach((l, k) => ctx.fillText(l, pad, y + k * 18)); }
+    else if (b.kind === "legend") { ctx.font = "12px " + data; for (const it of b.items) { const yy = y + it.row * 20; ctx.fillStyle = it.color; ctx.fillRect(pad + it.x, yy + 3, 10, 10); ctx.fillStyle = pal.muted; ctx.fillText(it.text, pad + it.x + 15, yy + 1); } }
+    y += b.h + gap;
+  }
+  downloadCanvas(c, name);
+}
+const slug = t => t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+function saveName(title) {
+  const bits = { overview: [], dataset: [], run: [S.exp, S.category, "seed" + S.seed], compare: [S.category], singlejoint: [S.category], seeds: [S.exp, S.category], test: [S.category] }[S.tab];
+  return ["training", S.tab, ...bits, slug(title)].join("_").replace(/[^A-Za-z0-9_.-]+/g, "-") + ".png";
+}
+function saveButton(onClick) { const b = document.createElement("button"); b.type = "button"; b.className = "save"; b.textContent = "Save image"; b.addEventListener("click", onClick); return b; }
+function addPanelSaves(root) {
+  root.querySelectorAll("section.panel.chart").forEach(sec => {
+    if (!sec.querySelector(".chart-body svg, .chart-body table")) return;
+    const head = sec.querySelector(".panel-head"), title = sec.querySelector("h2").textContent;
+    const b = document.createElement("button"); b.type = "button"; b.className = "save"; b.textContent = "Save image";
+    b.addEventListener("click", () => exportRegion(sec, title, saveName(title))); head.appendChild(b);
+  });
+}
+
+/* ================= controls ================= */
+function seg(el, items, current, onPick) {
+  el.innerHTML = "";
+  if (items.length === 1 && items[0].fixed) { const s = document.createElement("div"); s.className = "fixed"; s.textContent = items[0].label; el.appendChild(s); return; }
+  for (const it of items) {
+    const b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-pressed", String(it.value === current));
+    b.innerHTML = `<span>${it.label}</span>` + (it.small !== undefined ? `<small>${it.small}</small>` : ""); b.disabled = !!it.disabled;
+    if (it.title) b.title = it.title;
+    b.addEventListener("click", () => onPick(it.value)); el.appendChild(b);
+  }
+}
+const USES = { overview: [], dataset: ["cat"], run: ["exp", "cat", "seed", "curve"], compare: ["cat", "curve", "seedview"], singlejoint: ["cat", "curve"], seeds: ["exp", "cat", "curve"], test: ["cat"] };
+/* the category and experiment must exist for the tab; otherwise pick the closest valid one */
+function normalize() {
+  if (!TABS.some(t => t[0] === S.tab)) S.tab = "overview";
+  if (!EXP(S.exp)) S.exp = "full_parts_per_category";
+  if (!["count", "share"].includes(S.dshist)) S.dshist = "count";
+  if (!FONT_SETS[S.font]) S.font = "plex";
+  if (!ALL_CATS.includes(S.category)) S.category = "Airplane";
+  if (S.tab === "seeds" && !SEED_EXPS.includes(S.exp)) S.exp = SEED_EXPS.find(e => catsOf(e).includes(S.category)) || SEED_EXPS[0];
+  if (S.tab === "run" || S.tab === "seeds") { if (!catsOf(S.exp).includes(S.category)) S.category = catsOf(S.exp)[0]; }
+  if (S.tab === "singlejoint" && !singleRun(S.category)) S.category = "Airplane";
+  if (S.tab === "test" && !TEST_CATS.includes(S.category)) S.category = TEST_CATS[0];
+  const seeds = runsOf(S.exp, S.category).map(r => r.seed);
+  if (seeds.length && !seeds.includes(S.seed)) S.seed = seeds.includes(42) ? 42 : seeds[0];
+}
+function catAllowed(c) {
+  if (S.tab === "run" || S.tab === "seeds") return catsOf(S.exp).includes(c);
+  if (S.tab === "singlejoint") return !!singleRun(c);
+  if (S.tab === "test") return TEST_CATS.includes(c);
+  return true;
+}
+function set(k, v) {
+  S[k] = v;
+  if (k === "exp" && (S.tab === "run" || S.tab === "seeds") && !catsOf(v).includes(S.category)) S.category = catsOf(v)[0];
+  if (k === "tab") syncHash();
+  render();
+}
+function go(tab, exp, cat, seed) { if (exp) S.exp = exp; if (cat) S.category = cat; if (seed !== undefined) S.seed = seed; S.tab = tab; syncHash(); render(); window.scrollTo({ top: 0 }); }
+function syncHash() { try { history.replaceState(null, "", "#" + S.tab); } catch (e) {} }
+function save() { try { localStorage.setItem("train-explorer-v1", JSON.stringify(S)); } catch (e) {} }
+
+function renderControls() {
+  seg($("tabs"), TABS.map(([v, l]) => ({ value: v, label: l })), S.tab, v => set("tab", v));
+  const use = USES[S.tab];
+  for (const [id, key] of [["s-exp", "exp"], ["s-cat", "cat"], ["s-seed", "seed"], ["s-curve", "curve"], ["s-seedview", "seedview"]]) {
+    const el = $(id), off = !use.includes(key); el.classList.toggle("off", off); el.inert = off;
+  }
+  seg($("c-exp"), T.experiments.map(e => ({ value: e.id, label: `<i class="sw" style="background:${EXP_COLOR[e.id]}"></i>${e.label}`, small: runsOf(e.id).length + (runsOf(e.id).length === 1 ? " run" : " runs"),
+    disabled: S.tab === "seeds" && !SEED_EXPS.includes(e.id) })), S.exp, v => set("exp", v));
+  $("h-exp").textContent = S.tab === "seeds" ? "Only the experiments with 10 seeds." : EXP(S.exp).about;
+  seg($("c-cat"), ALL_CATS.map(c => ({ value: c, label: c, disabled: !catAllowed(c) })), S.category, v => set("category", v));
+  $("h-cat").textContent = { dataset: "The chosen category is marked in the tables and the histograms.", run:"Categories of this experiment.", seeds: "Categories of this experiment.", singlejoint: "14 categories have a single and a joint model.", test: "Per-object test results exist for the 6 categories of the XAI study.", compare: "Every run that trained this category is compared." }[S.tab] || "";
+  const seeds = runsOf(S.exp, S.category).map(r => r.seed).sort((a, b) => a - b);
+  seg($("c-seed"), seeds.length === 1 ? [{ fixed: true, label: `seed ${seeds[0]} (only run)` }] : seeds.map(s => ({ value: s, label: String(s) })), S.seed, v => set("seed", v));
+  seg($("c-curve"), [["raw", "Every epoch"], ["smooth", "Smoothed (5 epochs)"]].map(([v, l]) => ({ value: v, label: l })), S.curve, v => set("curve", v));
+  seg($("c-seedview"), [["band", "Mean and range"], ["each", "Every seed"]].map(([v, l]) => ({ value: v, label: l })), S.seedview, v => set("seedview", v));
+  seg($("c-theme"), [["light", "Light"], ["dark", "Dark"], ["system", "System"]].map(([v, l]) => ({ value: v, label: l })), S.theme, v => { S.theme = v; applyTheme(); render(); });
+  seg($("c-font"), Object.entries(FONT_SETS).map(([v, f]) => ({ value: v, label: f.label })), S.font, v => { S.font = v; applyFont(); render(); });
+  $("h-font").hidden = $("c-font").hidden = !Object.keys(FONT_SETS).length;
+}
+function pathLine(bits) { return `<div class="path">${bits.map(b => `<b>${b}</b>`).join(`<span class="sep">›</span>`)}</div>`; }
+
+/* ================= overview ================= */
+function renderOverview(m) {
+  const pal = palette(), E = T.experiments;
+  const epochs = RUNS.reduce((a, r) => a + r.epochs, 0), hrs = RUNS.reduce((a, r) => a + hours(r), 0), gpus = [...new Set(RUNS.map(r => gpuName(r)))];
+  m.appendChild(panel("All training runs at a glance", "PointNet++ (MSG) part segmentation on ShapeNetPart, 2,048 points per shape. Every number on this page comes from the saved training logs. Nothing was trained again.",
+    glance([[RUNS.length, "training runs"], [E.length, "experiments"], [ALL_CATS.length, "categories"], [fmtInt(epochs), "epochs in total"], [fmt(hrs, 0), "GPU hours"], [gpus.length, "GPUs: " + gpus.join(" and ")]]), "wide"));
+
+  // experiments table
+  const rng = (a) => { const lo = Math.min(...a), hi = Math.max(...a); return lo === hi ? fmtInt(lo) : fmtInt(lo) + "–" + fmtInt(hi); };
+  let t = `<div class="scroll-x"><table class="top" style="min-width:900px"><thead><tr><th>Experiment</th><th>What it is</th><th>Categories</th><th class="r">Runs</th><th class="r">Epochs</th><th class="r">Training shapes per category</th><th class="r">Test shapes per category</th><th class="r">GPU hours</th><th>GPU</th></tr></thead><tbody>`;
+  for (const e of E) {
+    const rs = runsOf(e.id), cats = catsOf(e.id), tr = [], te = [];
+    rs.forEach(r => r.categories.forEach(c => { tr.push(r.counts[c][0]); te.push(r.counts[c][1]); }));
+    t += `<tr><td class="t" style="white-space:nowrap"><i style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${EXP_COLOR[e.id]};margin-right:6px"></i><button type="button" class="link" data-exp="${e.id}">${e.label}</button></td><td class="t">${e.about}</td>
+      <td class="t">${cats.length > 5 ? cats.length + " categories" : cats.join(", ")}</td><td class="r">${rs.length}</td><td class="r">${rng(rs.map(r => r.epochs))}</td><td class="r">${rng(tr)}</td><td class="r">${rng(te)}</td>
+      <td class="r">${fmt(rs.reduce((a, r) => a + hours(r), 0), 1)}</td><td class="t" style="white-space:nowrap">${[...new Set(rs.map(gpuName))].join(", ")}</td></tr>`;
+  }
+  t += `</tbody></table></div>`;
+  const ep = panel("The experiments", "Click an experiment to see its training curves.", t, "wide");
+  m.appendChild(ep);
+  ep.querySelectorAll("[data-exp]").forEach(b => b.addEventListener("click", () => go(SEED_EXPS.includes(b.dataset.exp) ? "seeds" : "run", b.dataset.exp)));
+
+  // heat table: saved test mIoU per category and experiment
+  const vals = [];
+  const cellOf = (e, c) => { const rs = runsOf(e, c); if (!rs.length) return null; const v = rs.map(r => r.best_cat[c]); vals.push(...v); return { v: mean(v), n: rs.length, sd: sd(v), tr: rs[0].counts[c][0], te: rs[0].counts[c][1] }; };
+  const grid = ALL_CATS.map(c => E.map(e => cellOf(e.id, c)));
+  const lo = Math.min(...vals), hi = Math.max(...vals), [ar, ag, ab] = hexRgb(pal.accent);
+  let h = `<div class="scroll-x"><table class="heat"><thead><tr><th></th>${E.map(e => `<th><span style="color:${EXP_COLOR[e.id]}">●</span> ${SHORT[e.id]}</th>`).join("")}</tr></thead><tbody>`;
+  ALL_CATS.forEach((c, i) => {
+    h += `<tr><th class="r">${c}</th>` + grid[i].map((x, j) => {
+      if (!x) return `<td class="empty">·</td>`;
+      const a = (x.v - lo) / ((hi - lo) || 1);
+      return `<td class="cell" data-exp="${E[j].id}" data-cat="${c}" style="background:rgba(${ar},${ag},${ab},${(0.08 + a * 0.72).toFixed(3)});color:${a > 0.6 ? pal.surface : pal.ink}" title="${c} · ${E[j].label}: ${fmt(x.v, 4)}${x.n > 1 ? ` (mean of ${x.n} seeds, sd ${fmt(x.sd, 4)})` : ""} · ${fmtInt(x.tr)} training / ${fmtInt(x.te)} test shapes">${fmt(x.v, 3)}</td>`;
+    }).join("") + "</tr>";
+  });
+  h += `</tbody></table></div>`;
+  const hp = panel("Test mIoU of every category in every experiment", "Test mIoU of the saved checkpoint. Runs with 10 seeds: the mean. Darker = higher. The experiments use different shapes (part filters and caps), so compare along a row with care. Click a cell to open that run.", h, "wide");
+  m.appendChild(hp);
+  hp.querySelectorAll("td.cell").forEach(td => td.addEventListener("click", () => go(SEED_EXPS.includes(td.dataset.exp) ? "seeds" : "run", td.dataset.exp, td.dataset.cat)));
+
+  // findings, from the numbers
+  const G = seedGroups(), maxRange = Math.max(...G.map(g => Math.max(...g.vals) - Math.min(...g.vals))), sds = G.map(g => sd(g.vals));
+  const sj = ALL_CATS.filter(c => singleRun(c)).map(c => ({ c, d: jointRun().best_cat[c] - singleRun(c).best_cat[c], n: singleRun(c).counts[c][0] }));
+  const nJ = sj.filter(x => x.d > 0).length, nS = sj.filter(x => x.d < 0).length, small = sj.filter(x => Math.abs(x.d) <= maxRange).length;
+  const bigJ = sj.filter(x => x.d > maxRange), bigS = sj.filter(x => -x.d > maxRange);
+  const gaps = RUNS.map(r => r.series.test_instance_avg_iou[r.best_epoch - 1] - r.series.test_instance_avg_iou[r.epochs - 1]);
+  const list = a => a.map(x => `${x.c} (${sgn(x.d)}, ${fmtInt(x.n)} training shapes)`).join(", ");
+  const findings = [
+    `Seeds change the test mIoU very little. Over 10 seeds the standard deviation is ${fmt(Math.min(...sds))} to ${fmt(Math.max(...sds))}, and the best seed is at most ${fmt(maxRange)} above the worst.`,
+    `Single or joint model: the single model scores higher in ${nS} of ${sj.length} categories, the joint model in ${nJ}. In ${small} of ${sj.length} the difference is not bigger than ${fmt(maxRange)}, the largest seed range.`,
+    bigJ.length ? `The joint model is better by more than ${fmt(maxRange)} for ${list(bigJ)}.` : `The joint model is never better by more than ${fmt(maxRange)}.`,
+    bigS.length ? `The single model is better by more than ${fmt(maxRange)} for ${list(bigS)}.` : `The single model is never better by more than ${fmt(maxRange)}.`,
+    `The saved checkpoint is the epoch with the best test mIoU. The last epoch is ${fmt(median(gaps))} lower (median over all ${RUNS.length} runs). So the saved scores are a little optimistic: there was no separate validation set.`];
+  m.appendChild(panel("What this shows", "", `<ul class="findings">${findings.map(f => `<li>${f}</li>`).join("")}</ul>`, "wide"));
+}
+
+/* ================= dataset ================= */
+let DS_CACHE = null;
+const bitCount = m => { let n = 0; for (; m; m >>= 1) n += m & 1; return n; };
+/* one row per (object, split), like the data loader: a file in two split lists is used in both */
+function dsCats() {
+  if (DS_CACHE) return DS_CACHE;
+  DS_CACHE = T.dataset.categories.map(c => {
+    const rows = []; c.split.forEach((s, i) => { for (const l of s) rows.push({ s: l, p: c.points[i], m: c.combo[i], k: bitCount(c.combo[i]) }); });
+    const combos = Object.values(rows.reduce((a, r) => { (a[r.m] = a[r.m] || { m: r.m, k: r.k, n: 0 }).n++; return a; }, {})).sort((a, b) => b.n - a.n || b.k - a.k || a.m - b.m)
+      .map(x => ({ ...x, full: x.m === 2 ** c.nominal - 1, label: c.part_names.filter((_, j) => x.m >> j & 1).join(" + ") }));
+    const n = l => rows.filter(r => r.s === l).length, p = rows.map(r => r.p).sort((a, b) => a - b);
+    return { ...c, rows, combos, train: n("t"), val: n("v"), test: n("e"), total: rows.length, files: c.split.length, twice: c.split.filter(s => s.length > 1),
+             pmin: p[0], pmax: p[p.length - 1], pmed: median(p), pmean: mean(p), q1: quantile(p, 0.25), q3: quantile(p, 0.75), below: rows.filter(r => r.p < 2048).length,
+             dist: [1, 2, 3, 4, 5, 6].map(k => ({ k, n: rows.filter(r => r.k === k).length })) };
+  }).sort((a, b) => b.total - a.total);
+  return DS_CACHE;
+}
+const catLink = (c, sel) => `<button type="button" class="link" data-cat="${c}" style="${sel ? "" : "font-weight:500"}">${c}</button>`;
+function dsRangeChart(C, pal) {
+  const W = 720, L = 100, R = 20, T0 = 20, rh = 22, B = 40, H = T0 + rh * C.length + B, xmax = 3000, x = v => L + v / xmax * (W - L - R), y = i => T0 + rh * (i + 0.5);
+  let s = `<svg viewBox="0 0 ${W} ${H}" style="max-width:900px" data-xlo="0" role="img" aria-label="raw points per object">`;
+  for (let v = 0; v <= xmax; v += 500) s += `<line x1="${x(v)}" x2="${x(v)}" y1="${T0}" y2="${H - B}" stroke="${pal.line}" stroke-width="0.7"/><text x="${x(v)}" y="${H - B + 16}" text-anchor="middle">${fmtInt(v)}</text>`;
+  s += `<line x1="${x(2048)}" x2="${x(2048)}" y1="${T0 - 4}" y2="${H - B}" stroke="${pal.bad}" stroke-width="1.4" stroke-dasharray="5 4"/><text x="${x(2048)}" y="${T0 - 8}" text-anchor="middle" style="fill:${pal.bad}">2,048 points per object for the model</text>`;
+  s += `<text x="${(L + W - R) / 2}" y="${H - 4}" text-anchor="middle">points in the .txt file (line = min to max · box = middle 50 % · bar = median)</text>`;
+  C.forEach((c, i) => {
+    const sel = c.name === S.category, yc = y(i), col = sel ? pal.accent : pal.muted;
+    if (sel) s += `<rect x="2" y="${yc - rh / 2}" width="${W - 4}" height="${rh}" fill="${pal.accent}" opacity="0.08"/>`;
+    s += `<text x="${L - 10}" y="${yc + 4}" text-anchor="end" style="fill:${pal.ink};${sel ? "font-weight:600" : ""}">${c.name}</text>`;
+    s += `<line x1="${x(c.pmin)}" x2="${x(c.pmax)}" y1="${yc}" y2="${yc}" stroke="${col}" stroke-width="1.4"/>`;
+    s += `<rect x="${x(c.q1)}" y="${yc - 6}" width="${Math.max(1, x(c.q3) - x(c.q1))}" height="12" fill="${col}" opacity="0.35"/>`;
+    s += `<line x1="${x(c.pmed)}" x2="${x(c.pmed)}" y1="${yc - 7}" y2="${yc + 7}" stroke="${pal.ink}" stroke-width="2.2"><title>${c.name}: min ${fmtInt(c.pmin)}, median ${fmtInt(Math.trunc(c.pmed))}, max ${fmtInt(c.pmax)}; ${c.below} of ${fmtInt(c.total)} below 2,048</title></line>`;
+  });
+  return s + "</svg>";
+}
+/* one bar per part combination that occurs in the category, biggest first */
+function dsCombo(c, pal, share) {
+  const cw = 6.7, L = Math.max(...c.combos.map(x => x.label.length)) * cw + 12, BW = 210, R = 92, T0 = 4, rh = 20, B = 30, W = L + BW + R, H = T0 + rh * c.combos.length + B;
+  const val = n => share ? 100 * n / c.total : n, top = Math.max(1, ...c.combos.map(x => val(x.n)));
+  const step = share ? 25 : Math.max(1, niceStep(top, 3)), xmax = share ? 100 : Math.ceil(top / step) * step, x = v => L + v / xmax * BW;
+  let s = `<svg viewBox="0 0 ${W} ${H}" style="max-width:${Math.round(W)}px" data-w="${Math.round(W)}" data-xlo="0" role="img" aria-label="${c.name}: objects per part combination">`;
+  for (let v = 0; v <= xmax + 1e-9; v += step) s += `<line x1="${x(v)}" x2="${x(v)}" y1="${T0}" y2="${H - B}" stroke="${pal.line}" stroke-width="0.7"/><text x="${x(v)}" y="${H - B + 14}" text-anchor="middle">${share ? v + "%" : fmtInt(v)}</text>`;
+  s += `<text x="${L + BW / 2}" y="${H - 2}" text-anchor="middle">${share ? "% of the category's objects" : "objects"}</text>`;
+  c.combos.forEach((cb, i) => {
+    const yc = T0 + rh * (i + 0.5), w = Math.max(1, x(val(cb.n)) - L), pc = 100 * cb.n / c.total;
+    s += `<text x="${L - 8}" y="${yc + 4}" text-anchor="end" style="fill:${pal.ink};${cb.full ? "font-weight:600" : ""}">${cb.label}</text>`;
+    s += `<rect x="${L}" y="${yc - 6.5}" width="${w}" height="13" fill="${pal.accent}" opacity="0.85"${cb.full ? ` stroke="${pal.ink}" stroke-width="1.6"` : ""}><title>${c.name} · ${cb.label}: ${fmtInt(cb.n)} objects (${fmt(pc, 1)} %)${cb.full ? " · all parts" : ""}</title></rect>`;
+    s += `<text x="${L + w + 6}" y="${yc + 4}">${fmtInt(cb.n)} (${pc < 1 && pc > 0 ? "<1" : Math.round(pc)}%)</text>`;
+  });
+  return s + "</svg>";
+}
+function renderDataset(m) {
+  const pal = palette(), C = dsCats(), sum = k => C.reduce((a, c) => a + c[k], 0), files = sum("files"), twice = C.flatMap(c => c.twice.map(s => ({ c: c.name, s })));
+  const unused = T.dataset.unused_folders;
+  m.insertAdjacentHTML("beforeend", pathLine(["ShapeNetPart", `${C.length} categories`, `${fmtInt(sum("total"))} objects (as the data loader counts them)`]));
+  const sel = c => c.name === S.category ? "sel" : "";
+  const bindLinks = el => el.querySelectorAll("[data-cat]").forEach(b => b.addEventListener("click", () => set("category", b.dataset.cat)));
+
+  // 1. splits
+  let t = `<div class="scroll-x"><table class="top nowrap"><thead><tr><th>Category</th><th class="r">Train</th><th class="r">Val</th><th class="r">Test</th><th class="r">Parts</th><th class="r">Total</th></tr></thead><tbody>`;
+  for (const c of C) t += `<tr class="${sel(c)}"><td class="t">${catLink(c.name, sel(c))}</td><td class="r">${fmtInt(c.train)}</td><td class="r">${fmtInt(c.val)}</td><td class="r">${fmtInt(c.test)}</td><td class="r">${c.nominal}</td><td class="r">${fmtInt(c.total)}</td></tr>`;
+  t += `<tr style="font-weight:600"><td class="t"><b>Total</b></td><td class="r">${fmtInt(sum("train"))}</td><td class="r">${fmtInt(sum("val"))}</td><td class="r">${fmtInt(sum("test"))}</td><td class="r"></td><td class="r">${fmtInt(sum("total"))}</td></tr></tbody></table></div>`;
+  const pairName = { tv: "train and val", te: "train and test", ve: "val and test" };
+  const pairs = Object.entries(twice.reduce((a, x) => { (a[x.s] = a[x.s] || {})[x.c] = (a[x.s][x.c] || 0) + 1; return a; }, {}))
+    .map(([s, by]) => `${pairName[s]}: ${Object.entries(by).map(([c, n]) => `${c} ${n}`).join(", ")}`).join("; ");
+  const p1 = panel("Objects per split", `Parts = the nominal number of parts of the category. Split lists: <code>train_test_split/shuffled_*_file_list.json</code>. Counted like the data loader: ${twice.length} files are in two split lists and are counted in both (${pairs}). So there are ${fmtInt(files)} different files but ${fmtInt(sum("total"))} objects in the table.${unused.length ? ` The folder ${unused.map(u => `${u.folder} (Pistol, ${u.files} files)`).join(", ")} is not in <code>synsetoffset2category.txt</code>, so no run uses it.` : ""}`, t, "wide");
+  m.appendChild(p1); bindLinks(p1);
+
+  // 2. raw points
+  let t2 = `<div class="scroll-x"><table class="top nowrap"><thead><tr><th>Category</th><th class="r">Objects</th><th class="r">Min</th><th class="r">Median</th><th class="r">Mean</th><th class="r">Max</th></tr></thead><tbody>`;
+  for (const c of C) t2 += `<tr class="${sel(c)}"><td class="t">${catLink(c.name, sel(c))}</td><td class="r">${fmtInt(c.total)}</td><td class="r">${fmtInt(c.pmin)}</td><td class="r">${fmtInt(Math.trunc(c.pmed))}</td><td class="r">${fmtInt(Math.trunc(c.pmean))}</td><td class="r">${fmtInt(c.pmax)}</td></tr>`;
+  t2 += `</tbody></table></div>`;
+  const p2 = panel("Raw points per object", "Points in each .txt file, before the loader draws 2,048 points (with replacement) for the model. Median and mean are cut to whole numbers. Red line: 2,048.", t2 + `<div class="scroll-x" style="margin-top:14px"><div style="min-width:560px">${dsRangeChart(C, pal)}</div></div>`, "wide");
+  m.appendChild(p2); bindLinks(p2);
+
+  // 3. part-count distribution
+  let t3 = `<div class="scroll-x"><table class="top nowrap"><thead><tr><th>Category</th><th class="r">Nominal</th>${[1, 2, 3, 4, 5, 6].map(k => `<th class="r">=${k}</th>`).join("")}<th class="r">%Full</th></tr></thead><tbody>`;
+  for (const c of C) {
+    const full = c.dist[c.nominal - 1].n / c.total;
+    t3 += `<tr class="${sel(c)}"><td class="t">${catLink(c.name, sel(c))}</td><td class="r">${c.nominal}</td>` +
+      c.dist.map(d => `<td class="r" style="${d.k === c.nominal ? `font-weight:600;box-shadow:inset 0 0 0 1.5px ${pal.accent}` : d.n ? "" : `color:${pal.line}`}">${fmtInt(d.n)}</td>`).join("") +
+      `<td class="r" style="${full < 0.5 ? `color:${pal.bad};font-weight:600` : ""}">${Math.round(100 * full)}%</td></tr>`;
+  }
+  t3 += `</tbody></table></div>`;
+  const p3 = panel("Actual part-count distribution", "Objects with exactly k distinct part labels. The framed cell is the nominal part count; %Full = its share. Red: fewer than half of the objects have all parts.", t3, "wide");
+  m.appendChild(p3); bindLinks(p3);
+
+  // 4. histograms: one bar per part combination, one card (and one saved image) per category
+  const share = S.dshist === "share";
+  const p4 = panel("Part combinations as histograms", `One histogram per category. Each bar is one combination of parts that really occurs, biggest first. Bold label and framed bar = all parts of the category. ${share ? "X axis: % of the category's objects (same scale for all)." : "X axis: number of objects (own scale for each category)."} "Save image" on a card saves only that histogram.`,
+    `<div class="seg" id="c-dshist" style="margin-bottom:10px"></div><div class="hist-grid">${C.map(c => { const svg = dsCombo(c, pal, share), w = +svg.match(/data-w="(\d+)"/)[1];
+      return `<div class="${[sel(c) ? "on" : "", w > 520 ? "span" : ""].join(" ").trim()}" data-card="${c.name}"><div class="card-head"><div class="note"><b style="color:var(--ink)">${catLink(c.name, sel(c))}</b> · ${fmtInt(c.total)} objects · ${c.combos.length} combination${c.combos.length > 1 ? "s" : ""} · all ${c.nominal} parts: ${Math.round(100 * c.dist[c.nominal - 1].n / c.total)}%</div></div><div class="scroll-x"><div style="min-width:${Math.round(w * 0.85)}px">${svg}</div></div></div>`; }).join("")}</div>`, "wide");
+  m.appendChild(p4); bindLinks(p4);
+  seg(p4.querySelector("#c-dshist"), [["count", "Number of objects"], ["share", "% of the category"]].map(([v, l]) => ({ value: v, label: l })), S.dshist, v => set("dshist", v));
+  p4.querySelectorAll("[data-card]").forEach(card => {
+    const c = card.dataset.card, title = `${c}: part combinations`;
+    card.querySelector(".card-head").appendChild(saveButton(() => exportRegion(card, title, ["training", "dataset", c, "part-combinations", share ? "percent" : "count"].join("_") + ".png")));
+  });
+
+  // 5. findings
+  const big = C[0], small = C[C.length - 1], fullPct = c => c.dist[c.nominal - 1].n / c.total;
+  const noFull = C.filter(c => fullPct(c) < 0.01), low = C.filter(c => fullPct(c) >= 0.01 && fullPct(c) < 0.5);
+  const fpCats = catsOf("full_parts_per_category"), left = C.map(c => c.name).filter(c => !fpCats.includes(c));
+  const below = sum("below"), belowTop = [...C].sort((a, b) => b.below - a.below).filter(c => c.below).slice(0, 2);
+  const tt = twice.filter(x => x.s === "te");
+  const ff = [
+    `The categories are very unequal: ${big.name} has ${fmtInt(big.total)} objects, ${small.name} only ${fmtInt(small.total)} (${Math.round(big.total / small.total)} times fewer). ${C.filter(c => c.total < 100).length} categories have fewer than 100 objects.`,
+    ...noFull.map(c => `${c.name}: only ${fmtInt(c.dist[c.nominal - 1].n)} of ${fmtInt(c.total)} objects ${c.dist[c.nominal - 1].n === 1 ? "has" : "have"} all ${c.nominal} parts.${left.includes(c.name) ? ` The full-parts experiments train ${fpCats.length} categories, without ${left.join(" and ")}.` : ""}`),
+    `Many objects have fewer parts than the nominal count: fewer than half are complete in ${low.map(c => `${c.name} (${Math.round(100 * fullPct(c))}%)`).join(", ")}.`,
+    `${fmtInt(below)} objects (${fmt(100 * below / sum("total"), 1)}%) have fewer than 2,048 raw points, most of them in ${belowTop.map(c => `${c.name} (${c.below})`).join(" and ")}. For them the loader must repeat points.`,
+    `${tt.length} files are in both the train and the test list (${Object.entries(tt.reduce((a, x) => { a[x.c] = (a[x.c] || 0) + 1; return a; }, {})).map(([c, n]) => `${c} ${n}`).join(", ")}). The model has seen them in training, so they are a small leak into the test scores.${TEST_CATS.some(c => T.test[c].single_seen) ? ` The XAI study leaves such objects out (${TEST_CATS.filter(c => T.test[c].single_seen).map(c => `${c}: ${T.test[c].single_seen}`).join(", ")}).` : ""}`];
+  m.appendChild(panel("What this shows", "", `<ul class="findings">${ff.map(f => `<li>${f}</li>`).join("")}</ul>`, "wide"));
+}
+
+/* ================= one run ================= */
+function renderRun(m) {
+  const pal = palette(), run = runsOf(S.exp, S.category).find(r => r.seed === S.seed), c = S.category, se = run.series, n = run.epochs, e = EXP(S.exp);
+  const best = run.best_epoch, isMulti = multi(run);
+  m.insertAdjacentHTML("beforeend", pathLine([e.label, isMulti ? `${run.categories.length} categories (showing ${c})` : c, "seed " + run.seed, run.id]));
+  const lrDrops = se.learning_rate.map((v, i) => i > 0 && v !== se.learning_rate[i - 1] ? i + 0.5 : null).filter(v => v !== null);
+  const vl = (extra = []) => [...lrDrops.map(x => ({ x, color: pal.muted, w: 1, dash: "2 3", opacity: 0.45 })), { x: best, color: pal.ink, dash: "5 4", label: `saved: epoch ${best}` }, ...extra];
+  const catVals = catCurve(run, c), catBest = run.best_cat[c];
+  m.appendChild(panel(isMulti ? `${c} in this run` : "Key numbers", isMulti ? `This run trained ${run.categories.length} categories together. The first numbers are for ${c}; the model was saved at the epoch with the best mIoU over all test shapes.` : "",
+    glance([[fmt(catBest), `test mIoU of ${c} at the saved epoch`], [best, `saved epoch (best test mIoU of ${n})`], [fmt(catVals[n - 1]), `${c} at the last epoch`],
+      [withinEpoch(run), "first epoch within 0.005 of the best"], [fmt(hours(run), 1) + " h", `training time (${fmt(mean(se.epoch_time_seconds), 0)} s per epoch)`],
+      [`${fmtInt(run.counts[c][0])} / ${fmtInt(run.counts[c][1])}`, `training / test shapes of ${c}`]]), "wide"));
+
+  const grid = document.createElement("div"); grid.className = "twocol wide"; m.appendChild(grid);
+  const hoverFrom = (lines) => ep => { const bits = lines.map(([name, a]) => { const v = a[ep - 1]; return v === null || v === undefined ? null : `${name} ${fmt(v, 4)}`; }).filter(Boolean); return bits.length ? `epoch ${ep} · ` + bits.join(" · ") : ""; };
+
+  // 1. test mIoU
+  const s1 = isMulti
+    ? [{ pts: pts(smooth(se.test_instance_avg_iou)), color: pal.accent, name: "instance mIoU" }, { pts: pts(smooth(se.test_class_avg_iou)), color: pal.muted, dash: true, name: "class mIoU" }]
+    : [{ pts: pts(smooth(catVals)), color: pal.accent, name: "test mIoU" }];
+  s1.push({ dots: [[best, se.test_instance_avg_iou[best - 1], `saved epoch ${best}: ${fmt(se.test_instance_avg_iou[best - 1], 4)}`]], color: pal.ink, r: 4.5 });
+  let [lo, hi] = curveRange(s1, true);
+  grid.appendChild(panel("Test mIoU per epoch", isMulti ? "Instance mIoU = mean over all test shapes (the saving rule). Class mIoU = mean over the categories. Dotted lines: the learning rate halves." : "Mean IoU over the test shapes. The model is saved at the best epoch. Dotted lines: the learning rate halves.",
+    lineChart({ pal, ...epochX(n), ylo: lo, yhi: hi, ylab: "test mIoU", series: s1, vlines: vl(), vlabels: true, hover: hoverFrom(isMulti ? [["instance", se.test_instance_avg_iou], ["class", se.test_class_avg_iou]] : [["mIoU", catVals]]) }) +
+    (isMulti ? legend([[pal.accent, "instance mIoU"], [pal.muted, "class mIoU", true]]) : "") +
+    metricsRow([["best", fmt(Math.max(...se.test_instance_avg_iou), 4)], ["last", fmt(se.test_instance_avg_iou[n - 1], 4)], ["best − last", fmt(se.test_instance_avg_iou[best - 1] - se.test_instance_avg_iou[n - 1], 4)]])));
+
+  // 2. accuracy
+  const s2 = [{ pts: pts(smooth(se.train_accuracy)), color: pal.accent, name: "train" }, { pts: pts(smooth(se.test_accuracy)), color: EXP_COLOR.full_parts_joint_model, name: "test" }];
+  [lo, hi] = curveRange(s2, true);
+  const gapLast = se.train_accuracy[n - 1] - se.test_accuracy[n - 1];
+  grid.appendChild(panel("Point accuracy: training vs test", "Share of points with the right part label. When the training line goes above the test line, the model starts to learn the training shapes by heart.",
+    lineChart({ pal, ...epochX(n), ylo: lo, yhi: hi, ylab: "accuracy", series: s2, vlines: vl(), vlabels: true, hover: hoverFrom([["train", se.train_accuracy], ["test", se.test_accuracy]]) }) +
+    legend([[pal.accent, "training"], [EXP_COLOR.full_parts_joint_model, "test"]]) +
+    metricsRow([["gap at the last epoch (train − test)", sgn(gapLast, 4)], ["gap at the saved epoch", sgn(se.train_accuracy[best - 1] - se.test_accuracy[best - 1], 4)]])));
+
+  // 3. loss
+  const s3 = [{ pts: pts(smooth(se.train_loss)), color: pal.accent }];
+  [lo, hi] = curveRange(s3);
+  grid.appendChild(panel("Training loss per epoch", "Cross-entropy on the training shapes. Only the training loss was saved.",
+    lineChart({ pal, ...epochX(n), ylo: lo, yhi: hi, ylab: "training loss", series: s3, vlines: vl(), vlabels: true, hover: hoverFrom([["loss", se.train_loss]]) }) +
+    metricsRow([["first", fmt(se.train_loss[0], 4)], ["last", fmt(se.train_loss[n - 1], 4)]])));
+
+  // 4. learning rate
+  const lr = se.learning_rate.map(v => v * 1000), [llo, lhi] = niceRange(lr, 0.04, 0);
+  const steps = []; lr.forEach((v, i) => { steps.push([i + 0.5, v], [i + 1.5, v]); });
+  grid.appendChild(panel("Learning rate", `Adam, starts at ${run.config.learning_rate}, multiplied by ${run.config.lr_decay} every ${run.config.step_size} epochs.`,
+    lineChart({ pal, xmin: 1, xmax: n, xlab: "epoch", ylo: llo, yhi: lhi, ylab: "learning rate (× 0.001)", series: [{ pts: steps, color: pal.accent }], hover: hoverFrom([["learning rate", se.learning_rate]]) })));
+
+  // 5. every category of a multi-category run
+  if (isMulti) {
+    const cats = run.categories, series = cats.filter(x => x !== c).map(x => ({ pts: pts(smooth(run.cat_series[x])), color: pal.muted, w: 1, opacity: 0.45 }));
+    series.push({ pts: pts(smooth(run.cat_series[c])), color: pal.accent, w: 2.6 });
+    [lo, hi] = curveRange(series, true);
+    const order = [...cats].sort((a, b) => run.best_cat[b] - run.best_cat[a]);
+    let tb = `<div class="scroll-x"><table class="top nowrap"><thead><tr><th>Category</th><th class="r">Training shapes</th><th class="r">Test shapes</th><th class="r">Saved epoch</th><th class="r">Last epoch</th><th class="r">Best epoch of the category</th></tr></thead><tbody>`;
+    for (const x of order) { const cs = run.cat_series[x], bi = cs.indexOf(Math.max(...cs.filter(Number.isFinite))); tb += `<tr class="${x === c ? "sel" : ""}"><td class="t"><button type="button" class="link" data-cat="${x}">${x}</button></td><td class="r">${fmtInt(run.counts[x][0])}</td><td class="r">${fmtInt(run.counts[x][1])}</td><td class="r">${fmt(run.best_cat[x])}</td><td class="r">${fmt(cs[n - 1])}</td><td class="r">${bi + 1} (${fmt(cs[bi])})</td></tr>`; }
+    tb += `</tbody></table></div>`;
+    const p5 = panel(`Test mIoU of each category per epoch`, `One line per category; ${c} is the thick line. Click a category name to follow it. The table is sorted by the mIoU at the saved epoch.`,
+      lineChart({ pal, ...epochX(n), ylo: lo, yhi: hi, ylab: "test mIoU", series, vlines: vl(), vlabels: true, wide: true, W: 900, H: 320, hover: ep => `epoch ${ep} · ` + order.map(x => `${x} ${fmt(run.cat_series[x][ep - 1], 3)}`).join(" · ") }) +
+      legend([[pal.accent, c, true], [pal.muted, "other categories", true]]) + `<div style="margin-top:10px">${tb}</div>`, "wide");
+    grid.appendChild(p5);
+    p5.querySelectorAll("[data-cat]").forEach(b => b.addEventListener("click", () => set("category", b.dataset.cat)));
+  }
+
+  // 6. settings of the run
+  const cf = run.config, filt = cf.num_parts ? `exactly ${cf.num_parts} parts` : cf.full_parts_only ? "all parts of the category" : "none";
+  const rows = [["Batch size", cf.batch_size], ["Epochs", run.epochs], ["Optimizer", cf.optimizer], ["Learning rate", `${cf.learning_rate}, × ${cf.lr_decay} every ${cf.step_size} epochs`], ["Weight decay", cf.decay_rate],
+    ["Points per shape", fmtInt(cf.npoint)], ["Part filter", filt], ["Training shapes cap", cf.samples_per_category ?? "none"], ["Test shapes cap", cf.test_samples_per_category ?? "none"],
+    ["Seed", run.seed], ["GPU", run.env.gpu], ["PyTorch", run.env.torch], ["Started", run.env.date]];
+  grid.appendChild(panel("Settings of this run", "From config.json.", `<table class="top"><tbody>${rows.map(([k, v]) => `<tr><td class="t" style="color:var(--muted)">${k}</td><td>${v}</td></tr>`).join("")}</tbody></table>`));
+}
+
+/* ================= compare runs of one category ================= */
+function curveSeries(exp, c, pal, label) {
+  const rs = runsOf(exp, c), col = EXP_COLOR[exp];
+  if (rs.length === 1) return [{ pts: pts(smooth(catCurve(rs[0], c))), color: col, w: 2, name: label }];
+  const curves = rs.map(r => smooth(catCurve(r, c))), n = Math.max(...curves.map(a => a.length));
+  if (S.seedview === "each") return curves.map(a => ({ pts: pts(a), color: col, w: 1, opacity: 0.55, name: label }));
+  const band = [], mid = [];
+  for (let i = 0; i < n; i++) { const v = curves.map(a => a[i]).filter(Number.isFinite); if (!v.length) continue; band.push([i + 1, Math.min(...v), Math.max(...v)]); mid.push([i + 1, mean(v)]); }
+  return [{ band, color: col }, { pts: mid, color: col, w: 2, name: label }];
+}
+function renderCompare(m) {
+  const pal = palette(), c = S.category, exps = expsOf(c);
+  m.insertAdjacentHTML("beforeend", pathLine([c, `${exps.length} experiments`, `${exps.reduce((a, e) => a + runsOf(e, c).length, 0)} runs`]));
+  const series = exps.flatMap(e => curveSeries(e, c, pal, EXP(e).label)), n = Math.max(...exps.flatMap(e => runsOf(e, c).map(r => r.epochs)));
+  const [lo, hi] = curveRange(series, true);
+  const hover = ep => `epoch ${ep} · ` + exps.map(e => { const v = runsOf(e, c).map(r => catCurve(r, c)[ep - 1]).filter(Number.isFinite); return v.length ? `${SHORT[e]} ${fmt(mean(v), 3)}` : null; }).filter(Boolean).join(" · ");
+  m.appendChild(panel(`Test mIoU of ${c} per epoch, every experiment`, `One colour per experiment. ${exps.some(e => SEED_EXPS.includes(e)) ? (S.seedview === "band" ? "Runs with 10 seeds: the line is the mean, the band goes from the lowest to the highest seed." : "Runs with 10 seeds: one thin line per seed.") : ""} ${n > 100 ? "The full-dataset run trained for 251 epochs." : ""}`,
+    lineChart({ pal, ...epochX(n), ylo: lo, yhi: hi, ylab: `test mIoU of ${c}`, series, wide: true, W: 900, H: 340, hover }) +
+    legend(exps.map(e => [EXP_COLOR[e], EXP(e).label])), "wide"));
+
+  // table and dot strip of the saved scores
+  const rows = exps.map(e => { const rs = runsOf(e, c), v = rs.map(r => r.best_cat[c]); return { e, rs, v, m: mean(v), tr: rs[0].counts[c][0], te: rs[0].counts[c][1], last: mean(rs.map(r => catCurve(r, c)[r.epochs - 1])), be: rs.map(r => r.best_epoch) }; });
+  let t = `<div class="scroll-x"><table class="top nowrap"><thead><tr><th>Experiment</th><th class="r">Runs</th><th class="r">Training shapes</th><th class="r">Test shapes</th><th class="r">Saved checkpoint</th><th class="r">Last epoch</th><th class="r">Saved epoch</th></tr></thead><tbody>`;
+  for (const r of rows) t += `<tr><td class="t"><i style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${EXP_COLOR[r.e]};margin-right:6px"></i><button type="button" class="link" data-exp="${r.e}">${EXP(r.e).label}</button></td><td class="r">${r.rs.length}</td><td class="r">${fmtInt(r.tr)}</td><td class="r">${fmtInt(r.te)}</td>
+    <td class="r">${fmt(r.m)}${r.rs.length > 1 ? ` ± ${fmt(sd(r.v))}` : ""}</td><td class="r">${fmt(r.last)}</td><td class="r">${Math.min(...r.be) === Math.max(...r.be) ? r.be[0] : Math.min(...r.be) + "–" + Math.max(...r.be)}</td></tr>`;
+  t += `</tbody></table></div>`;
+  const hiR = rows.reduce((a, b) => b.m > a.m ? b : a), loR = rows.reduce((a, b) => b.m < a.m ? b : a);
+  const tp = panel(`Saved test mIoU of ${c}`, `The value of the saved checkpoint. ± = standard deviation over the seeds. Last epoch = mean at the end of training. The test shapes are not the same in every experiment (see the column), so a higher number can also mean easier test shapes.`,
+    t + (rows.length > 1 ? `<ul class="findings"><li>Highest: <b>${EXP(hiR.e).label}</b> (${fmt(hiR.m)}). Lowest: <b>${EXP(loR.e).label}</b> (${fmt(loR.m)}). Difference ${fmt(hiR.m - loR.m)}.</li></ul>` : ""));
+  tp.classList.add("wide"); m.appendChild(tp);
+  const grid = document.createElement("div"); grid.className = "twocol wide"; m.appendChild(grid);
+  tp.querySelectorAll("[data-exp]").forEach(b => b.addEventListener("click", () => go(SEED_EXPS.includes(b.dataset.exp) ? "seeds" : "run", b.dataset.exp, c)));
+  const [slo, shi] = niceRange(rows.flatMap(r => r.v), 0.1);
+  grid.appendChild(panel("Saved scores as dots", "One dot per run; the bar is the median.",
+    stripChart(rows.map(r => ({ label: SHORT[r.e], sub: `${fmtInt(r.tr)} train`, values: r.v, color: EXP_COLOR[r.e], titles: r.rs.map(x => "seed " + x.seed) })), { pal, ylo: slo, yhi: shi, ylab: `saved test mIoU of ${c}`, cw: 86 })));
+  const eps = rows.flatMap(r => r.rs.map(x => x.best_epoch)), [elo, ehi] = niceRange(eps, 0.1);
+  grid.appendChild(panel("When was each run saved?", "The saved epoch of every run (the epoch with the best test mIoU over all test shapes). Runs with the same settings can be saved at very different epochs.",
+    stripChart(rows.map(r => ({ label: SHORT[r.e], sub: `${r.rs[0].epochs} epochs`, values: r.rs.map(x => x.best_epoch), color: EXP_COLOR[r.e], titles: r.rs.map(x => "seed " + x.seed) })), { pal, ylo: Math.max(0, elo), yhi: ehi, ylab: "saved epoch", cw: 86, nd: 0 })));
+}
+
+/* ================= single vs joint ================= */
+function renderSingleJoint(m) {
+  const pal = palette(), J = jointRun(), cats = ALL_CATS.filter(c => singleRun(c));
+  const G = seedGroups(), maxRange = Math.max(...G.map(g => Math.max(...g.vals) - Math.min(...g.vals)));
+  const rows = cats.map(c => { const s = singleRun(c); return { c, s: s.best_cat[c], j: J.best_cat[c], d: J.best_cat[c] - s.best_cat[c], tr: s.counts[c][0], te: s.counts[c][1], parts: T.parts[c], sb: s.best_epoch }; }).sort((a, b) => b.tr - a.tr);
+  m.insertAdjacentHTML("beforeend", pathLine(["Single models (one per category)", "Joint model (14 categories)", "the two models of the XAI study", "only objects with all parts, seed 42"]));
+
+  // dumbbell
+  const W = 900, rh = 34, L = 190, R = 110, T0 = 12, B = 40, H = T0 + rh * rows.length + B, [lo, hi] = niceRange(rows.flatMap(r => [r.s, r.j]), 0.03, 0);
+  const x = v => L + (v - lo) / (hi - lo) * (W - L - R), nd = tickDec(lo, hi, 6);
+  let sv = `<svg viewBox="0 0 ${W} ${H}" data-xlo="${lo}" role="img" aria-label="single and joint test mIoU per category">`;
+  for (const v of ticksIn(lo, hi, 6)) sv += `<line x1="${x(v)}" x2="${x(v)}" y1="${T0}" y2="${H - B + 4}" stroke="${pal.line}" stroke-width="0.8"/><text x="${x(v)}" y="${H - B + 18}" text-anchor="middle">${fmt(v, nd)}</text>`;
+  sv += `<text x="${(L + W - R) / 2}" y="${H - 4}" text-anchor="middle">test mIoU of the saved checkpoint</text><text x="${W - R + 12}" y="${T0 + 4}" style="fill:${pal.ink}">joint − single</text>`;
+  rows.forEach((r, k) => {
+    const yc = T0 + rh * (k + 0.5) + 6, sel = r.c === S.category;
+    if (sel) sv += `<rect x="4" y="${yc - rh / 2}" width="${W - 8}" height="${rh}" fill="${pal.accent}" opacity="0.08" rx="4"/>`;
+    sv += `<text x="${L - 12}" y="${yc - 2}" text-anchor="end" style="fill:${pal.ink};font-size:12.5px">${r.c}</text><text x="${L - 12}" y="${yc + 11}" text-anchor="end" style="font-size:10.5px">${fmtInt(r.tr)} training shapes</text>`;
+    sv += `<line x1="${x(r.s)}" x2="${x(r.j)}" y1="${yc}" y2="${yc}" stroke="${pal.muted}" stroke-width="2"/>`;
+    sv += `<circle cx="${x(r.s)}" cy="${yc}" r="6" fill="${MODEL_COLOR.single}"><title>${r.c} single: ${fmt(r.s, 4)}</title></circle><circle cx="${x(r.j)}" cy="${yc}" r="6" fill="${MODEL_COLOR.joint}"><title>${r.c} joint: ${fmt(r.j, 4)}</title></circle>`;
+    const clear = Math.abs(r.d) > maxRange;
+    sv += `<text x="${W - R + 12}" y="${yc + 4}" style="fill:${clear ? (r.d > 0 ? MODEL_COLOR.joint : MODEL_COLOR.single) : pal.muted};font-weight:${clear ? 600 : 400}">${sgn(r.d)}</text>`;
+  });
+  sv += `</svg>`;
+  m.appendChild(panel("Single model vs joint model, per category", `Sorted by the number of training shapes. Bold difference = bigger than ${fmt(maxRange)}, the largest range between 10 seeds in the seed experiments. Smaller differences could come from the seed alone.`,
+    sv + legend([[MODEL_COLOR.single, "single model"], [MODEL_COLOR.joint, "joint model"]]), "wide"));
+
+  const grid = document.createElement("div"); grid.className = "twocol wide"; m.appendChild(grid);
+  // difference vs training shapes (log x)
+  const SW = 560, SH = 340, sL = 60, sR = 20, sT = 14, sB = 46, lx = rows.map(r => Math.log10(r.tr));
+  const xlo = Math.floor(Math.min(...lx) * 10) / 10 - 0.1, xhi = Math.ceil(Math.max(...lx) * 10) / 10 + 0.1, [ylo, yhi] = niceRange([...rows.map(r => r.d), maxRange, -maxRange], 0.12);
+  const sx = v => sL + (v - xlo) / (xhi - xlo) * (SW - sL - sR), sy = v => sT + (yhi - v) / (yhi - ylo) * (SH - sT - sB);
+  let sc = `<svg class="small" viewBox="0 0 ${SW} ${SH}" data-xlog="1" data-ylo="${ylo}" role="img" aria-label="joint minus single against training shapes">`;
+  sc += `<rect x="${sL}" y="${sy(maxRange)}" width="${SW - sL - sR}" height="${sy(-maxRange) - sy(maxRange)}" fill="${pal.muted}" opacity="0.12"/>`;
+  for (const v of ticksIn(ylo, yhi)) sc += `<line x1="${sL}" x2="${SW - sR}" y1="${sy(v)}" y2="${sy(v)}" stroke="${v === 0 ? pal.muted : pal.line}" stroke-width="${v === 0 ? 1.2 : 0.7}"/><text x="${sL - 6}" y="${sy(v) + 4}" text-anchor="end">${sgn(v, tickDec(ylo, yhi))}</text>`;
+  for (const v of [10, 30, 100, 300, 1000, 3000]) if (Math.log10(v) >= xlo && Math.log10(v) <= xhi) sc += `<line x1="${sx(Math.log10(v))}" x2="${sx(Math.log10(v))}" y1="${sT}" y2="${SH - sB}" stroke="${pal.line}" stroke-width="0.7"/><text x="${sx(Math.log10(v))}" y="${SH - sB + 16}" text-anchor="middle">${fmtInt(v)}</text>`;
+  sc += `<text x="${(sL + SW - sR) / 2}" y="${SH - 6}" text-anchor="middle">training shapes of the category (log scale)</text><text transform="translate(14 ${(sT + SH - sB) / 2}) rotate(-90)" text-anchor="middle">joint − single (test mIoU)</text>`;
+  const items = rows.map(r => ({ x: sx(Math.log10(r.tr)), y: sy(r.d), text: r.c, r }));
+  for (const it of items) sc += `<circle cx="${it.x}" cy="${it.y}" r="5.5" fill="${it.r.d > 0 ? MODEL_COLOR.joint : MODEL_COLOR.single}"><title>${it.r.c}: ${fmtInt(it.r.tr)} shapes, joint − single ${sgn(it.r.d, 4)}</title></circle>`;
+  for (const l of placeLabels(items, sL, SW)) sc += `<text x="${l.x}" y="${l.y}" text-anchor="${l.a}" style="fill:${pal.ink};font-size:11.5px">${l.p.text}</text>`;
+  sc += `</svg>`;
+  const rho = spearman(rows.map(r => r.tr), rows.map(r => r.d));
+  grid.appendChild(panel("Does the joint model help small categories?", `Above 0: the joint model is better. Grey band: ±${fmt(maxRange)} (the largest seed range). ${rows.length} points, one seed per model: a hint, not proof.`,
+    sc + metricsRow([["rank correlation (training shapes vs difference)", fmt(rho, 2)]])));
+
+  // curves of the chosen category
+  const c = S.category, s = singleRun(c), series = [{ pts: pts(smooth(catCurve(s, c))), color: MODEL_COLOR.single, name: "single" }, { pts: pts(smooth(J.cat_series[c])), color: MODEL_COLOR.joint, name: "joint" }];
+  series.push({ dots: [[s.best_epoch, s.best_cat[c], `single saved at epoch ${s.best_epoch}: ${fmt(s.best_cat[c], 4)}`]], color: MODEL_COLOR.single, r: 5 }, { dots: [[J.best_epoch, J.best_cat[c], `joint saved at epoch ${J.best_epoch}: ${fmt(J.best_cat[c], 4)}`]], color: MODEL_COLOR.joint, r: 5 });
+  const [clo, chi] = curveRange(series, true);
+  grid.appendChild(panel(`${c}: test mIoU per epoch`, `Choose the category on the left or in the table. Dots = saved checkpoints. The joint model is saved at its best epoch over all 14 categories, not the best epoch for ${c}.`,
+    lineChart({ pal, ...epochX(100), ylo: clo, yhi: chi, ylab: `test mIoU of ${c}`, series, hover: ep => `epoch ${ep} · single ${fmt(catCurve(s, c)[ep - 1], 4)} · joint ${fmt(J.cat_series[c][ep - 1], 4)}` }) +
+    legend([[MODEL_COLOR.single, "single model"], [MODEL_COLOR.joint, "joint model"]]) +
+    metricsRow([["single", `${fmt(s.best_cat[c])} (epoch ${s.best_epoch})`], ["joint", `${fmt(J.best_cat[c])} (epoch ${J.best_epoch})`], ["best epoch for " + c + ", joint", (() => { const a = J.cat_series[c], i = a.indexOf(Math.max(...a.filter(Number.isFinite))); return `${i + 1} (${fmt(a[i])})`; })()]])));
+
+  // table
+  let t = `<div class="scroll-x"><table class="top nowrap"><thead><tr><th>Category</th><th class="r">Parts</th><th class="r">Training shapes</th><th class="r">Test shapes</th><th class="r">Single</th><th class="r">Joint</th><th class="r">Joint − single</th><th class="r">Single saved at epoch</th></tr></thead><tbody>`;
+  for (const r of rows) t += `<tr class="${r.c === c ? "sel" : ""}"><td class="t"><button type="button" class="link" data-cat="${r.c}">${r.c}</button></td><td class="r">${r.parts}</td><td class="r">${fmtInt(r.tr)}</td><td class="r">${fmtInt(r.te)}</td><td class="r">${fmt(r.s)}</td><td class="r">${fmt(r.j)}</td><td class="r" style="${Math.abs(r.d) > maxRange ? `color:${r.d > 0 ? MODEL_COLOR.joint : MODEL_COLOR.single};font-weight:600` : ""}">${sgn(r.d)}</td><td class="r">${r.sb}</td></tr>`;
+  const ms = mean(rows.map(r => r.s)), mj = mean(rows.map(r => r.j));
+  t += `<tr><td class="t"><b>Mean of the ${rows.length}</b></td><td></td><td></td><td></td><td class="r"><b>${fmt(ms)}</b></td><td class="r"><b>${fmt(mj)}</b></td><td class="r"><b>${sgn(mj - ms)}</b></td><td></td></tr></tbody></table></div>`;
+  const tp = panel("All 14 categories", `Test mIoU of the saved checkpoints. Coloured = the difference is bigger than ${fmt(maxRange)} (orange: joint better, purple: single better). The joint model was saved at epoch ${J.best_epoch}.`, t, "wide");
+  m.appendChild(tp);
+  tp.querySelectorAll("[data-cat]").forEach(b => b.addEventListener("click", () => set("category", b.dataset.cat)));
+}
+
+/* ================= seeds ================= */
+function renderSeeds(m) {
+  const pal = palette(), G = seedGroups(), e = S.exp, c = S.category, rs = runsOf(e, c).sort((a, b) => a.seed - b.seed);
+  m.insertAdjacentHTML("beforeend", pathLine([`${G.length} groups of 10 seeds`, EXP(e).label, c]));
+  // strip of deviations from the group mean
+  const dev = G.map(g => { const mu = mean(g.vals); return { label: g.cat, sub: g.exp === "parts4_cap740" ? "no filter" : SHORT[g.exp], values: g.vals.map(v => v - mu), color: EXP_COLOR[g.exp], titles: g.runs.map(r => "seed " + r.seed) }; });
+  const lim = Math.max(...dev.flatMap(d => d.values.map(Math.abs))), [ylo, yhi] = niceRange([-lim, lim], 0.1);
+  m.appendChild(panel("How much does the seed change the score?", "Every dot is one seed: its saved test mIoU minus the mean of its 10 seeds. Same data and settings, only the seed changes (weights at the start and the order of the shapes). The bar is the median.",
+    `<div class="scroll-x"><div style="min-width:760px">${stripChart(dev, { pal, ylo, yhi, ylab: "seed − mean of its 10 seeds", cw: 70, L: 74, signed: true, zero: true, medLabel: false })}</div></div>` + legend(SEED_EXPS.map(x => [EXP_COLOR[x], EXP(x).label + (x === "parts4_cap740" ? " (no part filter)" : "")])), "wide"));
+
+  // table
+  let t = `<div class="scroll-x"><table class="top nowrap"><thead><tr><th>Experiment</th><th>Category</th><th class="r">Mean</th><th class="r">SD</th><th class="r">Lowest</th><th class="r">Highest</th><th class="r">Range</th><th class="r">Saved epoch</th><th class="r">Best − last</th></tr></thead><tbody>`;
+  for (const g of G) {
+    const be = g.runs.map(r => r.best_epoch), bl = mean(g.runs.map(r => r.best_cat[g.cat] - catCurve(r, g.cat)[r.epochs - 1]));
+    t += `<tr class="${g.exp === e && g.cat === c ? "sel" : ""}"><td class="t"><i style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${EXP_COLOR[g.exp]};margin-right:6px"></i>${EXP(g.exp).label}</td><td class="t"><button type="button" class="link" data-exp="${g.exp}" data-cat="${g.cat}">${g.cat}</button></td>
+      <td class="r">${fmt(mean(g.vals))}</td><td class="r">${fmt(sd(g.vals), 4)}</td><td class="r">${fmt(Math.min(...g.vals))}</td><td class="r">${fmt(Math.max(...g.vals))}</td><td class="r">${fmt(Math.max(...g.vals) - Math.min(...g.vals))}</td><td class="r">${Math.min(...be)}–${Math.max(...be)}</td><td class="r">${fmt(bl)}</td></tr>`;
+  }
+  t += `</tbody></table></div>`;
+  const sds = G.map(g => sd(g.vals)), rngs = G.map(g => Math.max(...g.vals) - Math.min(...g.vals)), spans = G.map(g => { const b = g.runs.map(r => r.best_epoch); return Math.max(...b) - Math.min(...b); });
+  const findings = [`The seed changes the saved test mIoU by ${fmt(Math.min(...rngs))} to ${fmt(Math.max(...rngs))} (best seed − worst seed). The standard deviation is at most ${fmt(Math.max(...sds), 4)}.`,
+    `The saved epoch changes much more: between seeds it moves by up to ${Math.max(...spans)} epochs. The curves are flat at the end, so small ups and downs decide the best epoch.`,
+    `So differences between models smaller than about ${fmt(Math.max(...rngs), 2)} should not be trusted when each model has only one seed.`];
+  const tp = panel("All seed groups", "Saved test mIoU over 10 seeds. Range = highest − lowest. Best − last = how much the saved epoch is above the last epoch (mean). Click a category to see its curves.",
+    t + `<h2 style="margin-top:14px">What this shows</h2><ul class="findings">${findings.map(f => `<li>${f}</li>`).join("")}</ul>`, "wide");
+  m.appendChild(tp);
+  tp.querySelectorAll("[data-cat]").forEach(b => b.addEventListener("click", () => { S.exp = b.dataset.exp; set("category", b.dataset.cat); }));
+
+  // curves of the chosen group: every seed
+  const grid = document.createElement("div"); grid.className = "twocol wide"; m.appendChild(grid);
+  const series = rs.map(r => ({ pts: pts(smooth(catCurve(r, c))), color: EXP_COLOR[e], w: 1.2, opacity: 0.55 }));
+  const mu = []; for (let i = 0; i < rs[0].epochs; i++) mu.push(mean(rs.map(r => catCurve(r, c)[i])));
+  series.push({ pts: pts(smooth(mu)), color: pal.ink, w: 2.2 }, { dots: rs.map(r => [r.best_epoch, r.best_cat[c], `seed ${r.seed}: saved at epoch ${r.best_epoch}, ${fmt(r.best_cat[c], 4)}`]), color: EXP_COLOR[e], r: 3.8 });
+  const [lo, hi] = curveRange(series, true);
+  grid.appendChild(panel(`${c}, ${EXP(e).label}: every seed`, "Thin lines = the 10 seeds; dark line = their mean; dots = saved checkpoints.",
+    lineChart({ pal, ...epochX(rs[0].epochs), ylo: lo, yhi: hi, ylab: `test mIoU of ${c}`, series, hover: ep => `epoch ${ep} · mean ${fmt(mu[ep - 1], 4)} · lowest ${fmt(Math.min(...rs.map(r => catCurve(r, c)[ep - 1])), 4)} · highest ${fmt(Math.max(...rs.map(r => catCurve(r, c)[ep - 1])), 4)}` }) +
+    legend([[EXP_COLOR[e], "one seed", true], [pal.ink, "mean", true]])));
+  // saved epoch vs saved score
+  const pp = rs.map(r => ({ x: r.best_epoch, y: r.best_cat[c], color: EXP_COLOR[e], title: `seed ${r.seed}: epoch ${r.best_epoch}, ${fmt(r.best_cat[c], 4)}` }));
+  const [py0, py1] = niceRange(pp.map(p => p.y), 0.2), [px0, px1] = niceRange(pp.map(p => p.x), 0.1);
+  grid.appendChild(panel("Saved epoch and saved score of each seed", "A late saved epoch does not mean a better model.",
+    scatterChart(pp, { pal, xlo: Math.max(0, px0), xhi: Math.min(rs[0].epochs, px1), ylo: py0, yhi: py1, xlab: "saved epoch", ylab: `saved test mIoU of ${c}`, r: 5 }) +
+    metricsRow([["seeds", rs.length], ["mean", fmt(mean(rs.map(r => r.best_cat[c])), 4)], ["sd", fmt(sd(rs.map(r => r.best_cat[c])), 4)]])));
+
+  // the same category in two seed experiments
+  const pairs = [];
+  for (const cat of [...new Set(G.map(g => g.cat))]) { const gs = G.filter(g => g.cat === cat); for (let i = 0; i < gs.length; i++) for (let j = i + 1; j < gs.length; j++) pairs.push([gs[i], gs[j]]); }
+  if (pairs.length) {
+    let pt = `<div class="scroll-x"><table class="top nowrap"><thead><tr><th>Category</th><th>Experiment A</th><th>Experiment B</th><th class="r">Mean A</th><th class="r">Mean B</th><th class="r">B − A</th><th>Do the 10 seeds overlap?</th></tr></thead><tbody>`;
+    for (const [a, b] of pairs) {
+      const ov = Math.max(...a.vals) >= Math.min(...b.vals) && Math.max(...b.vals) >= Math.min(...a.vals);
+      pt += `<tr><td class="t">${a.cat}</td><td class="t">${EXP(a.exp).label} <span class="note">(${fmtInt(a.runs[0].counts[a.cat][0])} / ${fmtInt(a.runs[0].counts[a.cat][1])})</span></td><td class="t">${EXP(b.exp).label} <span class="note">(${fmtInt(b.runs[0].counts[b.cat][0])} / ${fmtInt(b.runs[0].counts[b.cat][1])})</span></td>
+        <td class="r">${fmt(mean(a.vals))}</td><td class="r">${fmt(mean(b.vals))}</td><td class="r">${sgn(mean(b.vals) - mean(a.vals))}</td><td class="t">${ov ? "yes" : "no: every seed of one is higher"}</td></tr>`;
+    }
+    pt += `</tbody></table></div>`;
+    m.appendChild(panel("The same category in two seed experiments", "(training / test shapes). The two experiments use different shapes for training <b>and</b> for testing (other part filter or cap). So a difference is not only an effect of the training data.", pt, "wide"));
+  }
+}
+
+/* ================= test results (per object, 6 XAI categories) ================= */
+/* bootstrap over the test objects: 95 % interval of the mean of paired differences.
+   A fixed random seed per question, so the page always shows the same numbers. */
+function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+const hashStr = str => [...str].reduce((h, ch) => Math.imul(h ^ ch.charCodeAt(0), 16777619) >>> 0, 2166136261);
+const BOOT = 10000, bootCache = {};
+function bootCI(diffs, key) {
+  if (bootCache[key]) return bootCache[key];
+  const r = rng(hashStr(key)), n = diffs.length, means = new Float64Array(BOOT);
+  for (let b = 0; b < BOOT; b++) { let sum = 0; for (let i = 0; i < n; i++) sum += diffs[Math.floor(r() * n)]; means[b] = sum / n; }
+  means.sort();
+  return (bootCache[key] = { mean: mean(diffs), lo: quantile(means, 0.025), hi: quantile(means, 0.975), n });
+}
+const ciText = x => `${sgn(x.mean)} (${sgn(x.lo)} to ${sgn(x.hi)})`;
+/* forest chart: one row per question, a dot at the mean and a line for the 95 % interval; grey band = ±band */
+function forestChart(rows, o) {
+  const W = o.W || 820, rh = 34, L = o.L || 150, R = o.R || 200, T = 10, B = 40, H = T + rh * rows.length + B, pal = o.pal;
+  const [lo, hi] = niceRange([...rows.flatMap(r => [r.lo, r.hi]), 0, o.band || 0, -(o.band || 0)], 0.06);
+  const x = v => L + (v - lo) / (hi - lo) * (W - L - R), nd = tickDec(lo, hi, 6);
+  let sv = `<svg viewBox="0 0 ${W} ${H}" data-xlo="${lo}" role="img" aria-label="${o.xlab}">`;
+  if (o.band) sv += `<rect x="${x(-o.band)}" y="${T}" width="${x(o.band) - x(-o.band)}" height="${H - T - B}" fill="${pal.muted}" opacity="0.12"/>`;
+  for (const v of ticksIn(lo, hi, 6)) sv += `<line x1="${x(v)}" x2="${x(v)}" y1="${T}" y2="${H - B + 4}" stroke="${v === 0 ? pal.muted : pal.line}" stroke-width="${v === 0 ? 1.4 : 0.8}"/><text x="${x(v)}" y="${H - B + 18}" text-anchor="middle">${sgn(v, nd)}</text>`;
+  sv += `<text x="${(L + W - R) / 2}" y="${H - 4}" text-anchor="middle">${o.xlab}</text><text x="${W - R + 14}" y="${T + 10}" style="fill:${pal.ink}">mean (95 % interval)</text>`;
+  rows.forEach((r, k) => {
+    const yc = T + rh * (k + 0.5) + 8, col = r.lo > 0 ? MODEL_COLOR.joint : r.hi < 0 ? MODEL_COLOR.single : pal.muted, sel = r.sel;
+    if (sel) sv += `<rect x="4" y="${yc - rh / 2}" width="${W - 8}" height="${rh}" fill="${pal.accent}" opacity="0.08" rx="4"/>`;
+    sv += `<text x="${L - 12}" y="${yc + (r.sub ? -2 : 4)}" text-anchor="end" style="fill:${pal.ink};font-size:12.5px">${r.label}</text>` + (r.sub ? `<text x="${L - 12}" y="${yc + 11}" text-anchor="end" style="font-size:10.5px">${r.sub}</text>` : "");
+    sv += `<line x1="${x(r.lo)}" x2="${x(r.hi)}" y1="${yc}" y2="${yc}" stroke="${col}" stroke-width="3" stroke-linecap="round"/><circle cx="${x(r.mean)}" cy="${yc}" r="5.5" fill="${col}"><title>${esc(r.label)}: ${ciText(r)}</title></circle>`;
+    sv += `<text x="${W - R + 14}" y="${yc + 4}" style="fill:${col === pal.muted ? pal.muted : col};font-weight:${col === pal.muted ? 400 : 600}">${ciText(r)}</text>`;
+  });
+  return sv + `</svg>`;
+}
+/* the confusion matrices of one category: share of each true part's points per predicted part */
+const rowPct = M => M.map(r => { const t = r.reduce((a, b) => a + b, 0); return r.map(v => t ? 100 * v / t : NaN); });
+function confTable(M, names, pal, cls = "") {
+  const pct = rowPct(M), [ar, ag, ab] = hexRgb(pal.accent);
+  let h = `<div class="scroll-x"><table class="heat conf ${cls}"><thead><tr><th class="corner">true ↓<br>predicted →</th>${names.map(n => `<th>${n}</th>`).join("")}</tr></thead><tbody>`;
+  pct.forEach((r, i) => {
+    h += `<tr><th class="r">${names[i]}</th>` + r.map((v, j) => `<td style="background:rgba(${ar},${ag},${ab},${(0.04 + v / 100 * 0.8).toFixed(3)});color:${v > 55 ? pal.surface : pal.ink}" title="${fmtInt(M[i][j])} of ${fmtInt(M[i].reduce((a, b) => a + b, 0))} ${names[i]} points predicted as ${names[j]}">${fmt(v, 1)}</td>`).join("") + `</tr>`;
+  });
+  return h + `</tbody></table></div>`;
+}
+function confDiffTable(S, J, names, pal) {
+  const a = rowPct(S), b = rowPct(J), D = b.map((r, i) => r.map((v, j) => v - a[i][j])), mx = Math.max(0.1, ...D.flat().map(Math.abs));
+  const [gr, gg, gb] = hexRgb(pal.good), [br, bg, bb] = hexRgb(pal.bad);
+  let h = `<div class="scroll-x"><table class="heat conf diff"><thead><tr><th class="corner">true ↓<br>predicted →</th>${names.map(n => `<th>${n}</th>`).join("")}</tr></thead><tbody>`;
+  D.forEach((r, i) => {
+    h += `<tr><th class="r">${names[i]}</th>` + r.map((v, j) => { const good = i === j ? v > 0 : v < 0, al = (Math.abs(v) / mx * 0.7).toFixed(3), [cr, cg, cb] = good ? [gr, gg, gb] : [br, bg, bb];
+      return `<td style="background:rgba(${cr},${cg},${cb},${al})" title="${names[i]} → ${names[j]}: single ${fmt(a[i][j], 1)} %, joint ${fmt(b[i][j], 1)} %">${sgn(v, 1)}</td>`; }).join("") + `</tr>`;
+  });
+  return h + `</tbody></table></div>`;
+}
+function biggestMistake(M, names) {
+  const pct = rowPct(M); let best = null;
+  pct.forEach((r, i) => r.forEach((v, j) => { if (i !== j && (!best || v > best.v)) best = { i, j, v, n: M[i][j] }; }));
+  return best ? `${names[best.i]} points labelled as ${names[best.j]} (${fmt(best.v, 1)} % of the ${names[best.i]} points)` : "none";
+}
+
+function renderTest(m) {
+  const pal = palette(), c = S.category, d = T.test[c], P = d.parts.length, S1 = d.single, J1 = d.joint, n = S1.length;
+  m.insertAdjacentHTML("beforeend", pathLine(["Test results per object", c, `${n} test objects`, "single and joint model"]));
+  // all six categories
+  let t = `<div class="scroll-x"><table class="top nowrap"><thead><tr><th>Category</th><th class="r">Objects</th><th class="r">Mean mIoU single</th><th class="r">Mean mIoU joint</th><th class="r">Median single / joint</th><th class="r">Joint better</th><th class="r">Below 0.5 single / joint</th><th>Weakest part (mean IoU single / joint)</th></tr></thead><tbody>`;
+  for (const cat of TEST_CATS) {
+    const x = T.test[cat], s = x.single.map(o => o.miou), j = x.joint.map(o => o.miou), better = x.single.filter((o, i) => x.joint[i].miou > o.miou).length;
+    const pm = x.parts.map((p, q) => ({ name: p.name, s: mean(x.single.map(o => o.parts[q])), j: mean(x.joint.map(o => o.parts[q])) })), weak = pm.reduce((a, b) => (b.s + b.j < a.s + a.j ? b : a));
+    t += `<tr class="${cat === c ? "sel" : ""}"><td class="t"><button type="button" class="link" data-cat="${cat}">${cat}</button></td><td class="r">${x.single.length}</td><td class="r">${fmt(mean(s))}</td><td class="r">${fmt(mean(j))}</td><td class="r">${fmt(median(s))} / ${fmt(median(j))}</td>
+      <td class="r">${better} of ${x.single.length}</td><td class="r">${s.filter(v => v < 0.5).length} / ${j.filter(v => v < 0.5).length}</td><td class="t">${weak.name} (${fmt(weak.s, 2)} / ${fmt(weak.j, 2)})</td></tr>`;
+  }
+  t += `</tbody></table></div>`;
+  // the study sampled its own points: how far are its means from the training log?
+  const logGap = Math.max(...TEST_CATS.flatMap(cat => [["single", singleRun(cat)], ["joint", jointRun()]].map(([mo, r]) => Math.abs(mean(T.test[cat][mo].map(o => o.miou)) - r.best_cat[cat]))));
+  const seen = TEST_CATS.filter(cat => T.test[cat].single_seen).map(cat => `${cat}: ${T.test[cat].single_seen} objects`);
+  const tp = panel("Test results of the six XAI categories", `mIoU of every test object, from the XAI study (the object numbers are the same as in the XAI explorer). The study sampled its own 2,048 points per object, so the means differ a little (at most ${fmt(logGap)}) from the training log.${seen.length ? ` Objects that also appear in the training data are left out (${seen.join(", ")}).` : ""}`, t, "wide");
+  m.appendChild(tp);
+  tp.querySelectorAll("[data-cat]").forEach(b => b.addEventListener("click", () => set("category", b.dataset.cat)));
+
+  // joint − single with a 95 % interval over the test objects
+  const G = seedGroups(), maxRange = Math.max(...G.map(g => Math.max(...g.vals) - Math.min(...g.vals)));
+  const fr = TEST_CATS.map(cat => { const x = T.test[cat]; return { label: cat, sub: `${x.single.length} objects`, sel: cat === c, ...bootCI(x.single.map((o, i) => x.joint[i].miou - o.miou), cat + "/miou") }; });
+  const up = fr.filter(r => r.lo > 0).map(r => r.label), down = fr.filter(r => r.hi < 0).map(r => r.label), zero = fr.filter(r => r.lo <= 0 && r.hi >= 0).map(r => r.label);
+  const nameList = a => a.length ? a.join(", ") : "none";
+  const ff = [`The joint model is better, and the interval is above 0: ${nameList(up)}.`, `The single model is better, and the interval is below 0: ${nameList(down)}.`, `The interval includes 0 (no clear difference): ${nameList(zero)}.`,
+    `The widest interval is ${fr.reduce((a, b) => (b.hi - b.lo > a.hi - a.lo ? b : a)).label}: few test objects give an uncertain mean.`];
+  const fp = panel("Joint − single: how sure are we?", `For each test object: mIoU of the joint model − mIoU of the single model. Dot = mean over the objects. Line = 95 % interval from a bootstrap (${fmtInt(BOOT)} random draws of the test objects with replacement). The interval shows how much the mean could change with other test objects of the same kind. It does <b>not</b> include the training seed: each model was trained once. Grey band: ±${fmt(maxRange)}, the largest seed range (Seeds tab).`,
+    forestChart(fr, { pal, band: maxRange, xlab: "joint − single (object mIoU)" }) + `<h2 style="margin-top:12px">What this shows</h2><ul class="findings">${ff.map(f => `<li>${f}</li>`).join("")}</ul>`, "wide");
+  m.appendChild(fp);
+
+  const s = S1.map(o => o.miou), j = J1.map(o => o.miou), better = S1.filter((o, i) => J1[i].miou > o.miou).length, same = S1.filter((o, i) => Math.abs(J1[i].miou - o.miou) < 1e-9).length;
+  const grid = document.createElement("div"); grid.className = "twocol wide"; m.appendChild(grid);
+  const hlo = Math.max(0, Math.floor(Math.min(...s, ...j) * 10) / 10);
+  grid.appendChild(panel(`${c}: mIoU of the test objects`, `How many objects reach each mIoU. Bars side by side: single model left, joint model right.`,
+    histChart([{ name: "single", values: s, color: MODEL_COLOR.single }, { name: "joint", values: j, color: MODEL_COLOR.joint }], { pal, lo: hlo, hi: 1, bins: Math.round((1 - hlo) * 20), xlab: "object mIoU" }) +
+    legend([[MODEL_COLOR.single, "single model"], [MODEL_COLOR.joint, "joint model"]]) +
+    metricsRow([["mean single", fmt(mean(s))], ["mean joint", fmt(mean(j))], ["objects", n]])));
+  const [lo, hi] = niceRange([...s, ...j], 0.04);
+  grid.appendChild(panel(`${c}: the same object, two models`, "One dot per object. Above the dashed line: the joint model is better for that object.",
+    scatterChart(S1.map((o, i) => ({ x: o.miou, y: J1[i].miou, color: J1[i].miou > o.miou ? MODEL_COLOR.joint : MODEL_COLOR.single, title: `object #${o.o}: single ${fmt(o.miou)}, joint ${fmt(J1[i].miou)}` })),
+      { pal, xlo: lo, xhi: Math.min(1, hi), ylo: lo, yhi: Math.min(1, hi), xlab: "mIoU, single model", ylab: "mIoU, joint model", diag: true, r: 3.6, opacity: 0.7 }) +
+    metricsRow([["joint better", `${better} of ${n}`], ["single better", `${n - better - same} of ${n}`], ["rank correlation", fmt(spearman(s, j), 2)]])));
+  // per part
+  const cols = []; d.parts.forEach((p, q) => { for (const [mo, arr] of [["single", S1], ["joint", J1]]) cols.push({ label: p.name, sub: mo, values: arr.map(o => o.parts[q]), color: MODEL_COLOR[mo], titles: arr.map(o => "object #" + o.o) }); });
+  grid.appendChild(panel(`${c}: IoU of each part`, "One dot per object. The bar and the number are the median.",
+    `<div class="scroll-x"><div style="min-width:${Math.max(360, cols.length * 62)}px">${stripChart(cols, { pal, ylo: 0, yhi: 1, ylab: "part IoU", cw: 62, r: 2.4, opacity: 0.45, nd: 2 })}</div></div>` + legend([[MODEL_COLOR.single, "single model"], [MODEL_COLOR.joint, "joint model"]]), "wide"));
+  // confusion matrices
+  const names = d.parts.map(p => p.name), SC = d.single_conf, JC = d.joint_conf;
+  grid.appendChild(panel(`${c}: confusion matrix of the parts`, `All points of the ${n} test objects (${fmtInt(n * 2048)} points). Each row is a true part; the numbers say where its points went, in % of the row. The diagonal = points with the right part (this is the recall). Change: joint − single in percentage points; green = better for the joint model (more right points, or fewer mistakes), red = worse.`,
+    `<div class="conf-grid" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, ${120 + names.length * 60}px), 1fr))"><div><p class="note">Single model</p>${confTable(SC, names, pal, "single")}</div><div><p class="note">Joint model</p>${confTable(JC, names, pal, "joint")}</div><div><p class="note">Change (joint − single)</p>${confDiffTable(SC, JC, names, pal)}</div></div>` +
+    `<ul class="findings"><li>Most common mistake, single model: ${biggestMistake(SC, names)}.</li><li>Most common mistake, joint model: ${biggestMistake(JC, names)}.</li></ul>`, "wide"));
+  // precision and recall per part, from the confusion matrices
+  const pr = M => names.map((_, i) => { const tp = M[i][i], row = M[i].reduce((a, b) => a + b, 0), col = M.reduce((a, r) => a + r[i], 0); return { rec: tp / row, prec: col ? tp / col : NaN, n: row, pred: col }; });
+  const ps = pr(SC), pj = pr(JC), cell = (a, b) => `<td class="r">${fmt(a)}</td><td class="r" style="${Math.abs(b - a) >= 0.02 ? `color:${b > a ? MODEL_COLOR.joint : MODEL_COLOR.single};font-weight:600` : ""}">${fmt(b)}</td>`;
+  let prt = `<div class="scroll-x"><table class="top nowrap"><thead><tr><th>Part</th><th class="r">True points</th><th class="r">Recall single</th><th class="r">Recall joint</th><th class="r">Precision single</th><th class="r">Precision joint</th></tr></thead><tbody>`;
+  names.forEach((nm, i) => { prt += `<tr><td class="t">${nm}</td><td class="r">${fmtInt(ps[i].n)}</td>${cell(ps[i].rec, pj[i].rec)}${cell(ps[i].prec, pj[i].prec)}</tr>`; });
+  prt += `</tbody></table></div>`;
+  const low = (arr, k) => arr.reduce((a, b, i) => (b[k] < arr[a][k] ? i : a), 0);
+  grid.appendChild(panel(`${c}: precision and recall of each part`, "Recall: of the points that really belong to the part, the share the model found. Precision: of the points the model called this part, the share that is right. Low recall = the model misses the part; low precision = it paints the part too big. Coloured = the joint value differs by 0.02 or more (orange: higher, purple: lower).",
+    prt + `<ul class="findings"><li>Lowest recall: ${names[low(ps, "rec")]} (single ${fmt(ps[low(ps, "rec")].rec)}), ${names[low(pj, "rec")]} (joint ${fmt(pj[low(pj, "rec")].rec)}).</li><li>Lowest precision: ${names[low(ps, "prec")]} (single ${fmt(ps[low(ps, "prec")].prec)}), ${names[low(pj, "prec")]} (joint ${fmt(pj[low(pj, "prec")].prec)}).</li></ul>`));
+  // joint − single per part, with intervals
+  const pf = d.parts.map((p, q) => ({ label: p.name, ...bootCI(S1.map((o, i) => J1[i].parts[q] - o.parts[q]), `${c}/part/${q}`) }));
+  grid.appendChild(panel(`${c}: joint − single for each part`, `Part IoU of the joint model − part IoU of the single model, per object. Dot = mean; line = 95 % interval (bootstrap over the ${n} test objects). Grey band: ±${fmt(maxRange)}.`,
+    forestChart(pf, { pal, band: maxRange, xlab: "joint − single (part IoU)", W: 560, L: 84, R: 178 })));
+  // hardest objects
+  const order = S1.map((o, i) => i).sort((a, b) => (S1[a].miou + J1[a].miou) - (S1[b].miou + J1[b].miou)).slice(0, 10);
+  let wt = `<div class="scroll-x"><table class="top nowrap"><thead><tr><th>Object</th><th class="r">mIoU single</th><th class="r">mIoU joint</th>${d.parts.map(p => `<th class="r">${p.name}</th>`).join("")}</tr></thead><tbody>`;
+  for (const i of order) wt += `<tr><td>#${S1[i].o}</td><td class="r">${fmt(S1[i].miou)}</td><td class="r">${fmt(J1[i].miou)}</td>${d.parts.map((p, q) => `<td class="r">${fmt(S1[i].parts[q], 2)} / ${fmt(J1[i].parts[q], 2)}</td>`).join("")}</tr>`;
+  wt += `</tbody></table></div>`;
+  grid.appendChild(panel(`${c}: the 10 hardest objects`, "Lowest mean of the two models first. Part columns: single / joint. The object numbers are the same as in the XAI explorer.", wt, "wide"));
+}
+
+/* ================= render, theme ================= */
+function render() {
+  if (!T) return;
+  const a = document.activeElement, box = a && a.tagName === "BUTTON" && a.parentElement && a.parentElement.id ? a.parentElement.id : null;
+  normalize(); applyFont(); save(); renderControls();
+  const m = $("main"); m.innerHTML = "";
+  ({ overview: renderOverview, dataset: renderDataset, run: renderRun, compare: renderCompare, singlejoint: renderSingleJoint, seeds: renderSeeds, test: renderTest })[S.tab](m);
+  addPanelSaves(m);
+  if (box) { const el = document.getElementById(box); const b = el && (el.querySelector('button[aria-pressed="true"]') || el.querySelector("button")); if (b) b.focus({ preventScroll: true }); }
+}
+/* the font set: CSS font stacks of the page; saved images take the same faces (see svgImage and exportRegion) */
+function applyFont() { const f = FONT_SETS[S.font]; if (!f) return; const r = document.documentElement; r.dataset.font = S.font; for (const k of ["body", "data", "code"]) r.style.setProperty("--font-" + k, f[k]); }
+function applyTheme() { if (S.theme === "system") document.documentElement.removeAttribute("data-theme"); else document.documentElement.setAttribute("data-theme", S.theme); }
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => render());
+if (TABS.some(t => "#" + t[0] === location.hash)) S.tab = location.hash.slice(1);
+window.addEventListener("hashchange", () => { const h = location.hash.slice(1); if (TABS.some(t => t[0] === h) && h !== S.tab) set("tab", h); });
+window.__train = { state: () => JSON.parse(JSON.stringify(S)), set: (k, v) => set(k, v), go };   // for the automated tests
+applyTheme(); applyFont();
+if (!T) $("main").innerHTML = `<div class="panel loading">No data found. Run build_data.py next to this page.</div>`;
+else render();
+</script>
+</body>
+</html>

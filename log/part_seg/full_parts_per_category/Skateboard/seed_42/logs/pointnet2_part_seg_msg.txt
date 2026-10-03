@@ -1,0 +1,847 @@
+2026-09-08 23:10:54,602 - Model - INFO - PARAMETER ...
+2026-09-08 23:10:54,603 - Model - INFO - Namespace(model='pointnet2_part_seg_msg', batch_size=16, epoch=100, learning_rate=0.001, gpu='1', optimizer='Adam', log_dir='full_parts_per_category/Skateboard/seed_42', decay_rate=0.0001, npoint=2048, step_size=20, lr_decay=0.5, seed=42, categories=['Skateboard'], samples_per_category=None, subset_seed=0, test_samples_per_category=None, test_subset_seed=0, full_parts_only=True, num_parts=None)
+2026-09-08 23:10:54,653 - Model - INFO - The number of training data is: 92
+2026-09-08 23:10:54,653 - Model - INFO - The number of test data is: 21
+2026-09-08 23:10:55,038 - Model - INFO - No existing model, starting training from scratch...
+2026-09-08 23:10:55,625 - Model - INFO - Epoch 1 (1/100):
+2026-09-08 23:10:55,625 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:10:59,910 - Model - INFO - Train accuracy is: 0.25259
+2026-09-08 23:11:00,572 - Model - INFO - eval mIoU of Skateboard     0.261936
+2026-09-08 23:11:00,572 - Model - INFO - Epoch 1 test Accuracy: 0.785807  Class avg mIOU: 0.261936   Inctance avg mIOU: 0.261936
+2026-09-08 23:11:00,572 - Model - INFO - Save model...
+2026-09-08 23:11:00,572 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:11:00,606 - Model - INFO - Saving model....
+2026-09-08 23:11:00,606 - Model - INFO - Best accuracy is: 0.78581
+2026-09-08 23:11:00,606 - Model - INFO - Best class avg mIOU is: 0.26194
+2026-09-08 23:11:00,606 - Model - INFO - Best inctance avg mIOU is: 0.26194
+2026-09-08 23:11:00,606 - Model - INFO - Epoch 2 (2/100):
+2026-09-08 23:11:00,606 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:02,967 - Model - INFO - Train accuracy is: 0.75012
+2026-09-08 23:11:03,613 - Model - INFO - eval mIoU of Skateboard     0.261646
+2026-09-08 23:11:03,613 - Model - INFO - Epoch 2 test Accuracy: 0.784528  Class avg mIOU: 0.261646   Inctance avg mIOU: 0.261646
+2026-09-08 23:11:03,614 - Model - INFO - Best accuracy is: 0.78581
+2026-09-08 23:11:03,614 - Model - INFO - Best class avg mIOU is: 0.26194
+2026-09-08 23:11:03,614 - Model - INFO - Best inctance avg mIOU is: 0.26194
+2026-09-08 23:11:03,614 - Model - INFO - Epoch 3 (3/100):
+2026-09-08 23:11:03,614 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:05,969 - Model - INFO - Train accuracy is: 0.87924
+2026-09-08 23:11:06,610 - Model - INFO - eval mIoU of Skateboard     0.046123
+2026-09-08 23:11:06,610 - Model - INFO - Epoch 3 test Accuracy: 0.138370  Class avg mIOU: 0.046123   Inctance avg mIOU: 0.046123
+2026-09-08 23:11:06,610 - Model - INFO - Best accuracy is: 0.78581
+2026-09-08 23:11:06,610 - Model - INFO - Best class avg mIOU is: 0.26194
+2026-09-08 23:11:06,610 - Model - INFO - Best inctance avg mIOU is: 0.26194
+2026-09-08 23:11:06,610 - Model - INFO - Epoch 4 (4/100):
+2026-09-08 23:11:06,610 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:08,965 - Model - INFO - Train accuracy is: 0.89910
+2026-09-08 23:11:09,608 - Model - INFO - eval mIoU of Skateboard     0.047146
+2026-09-08 23:11:09,608 - Model - INFO - Epoch 4 test Accuracy: 0.141439  Class avg mIOU: 0.047146   Inctance avg mIOU: 0.047146
+2026-09-08 23:11:09,608 - Model - INFO - Best accuracy is: 0.78581
+2026-09-08 23:11:09,608 - Model - INFO - Best class avg mIOU is: 0.26194
+2026-09-08 23:11:09,608 - Model - INFO - Best inctance avg mIOU is: 0.26194
+2026-09-08 23:11:09,608 - Model - INFO - Epoch 5 (5/100):
+2026-09-08 23:11:09,608 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:11,967 - Model - INFO - Train accuracy is: 0.92299
+2026-09-08 23:11:12,615 - Model - INFO - eval mIoU of Skateboard     0.046379
+2026-09-08 23:11:12,615 - Model - INFO - Epoch 5 test Accuracy: 0.139137  Class avg mIOU: 0.046379   Inctance avg mIOU: 0.046379
+2026-09-08 23:11:12,615 - Model - INFO - Best accuracy is: 0.78581
+2026-09-08 23:11:12,615 - Model - INFO - Best class avg mIOU is: 0.26194
+2026-09-08 23:11:12,615 - Model - INFO - Best inctance avg mIOU is: 0.26194
+2026-09-08 23:11:12,615 - Model - INFO - Epoch 6 (6/100):
+2026-09-08 23:11:12,615 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:14,973 - Model - INFO - Train accuracy is: 0.92249
+2026-09-08 23:11:15,616 - Model - INFO - eval mIoU of Skateboard     0.046418
+2026-09-08 23:11:15,616 - Model - INFO - Epoch 6 test Accuracy: 0.139253  Class avg mIOU: 0.046418   Inctance avg mIOU: 0.046418
+2026-09-08 23:11:15,616 - Model - INFO - Best accuracy is: 0.78581
+2026-09-08 23:11:15,616 - Model - INFO - Best class avg mIOU is: 0.26194
+2026-09-08 23:11:15,616 - Model - INFO - Best inctance avg mIOU is: 0.26194
+2026-09-08 23:11:15,616 - Model - INFO - Epoch 7 (7/100):
+2026-09-08 23:11:15,616 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:17,986 - Model - INFO - Train accuracy is: 0.93490
+2026-09-08 23:11:18,626 - Model - INFO - eval mIoU of Skateboard     0.048281
+2026-09-08 23:11:18,626 - Model - INFO - Epoch 7 test Accuracy: 0.143299  Class avg mIOU: 0.048281   Inctance avg mIOU: 0.048281
+2026-09-08 23:11:18,626 - Model - INFO - Best accuracy is: 0.78581
+2026-09-08 23:11:18,626 - Model - INFO - Best class avg mIOU is: 0.26194
+2026-09-08 23:11:18,626 - Model - INFO - Best inctance avg mIOU is: 0.26194
+2026-09-08 23:11:18,626 - Model - INFO - Epoch 8 (8/100):
+2026-09-08 23:11:18,626 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:20,986 - Model - INFO - Train accuracy is: 0.93599
+2026-09-08 23:11:21,630 - Model - INFO - eval mIoU of Skateboard     0.163115
+2026-09-08 23:11:21,630 - Model - INFO - Epoch 8 test Accuracy: 0.372070  Class avg mIOU: 0.163115   Inctance avg mIOU: 0.163115
+2026-09-08 23:11:21,630 - Model - INFO - Best accuracy is: 0.78581
+2026-09-08 23:11:21,630 - Model - INFO - Best class avg mIOU is: 0.26194
+2026-09-08 23:11:21,630 - Model - INFO - Best inctance avg mIOU is: 0.26194
+2026-09-08 23:11:21,630 - Model - INFO - Epoch 9 (9/100):
+2026-09-08 23:11:21,630 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:23,988 - Model - INFO - Train accuracy is: 0.93726
+2026-09-08 23:11:24,630 - Model - INFO - eval mIoU of Skateboard     0.314044
+2026-09-08 23:11:24,631 - Model - INFO - Epoch 9 test Accuracy: 0.619699  Class avg mIOU: 0.314044   Inctance avg mIOU: 0.314044
+2026-09-08 23:11:24,631 - Model - INFO - Save model...
+2026-09-08 23:11:24,631 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:11:24,676 - Model - INFO - Saving model....
+2026-09-08 23:11:24,676 - Model - INFO - Best accuracy is: 0.78581
+2026-09-08 23:11:24,676 - Model - INFO - Best class avg mIOU is: 0.31404
+2026-09-08 23:11:24,676 - Model - INFO - Best inctance avg mIOU is: 0.31404
+2026-09-08 23:11:24,676 - Model - INFO - Epoch 10 (10/100):
+2026-09-08 23:11:24,676 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:27,035 - Model - INFO - Train accuracy is: 0.94417
+2026-09-08 23:11:27,678 - Model - INFO - eval mIoU of Skateboard     0.496660
+2026-09-08 23:11:27,678 - Model - INFO - Epoch 10 test Accuracy: 0.828172  Class avg mIOU: 0.496660   Inctance avg mIOU: 0.496660
+2026-09-08 23:11:27,678 - Model - INFO - Save model...
+2026-09-08 23:11:27,678 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:11:27,724 - Model - INFO - Saving model....
+2026-09-08 23:11:27,724 - Model - INFO - Best accuracy is: 0.82817
+2026-09-08 23:11:27,724 - Model - INFO - Best class avg mIOU is: 0.49666
+2026-09-08 23:11:27,724 - Model - INFO - Best inctance avg mIOU is: 0.49666
+2026-09-08 23:11:27,724 - Model - INFO - Epoch 11 (11/100):
+2026-09-08 23:11:27,724 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:30,090 - Model - INFO - Train accuracy is: 0.94640
+2026-09-08 23:11:30,733 - Model - INFO - eval mIoU of Skateboard     0.641434
+2026-09-08 23:11:30,733 - Model - INFO - Epoch 11 test Accuracy: 0.909110  Class avg mIOU: 0.641434   Inctance avg mIOU: 0.641434
+2026-09-08 23:11:30,733 - Model - INFO - Save model...
+2026-09-08 23:11:30,733 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:11:30,778 - Model - INFO - Saving model....
+2026-09-08 23:11:30,778 - Model - INFO - Best accuracy is: 0.90911
+2026-09-08 23:11:30,778 - Model - INFO - Best class avg mIOU is: 0.64143
+2026-09-08 23:11:30,778 - Model - INFO - Best inctance avg mIOU is: 0.64143
+2026-09-08 23:11:30,778 - Model - INFO - Epoch 12 (12/100):
+2026-09-08 23:11:30,778 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:33,144 - Model - INFO - Train accuracy is: 0.94720
+2026-09-08 23:11:33,787 - Model - INFO - eval mIoU of Skateboard     0.697062
+2026-09-08 23:11:33,787 - Model - INFO - Epoch 12 test Accuracy: 0.924944  Class avg mIOU: 0.697062   Inctance avg mIOU: 0.697062
+2026-09-08 23:11:33,787 - Model - INFO - Save model...
+2026-09-08 23:11:33,787 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:11:33,832 - Model - INFO - Saving model....
+2026-09-08 23:11:33,832 - Model - INFO - Best accuracy is: 0.92494
+2026-09-08 23:11:33,833 - Model - INFO - Best class avg mIOU is: 0.69706
+2026-09-08 23:11:33,833 - Model - INFO - Best inctance avg mIOU is: 0.69706
+2026-09-08 23:11:33,833 - Model - INFO - Epoch 13 (13/100):
+2026-09-08 23:11:33,833 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:36,180 - Model - INFO - Train accuracy is: 0.94709
+2026-09-08 23:11:36,821 - Model - INFO - eval mIoU of Skateboard     0.715228
+2026-09-08 23:11:36,821 - Model - INFO - Epoch 13 test Accuracy: 0.930385  Class avg mIOU: 0.715228   Inctance avg mIOU: 0.715228
+2026-09-08 23:11:36,821 - Model - INFO - Save model...
+2026-09-08 23:11:36,821 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:11:36,866 - Model - INFO - Saving model....
+2026-09-08 23:11:36,866 - Model - INFO - Best accuracy is: 0.93039
+2026-09-08 23:11:36,866 - Model - INFO - Best class avg mIOU is: 0.71523
+2026-09-08 23:11:36,866 - Model - INFO - Best inctance avg mIOU is: 0.71523
+2026-09-08 23:11:36,866 - Model - INFO - Epoch 14 (14/100):
+2026-09-08 23:11:36,866 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:39,223 - Model - INFO - Train accuracy is: 0.94916
+2026-09-08 23:11:39,867 - Model - INFO - eval mIoU of Skateboard     0.734324
+2026-09-08 23:11:39,867 - Model - INFO - Epoch 14 test Accuracy: 0.935872  Class avg mIOU: 0.734324   Inctance avg mIOU: 0.734324
+2026-09-08 23:11:39,868 - Model - INFO - Save model...
+2026-09-08 23:11:39,868 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:11:39,912 - Model - INFO - Saving model....
+2026-09-08 23:11:39,913 - Model - INFO - Best accuracy is: 0.93587
+2026-09-08 23:11:39,913 - Model - INFO - Best class avg mIOU is: 0.73432
+2026-09-08 23:11:39,913 - Model - INFO - Best inctance avg mIOU is: 0.73432
+2026-09-08 23:11:39,913 - Model - INFO - Epoch 15 (15/100):
+2026-09-08 23:11:39,913 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:42,279 - Model - INFO - Train accuracy is: 0.94960
+2026-09-08 23:11:42,925 - Model - INFO - eval mIoU of Skateboard     0.690518
+2026-09-08 23:11:42,925 - Model - INFO - Epoch 15 test Accuracy: 0.912830  Class avg mIOU: 0.690518   Inctance avg mIOU: 0.690518
+2026-09-08 23:11:42,925 - Model - INFO - Best accuracy is: 0.93587
+2026-09-08 23:11:42,925 - Model - INFO - Best class avg mIOU is: 0.73432
+2026-09-08 23:11:42,925 - Model - INFO - Best inctance avg mIOU is: 0.73432
+2026-09-08 23:11:42,925 - Model - INFO - Epoch 16 (16/100):
+2026-09-08 23:11:42,925 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:45,285 - Model - INFO - Train accuracy is: 0.95113
+2026-09-08 23:11:45,928 - Model - INFO - eval mIoU of Skateboard     0.745536
+2026-09-08 23:11:45,928 - Model - INFO - Epoch 16 test Accuracy: 0.939058  Class avg mIOU: 0.745536   Inctance avg mIOU: 0.745536
+2026-09-08 23:11:45,928 - Model - INFO - Save model...
+2026-09-08 23:11:45,928 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:11:45,973 - Model - INFO - Saving model....
+2026-09-08 23:11:45,973 - Model - INFO - Best accuracy is: 0.93906
+2026-09-08 23:11:45,973 - Model - INFO - Best class avg mIOU is: 0.74554
+2026-09-08 23:11:45,973 - Model - INFO - Best inctance avg mIOU is: 0.74554
+2026-09-08 23:11:45,973 - Model - INFO - Epoch 17 (17/100):
+2026-09-08 23:11:45,973 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:48,337 - Model - INFO - Train accuracy is: 0.94869
+2026-09-08 23:11:48,984 - Model - INFO - eval mIoU of Skateboard     0.752747
+2026-09-08 23:11:48,984 - Model - INFO - Epoch 17 test Accuracy: 0.943429  Class avg mIOU: 0.752747   Inctance avg mIOU: 0.752747
+2026-09-08 23:11:48,984 - Model - INFO - Save model...
+2026-09-08 23:11:48,984 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:11:49,029 - Model - INFO - Saving model....
+2026-09-08 23:11:49,029 - Model - INFO - Best accuracy is: 0.94343
+2026-09-08 23:11:49,029 - Model - INFO - Best class avg mIOU is: 0.75275
+2026-09-08 23:11:49,029 - Model - INFO - Best inctance avg mIOU is: 0.75275
+2026-09-08 23:11:49,029 - Model - INFO - Epoch 18 (18/100):
+2026-09-08 23:11:49,029 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:51,401 - Model - INFO - Train accuracy is: 0.95065
+2026-09-08 23:11:52,043 - Model - INFO - eval mIoU of Skateboard     0.732690
+2026-09-08 23:11:52,043 - Model - INFO - Epoch 18 test Accuracy: 0.930385  Class avg mIOU: 0.732690   Inctance avg mIOU: 0.732690
+2026-09-08 23:11:52,043 - Model - INFO - Best accuracy is: 0.94343
+2026-09-08 23:11:52,043 - Model - INFO - Best class avg mIOU is: 0.75275
+2026-09-08 23:11:52,043 - Model - INFO - Best inctance avg mIOU is: 0.75275
+2026-09-08 23:11:52,043 - Model - INFO - Epoch 19 (19/100):
+2026-09-08 23:11:52,043 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:54,408 - Model - INFO - Train accuracy is: 0.95085
+2026-09-08 23:11:55,049 - Model - INFO - eval mIoU of Skateboard     0.726528
+2026-09-08 23:11:55,050 - Model - INFO - Epoch 19 test Accuracy: 0.930013  Class avg mIOU: 0.726528   Inctance avg mIOU: 0.726528
+2026-09-08 23:11:55,050 - Model - INFO - Best accuracy is: 0.94343
+2026-09-08 23:11:55,050 - Model - INFO - Best class avg mIOU is: 0.75275
+2026-09-08 23:11:55,050 - Model - INFO - Best inctance avg mIOU is: 0.75275
+2026-09-08 23:11:55,050 - Model - INFO - Epoch 20 (20/100):
+2026-09-08 23:11:55,050 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:11:57,413 - Model - INFO - Train accuracy is: 0.95366
+2026-09-08 23:11:58,059 - Model - INFO - eval mIoU of Skateboard     0.720687
+2026-09-08 23:11:58,059 - Model - INFO - Epoch 20 test Accuracy: 0.929804  Class avg mIOU: 0.720687   Inctance avg mIOU: 0.720687
+2026-09-08 23:11:58,059 - Model - INFO - Best accuracy is: 0.94343
+2026-09-08 23:11:58,059 - Model - INFO - Best class avg mIOU is: 0.75275
+2026-09-08 23:11:58,059 - Model - INFO - Best inctance avg mIOU is: 0.75275
+2026-09-08 23:11:58,059 - Model - INFO - Epoch 21 (21/100):
+2026-09-08 23:11:58,059 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:00,420 - Model - INFO - Train accuracy is: 0.95645
+2026-09-08 23:12:01,065 - Model - INFO - eval mIoU of Skateboard     0.751278
+2026-09-08 23:12:01,065 - Model - INFO - Epoch 21 test Accuracy: 0.940685  Class avg mIOU: 0.751278   Inctance avg mIOU: 0.751278
+2026-09-08 23:12:01,066 - Model - INFO - Best accuracy is: 0.94343
+2026-09-08 23:12:01,066 - Model - INFO - Best class avg mIOU is: 0.75275
+2026-09-08 23:12:01,066 - Model - INFO - Best inctance avg mIOU is: 0.75275
+2026-09-08 23:12:01,066 - Model - INFO - Epoch 22 (22/100):
+2026-09-08 23:12:01,066 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:03,422 - Model - INFO - Train accuracy is: 0.95316
+2026-09-08 23:12:04,067 - Model - INFO - eval mIoU of Skateboard     0.725426
+2026-09-08 23:12:04,067 - Model - INFO - Epoch 22 test Accuracy: 0.927316  Class avg mIOU: 0.725426   Inctance avg mIOU: 0.725426
+2026-09-08 23:12:04,067 - Model - INFO - Best accuracy is: 0.94343
+2026-09-08 23:12:04,067 - Model - INFO - Best class avg mIOU is: 0.75275
+2026-09-08 23:12:04,067 - Model - INFO - Best inctance avg mIOU is: 0.75275
+2026-09-08 23:12:04,067 - Model - INFO - Epoch 23 (23/100):
+2026-09-08 23:12:04,067 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:06,433 - Model - INFO - Train accuracy is: 0.95632
+2026-09-08 23:12:07,077 - Model - INFO - eval mIoU of Skateboard     0.751557
+2026-09-08 23:12:07,077 - Model - INFO - Epoch 23 test Accuracy: 0.941336  Class avg mIOU: 0.751557   Inctance avg mIOU: 0.751557
+2026-09-08 23:12:07,077 - Model - INFO - Best accuracy is: 0.94343
+2026-09-08 23:12:07,077 - Model - INFO - Best class avg mIOU is: 0.75275
+2026-09-08 23:12:07,077 - Model - INFO - Best inctance avg mIOU is: 0.75275
+2026-09-08 23:12:07,077 - Model - INFO - Epoch 24 (24/100):
+2026-09-08 23:12:07,077 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:09,446 - Model - INFO - Train accuracy is: 0.95435
+2026-09-08 23:12:10,094 - Model - INFO - eval mIoU of Skateboard     0.752235
+2026-09-08 23:12:10,094 - Model - INFO - Epoch 24 test Accuracy: 0.941150  Class avg mIOU: 0.752235   Inctance avg mIOU: 0.752235
+2026-09-08 23:12:10,094 - Model - INFO - Best accuracy is: 0.94343
+2026-09-08 23:12:10,094 - Model - INFO - Best class avg mIOU is: 0.75275
+2026-09-08 23:12:10,094 - Model - INFO - Best inctance avg mIOU is: 0.75275
+2026-09-08 23:12:10,094 - Model - INFO - Epoch 25 (25/100):
+2026-09-08 23:12:10,094 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:12,463 - Model - INFO - Train accuracy is: 0.95847
+2026-09-08 23:12:13,112 - Model - INFO - eval mIoU of Skateboard     0.750939
+2026-09-08 23:12:13,112 - Model - INFO - Epoch 25 test Accuracy: 0.940988  Class avg mIOU: 0.750939   Inctance avg mIOU: 0.750939
+2026-09-08 23:12:13,112 - Model - INFO - Best accuracy is: 0.94343
+2026-09-08 23:12:13,112 - Model - INFO - Best class avg mIOU is: 0.75275
+2026-09-08 23:12:13,112 - Model - INFO - Best inctance avg mIOU is: 0.75275
+2026-09-08 23:12:13,112 - Model - INFO - Epoch 26 (26/100):
+2026-09-08 23:12:13,112 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:15,475 - Model - INFO - Train accuracy is: 0.95850
+2026-09-08 23:12:16,121 - Model - INFO - eval mIoU of Skateboard     0.734815
+2026-09-08 23:12:16,121 - Model - INFO - Epoch 26 test Accuracy: 0.929943  Class avg mIOU: 0.734815   Inctance avg mIOU: 0.734815
+2026-09-08 23:12:16,121 - Model - INFO - Best accuracy is: 0.94343
+2026-09-08 23:12:16,121 - Model - INFO - Best class avg mIOU is: 0.75275
+2026-09-08 23:12:16,121 - Model - INFO - Best inctance avg mIOU is: 0.75275
+2026-09-08 23:12:16,122 - Model - INFO - Epoch 27 (27/100):
+2026-09-08 23:12:16,122 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:18,488 - Model - INFO - Train accuracy is: 0.96003
+2026-09-08 23:12:19,130 - Model - INFO - eval mIoU of Skateboard     0.736867
+2026-09-08 23:12:19,130 - Model - INFO - Epoch 27 test Accuracy: 0.931734  Class avg mIOU: 0.736867   Inctance avg mIOU: 0.736867
+2026-09-08 23:12:19,130 - Model - INFO - Best accuracy is: 0.94343
+2026-09-08 23:12:19,130 - Model - INFO - Best class avg mIOU is: 0.75275
+2026-09-08 23:12:19,130 - Model - INFO - Best inctance avg mIOU is: 0.75275
+2026-09-08 23:12:19,130 - Model - INFO - Epoch 28 (28/100):
+2026-09-08 23:12:19,130 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:21,498 - Model - INFO - Train accuracy is: 0.95888
+2026-09-08 23:12:22,141 - Model - INFO - eval mIoU of Skateboard     0.757392
+2026-09-08 23:12:22,141 - Model - INFO - Epoch 28 test Accuracy: 0.944196  Class avg mIOU: 0.757392   Inctance avg mIOU: 0.757392
+2026-09-08 23:12:22,141 - Model - INFO - Save model...
+2026-09-08 23:12:22,141 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:12:22,186 - Model - INFO - Saving model....
+2026-09-08 23:12:22,186 - Model - INFO - Best accuracy is: 0.94420
+2026-09-08 23:12:22,187 - Model - INFO - Best class avg mIOU is: 0.75739
+2026-09-08 23:12:22,187 - Model - INFO - Best inctance avg mIOU is: 0.75739
+2026-09-08 23:12:22,187 - Model - INFO - Epoch 29 (29/100):
+2026-09-08 23:12:22,187 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:24,553 - Model - INFO - Train accuracy is: 0.95644
+2026-09-08 23:12:25,195 - Model - INFO - eval mIoU of Skateboard     0.763034
+2026-09-08 23:12:25,195 - Model - INFO - Epoch 29 test Accuracy: 0.944731  Class avg mIOU: 0.763034   Inctance avg mIOU: 0.763034
+2026-09-08 23:12:25,195 - Model - INFO - Save model...
+2026-09-08 23:12:25,195 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:12:25,242 - Model - INFO - Saving model....
+2026-09-08 23:12:25,242 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:12:25,242 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:12:25,242 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:12:25,242 - Model - INFO - Epoch 30 (30/100):
+2026-09-08 23:12:25,242 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:27,608 - Model - INFO - Train accuracy is: 0.96212
+2026-09-08 23:12:28,252 - Model - INFO - eval mIoU of Skateboard     0.750434
+2026-09-08 23:12:28,252 - Model - INFO - Epoch 30 test Accuracy: 0.937035  Class avg mIOU: 0.750434   Inctance avg mIOU: 0.750434
+2026-09-08 23:12:28,252 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:12:28,252 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:12:28,252 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:12:28,252 - Model - INFO - Epoch 31 (31/100):
+2026-09-08 23:12:28,252 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:30,619 - Model - INFO - Train accuracy is: 0.96129
+2026-09-08 23:12:31,266 - Model - INFO - eval mIoU of Skateboard     0.755019
+2026-09-08 23:12:31,266 - Model - INFO - Epoch 31 test Accuracy: 0.938546  Class avg mIOU: 0.755019   Inctance avg mIOU: 0.755019
+2026-09-08 23:12:31,266 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:12:31,266 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:12:31,266 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:12:31,266 - Model - INFO - Epoch 32 (32/100):
+2026-09-08 23:12:31,266 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:33,630 - Model - INFO - Train accuracy is: 0.95319
+2026-09-08 23:12:34,269 - Model - INFO - eval mIoU of Skateboard     0.749266
+2026-09-08 23:12:34,269 - Model - INFO - Epoch 32 test Accuracy: 0.936151  Class avg mIOU: 0.749266   Inctance avg mIOU: 0.749266
+2026-09-08 23:12:34,269 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:12:34,269 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:12:34,269 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:12:34,269 - Model - INFO - Epoch 33 (33/100):
+2026-09-08 23:12:34,269 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:36,637 - Model - INFO - Train accuracy is: 0.96064
+2026-09-08 23:12:37,278 - Model - INFO - eval mIoU of Skateboard     0.740474
+2026-09-08 23:12:37,279 - Model - INFO - Epoch 33 test Accuracy: 0.933175  Class avg mIOU: 0.740474   Inctance avg mIOU: 0.740474
+2026-09-08 23:12:37,279 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:12:37,279 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:12:37,279 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:12:37,279 - Model - INFO - Epoch 34 (34/100):
+2026-09-08 23:12:37,279 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:39,642 - Model - INFO - Train accuracy is: 0.96329
+2026-09-08 23:12:40,286 - Model - INFO - eval mIoU of Skateboard     0.747325
+2026-09-08 23:12:40,286 - Model - INFO - Epoch 34 test Accuracy: 0.934663  Class avg mIOU: 0.747325   Inctance avg mIOU: 0.747325
+2026-09-08 23:12:40,287 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:12:40,287 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:12:40,287 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:12:40,287 - Model - INFO - Epoch 35 (35/100):
+2026-09-08 23:12:40,287 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:42,651 - Model - INFO - Train accuracy is: 0.96149
+2026-09-08 23:12:43,297 - Model - INFO - eval mIoU of Skateboard     0.738636
+2026-09-08 23:12:43,297 - Model - INFO - Epoch 35 test Accuracy: 0.928943  Class avg mIOU: 0.738636   Inctance avg mIOU: 0.738636
+2026-09-08 23:12:43,297 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:12:43,297 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:12:43,297 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:12:43,297 - Model - INFO - Epoch 36 (36/100):
+2026-09-08 23:12:43,297 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:45,664 - Model - INFO - Train accuracy is: 0.95875
+2026-09-08 23:12:46,308 - Model - INFO - eval mIoU of Skateboard     0.742772
+2026-09-08 23:12:46,308 - Model - INFO - Epoch 36 test Accuracy: 0.933873  Class avg mIOU: 0.742772   Inctance avg mIOU: 0.742772
+2026-09-08 23:12:46,308 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:12:46,308 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:12:46,308 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:12:46,308 - Model - INFO - Epoch 37 (37/100):
+2026-09-08 23:12:46,308 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:48,674 - Model - INFO - Train accuracy is: 0.96192
+2026-09-08 23:12:49,320 - Model - INFO - eval mIoU of Skateboard     0.743040
+2026-09-08 23:12:49,320 - Model - INFO - Epoch 37 test Accuracy: 0.937826  Class avg mIOU: 0.743040   Inctance avg mIOU: 0.743040
+2026-09-08 23:12:49,320 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:12:49,320 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:12:49,320 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:12:49,320 - Model - INFO - Epoch 38 (38/100):
+2026-09-08 23:12:49,320 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:51,691 - Model - INFO - Train accuracy is: 0.96221
+2026-09-08 23:12:52,335 - Model - INFO - eval mIoU of Skateboard     0.748774
+2026-09-08 23:12:52,335 - Model - INFO - Epoch 38 test Accuracy: 0.935198  Class avg mIOU: 0.748774   Inctance avg mIOU: 0.748774
+2026-09-08 23:12:52,335 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:12:52,335 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:12:52,335 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:12:52,335 - Model - INFO - Epoch 39 (39/100):
+2026-09-08 23:12:52,335 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:54,699 - Model - INFO - Train accuracy is: 0.96014
+2026-09-08 23:12:55,341 - Model - INFO - eval mIoU of Skateboard     0.747061
+2026-09-08 23:12:55,341 - Model - INFO - Epoch 39 test Accuracy: 0.932919  Class avg mIOU: 0.747061   Inctance avg mIOU: 0.747061
+2026-09-08 23:12:55,341 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:12:55,341 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:12:55,341 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:12:55,341 - Model - INFO - Epoch 40 (40/100):
+2026-09-08 23:12:55,341 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:12:57,710 - Model - INFO - Train accuracy is: 0.96274
+2026-09-08 23:12:58,354 - Model - INFO - eval mIoU of Skateboard     0.740906
+2026-09-08 23:12:58,354 - Model - INFO - Epoch 40 test Accuracy: 0.929222  Class avg mIOU: 0.740906   Inctance avg mIOU: 0.740906
+2026-09-08 23:12:58,354 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:12:58,354 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:12:58,354 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:12:58,354 - Model - INFO - Epoch 41 (41/100):
+2026-09-08 23:12:58,354 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:00,719 - Model - INFO - Train accuracy is: 0.96113
+2026-09-08 23:13:01,361 - Model - INFO - eval mIoU of Skateboard     0.750704
+2026-09-08 23:13:01,361 - Model - INFO - Epoch 41 test Accuracy: 0.935547  Class avg mIOU: 0.750704   Inctance avg mIOU: 0.750704
+2026-09-08 23:13:01,361 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:13:01,361 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:13:01,361 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:13:01,361 - Model - INFO - Epoch 42 (42/100):
+2026-09-08 23:13:01,361 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:03,721 - Model - INFO - Train accuracy is: 0.96306
+2026-09-08 23:13:04,363 - Model - INFO - eval mIoU of Skateboard     0.751806
+2026-09-08 23:13:04,363 - Model - INFO - Epoch 42 test Accuracy: 0.934826  Class avg mIOU: 0.751806   Inctance avg mIOU: 0.751806
+2026-09-08 23:13:04,363 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:13:04,363 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:13:04,363 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:13:04,363 - Model - INFO - Epoch 43 (43/100):
+2026-09-08 23:13:04,363 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:06,723 - Model - INFO - Train accuracy is: 0.96483
+2026-09-08 23:13:07,366 - Model - INFO - eval mIoU of Skateboard     0.745253
+2026-09-08 23:13:07,366 - Model - INFO - Epoch 43 test Accuracy: 0.931734  Class avg mIOU: 0.745253   Inctance avg mIOU: 0.745253
+2026-09-08 23:13:07,366 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:13:07,366 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:13:07,366 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:13:07,366 - Model - INFO - Epoch 44 (44/100):
+2026-09-08 23:13:07,366 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:09,728 - Model - INFO - Train accuracy is: 0.96258
+2026-09-08 23:13:10,375 - Model - INFO - eval mIoU of Skateboard     0.751530
+2026-09-08 23:13:10,375 - Model - INFO - Epoch 44 test Accuracy: 0.934989  Class avg mIOU: 0.751530   Inctance avg mIOU: 0.751530
+2026-09-08 23:13:10,375 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:13:10,375 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:13:10,375 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:13:10,375 - Model - INFO - Epoch 45 (45/100):
+2026-09-08 23:13:10,375 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:12,735 - Model - INFO - Train accuracy is: 0.96232
+2026-09-08 23:13:13,377 - Model - INFO - eval mIoU of Skateboard     0.751883
+2026-09-08 23:13:13,377 - Model - INFO - Epoch 45 test Accuracy: 0.935872  Class avg mIOU: 0.751883   Inctance avg mIOU: 0.751883
+2026-09-08 23:13:13,377 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:13:13,377 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:13:13,377 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:13:13,377 - Model - INFO - Epoch 46 (46/100):
+2026-09-08 23:13:13,377 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:15,744 - Model - INFO - Train accuracy is: 0.96580
+2026-09-08 23:13:16,386 - Model - INFO - eval mIoU of Skateboard     0.736019
+2026-09-08 23:13:16,386 - Model - INFO - Epoch 46 test Accuracy: 0.927827  Class avg mIOU: 0.736019   Inctance avg mIOU: 0.736019
+2026-09-08 23:13:16,386 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:13:16,386 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:13:16,386 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:13:16,386 - Model - INFO - Epoch 47 (47/100):
+2026-09-08 23:13:16,386 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:18,748 - Model - INFO - Train accuracy is: 0.96567
+2026-09-08 23:13:19,396 - Model - INFO - eval mIoU of Skateboard     0.748317
+2026-09-08 23:13:19,396 - Model - INFO - Epoch 47 test Accuracy: 0.930525  Class avg mIOU: 0.748317   Inctance avg mIOU: 0.748317
+2026-09-08 23:13:19,396 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:13:19,396 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:13:19,396 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:13:19,397 - Model - INFO - Epoch 48 (48/100):
+2026-09-08 23:13:19,397 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:21,766 - Model - INFO - Train accuracy is: 0.96479
+2026-09-08 23:13:22,406 - Model - INFO - eval mIoU of Skateboard     0.761242
+2026-09-08 23:13:22,406 - Model - INFO - Epoch 48 test Accuracy: 0.940685  Class avg mIOU: 0.761242   Inctance avg mIOU: 0.761242
+2026-09-08 23:13:22,407 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:13:22,407 - Model - INFO - Best class avg mIOU is: 0.76303
+2026-09-08 23:13:22,407 - Model - INFO - Best inctance avg mIOU is: 0.76303
+2026-09-08 23:13:22,407 - Model - INFO - Epoch 49 (49/100):
+2026-09-08 23:13:22,407 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:24,774 - Model - INFO - Train accuracy is: 0.96551
+2026-09-08 23:13:25,420 - Model - INFO - eval mIoU of Skateboard     0.768930
+2026-09-08 23:13:25,420 - Model - INFO - Epoch 49 test Accuracy: 0.944150  Class avg mIOU: 0.768930   Inctance avg mIOU: 0.768930
+2026-09-08 23:13:25,420 - Model - INFO - Save model...
+2026-09-08 23:13:25,420 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:13:25,465 - Model - INFO - Saving model....
+2026-09-08 23:13:25,466 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:13:25,466 - Model - INFO - Best class avg mIOU is: 0.76893
+2026-09-08 23:13:25,466 - Model - INFO - Best inctance avg mIOU is: 0.76893
+2026-09-08 23:13:25,466 - Model - INFO - Epoch 50 (50/100):
+2026-09-08 23:13:25,466 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:27,832 - Model - INFO - Train accuracy is: 0.96445
+2026-09-08 23:13:28,475 - Model - INFO - eval mIoU of Skateboard     0.759130
+2026-09-08 23:13:28,475 - Model - INFO - Epoch 50 test Accuracy: 0.939616  Class avg mIOU: 0.759130   Inctance avg mIOU: 0.759130
+2026-09-08 23:13:28,475 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:13:28,475 - Model - INFO - Best class avg mIOU is: 0.76893
+2026-09-08 23:13:28,475 - Model - INFO - Best inctance avg mIOU is: 0.76893
+2026-09-08 23:13:28,475 - Model - INFO - Epoch 51 (51/100):
+2026-09-08 23:13:28,475 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:30,836 - Model - INFO - Train accuracy is: 0.96229
+2026-09-08 23:13:31,482 - Model - INFO - eval mIoU of Skateboard     0.749187
+2026-09-08 23:13:31,482 - Model - INFO - Epoch 51 test Accuracy: 0.930013  Class avg mIOU: 0.749187   Inctance avg mIOU: 0.749187
+2026-09-08 23:13:31,482 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:13:31,482 - Model - INFO - Best class avg mIOU is: 0.76893
+2026-09-08 23:13:31,482 - Model - INFO - Best inctance avg mIOU is: 0.76893
+2026-09-08 23:13:31,482 - Model - INFO - Epoch 52 (52/100):
+2026-09-08 23:13:31,482 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:33,852 - Model - INFO - Train accuracy is: 0.96527
+2026-09-08 23:13:34,492 - Model - INFO - eval mIoU of Skateboard     0.746077
+2026-09-08 23:13:34,492 - Model - INFO - Epoch 52 test Accuracy: 0.931245  Class avg mIOU: 0.746077   Inctance avg mIOU: 0.746077
+2026-09-08 23:13:34,492 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:13:34,492 - Model - INFO - Best class avg mIOU is: 0.76893
+2026-09-08 23:13:34,492 - Model - INFO - Best inctance avg mIOU is: 0.76893
+2026-09-08 23:13:34,492 - Model - INFO - Epoch 53 (53/100):
+2026-09-08 23:13:34,492 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:36,857 - Model - INFO - Train accuracy is: 0.96511
+2026-09-08 23:13:37,505 - Model - INFO - eval mIoU of Skateboard     0.766423
+2026-09-08 23:13:37,505 - Model - INFO - Epoch 53 test Accuracy: 0.940290  Class avg mIOU: 0.766423   Inctance avg mIOU: 0.766423
+2026-09-08 23:13:37,506 - Model - INFO - Best accuracy is: 0.94473
+2026-09-08 23:13:37,506 - Model - INFO - Best class avg mIOU is: 0.76893
+2026-09-08 23:13:37,506 - Model - INFO - Best inctance avg mIOU is: 0.76893
+2026-09-08 23:13:37,506 - Model - INFO - Epoch 54 (54/100):
+2026-09-08 23:13:37,506 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:39,864 - Model - INFO - Train accuracy is: 0.96671
+2026-09-08 23:13:40,507 - Model - INFO - eval mIoU of Skateboard     0.776187
+2026-09-08 23:13:40,507 - Model - INFO - Epoch 54 test Accuracy: 0.948451  Class avg mIOU: 0.776187   Inctance avg mIOU: 0.776187
+2026-09-08 23:13:40,508 - Model - INFO - Save model...
+2026-09-08 23:13:40,508 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:13:40,553 - Model - INFO - Saving model....
+2026-09-08 23:13:40,553 - Model - INFO - Best accuracy is: 0.94845
+2026-09-08 23:13:40,553 - Model - INFO - Best class avg mIOU is: 0.77619
+2026-09-08 23:13:40,553 - Model - INFO - Best inctance avg mIOU is: 0.77619
+2026-09-08 23:13:40,553 - Model - INFO - Epoch 55 (55/100):
+2026-09-08 23:13:40,553 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:42,920 - Model - INFO - Train accuracy is: 0.96213
+2026-09-08 23:13:43,567 - Model - INFO - eval mIoU of Skateboard     0.755265
+2026-09-08 23:13:43,567 - Model - INFO - Epoch 55 test Accuracy: 0.936942  Class avg mIOU: 0.755265   Inctance avg mIOU: 0.755265
+2026-09-08 23:13:43,567 - Model - INFO - Best accuracy is: 0.94845
+2026-09-08 23:13:43,567 - Model - INFO - Best class avg mIOU is: 0.77619
+2026-09-08 23:13:43,567 - Model - INFO - Best inctance avg mIOU is: 0.77619
+2026-09-08 23:13:43,567 - Model - INFO - Epoch 56 (56/100):
+2026-09-08 23:13:43,567 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:45,936 - Model - INFO - Train accuracy is: 0.96537
+2026-09-08 23:13:46,577 - Model - INFO - eval mIoU of Skateboard     0.762797
+2026-09-08 23:13:46,577 - Model - INFO - Epoch 56 test Accuracy: 0.938453  Class avg mIOU: 0.762797   Inctance avg mIOU: 0.762797
+2026-09-08 23:13:46,577 - Model - INFO - Best accuracy is: 0.94845
+2026-09-08 23:13:46,577 - Model - INFO - Best class avg mIOU is: 0.77619
+2026-09-08 23:13:46,577 - Model - INFO - Best inctance avg mIOU is: 0.77619
+2026-09-08 23:13:46,577 - Model - INFO - Epoch 57 (57/100):
+2026-09-08 23:13:46,577 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:48,946 - Model - INFO - Train accuracy is: 0.96533
+2026-09-08 23:13:49,587 - Model - INFO - eval mIoU of Skateboard     0.754918
+2026-09-08 23:13:49,587 - Model - INFO - Epoch 57 test Accuracy: 0.940034  Class avg mIOU: 0.754918   Inctance avg mIOU: 0.754918
+2026-09-08 23:13:49,587 - Model - INFO - Best accuracy is: 0.94845
+2026-09-08 23:13:49,587 - Model - INFO - Best class avg mIOU is: 0.77619
+2026-09-08 23:13:49,587 - Model - INFO - Best inctance avg mIOU is: 0.77619
+2026-09-08 23:13:49,587 - Model - INFO - Epoch 58 (58/100):
+2026-09-08 23:13:49,587 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:51,943 - Model - INFO - Train accuracy is: 0.96392
+2026-09-08 23:13:52,588 - Model - INFO - eval mIoU of Skateboard     0.762872
+2026-09-08 23:13:52,588 - Model - INFO - Epoch 58 test Accuracy: 0.943150  Class avg mIOU: 0.762872   Inctance avg mIOU: 0.762872
+2026-09-08 23:13:52,588 - Model - INFO - Best accuracy is: 0.94845
+2026-09-08 23:13:52,588 - Model - INFO - Best class avg mIOU is: 0.77619
+2026-09-08 23:13:52,588 - Model - INFO - Best inctance avg mIOU is: 0.77619
+2026-09-08 23:13:52,588 - Model - INFO - Epoch 59 (59/100):
+2026-09-08 23:13:52,588 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:54,950 - Model - INFO - Train accuracy is: 0.96479
+2026-09-08 23:13:55,589 - Model - INFO - eval mIoU of Skateboard     0.759695
+2026-09-08 23:13:55,589 - Model - INFO - Epoch 59 test Accuracy: 0.938732  Class avg mIOU: 0.759695   Inctance avg mIOU: 0.759695
+2026-09-08 23:13:55,589 - Model - INFO - Best accuracy is: 0.94845
+2026-09-08 23:13:55,589 - Model - INFO - Best class avg mIOU is: 0.77619
+2026-09-08 23:13:55,589 - Model - INFO - Best inctance avg mIOU is: 0.77619
+2026-09-08 23:13:55,589 - Model - INFO - Epoch 60 (60/100):
+2026-09-08 23:13:55,589 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:13:57,953 - Model - INFO - Train accuracy is: 0.96884
+2026-09-08 23:13:58,595 - Model - INFO - eval mIoU of Skateboard     0.759927
+2026-09-08 23:13:58,595 - Model - INFO - Epoch 60 test Accuracy: 0.940941  Class avg mIOU: 0.759927   Inctance avg mIOU: 0.759927
+2026-09-08 23:13:58,595 - Model - INFO - Best accuracy is: 0.94845
+2026-09-08 23:13:58,595 - Model - INFO - Best class avg mIOU is: 0.77619
+2026-09-08 23:13:58,595 - Model - INFO - Best inctance avg mIOU is: 0.77619
+2026-09-08 23:13:58,595 - Model - INFO - Epoch 61 (61/100):
+2026-09-08 23:13:58,595 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:00,950 - Model - INFO - Train accuracy is: 0.96566
+2026-09-08 23:14:01,596 - Model - INFO - eval mIoU of Skateboard     0.777325
+2026-09-08 23:14:01,596 - Model - INFO - Epoch 61 test Accuracy: 0.949730  Class avg mIOU: 0.777325   Inctance avg mIOU: 0.777325
+2026-09-08 23:14:01,596 - Model - INFO - Save model...
+2026-09-08 23:14:01,596 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Skateboard/seed_42/checkpoints/best_model.pth
+2026-09-08 23:14:01,641 - Model - INFO - Saving model....
+2026-09-08 23:14:01,641 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:01,641 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:01,641 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:01,641 - Model - INFO - Epoch 62 (62/100):
+2026-09-08 23:14:01,641 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:04,000 - Model - INFO - Train accuracy is: 0.96715
+2026-09-08 23:14:04,643 - Model - INFO - eval mIoU of Skateboard     0.768014
+2026-09-08 23:14:04,643 - Model - INFO - Epoch 62 test Accuracy: 0.946150  Class avg mIOU: 0.768014   Inctance avg mIOU: 0.768014
+2026-09-08 23:14:04,643 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:04,643 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:04,643 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:04,643 - Model - INFO - Epoch 63 (63/100):
+2026-09-08 23:14:04,643 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:07,001 - Model - INFO - Train accuracy is: 0.96566
+2026-09-08 23:14:07,638 - Model - INFO - eval mIoU of Skateboard     0.775267
+2026-09-08 23:14:07,639 - Model - INFO - Epoch 63 test Accuracy: 0.948103  Class avg mIOU: 0.775267   Inctance avg mIOU: 0.775267
+2026-09-08 23:14:07,639 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:07,639 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:07,639 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:07,639 - Model - INFO - Epoch 64 (64/100):
+2026-09-08 23:14:07,639 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:10,000 - Model - INFO - Train accuracy is: 0.96641
+2026-09-08 23:14:10,646 - Model - INFO - eval mIoU of Skateboard     0.767734
+2026-09-08 23:14:10,646 - Model - INFO - Epoch 64 test Accuracy: 0.943429  Class avg mIOU: 0.767734   Inctance avg mIOU: 0.767734
+2026-09-08 23:14:10,646 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:10,646 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:10,646 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:10,646 - Model - INFO - Epoch 65 (65/100):
+2026-09-08 23:14:10,646 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:13,011 - Model - INFO - Train accuracy is: 0.96766
+2026-09-08 23:14:13,655 - Model - INFO - eval mIoU of Skateboard     0.766722
+2026-09-08 23:14:13,656 - Model - INFO - Epoch 65 test Accuracy: 0.942801  Class avg mIOU: 0.766722   Inctance avg mIOU: 0.766722
+2026-09-08 23:14:13,656 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:13,656 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:13,656 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:13,656 - Model - INFO - Epoch 66 (66/100):
+2026-09-08 23:14:13,656 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:16,018 - Model - INFO - Train accuracy is: 0.96661
+2026-09-08 23:14:16,657 - Model - INFO - eval mIoU of Skateboard     0.757229
+2026-09-08 23:14:16,657 - Model - INFO - Epoch 66 test Accuracy: 0.939035  Class avg mIOU: 0.757229   Inctance avg mIOU: 0.757229
+2026-09-08 23:14:16,657 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:16,657 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:16,657 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:16,657 - Model - INFO - Epoch 67 (67/100):
+2026-09-08 23:14:16,657 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:19,017 - Model - INFO - Train accuracy is: 0.96672
+2026-09-08 23:14:19,661 - Model - INFO - eval mIoU of Skateboard     0.764484
+2026-09-08 23:14:19,661 - Model - INFO - Epoch 67 test Accuracy: 0.942081  Class avg mIOU: 0.764484   Inctance avg mIOU: 0.764484
+2026-09-08 23:14:19,661 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:19,661 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:19,661 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:19,662 - Model - INFO - Epoch 68 (68/100):
+2026-09-08 23:14:19,662 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:22,021 - Model - INFO - Train accuracy is: 0.96712
+2026-09-08 23:14:22,666 - Model - INFO - eval mIoU of Skateboard     0.775286
+2026-09-08 23:14:22,666 - Model - INFO - Epoch 68 test Accuracy: 0.945126  Class avg mIOU: 0.775286   Inctance avg mIOU: 0.775286
+2026-09-08 23:14:22,666 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:22,666 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:22,666 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:22,666 - Model - INFO - Epoch 69 (69/100):
+2026-09-08 23:14:22,666 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:25,041 - Model - INFO - Train accuracy is: 0.96834
+2026-09-08 23:14:25,684 - Model - INFO - eval mIoU of Skateboard     0.760714
+2026-09-08 23:14:25,685 - Model - INFO - Epoch 69 test Accuracy: 0.938384  Class avg mIOU: 0.760714   Inctance avg mIOU: 0.760714
+2026-09-08 23:14:25,685 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:25,685 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:25,685 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:25,685 - Model - INFO - Epoch 70 (70/100):
+2026-09-08 23:14:25,685 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:28,044 - Model - INFO - Train accuracy is: 0.96852
+2026-09-08 23:14:28,684 - Model - INFO - eval mIoU of Skateboard     0.761575
+2026-09-08 23:14:28,684 - Model - INFO - Epoch 70 test Accuracy: 0.934873  Class avg mIOU: 0.761575   Inctance avg mIOU: 0.761575
+2026-09-08 23:14:28,684 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:28,684 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:28,684 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:28,684 - Model - INFO - Epoch 71 (71/100):
+2026-09-08 23:14:28,684 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:31,044 - Model - INFO - Train accuracy is: 0.96808
+2026-09-08 23:14:31,687 - Model - INFO - eval mIoU of Skateboard     0.754168
+2026-09-08 23:14:31,688 - Model - INFO - Epoch 71 test Accuracy: 0.934431  Class avg mIOU: 0.754168   Inctance avg mIOU: 0.754168
+2026-09-08 23:14:31,688 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:31,688 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:31,688 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:31,688 - Model - INFO - Epoch 72 (72/100):
+2026-09-08 23:14:31,688 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:34,042 - Model - INFO - Train accuracy is: 0.96862
+2026-09-08 23:14:34,683 - Model - INFO - eval mIoU of Skateboard     0.767449
+2026-09-08 23:14:34,683 - Model - INFO - Epoch 72 test Accuracy: 0.943197  Class avg mIOU: 0.767449   Inctance avg mIOU: 0.767449
+2026-09-08 23:14:34,683 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:34,683 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:34,683 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:34,683 - Model - INFO - Epoch 73 (73/100):
+2026-09-08 23:14:34,683 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:37,045 - Model - INFO - Train accuracy is: 0.96843
+2026-09-08 23:14:37,687 - Model - INFO - eval mIoU of Skateboard     0.767726
+2026-09-08 23:14:37,687 - Model - INFO - Epoch 73 test Accuracy: 0.942918  Class avg mIOU: 0.767726   Inctance avg mIOU: 0.767726
+2026-09-08 23:14:37,688 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:37,688 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:37,688 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:37,688 - Model - INFO - Epoch 74 (74/100):
+2026-09-08 23:14:37,688 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:40,044 - Model - INFO - Train accuracy is: 0.96551
+2026-09-08 23:14:40,685 - Model - INFO - eval mIoU of Skateboard     0.761504
+2026-09-08 23:14:40,685 - Model - INFO - Epoch 74 test Accuracy: 0.940709  Class avg mIOU: 0.761504   Inctance avg mIOU: 0.761504
+2026-09-08 23:14:40,685 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:40,685 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:40,685 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:40,685 - Model - INFO - Epoch 75 (75/100):
+2026-09-08 23:14:40,685 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:43,042 - Model - INFO - Train accuracy is: 0.96823
+2026-09-08 23:14:43,685 - Model - INFO - eval mIoU of Skateboard     0.768846
+2026-09-08 23:14:43,685 - Model - INFO - Epoch 75 test Accuracy: 0.943731  Class avg mIOU: 0.768846   Inctance avg mIOU: 0.768846
+2026-09-08 23:14:43,685 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:43,685 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:43,685 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:43,685 - Model - INFO - Epoch 76 (76/100):
+2026-09-08 23:14:43,685 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:46,048 - Model - INFO - Train accuracy is: 0.96909
+2026-09-08 23:14:46,688 - Model - INFO - eval mIoU of Skateboard     0.768512
+2026-09-08 23:14:46,688 - Model - INFO - Epoch 76 test Accuracy: 0.942732  Class avg mIOU: 0.768512   Inctance avg mIOU: 0.768512
+2026-09-08 23:14:46,689 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:46,689 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:46,689 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:46,689 - Model - INFO - Epoch 77 (77/100):
+2026-09-08 23:14:46,689 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:49,049 - Model - INFO - Train accuracy is: 0.97004
+2026-09-08 23:14:49,693 - Model - INFO - eval mIoU of Skateboard     0.762412
+2026-09-08 23:14:49,693 - Model - INFO - Epoch 77 test Accuracy: 0.941011  Class avg mIOU: 0.762412   Inctance avg mIOU: 0.762412
+2026-09-08 23:14:49,693 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:49,693 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:49,693 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:49,693 - Model - INFO - Epoch 78 (78/100):
+2026-09-08 23:14:49,693 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:52,064 - Model - INFO - Train accuracy is: 0.96865
+2026-09-08 23:14:52,704 - Model - INFO - eval mIoU of Skateboard     0.757059
+2026-09-08 23:14:52,704 - Model - INFO - Epoch 78 test Accuracy: 0.937105  Class avg mIOU: 0.757059   Inctance avg mIOU: 0.757059
+2026-09-08 23:14:52,704 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:52,704 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:52,704 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:52,704 - Model - INFO - Epoch 79 (79/100):
+2026-09-08 23:14:52,704 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:55,079 - Model - INFO - Train accuracy is: 0.96824
+2026-09-08 23:14:55,724 - Model - INFO - eval mIoU of Skateboard     0.761978
+2026-09-08 23:14:55,724 - Model - INFO - Epoch 79 test Accuracy: 0.938314  Class avg mIOU: 0.761978   Inctance avg mIOU: 0.761978
+2026-09-08 23:14:55,724 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:55,724 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:55,724 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:55,724 - Model - INFO - Epoch 80 (80/100):
+2026-09-08 23:14:55,724 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:14:58,082 - Model - INFO - Train accuracy is: 0.97015
+2026-09-08 23:14:58,728 - Model - INFO - eval mIoU of Skateboard     0.759224
+2026-09-08 23:14:58,728 - Model - INFO - Epoch 80 test Accuracy: 0.938291  Class avg mIOU: 0.759224   Inctance avg mIOU: 0.759224
+2026-09-08 23:14:58,728 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:14:58,728 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:14:58,728 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:14:58,729 - Model - INFO - Epoch 81 (81/100):
+2026-09-08 23:14:58,729 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:01,088 - Model - INFO - Train accuracy is: 0.96978
+2026-09-08 23:15:01,730 - Model - INFO - eval mIoU of Skateboard     0.757949
+2026-09-08 23:15:01,730 - Model - INFO - Epoch 81 test Accuracy: 0.936384  Class avg mIOU: 0.757949   Inctance avg mIOU: 0.757949
+2026-09-08 23:15:01,730 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:01,730 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:01,730 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:01,730 - Model - INFO - Epoch 82 (82/100):
+2026-09-08 23:15:01,730 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:04,091 - Model - INFO - Train accuracy is: 0.96970
+2026-09-08 23:15:04,735 - Model - INFO - eval mIoU of Skateboard     0.762463
+2026-09-08 23:15:04,735 - Model - INFO - Epoch 82 test Accuracy: 0.939407  Class avg mIOU: 0.762463   Inctance avg mIOU: 0.762463
+2026-09-08 23:15:04,735 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:04,735 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:04,735 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:04,735 - Model - INFO - Epoch 83 (83/100):
+2026-09-08 23:15:04,735 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:07,092 - Model - INFO - Train accuracy is: 0.96831
+2026-09-08 23:15:07,738 - Model - INFO - eval mIoU of Skateboard     0.750934
+2026-09-08 23:15:07,738 - Model - INFO - Epoch 83 test Accuracy: 0.935500  Class avg mIOU: 0.750934   Inctance avg mIOU: 0.750934
+2026-09-08 23:15:07,738 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:07,738 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:07,738 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:07,738 - Model - INFO - Epoch 84 (84/100):
+2026-09-08 23:15:07,738 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:10,101 - Model - INFO - Train accuracy is: 0.96873
+2026-09-08 23:15:10,740 - Model - INFO - eval mIoU of Skateboard     0.752808
+2026-09-08 23:15:10,740 - Model - INFO - Epoch 84 test Accuracy: 0.936151  Class avg mIOU: 0.752808   Inctance avg mIOU: 0.752808
+2026-09-08 23:15:10,740 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:10,740 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:10,740 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:10,740 - Model - INFO - Epoch 85 (85/100):
+2026-09-08 23:15:10,740 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:13,096 - Model - INFO - Train accuracy is: 0.96887
+2026-09-08 23:15:13,737 - Model - INFO - eval mIoU of Skateboard     0.754935
+2026-09-08 23:15:13,737 - Model - INFO - Epoch 85 test Accuracy: 0.935198  Class avg mIOU: 0.754935   Inctance avg mIOU: 0.754935
+2026-09-08 23:15:13,737 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:13,737 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:13,737 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:13,737 - Model - INFO - Epoch 86 (86/100):
+2026-09-08 23:15:13,737 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:16,094 - Model - INFO - Train accuracy is: 0.97116
+2026-09-08 23:15:16,739 - Model - INFO - eval mIoU of Skateboard     0.755996
+2026-09-08 23:15:16,739 - Model - INFO - Epoch 86 test Accuracy: 0.933408  Class avg mIOU: 0.755996   Inctance avg mIOU: 0.755996
+2026-09-08 23:15:16,739 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:16,739 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:16,739 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:16,739 - Model - INFO - Epoch 87 (87/100):
+2026-09-08 23:15:16,739 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:19,097 - Model - INFO - Train accuracy is: 0.96883
+2026-09-08 23:15:19,736 - Model - INFO - eval mIoU of Skateboard     0.757164
+2026-09-08 23:15:19,736 - Model - INFO - Epoch 87 test Accuracy: 0.933733  Class avg mIOU: 0.757164   Inctance avg mIOU: 0.757164
+2026-09-08 23:15:19,736 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:19,736 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:19,736 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:19,736 - Model - INFO - Epoch 88 (88/100):
+2026-09-08 23:15:19,737 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:22,093 - Model - INFO - Train accuracy is: 0.97142
+2026-09-08 23:15:22,732 - Model - INFO - eval mIoU of Skateboard     0.762933
+2026-09-08 23:15:22,732 - Model - INFO - Epoch 88 test Accuracy: 0.939825  Class avg mIOU: 0.762933   Inctance avg mIOU: 0.762933
+2026-09-08 23:15:22,733 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:22,733 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:22,733 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:22,733 - Model - INFO - Epoch 89 (89/100):
+2026-09-08 23:15:22,733 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:25,093 - Model - INFO - Train accuracy is: 0.96845
+2026-09-08 23:15:25,737 - Model - INFO - eval mIoU of Skateboard     0.762672
+2026-09-08 23:15:25,737 - Model - INFO - Epoch 89 test Accuracy: 0.937012  Class avg mIOU: 0.762672   Inctance avg mIOU: 0.762672
+2026-09-08 23:15:25,737 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:25,737 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:25,737 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:25,737 - Model - INFO - Epoch 90 (90/100):
+2026-09-08 23:15:25,737 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:28,092 - Model - INFO - Train accuracy is: 0.97024
+2026-09-08 23:15:28,738 - Model - INFO - eval mIoU of Skateboard     0.756579
+2026-09-08 23:15:28,738 - Model - INFO - Epoch 90 test Accuracy: 0.937198  Class avg mIOU: 0.756579   Inctance avg mIOU: 0.756579
+2026-09-08 23:15:28,738 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:28,738 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:28,738 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:28,738 - Model - INFO - Epoch 91 (91/100):
+2026-09-08 23:15:28,738 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:31,093 - Model - INFO - Train accuracy is: 0.97075
+2026-09-08 23:15:31,736 - Model - INFO - eval mIoU of Skateboard     0.754141
+2026-09-08 23:15:31,736 - Model - INFO - Epoch 91 test Accuracy: 0.932733  Class avg mIOU: 0.754141   Inctance avg mIOU: 0.754141
+2026-09-08 23:15:31,737 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:31,737 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:31,737 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:31,737 - Model - INFO - Epoch 92 (92/100):
+2026-09-08 23:15:31,737 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:34,093 - Model - INFO - Train accuracy is: 0.96871
+2026-09-08 23:15:34,734 - Model - INFO - eval mIoU of Skateboard     0.762815
+2026-09-08 23:15:34,734 - Model - INFO - Epoch 92 test Accuracy: 0.938756  Class avg mIOU: 0.762815   Inctance avg mIOU: 0.762815
+2026-09-08 23:15:34,734 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:34,734 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:34,734 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:34,734 - Model - INFO - Epoch 93 (93/100):
+2026-09-08 23:15:34,734 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:37,090 - Model - INFO - Train accuracy is: 0.97019
+2026-09-08 23:15:37,735 - Model - INFO - eval mIoU of Skateboard     0.762224
+2026-09-08 23:15:37,736 - Model - INFO - Epoch 93 test Accuracy: 0.938151  Class avg mIOU: 0.762224   Inctance avg mIOU: 0.762224
+2026-09-08 23:15:37,736 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:37,736 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:37,736 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:37,736 - Model - INFO - Epoch 94 (94/100):
+2026-09-08 23:15:37,736 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:40,088 - Model - INFO - Train accuracy is: 0.96940
+2026-09-08 23:15:40,731 - Model - INFO - eval mIoU of Skateboard     0.759804
+2026-09-08 23:15:40,731 - Model - INFO - Epoch 94 test Accuracy: 0.937384  Class avg mIOU: 0.759804   Inctance avg mIOU: 0.759804
+2026-09-08 23:15:40,731 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:40,731 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:40,731 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:40,731 - Model - INFO - Epoch 95 (95/100):
+2026-09-08 23:15:40,731 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:43,110 - Model - INFO - Train accuracy is: 0.96974
+2026-09-08 23:15:43,753 - Model - INFO - eval mIoU of Skateboard     0.765613
+2026-09-08 23:15:43,753 - Model - INFO - Epoch 95 test Accuracy: 0.943057  Class avg mIOU: 0.765613   Inctance avg mIOU: 0.765613
+2026-09-08 23:15:43,753 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:43,753 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:43,753 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:43,753 - Model - INFO - Epoch 96 (96/100):
+2026-09-08 23:15:43,753 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:46,124 - Model - INFO - Train accuracy is: 0.96804
+2026-09-08 23:15:46,767 - Model - INFO - eval mIoU of Skateboard     0.758093
+2026-09-08 23:15:46,767 - Model - INFO - Epoch 96 test Accuracy: 0.939779  Class avg mIOU: 0.758093   Inctance avg mIOU: 0.758093
+2026-09-08 23:15:46,767 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:46,767 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:46,767 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:46,767 - Model - INFO - Epoch 97 (97/100):
+2026-09-08 23:15:46,767 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:49,123 - Model - INFO - Train accuracy is: 0.96983
+2026-09-08 23:15:49,765 - Model - INFO - eval mIoU of Skateboard     0.770973
+2026-09-08 23:15:49,766 - Model - INFO - Epoch 97 test Accuracy: 0.942174  Class avg mIOU: 0.770973   Inctance avg mIOU: 0.770973
+2026-09-08 23:15:49,766 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:49,766 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:49,766 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:49,766 - Model - INFO - Epoch 98 (98/100):
+2026-09-08 23:15:49,766 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:52,127 - Model - INFO - Train accuracy is: 0.97032
+2026-09-08 23:15:52,770 - Model - INFO - eval mIoU of Skateboard     0.766722
+2026-09-08 23:15:52,770 - Model - INFO - Epoch 98 test Accuracy: 0.939337  Class avg mIOU: 0.766722   Inctance avg mIOU: 0.766722
+2026-09-08 23:15:52,770 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:52,770 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:52,770 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:52,770 - Model - INFO - Epoch 99 (99/100):
+2026-09-08 23:15:52,770 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:55,125 - Model - INFO - Train accuracy is: 0.96765
+2026-09-08 23:15:55,768 - Model - INFO - eval mIoU of Skateboard     0.765585
+2026-09-08 23:15:55,768 - Model - INFO - Epoch 99 test Accuracy: 0.940104  Class avg mIOU: 0.765585   Inctance avg mIOU: 0.765585
+2026-09-08 23:15:55,768 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:55,768 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:55,768 - Model - INFO - Best inctance avg mIOU is: 0.77732
+2026-09-08 23:15:55,768 - Model - INFO - Epoch 100 (100/100):
+2026-09-08 23:15:55,768 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:15:58,126 - Model - INFO - Train accuracy is: 0.96793
+2026-09-08 23:15:58,769 - Model - INFO - eval mIoU of Skateboard     0.759918
+2026-09-08 23:15:58,769 - Model - INFO - Epoch 100 test Accuracy: 0.938802  Class avg mIOU: 0.759918   Inctance avg mIOU: 0.759918
+2026-09-08 23:15:58,770 - Model - INFO - Best accuracy is: 0.94973
+2026-09-08 23:15:58,770 - Model - INFO - Best class avg mIOU is: 0.77732
+2026-09-08 23:15:58,770 - Model - INFO - Best inctance avg mIOU is: 0.77732

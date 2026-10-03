@@ -1,0 +1,850 @@
+2026-09-08 21:36:58,593 - Model - INFO - PARAMETER ...
+2026-09-08 21:36:58,593 - Model - INFO - Namespace(model='pointnet2_part_seg_msg', batch_size=16, epoch=100, learning_rate=0.001, gpu='1', optimizer='Adam', log_dir='full_parts_per_category/Earphone/seed_42', decay_rate=0.0001, npoint=2048, step_size=20, lr_decay=0.5, seed=42, categories=['Earphone'], samples_per_category=None, subset_seed=0, test_samples_per_category=None, test_subset_seed=0, full_parts_only=True, num_parts=None)
+2026-09-08 21:36:58,645 - Model - INFO - The number of training data is: 25
+2026-09-08 21:36:58,645 - Model - INFO - The number of test data is: 9
+2026-09-08 21:36:58,781 - Model - INFO - No existing model, starting training from scratch...
+2026-09-08 21:36:59,366 - Model - INFO - Epoch 1 (1/100):
+2026-09-08 21:36:59,366 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:01,716 - Model - INFO - Train accuracy is: 0.01099
+2026-09-08 21:37:01,978 - Model - INFO - eval mIoU of Earphone       0.094582
+2026-09-08 21:37:01,978 - Model - INFO - Epoch 1 test Accuracy: 0.283746  Class avg mIOU: 0.094582   Inctance avg mIOU: 0.094582
+2026-09-08 21:37:01,978 - Model - INFO - Save model...
+2026-09-08 21:37:01,978 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:02,010 - Model - INFO - Saving model....
+2026-09-08 21:37:02,010 - Model - INFO - Best accuracy is: 0.28375
+2026-09-08 21:37:02,010 - Model - INFO - Best class avg mIOU is: 0.09458
+2026-09-08 21:37:02,010 - Model - INFO - Best inctance avg mIOU is: 0.09458
+2026-09-08 21:37:02,010 - Model - INFO - Epoch 2 (2/100):
+2026-09-08 21:37:02,010 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:02,404 - Model - INFO - Train accuracy is: 0.06900
+2026-09-08 21:37:02,812 - Model - INFO - eval mIoU of Earphone       0.108551
+2026-09-08 21:37:02,812 - Model - INFO - Epoch 2 test Accuracy: 0.279080  Class avg mIOU: 0.108551   Inctance avg mIOU: 0.108551
+2026-09-08 21:37:02,812 - Model - INFO - Save model...
+2026-09-08 21:37:02,812 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:02,846 - Model - INFO - Saving model....
+2026-09-08 21:37:02,847 - Model - INFO - Best accuracy is: 0.28375
+2026-09-08 21:37:02,847 - Model - INFO - Best class avg mIOU is: 0.10855
+2026-09-08 21:37:02,847 - Model - INFO - Best inctance avg mIOU is: 0.10855
+2026-09-08 21:37:02,847 - Model - INFO - Epoch 3 (3/100):
+2026-09-08 21:37:02,847 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:03,200 - Model - INFO - Train accuracy is: 0.16455
+2026-09-08 21:37:03,615 - Model - INFO - eval mIoU of Earphone       0.093424
+2026-09-08 21:37:03,615 - Model - INFO - Epoch 3 test Accuracy: 0.280273  Class avg mIOU: 0.093424   Inctance avg mIOU: 0.093424
+2026-09-08 21:37:03,615 - Model - INFO - Best accuracy is: 0.28375
+2026-09-08 21:37:03,615 - Model - INFO - Best class avg mIOU is: 0.10855
+2026-09-08 21:37:03,615 - Model - INFO - Best inctance avg mIOU is: 0.10855
+2026-09-08 21:37:03,615 - Model - INFO - Epoch 4 (4/100):
+2026-09-08 21:37:03,615 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:03,962 - Model - INFO - Train accuracy is: 0.22574
+2026-09-08 21:37:04,380 - Model - INFO - eval mIoU of Earphone       0.093786
+2026-09-08 21:37:04,380 - Model - INFO - Epoch 4 test Accuracy: 0.281359  Class avg mIOU: 0.093786   Inctance avg mIOU: 0.093786
+2026-09-08 21:37:04,380 - Model - INFO - Best accuracy is: 0.28375
+2026-09-08 21:37:04,380 - Model - INFO - Best class avg mIOU is: 0.10855
+2026-09-08 21:37:04,380 - Model - INFO - Best inctance avg mIOU is: 0.10855
+2026-09-08 21:37:04,380 - Model - INFO - Epoch 5 (5/100):
+2026-09-08 21:37:04,380 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:04,726 - Model - INFO - Train accuracy is: 0.31613
+2026-09-08 21:37:05,139 - Model - INFO - eval mIoU of Earphone       0.095088
+2026-09-08 21:37:05,139 - Model - INFO - Epoch 5 test Accuracy: 0.285265  Class avg mIOU: 0.095088   Inctance avg mIOU: 0.095088
+2026-09-08 21:37:05,139 - Model - INFO - Best accuracy is: 0.28526
+2026-09-08 21:37:05,139 - Model - INFO - Best class avg mIOU is: 0.10855
+2026-09-08 21:37:05,139 - Model - INFO - Best inctance avg mIOU is: 0.10855
+2026-09-08 21:37:05,139 - Model - INFO - Epoch 6 (6/100):
+2026-09-08 21:37:05,139 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:05,484 - Model - INFO - Train accuracy is: 0.46100
+2026-09-08 21:37:05,896 - Model - INFO - eval mIoU of Earphone       0.133851
+2026-09-08 21:37:05,896 - Model - INFO - Epoch 6 test Accuracy: 0.281196  Class avg mIOU: 0.133851   Inctance avg mIOU: 0.133851
+2026-09-08 21:37:05,896 - Model - INFO - Save model...
+2026-09-08 21:37:05,896 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:05,940 - Model - INFO - Saving model....
+2026-09-08 21:37:05,941 - Model - INFO - Best accuracy is: 0.28526
+2026-09-08 21:37:05,941 - Model - INFO - Best class avg mIOU is: 0.13385
+2026-09-08 21:37:05,941 - Model - INFO - Best inctance avg mIOU is: 0.13385
+2026-09-08 21:37:05,941 - Model - INFO - Epoch 7 (7/100):
+2026-09-08 21:37:05,941 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:06,289 - Model - INFO - Train accuracy is: 0.57959
+2026-09-08 21:37:06,702 - Model - INFO - eval mIoU of Earphone       0.175469
+2026-09-08 21:37:06,702 - Model - INFO - Epoch 7 test Accuracy: 0.292101  Class avg mIOU: 0.175469   Inctance avg mIOU: 0.175469
+2026-09-08 21:37:06,702 - Model - INFO - Save model...
+2026-09-08 21:37:06,702 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:06,747 - Model - INFO - Saving model....
+2026-09-08 21:37:06,747 - Model - INFO - Best accuracy is: 0.29210
+2026-09-08 21:37:06,747 - Model - INFO - Best class avg mIOU is: 0.17547
+2026-09-08 21:37:06,747 - Model - INFO - Best inctance avg mIOU is: 0.17547
+2026-09-08 21:37:06,747 - Model - INFO - Epoch 8 (8/100):
+2026-09-08 21:37:06,747 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:07,099 - Model - INFO - Train accuracy is: 0.63254
+2026-09-08 21:37:07,514 - Model - INFO - eval mIoU of Earphone       0.170911
+2026-09-08 21:37:07,514 - Model - INFO - Epoch 8 test Accuracy: 0.294325  Class avg mIOU: 0.170911   Inctance avg mIOU: 0.170911
+2026-09-08 21:37:07,514 - Model - INFO - Best accuracy is: 0.29433
+2026-09-08 21:37:07,514 - Model - INFO - Best class avg mIOU is: 0.17547
+2026-09-08 21:37:07,514 - Model - INFO - Best inctance avg mIOU is: 0.17547
+2026-09-08 21:37:07,514 - Model - INFO - Epoch 9 (9/100):
+2026-09-08 21:37:07,514 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:07,864 - Model - INFO - Train accuracy is: 0.70050
+2026-09-08 21:37:08,280 - Model - INFO - eval mIoU of Earphone       0.196817
+2026-09-08 21:37:08,281 - Model - INFO - Epoch 9 test Accuracy: 0.297472  Class avg mIOU: 0.196817   Inctance avg mIOU: 0.196817
+2026-09-08 21:37:08,281 - Model - INFO - Save model...
+2026-09-08 21:37:08,281 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:08,325 - Model - INFO - Saving model....
+2026-09-08 21:37:08,325 - Model - INFO - Best accuracy is: 0.29747
+2026-09-08 21:37:08,325 - Model - INFO - Best class avg mIOU is: 0.19682
+2026-09-08 21:37:08,325 - Model - INFO - Best inctance avg mIOU is: 0.19682
+2026-09-08 21:37:08,325 - Model - INFO - Epoch 10 (10/100):
+2026-09-08 21:37:08,325 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:08,675 - Model - INFO - Train accuracy is: 0.74417
+2026-09-08 21:37:09,091 - Model - INFO - eval mIoU of Earphone       0.209153
+2026-09-08 21:37:09,091 - Model - INFO - Epoch 10 test Accuracy: 0.318902  Class avg mIOU: 0.209153   Inctance avg mIOU: 0.209153
+2026-09-08 21:37:09,091 - Model - INFO - Save model...
+2026-09-08 21:37:09,091 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:09,136 - Model - INFO - Saving model....
+2026-09-08 21:37:09,136 - Model - INFO - Best accuracy is: 0.31890
+2026-09-08 21:37:09,136 - Model - INFO - Best class avg mIOU is: 0.20915
+2026-09-08 21:37:09,136 - Model - INFO - Best inctance avg mIOU is: 0.20915
+2026-09-08 21:37:09,136 - Model - INFO - Epoch 11 (11/100):
+2026-09-08 21:37:09,136 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:09,485 - Model - INFO - Train accuracy is: 0.75677
+2026-09-08 21:37:09,895 - Model - INFO - eval mIoU of Earphone       0.241794
+2026-09-08 21:37:09,895 - Model - INFO - Epoch 11 test Accuracy: 0.317220  Class avg mIOU: 0.241794   Inctance avg mIOU: 0.241794
+2026-09-08 21:37:09,895 - Model - INFO - Save model...
+2026-09-08 21:37:09,895 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:09,939 - Model - INFO - Saving model....
+2026-09-08 21:37:09,940 - Model - INFO - Best accuracy is: 0.31890
+2026-09-08 21:37:09,940 - Model - INFO - Best class avg mIOU is: 0.24179
+2026-09-08 21:37:09,940 - Model - INFO - Best inctance avg mIOU is: 0.24179
+2026-09-08 21:37:09,940 - Model - INFO - Epoch 12 (12/100):
+2026-09-08 21:37:09,940 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:10,288 - Model - INFO - Train accuracy is: 0.76236
+2026-09-08 21:37:10,698 - Model - INFO - eval mIoU of Earphone       0.243125
+2026-09-08 21:37:10,698 - Model - INFO - Epoch 12 test Accuracy: 0.322591  Class avg mIOU: 0.243125   Inctance avg mIOU: 0.243125
+2026-09-08 21:37:10,698 - Model - INFO - Save model...
+2026-09-08 21:37:10,698 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:10,742 - Model - INFO - Saving model....
+2026-09-08 21:37:10,742 - Model - INFO - Best accuracy is: 0.32259
+2026-09-08 21:37:10,742 - Model - INFO - Best class avg mIOU is: 0.24313
+2026-09-08 21:37:10,742 - Model - INFO - Best inctance avg mIOU is: 0.24313
+2026-09-08 21:37:10,742 - Model - INFO - Epoch 13 (13/100):
+2026-09-08 21:37:10,742 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:11,092 - Model - INFO - Train accuracy is: 0.79395
+2026-09-08 21:37:11,501 - Model - INFO - eval mIoU of Earphone       0.218257
+2026-09-08 21:37:11,501 - Model - INFO - Epoch 13 test Accuracy: 0.326660  Class avg mIOU: 0.218257   Inctance avg mIOU: 0.218257
+2026-09-08 21:37:11,502 - Model - INFO - Best accuracy is: 0.32666
+2026-09-08 21:37:11,502 - Model - INFO - Best class avg mIOU is: 0.24313
+2026-09-08 21:37:11,502 - Model - INFO - Best inctance avg mIOU is: 0.24313
+2026-09-08 21:37:11,502 - Model - INFO - Epoch 14 (14/100):
+2026-09-08 21:37:11,502 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:11,847 - Model - INFO - Train accuracy is: 0.78979
+2026-09-08 21:37:12,261 - Model - INFO - eval mIoU of Earphone       0.224675
+2026-09-08 21:37:12,262 - Model - INFO - Epoch 14 test Accuracy: 0.316623  Class avg mIOU: 0.224675   Inctance avg mIOU: 0.224675
+2026-09-08 21:37:12,262 - Model - INFO - Best accuracy is: 0.32666
+2026-09-08 21:37:12,262 - Model - INFO - Best class avg mIOU is: 0.24313
+2026-09-08 21:37:12,262 - Model - INFO - Best inctance avg mIOU is: 0.24313
+2026-09-08 21:37:12,262 - Model - INFO - Epoch 15 (15/100):
+2026-09-08 21:37:12,262 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:12,609 - Model - INFO - Train accuracy is: 0.77417
+2026-09-08 21:37:13,021 - Model - INFO - eval mIoU of Earphone       0.275272
+2026-09-08 21:37:13,021 - Model - INFO - Epoch 15 test Accuracy: 0.289714  Class avg mIOU: 0.275272   Inctance avg mIOU: 0.275272
+2026-09-08 21:37:13,021 - Model - INFO - Save model...
+2026-09-08 21:37:13,021 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:13,066 - Model - INFO - Saving model....
+2026-09-08 21:37:13,066 - Model - INFO - Best accuracy is: 0.32666
+2026-09-08 21:37:13,067 - Model - INFO - Best class avg mIOU is: 0.27527
+2026-09-08 21:37:13,067 - Model - INFO - Best inctance avg mIOU is: 0.27527
+2026-09-08 21:37:13,067 - Model - INFO - Epoch 16 (16/100):
+2026-09-08 21:37:13,067 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:13,415 - Model - INFO - Train accuracy is: 0.83109
+2026-09-08 21:37:13,831 - Model - INFO - eval mIoU of Earphone       0.238563
+2026-09-08 21:37:13,831 - Model - INFO - Epoch 16 test Accuracy: 0.253364  Class avg mIOU: 0.238563   Inctance avg mIOU: 0.238563
+2026-09-08 21:37:13,831 - Model - INFO - Best accuracy is: 0.32666
+2026-09-08 21:37:13,831 - Model - INFO - Best class avg mIOU is: 0.27527
+2026-09-08 21:37:13,831 - Model - INFO - Best inctance avg mIOU is: 0.27527
+2026-09-08 21:37:13,831 - Model - INFO - Epoch 17 (17/100):
+2026-09-08 21:37:13,831 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:14,180 - Model - INFO - Train accuracy is: 0.83316
+2026-09-08 21:37:14,592 - Model - INFO - eval mIoU of Earphone       0.216750
+2026-09-08 21:37:14,592 - Model - INFO - Epoch 17 test Accuracy: 0.242513  Class avg mIOU: 0.216750   Inctance avg mIOU: 0.216750
+2026-09-08 21:37:14,592 - Model - INFO - Best accuracy is: 0.32666
+2026-09-08 21:37:14,592 - Model - INFO - Best class avg mIOU is: 0.27527
+2026-09-08 21:37:14,592 - Model - INFO - Best inctance avg mIOU is: 0.27527
+2026-09-08 21:37:14,592 - Model - INFO - Epoch 18 (18/100):
+2026-09-08 21:37:14,592 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:14,938 - Model - INFO - Train accuracy is: 0.85132
+2026-09-08 21:37:15,349 - Model - INFO - eval mIoU of Earphone       0.213640
+2026-09-08 21:37:15,349 - Model - INFO - Epoch 18 test Accuracy: 0.237250  Class avg mIOU: 0.213640   Inctance avg mIOU: 0.213640
+2026-09-08 21:37:15,349 - Model - INFO - Best accuracy is: 0.32666
+2026-09-08 21:37:15,349 - Model - INFO - Best class avg mIOU is: 0.27527
+2026-09-08 21:37:15,349 - Model - INFO - Best inctance avg mIOU is: 0.27527
+2026-09-08 21:37:15,349 - Model - INFO - Epoch 19 (19/100):
+2026-09-08 21:37:15,349 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:15,705 - Model - INFO - Train accuracy is: 0.85727
+2026-09-08 21:37:16,119 - Model - INFO - eval mIoU of Earphone       0.269623
+2026-09-08 21:37:16,120 - Model - INFO - Epoch 19 test Accuracy: 0.293132  Class avg mIOU: 0.269623   Inctance avg mIOU: 0.269623
+2026-09-08 21:37:16,120 - Model - INFO - Best accuracy is: 0.32666
+2026-09-08 21:37:16,120 - Model - INFO - Best class avg mIOU is: 0.27527
+2026-09-08 21:37:16,120 - Model - INFO - Best inctance avg mIOU is: 0.27527
+2026-09-08 21:37:16,120 - Model - INFO - Epoch 20 (20/100):
+2026-09-08 21:37:16,120 - Model - INFO - Learning rate:0.001000
+2026-09-08 21:37:16,471 - Model - INFO - Train accuracy is: 0.85492
+2026-09-08 21:37:16,886 - Model - INFO - eval mIoU of Earphone       0.271223
+2026-09-08 21:37:16,886 - Model - INFO - Epoch 20 test Accuracy: 0.369141  Class avg mIOU: 0.271223   Inctance avg mIOU: 0.271223
+2026-09-08 21:37:16,886 - Model - INFO - Best accuracy is: 0.36914
+2026-09-08 21:37:16,886 - Model - INFO - Best class avg mIOU is: 0.27527
+2026-09-08 21:37:16,886 - Model - INFO - Best inctance avg mIOU is: 0.27527
+2026-09-08 21:37:16,886 - Model - INFO - Epoch 21 (21/100):
+2026-09-08 21:37:16,886 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:17,237 - Model - INFO - Train accuracy is: 0.85086
+2026-09-08 21:37:17,648 - Model - INFO - eval mIoU of Earphone       0.411495
+2026-09-08 21:37:17,649 - Model - INFO - Epoch 21 test Accuracy: 0.586860  Class avg mIOU: 0.411495   Inctance avg mIOU: 0.411495
+2026-09-08 21:37:17,649 - Model - INFO - Save model...
+2026-09-08 21:37:17,649 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:17,694 - Model - INFO - Saving model....
+2026-09-08 21:37:17,694 - Model - INFO - Best accuracy is: 0.58686
+2026-09-08 21:37:17,694 - Model - INFO - Best class avg mIOU is: 0.41149
+2026-09-08 21:37:17,694 - Model - INFO - Best inctance avg mIOU is: 0.41149
+2026-09-08 21:37:17,694 - Model - INFO - Epoch 22 (22/100):
+2026-09-08 21:37:17,694 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:18,045 - Model - INFO - Train accuracy is: 0.85089
+2026-09-08 21:37:18,458 - Model - INFO - eval mIoU of Earphone       0.520669
+2026-09-08 21:37:18,458 - Model - INFO - Epoch 22 test Accuracy: 0.766005  Class avg mIOU: 0.520669   Inctance avg mIOU: 0.520669
+2026-09-08 21:37:18,458 - Model - INFO - Save model...
+2026-09-08 21:37:18,458 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:18,503 - Model - INFO - Saving model....
+2026-09-08 21:37:18,503 - Model - INFO - Best accuracy is: 0.76600
+2026-09-08 21:37:18,503 - Model - INFO - Best class avg mIOU is: 0.52067
+2026-09-08 21:37:18,503 - Model - INFO - Best inctance avg mIOU is: 0.52067
+2026-09-08 21:37:18,503 - Model - INFO - Epoch 23 (23/100):
+2026-09-08 21:37:18,503 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:18,854 - Model - INFO - Train accuracy is: 0.85733
+2026-09-08 21:37:19,269 - Model - INFO - eval mIoU of Earphone       0.576389
+2026-09-08 21:37:19,269 - Model - INFO - Epoch 23 test Accuracy: 0.836643  Class avg mIOU: 0.576389   Inctance avg mIOU: 0.576389
+2026-09-08 21:37:19,269 - Model - INFO - Save model...
+2026-09-08 21:37:19,269 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:19,314 - Model - INFO - Saving model....
+2026-09-08 21:37:19,314 - Model - INFO - Best accuracy is: 0.83664
+2026-09-08 21:37:19,314 - Model - INFO - Best class avg mIOU is: 0.57639
+2026-09-08 21:37:19,314 - Model - INFO - Best inctance avg mIOU is: 0.57639
+2026-09-08 21:37:19,314 - Model - INFO - Epoch 24 (24/100):
+2026-09-08 21:37:19,314 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:19,664 - Model - INFO - Train accuracy is: 0.84680
+2026-09-08 21:37:20,075 - Model - INFO - eval mIoU of Earphone       0.606692
+2026-09-08 21:37:20,075 - Model - INFO - Epoch 24 test Accuracy: 0.876790  Class avg mIOU: 0.606692   Inctance avg mIOU: 0.606692
+2026-09-08 21:37:20,075 - Model - INFO - Save model...
+2026-09-08 21:37:20,075 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:20,120 - Model - INFO - Saving model....
+2026-09-08 21:37:20,121 - Model - INFO - Best accuracy is: 0.87679
+2026-09-08 21:37:20,121 - Model - INFO - Best class avg mIOU is: 0.60669
+2026-09-08 21:37:20,121 - Model - INFO - Best inctance avg mIOU is: 0.60669
+2026-09-08 21:37:20,121 - Model - INFO - Epoch 25 (25/100):
+2026-09-08 21:37:20,121 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:20,470 - Model - INFO - Train accuracy is: 0.86334
+2026-09-08 21:37:20,883 - Model - INFO - eval mIoU of Earphone       0.608650
+2026-09-08 21:37:20,883 - Model - INFO - Epoch 25 test Accuracy: 0.884657  Class avg mIOU: 0.608650   Inctance avg mIOU: 0.608650
+2026-09-08 21:37:20,883 - Model - INFO - Save model...
+2026-09-08 21:37:20,883 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:20,928 - Model - INFO - Saving model....
+2026-09-08 21:37:20,928 - Model - INFO - Best accuracy is: 0.88466
+2026-09-08 21:37:20,929 - Model - INFO - Best class avg mIOU is: 0.60865
+2026-09-08 21:37:20,929 - Model - INFO - Best inctance avg mIOU is: 0.60865
+2026-09-08 21:37:20,929 - Model - INFO - Epoch 26 (26/100):
+2026-09-08 21:37:20,929 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:21,278 - Model - INFO - Train accuracy is: 0.86533
+2026-09-08 21:37:21,693 - Model - INFO - eval mIoU of Earphone       0.586499
+2026-09-08 21:37:21,693 - Model - INFO - Epoch 26 test Accuracy: 0.879178  Class avg mIOU: 0.586499   Inctance avg mIOU: 0.586499
+2026-09-08 21:37:21,693 - Model - INFO - Best accuracy is: 0.88466
+2026-09-08 21:37:21,693 - Model - INFO - Best class avg mIOU is: 0.60865
+2026-09-08 21:37:21,693 - Model - INFO - Best inctance avg mIOU is: 0.60865
+2026-09-08 21:37:21,693 - Model - INFO - Epoch 27 (27/100):
+2026-09-08 21:37:21,693 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:22,039 - Model - INFO - Train accuracy is: 0.86359
+2026-09-08 21:37:22,453 - Model - INFO - eval mIoU of Earphone       0.632986
+2026-09-08 21:37:22,453 - Model - INFO - Epoch 27 test Accuracy: 0.882975  Class avg mIOU: 0.632986   Inctance avg mIOU: 0.632986
+2026-09-08 21:37:22,453 - Model - INFO - Save model...
+2026-09-08 21:37:22,453 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Earphone/seed_42/checkpoints/best_model.pth
+2026-09-08 21:37:22,500 - Model - INFO - Saving model....
+2026-09-08 21:37:22,500 - Model - INFO - Best accuracy is: 0.88466
+2026-09-08 21:37:22,500 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:22,500 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:22,500 - Model - INFO - Epoch 28 (28/100):
+2026-09-08 21:37:22,500 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:22,849 - Model - INFO - Train accuracy is: 0.86978
+2026-09-08 21:37:23,263 - Model - INFO - eval mIoU of Earphone       0.596943
+2026-09-08 21:37:23,263 - Model - INFO - Epoch 28 test Accuracy: 0.886230  Class avg mIOU: 0.596943   Inctance avg mIOU: 0.596943
+2026-09-08 21:37:23,263 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:23,263 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:23,263 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:23,263 - Model - INFO - Epoch 29 (29/100):
+2026-09-08 21:37:23,263 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:23,612 - Model - INFO - Train accuracy is: 0.87436
+2026-09-08 21:37:24,024 - Model - INFO - eval mIoU of Earphone       0.617796
+2026-09-08 21:37:24,024 - Model - INFO - Epoch 29 test Accuracy: 0.885308  Class avg mIOU: 0.617796   Inctance avg mIOU: 0.617796
+2026-09-08 21:37:24,024 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:24,024 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:24,024 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:24,024 - Model - INFO - Epoch 30 (30/100):
+2026-09-08 21:37:24,024 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:24,382 - Model - INFO - Train accuracy is: 0.87665
+2026-09-08 21:37:24,795 - Model - INFO - eval mIoU of Earphone       0.590754
+2026-09-08 21:37:24,795 - Model - INFO - Epoch 30 test Accuracy: 0.839572  Class avg mIOU: 0.590754   Inctance avg mIOU: 0.590754
+2026-09-08 21:37:24,795 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:24,795 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:24,795 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:24,795 - Model - INFO - Epoch 31 (31/100):
+2026-09-08 21:37:24,795 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:25,141 - Model - INFO - Train accuracy is: 0.88855
+2026-09-08 21:37:25,553 - Model - INFO - eval mIoU of Earphone       0.554351
+2026-09-08 21:37:25,553 - Model - INFO - Epoch 31 test Accuracy: 0.801324  Class avg mIOU: 0.554351   Inctance avg mIOU: 0.554351
+2026-09-08 21:37:25,553 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:25,553 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:25,553 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:25,553 - Model - INFO - Epoch 32 (32/100):
+2026-09-08 21:37:25,553 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:25,912 - Model - INFO - Train accuracy is: 0.87842
+2026-09-08 21:37:26,327 - Model - INFO - eval mIoU of Earphone       0.535277
+2026-09-08 21:37:26,327 - Model - INFO - Epoch 32 test Accuracy: 0.746908  Class avg mIOU: 0.535277   Inctance avg mIOU: 0.535277
+2026-09-08 21:37:26,327 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:26,327 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:26,327 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:26,327 - Model - INFO - Epoch 33 (33/100):
+2026-09-08 21:37:26,327 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:26,676 - Model - INFO - Train accuracy is: 0.88858
+2026-09-08 21:37:27,088 - Model - INFO - eval mIoU of Earphone       0.540546
+2026-09-08 21:37:27,088 - Model - INFO - Epoch 33 test Accuracy: 0.724826  Class avg mIOU: 0.540546   Inctance avg mIOU: 0.540546
+2026-09-08 21:37:27,088 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:27,088 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:27,088 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:27,088 - Model - INFO - Epoch 34 (34/100):
+2026-09-08 21:37:27,088 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:27,438 - Model - INFO - Train accuracy is: 0.89362
+2026-09-08 21:37:27,851 - Model - INFO - eval mIoU of Earphone       0.555036
+2026-09-08 21:37:27,851 - Model - INFO - Epoch 34 test Accuracy: 0.718804  Class avg mIOU: 0.555036   Inctance avg mIOU: 0.555036
+2026-09-08 21:37:27,851 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:27,851 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:27,851 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:27,851 - Model - INFO - Epoch 35 (35/100):
+2026-09-08 21:37:27,851 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:28,210 - Model - INFO - Train accuracy is: 0.88617
+2026-09-08 21:37:28,623 - Model - INFO - eval mIoU of Earphone       0.550979
+2026-09-08 21:37:28,623 - Model - INFO - Epoch 35 test Accuracy: 0.724881  Class avg mIOU: 0.550979   Inctance avg mIOU: 0.550979
+2026-09-08 21:37:28,623 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:28,623 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:28,623 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:28,623 - Model - INFO - Epoch 36 (36/100):
+2026-09-08 21:37:28,623 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:28,973 - Model - INFO - Train accuracy is: 0.88120
+2026-09-08 21:37:29,388 - Model - INFO - eval mIoU of Earphone       0.551386
+2026-09-08 21:37:29,388 - Model - INFO - Epoch 36 test Accuracy: 0.744954  Class avg mIOU: 0.551386   Inctance avg mIOU: 0.551386
+2026-09-08 21:37:29,388 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:29,388 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:29,388 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:29,388 - Model - INFO - Epoch 37 (37/100):
+2026-09-08 21:37:29,388 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:29,748 - Model - INFO - Train accuracy is: 0.89337
+2026-09-08 21:37:30,159 - Model - INFO - eval mIoU of Earphone       0.553881
+2026-09-08 21:37:30,159 - Model - INFO - Epoch 37 test Accuracy: 0.769477  Class avg mIOU: 0.553881   Inctance avg mIOU: 0.553881
+2026-09-08 21:37:30,159 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:30,159 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:30,159 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:30,159 - Model - INFO - Epoch 38 (38/100):
+2026-09-08 21:37:30,159 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:30,507 - Model - INFO - Train accuracy is: 0.89304
+2026-09-08 21:37:30,920 - Model - INFO - eval mIoU of Earphone       0.554714
+2026-09-08 21:37:30,920 - Model - INFO - Epoch 38 test Accuracy: 0.781304  Class avg mIOU: 0.554714   Inctance avg mIOU: 0.554714
+2026-09-08 21:37:30,920 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:30,920 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:30,920 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:30,920 - Model - INFO - Epoch 39 (39/100):
+2026-09-08 21:37:30,920 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:31,278 - Model - INFO - Train accuracy is: 0.89651
+2026-09-08 21:37:31,689 - Model - INFO - eval mIoU of Earphone       0.558651
+2026-09-08 21:37:31,689 - Model - INFO - Epoch 39 test Accuracy: 0.780490  Class avg mIOU: 0.558651   Inctance avg mIOU: 0.558651
+2026-09-08 21:37:31,689 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:31,689 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:31,689 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:31,689 - Model - INFO - Epoch 40 (40/100):
+2026-09-08 21:37:31,689 - Model - INFO - Learning rate:0.000500
+2026-09-08 21:37:32,040 - Model - INFO - Train accuracy is: 0.88907
+2026-09-08 21:37:32,456 - Model - INFO - eval mIoU of Earphone       0.571819
+2026-09-08 21:37:32,456 - Model - INFO - Epoch 40 test Accuracy: 0.781901  Class avg mIOU: 0.571819   Inctance avg mIOU: 0.571819
+2026-09-08 21:37:32,456 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:32,456 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:32,456 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:32,456 - Model - INFO - Epoch 41 (41/100):
+2026-09-08 21:37:32,456 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:32,810 - Model - INFO - Train accuracy is: 0.89127
+2026-09-08 21:37:33,222 - Model - INFO - eval mIoU of Earphone       0.571327
+2026-09-08 21:37:33,222 - Model - INFO - Epoch 41 test Accuracy: 0.781576  Class avg mIOU: 0.571327   Inctance avg mIOU: 0.571327
+2026-09-08 21:37:33,222 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:33,223 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:33,223 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:33,223 - Model - INFO - Epoch 42 (42/100):
+2026-09-08 21:37:33,223 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:33,571 - Model - INFO - Train accuracy is: 0.90152
+2026-09-08 21:37:33,984 - Model - INFO - eval mIoU of Earphone       0.577273
+2026-09-08 21:37:33,984 - Model - INFO - Epoch 42 test Accuracy: 0.782932  Class avg mIOU: 0.577273   Inctance avg mIOU: 0.577273
+2026-09-08 21:37:33,985 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:33,985 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:33,985 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:33,985 - Model - INFO - Epoch 43 (43/100):
+2026-09-08 21:37:33,985 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:34,344 - Model - INFO - Train accuracy is: 0.88788
+2026-09-08 21:37:34,759 - Model - INFO - eval mIoU of Earphone       0.571319
+2026-09-08 21:37:34,759 - Model - INFO - Epoch 43 test Accuracy: 0.767904  Class avg mIOU: 0.571319   Inctance avg mIOU: 0.571319
+2026-09-08 21:37:34,759 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:34,759 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:34,759 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:34,759 - Model - INFO - Epoch 44 (44/100):
+2026-09-08 21:37:34,759 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:35,108 - Model - INFO - Train accuracy is: 0.89017
+2026-09-08 21:37:35,521 - Model - INFO - eval mIoU of Earphone       0.570826
+2026-09-08 21:37:35,521 - Model - INFO - Epoch 44 test Accuracy: 0.772678  Class avg mIOU: 0.570826   Inctance avg mIOU: 0.570826
+2026-09-08 21:37:35,522 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:35,522 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:35,522 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:35,522 - Model - INFO - Epoch 45 (45/100):
+2026-09-08 21:37:35,522 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:35,871 - Model - INFO - Train accuracy is: 0.89252
+2026-09-08 21:37:36,284 - Model - INFO - eval mIoU of Earphone       0.569636
+2026-09-08 21:37:36,284 - Model - INFO - Epoch 45 test Accuracy: 0.783312  Class avg mIOU: 0.569636   Inctance avg mIOU: 0.569636
+2026-09-08 21:37:36,284 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:36,284 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:36,284 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:36,284 - Model - INFO - Epoch 46 (46/100):
+2026-09-08 21:37:36,284 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:36,631 - Model - INFO - Train accuracy is: 0.90814
+2026-09-08 21:37:37,045 - Model - INFO - eval mIoU of Earphone       0.564685
+2026-09-08 21:37:37,045 - Model - INFO - Epoch 46 test Accuracy: 0.791504  Class avg mIOU: 0.564685   Inctance avg mIOU: 0.564685
+2026-09-08 21:37:37,045 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:37,045 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:37,045 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:37,045 - Model - INFO - Epoch 47 (47/100):
+2026-09-08 21:37:37,045 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:37,392 - Model - INFO - Train accuracy is: 0.89349
+2026-09-08 21:37:37,806 - Model - INFO - eval mIoU of Earphone       0.567066
+2026-09-08 21:37:37,806 - Model - INFO - Epoch 47 test Accuracy: 0.801758  Class avg mIOU: 0.567066   Inctance avg mIOU: 0.567066
+2026-09-08 21:37:37,806 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:37,806 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:37,806 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:37,806 - Model - INFO - Epoch 48 (48/100):
+2026-09-08 21:37:37,806 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:38,163 - Model - INFO - Train accuracy is: 0.89862
+2026-09-08 21:37:38,577 - Model - INFO - eval mIoU of Earphone       0.567268
+2026-09-08 21:37:38,577 - Model - INFO - Epoch 48 test Accuracy: 0.808539  Class avg mIOU: 0.567268   Inctance avg mIOU: 0.567268
+2026-09-08 21:37:38,577 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:38,577 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:38,577 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:38,577 - Model - INFO - Epoch 49 (49/100):
+2026-09-08 21:37:38,577 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:38,926 - Model - INFO - Train accuracy is: 0.90076
+2026-09-08 21:37:39,340 - Model - INFO - eval mIoU of Earphone       0.570765
+2026-09-08 21:37:39,340 - Model - INFO - Epoch 49 test Accuracy: 0.806803  Class avg mIOU: 0.570765   Inctance avg mIOU: 0.570765
+2026-09-08 21:37:39,341 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:39,341 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:39,341 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:39,341 - Model - INFO - Epoch 50 (50/100):
+2026-09-08 21:37:39,341 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:39,688 - Model - INFO - Train accuracy is: 0.90155
+2026-09-08 21:37:40,102 - Model - INFO - eval mIoU of Earphone       0.581958
+2026-09-08 21:37:40,102 - Model - INFO - Epoch 50 test Accuracy: 0.813477  Class avg mIOU: 0.581958   Inctance avg mIOU: 0.581958
+2026-09-08 21:37:40,102 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:40,102 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:40,102 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:40,102 - Model - INFO - Epoch 51 (51/100):
+2026-09-08 21:37:40,102 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:40,450 - Model - INFO - Train accuracy is: 0.89297
+2026-09-08 21:37:40,864 - Model - INFO - eval mIoU of Earphone       0.586273
+2026-09-08 21:37:40,864 - Model - INFO - Epoch 51 test Accuracy: 0.816461  Class avg mIOU: 0.586273   Inctance avg mIOU: 0.586273
+2026-09-08 21:37:40,864 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:40,864 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:40,864 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:40,864 - Model - INFO - Epoch 52 (52/100):
+2026-09-08 21:37:40,864 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:41,216 - Model - INFO - Train accuracy is: 0.89825
+2026-09-08 21:37:41,626 - Model - INFO - eval mIoU of Earphone       0.590955
+2026-09-08 21:37:41,626 - Model - INFO - Epoch 52 test Accuracy: 0.819499  Class avg mIOU: 0.590955   Inctance avg mIOU: 0.590955
+2026-09-08 21:37:41,626 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:41,626 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:41,626 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:41,626 - Model - INFO - Epoch 53 (53/100):
+2026-09-08 21:37:41,626 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:41,973 - Model - INFO - Train accuracy is: 0.89407
+2026-09-08 21:37:42,384 - Model - INFO - eval mIoU of Earphone       0.590157
+2026-09-08 21:37:42,384 - Model - INFO - Epoch 53 test Accuracy: 0.823947  Class avg mIOU: 0.590157   Inctance avg mIOU: 0.590157
+2026-09-08 21:37:42,385 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:42,385 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:42,385 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:42,385 - Model - INFO - Epoch 54 (54/100):
+2026-09-08 21:37:42,385 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:42,743 - Model - INFO - Train accuracy is: 0.89932
+2026-09-08 21:37:43,158 - Model - INFO - eval mIoU of Earphone       0.595681
+2026-09-08 21:37:43,158 - Model - INFO - Epoch 54 test Accuracy: 0.828234  Class avg mIOU: 0.595681   Inctance avg mIOU: 0.595681
+2026-09-08 21:37:43,158 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:43,158 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:43,158 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:43,158 - Model - INFO - Epoch 55 (55/100):
+2026-09-08 21:37:43,158 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:43,508 - Model - INFO - Train accuracy is: 0.90445
+2026-09-08 21:37:43,922 - Model - INFO - eval mIoU of Earphone       0.597960
+2026-09-08 21:37:43,922 - Model - INFO - Epoch 55 test Accuracy: 0.826823  Class avg mIOU: 0.597960   Inctance avg mIOU: 0.597960
+2026-09-08 21:37:43,922 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:43,922 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:43,922 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:43,922 - Model - INFO - Epoch 56 (56/100):
+2026-09-08 21:37:43,922 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:44,270 - Model - INFO - Train accuracy is: 0.90363
+2026-09-08 21:37:44,682 - Model - INFO - eval mIoU of Earphone       0.598084
+2026-09-08 21:37:44,682 - Model - INFO - Epoch 56 test Accuracy: 0.828288  Class avg mIOU: 0.598084   Inctance avg mIOU: 0.598084
+2026-09-08 21:37:44,682 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:44,682 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:44,682 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:44,682 - Model - INFO - Epoch 57 (57/100):
+2026-09-08 21:37:44,682 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:45,041 - Model - INFO - Train accuracy is: 0.91248
+2026-09-08 21:37:45,453 - Model - INFO - eval mIoU of Earphone       0.590233
+2026-09-08 21:37:45,453 - Model - INFO - Epoch 57 test Accuracy: 0.822754  Class avg mIOU: 0.590233   Inctance avg mIOU: 0.590233
+2026-09-08 21:37:45,453 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:45,453 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:45,453 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:45,453 - Model - INFO - Epoch 58 (58/100):
+2026-09-08 21:37:45,453 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:45,799 - Model - INFO - Train accuracy is: 0.91434
+2026-09-08 21:37:46,212 - Model - INFO - eval mIoU of Earphone       0.593959
+2026-09-08 21:37:46,212 - Model - INFO - Epoch 58 test Accuracy: 0.818848  Class avg mIOU: 0.593959   Inctance avg mIOU: 0.593959
+2026-09-08 21:37:46,212 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:46,212 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:46,212 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:46,212 - Model - INFO - Epoch 59 (59/100):
+2026-09-08 21:37:46,212 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:46,561 - Model - INFO - Train accuracy is: 0.90897
+2026-09-08 21:37:46,977 - Model - INFO - eval mIoU of Earphone       0.580442
+2026-09-08 21:37:46,977 - Model - INFO - Epoch 59 test Accuracy: 0.799913  Class avg mIOU: 0.580442   Inctance avg mIOU: 0.580442
+2026-09-08 21:37:46,977 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:46,977 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:46,977 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:46,977 - Model - INFO - Epoch 60 (60/100):
+2026-09-08 21:37:46,977 - Model - INFO - Learning rate:0.000250
+2026-09-08 21:37:47,326 - Model - INFO - Train accuracy is: 0.90710
+2026-09-08 21:37:47,738 - Model - INFO - eval mIoU of Earphone       0.572979
+2026-09-08 21:37:47,739 - Model - INFO - Epoch 60 test Accuracy: 0.787869  Class avg mIOU: 0.572979   Inctance avg mIOU: 0.572979
+2026-09-08 21:37:47,739 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:47,739 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:47,739 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:47,739 - Model - INFO - Epoch 61 (61/100):
+2026-09-08 21:37:47,739 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:48,096 - Model - INFO - Train accuracy is: 0.90338
+2026-09-08 21:37:48,510 - Model - INFO - eval mIoU of Earphone       0.563302
+2026-09-08 21:37:48,510 - Model - INFO - Epoch 61 test Accuracy: 0.777018  Class avg mIOU: 0.563302   Inctance avg mIOU: 0.563302
+2026-09-08 21:37:48,510 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:48,510 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:48,510 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:48,510 - Model - INFO - Epoch 62 (62/100):
+2026-09-08 21:37:48,510 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:48,858 - Model - INFO - Train accuracy is: 0.92194
+2026-09-08 21:37:49,271 - Model - INFO - eval mIoU of Earphone       0.553893
+2026-09-08 21:37:49,271 - Model - INFO - Epoch 62 test Accuracy: 0.767741  Class avg mIOU: 0.553893   Inctance avg mIOU: 0.553893
+2026-09-08 21:37:49,271 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:49,271 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:49,271 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:49,271 - Model - INFO - Epoch 63 (63/100):
+2026-09-08 21:37:49,271 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:49,621 - Model - INFO - Train accuracy is: 0.91644
+2026-09-08 21:37:50,031 - Model - INFO - eval mIoU of Earphone       0.563323
+2026-09-08 21:37:50,031 - Model - INFO - Epoch 63 test Accuracy: 0.778266  Class avg mIOU: 0.563323   Inctance avg mIOU: 0.563323
+2026-09-08 21:37:50,031 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:50,031 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:50,031 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:50,031 - Model - INFO - Epoch 64 (64/100):
+2026-09-08 21:37:50,031 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:50,380 - Model - INFO - Train accuracy is: 0.91699
+2026-09-08 21:37:50,792 - Model - INFO - eval mIoU of Earphone       0.569043
+2026-09-08 21:37:50,792 - Model - INFO - Epoch 64 test Accuracy: 0.782498  Class avg mIOU: 0.569043   Inctance avg mIOU: 0.569043
+2026-09-08 21:37:50,792 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:50,792 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:50,792 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:50,792 - Model - INFO - Epoch 65 (65/100):
+2026-09-08 21:37:50,792 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:51,139 - Model - INFO - Train accuracy is: 0.89957
+2026-09-08 21:37:51,554 - Model - INFO - eval mIoU of Earphone       0.571255
+2026-09-08 21:37:51,554 - Model - INFO - Epoch 65 test Accuracy: 0.787272  Class avg mIOU: 0.571255   Inctance avg mIOU: 0.571255
+2026-09-08 21:37:51,554 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:51,554 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:51,554 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:51,554 - Model - INFO - Epoch 66 (66/100):
+2026-09-08 21:37:51,554 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:51,902 - Model - INFO - Train accuracy is: 0.90924
+2026-09-08 21:37:52,317 - Model - INFO - eval mIoU of Earphone       0.570128
+2026-09-08 21:37:52,317 - Model - INFO - Epoch 66 test Accuracy: 0.788411  Class avg mIOU: 0.570128   Inctance avg mIOU: 0.570128
+2026-09-08 21:37:52,317 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:52,317 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:52,317 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:52,317 - Model - INFO - Epoch 67 (67/100):
+2026-09-08 21:37:52,317 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:52,664 - Model - INFO - Train accuracy is: 0.90750
+2026-09-08 21:37:53,077 - Model - INFO - eval mIoU of Earphone       0.574443
+2026-09-08 21:37:53,077 - Model - INFO - Epoch 67 test Accuracy: 0.792535  Class avg mIOU: 0.574443   Inctance avg mIOU: 0.574443
+2026-09-08 21:37:53,077 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:53,077 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:53,077 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:53,077 - Model - INFO - Epoch 68 (68/100):
+2026-09-08 21:37:53,077 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:53,425 - Model - INFO - Train accuracy is: 0.91354
+2026-09-08 21:37:53,839 - Model - INFO - eval mIoU of Earphone       0.583267
+2026-09-08 21:37:53,839 - Model - INFO - Epoch 68 test Accuracy: 0.797418  Class avg mIOU: 0.583267   Inctance avg mIOU: 0.583267
+2026-09-08 21:37:53,839 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:53,839 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:53,839 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:53,839 - Model - INFO - Epoch 69 (69/100):
+2026-09-08 21:37:53,839 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:54,186 - Model - INFO - Train accuracy is: 0.92014
+2026-09-08 21:37:54,600 - Model - INFO - eval mIoU of Earphone       0.583628
+2026-09-08 21:37:54,600 - Model - INFO - Epoch 69 test Accuracy: 0.798069  Class avg mIOU: 0.583628   Inctance avg mIOU: 0.583628
+2026-09-08 21:37:54,600 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:54,600 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:54,600 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:54,600 - Model - INFO - Epoch 70 (70/100):
+2026-09-08 21:37:54,600 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:54,949 - Model - INFO - Train accuracy is: 0.90256
+2026-09-08 21:37:55,359 - Model - INFO - eval mIoU of Earphone       0.587638
+2026-09-08 21:37:55,359 - Model - INFO - Epoch 70 test Accuracy: 0.808051  Class avg mIOU: 0.587638   Inctance avg mIOU: 0.587638
+2026-09-08 21:37:55,360 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:55,360 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:55,360 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:55,360 - Model - INFO - Epoch 71 (71/100):
+2026-09-08 21:37:55,360 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:55,710 - Model - INFO - Train accuracy is: 0.93353
+2026-09-08 21:37:56,123 - Model - INFO - eval mIoU of Earphone       0.596897
+2026-09-08 21:37:56,124 - Model - INFO - Epoch 71 test Accuracy: 0.815538  Class avg mIOU: 0.596897   Inctance avg mIOU: 0.596897
+2026-09-08 21:37:56,124 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:56,124 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:56,124 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:56,124 - Model - INFO - Epoch 72 (72/100):
+2026-09-08 21:37:56,124 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:56,472 - Model - INFO - Train accuracy is: 0.90930
+2026-09-08 21:37:56,885 - Model - INFO - eval mIoU of Earphone       0.599455
+2026-09-08 21:37:56,885 - Model - INFO - Epoch 72 test Accuracy: 0.822320  Class avg mIOU: 0.599455   Inctance avg mIOU: 0.599455
+2026-09-08 21:37:56,885 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:56,885 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:56,885 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:56,885 - Model - INFO - Epoch 73 (73/100):
+2026-09-08 21:37:56,885 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:57,237 - Model - INFO - Train accuracy is: 0.92603
+2026-09-08 21:37:57,652 - Model - INFO - eval mIoU of Earphone       0.597931
+2026-09-08 21:37:57,652 - Model - INFO - Epoch 73 test Accuracy: 0.821506  Class avg mIOU: 0.597931   Inctance avg mIOU: 0.597931
+2026-09-08 21:37:57,652 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:57,652 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:57,652 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:57,652 - Model - INFO - Epoch 74 (74/100):
+2026-09-08 21:37:57,652 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:58,002 - Model - INFO - Train accuracy is: 0.91809
+2026-09-08 21:37:58,414 - Model - INFO - eval mIoU of Earphone       0.600165
+2026-09-08 21:37:58,414 - Model - INFO - Epoch 74 test Accuracy: 0.825087  Class avg mIOU: 0.600165   Inctance avg mIOU: 0.600165
+2026-09-08 21:37:58,414 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:58,414 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:58,414 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:58,414 - Model - INFO - Epoch 75 (75/100):
+2026-09-08 21:37:58,414 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:58,762 - Model - INFO - Train accuracy is: 0.92258
+2026-09-08 21:37:59,175 - Model - INFO - eval mIoU of Earphone       0.600696
+2026-09-08 21:37:59,176 - Model - INFO - Epoch 75 test Accuracy: 0.824870  Class avg mIOU: 0.600696   Inctance avg mIOU: 0.600696
+2026-09-08 21:37:59,176 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:59,176 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:59,176 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:59,176 - Model - INFO - Epoch 76 (76/100):
+2026-09-08 21:37:59,176 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:37:59,525 - Model - INFO - Train accuracy is: 0.91272
+2026-09-08 21:37:59,939 - Model - INFO - eval mIoU of Earphone       0.602311
+2026-09-08 21:37:59,939 - Model - INFO - Epoch 76 test Accuracy: 0.826063  Class avg mIOU: 0.602311   Inctance avg mIOU: 0.602311
+2026-09-08 21:37:59,939 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:37:59,939 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:37:59,939 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:37:59,939 - Model - INFO - Epoch 77 (77/100):
+2026-09-08 21:37:59,939 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:38:00,290 - Model - INFO - Train accuracy is: 0.92593
+2026-09-08 21:38:00,700 - Model - INFO - eval mIoU of Earphone       0.600783
+2026-09-08 21:38:00,700 - Model - INFO - Epoch 77 test Accuracy: 0.822266  Class avg mIOU: 0.600783   Inctance avg mIOU: 0.600783
+2026-09-08 21:38:00,700 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:00,700 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:00,700 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:00,700 - Model - INFO - Epoch 78 (78/100):
+2026-09-08 21:38:00,700 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:38:01,053 - Model - INFO - Train accuracy is: 0.92694
+2026-09-08 21:38:01,463 - Model - INFO - eval mIoU of Earphone       0.596984
+2026-09-08 21:38:01,463 - Model - INFO - Epoch 78 test Accuracy: 0.821343  Class avg mIOU: 0.596984   Inctance avg mIOU: 0.596984
+2026-09-08 21:38:01,463 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:01,463 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:01,463 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:01,463 - Model - INFO - Epoch 79 (79/100):
+2026-09-08 21:38:01,463 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:38:01,809 - Model - INFO - Train accuracy is: 0.93167
+2026-09-08 21:38:02,221 - Model - INFO - eval mIoU of Earphone       0.595682
+2026-09-08 21:38:02,221 - Model - INFO - Epoch 79 test Accuracy: 0.820475  Class avg mIOU: 0.595682   Inctance avg mIOU: 0.595682
+2026-09-08 21:38:02,221 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:02,221 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:02,221 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:02,221 - Model - INFO - Epoch 80 (80/100):
+2026-09-08 21:38:02,221 - Model - INFO - Learning rate:0.000125
+2026-09-08 21:38:02,568 - Model - INFO - Train accuracy is: 0.91681
+2026-09-08 21:38:02,980 - Model - INFO - eval mIoU of Earphone       0.598345
+2026-09-08 21:38:02,980 - Model - INFO - Epoch 80 test Accuracy: 0.816840  Class avg mIOU: 0.598345   Inctance avg mIOU: 0.598345
+2026-09-08 21:38:02,980 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:02,980 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:02,980 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:02,980 - Model - INFO - Epoch 81 (81/100):
+2026-09-08 21:38:02,980 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:03,329 - Model - INFO - Train accuracy is: 0.92084
+2026-09-08 21:38:03,740 - Model - INFO - eval mIoU of Earphone       0.595181
+2026-09-08 21:38:03,740 - Model - INFO - Epoch 81 test Accuracy: 0.811795  Class avg mIOU: 0.595181   Inctance avg mIOU: 0.595181
+2026-09-08 21:38:03,741 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:03,741 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:03,741 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:03,741 - Model - INFO - Epoch 82 (82/100):
+2026-09-08 21:38:03,741 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:04,086 - Model - INFO - Train accuracy is: 0.91260
+2026-09-08 21:38:04,498 - Model - INFO - eval mIoU of Earphone       0.591558
+2026-09-08 21:38:04,499 - Model - INFO - Epoch 82 test Accuracy: 0.808648  Class avg mIOU: 0.591558   Inctance avg mIOU: 0.591558
+2026-09-08 21:38:04,499 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:04,499 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:04,499 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:04,499 - Model - INFO - Epoch 83 (83/100):
+2026-09-08 21:38:04,499 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:04,846 - Model - INFO - Train accuracy is: 0.92398
+2026-09-08 21:38:05,260 - Model - INFO - eval mIoU of Earphone       0.597090
+2026-09-08 21:38:05,260 - Model - INFO - Epoch 83 test Accuracy: 0.806261  Class avg mIOU: 0.597090   Inctance avg mIOU: 0.597090
+2026-09-08 21:38:05,260 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:05,260 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:05,260 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:05,260 - Model - INFO - Epoch 84 (84/100):
+2026-09-08 21:38:05,260 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:05,605 - Model - INFO - Train accuracy is: 0.91788
+2026-09-08 21:38:06,021 - Model - INFO - eval mIoU of Earphone       0.582950
+2026-09-08 21:38:06,021 - Model - INFO - Epoch 84 test Accuracy: 0.795302  Class avg mIOU: 0.582950   Inctance avg mIOU: 0.582950
+2026-09-08 21:38:06,021 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:06,021 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:06,021 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:06,021 - Model - INFO - Epoch 85 (85/100):
+2026-09-08 21:38:06,021 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:06,371 - Model - INFO - Train accuracy is: 0.93085
+2026-09-08 21:38:06,781 - Model - INFO - eval mIoU of Earphone       0.582796
+2026-09-08 21:38:06,781 - Model - INFO - Epoch 85 test Accuracy: 0.792480  Class avg mIOU: 0.582796   Inctance avg mIOU: 0.582796
+2026-09-08 21:38:06,781 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:06,781 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:06,781 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:06,781 - Model - INFO - Epoch 86 (86/100):
+2026-09-08 21:38:06,781 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:07,127 - Model - INFO - Train accuracy is: 0.91068
+2026-09-08 21:38:07,539 - Model - INFO - eval mIoU of Earphone       0.579173
+2026-09-08 21:38:07,539 - Model - INFO - Epoch 86 test Accuracy: 0.788628  Class avg mIOU: 0.579173   Inctance avg mIOU: 0.579173
+2026-09-08 21:38:07,539 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:07,539 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:07,540 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:07,540 - Model - INFO - Epoch 87 (87/100):
+2026-09-08 21:38:07,540 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:07,887 - Model - INFO - Train accuracy is: 0.92816
+2026-09-08 21:38:08,300 - Model - INFO - eval mIoU of Earphone       0.573068
+2026-09-08 21:38:08,300 - Model - INFO - Epoch 87 test Accuracy: 0.781521  Class avg mIOU: 0.573068   Inctance avg mIOU: 0.573068
+2026-09-08 21:38:08,300 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:08,300 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:08,300 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:08,300 - Model - INFO - Epoch 88 (88/100):
+2026-09-08 21:38:08,300 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:08,646 - Model - INFO - Train accuracy is: 0.91888
+2026-09-08 21:38:09,057 - Model - INFO - eval mIoU of Earphone       0.581573
+2026-09-08 21:38:09,057 - Model - INFO - Epoch 88 test Accuracy: 0.787001  Class avg mIOU: 0.581573   Inctance avg mIOU: 0.581573
+2026-09-08 21:38:09,057 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:09,057 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:09,057 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:09,057 - Model - INFO - Epoch 89 (89/100):
+2026-09-08 21:38:09,057 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:09,405 - Model - INFO - Train accuracy is: 0.90878
+2026-09-08 21:38:09,820 - Model - INFO - eval mIoU of Earphone       0.568123
+2026-09-08 21:38:09,820 - Model - INFO - Epoch 89 test Accuracy: 0.781359  Class avg mIOU: 0.568123   Inctance avg mIOU: 0.568123
+2026-09-08 21:38:09,820 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:09,820 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:09,820 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:09,820 - Model - INFO - Epoch 90 (90/100):
+2026-09-08 21:38:09,820 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:10,168 - Model - INFO - Train accuracy is: 0.91202
+2026-09-08 21:38:10,582 - Model - INFO - eval mIoU of Earphone       0.582247
+2026-09-08 21:38:10,583 - Model - INFO - Epoch 90 test Accuracy: 0.786079  Class avg mIOU: 0.582247   Inctance avg mIOU: 0.582247
+2026-09-08 21:38:10,583 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:10,583 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:10,583 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:10,583 - Model - INFO - Epoch 91 (91/100):
+2026-09-08 21:38:10,583 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:10,930 - Model - INFO - Train accuracy is: 0.91785
+2026-09-08 21:38:11,340 - Model - INFO - eval mIoU of Earphone       0.578885
+2026-09-08 21:38:11,340 - Model - INFO - Epoch 91 test Accuracy: 0.784668  Class avg mIOU: 0.578885   Inctance avg mIOU: 0.578885
+2026-09-08 21:38:11,340 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:11,340 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:11,340 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:11,340 - Model - INFO - Epoch 92 (92/100):
+2026-09-08 21:38:11,340 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:11,693 - Model - INFO - Train accuracy is: 0.92743
+2026-09-08 21:38:12,108 - Model - INFO - eval mIoU of Earphone       0.579329
+2026-09-08 21:38:12,108 - Model - INFO - Epoch 92 test Accuracy: 0.783203  Class avg mIOU: 0.579329   Inctance avg mIOU: 0.579329
+2026-09-08 21:38:12,108 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:12,108 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:12,108 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:12,108 - Model - INFO - Epoch 93 (93/100):
+2026-09-08 21:38:12,108 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:12,457 - Model - INFO - Train accuracy is: 0.92099
+2026-09-08 21:38:12,872 - Model - INFO - eval mIoU of Earphone       0.584367
+2026-09-08 21:38:12,872 - Model - INFO - Epoch 93 test Accuracy: 0.786404  Class avg mIOU: 0.584367   Inctance avg mIOU: 0.584367
+2026-09-08 21:38:12,872 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:12,872 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:12,872 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:12,872 - Model - INFO - Epoch 94 (94/100):
+2026-09-08 21:38:12,872 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:13,223 - Model - INFO - Train accuracy is: 0.92215
+2026-09-08 21:38:13,637 - Model - INFO - eval mIoU of Earphone       0.582922
+2026-09-08 21:38:13,637 - Model - INFO - Epoch 94 test Accuracy: 0.785211  Class avg mIOU: 0.582922   Inctance avg mIOU: 0.582922
+2026-09-08 21:38:13,637 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:13,637 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:13,637 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:13,637 - Model - INFO - Epoch 95 (95/100):
+2026-09-08 21:38:13,637 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:13,987 - Model - INFO - Train accuracy is: 0.91504
+2026-09-08 21:38:14,398 - Model - INFO - eval mIoU of Earphone       0.584586
+2026-09-08 21:38:14,398 - Model - INFO - Epoch 95 test Accuracy: 0.789442  Class avg mIOU: 0.584586   Inctance avg mIOU: 0.584586
+2026-09-08 21:38:14,398 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:14,398 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:14,398 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:14,398 - Model - INFO - Epoch 96 (96/100):
+2026-09-08 21:38:14,398 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:14,745 - Model - INFO - Train accuracy is: 0.91595
+2026-09-08 21:38:15,159 - Model - INFO - eval mIoU of Earphone       0.594980
+2026-09-08 21:38:15,159 - Model - INFO - Epoch 96 test Accuracy: 0.800293  Class avg mIOU: 0.594980   Inctance avg mIOU: 0.594980
+2026-09-08 21:38:15,159 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:15,159 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:15,159 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:15,159 - Model - INFO - Epoch 97 (97/100):
+2026-09-08 21:38:15,159 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:15,504 - Model - INFO - Train accuracy is: 0.90729
+2026-09-08 21:38:15,920 - Model - INFO - eval mIoU of Earphone       0.582422
+2026-09-08 21:38:15,920 - Model - INFO - Epoch 97 test Accuracy: 0.791070  Class avg mIOU: 0.582422   Inctance avg mIOU: 0.582422
+2026-09-08 21:38:15,920 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:15,920 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:15,920 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:15,920 - Model - INFO - Epoch 98 (98/100):
+2026-09-08 21:38:15,920 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:16,272 - Model - INFO - Train accuracy is: 0.92474
+2026-09-08 21:38:16,687 - Model - INFO - eval mIoU of Earphone       0.589766
+2026-09-08 21:38:16,688 - Model - INFO - Epoch 98 test Accuracy: 0.796061  Class avg mIOU: 0.589766   Inctance avg mIOU: 0.589766
+2026-09-08 21:38:16,688 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:16,688 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:16,688 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:16,688 - Model - INFO - Epoch 99 (99/100):
+2026-09-08 21:38:16,688 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:17,037 - Model - INFO - Train accuracy is: 0.91589
+2026-09-08 21:38:17,449 - Model - INFO - eval mIoU of Earphone       0.590272
+2026-09-08 21:38:17,449 - Model - INFO - Epoch 99 test Accuracy: 0.796170  Class avg mIOU: 0.590272   Inctance avg mIOU: 0.590272
+2026-09-08 21:38:17,449 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:17,449 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:17,449 - Model - INFO - Best inctance avg mIOU is: 0.63299
+2026-09-08 21:38:17,449 - Model - INFO - Epoch 100 (100/100):
+2026-09-08 21:38:17,449 - Model - INFO - Learning rate:0.000063
+2026-09-08 21:38:17,796 - Model - INFO - Train accuracy is: 0.91476
+2026-09-08 21:38:18,212 - Model - INFO - eval mIoU of Earphone       0.585848
+2026-09-08 21:38:18,212 - Model - INFO - Epoch 100 test Accuracy: 0.791938  Class avg mIOU: 0.585848   Inctance avg mIOU: 0.585848
+2026-09-08 21:38:18,212 - Model - INFO - Best accuracy is: 0.88623
+2026-09-08 21:38:18,212 - Model - INFO - Best class avg mIOU is: 0.63299
+2026-09-08 21:38:18,212 - Model - INFO - Best inctance avg mIOU is: 0.63299

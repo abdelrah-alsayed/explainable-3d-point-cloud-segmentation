@@ -1,0 +1,33 @@
+{
+  "args": {
+    "model": "pointnet2_part_seg_msg",
+    "batch_size": 16,
+    "epoch": 100,
+    "learning_rate": 0.001,
+    "gpu": "0",
+    "optimizer": "Adam",
+    "log_dir": "parts4_cap740/Airplane/seed_42",
+    "decay_rate": 0.0001,
+    "npoint": 2048,
+    "step_size": 20,
+    "lr_decay": 0.5,
+    "seed": 42,
+    "categories": [
+      "Airplane"
+    ],
+    "samples_per_category": 740,
+    "subset_seed": 0
+  },
+  "seed": 42,
+  "git_commit": "b5f310c5f9666fb30bd2b78d0ca90e1703e21085",
+  "torch_version": "1.11.0+cu113",
+  "cuda_version": "11.3",
+  "gpu_name": "NVIDIA RTX A6000",
+  "num_categories": 1,
+  "categories": [
+    "Airplane"
+  ],
+  "samples_per_category": 740,
+  "subset_seed": 0,
+  "timestamp": "2026-06-11T15:38:08.643394"
+}

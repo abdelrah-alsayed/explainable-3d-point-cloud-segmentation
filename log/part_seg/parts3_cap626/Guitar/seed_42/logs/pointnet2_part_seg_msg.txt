@@ -1,0 +1,853 @@
+2026-06-20 00:16:53,110 - Model - INFO - PARAMETER ...
+2026-06-20 00:16:53,110 - Model - INFO - Namespace(model='pointnet2_part_seg_msg', batch_size=16, epoch=100, learning_rate=0.001, gpu='0', optimizer='Adam', log_dir='parts3_cap626/Guitar/seed_42', decay_rate=0.0001, npoint=2048, step_size=20, lr_decay=0.5, seed=42, categories=['Guitar'], samples_per_category=626, subset_seed=0, test_samples_per_category=159, test_subset_seed=0, full_parts_only=False, num_parts=3)
+2026-06-20 00:16:53,691 - Model - INFO - The number of training data is: 626
+2026-06-20 00:16:53,691 - Model - INFO - The number of test data is: 159
+2026-06-20 00:16:53,918 - Model - INFO - No existing model, starting training from scratch...
+2026-06-20 00:16:54,129 - Model - INFO - Epoch 1 (1/100):
+2026-06-20 00:16:54,129 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:17:03,540 - Model - INFO - Train accuracy is: 0.85013
+2026-06-20 00:17:05,327 - Model - INFO - eval mIoU of Guitar         0.781364
+2026-06-20 00:17:05,327 - Model - INFO - Epoch 1 test Accuracy: 0.914109  Class avg mIOU: 0.781364   Inctance avg mIOU: 0.781364
+2026-06-20 00:17:05,327 - Model - INFO - Save model...
+2026-06-20 00:17:05,327 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:17:05,360 - Model - INFO - Saving model....
+2026-06-20 00:17:05,360 - Model - INFO - Best accuracy is: 0.91411
+2026-06-20 00:17:05,360 - Model - INFO - Best class avg mIOU is: 0.78136
+2026-06-20 00:17:05,360 - Model - INFO - Best inctance avg mIOU is: 0.78136
+2026-06-20 00:17:05,360 - Model - INFO - Epoch 2 (2/100):
+2026-06-20 00:17:05,361 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:17:14,457 - Model - INFO - Train accuracy is: 0.96123
+2026-06-20 00:17:16,217 - Model - INFO - eval mIoU of Guitar         0.869156
+2026-06-20 00:17:16,217 - Model - INFO - Epoch 2 test Accuracy: 0.953460  Class avg mIOU: 0.869156   Inctance avg mIOU: 0.869156
+2026-06-20 00:17:16,217 - Model - INFO - Save model...
+2026-06-20 00:17:16,217 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:17:16,263 - Model - INFO - Saving model....
+2026-06-20 00:17:16,264 - Model - INFO - Best accuracy is: 0.95346
+2026-06-20 00:17:16,264 - Model - INFO - Best class avg mIOU is: 0.86916
+2026-06-20 00:17:16,264 - Model - INFO - Best inctance avg mIOU is: 0.86916
+2026-06-20 00:17:16,264 - Model - INFO - Epoch 3 (3/100):
+2026-06-20 00:17:16,264 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:17:25,388 - Model - INFO - Train accuracy is: 0.96325
+2026-06-20 00:17:27,134 - Model - INFO - eval mIoU of Guitar         0.892400
+2026-06-20 00:17:27,134 - Model - INFO - Epoch 3 test Accuracy: 0.958373  Class avg mIOU: 0.892400   Inctance avg mIOU: 0.892400
+2026-06-20 00:17:27,134 - Model - INFO - Save model...
+2026-06-20 00:17:27,134 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:17:27,184 - Model - INFO - Saving model....
+2026-06-20 00:17:27,184 - Model - INFO - Best accuracy is: 0.95837
+2026-06-20 00:17:27,184 - Model - INFO - Best class avg mIOU is: 0.89240
+2026-06-20 00:17:27,184 - Model - INFO - Best inctance avg mIOU is: 0.89240
+2026-06-20 00:17:27,184 - Model - INFO - Epoch 4 (4/100):
+2026-06-20 00:17:27,184 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:17:36,292 - Model - INFO - Train accuracy is: 0.96601
+2026-06-20 00:17:38,043 - Model - INFO - eval mIoU of Guitar         0.903732
+2026-06-20 00:17:38,044 - Model - INFO - Epoch 4 test Accuracy: 0.961527  Class avg mIOU: 0.903732   Inctance avg mIOU: 0.903732
+2026-06-20 00:17:38,044 - Model - INFO - Save model...
+2026-06-20 00:17:38,044 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:17:38,090 - Model - INFO - Saving model....
+2026-06-20 00:17:38,090 - Model - INFO - Best accuracy is: 0.96153
+2026-06-20 00:17:38,090 - Model - INFO - Best class avg mIOU is: 0.90373
+2026-06-20 00:17:38,090 - Model - INFO - Best inctance avg mIOU is: 0.90373
+2026-06-20 00:17:38,090 - Model - INFO - Epoch 5 (5/100):
+2026-06-20 00:17:38,090 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:17:47,218 - Model - INFO - Train accuracy is: 0.96599
+2026-06-20 00:17:48,981 - Model - INFO - eval mIoU of Guitar         0.870517
+2026-06-20 00:17:48,981 - Model - INFO - Epoch 5 test Accuracy: 0.954614  Class avg mIOU: 0.870517   Inctance avg mIOU: 0.870517
+2026-06-20 00:17:48,981 - Model - INFO - Best accuracy is: 0.96153
+2026-06-20 00:17:48,981 - Model - INFO - Best class avg mIOU is: 0.90373
+2026-06-20 00:17:48,981 - Model - INFO - Best inctance avg mIOU is: 0.90373
+2026-06-20 00:17:48,981 - Model - INFO - Epoch 6 (6/100):
+2026-06-20 00:17:48,981 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:17:58,095 - Model - INFO - Train accuracy is: 0.96558
+2026-06-20 00:17:59,843 - Model - INFO - eval mIoU of Guitar         0.883064
+2026-06-20 00:17:59,843 - Model - INFO - Epoch 6 test Accuracy: 0.957741  Class avg mIOU: 0.883064   Inctance avg mIOU: 0.883064
+2026-06-20 00:17:59,843 - Model - INFO - Best accuracy is: 0.96153
+2026-06-20 00:17:59,843 - Model - INFO - Best class avg mIOU is: 0.90373
+2026-06-20 00:17:59,843 - Model - INFO - Best inctance avg mIOU is: 0.90373
+2026-06-20 00:17:59,843 - Model - INFO - Epoch 7 (7/100):
+2026-06-20 00:17:59,843 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:18:08,940 - Model - INFO - Train accuracy is: 0.96760
+2026-06-20 00:18:10,718 - Model - INFO - eval mIoU of Guitar         0.901151
+2026-06-20 00:18:10,718 - Model - INFO - Epoch 7 test Accuracy: 0.960019  Class avg mIOU: 0.901151   Inctance avg mIOU: 0.901151
+2026-06-20 00:18:10,718 - Model - INFO - Best accuracy is: 0.96153
+2026-06-20 00:18:10,718 - Model - INFO - Best class avg mIOU is: 0.90373
+2026-06-20 00:18:10,718 - Model - INFO - Best inctance avg mIOU is: 0.90373
+2026-06-20 00:18:10,718 - Model - INFO - Epoch 8 (8/100):
+2026-06-20 00:18:10,718 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:18:19,802 - Model - INFO - Train accuracy is: 0.96871
+2026-06-20 00:18:21,543 - Model - INFO - eval mIoU of Guitar         0.904708
+2026-06-20 00:18:21,543 - Model - INFO - Epoch 8 test Accuracy: 0.961625  Class avg mIOU: 0.904708   Inctance avg mIOU: 0.904708
+2026-06-20 00:18:21,543 - Model - INFO - Save model...
+2026-06-20 00:18:21,543 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:18:21,589 - Model - INFO - Saving model....
+2026-06-20 00:18:21,590 - Model - INFO - Best accuracy is: 0.96163
+2026-06-20 00:18:21,590 - Model - INFO - Best class avg mIOU is: 0.90471
+2026-06-20 00:18:21,590 - Model - INFO - Best inctance avg mIOU is: 0.90471
+2026-06-20 00:18:21,590 - Model - INFO - Epoch 9 (9/100):
+2026-06-20 00:18:21,590 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:18:30,763 - Model - INFO - Train accuracy is: 0.96908
+2026-06-20 00:18:32,537 - Model - INFO - eval mIoU of Guitar         0.898195
+2026-06-20 00:18:32,537 - Model - INFO - Epoch 9 test Accuracy: 0.960640  Class avg mIOU: 0.898195   Inctance avg mIOU: 0.898195
+2026-06-20 00:18:32,537 - Model - INFO - Best accuracy is: 0.96163
+2026-06-20 00:18:32,537 - Model - INFO - Best class avg mIOU is: 0.90471
+2026-06-20 00:18:32,537 - Model - INFO - Best inctance avg mIOU is: 0.90471
+2026-06-20 00:18:32,537 - Model - INFO - Epoch 10 (10/100):
+2026-06-20 00:18:32,537 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:18:41,656 - Model - INFO - Train accuracy is: 0.96781
+2026-06-20 00:18:43,411 - Model - INFO - eval mIoU of Guitar         0.889624
+2026-06-20 00:18:43,412 - Model - INFO - Epoch 10 test Accuracy: 0.958963  Class avg mIOU: 0.889624   Inctance avg mIOU: 0.889624
+2026-06-20 00:18:43,412 - Model - INFO - Best accuracy is: 0.96163
+2026-06-20 00:18:43,412 - Model - INFO - Best class avg mIOU is: 0.90471
+2026-06-20 00:18:43,412 - Model - INFO - Best inctance avg mIOU is: 0.90471
+2026-06-20 00:18:43,412 - Model - INFO - Epoch 11 (11/100):
+2026-06-20 00:18:43,412 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:18:52,487 - Model - INFO - Train accuracy is: 0.96758
+2026-06-20 00:18:54,230 - Model - INFO - eval mIoU of Guitar         0.905856
+2026-06-20 00:18:54,230 - Model - INFO - Epoch 11 test Accuracy: 0.962141  Class avg mIOU: 0.905856   Inctance avg mIOU: 0.905856
+2026-06-20 00:18:54,230 - Model - INFO - Save model...
+2026-06-20 00:18:54,230 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:18:54,273 - Model - INFO - Saving model....
+2026-06-20 00:18:54,274 - Model - INFO - Best accuracy is: 0.96214
+2026-06-20 00:18:54,274 - Model - INFO - Best class avg mIOU is: 0.90586
+2026-06-20 00:18:54,274 - Model - INFO - Best inctance avg mIOU is: 0.90586
+2026-06-20 00:18:54,274 - Model - INFO - Epoch 12 (12/100):
+2026-06-20 00:18:54,274 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:19:03,391 - Model - INFO - Train accuracy is: 0.96846
+2026-06-20 00:19:05,148 - Model - INFO - eval mIoU of Guitar         0.901620
+2026-06-20 00:19:05,149 - Model - INFO - Epoch 12 test Accuracy: 0.960965  Class avg mIOU: 0.901620   Inctance avg mIOU: 0.901620
+2026-06-20 00:19:05,149 - Model - INFO - Best accuracy is: 0.96214
+2026-06-20 00:19:05,149 - Model - INFO - Best class avg mIOU is: 0.90586
+2026-06-20 00:19:05,149 - Model - INFO - Best inctance avg mIOU is: 0.90586
+2026-06-20 00:19:05,149 - Model - INFO - Epoch 13 (13/100):
+2026-06-20 00:19:05,149 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:19:14,246 - Model - INFO - Train accuracy is: 0.96901
+2026-06-20 00:19:16,024 - Model - INFO - eval mIoU of Guitar         0.906896
+2026-06-20 00:19:16,024 - Model - INFO - Epoch 13 test Accuracy: 0.963087  Class avg mIOU: 0.906896   Inctance avg mIOU: 0.906896
+2026-06-20 00:19:16,024 - Model - INFO - Save model...
+2026-06-20 00:19:16,024 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:19:16,070 - Model - INFO - Saving model....
+2026-06-20 00:19:16,071 - Model - INFO - Best accuracy is: 0.96309
+2026-06-20 00:19:16,071 - Model - INFO - Best class avg mIOU is: 0.90690
+2026-06-20 00:19:16,071 - Model - INFO - Best inctance avg mIOU is: 0.90690
+2026-06-20 00:19:16,071 - Model - INFO - Epoch 14 (14/100):
+2026-06-20 00:19:16,071 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:19:25,178 - Model - INFO - Train accuracy is: 0.96925
+2026-06-20 00:19:26,940 - Model - INFO - eval mIoU of Guitar         0.906712
+2026-06-20 00:19:26,940 - Model - INFO - Epoch 14 test Accuracy: 0.963707  Class avg mIOU: 0.906712   Inctance avg mIOU: 0.906712
+2026-06-20 00:19:26,940 - Model - INFO - Best accuracy is: 0.96371
+2026-06-20 00:19:26,940 - Model - INFO - Best class avg mIOU is: 0.90690
+2026-06-20 00:19:26,940 - Model - INFO - Best inctance avg mIOU is: 0.90690
+2026-06-20 00:19:26,940 - Model - INFO - Epoch 15 (15/100):
+2026-06-20 00:19:26,940 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:19:36,030 - Model - INFO - Train accuracy is: 0.97018
+2026-06-20 00:19:37,793 - Model - INFO - eval mIoU of Guitar         0.902663
+2026-06-20 00:19:37,793 - Model - INFO - Epoch 15 test Accuracy: 0.960624  Class avg mIOU: 0.902663   Inctance avg mIOU: 0.902663
+2026-06-20 00:19:37,793 - Model - INFO - Best accuracy is: 0.96371
+2026-06-20 00:19:37,793 - Model - INFO - Best class avg mIOU is: 0.90690
+2026-06-20 00:19:37,793 - Model - INFO - Best inctance avg mIOU is: 0.90690
+2026-06-20 00:19:37,793 - Model - INFO - Epoch 16 (16/100):
+2026-06-20 00:19:37,793 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:19:46,892 - Model - INFO - Train accuracy is: 0.97015
+2026-06-20 00:19:48,645 - Model - INFO - eval mIoU of Guitar         0.899563
+2026-06-20 00:19:48,645 - Model - INFO - Epoch 16 test Accuracy: 0.960173  Class avg mIOU: 0.899563   Inctance avg mIOU: 0.899563
+2026-06-20 00:19:48,646 - Model - INFO - Best accuracy is: 0.96371
+2026-06-20 00:19:48,646 - Model - INFO - Best class avg mIOU is: 0.90690
+2026-06-20 00:19:48,646 - Model - INFO - Best inctance avg mIOU is: 0.90690
+2026-06-20 00:19:48,646 - Model - INFO - Epoch 17 (17/100):
+2026-06-20 00:19:48,646 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:19:57,750 - Model - INFO - Train accuracy is: 0.97058
+2026-06-20 00:19:59,497 - Model - INFO - eval mIoU of Guitar         0.909109
+2026-06-20 00:19:59,497 - Model - INFO - Epoch 17 test Accuracy: 0.963692  Class avg mIOU: 0.909109   Inctance avg mIOU: 0.909109
+2026-06-20 00:19:59,497 - Model - INFO - Save model...
+2026-06-20 00:19:59,497 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:19:59,543 - Model - INFO - Saving model....
+2026-06-20 00:19:59,544 - Model - INFO - Best accuracy is: 0.96371
+2026-06-20 00:19:59,544 - Model - INFO - Best class avg mIOU is: 0.90911
+2026-06-20 00:19:59,544 - Model - INFO - Best inctance avg mIOU is: 0.90911
+2026-06-20 00:19:59,544 - Model - INFO - Epoch 18 (18/100):
+2026-06-20 00:19:59,544 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:20:08,634 - Model - INFO - Train accuracy is: 0.97057
+2026-06-20 00:20:10,387 - Model - INFO - eval mIoU of Guitar         0.901087
+2026-06-20 00:20:10,387 - Model - INFO - Epoch 18 test Accuracy: 0.962648  Class avg mIOU: 0.901087   Inctance avg mIOU: 0.901087
+2026-06-20 00:20:10,387 - Model - INFO - Best accuracy is: 0.96371
+2026-06-20 00:20:10,387 - Model - INFO - Best class avg mIOU is: 0.90911
+2026-06-20 00:20:10,387 - Model - INFO - Best inctance avg mIOU is: 0.90911
+2026-06-20 00:20:10,387 - Model - INFO - Epoch 19 (19/100):
+2026-06-20 00:20:10,387 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:20:19,469 - Model - INFO - Train accuracy is: 0.96966
+2026-06-20 00:20:21,236 - Model - INFO - eval mIoU of Guitar         0.887996
+2026-06-20 00:20:21,236 - Model - INFO - Epoch 19 test Accuracy: 0.958763  Class avg mIOU: 0.887996   Inctance avg mIOU: 0.887996
+2026-06-20 00:20:21,236 - Model - INFO - Best accuracy is: 0.96371
+2026-06-20 00:20:21,236 - Model - INFO - Best class avg mIOU is: 0.90911
+2026-06-20 00:20:21,236 - Model - INFO - Best inctance avg mIOU is: 0.90911
+2026-06-20 00:20:21,236 - Model - INFO - Epoch 20 (20/100):
+2026-06-20 00:20:21,236 - Model - INFO - Learning rate:0.001000
+2026-06-20 00:20:30,374 - Model - INFO - Train accuracy is: 0.96979
+2026-06-20 00:20:32,142 - Model - INFO - eval mIoU of Guitar         0.897044
+2026-06-20 00:20:32,142 - Model - INFO - Epoch 20 test Accuracy: 0.961484  Class avg mIOU: 0.897044   Inctance avg mIOU: 0.897044
+2026-06-20 00:20:32,142 - Model - INFO - Best accuracy is: 0.96371
+2026-06-20 00:20:32,142 - Model - INFO - Best class avg mIOU is: 0.90911
+2026-06-20 00:20:32,142 - Model - INFO - Best inctance avg mIOU is: 0.90911
+2026-06-20 00:20:32,142 - Model - INFO - Epoch 21 (21/100):
+2026-06-20 00:20:32,142 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:20:41,229 - Model - INFO - Train accuracy is: 0.97188
+2026-06-20 00:20:42,983 - Model - INFO - eval mIoU of Guitar         0.906435
+2026-06-20 00:20:42,983 - Model - INFO - Epoch 21 test Accuracy: 0.962937  Class avg mIOU: 0.906435   Inctance avg mIOU: 0.906435
+2026-06-20 00:20:42,983 - Model - INFO - Best accuracy is: 0.96371
+2026-06-20 00:20:42,983 - Model - INFO - Best class avg mIOU is: 0.90911
+2026-06-20 00:20:42,983 - Model - INFO - Best inctance avg mIOU is: 0.90911
+2026-06-20 00:20:42,983 - Model - INFO - Epoch 22 (22/100):
+2026-06-20 00:20:42,983 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:20:52,087 - Model - INFO - Train accuracy is: 0.97247
+2026-06-20 00:20:53,841 - Model - INFO - eval mIoU of Guitar         0.903309
+2026-06-20 00:20:53,841 - Model - INFO - Epoch 22 test Accuracy: 0.963523  Class avg mIOU: 0.903309   Inctance avg mIOU: 0.903309
+2026-06-20 00:20:53,841 - Model - INFO - Best accuracy is: 0.96371
+2026-06-20 00:20:53,841 - Model - INFO - Best class avg mIOU is: 0.90911
+2026-06-20 00:20:53,841 - Model - INFO - Best inctance avg mIOU is: 0.90911
+2026-06-20 00:20:53,841 - Model - INFO - Epoch 23 (23/100):
+2026-06-20 00:20:53,841 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:21:02,954 - Model - INFO - Train accuracy is: 0.97279
+2026-06-20 00:21:04,708 - Model - INFO - eval mIoU of Guitar         0.911408
+2026-06-20 00:21:04,708 - Model - INFO - Epoch 23 test Accuracy: 0.966545  Class avg mIOU: 0.911408   Inctance avg mIOU: 0.911408
+2026-06-20 00:21:04,708 - Model - INFO - Save model...
+2026-06-20 00:21:04,709 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:21:04,754 - Model - INFO - Saving model....
+2026-06-20 00:21:04,754 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:21:04,755 - Model - INFO - Best class avg mIOU is: 0.91141
+2026-06-20 00:21:04,755 - Model - INFO - Best inctance avg mIOU is: 0.91141
+2026-06-20 00:21:04,755 - Model - INFO - Epoch 24 (24/100):
+2026-06-20 00:21:04,755 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:21:13,868 - Model - INFO - Train accuracy is: 0.97316
+2026-06-20 00:21:15,615 - Model - INFO - eval mIoU of Guitar         0.899487
+2026-06-20 00:21:15,615 - Model - INFO - Epoch 24 test Accuracy: 0.962270  Class avg mIOU: 0.899487   Inctance avg mIOU: 0.899487
+2026-06-20 00:21:15,616 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:21:15,616 - Model - INFO - Best class avg mIOU is: 0.91141
+2026-06-20 00:21:15,616 - Model - INFO - Best inctance avg mIOU is: 0.91141
+2026-06-20 00:21:15,616 - Model - INFO - Epoch 25 (25/100):
+2026-06-20 00:21:15,616 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:21:24,700 - Model - INFO - Train accuracy is: 0.97284
+2026-06-20 00:21:26,460 - Model - INFO - eval mIoU of Guitar         0.905022
+2026-06-20 00:21:26,460 - Model - INFO - Epoch 25 test Accuracy: 0.964475  Class avg mIOU: 0.905022   Inctance avg mIOU: 0.905022
+2026-06-20 00:21:26,460 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:21:26,460 - Model - INFO - Best class avg mIOU is: 0.91141
+2026-06-20 00:21:26,460 - Model - INFO - Best inctance avg mIOU is: 0.91141
+2026-06-20 00:21:26,460 - Model - INFO - Epoch 26 (26/100):
+2026-06-20 00:21:26,460 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:21:35,542 - Model - INFO - Train accuracy is: 0.97320
+2026-06-20 00:21:37,315 - Model - INFO - eval mIoU of Guitar         0.908937
+2026-06-20 00:21:37,315 - Model - INFO - Epoch 26 test Accuracy: 0.963588  Class avg mIOU: 0.908937   Inctance avg mIOU: 0.908937
+2026-06-20 00:21:37,315 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:21:37,315 - Model - INFO - Best class avg mIOU is: 0.91141
+2026-06-20 00:21:37,315 - Model - INFO - Best inctance avg mIOU is: 0.91141
+2026-06-20 00:21:37,315 - Model - INFO - Epoch 27 (27/100):
+2026-06-20 00:21:37,315 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:21:46,381 - Model - INFO - Train accuracy is: 0.97348
+2026-06-20 00:21:48,143 - Model - INFO - eval mIoU of Guitar         0.893486
+2026-06-20 00:21:48,144 - Model - INFO - Epoch 27 test Accuracy: 0.959617  Class avg mIOU: 0.893486   Inctance avg mIOU: 0.893486
+2026-06-20 00:21:48,144 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:21:48,144 - Model - INFO - Best class avg mIOU is: 0.91141
+2026-06-20 00:21:48,144 - Model - INFO - Best inctance avg mIOU is: 0.91141
+2026-06-20 00:21:48,144 - Model - INFO - Epoch 28 (28/100):
+2026-06-20 00:21:48,144 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:21:57,221 - Model - INFO - Train accuracy is: 0.97149
+2026-06-20 00:21:58,978 - Model - INFO - eval mIoU of Guitar         0.912929
+2026-06-20 00:21:58,978 - Model - INFO - Epoch 28 test Accuracy: 0.966554  Class avg mIOU: 0.912929   Inctance avg mIOU: 0.912929
+2026-06-20 00:21:58,979 - Model - INFO - Save model...
+2026-06-20 00:21:58,979 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:21:59,025 - Model - INFO - Saving model....
+2026-06-20 00:21:59,025 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:21:59,025 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:21:59,025 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:21:59,025 - Model - INFO - Epoch 29 (29/100):
+2026-06-20 00:21:59,025 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:22:08,133 - Model - INFO - Train accuracy is: 0.97279
+2026-06-20 00:22:09,887 - Model - INFO - eval mIoU of Guitar         0.906607
+2026-06-20 00:22:09,887 - Model - INFO - Epoch 29 test Accuracy: 0.965375  Class avg mIOU: 0.906607   Inctance avg mIOU: 0.906607
+2026-06-20 00:22:09,887 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:22:09,887 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:22:09,887 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:22:09,887 - Model - INFO - Epoch 30 (30/100):
+2026-06-20 00:22:09,887 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:22:18,981 - Model - INFO - Train accuracy is: 0.97342
+2026-06-20 00:22:20,751 - Model - INFO - eval mIoU of Guitar         0.900884
+2026-06-20 00:22:20,751 - Model - INFO - Epoch 30 test Accuracy: 0.959936  Class avg mIOU: 0.900884   Inctance avg mIOU: 0.900884
+2026-06-20 00:22:20,752 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:22:20,752 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:22:20,752 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:22:20,752 - Model - INFO - Epoch 31 (31/100):
+2026-06-20 00:22:20,752 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:22:29,893 - Model - INFO - Train accuracy is: 0.97368
+2026-06-20 00:22:31,645 - Model - INFO - eval mIoU of Guitar         0.910822
+2026-06-20 00:22:31,645 - Model - INFO - Epoch 31 test Accuracy: 0.964758  Class avg mIOU: 0.910822   Inctance avg mIOU: 0.910822
+2026-06-20 00:22:31,646 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:22:31,646 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:22:31,646 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:22:31,646 - Model - INFO - Epoch 32 (32/100):
+2026-06-20 00:22:31,646 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:22:40,714 - Model - INFO - Train accuracy is: 0.97292
+2026-06-20 00:22:42,485 - Model - INFO - eval mIoU of Guitar         0.909395
+2026-06-20 00:22:42,485 - Model - INFO - Epoch 32 test Accuracy: 0.964902  Class avg mIOU: 0.909395   Inctance avg mIOU: 0.909395
+2026-06-20 00:22:42,485 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:22:42,485 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:22:42,485 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:22:42,485 - Model - INFO - Epoch 33 (33/100):
+2026-06-20 00:22:42,485 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:22:51,583 - Model - INFO - Train accuracy is: 0.97327
+2026-06-20 00:22:53,327 - Model - INFO - eval mIoU of Guitar         0.876130
+2026-06-20 00:22:53,327 - Model - INFO - Epoch 33 test Accuracy: 0.955014  Class avg mIOU: 0.876130   Inctance avg mIOU: 0.876130
+2026-06-20 00:22:53,327 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:22:53,327 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:22:53,327 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:22:53,327 - Model - INFO - Epoch 34 (34/100):
+2026-06-20 00:22:53,328 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:23:02,428 - Model - INFO - Train accuracy is: 0.97254
+2026-06-20 00:23:04,189 - Model - INFO - eval mIoU of Guitar         0.906272
+2026-06-20 00:23:04,189 - Model - INFO - Epoch 34 test Accuracy: 0.963103  Class avg mIOU: 0.906272   Inctance avg mIOU: 0.906272
+2026-06-20 00:23:04,189 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:23:04,189 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:23:04,189 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:23:04,189 - Model - INFO - Epoch 35 (35/100):
+2026-06-20 00:23:04,189 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:23:13,271 - Model - INFO - Train accuracy is: 0.97262
+2026-06-20 00:23:15,022 - Model - INFO - eval mIoU of Guitar         0.909473
+2026-06-20 00:23:15,022 - Model - INFO - Epoch 35 test Accuracy: 0.965903  Class avg mIOU: 0.909473   Inctance avg mIOU: 0.909473
+2026-06-20 00:23:15,023 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:23:15,023 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:23:15,023 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:23:15,023 - Model - INFO - Epoch 36 (36/100):
+2026-06-20 00:23:15,023 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:23:24,088 - Model - INFO - Train accuracy is: 0.97298
+2026-06-20 00:23:25,841 - Model - INFO - eval mIoU of Guitar         0.895600
+2026-06-20 00:23:25,842 - Model - INFO - Epoch 36 test Accuracy: 0.957477  Class avg mIOU: 0.895600   Inctance avg mIOU: 0.895600
+2026-06-20 00:23:25,842 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:23:25,842 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:23:25,842 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:23:25,842 - Model - INFO - Epoch 37 (37/100):
+2026-06-20 00:23:25,842 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:23:34,910 - Model - INFO - Train accuracy is: 0.97329
+2026-06-20 00:23:36,667 - Model - INFO - eval mIoU of Guitar         0.903591
+2026-06-20 00:23:36,667 - Model - INFO - Epoch 37 test Accuracy: 0.962838  Class avg mIOU: 0.903591   Inctance avg mIOU: 0.903591
+2026-06-20 00:23:36,667 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:23:36,667 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:23:36,667 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:23:36,667 - Model - INFO - Epoch 38 (38/100):
+2026-06-20 00:23:36,667 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:23:45,806 - Model - INFO - Train accuracy is: 0.97332
+2026-06-20 00:23:47,552 - Model - INFO - eval mIoU of Guitar         0.908516
+2026-06-20 00:23:47,552 - Model - INFO - Epoch 38 test Accuracy: 0.964730  Class avg mIOU: 0.908516   Inctance avg mIOU: 0.908516
+2026-06-20 00:23:47,552 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:23:47,552 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:23:47,552 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:23:47,552 - Model - INFO - Epoch 39 (39/100):
+2026-06-20 00:23:47,552 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:23:56,620 - Model - INFO - Train accuracy is: 0.97403
+2026-06-20 00:23:58,379 - Model - INFO - eval mIoU of Guitar         0.909432
+2026-06-20 00:23:58,379 - Model - INFO - Epoch 39 test Accuracy: 0.964125  Class avg mIOU: 0.909432   Inctance avg mIOU: 0.909432
+2026-06-20 00:23:58,379 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:23:58,379 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:23:58,379 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:23:58,379 - Model - INFO - Epoch 40 (40/100):
+2026-06-20 00:23:58,379 - Model - INFO - Learning rate:0.000500
+2026-06-20 00:24:07,475 - Model - INFO - Train accuracy is: 0.97421
+2026-06-20 00:24:09,249 - Model - INFO - eval mIoU of Guitar         0.907430
+2026-06-20 00:24:09,250 - Model - INFO - Epoch 40 test Accuracy: 0.964497  Class avg mIOU: 0.907430   Inctance avg mIOU: 0.907430
+2026-06-20 00:24:09,250 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:24:09,250 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:24:09,250 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:24:09,250 - Model - INFO - Epoch 41 (41/100):
+2026-06-20 00:24:09,250 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:24:18,376 - Model - INFO - Train accuracy is: 0.97366
+2026-06-20 00:24:20,132 - Model - INFO - eval mIoU of Guitar         0.911175
+2026-06-20 00:24:20,133 - Model - INFO - Epoch 41 test Accuracy: 0.964610  Class avg mIOU: 0.911175   Inctance avg mIOU: 0.911175
+2026-06-20 00:24:20,133 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:24:20,133 - Model - INFO - Best class avg mIOU is: 0.91293
+2026-06-20 00:24:20,133 - Model - INFO - Best inctance avg mIOU is: 0.91293
+2026-06-20 00:24:20,133 - Model - INFO - Epoch 42 (42/100):
+2026-06-20 00:24:20,133 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:24:29,267 - Model - INFO - Train accuracy is: 0.97466
+2026-06-20 00:24:31,025 - Model - INFO - eval mIoU of Guitar         0.913732
+2026-06-20 00:24:31,025 - Model - INFO - Epoch 42 test Accuracy: 0.965998  Class avg mIOU: 0.913732   Inctance avg mIOU: 0.913732
+2026-06-20 00:24:31,025 - Model - INFO - Save model...
+2026-06-20 00:24:31,025 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:24:31,071 - Model - INFO - Saving model....
+2026-06-20 00:24:31,071 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:24:31,072 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:24:31,072 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:24:31,072 - Model - INFO - Epoch 43 (43/100):
+2026-06-20 00:24:31,072 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:24:40,225 - Model - INFO - Train accuracy is: 0.97554
+2026-06-20 00:24:42,003 - Model - INFO - eval mIoU of Guitar         0.911547
+2026-06-20 00:24:42,003 - Model - INFO - Epoch 43 test Accuracy: 0.965774  Class avg mIOU: 0.911547   Inctance avg mIOU: 0.911547
+2026-06-20 00:24:42,003 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:24:42,004 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:24:42,004 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:24:42,004 - Model - INFO - Epoch 44 (44/100):
+2026-06-20 00:24:42,004 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:24:51,067 - Model - INFO - Train accuracy is: 0.97552
+2026-06-20 00:24:52,848 - Model - INFO - eval mIoU of Guitar         0.909571
+2026-06-20 00:24:52,848 - Model - INFO - Epoch 44 test Accuracy: 0.965526  Class avg mIOU: 0.909571   Inctance avg mIOU: 0.909571
+2026-06-20 00:24:52,848 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:24:52,848 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:24:52,848 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:24:52,848 - Model - INFO - Epoch 45 (45/100):
+2026-06-20 00:24:52,848 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:25:02,004 - Model - INFO - Train accuracy is: 0.97503
+2026-06-20 00:25:03,767 - Model - INFO - eval mIoU of Guitar         0.904965
+2026-06-20 00:25:03,767 - Model - INFO - Epoch 45 test Accuracy: 0.963910  Class avg mIOU: 0.904965   Inctance avg mIOU: 0.904965
+2026-06-20 00:25:03,767 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:25:03,767 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:25:03,768 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:25:03,768 - Model - INFO - Epoch 46 (46/100):
+2026-06-20 00:25:03,768 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:25:12,878 - Model - INFO - Train accuracy is: 0.97566
+2026-06-20 00:25:14,634 - Model - INFO - eval mIoU of Guitar         0.913280
+2026-06-20 00:25:14,634 - Model - INFO - Epoch 46 test Accuracy: 0.966496  Class avg mIOU: 0.913280   Inctance avg mIOU: 0.913280
+2026-06-20 00:25:14,634 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:25:14,634 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:25:14,634 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:25:14,634 - Model - INFO - Epoch 47 (47/100):
+2026-06-20 00:25:14,634 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:25:23,717 - Model - INFO - Train accuracy is: 0.97532
+2026-06-20 00:25:25,506 - Model - INFO - eval mIoU of Guitar         0.911620
+2026-06-20 00:25:25,506 - Model - INFO - Epoch 47 test Accuracy: 0.966152  Class avg mIOU: 0.911620   Inctance avg mIOU: 0.911620
+2026-06-20 00:25:25,506 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:25:25,506 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:25:25,506 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:25:25,506 - Model - INFO - Epoch 48 (48/100):
+2026-06-20 00:25:25,506 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:25:34,615 - Model - INFO - Train accuracy is: 0.97540
+2026-06-20 00:25:36,373 - Model - INFO - eval mIoU of Guitar         0.900514
+2026-06-20 00:25:36,374 - Model - INFO - Epoch 48 test Accuracy: 0.961438  Class avg mIOU: 0.900514   Inctance avg mIOU: 0.900514
+2026-06-20 00:25:36,374 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:25:36,374 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:25:36,374 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:25:36,374 - Model - INFO - Epoch 49 (49/100):
+2026-06-20 00:25:36,374 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:25:45,487 - Model - INFO - Train accuracy is: 0.97514
+2026-06-20 00:25:47,251 - Model - INFO - eval mIoU of Guitar         0.910987
+2026-06-20 00:25:47,251 - Model - INFO - Epoch 49 test Accuracy: 0.966130  Class avg mIOU: 0.910987   Inctance avg mIOU: 0.910987
+2026-06-20 00:25:47,251 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:25:47,251 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:25:47,251 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:25:47,251 - Model - INFO - Epoch 50 (50/100):
+2026-06-20 00:25:47,251 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:25:56,352 - Model - INFO - Train accuracy is: 0.97476
+2026-06-20 00:25:58,107 - Model - INFO - eval mIoU of Guitar         0.901900
+2026-06-20 00:25:58,107 - Model - INFO - Epoch 50 test Accuracy: 0.964715  Class avg mIOU: 0.901900   Inctance avg mIOU: 0.901900
+2026-06-20 00:25:58,107 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:25:58,107 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:25:58,107 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:25:58,107 - Model - INFO - Epoch 51 (51/100):
+2026-06-20 00:25:58,107 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:26:07,221 - Model - INFO - Train accuracy is: 0.97564
+2026-06-20 00:26:08,999 - Model - INFO - eval mIoU of Guitar         0.897341
+2026-06-20 00:26:09,000 - Model - INFO - Epoch 51 test Accuracy: 0.961714  Class avg mIOU: 0.897341   Inctance avg mIOU: 0.897341
+2026-06-20 00:26:09,000 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:26:09,000 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:26:09,000 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:26:09,000 - Model - INFO - Epoch 52 (52/100):
+2026-06-20 00:26:09,000 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:26:18,102 - Model - INFO - Train accuracy is: 0.97574
+2026-06-20 00:26:19,850 - Model - INFO - eval mIoU of Guitar         0.912589
+2026-06-20 00:26:19,850 - Model - INFO - Epoch 52 test Accuracy: 0.966450  Class avg mIOU: 0.912589   Inctance avg mIOU: 0.912589
+2026-06-20 00:26:19,850 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:26:19,850 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:26:19,850 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:26:19,850 - Model - INFO - Epoch 53 (53/100):
+2026-06-20 00:26:19,850 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:26:28,948 - Model - INFO - Train accuracy is: 0.97534
+2026-06-20 00:26:30,711 - Model - INFO - eval mIoU of Guitar         0.910775
+2026-06-20 00:26:30,711 - Model - INFO - Epoch 53 test Accuracy: 0.965436  Class avg mIOU: 0.910775   Inctance avg mIOU: 0.910775
+2026-06-20 00:26:30,711 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:26:30,711 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:26:30,711 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:26:30,711 - Model - INFO - Epoch 54 (54/100):
+2026-06-20 00:26:30,711 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:26:39,824 - Model - INFO - Train accuracy is: 0.97506
+2026-06-20 00:26:41,571 - Model - INFO - eval mIoU of Guitar         0.911109
+2026-06-20 00:26:41,571 - Model - INFO - Epoch 54 test Accuracy: 0.965608  Class avg mIOU: 0.911109   Inctance avg mIOU: 0.911109
+2026-06-20 00:26:41,571 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:26:41,571 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:26:41,571 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:26:41,571 - Model - INFO - Epoch 55 (55/100):
+2026-06-20 00:26:41,571 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:26:50,698 - Model - INFO - Train accuracy is: 0.97540
+2026-06-20 00:26:52,462 - Model - INFO - eval mIoU of Guitar         0.909630
+2026-06-20 00:26:52,462 - Model - INFO - Epoch 55 test Accuracy: 0.965974  Class avg mIOU: 0.909630   Inctance avg mIOU: 0.909630
+2026-06-20 00:26:52,462 - Model - INFO - Best accuracy is: 0.96655
+2026-06-20 00:26:52,462 - Model - INFO - Best class avg mIOU is: 0.91373
+2026-06-20 00:26:52,462 - Model - INFO - Best inctance avg mIOU is: 0.91373
+2026-06-20 00:26:52,462 - Model - INFO - Epoch 56 (56/100):
+2026-06-20 00:26:52,462 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:27:01,564 - Model - INFO - Train accuracy is: 0.97583
+2026-06-20 00:27:03,328 - Model - INFO - eval mIoU of Guitar         0.914568
+2026-06-20 00:27:03,328 - Model - INFO - Epoch 56 test Accuracy: 0.967242  Class avg mIOU: 0.914568   Inctance avg mIOU: 0.914568
+2026-06-20 00:27:03,328 - Model - INFO - Save model...
+2026-06-20 00:27:03,328 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:27:03,374 - Model - INFO - Saving model....
+2026-06-20 00:27:03,374 - Model - INFO - Best accuracy is: 0.96724
+2026-06-20 00:27:03,374 - Model - INFO - Best class avg mIOU is: 0.91457
+2026-06-20 00:27:03,374 - Model - INFO - Best inctance avg mIOU is: 0.91457
+2026-06-20 00:27:03,374 - Model - INFO - Epoch 57 (57/100):
+2026-06-20 00:27:03,374 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:27:12,483 - Model - INFO - Train accuracy is: 0.97601
+2026-06-20 00:27:14,245 - Model - INFO - eval mIoU of Guitar         0.912996
+2026-06-20 00:27:14,245 - Model - INFO - Epoch 57 test Accuracy: 0.966416  Class avg mIOU: 0.912996   Inctance avg mIOU: 0.912996
+2026-06-20 00:27:14,245 - Model - INFO - Best accuracy is: 0.96724
+2026-06-20 00:27:14,245 - Model - INFO - Best class avg mIOU is: 0.91457
+2026-06-20 00:27:14,245 - Model - INFO - Best inctance avg mIOU is: 0.91457
+2026-06-20 00:27:14,245 - Model - INFO - Epoch 58 (58/100):
+2026-06-20 00:27:14,245 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:27:23,320 - Model - INFO - Train accuracy is: 0.97566
+2026-06-20 00:27:25,062 - Model - INFO - eval mIoU of Guitar         0.910751
+2026-06-20 00:27:25,062 - Model - INFO - Epoch 58 test Accuracy: 0.965919  Class avg mIOU: 0.910751   Inctance avg mIOU: 0.910751
+2026-06-20 00:27:25,062 - Model - INFO - Best accuracy is: 0.96724
+2026-06-20 00:27:25,062 - Model - INFO - Best class avg mIOU is: 0.91457
+2026-06-20 00:27:25,062 - Model - INFO - Best inctance avg mIOU is: 0.91457
+2026-06-20 00:27:25,062 - Model - INFO - Epoch 59 (59/100):
+2026-06-20 00:27:25,062 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:27:34,144 - Model - INFO - Train accuracy is: 0.97616
+2026-06-20 00:27:35,897 - Model - INFO - eval mIoU of Guitar         0.914508
+2026-06-20 00:27:35,897 - Model - INFO - Epoch 59 test Accuracy: 0.967018  Class avg mIOU: 0.914508   Inctance avg mIOU: 0.914508
+2026-06-20 00:27:35,897 - Model - INFO - Best accuracy is: 0.96724
+2026-06-20 00:27:35,897 - Model - INFO - Best class avg mIOU is: 0.91457
+2026-06-20 00:27:35,897 - Model - INFO - Best inctance avg mIOU is: 0.91457
+2026-06-20 00:27:35,897 - Model - INFO - Epoch 60 (60/100):
+2026-06-20 00:27:35,897 - Model - INFO - Learning rate:0.000250
+2026-06-20 00:27:45,025 - Model - INFO - Train accuracy is: 0.97569
+2026-06-20 00:27:46,790 - Model - INFO - eval mIoU of Guitar         0.903665
+2026-06-20 00:27:46,790 - Model - INFO - Epoch 60 test Accuracy: 0.964954  Class avg mIOU: 0.903665   Inctance avg mIOU: 0.903665
+2026-06-20 00:27:46,790 - Model - INFO - Best accuracy is: 0.96724
+2026-06-20 00:27:46,790 - Model - INFO - Best class avg mIOU is: 0.91457
+2026-06-20 00:27:46,790 - Model - INFO - Best inctance avg mIOU is: 0.91457
+2026-06-20 00:27:46,790 - Model - INFO - Epoch 61 (61/100):
+2026-06-20 00:27:46,790 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:27:55,850 - Model - INFO - Train accuracy is: 0.97739
+2026-06-20 00:27:57,620 - Model - INFO - eval mIoU of Guitar         0.915421
+2026-06-20 00:27:57,620 - Model - INFO - Epoch 61 test Accuracy: 0.966800  Class avg mIOU: 0.915421   Inctance avg mIOU: 0.915421
+2026-06-20 00:27:57,620 - Model - INFO - Save model...
+2026-06-20 00:27:57,620 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:27:57,666 - Model - INFO - Saving model....
+2026-06-20 00:27:57,666 - Model - INFO - Best accuracy is: 0.96724
+2026-06-20 00:27:57,666 - Model - INFO - Best class avg mIOU is: 0.91542
+2026-06-20 00:27:57,667 - Model - INFO - Best inctance avg mIOU is: 0.91542
+2026-06-20 00:27:57,667 - Model - INFO - Epoch 62 (62/100):
+2026-06-20 00:27:57,667 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:28:06,774 - Model - INFO - Train accuracy is: 0.97733
+2026-06-20 00:28:08,552 - Model - INFO - eval mIoU of Guitar         0.914585
+2026-06-20 00:28:08,552 - Model - INFO - Epoch 62 test Accuracy: 0.968056  Class avg mIOU: 0.914585   Inctance avg mIOU: 0.914585
+2026-06-20 00:28:08,552 - Model - INFO - Best accuracy is: 0.96806
+2026-06-20 00:28:08,552 - Model - INFO - Best class avg mIOU is: 0.91542
+2026-06-20 00:28:08,552 - Model - INFO - Best inctance avg mIOU is: 0.91542
+2026-06-20 00:28:08,552 - Model - INFO - Epoch 63 (63/100):
+2026-06-20 00:28:08,552 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:28:17,639 - Model - INFO - Train accuracy is: 0.97757
+2026-06-20 00:28:19,389 - Model - INFO - eval mIoU of Guitar         0.910994
+2026-06-20 00:28:19,389 - Model - INFO - Epoch 63 test Accuracy: 0.965357  Class avg mIOU: 0.910994   Inctance avg mIOU: 0.910994
+2026-06-20 00:28:19,389 - Model - INFO - Best accuracy is: 0.96806
+2026-06-20 00:28:19,389 - Model - INFO - Best class avg mIOU is: 0.91542
+2026-06-20 00:28:19,389 - Model - INFO - Best inctance avg mIOU is: 0.91542
+2026-06-20 00:28:19,389 - Model - INFO - Epoch 64 (64/100):
+2026-06-20 00:28:19,389 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:28:28,457 - Model - INFO - Train accuracy is: 0.97728
+2026-06-20 00:28:30,213 - Model - INFO - eval mIoU of Guitar         0.907923
+2026-06-20 00:28:30,213 - Model - INFO - Epoch 64 test Accuracy: 0.965335  Class avg mIOU: 0.907923   Inctance avg mIOU: 0.907923
+2026-06-20 00:28:30,213 - Model - INFO - Best accuracy is: 0.96806
+2026-06-20 00:28:30,213 - Model - INFO - Best class avg mIOU is: 0.91542
+2026-06-20 00:28:30,213 - Model - INFO - Best inctance avg mIOU is: 0.91542
+2026-06-20 00:28:30,213 - Model - INFO - Epoch 65 (65/100):
+2026-06-20 00:28:30,213 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:28:39,331 - Model - INFO - Train accuracy is: 0.97776
+2026-06-20 00:28:41,097 - Model - INFO - eval mIoU of Guitar         0.912937
+2026-06-20 00:28:41,097 - Model - INFO - Epoch 65 test Accuracy: 0.966453  Class avg mIOU: 0.912937   Inctance avg mIOU: 0.912937
+2026-06-20 00:28:41,097 - Model - INFO - Best accuracy is: 0.96806
+2026-06-20 00:28:41,097 - Model - INFO - Best class avg mIOU is: 0.91542
+2026-06-20 00:28:41,097 - Model - INFO - Best inctance avg mIOU is: 0.91542
+2026-06-20 00:28:41,097 - Model - INFO - Epoch 66 (66/100):
+2026-06-20 00:28:41,097 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:28:50,160 - Model - INFO - Train accuracy is: 0.97716
+2026-06-20 00:28:51,913 - Model - INFO - eval mIoU of Guitar         0.913295
+2026-06-20 00:28:51,913 - Model - INFO - Epoch 66 test Accuracy: 0.967046  Class avg mIOU: 0.913295   Inctance avg mIOU: 0.913295
+2026-06-20 00:28:51,914 - Model - INFO - Best accuracy is: 0.96806
+2026-06-20 00:28:51,914 - Model - INFO - Best class avg mIOU is: 0.91542
+2026-06-20 00:28:51,914 - Model - INFO - Best inctance avg mIOU is: 0.91542
+2026-06-20 00:28:51,914 - Model - INFO - Epoch 67 (67/100):
+2026-06-20 00:28:51,914 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:29:01,007 - Model - INFO - Train accuracy is: 0.97779
+2026-06-20 00:29:02,751 - Model - INFO - eval mIoU of Guitar         0.916097
+2026-06-20 00:29:02,751 - Model - INFO - Epoch 67 test Accuracy: 0.968022  Class avg mIOU: 0.916097   Inctance avg mIOU: 0.916097
+2026-06-20 00:29:02,751 - Model - INFO - Save model...
+2026-06-20 00:29:02,752 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:29:02,798 - Model - INFO - Saving model....
+2026-06-20 00:29:02,798 - Model - INFO - Best accuracy is: 0.96806
+2026-06-20 00:29:02,798 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:29:02,798 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:29:02,798 - Model - INFO - Epoch 68 (68/100):
+2026-06-20 00:29:02,798 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:29:11,856 - Model - INFO - Train accuracy is: 0.97753
+2026-06-20 00:29:13,598 - Model - INFO - eval mIoU of Guitar         0.909908
+2026-06-20 00:29:13,599 - Model - INFO - Epoch 68 test Accuracy: 0.966656  Class avg mIOU: 0.909908   Inctance avg mIOU: 0.909908
+2026-06-20 00:29:13,599 - Model - INFO - Best accuracy is: 0.96806
+2026-06-20 00:29:13,599 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:29:13,599 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:29:13,599 - Model - INFO - Epoch 69 (69/100):
+2026-06-20 00:29:13,599 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:29:22,703 - Model - INFO - Train accuracy is: 0.97746
+2026-06-20 00:29:24,450 - Model - INFO - eval mIoU of Guitar         0.911072
+2026-06-20 00:29:24,450 - Model - INFO - Epoch 69 test Accuracy: 0.966238  Class avg mIOU: 0.911072   Inctance avg mIOU: 0.911072
+2026-06-20 00:29:24,450 - Model - INFO - Best accuracy is: 0.96806
+2026-06-20 00:29:24,450 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:29:24,450 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:29:24,450 - Model - INFO - Epoch 70 (70/100):
+2026-06-20 00:29:24,450 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:29:33,554 - Model - INFO - Train accuracy is: 0.97724
+2026-06-20 00:29:35,308 - Model - INFO - eval mIoU of Guitar         0.914345
+2026-06-20 00:29:35,308 - Model - INFO - Epoch 70 test Accuracy: 0.967285  Class avg mIOU: 0.914345   Inctance avg mIOU: 0.914345
+2026-06-20 00:29:35,309 - Model - INFO - Best accuracy is: 0.96806
+2026-06-20 00:29:35,309 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:29:35,309 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:29:35,309 - Model - INFO - Epoch 71 (71/100):
+2026-06-20 00:29:35,309 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:29:44,404 - Model - INFO - Train accuracy is: 0.97771
+2026-06-20 00:29:46,156 - Model - INFO - eval mIoU of Guitar         0.913613
+2026-06-20 00:29:46,156 - Model - INFO - Epoch 71 test Accuracy: 0.965747  Class avg mIOU: 0.913613   Inctance avg mIOU: 0.913613
+2026-06-20 00:29:46,156 - Model - INFO - Best accuracy is: 0.96806
+2026-06-20 00:29:46,156 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:29:46,156 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:29:46,156 - Model - INFO - Epoch 72 (72/100):
+2026-06-20 00:29:46,156 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:29:55,291 - Model - INFO - Train accuracy is: 0.97753
+2026-06-20 00:29:57,055 - Model - INFO - eval mIoU of Guitar         0.915850
+2026-06-20 00:29:57,055 - Model - INFO - Epoch 72 test Accuracy: 0.968157  Class avg mIOU: 0.915850   Inctance avg mIOU: 0.915850
+2026-06-20 00:29:57,055 - Model - INFO - Best accuracy is: 0.96816
+2026-06-20 00:29:57,056 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:29:57,056 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:29:57,056 - Model - INFO - Epoch 73 (73/100):
+2026-06-20 00:29:57,056 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:30:06,200 - Model - INFO - Train accuracy is: 0.97793
+2026-06-20 00:30:07,945 - Model - INFO - eval mIoU of Guitar         0.911292
+2026-06-20 00:30:07,945 - Model - INFO - Epoch 73 test Accuracy: 0.965869  Class avg mIOU: 0.911292   Inctance avg mIOU: 0.911292
+2026-06-20 00:30:07,946 - Model - INFO - Best accuracy is: 0.96816
+2026-06-20 00:30:07,946 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:30:07,946 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:30:07,946 - Model - INFO - Epoch 74 (74/100):
+2026-06-20 00:30:07,946 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:30:17,050 - Model - INFO - Train accuracy is: 0.97780
+2026-06-20 00:30:18,807 - Model - INFO - eval mIoU of Guitar         0.914045
+2026-06-20 00:30:18,807 - Model - INFO - Epoch 74 test Accuracy: 0.967420  Class avg mIOU: 0.914045   Inctance avg mIOU: 0.914045
+2026-06-20 00:30:18,807 - Model - INFO - Best accuracy is: 0.96816
+2026-06-20 00:30:18,807 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:30:18,807 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:30:18,807 - Model - INFO - Epoch 75 (75/100):
+2026-06-20 00:30:18,807 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:30:27,861 - Model - INFO - Train accuracy is: 0.97828
+2026-06-20 00:30:29,636 - Model - INFO - eval mIoU of Guitar         0.912053
+2026-06-20 00:30:29,636 - Model - INFO - Epoch 75 test Accuracy: 0.965599  Class avg mIOU: 0.912053   Inctance avg mIOU: 0.912053
+2026-06-20 00:30:29,636 - Model - INFO - Best accuracy is: 0.96816
+2026-06-20 00:30:29,636 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:30:29,637 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:30:29,637 - Model - INFO - Epoch 76 (76/100):
+2026-06-20 00:30:29,637 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:30:38,721 - Model - INFO - Train accuracy is: 0.97792
+2026-06-20 00:30:40,468 - Model - INFO - eval mIoU of Guitar         0.912742
+2026-06-20 00:30:40,468 - Model - INFO - Epoch 76 test Accuracy: 0.966892  Class avg mIOU: 0.912742   Inctance avg mIOU: 0.912742
+2026-06-20 00:30:40,468 - Model - INFO - Best accuracy is: 0.96816
+2026-06-20 00:30:40,468 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:30:40,468 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:30:40,468 - Model - INFO - Epoch 77 (77/100):
+2026-06-20 00:30:40,468 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:30:49,585 - Model - INFO - Train accuracy is: 0.97847
+2026-06-20 00:30:51,371 - Model - INFO - eval mIoU of Guitar         0.907036
+2026-06-20 00:30:51,371 - Model - INFO - Epoch 77 test Accuracy: 0.965409  Class avg mIOU: 0.907036   Inctance avg mIOU: 0.907036
+2026-06-20 00:30:51,371 - Model - INFO - Best accuracy is: 0.96816
+2026-06-20 00:30:51,371 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:30:51,371 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:30:51,371 - Model - INFO - Epoch 78 (78/100):
+2026-06-20 00:30:51,371 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:31:00,467 - Model - INFO - Train accuracy is: 0.97794
+2026-06-20 00:31:02,225 - Model - INFO - eval mIoU of Guitar         0.915867
+2026-06-20 00:31:02,225 - Model - INFO - Epoch 78 test Accuracy: 0.967417  Class avg mIOU: 0.915867   Inctance avg mIOU: 0.915867
+2026-06-20 00:31:02,225 - Model - INFO - Best accuracy is: 0.96816
+2026-06-20 00:31:02,225 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:31:02,225 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:31:02,225 - Model - INFO - Epoch 79 (79/100):
+2026-06-20 00:31:02,225 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:31:11,333 - Model - INFO - Train accuracy is: 0.97784
+2026-06-20 00:31:13,093 - Model - INFO - eval mIoU of Guitar         0.915068
+2026-06-20 00:31:13,093 - Model - INFO - Epoch 79 test Accuracy: 0.967362  Class avg mIOU: 0.915068   Inctance avg mIOU: 0.915068
+2026-06-20 00:31:13,093 - Model - INFO - Best accuracy is: 0.96816
+2026-06-20 00:31:13,093 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:31:13,093 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:31:13,093 - Model - INFO - Epoch 80 (80/100):
+2026-06-20 00:31:13,093 - Model - INFO - Learning rate:0.000125
+2026-06-20 00:31:22,189 - Model - INFO - Train accuracy is: 0.97799
+2026-06-20 00:31:23,948 - Model - INFO - eval mIoU of Guitar         0.915002
+2026-06-20 00:31:23,949 - Model - INFO - Epoch 80 test Accuracy: 0.967721  Class avg mIOU: 0.915002   Inctance avg mIOU: 0.915002
+2026-06-20 00:31:23,949 - Model - INFO - Best accuracy is: 0.96816
+2026-06-20 00:31:23,949 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:31:23,949 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:31:23,949 - Model - INFO - Epoch 81 (81/100):
+2026-06-20 00:31:23,949 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:31:33,049 - Model - INFO - Train accuracy is: 0.97842
+2026-06-20 00:31:34,813 - Model - INFO - eval mIoU of Guitar         0.915079
+2026-06-20 00:31:34,813 - Model - INFO - Epoch 81 test Accuracy: 0.967758  Class avg mIOU: 0.915079   Inctance avg mIOU: 0.915079
+2026-06-20 00:31:34,813 - Model - INFO - Best accuracy is: 0.96816
+2026-06-20 00:31:34,813 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:31:34,813 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:31:34,813 - Model - INFO - Epoch 82 (82/100):
+2026-06-20 00:31:34,813 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:31:43,940 - Model - INFO - Train accuracy is: 0.97888
+2026-06-20 00:31:45,717 - Model - INFO - eval mIoU of Guitar         0.903821
+2026-06-20 00:31:45,717 - Model - INFO - Epoch 82 test Accuracy: 0.964844  Class avg mIOU: 0.903821   Inctance avg mIOU: 0.903821
+2026-06-20 00:31:45,717 - Model - INFO - Best accuracy is: 0.96816
+2026-06-20 00:31:45,717 - Model - INFO - Best class avg mIOU is: 0.91610
+2026-06-20 00:31:45,717 - Model - INFO - Best inctance avg mIOU is: 0.91610
+2026-06-20 00:31:45,717 - Model - INFO - Epoch 83 (83/100):
+2026-06-20 00:31:45,717 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:31:54,797 - Model - INFO - Train accuracy is: 0.97847
+2026-06-20 00:31:56,555 - Model - INFO - eval mIoU of Guitar         0.918558
+2026-06-20 00:31:56,555 - Model - INFO - Epoch 83 test Accuracy: 0.968888  Class avg mIOU: 0.918558   Inctance avg mIOU: 0.918558
+2026-06-20 00:31:56,555 - Model - INFO - Save model...
+2026-06-20 00:31:56,555 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:31:56,601 - Model - INFO - Saving model....
+2026-06-20 00:31:56,602 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:31:56,602 - Model - INFO - Best class avg mIOU is: 0.91856
+2026-06-20 00:31:56,602 - Model - INFO - Best inctance avg mIOU is: 0.91856
+2026-06-20 00:31:56,602 - Model - INFO - Epoch 84 (84/100):
+2026-06-20 00:31:56,602 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:32:05,720 - Model - INFO - Train accuracy is: 0.97905
+2026-06-20 00:32:07,482 - Model - INFO - eval mIoU of Guitar         0.916541
+2026-06-20 00:32:07,482 - Model - INFO - Epoch 84 test Accuracy: 0.967939  Class avg mIOU: 0.916541   Inctance avg mIOU: 0.916541
+2026-06-20 00:32:07,482 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:32:07,482 - Model - INFO - Best class avg mIOU is: 0.91856
+2026-06-20 00:32:07,482 - Model - INFO - Best inctance avg mIOU is: 0.91856
+2026-06-20 00:32:07,482 - Model - INFO - Epoch 85 (85/100):
+2026-06-20 00:32:07,482 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:32:16,584 - Model - INFO - Train accuracy is: 0.97887
+2026-06-20 00:32:18,343 - Model - INFO - eval mIoU of Guitar         0.916466
+2026-06-20 00:32:18,343 - Model - INFO - Epoch 85 test Accuracy: 0.968031  Class avg mIOU: 0.916466   Inctance avg mIOU: 0.916466
+2026-06-20 00:32:18,344 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:32:18,344 - Model - INFO - Best class avg mIOU is: 0.91856
+2026-06-20 00:32:18,344 - Model - INFO - Best inctance avg mIOU is: 0.91856
+2026-06-20 00:32:18,344 - Model - INFO - Epoch 86 (86/100):
+2026-06-20 00:32:18,344 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:32:27,417 - Model - INFO - Train accuracy is: 0.97897
+2026-06-20 00:32:29,174 - Model - INFO - eval mIoU of Guitar         0.919483
+2026-06-20 00:32:29,174 - Model - INFO - Epoch 86 test Accuracy: 0.968784  Class avg mIOU: 0.919483   Inctance avg mIOU: 0.919483
+2026-06-20 00:32:29,174 - Model - INFO - Save model...
+2026-06-20 00:32:29,174 - Model - INFO - Saving at log/part_seg/parts3_cap626/Guitar/seed_42/checkpoints/best_model.pth
+2026-06-20 00:32:29,220 - Model - INFO - Saving model....
+2026-06-20 00:32:29,221 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:32:29,221 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:32:29,221 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:32:29,221 - Model - INFO - Epoch 87 (87/100):
+2026-06-20 00:32:29,221 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:32:38,300 - Model - INFO - Train accuracy is: 0.97910
+2026-06-20 00:32:40,058 - Model - INFO - eval mIoU of Guitar         0.912155
+2026-06-20 00:32:40,058 - Model - INFO - Epoch 87 test Accuracy: 0.966490  Class avg mIOU: 0.912155   Inctance avg mIOU: 0.912155
+2026-06-20 00:32:40,058 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:32:40,058 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:32:40,058 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:32:40,058 - Model - INFO - Epoch 88 (88/100):
+2026-06-20 00:32:40,058 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:32:49,179 - Model - INFO - Train accuracy is: 0.97913
+2026-06-20 00:32:50,937 - Model - INFO - eval mIoU of Guitar         0.913589
+2026-06-20 00:32:50,938 - Model - INFO - Epoch 88 test Accuracy: 0.966904  Class avg mIOU: 0.913589   Inctance avg mIOU: 0.913589
+2026-06-20 00:32:50,938 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:32:50,938 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:32:50,938 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:32:50,938 - Model - INFO - Epoch 89 (89/100):
+2026-06-20 00:32:50,938 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:33:00,007 - Model - INFO - Train accuracy is: 0.97928
+2026-06-20 00:33:01,757 - Model - INFO - eval mIoU of Guitar         0.914764
+2026-06-20 00:33:01,757 - Model - INFO - Epoch 89 test Accuracy: 0.967175  Class avg mIOU: 0.914764   Inctance avg mIOU: 0.914764
+2026-06-20 00:33:01,758 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:33:01,758 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:33:01,758 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:33:01,758 - Model - INFO - Epoch 90 (90/100):
+2026-06-20 00:33:01,758 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:33:10,884 - Model - INFO - Train accuracy is: 0.97911
+2026-06-20 00:33:12,628 - Model - INFO - eval mIoU of Guitar         0.908719
+2026-06-20 00:33:12,628 - Model - INFO - Epoch 90 test Accuracy: 0.965814  Class avg mIOU: 0.908719   Inctance avg mIOU: 0.908719
+2026-06-20 00:33:12,628 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:33:12,628 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:33:12,628 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:33:12,628 - Model - INFO - Epoch 91 (91/100):
+2026-06-20 00:33:12,628 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:33:21,747 - Model - INFO - Train accuracy is: 0.97921
+2026-06-20 00:33:23,510 - Model - INFO - eval mIoU of Guitar         0.911268
+2026-06-20 00:33:23,511 - Model - INFO - Epoch 91 test Accuracy: 0.966886  Class avg mIOU: 0.911268   Inctance avg mIOU: 0.911268
+2026-06-20 00:33:23,511 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:33:23,511 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:33:23,511 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:33:23,511 - Model - INFO - Epoch 92 (92/100):
+2026-06-20 00:33:23,511 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:33:32,608 - Model - INFO - Train accuracy is: 0.97942
+2026-06-20 00:33:34,347 - Model - INFO - eval mIoU of Guitar         0.912719
+2026-06-20 00:33:34,347 - Model - INFO - Epoch 92 test Accuracy: 0.967049  Class avg mIOU: 0.912719   Inctance avg mIOU: 0.912719
+2026-06-20 00:33:34,347 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:33:34,347 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:33:34,347 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:33:34,347 - Model - INFO - Epoch 93 (93/100):
+2026-06-20 00:33:34,347 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:33:43,424 - Model - INFO - Train accuracy is: 0.97924
+2026-06-20 00:33:45,189 - Model - INFO - eval mIoU of Guitar         0.918637
+2026-06-20 00:33:45,189 - Model - INFO - Epoch 93 test Accuracy: 0.968016  Class avg mIOU: 0.918637   Inctance avg mIOU: 0.918637
+2026-06-20 00:33:45,190 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:33:45,190 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:33:45,190 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:33:45,190 - Model - INFO - Epoch 94 (94/100):
+2026-06-20 00:33:45,190 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:33:54,347 - Model - INFO - Train accuracy is: 0.97914
+2026-06-20 00:33:56,105 - Model - INFO - eval mIoU of Guitar         0.918512
+2026-06-20 00:33:56,105 - Model - INFO - Epoch 94 test Accuracy: 0.968848  Class avg mIOU: 0.918512   Inctance avg mIOU: 0.918512
+2026-06-20 00:33:56,106 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:33:56,106 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:33:56,106 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:33:56,106 - Model - INFO - Epoch 95 (95/100):
+2026-06-20 00:33:56,106 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:34:05,198 - Model - INFO - Train accuracy is: 0.97903
+2026-06-20 00:34:06,966 - Model - INFO - eval mIoU of Guitar         0.915300
+2026-06-20 00:34:06,966 - Model - INFO - Epoch 95 test Accuracy: 0.967261  Class avg mIOU: 0.915300   Inctance avg mIOU: 0.915300
+2026-06-20 00:34:06,966 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:34:06,966 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:34:06,966 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:34:06,966 - Model - INFO - Epoch 96 (96/100):
+2026-06-20 00:34:06,966 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:34:16,061 - Model - INFO - Train accuracy is: 0.97932
+2026-06-20 00:34:17,814 - Model - INFO - eval mIoU of Guitar         0.916119
+2026-06-20 00:34:17,814 - Model - INFO - Epoch 96 test Accuracy: 0.968182  Class avg mIOU: 0.916119   Inctance avg mIOU: 0.916119
+2026-06-20 00:34:17,814 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:34:17,814 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:34:17,814 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:34:17,814 - Model - INFO - Epoch 97 (97/100):
+2026-06-20 00:34:17,814 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:34:26,938 - Model - INFO - Train accuracy is: 0.97900
+2026-06-20 00:34:28,698 - Model - INFO - eval mIoU of Guitar         0.915572
+2026-06-20 00:34:28,698 - Model - INFO - Epoch 97 test Accuracy: 0.967147  Class avg mIOU: 0.915572   Inctance avg mIOU: 0.915572
+2026-06-20 00:34:28,698 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:34:28,698 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:34:28,698 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:34:28,698 - Model - INFO - Epoch 98 (98/100):
+2026-06-20 00:34:28,698 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:34:37,776 - Model - INFO - Train accuracy is: 0.97953
+2026-06-20 00:34:39,506 - Model - INFO - eval mIoU of Guitar         0.918882
+2026-06-20 00:34:39,506 - Model - INFO - Epoch 98 test Accuracy: 0.968879  Class avg mIOU: 0.918882   Inctance avg mIOU: 0.918882
+2026-06-20 00:34:39,507 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:34:39,507 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:34:39,507 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:34:39,507 - Model - INFO - Epoch 99 (99/100):
+2026-06-20 00:34:39,507 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:34:48,581 - Model - INFO - Train accuracy is: 0.97964
+2026-06-20 00:34:50,331 - Model - INFO - eval mIoU of Guitar         0.914065
+2026-06-20 00:34:50,331 - Model - INFO - Epoch 99 test Accuracy: 0.967187  Class avg mIOU: 0.914065   Inctance avg mIOU: 0.914065
+2026-06-20 00:34:50,331 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:34:50,331 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:34:50,331 - Model - INFO - Best inctance avg mIOU is: 0.91948
+2026-06-20 00:34:50,331 - Model - INFO - Epoch 100 (100/100):
+2026-06-20 00:34:50,331 - Model - INFO - Learning rate:0.000063
+2026-06-20 00:34:59,430 - Model - INFO - Train accuracy is: 0.97941
+2026-06-20 00:35:01,199 - Model - INFO - eval mIoU of Guitar         0.903127
+2026-06-20 00:35:01,199 - Model - INFO - Epoch 100 test Accuracy: 0.964782  Class avg mIOU: 0.903127   Inctance avg mIOU: 0.903127
+2026-06-20 00:35:01,199 - Model - INFO - Best accuracy is: 0.96889
+2026-06-20 00:35:01,199 - Model - INFO - Best class avg mIOU is: 0.91948
+2026-06-20 00:35:01,199 - Model - INFO - Best inctance avg mIOU is: 0.91948

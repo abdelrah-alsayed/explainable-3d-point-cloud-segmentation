@@ -1,0 +1,919 @@
+2026-09-08 23:08:38,870 - Model - INFO - PARAMETER ...
+2026-09-08 23:08:38,870 - Model - INFO - Namespace(model='pointnet2_part_seg_msg', batch_size=16, epoch=100, learning_rate=0.001, gpu='1', optimizer='Adam', log_dir='full_parts_per_category/Rocket/seed_42', decay_rate=0.0001, npoint=2048, step_size=20, lr_decay=0.5, seed=42, categories=['Rocket'], samples_per_category=None, subset_seed=0, test_samples_per_category=None, test_subset_seed=0, full_parts_only=True, num_parts=None)
+2026-09-08 23:08:38,920 - Model - INFO - The number of training data is: 45
+2026-09-08 23:08:38,920 - Model - INFO - The number of test data is: 12
+2026-09-08 23:08:39,060 - Model - INFO - No existing model, starting training from scratch...
+2026-09-08 23:08:39,646 - Model - INFO - Epoch 1 (1/100):
+2026-09-08 23:08:39,646 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:42,520 - Model - INFO - Train accuracy is: 0.06989
+2026-09-08 23:08:42,973 - Model - INFO - eval mIoU of Rocket         0.090599
+2026-09-08 23:08:42,973 - Model - INFO - Epoch 1 test Accuracy: 0.248820  Class avg mIOU: 0.090599   Inctance avg mIOU: 0.090599
+2026-09-08 23:08:42,973 - Model - INFO - Save model...
+2026-09-08 23:08:42,973 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:08:43,005 - Model - INFO - Saving model....
+2026-09-08 23:08:43,006 - Model - INFO - Best accuracy is: 0.24882
+2026-09-08 23:08:43,006 - Model - INFO - Best class avg mIOU is: 0.09060
+2026-09-08 23:08:43,006 - Model - INFO - Best inctance avg mIOU is: 0.09060
+2026-09-08 23:08:43,006 - Model - INFO - Epoch 2 (2/100):
+2026-09-08 23:08:43,006 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:43,852 - Model - INFO - Train accuracy is: 0.33426
+2026-09-08 23:08:44,294 - Model - INFO - eval mIoU of Rocket         0.227525
+2026-09-08 23:08:44,295 - Model - INFO - Epoch 2 test Accuracy: 0.682576  Class avg mIOU: 0.227525   Inctance avg mIOU: 0.227525
+2026-09-08 23:08:44,295 - Model - INFO - Save model...
+2026-09-08 23:08:44,295 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:08:44,340 - Model - INFO - Saving model....
+2026-09-08 23:08:44,340 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:08:44,340 - Model - INFO - Best class avg mIOU is: 0.22753
+2026-09-08 23:08:44,340 - Model - INFO - Best inctance avg mIOU is: 0.22753
+2026-09-08 23:08:44,340 - Model - INFO - Epoch 3 (3/100):
+2026-09-08 23:08:44,340 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:45,189 - Model - INFO - Train accuracy is: 0.59540
+2026-09-08 23:08:45,635 - Model - INFO - eval mIoU of Rocket         0.226264
+2026-09-08 23:08:45,635 - Model - INFO - Epoch 3 test Accuracy: 0.678792  Class avg mIOU: 0.226264   Inctance avg mIOU: 0.226264
+2026-09-08 23:08:45,635 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:08:45,635 - Model - INFO - Best class avg mIOU is: 0.22753
+2026-09-08 23:08:45,635 - Model - INFO - Best inctance avg mIOU is: 0.22753
+2026-09-08 23:08:45,635 - Model - INFO - Epoch 4 (4/100):
+2026-09-08 23:08:45,635 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:46,481 - Model - INFO - Train accuracy is: 0.69034
+2026-09-08 23:08:46,923 - Model - INFO - eval mIoU of Rocket         0.226142
+2026-09-08 23:08:46,923 - Model - INFO - Epoch 4 test Accuracy: 0.678426  Class avg mIOU: 0.226142   Inctance avg mIOU: 0.226142
+2026-09-08 23:08:46,923 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:08:46,923 - Model - INFO - Best class avg mIOU is: 0.22753
+2026-09-08 23:08:46,923 - Model - INFO - Best inctance avg mIOU is: 0.22753
+2026-09-08 23:08:46,923 - Model - INFO - Epoch 5 (5/100):
+2026-09-08 23:08:46,923 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:47,770 - Model - INFO - Train accuracy is: 0.69537
+2026-09-08 23:08:48,212 - Model - INFO - eval mIoU of Rocket         0.186861
+2026-09-08 23:08:48,212 - Model - INFO - Epoch 5 test Accuracy: 0.348511  Class avg mIOU: 0.186861   Inctance avg mIOU: 0.186861
+2026-09-08 23:08:48,212 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:08:48,212 - Model - INFO - Best class avg mIOU is: 0.22753
+2026-09-08 23:08:48,212 - Model - INFO - Best inctance avg mIOU is: 0.22753
+2026-09-08 23:08:48,212 - Model - INFO - Epoch 6 (6/100):
+2026-09-08 23:08:48,212 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:49,055 - Model - INFO - Train accuracy is: 0.70796
+2026-09-08 23:08:49,499 - Model - INFO - eval mIoU of Rocket         0.035061
+2026-09-08 23:08:49,499 - Model - INFO - Epoch 6 test Accuracy: 0.105184  Class avg mIOU: 0.035061   Inctance avg mIOU: 0.035061
+2026-09-08 23:08:49,499 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:08:49,499 - Model - INFO - Best class avg mIOU is: 0.22753
+2026-09-08 23:08:49,499 - Model - INFO - Best inctance avg mIOU is: 0.22753
+2026-09-08 23:08:49,499 - Model - INFO - Epoch 7 (7/100):
+2026-09-08 23:08:49,499 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:50,349 - Model - INFO - Train accuracy is: 0.73352
+2026-09-08 23:08:50,794 - Model - INFO - eval mIoU of Rocket         0.036431
+2026-09-08 23:08:50,794 - Model - INFO - Epoch 7 test Accuracy: 0.109294  Class avg mIOU: 0.036431   Inctance avg mIOU: 0.036431
+2026-09-08 23:08:50,794 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:08:50,794 - Model - INFO - Best class avg mIOU is: 0.22753
+2026-09-08 23:08:50,794 - Model - INFO - Best inctance avg mIOU is: 0.22753
+2026-09-08 23:08:50,794 - Model - INFO - Epoch 8 (8/100):
+2026-09-08 23:08:50,794 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:51,640 - Model - INFO - Train accuracy is: 0.73077
+2026-09-08 23:08:52,081 - Model - INFO - eval mIoU of Rocket         0.034410
+2026-09-08 23:08:52,081 - Model - INFO - Epoch 8 test Accuracy: 0.103231  Class avg mIOU: 0.034410   Inctance avg mIOU: 0.034410
+2026-09-08 23:08:52,081 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:08:52,081 - Model - INFO - Best class avg mIOU is: 0.22753
+2026-09-08 23:08:52,081 - Model - INFO - Best inctance avg mIOU is: 0.22753
+2026-09-08 23:08:52,081 - Model - INFO - Epoch 9 (9/100):
+2026-09-08 23:08:52,081 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:52,930 - Model - INFO - Train accuracy is: 0.75291
+2026-09-08 23:08:53,377 - Model - INFO - eval mIoU of Rocket         0.034627
+2026-09-08 23:08:53,377 - Model - INFO - Epoch 9 test Accuracy: 0.103882  Class avg mIOU: 0.034627   Inctance avg mIOU: 0.034627
+2026-09-08 23:08:53,377 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:08:53,377 - Model - INFO - Best class avg mIOU is: 0.22753
+2026-09-08 23:08:53,377 - Model - INFO - Best inctance avg mIOU is: 0.22753
+2026-09-08 23:08:53,377 - Model - INFO - Epoch 10 (10/100):
+2026-09-08 23:08:53,377 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:54,227 - Model - INFO - Train accuracy is: 0.75595
+2026-09-08 23:08:54,671 - Model - INFO - eval mIoU of Rocket         0.079745
+2026-09-08 23:08:54,672 - Model - INFO - Epoch 10 test Accuracy: 0.149333  Class avg mIOU: 0.079745   Inctance avg mIOU: 0.079745
+2026-09-08 23:08:54,672 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:08:54,672 - Model - INFO - Best class avg mIOU is: 0.22753
+2026-09-08 23:08:54,672 - Model - INFO - Best inctance avg mIOU is: 0.22753
+2026-09-08 23:08:54,672 - Model - INFO - Epoch 11 (11/100):
+2026-09-08 23:08:54,672 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:55,517 - Model - INFO - Train accuracy is: 0.74815
+2026-09-08 23:08:55,960 - Model - INFO - eval mIoU of Rocket         0.269576
+2026-09-08 23:08:55,960 - Model - INFO - Epoch 11 test Accuracy: 0.290202  Class avg mIOU: 0.269576   Inctance avg mIOU: 0.269576
+2026-09-08 23:08:55,960 - Model - INFO - Save model...
+2026-09-08 23:08:55,960 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:08:56,005 - Model - INFO - Saving model....
+2026-09-08 23:08:56,006 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:08:56,006 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:08:56,006 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:08:56,006 - Model - INFO - Epoch 12 (12/100):
+2026-09-08 23:08:56,006 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:56,854 - Model - INFO - Train accuracy is: 0.76204
+2026-09-08 23:08:57,300 - Model - INFO - eval mIoU of Rocket         0.070801
+2026-09-08 23:08:57,301 - Model - INFO - Epoch 12 test Accuracy: 0.212402  Class avg mIOU: 0.070801   Inctance avg mIOU: 0.070801
+2026-09-08 23:08:57,301 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:08:57,301 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:08:57,301 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:08:57,301 - Model - INFO - Epoch 13 (13/100):
+2026-09-08 23:08:57,301 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:58,147 - Model - INFO - Train accuracy is: 0.77849
+2026-09-08 23:08:58,591 - Model - INFO - eval mIoU of Rocket         0.071357
+2026-09-08 23:08:58,591 - Model - INFO - Epoch 13 test Accuracy: 0.214071  Class avg mIOU: 0.071357   Inctance avg mIOU: 0.071357
+2026-09-08 23:08:58,591 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:08:58,591 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:08:58,591 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:08:58,591 - Model - INFO - Epoch 14 (14/100):
+2026-09-08 23:08:58,591 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:08:59,438 - Model - INFO - Train accuracy is: 0.78491
+2026-09-08 23:08:59,885 - Model - INFO - eval mIoU of Rocket         0.070380
+2026-09-08 23:08:59,885 - Model - INFO - Epoch 14 test Accuracy: 0.211141  Class avg mIOU: 0.070380   Inctance avg mIOU: 0.070380
+2026-09-08 23:08:59,885 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:08:59,885 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:08:59,885 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:08:59,885 - Model - INFO - Epoch 15 (15/100):
+2026-09-08 23:08:59,885 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:09:00,728 - Model - INFO - Train accuracy is: 0.79338
+2026-09-08 23:09:01,172 - Model - INFO - eval mIoU of Rocket         0.082586
+2026-09-08 23:09:01,173 - Model - INFO - Epoch 15 test Accuracy: 0.213501  Class avg mIOU: 0.082586   Inctance avg mIOU: 0.082586
+2026-09-08 23:09:01,173 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:01,173 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:09:01,173 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:09:01,173 - Model - INFO - Epoch 16 (16/100):
+2026-09-08 23:09:01,173 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:09:02,023 - Model - INFO - Train accuracy is: 0.78682
+2026-09-08 23:09:02,468 - Model - INFO - eval mIoU of Rocket         0.173119
+2026-09-08 23:09:02,468 - Model - INFO - Epoch 16 test Accuracy: 0.237142  Class avg mIOU: 0.173119   Inctance avg mIOU: 0.173119
+2026-09-08 23:09:02,468 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:02,468 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:09:02,468 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:09:02,468 - Model - INFO - Epoch 17 (17/100):
+2026-09-08 23:09:02,468 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:09:03,340 - Model - INFO - Train accuracy is: 0.80678
+2026-09-08 23:09:03,787 - Model - INFO - eval mIoU of Rocket         0.206126
+2026-09-08 23:09:03,787 - Model - INFO - Epoch 17 test Accuracy: 0.251017  Class avg mIOU: 0.206126   Inctance avg mIOU: 0.206126
+2026-09-08 23:09:03,787 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:03,787 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:09:03,787 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:09:03,787 - Model - INFO - Epoch 18 (18/100):
+2026-09-08 23:09:03,787 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:09:04,632 - Model - INFO - Train accuracy is: 0.80948
+2026-09-08 23:09:05,076 - Model - INFO - eval mIoU of Rocket         0.209581
+2026-09-08 23:09:05,076 - Model - INFO - Epoch 18 test Accuracy: 0.246338  Class avg mIOU: 0.209581   Inctance avg mIOU: 0.209581
+2026-09-08 23:09:05,076 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:05,076 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:09:05,076 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:09:05,076 - Model - INFO - Epoch 19 (19/100):
+2026-09-08 23:09:05,076 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:09:05,930 - Model - INFO - Train accuracy is: 0.82109
+2026-09-08 23:09:06,375 - Model - INFO - eval mIoU of Rocket         0.218326
+2026-09-08 23:09:06,375 - Model - INFO - Epoch 19 test Accuracy: 0.252482  Class avg mIOU: 0.218326   Inctance avg mIOU: 0.218326
+2026-09-08 23:09:06,375 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:06,375 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:09:06,375 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:09:06,375 - Model - INFO - Epoch 20 (20/100):
+2026-09-08 23:09:06,375 - Model - INFO - Learning rate:0.001000
+2026-09-08 23:09:07,223 - Model - INFO - Train accuracy is: 0.82237
+2026-09-08 23:09:07,665 - Model - INFO - eval mIoU of Rocket         0.233878
+2026-09-08 23:09:07,665 - Model - INFO - Epoch 20 test Accuracy: 0.269450  Class avg mIOU: 0.233878   Inctance avg mIOU: 0.233878
+2026-09-08 23:09:07,665 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:07,665 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:09:07,665 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:09:07,665 - Model - INFO - Epoch 21 (21/100):
+2026-09-08 23:09:07,665 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:08,513 - Model - INFO - Train accuracy is: 0.81473
+2026-09-08 23:09:08,957 - Model - INFO - eval mIoU of Rocket         0.244915
+2026-09-08 23:09:08,957 - Model - INFO - Epoch 21 test Accuracy: 0.280558  Class avg mIOU: 0.244915   Inctance avg mIOU: 0.244915
+2026-09-08 23:09:08,957 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:08,957 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:09:08,957 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:09:08,957 - Model - INFO - Epoch 22 (22/100):
+2026-09-08 23:09:08,957 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:09,808 - Model - INFO - Train accuracy is: 0.82268
+2026-09-08 23:09:10,253 - Model - INFO - eval mIoU of Rocket         0.240650
+2026-09-08 23:09:10,253 - Model - INFO - Epoch 22 test Accuracy: 0.270630  Class avg mIOU: 0.240650   Inctance avg mIOU: 0.240650
+2026-09-08 23:09:10,253 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:10,253 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:09:10,253 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:09:10,253 - Model - INFO - Epoch 23 (23/100):
+2026-09-08 23:09:10,253 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:11,103 - Model - INFO - Train accuracy is: 0.82819
+2026-09-08 23:09:11,544 - Model - INFO - eval mIoU of Rocket         0.245706
+2026-09-08 23:09:11,545 - Model - INFO - Epoch 23 test Accuracy: 0.273600  Class avg mIOU: 0.245706   Inctance avg mIOU: 0.245706
+2026-09-08 23:09:11,545 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:11,545 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:09:11,545 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:09:11,545 - Model - INFO - Epoch 24 (24/100):
+2026-09-08 23:09:11,545 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:12,391 - Model - INFO - Train accuracy is: 0.83882
+2026-09-08 23:09:12,840 - Model - INFO - eval mIoU of Rocket         0.246273
+2026-09-08 23:09:12,840 - Model - INFO - Epoch 24 test Accuracy: 0.272990  Class avg mIOU: 0.246273   Inctance avg mIOU: 0.246273
+2026-09-08 23:09:12,840 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:12,840 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:09:12,840 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:09:12,840 - Model - INFO - Epoch 25 (25/100):
+2026-09-08 23:09:12,840 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:13,693 - Model - INFO - Train accuracy is: 0.84305
+2026-09-08 23:09:14,139 - Model - INFO - eval mIoU of Rocket         0.258565
+2026-09-08 23:09:14,139 - Model - INFO - Epoch 25 test Accuracy: 0.279704  Class avg mIOU: 0.258565   Inctance avg mIOU: 0.258565
+2026-09-08 23:09:14,139 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:14,139 - Model - INFO - Best class avg mIOU is: 0.26958
+2026-09-08 23:09:14,139 - Model - INFO - Best inctance avg mIOU is: 0.26958
+2026-09-08 23:09:14,139 - Model - INFO - Epoch 26 (26/100):
+2026-09-08 23:09:14,139 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:14,987 - Model - INFO - Train accuracy is: 0.84055
+2026-09-08 23:09:15,429 - Model - INFO - eval mIoU of Rocket         0.281745
+2026-09-08 23:09:15,429 - Model - INFO - Epoch 26 test Accuracy: 0.304606  Class avg mIOU: 0.281745   Inctance avg mIOU: 0.281745
+2026-09-08 23:09:15,429 - Model - INFO - Save model...
+2026-09-08 23:09:15,429 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:15,474 - Model - INFO - Saving model....
+2026-09-08 23:09:15,475 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:15,475 - Model - INFO - Best class avg mIOU is: 0.28174
+2026-09-08 23:09:15,475 - Model - INFO - Best inctance avg mIOU is: 0.28174
+2026-09-08 23:09:15,475 - Model - INFO - Epoch 27 (27/100):
+2026-09-08 23:09:15,475 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:16,331 - Model - INFO - Train accuracy is: 0.84613
+2026-09-08 23:09:16,776 - Model - INFO - eval mIoU of Rocket         0.294228
+2026-09-08 23:09:16,776 - Model - INFO - Epoch 27 test Accuracy: 0.317830  Class avg mIOU: 0.294228   Inctance avg mIOU: 0.294228
+2026-09-08 23:09:16,776 - Model - INFO - Save model...
+2026-09-08 23:09:16,776 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:16,813 - Model - INFO - Saving model....
+2026-09-08 23:09:16,813 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:16,813 - Model - INFO - Best class avg mIOU is: 0.29423
+2026-09-08 23:09:16,813 - Model - INFO - Best inctance avg mIOU is: 0.29423
+2026-09-08 23:09:16,813 - Model - INFO - Epoch 28 (28/100):
+2026-09-08 23:09:16,813 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:17,663 - Model - INFO - Train accuracy is: 0.84744
+2026-09-08 23:09:18,105 - Model - INFO - eval mIoU of Rocket         0.300370
+2026-09-08 23:09:18,105 - Model - INFO - Epoch 28 test Accuracy: 0.327840  Class avg mIOU: 0.300370   Inctance avg mIOU: 0.300370
+2026-09-08 23:09:18,105 - Model - INFO - Save model...
+2026-09-08 23:09:18,105 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:18,150 - Model - INFO - Saving model....
+2026-09-08 23:09:18,150 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:18,150 - Model - INFO - Best class avg mIOU is: 0.30037
+2026-09-08 23:09:18,150 - Model - INFO - Best inctance avg mIOU is: 0.30037
+2026-09-08 23:09:18,151 - Model - INFO - Epoch 29 (29/100):
+2026-09-08 23:09:18,151 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:19,005 - Model - INFO - Train accuracy is: 0.86003
+2026-09-08 23:09:19,450 - Model - INFO - eval mIoU of Rocket         0.325615
+2026-09-08 23:09:19,450 - Model - INFO - Epoch 29 test Accuracy: 0.348104  Class avg mIOU: 0.325615   Inctance avg mIOU: 0.325615
+2026-09-08 23:09:19,450 - Model - INFO - Save model...
+2026-09-08 23:09:19,450 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:19,496 - Model - INFO - Saving model....
+2026-09-08 23:09:19,496 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:19,496 - Model - INFO - Best class avg mIOU is: 0.32561
+2026-09-08 23:09:19,496 - Model - INFO - Best inctance avg mIOU is: 0.32561
+2026-09-08 23:09:19,496 - Model - INFO - Epoch 30 (30/100):
+2026-09-08 23:09:19,496 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:20,345 - Model - INFO - Train accuracy is: 0.85420
+2026-09-08 23:09:20,792 - Model - INFO - eval mIoU of Rocket         0.316584
+2026-09-08 23:09:20,792 - Model - INFO - Epoch 30 test Accuracy: 0.350911  Class avg mIOU: 0.316584   Inctance avg mIOU: 0.316584
+2026-09-08 23:09:20,792 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:20,792 - Model - INFO - Best class avg mIOU is: 0.32561
+2026-09-08 23:09:20,792 - Model - INFO - Best inctance avg mIOU is: 0.32561
+2026-09-08 23:09:20,792 - Model - INFO - Epoch 31 (31/100):
+2026-09-08 23:09:20,792 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:21,640 - Model - INFO - Train accuracy is: 0.85252
+2026-09-08 23:09:22,085 - Model - INFO - eval mIoU of Rocket         0.329863
+2026-09-08 23:09:22,085 - Model - INFO - Epoch 31 test Accuracy: 0.356567  Class avg mIOU: 0.329863   Inctance avg mIOU: 0.329863
+2026-09-08 23:09:22,085 - Model - INFO - Save model...
+2026-09-08 23:09:22,085 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:22,132 - Model - INFO - Saving model....
+2026-09-08 23:09:22,132 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:22,132 - Model - INFO - Best class avg mIOU is: 0.32986
+2026-09-08 23:09:22,132 - Model - INFO - Best inctance avg mIOU is: 0.32986
+2026-09-08 23:09:22,132 - Model - INFO - Epoch 32 (32/100):
+2026-09-08 23:09:22,132 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:22,982 - Model - INFO - Train accuracy is: 0.85527
+2026-09-08 23:09:23,427 - Model - INFO - eval mIoU of Rocket         0.321337
+2026-09-08 23:09:23,427 - Model - INFO - Epoch 32 test Accuracy: 0.352987  Class avg mIOU: 0.321337   Inctance avg mIOU: 0.321337
+2026-09-08 23:09:23,427 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:23,427 - Model - INFO - Best class avg mIOU is: 0.32986
+2026-09-08 23:09:23,428 - Model - INFO - Best inctance avg mIOU is: 0.32986
+2026-09-08 23:09:23,428 - Model - INFO - Epoch 33 (33/100):
+2026-09-08 23:09:23,428 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:24,278 - Model - INFO - Train accuracy is: 0.85602
+2026-09-08 23:09:24,722 - Model - INFO - eval mIoU of Rocket         0.320793
+2026-09-08 23:09:24,722 - Model - INFO - Epoch 33 test Accuracy: 0.359049  Class avg mIOU: 0.320793   Inctance avg mIOU: 0.320793
+2026-09-08 23:09:24,723 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:24,723 - Model - INFO - Best class avg mIOU is: 0.32986
+2026-09-08 23:09:24,723 - Model - INFO - Best inctance avg mIOU is: 0.32986
+2026-09-08 23:09:24,723 - Model - INFO - Epoch 34 (34/100):
+2026-09-08 23:09:24,723 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:25,579 - Model - INFO - Train accuracy is: 0.85535
+2026-09-08 23:09:26,024 - Model - INFO - eval mIoU of Rocket         0.328530
+2026-09-08 23:09:26,024 - Model - INFO - Epoch 34 test Accuracy: 0.371460  Class avg mIOU: 0.328530   Inctance avg mIOU: 0.328530
+2026-09-08 23:09:26,024 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:26,024 - Model - INFO - Best class avg mIOU is: 0.32986
+2026-09-08 23:09:26,024 - Model - INFO - Best inctance avg mIOU is: 0.32986
+2026-09-08 23:09:26,024 - Model - INFO - Epoch 35 (35/100):
+2026-09-08 23:09:26,024 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:26,871 - Model - INFO - Train accuracy is: 0.86140
+2026-09-08 23:09:27,312 - Model - INFO - eval mIoU of Rocket         0.348633
+2026-09-08 23:09:27,312 - Model - INFO - Epoch 35 test Accuracy: 0.395345  Class avg mIOU: 0.348633   Inctance avg mIOU: 0.348633
+2026-09-08 23:09:27,312 - Model - INFO - Save model...
+2026-09-08 23:09:27,312 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:27,356 - Model - INFO - Saving model....
+2026-09-08 23:09:27,357 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:27,357 - Model - INFO - Best class avg mIOU is: 0.34863
+2026-09-08 23:09:27,357 - Model - INFO - Best inctance avg mIOU is: 0.34863
+2026-09-08 23:09:27,357 - Model - INFO - Epoch 36 (36/100):
+2026-09-08 23:09:27,357 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:28,210 - Model - INFO - Train accuracy is: 0.86406
+2026-09-08 23:09:28,654 - Model - INFO - eval mIoU of Rocket         0.366459
+2026-09-08 23:09:28,654 - Model - INFO - Epoch 36 test Accuracy: 0.417806  Class avg mIOU: 0.366459   Inctance avg mIOU: 0.366459
+2026-09-08 23:09:28,655 - Model - INFO - Save model...
+2026-09-08 23:09:28,655 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:28,699 - Model - INFO - Saving model....
+2026-09-08 23:09:28,700 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:28,700 - Model - INFO - Best class avg mIOU is: 0.36646
+2026-09-08 23:09:28,700 - Model - INFO - Best inctance avg mIOU is: 0.36646
+2026-09-08 23:09:28,700 - Model - INFO - Epoch 37 (37/100):
+2026-09-08 23:09:28,700 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:29,545 - Model - INFO - Train accuracy is: 0.86641
+2026-09-08 23:09:29,986 - Model - INFO - eval mIoU of Rocket         0.362649
+2026-09-08 23:09:29,987 - Model - INFO - Epoch 37 test Accuracy: 0.414591  Class avg mIOU: 0.362649   Inctance avg mIOU: 0.362649
+2026-09-08 23:09:29,987 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:29,987 - Model - INFO - Best class avg mIOU is: 0.36646
+2026-09-08 23:09:29,987 - Model - INFO - Best inctance avg mIOU is: 0.36646
+2026-09-08 23:09:29,987 - Model - INFO - Epoch 38 (38/100):
+2026-09-08 23:09:29,987 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:30,834 - Model - INFO - Train accuracy is: 0.86861
+2026-09-08 23:09:31,281 - Model - INFO - eval mIoU of Rocket         0.367859
+2026-09-08 23:09:31,281 - Model - INFO - Epoch 38 test Accuracy: 0.418783  Class avg mIOU: 0.367859   Inctance avg mIOU: 0.367859
+2026-09-08 23:09:31,281 - Model - INFO - Save model...
+2026-09-08 23:09:31,281 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:31,326 - Model - INFO - Saving model....
+2026-09-08 23:09:31,326 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:31,326 - Model - INFO - Best class avg mIOU is: 0.36786
+2026-09-08 23:09:31,326 - Model - INFO - Best inctance avg mIOU is: 0.36786
+2026-09-08 23:09:31,326 - Model - INFO - Epoch 39 (39/100):
+2026-09-08 23:09:31,326 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:32,176 - Model - INFO - Train accuracy is: 0.86794
+2026-09-08 23:09:32,620 - Model - INFO - eval mIoU of Rocket         0.365974
+2026-09-08 23:09:32,620 - Model - INFO - Epoch 39 test Accuracy: 0.423340  Class avg mIOU: 0.365974   Inctance avg mIOU: 0.365974
+2026-09-08 23:09:32,620 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:32,620 - Model - INFO - Best class avg mIOU is: 0.36786
+2026-09-08 23:09:32,620 - Model - INFO - Best inctance avg mIOU is: 0.36786
+2026-09-08 23:09:32,620 - Model - INFO - Epoch 40 (40/100):
+2026-09-08 23:09:32,620 - Model - INFO - Learning rate:0.000500
+2026-09-08 23:09:33,474 - Model - INFO - Train accuracy is: 0.86563
+2026-09-08 23:09:33,921 - Model - INFO - eval mIoU of Rocket         0.380828
+2026-09-08 23:09:33,922 - Model - INFO - Epoch 40 test Accuracy: 0.455933  Class avg mIOU: 0.380828   Inctance avg mIOU: 0.380828
+2026-09-08 23:09:33,922 - Model - INFO - Save model...
+2026-09-08 23:09:33,922 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:33,967 - Model - INFO - Saving model....
+2026-09-08 23:09:33,967 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:33,967 - Model - INFO - Best class avg mIOU is: 0.38083
+2026-09-08 23:09:33,967 - Model - INFO - Best inctance avg mIOU is: 0.38083
+2026-09-08 23:09:33,967 - Model - INFO - Epoch 41 (41/100):
+2026-09-08 23:09:33,967 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:34,821 - Model - INFO - Train accuracy is: 0.86124
+2026-09-08 23:09:35,266 - Model - INFO - eval mIoU of Rocket         0.396025
+2026-09-08 23:09:35,266 - Model - INFO - Epoch 41 test Accuracy: 0.479289  Class avg mIOU: 0.396025   Inctance avg mIOU: 0.396025
+2026-09-08 23:09:35,266 - Model - INFO - Save model...
+2026-09-08 23:09:35,266 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:35,311 - Model - INFO - Saving model....
+2026-09-08 23:09:35,311 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:35,311 - Model - INFO - Best class avg mIOU is: 0.39603
+2026-09-08 23:09:35,311 - Model - INFO - Best inctance avg mIOU is: 0.39603
+2026-09-08 23:09:35,311 - Model - INFO - Epoch 42 (42/100):
+2026-09-08 23:09:35,311 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:36,156 - Model - INFO - Train accuracy is: 0.87791
+2026-09-08 23:09:36,603 - Model - INFO - eval mIoU of Rocket         0.403349
+2026-09-08 23:09:36,603 - Model - INFO - Epoch 42 test Accuracy: 0.487915  Class avg mIOU: 0.403349   Inctance avg mIOU: 0.403349
+2026-09-08 23:09:36,603 - Model - INFO - Save model...
+2026-09-08 23:09:36,603 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:36,648 - Model - INFO - Saving model....
+2026-09-08 23:09:36,648 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:36,648 - Model - INFO - Best class avg mIOU is: 0.40335
+2026-09-08 23:09:36,648 - Model - INFO - Best inctance avg mIOU is: 0.40335
+2026-09-08 23:09:36,648 - Model - INFO - Epoch 43 (43/100):
+2026-09-08 23:09:36,648 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:37,495 - Model - INFO - Train accuracy is: 0.87569
+2026-09-08 23:09:37,938 - Model - INFO - eval mIoU of Rocket         0.426066
+2026-09-08 23:09:37,938 - Model - INFO - Epoch 43 test Accuracy: 0.516398  Class avg mIOU: 0.426066   Inctance avg mIOU: 0.426066
+2026-09-08 23:09:37,938 - Model - INFO - Save model...
+2026-09-08 23:09:37,938 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:37,983 - Model - INFO - Saving model....
+2026-09-08 23:09:37,983 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:37,983 - Model - INFO - Best class avg mIOU is: 0.42607
+2026-09-08 23:09:37,983 - Model - INFO - Best inctance avg mIOU is: 0.42607
+2026-09-08 23:09:37,983 - Model - INFO - Epoch 44 (44/100):
+2026-09-08 23:09:37,983 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:38,829 - Model - INFO - Train accuracy is: 0.88120
+2026-09-08 23:09:39,275 - Model - INFO - eval mIoU of Rocket         0.428652
+2026-09-08 23:09:39,275 - Model - INFO - Epoch 44 test Accuracy: 0.518107  Class avg mIOU: 0.428652   Inctance avg mIOU: 0.428652
+2026-09-08 23:09:39,275 - Model - INFO - Save model...
+2026-09-08 23:09:39,275 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:39,319 - Model - INFO - Saving model....
+2026-09-08 23:09:39,320 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:39,320 - Model - INFO - Best class avg mIOU is: 0.42865
+2026-09-08 23:09:39,320 - Model - INFO - Best inctance avg mIOU is: 0.42865
+2026-09-08 23:09:39,320 - Model - INFO - Epoch 45 (45/100):
+2026-09-08 23:09:39,320 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:40,174 - Model - INFO - Train accuracy is: 0.86638
+2026-09-08 23:09:40,616 - Model - INFO - eval mIoU of Rocket         0.429751
+2026-09-08 23:09:40,616 - Model - INFO - Epoch 45 test Accuracy: 0.523438  Class avg mIOU: 0.429751   Inctance avg mIOU: 0.429751
+2026-09-08 23:09:40,616 - Model - INFO - Save model...
+2026-09-08 23:09:40,616 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:40,660 - Model - INFO - Saving model....
+2026-09-08 23:09:40,661 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:40,661 - Model - INFO - Best class avg mIOU is: 0.42975
+2026-09-08 23:09:40,661 - Model - INFO - Best inctance avg mIOU is: 0.42975
+2026-09-08 23:09:40,661 - Model - INFO - Epoch 46 (46/100):
+2026-09-08 23:09:40,661 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:41,516 - Model - INFO - Train accuracy is: 0.86990
+2026-09-08 23:09:41,961 - Model - INFO - eval mIoU of Rocket         0.444108
+2026-09-08 23:09:41,961 - Model - INFO - Epoch 46 test Accuracy: 0.539714  Class avg mIOU: 0.444108   Inctance avg mIOU: 0.444108
+2026-09-08 23:09:41,961 - Model - INFO - Save model...
+2026-09-08 23:09:41,961 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:42,006 - Model - INFO - Saving model....
+2026-09-08 23:09:42,006 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:42,006 - Model - INFO - Best class avg mIOU is: 0.44411
+2026-09-08 23:09:42,006 - Model - INFO - Best inctance avg mIOU is: 0.44411
+2026-09-08 23:09:42,006 - Model - INFO - Epoch 47 (47/100):
+2026-09-08 23:09:42,006 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:42,856 - Model - INFO - Train accuracy is: 0.86252
+2026-09-08 23:09:43,304 - Model - INFO - eval mIoU of Rocket         0.441522
+2026-09-08 23:09:43,304 - Model - INFO - Epoch 47 test Accuracy: 0.541300  Class avg mIOU: 0.441522   Inctance avg mIOU: 0.441522
+2026-09-08 23:09:43,304 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:43,304 - Model - INFO - Best class avg mIOU is: 0.44411
+2026-09-08 23:09:43,304 - Model - INFO - Best inctance avg mIOU is: 0.44411
+2026-09-08 23:09:43,304 - Model - INFO - Epoch 48 (48/100):
+2026-09-08 23:09:43,304 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:44,153 - Model - INFO - Train accuracy is: 0.87785
+2026-09-08 23:09:44,602 - Model - INFO - eval mIoU of Rocket         0.449348
+2026-09-08 23:09:44,602 - Model - INFO - Epoch 48 test Accuracy: 0.560628  Class avg mIOU: 0.449348   Inctance avg mIOU: 0.449348
+2026-09-08 23:09:44,602 - Model - INFO - Save model...
+2026-09-08 23:09:44,602 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:44,646 - Model - INFO - Saving model....
+2026-09-08 23:09:44,647 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:44,647 - Model - INFO - Best class avg mIOU is: 0.44935
+2026-09-08 23:09:44,647 - Model - INFO - Best inctance avg mIOU is: 0.44935
+2026-09-08 23:09:44,647 - Model - INFO - Epoch 49 (49/100):
+2026-09-08 23:09:44,647 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:45,495 - Model - INFO - Train accuracy is: 0.86433
+2026-09-08 23:09:45,937 - Model - INFO - eval mIoU of Rocket         0.441190
+2026-09-08 23:09:45,937 - Model - INFO - Epoch 49 test Accuracy: 0.569539  Class avg mIOU: 0.441190   Inctance avg mIOU: 0.441190
+2026-09-08 23:09:45,937 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:45,937 - Model - INFO - Best class avg mIOU is: 0.44935
+2026-09-08 23:09:45,937 - Model - INFO - Best inctance avg mIOU is: 0.44935
+2026-09-08 23:09:45,937 - Model - INFO - Epoch 50 (50/100):
+2026-09-08 23:09:45,937 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:46,790 - Model - INFO - Train accuracy is: 0.87851
+2026-09-08 23:09:47,236 - Model - INFO - eval mIoU of Rocket         0.457589
+2026-09-08 23:09:47,236 - Model - INFO - Epoch 50 test Accuracy: 0.584676  Class avg mIOU: 0.457589   Inctance avg mIOU: 0.457589
+2026-09-08 23:09:47,236 - Model - INFO - Save model...
+2026-09-08 23:09:47,236 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:47,281 - Model - INFO - Saving model....
+2026-09-08 23:09:47,281 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:47,281 - Model - INFO - Best class avg mIOU is: 0.45759
+2026-09-08 23:09:47,281 - Model - INFO - Best inctance avg mIOU is: 0.45759
+2026-09-08 23:09:47,281 - Model - INFO - Epoch 51 (51/100):
+2026-09-08 23:09:47,281 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:48,131 - Model - INFO - Train accuracy is: 0.86942
+2026-09-08 23:09:48,578 - Model - INFO - eval mIoU of Rocket         0.472452
+2026-09-08 23:09:48,578 - Model - INFO - Epoch 51 test Accuracy: 0.598470  Class avg mIOU: 0.472452   Inctance avg mIOU: 0.472452
+2026-09-08 23:09:48,579 - Model - INFO - Save model...
+2026-09-08 23:09:48,579 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:48,624 - Model - INFO - Saving model....
+2026-09-08 23:09:48,624 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:48,624 - Model - INFO - Best class avg mIOU is: 0.47245
+2026-09-08 23:09:48,624 - Model - INFO - Best inctance avg mIOU is: 0.47245
+2026-09-08 23:09:48,624 - Model - INFO - Epoch 52 (52/100):
+2026-09-08 23:09:48,624 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:49,471 - Model - INFO - Train accuracy is: 0.88406
+2026-09-08 23:09:49,917 - Model - INFO - eval mIoU of Rocket         0.478452
+2026-09-08 23:09:49,917 - Model - INFO - Epoch 52 test Accuracy: 0.614095  Class avg mIOU: 0.478452   Inctance avg mIOU: 0.478452
+2026-09-08 23:09:49,917 - Model - INFO - Save model...
+2026-09-08 23:09:49,917 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:49,962 - Model - INFO - Saving model....
+2026-09-08 23:09:49,962 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:49,962 - Model - INFO - Best class avg mIOU is: 0.47845
+2026-09-08 23:09:49,962 - Model - INFO - Best inctance avg mIOU is: 0.47845
+2026-09-08 23:09:49,962 - Model - INFO - Epoch 53 (53/100):
+2026-09-08 23:09:49,962 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:50,818 - Model - INFO - Train accuracy is: 0.87627
+2026-09-08 23:09:51,256 - Model - INFO - eval mIoU of Rocket         0.499660
+2026-09-08 23:09:51,256 - Model - INFO - Epoch 53 test Accuracy: 0.644084  Class avg mIOU: 0.499660   Inctance avg mIOU: 0.499660
+2026-09-08 23:09:51,256 - Model - INFO - Save model...
+2026-09-08 23:09:51,256 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:51,301 - Model - INFO - Saving model....
+2026-09-08 23:09:51,301 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:51,301 - Model - INFO - Best class avg mIOU is: 0.49966
+2026-09-08 23:09:51,301 - Model - INFO - Best inctance avg mIOU is: 0.49966
+2026-09-08 23:09:51,301 - Model - INFO - Epoch 54 (54/100):
+2026-09-08 23:09:51,301 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:52,151 - Model - INFO - Train accuracy is: 0.87939
+2026-09-08 23:09:52,599 - Model - INFO - eval mIoU of Rocket         0.517094
+2026-09-08 23:09:52,599 - Model - INFO - Epoch 54 test Accuracy: 0.672363  Class avg mIOU: 0.517094   Inctance avg mIOU: 0.517094
+2026-09-08 23:09:52,599 - Model - INFO - Save model...
+2026-09-08 23:09:52,599 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:52,632 - Model - INFO - Saving model....
+2026-09-08 23:09:52,632 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:52,632 - Model - INFO - Best class avg mIOU is: 0.51709
+2026-09-08 23:09:52,632 - Model - INFO - Best inctance avg mIOU is: 0.51709
+2026-09-08 23:09:52,632 - Model - INFO - Epoch 55 (55/100):
+2026-09-08 23:09:52,632 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:53,480 - Model - INFO - Train accuracy is: 0.88312
+2026-09-08 23:09:53,922 - Model - INFO - eval mIoU of Rocket         0.514617
+2026-09-08 23:09:53,922 - Model - INFO - Epoch 55 test Accuracy: 0.677490  Class avg mIOU: 0.514617   Inctance avg mIOU: 0.514617
+2026-09-08 23:09:53,922 - Model - INFO - Best accuracy is: 0.68258
+2026-09-08 23:09:53,922 - Model - INFO - Best class avg mIOU is: 0.51709
+2026-09-08 23:09:53,922 - Model - INFO - Best inctance avg mIOU is: 0.51709
+2026-09-08 23:09:53,922 - Model - INFO - Epoch 56 (56/100):
+2026-09-08 23:09:53,922 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:54,771 - Model - INFO - Train accuracy is: 0.88341
+2026-09-08 23:09:55,217 - Model - INFO - eval mIoU of Rocket         0.526532
+2026-09-08 23:09:55,217 - Model - INFO - Epoch 56 test Accuracy: 0.692464  Class avg mIOU: 0.526532   Inctance avg mIOU: 0.526532
+2026-09-08 23:09:55,217 - Model - INFO - Save model...
+2026-09-08 23:09:55,217 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:55,250 - Model - INFO - Saving model....
+2026-09-08 23:09:55,250 - Model - INFO - Best accuracy is: 0.69246
+2026-09-08 23:09:55,250 - Model - INFO - Best class avg mIOU is: 0.52653
+2026-09-08 23:09:55,250 - Model - INFO - Best inctance avg mIOU is: 0.52653
+2026-09-08 23:09:55,250 - Model - INFO - Epoch 57 (57/100):
+2026-09-08 23:09:55,250 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:56,101 - Model - INFO - Train accuracy is: 0.87921
+2026-09-08 23:09:56,544 - Model - INFO - eval mIoU of Rocket         0.532359
+2026-09-08 23:09:56,545 - Model - INFO - Epoch 57 test Accuracy: 0.702026  Class avg mIOU: 0.532359   Inctance avg mIOU: 0.532359
+2026-09-08 23:09:56,545 - Model - INFO - Save model...
+2026-09-08 23:09:56,545 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:56,578 - Model - INFO - Saving model....
+2026-09-08 23:09:56,578 - Model - INFO - Best accuracy is: 0.70203
+2026-09-08 23:09:56,578 - Model - INFO - Best class avg mIOU is: 0.53236
+2026-09-08 23:09:56,578 - Model - INFO - Best inctance avg mIOU is: 0.53236
+2026-09-08 23:09:56,578 - Model - INFO - Epoch 58 (58/100):
+2026-09-08 23:09:56,578 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:57,427 - Model - INFO - Train accuracy is: 0.87274
+2026-09-08 23:09:57,875 - Model - INFO - eval mIoU of Rocket         0.540319
+2026-09-08 23:09:57,876 - Model - INFO - Epoch 58 test Accuracy: 0.713257  Class avg mIOU: 0.540319   Inctance avg mIOU: 0.540319
+2026-09-08 23:09:57,876 - Model - INFO - Save model...
+2026-09-08 23:09:57,876 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:57,909 - Model - INFO - Saving model....
+2026-09-08 23:09:57,909 - Model - INFO - Best accuracy is: 0.71326
+2026-09-08 23:09:57,909 - Model - INFO - Best class avg mIOU is: 0.54032
+2026-09-08 23:09:57,909 - Model - INFO - Best inctance avg mIOU is: 0.54032
+2026-09-08 23:09:57,909 - Model - INFO - Epoch 59 (59/100):
+2026-09-08 23:09:57,909 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:09:58,758 - Model - INFO - Train accuracy is: 0.87291
+2026-09-08 23:09:59,202 - Model - INFO - eval mIoU of Rocket         0.545687
+2026-09-08 23:09:59,203 - Model - INFO - Epoch 59 test Accuracy: 0.722941  Class avg mIOU: 0.545687   Inctance avg mIOU: 0.545687
+2026-09-08 23:09:59,203 - Model - INFO - Save model...
+2026-09-08 23:09:59,203 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:09:59,247 - Model - INFO - Saving model....
+2026-09-08 23:09:59,248 - Model - INFO - Best accuracy is: 0.72294
+2026-09-08 23:09:59,248 - Model - INFO - Best class avg mIOU is: 0.54569
+2026-09-08 23:09:59,248 - Model - INFO - Best inctance avg mIOU is: 0.54569
+2026-09-08 23:09:59,248 - Model - INFO - Epoch 60 (60/100):
+2026-09-08 23:09:59,248 - Model - INFO - Learning rate:0.000250
+2026-09-08 23:10:00,093 - Model - INFO - Train accuracy is: 0.87947
+2026-09-08 23:10:00,540 - Model - INFO - eval mIoU of Rocket         0.560160
+2026-09-08 23:10:00,540 - Model - INFO - Epoch 60 test Accuracy: 0.742594  Class avg mIOU: 0.560160   Inctance avg mIOU: 0.560160
+2026-09-08 23:10:00,540 - Model - INFO - Save model...
+2026-09-08 23:10:00,540 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:10:00,574 - Model - INFO - Saving model....
+2026-09-08 23:10:00,575 - Model - INFO - Best accuracy is: 0.74259
+2026-09-08 23:10:00,575 - Model - INFO - Best class avg mIOU is: 0.56016
+2026-09-08 23:10:00,575 - Model - INFO - Best inctance avg mIOU is: 0.56016
+2026-09-08 23:10:00,575 - Model - INFO - Epoch 61 (61/100):
+2026-09-08 23:10:00,575 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:01,428 - Model - INFO - Train accuracy is: 0.88470
+2026-09-08 23:10:01,873 - Model - INFO - eval mIoU of Rocket         0.559618
+2026-09-08 23:10:01,873 - Model - INFO - Epoch 61 test Accuracy: 0.748901  Class avg mIOU: 0.559618   Inctance avg mIOU: 0.559618
+2026-09-08 23:10:01,873 - Model - INFO - Best accuracy is: 0.74890
+2026-09-08 23:10:01,873 - Model - INFO - Best class avg mIOU is: 0.56016
+2026-09-08 23:10:01,873 - Model - INFO - Best inctance avg mIOU is: 0.56016
+2026-09-08 23:10:01,873 - Model - INFO - Epoch 62 (62/100):
+2026-09-08 23:10:01,873 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:02,721 - Model - INFO - Train accuracy is: 0.89008
+2026-09-08 23:10:03,162 - Model - INFO - eval mIoU of Rocket         0.559006
+2026-09-08 23:10:03,162 - Model - INFO - Epoch 62 test Accuracy: 0.739095  Class avg mIOU: 0.559006   Inctance avg mIOU: 0.559006
+2026-09-08 23:10:03,162 - Model - INFO - Best accuracy is: 0.74890
+2026-09-08 23:10:03,163 - Model - INFO - Best class avg mIOU is: 0.56016
+2026-09-08 23:10:03,163 - Model - INFO - Best inctance avg mIOU is: 0.56016
+2026-09-08 23:10:03,163 - Model - INFO - Epoch 63 (63/100):
+2026-09-08 23:10:03,163 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:04,010 - Model - INFO - Train accuracy is: 0.88860
+2026-09-08 23:10:04,455 - Model - INFO - eval mIoU of Rocket         0.558935
+2026-09-08 23:10:04,455 - Model - INFO - Epoch 63 test Accuracy: 0.738851  Class avg mIOU: 0.558935   Inctance avg mIOU: 0.558935
+2026-09-08 23:10:04,455 - Model - INFO - Best accuracy is: 0.74890
+2026-09-08 23:10:04,455 - Model - INFO - Best class avg mIOU is: 0.56016
+2026-09-08 23:10:04,455 - Model - INFO - Best inctance avg mIOU is: 0.56016
+2026-09-08 23:10:04,455 - Model - INFO - Epoch 64 (64/100):
+2026-09-08 23:10:04,455 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:05,308 - Model - INFO - Train accuracy is: 0.88885
+2026-09-08 23:10:05,753 - Model - INFO - eval mIoU of Rocket         0.556447
+2026-09-08 23:10:05,753 - Model - INFO - Epoch 64 test Accuracy: 0.731283  Class avg mIOU: 0.556447   Inctance avg mIOU: 0.556447
+2026-09-08 23:10:05,753 - Model - INFO - Best accuracy is: 0.74890
+2026-09-08 23:10:05,753 - Model - INFO - Best class avg mIOU is: 0.56016
+2026-09-08 23:10:05,753 - Model - INFO - Best inctance avg mIOU is: 0.56016
+2026-09-08 23:10:05,753 - Model - INFO - Epoch 65 (65/100):
+2026-09-08 23:10:05,753 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:06,599 - Model - INFO - Train accuracy is: 0.88116
+2026-09-08 23:10:07,046 - Model - INFO - eval mIoU of Rocket         0.563352
+2026-09-08 23:10:07,046 - Model - INFO - Epoch 65 test Accuracy: 0.739176  Class avg mIOU: 0.563352   Inctance avg mIOU: 0.563352
+2026-09-08 23:10:07,046 - Model - INFO - Save model...
+2026-09-08 23:10:07,046 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:10:07,091 - Model - INFO - Saving model....
+2026-09-08 23:10:07,091 - Model - INFO - Best accuracy is: 0.74890
+2026-09-08 23:10:07,091 - Model - INFO - Best class avg mIOU is: 0.56335
+2026-09-08 23:10:07,091 - Model - INFO - Best inctance avg mIOU is: 0.56335
+2026-09-08 23:10:07,091 - Model - INFO - Epoch 66 (66/100):
+2026-09-08 23:10:07,091 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:07,945 - Model - INFO - Train accuracy is: 0.89392
+2026-09-08 23:10:08,391 - Model - INFO - eval mIoU of Rocket         0.556847
+2026-09-08 23:10:08,391 - Model - INFO - Epoch 66 test Accuracy: 0.740926  Class avg mIOU: 0.556847   Inctance avg mIOU: 0.556847
+2026-09-08 23:10:08,391 - Model - INFO - Best accuracy is: 0.74890
+2026-09-08 23:10:08,391 - Model - INFO - Best class avg mIOU is: 0.56335
+2026-09-08 23:10:08,391 - Model - INFO - Best inctance avg mIOU is: 0.56335
+2026-09-08 23:10:08,391 - Model - INFO - Epoch 67 (67/100):
+2026-09-08 23:10:08,391 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:09,239 - Model - INFO - Train accuracy is: 0.88983
+2026-09-08 23:10:09,683 - Model - INFO - eval mIoU of Rocket         0.556401
+2026-09-08 23:10:09,683 - Model - INFO - Epoch 67 test Accuracy: 0.738363  Class avg mIOU: 0.556401   Inctance avg mIOU: 0.556401
+2026-09-08 23:10:09,683 - Model - INFO - Best accuracy is: 0.74890
+2026-09-08 23:10:09,683 - Model - INFO - Best class avg mIOU is: 0.56335
+2026-09-08 23:10:09,683 - Model - INFO - Best inctance avg mIOU is: 0.56335
+2026-09-08 23:10:09,683 - Model - INFO - Epoch 68 (68/100):
+2026-09-08 23:10:09,683 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:10,531 - Model - INFO - Train accuracy is: 0.88412
+2026-09-08 23:10:10,975 - Model - INFO - eval mIoU of Rocket         0.564076
+2026-09-08 23:10:10,975 - Model - INFO - Epoch 68 test Accuracy: 0.741821  Class avg mIOU: 0.564076   Inctance avg mIOU: 0.564076
+2026-09-08 23:10:10,975 - Model - INFO - Save model...
+2026-09-08 23:10:10,975 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:10:11,020 - Model - INFO - Saving model....
+2026-09-08 23:10:11,020 - Model - INFO - Best accuracy is: 0.74890
+2026-09-08 23:10:11,020 - Model - INFO - Best class avg mIOU is: 0.56408
+2026-09-08 23:10:11,020 - Model - INFO - Best inctance avg mIOU is: 0.56408
+2026-09-08 23:10:11,020 - Model - INFO - Epoch 69 (69/100):
+2026-09-08 23:10:11,020 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:11,871 - Model - INFO - Train accuracy is: 0.88116
+2026-09-08 23:10:12,315 - Model - INFO - eval mIoU of Rocket         0.558181
+2026-09-08 23:10:12,315 - Model - INFO - Epoch 69 test Accuracy: 0.742879  Class avg mIOU: 0.558181   Inctance avg mIOU: 0.558181
+2026-09-08 23:10:12,315 - Model - INFO - Best accuracy is: 0.74890
+2026-09-08 23:10:12,315 - Model - INFO - Best class avg mIOU is: 0.56408
+2026-09-08 23:10:12,315 - Model - INFO - Best inctance avg mIOU is: 0.56408
+2026-09-08 23:10:12,315 - Model - INFO - Epoch 70 (70/100):
+2026-09-08 23:10:12,315 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:13,164 - Model - INFO - Train accuracy is: 0.89194
+2026-09-08 23:10:13,607 - Model - INFO - eval mIoU of Rocket         0.562496
+2026-09-08 23:10:13,607 - Model - INFO - Epoch 70 test Accuracy: 0.740560  Class avg mIOU: 0.562496   Inctance avg mIOU: 0.562496
+2026-09-08 23:10:13,607 - Model - INFO - Best accuracy is: 0.74890
+2026-09-08 23:10:13,607 - Model - INFO - Best class avg mIOU is: 0.56408
+2026-09-08 23:10:13,607 - Model - INFO - Best inctance avg mIOU is: 0.56408
+2026-09-08 23:10:13,607 - Model - INFO - Epoch 71 (71/100):
+2026-09-08 23:10:13,607 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:14,456 - Model - INFO - Train accuracy is: 0.88799
+2026-09-08 23:10:14,906 - Model - INFO - eval mIoU of Rocket         0.568169
+2026-09-08 23:10:14,906 - Model - INFO - Epoch 71 test Accuracy: 0.748047  Class avg mIOU: 0.568169   Inctance avg mIOU: 0.568169
+2026-09-08 23:10:14,906 - Model - INFO - Save model...
+2026-09-08 23:10:14,906 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:10:14,952 - Model - INFO - Saving model....
+2026-09-08 23:10:14,953 - Model - INFO - Best accuracy is: 0.74890
+2026-09-08 23:10:14,953 - Model - INFO - Best class avg mIOU is: 0.56817
+2026-09-08 23:10:14,953 - Model - INFO - Best inctance avg mIOU is: 0.56817
+2026-09-08 23:10:14,953 - Model - INFO - Epoch 72 (72/100):
+2026-09-08 23:10:14,953 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:15,804 - Model - INFO - Train accuracy is: 0.89252
+2026-09-08 23:10:16,249 - Model - INFO - eval mIoU of Rocket         0.568871
+2026-09-08 23:10:16,249 - Model - INFO - Epoch 72 test Accuracy: 0.753052  Class avg mIOU: 0.568871   Inctance avg mIOU: 0.568871
+2026-09-08 23:10:16,249 - Model - INFO - Save model...
+2026-09-08 23:10:16,249 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:10:16,293 - Model - INFO - Saving model....
+2026-09-08 23:10:16,294 - Model - INFO - Best accuracy is: 0.75305
+2026-09-08 23:10:16,294 - Model - INFO - Best class avg mIOU is: 0.56887
+2026-09-08 23:10:16,294 - Model - INFO - Best inctance avg mIOU is: 0.56887
+2026-09-08 23:10:16,294 - Model - INFO - Epoch 73 (73/100):
+2026-09-08 23:10:16,294 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:17,146 - Model - INFO - Train accuracy is: 0.88730
+2026-09-08 23:10:17,590 - Model - INFO - eval mIoU of Rocket         0.578208
+2026-09-08 23:10:17,590 - Model - INFO - Epoch 73 test Accuracy: 0.757528  Class avg mIOU: 0.578208   Inctance avg mIOU: 0.578208
+2026-09-08 23:10:17,590 - Model - INFO - Save model...
+2026-09-08 23:10:17,590 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:10:17,624 - Model - INFO - Saving model....
+2026-09-08 23:10:17,625 - Model - INFO - Best accuracy is: 0.75753
+2026-09-08 23:10:17,625 - Model - INFO - Best class avg mIOU is: 0.57821
+2026-09-08 23:10:17,625 - Model - INFO - Best inctance avg mIOU is: 0.57821
+2026-09-08 23:10:17,625 - Model - INFO - Epoch 74 (74/100):
+2026-09-08 23:10:17,625 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:18,474 - Model - INFO - Train accuracy is: 0.89606
+2026-09-08 23:10:18,918 - Model - INFO - eval mIoU of Rocket         0.575825
+2026-09-08 23:10:18,919 - Model - INFO - Epoch 74 test Accuracy: 0.754517  Class avg mIOU: 0.575825   Inctance avg mIOU: 0.575825
+2026-09-08 23:10:18,919 - Model - INFO - Best accuracy is: 0.75753
+2026-09-08 23:10:18,919 - Model - INFO - Best class avg mIOU is: 0.57821
+2026-09-08 23:10:18,919 - Model - INFO - Best inctance avg mIOU is: 0.57821
+2026-09-08 23:10:18,919 - Model - INFO - Epoch 75 (75/100):
+2026-09-08 23:10:18,919 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:19,767 - Model - INFO - Train accuracy is: 0.89209
+2026-09-08 23:10:20,215 - Model - INFO - eval mIoU of Rocket         0.576735
+2026-09-08 23:10:20,215 - Model - INFO - Epoch 75 test Accuracy: 0.764811  Class avg mIOU: 0.576735   Inctance avg mIOU: 0.576735
+2026-09-08 23:10:20,215 - Model - INFO - Best accuracy is: 0.76481
+2026-09-08 23:10:20,215 - Model - INFO - Best class avg mIOU is: 0.57821
+2026-09-08 23:10:20,215 - Model - INFO - Best inctance avg mIOU is: 0.57821
+2026-09-08 23:10:20,215 - Model - INFO - Epoch 76 (76/100):
+2026-09-08 23:10:20,215 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:21,067 - Model - INFO - Train accuracy is: 0.89268
+2026-09-08 23:10:21,512 - Model - INFO - eval mIoU of Rocket         0.576984
+2026-09-08 23:10:21,512 - Model - INFO - Epoch 76 test Accuracy: 0.764526  Class avg mIOU: 0.576984   Inctance avg mIOU: 0.576984
+2026-09-08 23:10:21,512 - Model - INFO - Best accuracy is: 0.76481
+2026-09-08 23:10:21,512 - Model - INFO - Best class avg mIOU is: 0.57821
+2026-09-08 23:10:21,513 - Model - INFO - Best inctance avg mIOU is: 0.57821
+2026-09-08 23:10:21,513 - Model - INFO - Epoch 77 (77/100):
+2026-09-08 23:10:21,513 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:22,359 - Model - INFO - Train accuracy is: 0.89154
+2026-09-08 23:10:22,801 - Model - INFO - eval mIoU of Rocket         0.586472
+2026-09-08 23:10:22,801 - Model - INFO - Epoch 77 test Accuracy: 0.767334  Class avg mIOU: 0.586472   Inctance avg mIOU: 0.586472
+2026-09-08 23:10:22,801 - Model - INFO - Save model...
+2026-09-08 23:10:22,801 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:10:22,846 - Model - INFO - Saving model....
+2026-09-08 23:10:22,846 - Model - INFO - Best accuracy is: 0.76733
+2026-09-08 23:10:22,846 - Model - INFO - Best class avg mIOU is: 0.58647
+2026-09-08 23:10:22,846 - Model - INFO - Best inctance avg mIOU is: 0.58647
+2026-09-08 23:10:22,846 - Model - INFO - Epoch 78 (78/100):
+2026-09-08 23:10:22,846 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:23,700 - Model - INFO - Train accuracy is: 0.89154
+2026-09-08 23:10:24,147 - Model - INFO - eval mIoU of Rocket         0.575570
+2026-09-08 23:10:24,147 - Model - INFO - Epoch 78 test Accuracy: 0.767456  Class avg mIOU: 0.575570   Inctance avg mIOU: 0.575570
+2026-09-08 23:10:24,147 - Model - INFO - Best accuracy is: 0.76746
+2026-09-08 23:10:24,147 - Model - INFO - Best class avg mIOU is: 0.58647
+2026-09-08 23:10:24,147 - Model - INFO - Best inctance avg mIOU is: 0.58647
+2026-09-08 23:10:24,147 - Model - INFO - Epoch 79 (79/100):
+2026-09-08 23:10:24,147 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:24,995 - Model - INFO - Train accuracy is: 0.89774
+2026-09-08 23:10:25,440 - Model - INFO - eval mIoU of Rocket         0.577554
+2026-09-08 23:10:25,440 - Model - INFO - Epoch 79 test Accuracy: 0.765381  Class avg mIOU: 0.577554   Inctance avg mIOU: 0.577554
+2026-09-08 23:10:25,440 - Model - INFO - Best accuracy is: 0.76746
+2026-09-08 23:10:25,440 - Model - INFO - Best class avg mIOU is: 0.58647
+2026-09-08 23:10:25,440 - Model - INFO - Best inctance avg mIOU is: 0.58647
+2026-09-08 23:10:25,440 - Model - INFO - Epoch 80 (80/100):
+2026-09-08 23:10:25,440 - Model - INFO - Learning rate:0.000125
+2026-09-08 23:10:26,287 - Model - INFO - Train accuracy is: 0.89798
+2026-09-08 23:10:26,733 - Model - INFO - eval mIoU of Rocket         0.568325
+2026-09-08 23:10:26,733 - Model - INFO - Epoch 80 test Accuracy: 0.763713  Class avg mIOU: 0.568325   Inctance avg mIOU: 0.568325
+2026-09-08 23:10:26,733 - Model - INFO - Best accuracy is: 0.76746
+2026-09-08 23:10:26,733 - Model - INFO - Best class avg mIOU is: 0.58647
+2026-09-08 23:10:26,733 - Model - INFO - Best inctance avg mIOU is: 0.58647
+2026-09-08 23:10:26,733 - Model - INFO - Epoch 81 (81/100):
+2026-09-08 23:10:26,733 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:27,577 - Model - INFO - Train accuracy is: 0.89519
+2026-09-08 23:10:28,024 - Model - INFO - eval mIoU of Rocket         0.578305
+2026-09-08 23:10:28,024 - Model - INFO - Epoch 81 test Accuracy: 0.770386  Class avg mIOU: 0.578305   Inctance avg mIOU: 0.578305
+2026-09-08 23:10:28,024 - Model - INFO - Best accuracy is: 0.77039
+2026-09-08 23:10:28,024 - Model - INFO - Best class avg mIOU is: 0.58647
+2026-09-08 23:10:28,024 - Model - INFO - Best inctance avg mIOU is: 0.58647
+2026-09-08 23:10:28,024 - Model - INFO - Epoch 82 (82/100):
+2026-09-08 23:10:28,024 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:28,872 - Model - INFO - Train accuracy is: 0.89461
+2026-09-08 23:10:29,315 - Model - INFO - eval mIoU of Rocket         0.578999
+2026-09-08 23:10:29,315 - Model - INFO - Epoch 82 test Accuracy: 0.773926  Class avg mIOU: 0.578999   Inctance avg mIOU: 0.578999
+2026-09-08 23:10:29,315 - Model - INFO - Best accuracy is: 0.77393
+2026-09-08 23:10:29,315 - Model - INFO - Best class avg mIOU is: 0.58647
+2026-09-08 23:10:29,315 - Model - INFO - Best inctance avg mIOU is: 0.58647
+2026-09-08 23:10:29,315 - Model - INFO - Epoch 83 (83/100):
+2026-09-08 23:10:29,315 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:30,161 - Model - INFO - Train accuracy is: 0.89371
+2026-09-08 23:10:30,607 - Model - INFO - eval mIoU of Rocket         0.586669
+2026-09-08 23:10:30,607 - Model - INFO - Epoch 83 test Accuracy: 0.775879  Class avg mIOU: 0.586669   Inctance avg mIOU: 0.586669
+2026-09-08 23:10:30,607 - Model - INFO - Save model...
+2026-09-08 23:10:30,607 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:10:30,655 - Model - INFO - Saving model....
+2026-09-08 23:10:30,655 - Model - INFO - Best accuracy is: 0.77588
+2026-09-08 23:10:30,655 - Model - INFO - Best class avg mIOU is: 0.58667
+2026-09-08 23:10:30,655 - Model - INFO - Best inctance avg mIOU is: 0.58667
+2026-09-08 23:10:30,655 - Model - INFO - Epoch 84 (84/100):
+2026-09-08 23:10:30,655 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:31,509 - Model - INFO - Train accuracy is: 0.88683
+2026-09-08 23:10:31,955 - Model - INFO - eval mIoU of Rocket         0.583331
+2026-09-08 23:10:31,955 - Model - INFO - Epoch 84 test Accuracy: 0.776855  Class avg mIOU: 0.583331   Inctance avg mIOU: 0.583331
+2026-09-08 23:10:31,955 - Model - INFO - Best accuracy is: 0.77686
+2026-09-08 23:10:31,955 - Model - INFO - Best class avg mIOU is: 0.58667
+2026-09-08 23:10:31,955 - Model - INFO - Best inctance avg mIOU is: 0.58667
+2026-09-08 23:10:31,955 - Model - INFO - Epoch 85 (85/100):
+2026-09-08 23:10:31,955 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:32,803 - Model - INFO - Train accuracy is: 0.88660
+2026-09-08 23:10:33,245 - Model - INFO - eval mIoU of Rocket         0.585872
+2026-09-08 23:10:33,245 - Model - INFO - Epoch 85 test Accuracy: 0.777507  Class avg mIOU: 0.585872   Inctance avg mIOU: 0.585872
+2026-09-08 23:10:33,245 - Model - INFO - Best accuracy is: 0.77751
+2026-09-08 23:10:33,245 - Model - INFO - Best class avg mIOU is: 0.58667
+2026-09-08 23:10:33,245 - Model - INFO - Best inctance avg mIOU is: 0.58667
+2026-09-08 23:10:33,245 - Model - INFO - Epoch 86 (86/100):
+2026-09-08 23:10:33,245 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:34,100 - Model - INFO - Train accuracy is: 0.89262
+2026-09-08 23:10:34,545 - Model - INFO - eval mIoU of Rocket         0.584291
+2026-09-08 23:10:34,545 - Model - INFO - Epoch 86 test Accuracy: 0.777100  Class avg mIOU: 0.584291   Inctance avg mIOU: 0.584291
+2026-09-08 23:10:34,545 - Model - INFO - Best accuracy is: 0.77751
+2026-09-08 23:10:34,545 - Model - INFO - Best class avg mIOU is: 0.58667
+2026-09-08 23:10:34,545 - Model - INFO - Best inctance avg mIOU is: 0.58667
+2026-09-08 23:10:34,545 - Model - INFO - Epoch 87 (87/100):
+2026-09-08 23:10:34,545 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:35,397 - Model - INFO - Train accuracy is: 0.89658
+2026-09-08 23:10:35,845 - Model - INFO - eval mIoU of Rocket         0.571079
+2026-09-08 23:10:35,846 - Model - INFO - Epoch 87 test Accuracy: 0.766724  Class avg mIOU: 0.571079   Inctance avg mIOU: 0.571079
+2026-09-08 23:10:35,846 - Model - INFO - Best accuracy is: 0.77751
+2026-09-08 23:10:35,846 - Model - INFO - Best class avg mIOU is: 0.58667
+2026-09-08 23:10:35,846 - Model - INFO - Best inctance avg mIOU is: 0.58667
+2026-09-08 23:10:35,846 - Model - INFO - Epoch 88 (88/100):
+2026-09-08 23:10:35,846 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:36,694 - Model - INFO - Train accuracy is: 0.89273
+2026-09-08 23:10:37,137 - Model - INFO - eval mIoU of Rocket         0.585763
+2026-09-08 23:10:37,137 - Model - INFO - Epoch 88 test Accuracy: 0.774536  Class avg mIOU: 0.585763   Inctance avg mIOU: 0.585763
+2026-09-08 23:10:37,137 - Model - INFO - Best accuracy is: 0.77751
+2026-09-08 23:10:37,137 - Model - INFO - Best class avg mIOU is: 0.58667
+2026-09-08 23:10:37,137 - Model - INFO - Best inctance avg mIOU is: 0.58667
+2026-09-08 23:10:37,137 - Model - INFO - Epoch 89 (89/100):
+2026-09-08 23:10:37,137 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:37,986 - Model - INFO - Train accuracy is: 0.89720
+2026-09-08 23:10:38,432 - Model - INFO - eval mIoU of Rocket         0.589105
+2026-09-08 23:10:38,432 - Model - INFO - Epoch 89 test Accuracy: 0.777384  Class avg mIOU: 0.589105   Inctance avg mIOU: 0.589105
+2026-09-08 23:10:38,432 - Model - INFO - Save model...
+2026-09-08 23:10:38,432 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:10:38,477 - Model - INFO - Saving model....
+2026-09-08 23:10:38,477 - Model - INFO - Best accuracy is: 0.77751
+2026-09-08 23:10:38,477 - Model - INFO - Best class avg mIOU is: 0.58910
+2026-09-08 23:10:38,477 - Model - INFO - Best inctance avg mIOU is: 0.58910
+2026-09-08 23:10:38,477 - Model - INFO - Epoch 90 (90/100):
+2026-09-08 23:10:38,477 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:39,324 - Model - INFO - Train accuracy is: 0.90002
+2026-09-08 23:10:39,770 - Model - INFO - eval mIoU of Rocket         0.580378
+2026-09-08 23:10:39,770 - Model - INFO - Epoch 90 test Accuracy: 0.771891  Class avg mIOU: 0.580378   Inctance avg mIOU: 0.580378
+2026-09-08 23:10:39,770 - Model - INFO - Best accuracy is: 0.77751
+2026-09-08 23:10:39,770 - Model - INFO - Best class avg mIOU is: 0.58910
+2026-09-08 23:10:39,770 - Model - INFO - Best inctance avg mIOU is: 0.58910
+2026-09-08 23:10:39,770 - Model - INFO - Epoch 91 (91/100):
+2026-09-08 23:10:39,770 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:40,616 - Model - INFO - Train accuracy is: 0.89375
+2026-09-08 23:10:41,064 - Model - INFO - eval mIoU of Rocket         0.577032
+2026-09-08 23:10:41,064 - Model - INFO - Epoch 91 test Accuracy: 0.766683  Class avg mIOU: 0.577032   Inctance avg mIOU: 0.577032
+2026-09-08 23:10:41,064 - Model - INFO - Best accuracy is: 0.77751
+2026-09-08 23:10:41,064 - Model - INFO - Best class avg mIOU is: 0.58910
+2026-09-08 23:10:41,064 - Model - INFO - Best inctance avg mIOU is: 0.58910
+2026-09-08 23:10:41,064 - Model - INFO - Epoch 92 (92/100):
+2026-09-08 23:10:41,064 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:41,909 - Model - INFO - Train accuracy is: 0.89989
+2026-09-08 23:10:42,356 - Model - INFO - eval mIoU of Rocket         0.582493
+2026-09-08 23:10:42,356 - Model - INFO - Epoch 92 test Accuracy: 0.768799  Class avg mIOU: 0.582493   Inctance avg mIOU: 0.582493
+2026-09-08 23:10:42,356 - Model - INFO - Best accuracy is: 0.77751
+2026-09-08 23:10:42,356 - Model - INFO - Best class avg mIOU is: 0.58910
+2026-09-08 23:10:42,356 - Model - INFO - Best inctance avg mIOU is: 0.58910
+2026-09-08 23:10:42,356 - Model - INFO - Epoch 93 (93/100):
+2026-09-08 23:10:42,356 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:43,207 - Model - INFO - Train accuracy is: 0.89111
+2026-09-08 23:10:43,652 - Model - INFO - eval mIoU of Rocket         0.575880
+2026-09-08 23:10:43,652 - Model - INFO - Epoch 93 test Accuracy: 0.765340  Class avg mIOU: 0.575880   Inctance avg mIOU: 0.575880
+2026-09-08 23:10:43,652 - Model - INFO - Best accuracy is: 0.77751
+2026-09-08 23:10:43,652 - Model - INFO - Best class avg mIOU is: 0.58910
+2026-09-08 23:10:43,652 - Model - INFO - Best inctance avg mIOU is: 0.58910
+2026-09-08 23:10:43,652 - Model - INFO - Epoch 94 (94/100):
+2026-09-08 23:10:43,652 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:44,499 - Model - INFO - Train accuracy is: 0.89381
+2026-09-08 23:10:44,948 - Model - INFO - eval mIoU of Rocket         0.594456
+2026-09-08 23:10:44,948 - Model - INFO - Epoch 94 test Accuracy: 0.781535  Class avg mIOU: 0.594456   Inctance avg mIOU: 0.594456
+2026-09-08 23:10:44,948 - Model - INFO - Save model...
+2026-09-08 23:10:44,948 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Rocket/seed_42/checkpoints/best_model.pth
+2026-09-08 23:10:44,993 - Model - INFO - Saving model....
+2026-09-08 23:10:44,993 - Model - INFO - Best accuracy is: 0.78153
+2026-09-08 23:10:44,993 - Model - INFO - Best class avg mIOU is: 0.59446
+2026-09-08 23:10:44,993 - Model - INFO - Best inctance avg mIOU is: 0.59446
+2026-09-08 23:10:44,993 - Model - INFO - Epoch 95 (95/100):
+2026-09-08 23:10:44,993 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:45,845 - Model - INFO - Train accuracy is: 0.90353
+2026-09-08 23:10:46,291 - Model - INFO - eval mIoU of Rocket         0.571482
+2026-09-08 23:10:46,292 - Model - INFO - Epoch 95 test Accuracy: 0.763509  Class avg mIOU: 0.571482   Inctance avg mIOU: 0.571482
+2026-09-08 23:10:46,292 - Model - INFO - Best accuracy is: 0.78153
+2026-09-08 23:10:46,292 - Model - INFO - Best class avg mIOU is: 0.59446
+2026-09-08 23:10:46,292 - Model - INFO - Best inctance avg mIOU is: 0.59446
+2026-09-08 23:10:46,292 - Model - INFO - Epoch 96 (96/100):
+2026-09-08 23:10:46,292 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:47,140 - Model - INFO - Train accuracy is: 0.89859
+2026-09-08 23:10:47,584 - Model - INFO - eval mIoU of Rocket         0.571207
+2026-09-08 23:10:47,584 - Model - INFO - Epoch 96 test Accuracy: 0.758097  Class avg mIOU: 0.571207   Inctance avg mIOU: 0.571207
+2026-09-08 23:10:47,584 - Model - INFO - Best accuracy is: 0.78153
+2026-09-08 23:10:47,584 - Model - INFO - Best class avg mIOU is: 0.59446
+2026-09-08 23:10:47,584 - Model - INFO - Best inctance avg mIOU is: 0.59446
+2026-09-08 23:10:47,584 - Model - INFO - Epoch 97 (97/100):
+2026-09-08 23:10:47,584 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:48,434 - Model - INFO - Train accuracy is: 0.89023
+2026-09-08 23:10:48,880 - Model - INFO - eval mIoU of Rocket         0.570403
+2026-09-08 23:10:48,880 - Model - INFO - Epoch 97 test Accuracy: 0.759928  Class avg mIOU: 0.570403   Inctance avg mIOU: 0.570403
+2026-09-08 23:10:48,880 - Model - INFO - Best accuracy is: 0.78153
+2026-09-08 23:10:48,880 - Model - INFO - Best class avg mIOU is: 0.59446
+2026-09-08 23:10:48,880 - Model - INFO - Best inctance avg mIOU is: 0.59446
+2026-09-08 23:10:48,880 - Model - INFO - Epoch 98 (98/100):
+2026-09-08 23:10:48,880 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:49,733 - Model - INFO - Train accuracy is: 0.89960
+2026-09-08 23:10:50,181 - Model - INFO - eval mIoU of Rocket         0.565056
+2026-09-08 23:10:50,181 - Model - INFO - Epoch 98 test Accuracy: 0.753174  Class avg mIOU: 0.565056   Inctance avg mIOU: 0.565056
+2026-09-08 23:10:50,181 - Model - INFO - Best accuracy is: 0.78153
+2026-09-08 23:10:50,181 - Model - INFO - Best class avg mIOU is: 0.59446
+2026-09-08 23:10:50,181 - Model - INFO - Best inctance avg mIOU is: 0.59446
+2026-09-08 23:10:50,181 - Model - INFO - Epoch 99 (99/100):
+2026-09-08 23:10:50,181 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:51,030 - Model - INFO - Train accuracy is: 0.89758
+2026-09-08 23:10:51,475 - Model - INFO - eval mIoU of Rocket         0.574545
+2026-09-08 23:10:51,475 - Model - INFO - Epoch 99 test Accuracy: 0.756714  Class avg mIOU: 0.574545   Inctance avg mIOU: 0.574545
+2026-09-08 23:10:51,475 - Model - INFO - Best accuracy is: 0.78153
+2026-09-08 23:10:51,475 - Model - INFO - Best class avg mIOU is: 0.59446
+2026-09-08 23:10:51,475 - Model - INFO - Best inctance avg mIOU is: 0.59446
+2026-09-08 23:10:51,475 - Model - INFO - Epoch 100 (100/100):
+2026-09-08 23:10:51,475 - Model - INFO - Learning rate:0.000063
+2026-09-08 23:10:52,322 - Model - INFO - Train accuracy is: 0.88542
+2026-09-08 23:10:52,772 - Model - INFO - eval mIoU of Rocket         0.563213
+2026-09-08 23:10:52,772 - Model - INFO - Epoch 100 test Accuracy: 0.758545  Class avg mIOU: 0.563213   Inctance avg mIOU: 0.563213
+2026-09-08 23:10:52,772 - Model - INFO - Best accuracy is: 0.78153
+2026-09-08 23:10:52,772 - Model - INFO - Best class avg mIOU is: 0.59446
+2026-09-08 23:10:52,772 - Model - INFO - Best inctance avg mIOU is: 0.59446

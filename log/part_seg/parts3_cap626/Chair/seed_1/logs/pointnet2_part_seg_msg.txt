@@ -1,0 +1,841 @@
+2026-06-19 19:43:54,377 - Model - INFO - PARAMETER ...
+2026-06-19 19:43:54,377 - Model - INFO - Namespace(model='pointnet2_part_seg_msg', batch_size=16, epoch=100, learning_rate=0.001, gpu='0', optimizer='Adam', log_dir='parts3_cap626/Chair/seed_1', decay_rate=0.0001, npoint=2048, step_size=20, lr_decay=0.5, seed=1, categories=['Chair'], samples_per_category=626, subset_seed=0, test_samples_per_category=159, test_subset_seed=0, full_parts_only=False, num_parts=3)
+2026-06-19 19:43:54,464 - Model - INFO - The number of training data is: 626
+2026-06-19 19:43:54,464 - Model - INFO - The number of test data is: 159
+2026-06-19 19:43:54,690 - Model - INFO - No existing model, starting training from scratch...
+2026-06-19 19:43:54,870 - Model - INFO - Epoch 1 (1/100):
+2026-06-19 19:43:54,870 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:44:04,354 - Model - INFO - Train accuracy is: 0.84319
+2026-06-19 19:44:06,168 - Model - INFO - eval mIoU of Chair          0.743453
+2026-06-19 19:44:06,168 - Model - INFO - Epoch 1 test Accuracy: 0.792462  Class avg mIOU: 0.743453   Inctance avg mIOU: 0.743453
+2026-06-19 19:44:06,168 - Model - INFO - Save model...
+2026-06-19 19:44:06,168 - Model - INFO - Saving at log/part_seg/parts3_cap626/Chair/seed_1/checkpoints/best_model.pth
+2026-06-19 19:44:06,200 - Model - INFO - Saving model....
+2026-06-19 19:44:06,201 - Model - INFO - Best accuracy is: 0.79246
+2026-06-19 19:44:06,201 - Model - INFO - Best class avg mIOU is: 0.74345
+2026-06-19 19:44:06,201 - Model - INFO - Best inctance avg mIOU is: 0.74345
+2026-06-19 19:44:06,201 - Model - INFO - Epoch 2 (2/100):
+2026-06-19 19:44:06,201 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:44:15,326 - Model - INFO - Train accuracy is: 0.93192
+2026-06-19 19:44:17,114 - Model - INFO - eval mIoU of Chair          0.906188
+2026-06-19 19:44:17,114 - Model - INFO - Epoch 2 test Accuracy: 0.937862  Class avg mIOU: 0.906188   Inctance avg mIOU: 0.906188
+2026-06-19 19:44:17,114 - Model - INFO - Save model...
+2026-06-19 19:44:17,114 - Model - INFO - Saving at log/part_seg/parts3_cap626/Chair/seed_1/checkpoints/best_model.pth
+2026-06-19 19:44:17,161 - Model - INFO - Saving model....
+2026-06-19 19:44:17,161 - Model - INFO - Best accuracy is: 0.93786
+2026-06-19 19:44:17,161 - Model - INFO - Best class avg mIOU is: 0.90619
+2026-06-19 19:44:17,161 - Model - INFO - Best inctance avg mIOU is: 0.90619
+2026-06-19 19:44:17,161 - Model - INFO - Epoch 3 (3/100):
+2026-06-19 19:44:17,161 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:44:26,280 - Model - INFO - Train accuracy is: 0.93517
+2026-06-19 19:44:28,063 - Model - INFO - eval mIoU of Chair          0.905965
+2026-06-19 19:44:28,063 - Model - INFO - Epoch 3 test Accuracy: 0.936115  Class avg mIOU: 0.905965   Inctance avg mIOU: 0.905965
+2026-06-19 19:44:28,063 - Model - INFO - Best accuracy is: 0.93786
+2026-06-19 19:44:28,064 - Model - INFO - Best class avg mIOU is: 0.90619
+2026-06-19 19:44:28,064 - Model - INFO - Best inctance avg mIOU is: 0.90619
+2026-06-19 19:44:28,064 - Model - INFO - Epoch 4 (4/100):
+2026-06-19 19:44:28,064 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:44:37,192 - Model - INFO - Train accuracy is: 0.93560
+2026-06-19 19:44:38,961 - Model - INFO - eval mIoU of Chair          0.887789
+2026-06-19 19:44:38,961 - Model - INFO - Epoch 4 test Accuracy: 0.920518  Class avg mIOU: 0.887789   Inctance avg mIOU: 0.887789
+2026-06-19 19:44:38,961 - Model - INFO - Best accuracy is: 0.93786
+2026-06-19 19:44:38,961 - Model - INFO - Best class avg mIOU is: 0.90619
+2026-06-19 19:44:38,961 - Model - INFO - Best inctance avg mIOU is: 0.90619
+2026-06-19 19:44:38,961 - Model - INFO - Epoch 5 (5/100):
+2026-06-19 19:44:38,961 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:44:48,099 - Model - INFO - Train accuracy is: 0.93598
+2026-06-19 19:44:49,875 - Model - INFO - eval mIoU of Chair          0.911340
+2026-06-19 19:44:49,875 - Model - INFO - Epoch 5 test Accuracy: 0.941161  Class avg mIOU: 0.911340   Inctance avg mIOU: 0.911340
+2026-06-19 19:44:49,875 - Model - INFO - Save model...
+2026-06-19 19:44:49,875 - Model - INFO - Saving at log/part_seg/parts3_cap626/Chair/seed_1/checkpoints/best_model.pth
+2026-06-19 19:44:49,922 - Model - INFO - Saving model....
+2026-06-19 19:44:49,922 - Model - INFO - Best accuracy is: 0.94116
+2026-06-19 19:44:49,922 - Model - INFO - Best class avg mIOU is: 0.91134
+2026-06-19 19:44:49,922 - Model - INFO - Best inctance avg mIOU is: 0.91134
+2026-06-19 19:44:49,922 - Model - INFO - Epoch 6 (6/100):
+2026-06-19 19:44:49,922 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:44:59,069 - Model - INFO - Train accuracy is: 0.94217
+2026-06-19 19:45:00,843 - Model - INFO - eval mIoU of Chair          0.905049
+2026-06-19 19:45:00,843 - Model - INFO - Epoch 6 test Accuracy: 0.935602  Class avg mIOU: 0.905049   Inctance avg mIOU: 0.905049
+2026-06-19 19:45:00,843 - Model - INFO - Best accuracy is: 0.94116
+2026-06-19 19:45:00,843 - Model - INFO - Best class avg mIOU is: 0.91134
+2026-06-19 19:45:00,843 - Model - INFO - Best inctance avg mIOU is: 0.91134
+2026-06-19 19:45:00,843 - Model - INFO - Epoch 7 (7/100):
+2026-06-19 19:45:00,843 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:45:09,957 - Model - INFO - Train accuracy is: 0.94074
+2026-06-19 19:45:11,727 - Model - INFO - eval mIoU of Chair          0.886387
+2026-06-19 19:45:11,728 - Model - INFO - Epoch 7 test Accuracy: 0.928149  Class avg mIOU: 0.886387   Inctance avg mIOU: 0.886387
+2026-06-19 19:45:11,728 - Model - INFO - Best accuracy is: 0.94116
+2026-06-19 19:45:11,728 - Model - INFO - Best class avg mIOU is: 0.91134
+2026-06-19 19:45:11,728 - Model - INFO - Best inctance avg mIOU is: 0.91134
+2026-06-19 19:45:11,728 - Model - INFO - Epoch 8 (8/100):
+2026-06-19 19:45:11,728 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:45:20,874 - Model - INFO - Train accuracy is: 0.93979
+2026-06-19 19:45:22,651 - Model - INFO - eval mIoU of Chair          0.913376
+2026-06-19 19:45:22,651 - Model - INFO - Epoch 8 test Accuracy: 0.944364  Class avg mIOU: 0.913376   Inctance avg mIOU: 0.913376
+2026-06-19 19:45:22,651 - Model - INFO - Save model...
+2026-06-19 19:45:22,651 - Model - INFO - Saving at log/part_seg/parts3_cap626/Chair/seed_1/checkpoints/best_model.pth
+2026-06-19 19:45:22,697 - Model - INFO - Saving model....
+2026-06-19 19:45:22,697 - Model - INFO - Best accuracy is: 0.94436
+2026-06-19 19:45:22,697 - Model - INFO - Best class avg mIOU is: 0.91338
+2026-06-19 19:45:22,697 - Model - INFO - Best inctance avg mIOU is: 0.91338
+2026-06-19 19:45:22,697 - Model - INFO - Epoch 9 (9/100):
+2026-06-19 19:45:22,697 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:45:31,898 - Model - INFO - Train accuracy is: 0.94173
+2026-06-19 19:45:33,694 - Model - INFO - eval mIoU of Chair          0.907059
+2026-06-19 19:45:33,694 - Model - INFO - Epoch 9 test Accuracy: 0.942211  Class avg mIOU: 0.907059   Inctance avg mIOU: 0.907059
+2026-06-19 19:45:33,694 - Model - INFO - Best accuracy is: 0.94436
+2026-06-19 19:45:33,694 - Model - INFO - Best class avg mIOU is: 0.91338
+2026-06-19 19:45:33,694 - Model - INFO - Best inctance avg mIOU is: 0.91338
+2026-06-19 19:45:33,694 - Model - INFO - Epoch 10 (10/100):
+2026-06-19 19:45:33,694 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:45:42,804 - Model - INFO - Train accuracy is: 0.94119
+2026-06-19 19:45:44,591 - Model - INFO - eval mIoU of Chair          0.908991
+2026-06-19 19:45:44,592 - Model - INFO - Epoch 10 test Accuracy: 0.940826  Class avg mIOU: 0.908991   Inctance avg mIOU: 0.908991
+2026-06-19 19:45:44,592 - Model - INFO - Best accuracy is: 0.94436
+2026-06-19 19:45:44,592 - Model - INFO - Best class avg mIOU is: 0.91338
+2026-06-19 19:45:44,592 - Model - INFO - Best inctance avg mIOU is: 0.91338
+2026-06-19 19:45:44,592 - Model - INFO - Epoch 11 (11/100):
+2026-06-19 19:45:44,592 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:45:53,741 - Model - INFO - Train accuracy is: 0.94338
+2026-06-19 19:45:55,509 - Model - INFO - eval mIoU of Chair          0.910485
+2026-06-19 19:45:55,509 - Model - INFO - Epoch 11 test Accuracy: 0.946129  Class avg mIOU: 0.910485   Inctance avg mIOU: 0.910485
+2026-06-19 19:45:55,509 - Model - INFO - Best accuracy is: 0.94613
+2026-06-19 19:45:55,509 - Model - INFO - Best class avg mIOU is: 0.91338
+2026-06-19 19:45:55,509 - Model - INFO - Best inctance avg mIOU is: 0.91338
+2026-06-19 19:45:55,509 - Model - INFO - Epoch 12 (12/100):
+2026-06-19 19:45:55,509 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:46:04,617 - Model - INFO - Train accuracy is: 0.94588
+2026-06-19 19:46:06,389 - Model - INFO - eval mIoU of Chair          0.912118
+2026-06-19 19:46:06,390 - Model - INFO - Epoch 12 test Accuracy: 0.944050  Class avg mIOU: 0.912118   Inctance avg mIOU: 0.912118
+2026-06-19 19:46:06,390 - Model - INFO - Best accuracy is: 0.94613
+2026-06-19 19:46:06,390 - Model - INFO - Best class avg mIOU is: 0.91338
+2026-06-19 19:46:06,390 - Model - INFO - Best inctance avg mIOU is: 0.91338
+2026-06-19 19:46:06,390 - Model - INFO - Epoch 13 (13/100):
+2026-06-19 19:46:06,390 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:46:15,519 - Model - INFO - Train accuracy is: 0.94652
+2026-06-19 19:46:17,286 - Model - INFO - eval mIoU of Chair          0.886644
+2026-06-19 19:46:17,286 - Model - INFO - Epoch 13 test Accuracy: 0.930560  Class avg mIOU: 0.886644   Inctance avg mIOU: 0.886644
+2026-06-19 19:46:17,286 - Model - INFO - Best accuracy is: 0.94613
+2026-06-19 19:46:17,286 - Model - INFO - Best class avg mIOU is: 0.91338
+2026-06-19 19:46:17,286 - Model - INFO - Best inctance avg mIOU is: 0.91338
+2026-06-19 19:46:17,286 - Model - INFO - Epoch 14 (14/100):
+2026-06-19 19:46:17,286 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:46:26,443 - Model - INFO - Train accuracy is: 0.94603
+2026-06-19 19:46:28,230 - Model - INFO - eval mIoU of Chair          0.912013
+2026-06-19 19:46:28,230 - Model - INFO - Epoch 14 test Accuracy: 0.946375  Class avg mIOU: 0.912013   Inctance avg mIOU: 0.912013
+2026-06-19 19:46:28,230 - Model - INFO - Best accuracy is: 0.94638
+2026-06-19 19:46:28,230 - Model - INFO - Best class avg mIOU is: 0.91338
+2026-06-19 19:46:28,230 - Model - INFO - Best inctance avg mIOU is: 0.91338
+2026-06-19 19:46:28,230 - Model - INFO - Epoch 15 (15/100):
+2026-06-19 19:46:28,230 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:46:37,374 - Model - INFO - Train accuracy is: 0.94727
+2026-06-19 19:46:39,139 - Model - INFO - eval mIoU of Chair          0.908493
+2026-06-19 19:46:39,139 - Model - INFO - Epoch 15 test Accuracy: 0.944499  Class avg mIOU: 0.908493   Inctance avg mIOU: 0.908493
+2026-06-19 19:46:39,139 - Model - INFO - Best accuracy is: 0.94638
+2026-06-19 19:46:39,139 - Model - INFO - Best class avg mIOU is: 0.91338
+2026-06-19 19:46:39,139 - Model - INFO - Best inctance avg mIOU is: 0.91338
+2026-06-19 19:46:39,139 - Model - INFO - Epoch 16 (16/100):
+2026-06-19 19:46:39,139 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:46:48,251 - Model - INFO - Train accuracy is: 0.94717
+2026-06-19 19:46:50,031 - Model - INFO - eval mIoU of Chair          0.917623
+2026-06-19 19:46:50,031 - Model - INFO - Epoch 16 test Accuracy: 0.948337  Class avg mIOU: 0.917623   Inctance avg mIOU: 0.917623
+2026-06-19 19:46:50,032 - Model - INFO - Save model...
+2026-06-19 19:46:50,032 - Model - INFO - Saving at log/part_seg/parts3_cap626/Chair/seed_1/checkpoints/best_model.pth
+2026-06-19 19:46:50,078 - Model - INFO - Saving model....
+2026-06-19 19:46:50,078 - Model - INFO - Best accuracy is: 0.94834
+2026-06-19 19:46:50,078 - Model - INFO - Best class avg mIOU is: 0.91762
+2026-06-19 19:46:50,078 - Model - INFO - Best inctance avg mIOU is: 0.91762
+2026-06-19 19:46:50,078 - Model - INFO - Epoch 17 (17/100):
+2026-06-19 19:46:50,078 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:46:59,248 - Model - INFO - Train accuracy is: 0.94634
+2026-06-19 19:47:01,026 - Model - INFO - eval mIoU of Chair          0.918836
+2026-06-19 19:47:01,026 - Model - INFO - Epoch 17 test Accuracy: 0.947256  Class avg mIOU: 0.918836   Inctance avg mIOU: 0.918836
+2026-06-19 19:47:01,026 - Model - INFO - Save model...
+2026-06-19 19:47:01,026 - Model - INFO - Saving at log/part_seg/parts3_cap626/Chair/seed_1/checkpoints/best_model.pth
+2026-06-19 19:47:01,064 - Model - INFO - Saving model....
+2026-06-19 19:47:01,065 - Model - INFO - Best accuracy is: 0.94834
+2026-06-19 19:47:01,065 - Model - INFO - Best class avg mIOU is: 0.91884
+2026-06-19 19:47:01,065 - Model - INFO - Best inctance avg mIOU is: 0.91884
+2026-06-19 19:47:01,065 - Model - INFO - Epoch 18 (18/100):
+2026-06-19 19:47:01,065 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:47:10,192 - Model - INFO - Train accuracy is: 0.94864
+2026-06-19 19:47:11,952 - Model - INFO - eval mIoU of Chair          0.890904
+2026-06-19 19:47:11,952 - Model - INFO - Epoch 18 test Accuracy: 0.940771  Class avg mIOU: 0.890904   Inctance avg mIOU: 0.890904
+2026-06-19 19:47:11,952 - Model - INFO - Best accuracy is: 0.94834
+2026-06-19 19:47:11,952 - Model - INFO - Best class avg mIOU is: 0.91884
+2026-06-19 19:47:11,952 - Model - INFO - Best inctance avg mIOU is: 0.91884
+2026-06-19 19:47:11,952 - Model - INFO - Epoch 19 (19/100):
+2026-06-19 19:47:11,952 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:47:21,118 - Model - INFO - Train accuracy is: 0.94899
+2026-06-19 19:47:22,902 - Model - INFO - eval mIoU of Chair          0.900420
+2026-06-19 19:47:22,902 - Model - INFO - Epoch 19 test Accuracy: 0.942564  Class avg mIOU: 0.900420   Inctance avg mIOU: 0.900420
+2026-06-19 19:47:22,902 - Model - INFO - Best accuracy is: 0.94834
+2026-06-19 19:47:22,902 - Model - INFO - Best class avg mIOU is: 0.91884
+2026-06-19 19:47:22,902 - Model - INFO - Best inctance avg mIOU is: 0.91884
+2026-06-19 19:47:22,902 - Model - INFO - Epoch 20 (20/100):
+2026-06-19 19:47:22,902 - Model - INFO - Learning rate:0.001000
+2026-06-19 19:47:32,040 - Model - INFO - Train accuracy is: 0.94944
+2026-06-19 19:47:33,805 - Model - INFO - eval mIoU of Chair          0.899664
+2026-06-19 19:47:33,805 - Model - INFO - Epoch 20 test Accuracy: 0.936434  Class avg mIOU: 0.899664   Inctance avg mIOU: 0.899664
+2026-06-19 19:47:33,805 - Model - INFO - Best accuracy is: 0.94834
+2026-06-19 19:47:33,805 - Model - INFO - Best class avg mIOU is: 0.91884
+2026-06-19 19:47:33,805 - Model - INFO - Best inctance avg mIOU is: 0.91884
+2026-06-19 19:47:33,805 - Model - INFO - Epoch 21 (21/100):
+2026-06-19 19:47:33,805 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:47:42,924 - Model - INFO - Train accuracy is: 0.95115
+2026-06-19 19:47:44,706 - Model - INFO - eval mIoU of Chair          0.896516
+2026-06-19 19:47:44,706 - Model - INFO - Epoch 21 test Accuracy: 0.940801  Class avg mIOU: 0.896516   Inctance avg mIOU: 0.896516
+2026-06-19 19:47:44,706 - Model - INFO - Best accuracy is: 0.94834
+2026-06-19 19:47:44,706 - Model - INFO - Best class avg mIOU is: 0.91884
+2026-06-19 19:47:44,706 - Model - INFO - Best inctance avg mIOU is: 0.91884
+2026-06-19 19:47:44,706 - Model - INFO - Epoch 22 (22/100):
+2026-06-19 19:47:44,707 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:47:53,859 - Model - INFO - Train accuracy is: 0.95374
+2026-06-19 19:47:55,638 - Model - INFO - eval mIoU of Chair          0.913621
+2026-06-19 19:47:55,639 - Model - INFO - Epoch 22 test Accuracy: 0.946863  Class avg mIOU: 0.913621   Inctance avg mIOU: 0.913621
+2026-06-19 19:47:55,639 - Model - INFO - Best accuracy is: 0.94834
+2026-06-19 19:47:55,639 - Model - INFO - Best class avg mIOU is: 0.91884
+2026-06-19 19:47:55,639 - Model - INFO - Best inctance avg mIOU is: 0.91884
+2026-06-19 19:47:55,639 - Model - INFO - Epoch 23 (23/100):
+2026-06-19 19:47:55,639 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:48:04,771 - Model - INFO - Train accuracy is: 0.95400
+2026-06-19 19:48:06,525 - Model - INFO - eval mIoU of Chair          0.917963
+2026-06-19 19:48:06,525 - Model - INFO - Epoch 23 test Accuracy: 0.949959  Class avg mIOU: 0.917963   Inctance avg mIOU: 0.917963
+2026-06-19 19:48:06,525 - Model - INFO - Best accuracy is: 0.94996
+2026-06-19 19:48:06,525 - Model - INFO - Best class avg mIOU is: 0.91884
+2026-06-19 19:48:06,525 - Model - INFO - Best inctance avg mIOU is: 0.91884
+2026-06-19 19:48:06,525 - Model - INFO - Epoch 24 (24/100):
+2026-06-19 19:48:06,525 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:48:15,653 - Model - INFO - Train accuracy is: 0.95454
+2026-06-19 19:48:17,416 - Model - INFO - eval mIoU of Chair          0.914875
+2026-06-19 19:48:17,417 - Model - INFO - Epoch 24 test Accuracy: 0.947972  Class avg mIOU: 0.914875   Inctance avg mIOU: 0.914875
+2026-06-19 19:48:17,417 - Model - INFO - Best accuracy is: 0.94996
+2026-06-19 19:48:17,417 - Model - INFO - Best class avg mIOU is: 0.91884
+2026-06-19 19:48:17,417 - Model - INFO - Best inctance avg mIOU is: 0.91884
+2026-06-19 19:48:17,417 - Model - INFO - Epoch 25 (25/100):
+2026-06-19 19:48:17,417 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:48:26,552 - Model - INFO - Train accuracy is: 0.95637
+2026-06-19 19:48:28,316 - Model - INFO - eval mIoU of Chair          0.922139
+2026-06-19 19:48:28,316 - Model - INFO - Epoch 25 test Accuracy: 0.952207  Class avg mIOU: 0.922139   Inctance avg mIOU: 0.922139
+2026-06-19 19:48:28,316 - Model - INFO - Save model...
+2026-06-19 19:48:28,316 - Model - INFO - Saving at log/part_seg/parts3_cap626/Chair/seed_1/checkpoints/best_model.pth
+2026-06-19 19:48:28,362 - Model - INFO - Saving model....
+2026-06-19 19:48:28,363 - Model - INFO - Best accuracy is: 0.95221
+2026-06-19 19:48:28,363 - Model - INFO - Best class avg mIOU is: 0.92214
+2026-06-19 19:48:28,363 - Model - INFO - Best inctance avg mIOU is: 0.92214
+2026-06-19 19:48:28,363 - Model - INFO - Epoch 26 (26/100):
+2026-06-19 19:48:28,363 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:48:37,517 - Model - INFO - Train accuracy is: 0.95638
+2026-06-19 19:48:39,315 - Model - INFO - eval mIoU of Chair          0.924995
+2026-06-19 19:48:39,315 - Model - INFO - Epoch 26 test Accuracy: 0.952483  Class avg mIOU: 0.924995   Inctance avg mIOU: 0.924995
+2026-06-19 19:48:39,315 - Model - INFO - Save model...
+2026-06-19 19:48:39,315 - Model - INFO - Saving at log/part_seg/parts3_cap626/Chair/seed_1/checkpoints/best_model.pth
+2026-06-19 19:48:39,362 - Model - INFO - Saving model....
+2026-06-19 19:48:39,362 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:48:39,362 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:48:39,362 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:48:39,362 - Model - INFO - Epoch 27 (27/100):
+2026-06-19 19:48:39,362 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:48:48,502 - Model - INFO - Train accuracy is: 0.95643
+2026-06-19 19:48:50,272 - Model - INFO - eval mIoU of Chair          0.913898
+2026-06-19 19:48:50,272 - Model - INFO - Epoch 27 test Accuracy: 0.948801  Class avg mIOU: 0.913898   Inctance avg mIOU: 0.913898
+2026-06-19 19:48:50,273 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:48:50,273 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:48:50,273 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:48:50,273 - Model - INFO - Epoch 28 (28/100):
+2026-06-19 19:48:50,273 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:48:59,438 - Model - INFO - Train accuracy is: 0.95682
+2026-06-19 19:49:01,216 - Model - INFO - eval mIoU of Chair          0.908652
+2026-06-19 19:49:01,216 - Model - INFO - Epoch 28 test Accuracy: 0.947407  Class avg mIOU: 0.908652   Inctance avg mIOU: 0.908652
+2026-06-19 19:49:01,216 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:49:01,216 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:49:01,216 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:49:01,216 - Model - INFO - Epoch 29 (29/100):
+2026-06-19 19:49:01,216 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:49:10,386 - Model - INFO - Train accuracy is: 0.95643
+2026-06-19 19:49:12,185 - Model - INFO - eval mIoU of Chair          0.910494
+2026-06-19 19:49:12,186 - Model - INFO - Epoch 29 test Accuracy: 0.946983  Class avg mIOU: 0.910494   Inctance avg mIOU: 0.910494
+2026-06-19 19:49:12,186 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:49:12,186 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:49:12,186 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:49:12,186 - Model - INFO - Epoch 30 (30/100):
+2026-06-19 19:49:12,186 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:49:21,304 - Model - INFO - Train accuracy is: 0.95491
+2026-06-19 19:49:23,086 - Model - INFO - eval mIoU of Chair          0.915978
+2026-06-19 19:49:23,086 - Model - INFO - Epoch 30 test Accuracy: 0.945669  Class avg mIOU: 0.915978   Inctance avg mIOU: 0.915978
+2026-06-19 19:49:23,086 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:49:23,086 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:49:23,086 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:49:23,086 - Model - INFO - Epoch 31 (31/100):
+2026-06-19 19:49:23,087 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:49:32,197 - Model - INFO - Train accuracy is: 0.95466
+2026-06-19 19:49:33,969 - Model - INFO - eval mIoU of Chair          0.908028
+2026-06-19 19:49:33,969 - Model - INFO - Epoch 31 test Accuracy: 0.939370  Class avg mIOU: 0.908028   Inctance avg mIOU: 0.908028
+2026-06-19 19:49:33,970 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:49:33,970 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:49:33,970 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:49:33,970 - Model - INFO - Epoch 32 (32/100):
+2026-06-19 19:49:33,970 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:49:43,139 - Model - INFO - Train accuracy is: 0.95494
+2026-06-19 19:49:44,926 - Model - INFO - eval mIoU of Chair          0.913726
+2026-06-19 19:49:44,926 - Model - INFO - Epoch 32 test Accuracy: 0.948500  Class avg mIOU: 0.913726   Inctance avg mIOU: 0.913726
+2026-06-19 19:49:44,926 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:49:44,926 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:49:44,926 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:49:44,926 - Model - INFO - Epoch 33 (33/100):
+2026-06-19 19:49:44,927 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:49:54,118 - Model - INFO - Train accuracy is: 0.95773
+2026-06-19 19:49:55,884 - Model - INFO - eval mIoU of Chair          0.918035
+2026-06-19 19:49:55,884 - Model - INFO - Epoch 33 test Accuracy: 0.952026  Class avg mIOU: 0.918035   Inctance avg mIOU: 0.918035
+2026-06-19 19:49:55,884 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:49:55,884 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:49:55,884 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:49:55,884 - Model - INFO - Epoch 34 (34/100):
+2026-06-19 19:49:55,884 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:50:05,020 - Model - INFO - Train accuracy is: 0.95965
+2026-06-19 19:50:06,790 - Model - INFO - eval mIoU of Chair          0.913231
+2026-06-19 19:50:06,790 - Model - INFO - Epoch 34 test Accuracy: 0.945294  Class avg mIOU: 0.913231   Inctance avg mIOU: 0.913231
+2026-06-19 19:50:06,790 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:50:06,790 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:50:06,790 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:50:06,790 - Model - INFO - Epoch 35 (35/100):
+2026-06-19 19:50:06,790 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:50:15,915 - Model - INFO - Train accuracy is: 0.95963
+2026-06-19 19:50:17,689 - Model - INFO - eval mIoU of Chair          0.915227
+2026-06-19 19:50:17,689 - Model - INFO - Epoch 35 test Accuracy: 0.946132  Class avg mIOU: 0.915227   Inctance avg mIOU: 0.915227
+2026-06-19 19:50:17,689 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:50:17,689 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:50:17,689 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:50:17,689 - Model - INFO - Epoch 36 (36/100):
+2026-06-19 19:50:17,689 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:50:26,822 - Model - INFO - Train accuracy is: 0.95855
+2026-06-19 19:50:28,630 - Model - INFO - eval mIoU of Chair          0.920860
+2026-06-19 19:50:28,630 - Model - INFO - Epoch 36 test Accuracy: 0.949719  Class avg mIOU: 0.920860   Inctance avg mIOU: 0.920860
+2026-06-19 19:50:28,630 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:50:28,630 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:50:28,630 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:50:28,630 - Model - INFO - Epoch 37 (37/100):
+2026-06-19 19:50:28,631 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:50:37,783 - Model - INFO - Train accuracy is: 0.95853
+2026-06-19 19:50:39,572 - Model - INFO - eval mIoU of Chair          0.917046
+2026-06-19 19:50:39,572 - Model - INFO - Epoch 37 test Accuracy: 0.950478  Class avg mIOU: 0.917046   Inctance avg mIOU: 0.917046
+2026-06-19 19:50:39,572 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:50:39,572 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:50:39,572 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:50:39,572 - Model - INFO - Epoch 38 (38/100):
+2026-06-19 19:50:39,572 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:50:48,717 - Model - INFO - Train accuracy is: 0.95900
+2026-06-19 19:50:50,484 - Model - INFO - eval mIoU of Chair          0.911227
+2026-06-19 19:50:50,485 - Model - INFO - Epoch 38 test Accuracy: 0.945395  Class avg mIOU: 0.911227   Inctance avg mIOU: 0.911227
+2026-06-19 19:50:50,485 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:50:50,485 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:50:50,485 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:50:50,485 - Model - INFO - Epoch 39 (39/100):
+2026-06-19 19:50:50,485 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:50:59,625 - Model - INFO - Train accuracy is: 0.95871
+2026-06-19 19:51:01,403 - Model - INFO - eval mIoU of Chair          0.920933
+2026-06-19 19:51:01,403 - Model - INFO - Epoch 39 test Accuracy: 0.948801  Class avg mIOU: 0.920933   Inctance avg mIOU: 0.920933
+2026-06-19 19:51:01,403 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:51:01,403 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:51:01,403 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:51:01,403 - Model - INFO - Epoch 40 (40/100):
+2026-06-19 19:51:01,403 - Model - INFO - Learning rate:0.000500
+2026-06-19 19:51:10,573 - Model - INFO - Train accuracy is: 0.95694
+2026-06-19 19:51:12,357 - Model - INFO - eval mIoU of Chair          0.917959
+2026-06-19 19:51:12,357 - Model - INFO - Epoch 40 test Accuracy: 0.946608  Class avg mIOU: 0.917959   Inctance avg mIOU: 0.917959
+2026-06-19 19:51:12,357 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:51:12,357 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:51:12,357 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:51:12,357 - Model - INFO - Epoch 41 (41/100):
+2026-06-19 19:51:12,357 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:51:21,528 - Model - INFO - Train accuracy is: 0.95832
+2026-06-19 19:51:23,303 - Model - INFO - eval mIoU of Chair          0.917470
+2026-06-19 19:51:23,303 - Model - INFO - Epoch 41 test Accuracy: 0.946968  Class avg mIOU: 0.917470   Inctance avg mIOU: 0.917470
+2026-06-19 19:51:23,303 - Model - INFO - Best accuracy is: 0.95248
+2026-06-19 19:51:23,303 - Model - INFO - Best class avg mIOU is: 0.92499
+2026-06-19 19:51:23,303 - Model - INFO - Best inctance avg mIOU is: 0.92499
+2026-06-19 19:51:23,303 - Model - INFO - Epoch 42 (42/100):
+2026-06-19 19:51:23,303 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:51:32,454 - Model - INFO - Train accuracy is: 0.96112
+2026-06-19 19:51:34,222 - Model - INFO - eval mIoU of Chair          0.927615
+2026-06-19 19:51:34,222 - Model - INFO - Epoch 42 test Accuracy: 0.954390  Class avg mIOU: 0.927615   Inctance avg mIOU: 0.927615
+2026-06-19 19:51:34,222 - Model - INFO - Save model...
+2026-06-19 19:51:34,222 - Model - INFO - Saving at log/part_seg/parts3_cap626/Chair/seed_1/checkpoints/best_model.pth
+2026-06-19 19:51:34,269 - Model - INFO - Saving model....
+2026-06-19 19:51:34,269 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:51:34,269 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:51:34,269 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:51:34,269 - Model - INFO - Epoch 43 (43/100):
+2026-06-19 19:51:34,269 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:51:43,416 - Model - INFO - Train accuracy is: 0.96232
+2026-06-19 19:51:45,187 - Model - INFO - eval mIoU of Chair          0.921994
+2026-06-19 19:51:45,187 - Model - INFO - Epoch 43 test Accuracy: 0.951464  Class avg mIOU: 0.921994   Inctance avg mIOU: 0.921994
+2026-06-19 19:51:45,187 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:51:45,187 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:51:45,187 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:51:45,187 - Model - INFO - Epoch 44 (44/100):
+2026-06-19 19:51:45,187 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:51:54,293 - Model - INFO - Train accuracy is: 0.96215
+2026-06-19 19:51:56,064 - Model - INFO - eval mIoU of Chair          0.922376
+2026-06-19 19:51:56,065 - Model - INFO - Epoch 44 test Accuracy: 0.951454  Class avg mIOU: 0.922376   Inctance avg mIOU: 0.922376
+2026-06-19 19:51:56,065 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:51:56,065 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:51:56,065 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:51:56,065 - Model - INFO - Epoch 45 (45/100):
+2026-06-19 19:51:56,065 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:52:05,235 - Model - INFO - Train accuracy is: 0.96263
+2026-06-19 19:52:07,005 - Model - INFO - eval mIoU of Chair          0.920572
+2026-06-19 19:52:07,005 - Model - INFO - Epoch 45 test Accuracy: 0.950195  Class avg mIOU: 0.920572   Inctance avg mIOU: 0.920572
+2026-06-19 19:52:07,005 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:52:07,005 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:52:07,005 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:52:07,005 - Model - INFO - Epoch 46 (46/100):
+2026-06-19 19:52:07,005 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:52:16,133 - Model - INFO - Train accuracy is: 0.96327
+2026-06-19 19:52:17,907 - Model - INFO - eval mIoU of Chair          0.921829
+2026-06-19 19:52:17,907 - Model - INFO - Epoch 46 test Accuracy: 0.951003  Class avg mIOU: 0.921829   Inctance avg mIOU: 0.921829
+2026-06-19 19:52:17,907 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:52:17,907 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:52:17,907 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:52:17,907 - Model - INFO - Epoch 47 (47/100):
+2026-06-19 19:52:17,907 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:52:27,092 - Model - INFO - Train accuracy is: 0.96284
+2026-06-19 19:52:28,875 - Model - INFO - eval mIoU of Chair          0.924685
+2026-06-19 19:52:28,876 - Model - INFO - Epoch 47 test Accuracy: 0.951393  Class avg mIOU: 0.924685   Inctance avg mIOU: 0.924685
+2026-06-19 19:52:28,876 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:52:28,876 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:52:28,876 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:52:28,876 - Model - INFO - Epoch 48 (48/100):
+2026-06-19 19:52:28,876 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:52:38,005 - Model - INFO - Train accuracy is: 0.96378
+2026-06-19 19:52:39,773 - Model - INFO - eval mIoU of Chair          0.925264
+2026-06-19 19:52:39,773 - Model - INFO - Epoch 48 test Accuracy: 0.952784  Class avg mIOU: 0.925264   Inctance avg mIOU: 0.925264
+2026-06-19 19:52:39,773 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:52:39,773 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:52:39,773 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:52:39,773 - Model - INFO - Epoch 49 (49/100):
+2026-06-19 19:52:39,773 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:52:48,905 - Model - INFO - Train accuracy is: 0.96382
+2026-06-19 19:52:50,679 - Model - INFO - eval mIoU of Chair          0.924188
+2026-06-19 19:52:50,679 - Model - INFO - Epoch 49 test Accuracy: 0.952821  Class avg mIOU: 0.924188   Inctance avg mIOU: 0.924188
+2026-06-19 19:52:50,679 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:52:50,680 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:52:50,680 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:52:50,680 - Model - INFO - Epoch 50 (50/100):
+2026-06-19 19:52:50,680 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:52:59,814 - Model - INFO - Train accuracy is: 0.96301
+2026-06-19 19:53:01,602 - Model - INFO - eval mIoU of Chair          0.923669
+2026-06-19 19:53:01,602 - Model - INFO - Epoch 50 test Accuracy: 0.951212  Class avg mIOU: 0.923669   Inctance avg mIOU: 0.923669
+2026-06-19 19:53:01,602 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:53:01,602 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:53:01,602 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:53:01,602 - Model - INFO - Epoch 51 (51/100):
+2026-06-19 19:53:01,602 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:53:10,742 - Model - INFO - Train accuracy is: 0.96411
+2026-06-19 19:53:12,516 - Model - INFO - eval mIoU of Chair          0.923452
+2026-06-19 19:53:12,516 - Model - INFO - Epoch 51 test Accuracy: 0.951547  Class avg mIOU: 0.923452   Inctance avg mIOU: 0.923452
+2026-06-19 19:53:12,516 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:53:12,516 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:53:12,516 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:53:12,516 - Model - INFO - Epoch 52 (52/100):
+2026-06-19 19:53:12,516 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:53:21,638 - Model - INFO - Train accuracy is: 0.96427
+2026-06-19 19:53:23,404 - Model - INFO - eval mIoU of Chair          0.920411
+2026-06-19 19:53:23,404 - Model - INFO - Epoch 52 test Accuracy: 0.950951  Class avg mIOU: 0.920411   Inctance avg mIOU: 0.920411
+2026-06-19 19:53:23,404 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:53:23,404 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:53:23,404 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:53:23,404 - Model - INFO - Epoch 53 (53/100):
+2026-06-19 19:53:23,404 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:53:32,525 - Model - INFO - Train accuracy is: 0.96303
+2026-06-19 19:53:34,310 - Model - INFO - eval mIoU of Chair          0.925205
+2026-06-19 19:53:34,310 - Model - INFO - Epoch 53 test Accuracy: 0.952846  Class avg mIOU: 0.925205   Inctance avg mIOU: 0.925205
+2026-06-19 19:53:34,310 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:53:34,310 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:53:34,310 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:53:34,310 - Model - INFO - Epoch 54 (54/100):
+2026-06-19 19:53:34,310 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:53:43,480 - Model - INFO - Train accuracy is: 0.96367
+2026-06-19 19:53:45,261 - Model - INFO - eval mIoU of Chair          0.918410
+2026-06-19 19:53:45,261 - Model - INFO - Epoch 54 test Accuracy: 0.949335  Class avg mIOU: 0.918410   Inctance avg mIOU: 0.918410
+2026-06-19 19:53:45,261 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:53:45,261 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:53:45,261 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:53:45,261 - Model - INFO - Epoch 55 (55/100):
+2026-06-19 19:53:45,261 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:53:54,381 - Model - INFO - Train accuracy is: 0.96371
+2026-06-19 19:53:56,151 - Model - INFO - eval mIoU of Chair          0.917074
+2026-06-19 19:53:56,152 - Model - INFO - Epoch 55 test Accuracy: 0.946876  Class avg mIOU: 0.917074   Inctance avg mIOU: 0.917074
+2026-06-19 19:53:56,152 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:53:56,152 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:53:56,152 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:53:56,152 - Model - INFO - Epoch 56 (56/100):
+2026-06-19 19:53:56,152 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:54:05,243 - Model - INFO - Train accuracy is: 0.96437
+2026-06-19 19:54:07,016 - Model - INFO - eval mIoU of Chair          0.919402
+2026-06-19 19:54:07,016 - Model - INFO - Epoch 56 test Accuracy: 0.951353  Class avg mIOU: 0.919402   Inctance avg mIOU: 0.919402
+2026-06-19 19:54:07,016 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:54:07,016 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:54:07,016 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:54:07,016 - Model - INFO - Epoch 57 (57/100):
+2026-06-19 19:54:07,016 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:54:16,145 - Model - INFO - Train accuracy is: 0.96430
+2026-06-19 19:54:17,909 - Model - INFO - eval mIoU of Chair          0.919006
+2026-06-19 19:54:17,909 - Model - INFO - Epoch 57 test Accuracy: 0.951344  Class avg mIOU: 0.919006   Inctance avg mIOU: 0.919006
+2026-06-19 19:54:17,909 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:54:17,909 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:54:17,909 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:54:17,909 - Model - INFO - Epoch 58 (58/100):
+2026-06-19 19:54:17,909 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:54:27,025 - Model - INFO - Train accuracy is: 0.96454
+2026-06-19 19:54:28,787 - Model - INFO - eval mIoU of Chair          0.922488
+2026-06-19 19:54:28,787 - Model - INFO - Epoch 58 test Accuracy: 0.951556  Class avg mIOU: 0.922488   Inctance avg mIOU: 0.922488
+2026-06-19 19:54:28,787 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:54:28,787 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:54:28,787 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:54:28,787 - Model - INFO - Epoch 59 (59/100):
+2026-06-19 19:54:28,787 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:54:37,965 - Model - INFO - Train accuracy is: 0.96244
+2026-06-19 19:54:39,746 - Model - INFO - eval mIoU of Chair          0.923590
+2026-06-19 19:54:39,746 - Model - INFO - Epoch 59 test Accuracy: 0.952087  Class avg mIOU: 0.923590   Inctance avg mIOU: 0.923590
+2026-06-19 19:54:39,746 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:54:39,746 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:54:39,746 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:54:39,746 - Model - INFO - Epoch 60 (60/100):
+2026-06-19 19:54:39,746 - Model - INFO - Learning rate:0.000250
+2026-06-19 19:54:48,874 - Model - INFO - Train accuracy is: 0.96448
+2026-06-19 19:54:50,642 - Model - INFO - eval mIoU of Chair          0.916541
+2026-06-19 19:54:50,642 - Model - INFO - Epoch 60 test Accuracy: 0.948433  Class avg mIOU: 0.916541   Inctance avg mIOU: 0.916541
+2026-06-19 19:54:50,642 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:54:50,642 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:54:50,642 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:54:50,642 - Model - INFO - Epoch 61 (61/100):
+2026-06-19 19:54:50,642 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:54:59,771 - Model - INFO - Train accuracy is: 0.96473
+2026-06-19 19:55:01,543 - Model - INFO - eval mIoU of Chair          0.923497
+2026-06-19 19:55:01,543 - Model - INFO - Epoch 61 test Accuracy: 0.951801  Class avg mIOU: 0.923497   Inctance avg mIOU: 0.923497
+2026-06-19 19:55:01,543 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:55:01,544 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:55:01,544 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:55:01,544 - Model - INFO - Epoch 62 (62/100):
+2026-06-19 19:55:01,544 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:55:10,692 - Model - INFO - Train accuracy is: 0.96589
+2026-06-19 19:55:12,452 - Model - INFO - eval mIoU of Chair          0.925367
+2026-06-19 19:55:12,452 - Model - INFO - Epoch 62 test Accuracy: 0.952772  Class avg mIOU: 0.925367   Inctance avg mIOU: 0.925367
+2026-06-19 19:55:12,452 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:55:12,452 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:55:12,452 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:55:12,452 - Model - INFO - Epoch 63 (63/100):
+2026-06-19 19:55:12,452 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:55:21,581 - Model - INFO - Train accuracy is: 0.96667
+2026-06-19 19:55:23,361 - Model - INFO - eval mIoU of Chair          0.924869
+2026-06-19 19:55:23,361 - Model - INFO - Epoch 63 test Accuracy: 0.952462  Class avg mIOU: 0.924869   Inctance avg mIOU: 0.924869
+2026-06-19 19:55:23,361 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:55:23,361 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:55:23,361 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:55:23,361 - Model - INFO - Epoch 64 (64/100):
+2026-06-19 19:55:23,361 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:55:32,548 - Model - INFO - Train accuracy is: 0.96651
+2026-06-19 19:55:34,323 - Model - INFO - eval mIoU of Chair          0.922937
+2026-06-19 19:55:34,323 - Model - INFO - Epoch 64 test Accuracy: 0.950512  Class avg mIOU: 0.922937   Inctance avg mIOU: 0.922937
+2026-06-19 19:55:34,323 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:55:34,323 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:55:34,323 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:55:34,323 - Model - INFO - Epoch 65 (65/100):
+2026-06-19 19:55:34,323 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:55:43,463 - Model - INFO - Train accuracy is: 0.96696
+2026-06-19 19:55:45,228 - Model - INFO - eval mIoU of Chair          0.926148
+2026-06-19 19:55:45,228 - Model - INFO - Epoch 65 test Accuracy: 0.952542  Class avg mIOU: 0.926148   Inctance avg mIOU: 0.926148
+2026-06-19 19:55:45,229 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:55:45,229 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:55:45,229 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:55:45,229 - Model - INFO - Epoch 66 (66/100):
+2026-06-19 19:55:45,229 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:55:54,364 - Model - INFO - Train accuracy is: 0.96807
+2026-06-19 19:55:56,131 - Model - INFO - eval mIoU of Chair          0.923607
+2026-06-19 19:55:56,131 - Model - INFO - Epoch 66 test Accuracy: 0.952121  Class avg mIOU: 0.923607   Inctance avg mIOU: 0.923607
+2026-06-19 19:55:56,131 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:55:56,131 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:55:56,131 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:55:56,131 - Model - INFO - Epoch 67 (67/100):
+2026-06-19 19:55:56,131 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:56:05,270 - Model - INFO - Train accuracy is: 0.96773
+2026-06-19 19:56:07,036 - Model - INFO - eval mIoU of Chair          0.923237
+2026-06-19 19:56:07,036 - Model - INFO - Epoch 67 test Accuracy: 0.953656  Class avg mIOU: 0.923237   Inctance avg mIOU: 0.923237
+2026-06-19 19:56:07,037 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:56:07,037 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:56:07,037 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:56:07,037 - Model - INFO - Epoch 68 (68/100):
+2026-06-19 19:56:07,037 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:56:16,168 - Model - INFO - Train accuracy is: 0.96791
+2026-06-19 19:56:17,940 - Model - INFO - eval mIoU of Chair          0.925015
+2026-06-19 19:56:17,940 - Model - INFO - Epoch 68 test Accuracy: 0.953414  Class avg mIOU: 0.925015   Inctance avg mIOU: 0.925015
+2026-06-19 19:56:17,940 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:56:17,940 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:56:17,940 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:56:17,940 - Model - INFO - Epoch 69 (69/100):
+2026-06-19 19:56:17,940 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:56:27,053 - Model - INFO - Train accuracy is: 0.96819
+2026-06-19 19:56:28,817 - Model - INFO - eval mIoU of Chair          0.919984
+2026-06-19 19:56:28,817 - Model - INFO - Epoch 69 test Accuracy: 0.953030  Class avg mIOU: 0.919984   Inctance avg mIOU: 0.919984
+2026-06-19 19:56:28,818 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:56:28,818 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:56:28,818 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:56:28,818 - Model - INFO - Epoch 70 (70/100):
+2026-06-19 19:56:28,818 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:56:37,943 - Model - INFO - Train accuracy is: 0.96770
+2026-06-19 19:56:39,703 - Model - INFO - eval mIoU of Chair          0.926155
+2026-06-19 19:56:39,703 - Model - INFO - Epoch 70 test Accuracy: 0.952833  Class avg mIOU: 0.926155   Inctance avg mIOU: 0.926155
+2026-06-19 19:56:39,703 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:56:39,703 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:56:39,703 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:56:39,703 - Model - INFO - Epoch 71 (71/100):
+2026-06-19 19:56:39,703 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:56:48,841 - Model - INFO - Train accuracy is: 0.96801
+2026-06-19 19:56:50,600 - Model - INFO - eval mIoU of Chair          0.926350
+2026-06-19 19:56:50,600 - Model - INFO - Epoch 71 test Accuracy: 0.953288  Class avg mIOU: 0.926350   Inctance avg mIOU: 0.926350
+2026-06-19 19:56:50,600 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:56:50,600 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:56:50,600 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:56:50,600 - Model - INFO - Epoch 72 (72/100):
+2026-06-19 19:56:50,600 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:56:59,739 - Model - INFO - Train accuracy is: 0.96856
+2026-06-19 19:57:01,513 - Model - INFO - eval mIoU of Chair          0.924840
+2026-06-19 19:57:01,513 - Model - INFO - Epoch 72 test Accuracy: 0.951064  Class avg mIOU: 0.924840   Inctance avg mIOU: 0.924840
+2026-06-19 19:57:01,513 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:57:01,513 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:57:01,513 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:57:01,513 - Model - INFO - Epoch 73 (73/100):
+2026-06-19 19:57:01,513 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:57:10,690 - Model - INFO - Train accuracy is: 0.96842
+2026-06-19 19:57:12,468 - Model - INFO - eval mIoU of Chair          0.925545
+2026-06-19 19:57:12,468 - Model - INFO - Epoch 73 test Accuracy: 0.953371  Class avg mIOU: 0.925545   Inctance avg mIOU: 0.925545
+2026-06-19 19:57:12,469 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:57:12,469 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:57:12,469 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:57:12,469 - Model - INFO - Epoch 74 (74/100):
+2026-06-19 19:57:12,469 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:57:21,590 - Model - INFO - Train accuracy is: 0.96788
+2026-06-19 19:57:23,361 - Model - INFO - eval mIoU of Chair          0.926290
+2026-06-19 19:57:23,361 - Model - INFO - Epoch 74 test Accuracy: 0.952038  Class avg mIOU: 0.926290   Inctance avg mIOU: 0.926290
+2026-06-19 19:57:23,362 - Model - INFO - Best accuracy is: 0.95439
+2026-06-19 19:57:23,362 - Model - INFO - Best class avg mIOU is: 0.92762
+2026-06-19 19:57:23,362 - Model - INFO - Best inctance avg mIOU is: 0.92762
+2026-06-19 19:57:23,362 - Model - INFO - Epoch 75 (75/100):
+2026-06-19 19:57:23,362 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:57:32,520 - Model - INFO - Train accuracy is: 0.96829
+2026-06-19 19:57:34,294 - Model - INFO - eval mIoU of Chair          0.927961
+2026-06-19 19:57:34,294 - Model - INFO - Epoch 75 test Accuracy: 0.954743  Class avg mIOU: 0.927961   Inctance avg mIOU: 0.927961
+2026-06-19 19:57:34,294 - Model - INFO - Save model...
+2026-06-19 19:57:34,294 - Model - INFO - Saving at log/part_seg/parts3_cap626/Chair/seed_1/checkpoints/best_model.pth
+2026-06-19 19:57:34,340 - Model - INFO - Saving model....
+2026-06-19 19:57:34,340 - Model - INFO - Best accuracy is: 0.95474
+2026-06-19 19:57:34,340 - Model - INFO - Best class avg mIOU is: 0.92796
+2026-06-19 19:57:34,340 - Model - INFO - Best inctance avg mIOU is: 0.92796
+2026-06-19 19:57:34,340 - Model - INFO - Epoch 76 (76/100):
+2026-06-19 19:57:34,340 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:57:43,497 - Model - INFO - Train accuracy is: 0.96789
+2026-06-19 19:57:45,274 - Model - INFO - eval mIoU of Chair          0.925403
+2026-06-19 19:57:45,274 - Model - INFO - Epoch 76 test Accuracy: 0.954105  Class avg mIOU: 0.925403   Inctance avg mIOU: 0.925403
+2026-06-19 19:57:45,274 - Model - INFO - Best accuracy is: 0.95474
+2026-06-19 19:57:45,274 - Model - INFO - Best class avg mIOU is: 0.92796
+2026-06-19 19:57:45,274 - Model - INFO - Best inctance avg mIOU is: 0.92796
+2026-06-19 19:57:45,274 - Model - INFO - Epoch 77 (77/100):
+2026-06-19 19:57:45,274 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:57:54,394 - Model - INFO - Train accuracy is: 0.96862
+2026-06-19 19:57:56,171 - Model - INFO - eval mIoU of Chair          0.922086
+2026-06-19 19:57:56,171 - Model - INFO - Epoch 77 test Accuracy: 0.952388  Class avg mIOU: 0.922086   Inctance avg mIOU: 0.922086
+2026-06-19 19:57:56,171 - Model - INFO - Best accuracy is: 0.95474
+2026-06-19 19:57:56,171 - Model - INFO - Best class avg mIOU is: 0.92796
+2026-06-19 19:57:56,171 - Model - INFO - Best inctance avg mIOU is: 0.92796
+2026-06-19 19:57:56,171 - Model - INFO - Epoch 78 (78/100):
+2026-06-19 19:57:56,171 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:58:05,312 - Model - INFO - Train accuracy is: 0.96901
+2026-06-19 19:58:07,071 - Model - INFO - eval mIoU of Chair          0.926963
+2026-06-19 19:58:07,071 - Model - INFO - Epoch 78 test Accuracy: 0.952806  Class avg mIOU: 0.926963   Inctance avg mIOU: 0.926963
+2026-06-19 19:58:07,071 - Model - INFO - Best accuracy is: 0.95474
+2026-06-19 19:58:07,071 - Model - INFO - Best class avg mIOU is: 0.92796
+2026-06-19 19:58:07,071 - Model - INFO - Best inctance avg mIOU is: 0.92796
+2026-06-19 19:58:07,071 - Model - INFO - Epoch 79 (79/100):
+2026-06-19 19:58:07,071 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:58:16,266 - Model - INFO - Train accuracy is: 0.96789
+2026-06-19 19:58:18,051 - Model - INFO - eval mIoU of Chair          0.924154
+2026-06-19 19:58:18,051 - Model - INFO - Epoch 79 test Accuracy: 0.950852  Class avg mIOU: 0.924154   Inctance avg mIOU: 0.924154
+2026-06-19 19:58:18,051 - Model - INFO - Best accuracy is: 0.95474
+2026-06-19 19:58:18,051 - Model - INFO - Best class avg mIOU is: 0.92796
+2026-06-19 19:58:18,051 - Model - INFO - Best inctance avg mIOU is: 0.92796
+2026-06-19 19:58:18,051 - Model - INFO - Epoch 80 (80/100):
+2026-06-19 19:58:18,051 - Model - INFO - Learning rate:0.000125
+2026-06-19 19:58:27,196 - Model - INFO - Train accuracy is: 0.96878
+2026-06-19 19:58:28,965 - Model - INFO - eval mIoU of Chair          0.919799
+2026-06-19 19:58:28,965 - Model - INFO - Epoch 80 test Accuracy: 0.952529  Class avg mIOU: 0.919799   Inctance avg mIOU: 0.919799
+2026-06-19 19:58:28,965 - Model - INFO - Best accuracy is: 0.95474
+2026-06-19 19:58:28,965 - Model - INFO - Best class avg mIOU is: 0.92796
+2026-06-19 19:58:28,965 - Model - INFO - Best inctance avg mIOU is: 0.92796
+2026-06-19 19:58:28,965 - Model - INFO - Epoch 81 (81/100):
+2026-06-19 19:58:28,965 - Model - INFO - Learning rate:0.000063
+2026-06-19 19:58:38,078 - Model - INFO - Train accuracy is: 0.96955
+2026-06-19 19:58:39,844 - Model - INFO - eval mIoU of Chair          0.928282
+2026-06-19 19:58:39,844 - Model - INFO - Epoch 81 test Accuracy: 0.953672  Class avg mIOU: 0.928282   Inctance avg mIOU: 0.928282
+2026-06-19 19:58:39,845 - Model - INFO - Save model...
+2026-06-19 19:58:39,845 - Model - INFO - Saving at log/part_seg/parts3_cap626/Chair/seed_1/checkpoints/best_model.pth
+2026-06-19 19:58:39,890 - Model - INFO - Saving model....
+2026-06-19 19:58:39,891 - Model - INFO - Best accuracy is: 0.95474
+2026-06-19 19:58:39,891 - Model - INFO - Best class avg mIOU is: 0.92828
+2026-06-19 19:58:39,891 - Model - INFO - Best inctance avg mIOU is: 0.92828
+2026-06-19 19:58:39,891 - Model - INFO - Epoch 82 (82/100):
+2026-06-19 19:58:39,891 - Model - INFO - Learning rate:0.000063
+2026-06-19 19:58:49,063 - Model - INFO - Train accuracy is: 0.96944
+2026-06-19 19:58:50,838 - Model - INFO - eval mIoU of Chair          0.926158
+2026-06-19 19:58:50,839 - Model - INFO - Epoch 82 test Accuracy: 0.952928  Class avg mIOU: 0.926158   Inctance avg mIOU: 0.926158
+2026-06-19 19:58:50,839 - Model - INFO - Best accuracy is: 0.95474
+2026-06-19 19:58:50,839 - Model - INFO - Best class avg mIOU is: 0.92828
+2026-06-19 19:58:50,839 - Model - INFO - Best inctance avg mIOU is: 0.92828
+2026-06-19 19:58:50,839 - Model - INFO - Epoch 83 (83/100):
+2026-06-19 19:58:50,839 - Model - INFO - Learning rate:0.000063
+2026-06-19 19:58:59,975 - Model - INFO - Train accuracy is: 0.97008
+2026-06-19 19:59:01,739 - Model - INFO - eval mIoU of Chair          0.928744
+2026-06-19 19:59:01,739 - Model - INFO - Epoch 83 test Accuracy: 0.953607  Class avg mIOU: 0.928744   Inctance avg mIOU: 0.928744
+2026-06-19 19:59:01,739 - Model - INFO - Save model...
+2026-06-19 19:59:01,739 - Model - INFO - Saving at log/part_seg/parts3_cap626/Chair/seed_1/checkpoints/best_model.pth
+2026-06-19 19:59:01,786 - Model - INFO - Saving model....
+2026-06-19 19:59:01,787 - Model - INFO - Best accuracy is: 0.95474
+2026-06-19 19:59:01,787 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 19:59:01,787 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 19:59:01,787 - Model - INFO - Epoch 84 (84/100):
+2026-06-19 19:59:01,787 - Model - INFO - Learning rate:0.000063
+2026-06-19 19:59:10,919 - Model - INFO - Train accuracy is: 0.97008
+2026-06-19 19:59:12,703 - Model - INFO - eval mIoU of Chair          0.927289
+2026-06-19 19:59:12,703 - Model - INFO - Epoch 84 test Accuracy: 0.954046  Class avg mIOU: 0.927289   Inctance avg mIOU: 0.927289
+2026-06-19 19:59:12,703 - Model - INFO - Best accuracy is: 0.95474
+2026-06-19 19:59:12,703 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 19:59:12,703 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 19:59:12,703 - Model - INFO - Epoch 85 (85/100):
+2026-06-19 19:59:12,703 - Model - INFO - Learning rate:0.000063
+2026-06-19 19:59:21,829 - Model - INFO - Train accuracy is: 0.96981
+2026-06-19 19:59:23,606 - Model - INFO - eval mIoU of Chair          0.925243
+2026-06-19 19:59:23,607 - Model - INFO - Epoch 85 test Accuracy: 0.953291  Class avg mIOU: 0.925243   Inctance avg mIOU: 0.925243
+2026-06-19 19:59:23,607 - Model - INFO - Best accuracy is: 0.95474
+2026-06-19 19:59:23,607 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 19:59:23,607 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 19:59:23,607 - Model - INFO - Epoch 86 (86/100):
+2026-06-19 19:59:23,607 - Model - INFO - Learning rate:0.000063
+2026-06-19 19:59:32,761 - Model - INFO - Train accuracy is: 0.97022
+2026-06-19 19:59:34,530 - Model - INFO - eval mIoU of Chair          0.924325
+2026-06-19 19:59:34,531 - Model - INFO - Epoch 86 test Accuracy: 0.951814  Class avg mIOU: 0.924325   Inctance avg mIOU: 0.924325
+2026-06-19 19:59:34,531 - Model - INFO - Best accuracy is: 0.95474
+2026-06-19 19:59:34,531 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 19:59:34,531 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 19:59:34,531 - Model - INFO - Epoch 87 (87/100):
+2026-06-19 19:59:34,531 - Model - INFO - Learning rate:0.000063
+2026-06-19 19:59:43,719 - Model - INFO - Train accuracy is: 0.97029
+2026-06-19 19:59:45,500 - Model - INFO - eval mIoU of Chair          0.928421
+2026-06-19 19:59:45,500 - Model - INFO - Epoch 87 test Accuracy: 0.954780  Class avg mIOU: 0.928421   Inctance avg mIOU: 0.928421
+2026-06-19 19:59:45,500 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 19:59:45,500 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 19:59:45,501 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 19:59:45,501 - Model - INFO - Epoch 88 (88/100):
+2026-06-19 19:59:45,501 - Model - INFO - Learning rate:0.000063
+2026-06-19 19:59:54,616 - Model - INFO - Train accuracy is: 0.96979
+2026-06-19 19:59:56,387 - Model - INFO - eval mIoU of Chair          0.923062
+2026-06-19 19:59:56,387 - Model - INFO - Epoch 88 test Accuracy: 0.952667  Class avg mIOU: 0.923062   Inctance avg mIOU: 0.923062
+2026-06-19 19:59:56,387 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 19:59:56,387 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 19:59:56,387 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 19:59:56,387 - Model - INFO - Epoch 89 (89/100):
+2026-06-19 19:59:56,387 - Model - INFO - Learning rate:0.000063
+2026-06-19 20:00:05,549 - Model - INFO - Train accuracy is: 0.97010
+2026-06-19 20:00:07,341 - Model - INFO - eval mIoU of Chair          0.926675
+2026-06-19 20:00:07,342 - Model - INFO - Epoch 89 test Accuracy: 0.954639  Class avg mIOU: 0.926675   Inctance avg mIOU: 0.926675
+2026-06-19 20:00:07,342 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 20:00:07,342 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 20:00:07,342 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 20:00:07,342 - Model - INFO - Epoch 90 (90/100):
+2026-06-19 20:00:07,342 - Model - INFO - Learning rate:0.000063
+2026-06-19 20:00:16,501 - Model - INFO - Train accuracy is: 0.97037
+2026-06-19 20:00:18,269 - Model - INFO - eval mIoU of Chair          0.920476
+2026-06-19 20:00:18,269 - Model - INFO - Epoch 90 test Accuracy: 0.952081  Class avg mIOU: 0.920476   Inctance avg mIOU: 0.920476
+2026-06-19 20:00:18,269 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 20:00:18,269 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 20:00:18,269 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 20:00:18,269 - Model - INFO - Epoch 91 (91/100):
+2026-06-19 20:00:18,269 - Model - INFO - Learning rate:0.000063
+2026-06-19 20:00:27,463 - Model - INFO - Train accuracy is: 0.97062
+2026-06-19 20:00:29,248 - Model - INFO - eval mIoU of Chair          0.921639
+2026-06-19 20:00:29,248 - Model - INFO - Epoch 91 test Accuracy: 0.953441  Class avg mIOU: 0.921639   Inctance avg mIOU: 0.921639
+2026-06-19 20:00:29,248 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 20:00:29,248 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 20:00:29,248 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 20:00:29,248 - Model - INFO - Epoch 92 (92/100):
+2026-06-19 20:00:29,248 - Model - INFO - Learning rate:0.000063
+2026-06-19 20:00:38,370 - Model - INFO - Train accuracy is: 0.97097
+2026-06-19 20:00:40,138 - Model - INFO - eval mIoU of Chair          0.922214
+2026-06-19 20:00:40,138 - Model - INFO - Epoch 92 test Accuracy: 0.952492  Class avg mIOU: 0.922214   Inctance avg mIOU: 0.922214
+2026-06-19 20:00:40,138 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 20:00:40,138 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 20:00:40,138 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 20:00:40,138 - Model - INFO - Epoch 93 (93/100):
+2026-06-19 20:00:40,138 - Model - INFO - Learning rate:0.000063
+2026-06-19 20:00:49,252 - Model - INFO - Train accuracy is: 0.97036
+2026-06-19 20:00:51,028 - Model - INFO - eval mIoU of Chair          0.922548
+2026-06-19 20:00:51,028 - Model - INFO - Epoch 93 test Accuracy: 0.951952  Class avg mIOU: 0.922548   Inctance avg mIOU: 0.922548
+2026-06-19 20:00:51,029 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 20:00:51,029 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 20:00:51,029 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 20:00:51,029 - Model - INFO - Epoch 94 (94/100):
+2026-06-19 20:00:51,029 - Model - INFO - Learning rate:0.000063
+2026-06-19 20:01:00,210 - Model - INFO - Train accuracy is: 0.97104
+2026-06-19 20:01:02,003 - Model - INFO - eval mIoU of Chair          0.928646
+2026-06-19 20:01:02,003 - Model - INFO - Epoch 94 test Accuracy: 0.954762  Class avg mIOU: 0.928646   Inctance avg mIOU: 0.928646
+2026-06-19 20:01:02,003 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 20:01:02,003 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 20:01:02,003 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 20:01:02,003 - Model - INFO - Epoch 95 (95/100):
+2026-06-19 20:01:02,003 - Model - INFO - Learning rate:0.000063
+2026-06-19 20:01:11,152 - Model - INFO - Train accuracy is: 0.97119
+2026-06-19 20:01:12,939 - Model - INFO - eval mIoU of Chair          0.926010
+2026-06-19 20:01:12,939 - Model - INFO - Epoch 95 test Accuracy: 0.953033  Class avg mIOU: 0.926010   Inctance avg mIOU: 0.926010
+2026-06-19 20:01:12,939 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 20:01:12,939 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 20:01:12,939 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 20:01:12,939 - Model - INFO - Epoch 96 (96/100):
+2026-06-19 20:01:12,939 - Model - INFO - Learning rate:0.000063
+2026-06-19 20:01:22,083 - Model - INFO - Train accuracy is: 0.97131
+2026-06-19 20:01:23,871 - Model - INFO - eval mIoU of Chair          0.922079
+2026-06-19 20:01:23,871 - Model - INFO - Epoch 96 test Accuracy: 0.951123  Class avg mIOU: 0.922079   Inctance avg mIOU: 0.922079
+2026-06-19 20:01:23,871 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 20:01:23,872 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 20:01:23,872 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 20:01:23,872 - Model - INFO - Epoch 97 (97/100):
+2026-06-19 20:01:23,872 - Model - INFO - Learning rate:0.000063
+2026-06-19 20:01:32,987 - Model - INFO - Train accuracy is: 0.97094
+2026-06-19 20:01:34,780 - Model - INFO - eval mIoU of Chair          0.926259
+2026-06-19 20:01:34,780 - Model - INFO - Epoch 97 test Accuracy: 0.953239  Class avg mIOU: 0.926259   Inctance avg mIOU: 0.926259
+2026-06-19 20:01:34,780 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 20:01:34,780 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 20:01:34,780 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 20:01:34,780 - Model - INFO - Epoch 98 (98/100):
+2026-06-19 20:01:34,780 - Model - INFO - Learning rate:0.000063
+2026-06-19 20:01:43,915 - Model - INFO - Train accuracy is: 0.97117
+2026-06-19 20:01:45,695 - Model - INFO - eval mIoU of Chair          0.925692
+2026-06-19 20:01:45,695 - Model - INFO - Epoch 98 test Accuracy: 0.952612  Class avg mIOU: 0.925692   Inctance avg mIOU: 0.925692
+2026-06-19 20:01:45,696 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 20:01:45,696 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 20:01:45,696 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 20:01:45,696 - Model - INFO - Epoch 99 (99/100):
+2026-06-19 20:01:45,696 - Model - INFO - Learning rate:0.000063
+2026-06-19 20:01:54,815 - Model - INFO - Train accuracy is: 0.97122
+2026-06-19 20:01:56,592 - Model - INFO - eval mIoU of Chair          0.925462
+2026-06-19 20:01:56,593 - Model - INFO - Epoch 99 test Accuracy: 0.954126  Class avg mIOU: 0.925462   Inctance avg mIOU: 0.925462
+2026-06-19 20:01:56,593 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 20:01:56,593 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 20:01:56,593 - Model - INFO - Best inctance avg mIOU is: 0.92874
+2026-06-19 20:01:56,593 - Model - INFO - Epoch 100 (100/100):
+2026-06-19 20:01:56,593 - Model - INFO - Learning rate:0.000063
+2026-06-19 20:02:05,718 - Model - INFO - Train accuracy is: 0.97113
+2026-06-19 20:02:07,500 - Model - INFO - eval mIoU of Chair          0.924708
+2026-06-19 20:02:07,500 - Model - INFO - Epoch 100 test Accuracy: 0.950782  Class avg mIOU: 0.924708   Inctance avg mIOU: 0.924708
+2026-06-19 20:02:07,500 - Model - INFO - Best accuracy is: 0.95478
+2026-06-19 20:02:07,500 - Model - INFO - Best class avg mIOU is: 0.92874
+2026-06-19 20:02:07,500 - Model - INFO - Best inctance avg mIOU is: 0.92874

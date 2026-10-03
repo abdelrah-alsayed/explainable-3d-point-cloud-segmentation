@@ -1,0 +1,278 @@
+{
+  "study_id": "e4a92ad22820ed54483cb9bca652d6220490a4c4f174abbfb327330a9c3c2056",
+  "identity": {
+    "schema": 2,
+    "config": {
+      "category": "Skateboard",
+      "log_dir": "log/part_seg/full_parts_per_category/Skateboard/seed_42",
+      "output_dir": "log/part_seg/full_parts_per_category/Skateboard/seed_42/explain/full-exp",
+      "npoints": 2048,
+      "num_parts_filter": 3,
+      "test_count": 21,
+      "subset_seed": 0,
+      "sample_seed": 0,
+      "region_seed": 0,
+      "groups": 32,
+      "trial_objects": [
+        0,
+        1,
+        3,
+        4,
+        7,
+        8,
+        10,
+        15,
+        17,
+        18
+      ],
+      "example_objects": [
+        8,
+        10,
+        17
+      ],
+      "exact_objects": [
+        10
+      ],
+      "exact_groups": 8,
+      "exact_budgets": [
+        64,
+        128,
+        254
+      ],
+      "trial_budgets": [
+        4096,
+        8192
+      ],
+      "kernel_seeds": [
+        0,
+        1,
+        2
+      ],
+      "replacement_seeds": [
+        0,
+        1,
+        2
+      ],
+      "batch_size": 8,
+      "score_chunk_size": 64,
+      "random_removal_orders": 5,
+      "device": "auto",
+      "logprob_mode": "category",
+      "object_names": [
+        "24e46e195f4907887a70e5e6aa241c88.txt",
+        "36aaae334d636ec28043db94fbc8c982.txt",
+        "393ca71bd734f3071082f2ea630bf69e.txt",
+        "48f26ddc704fec2f379c6a1d59ef7283.txt",
+        "755dc44dae7791761082f2ea630bf69e.txt",
+        "776eaffd7cbe7bc6b9e8bdc9c4a49aa2.txt",
+        "90dbe261a4d56dcf1082f2ea630bf69e.txt",
+        "97f85bc59f09a9f455c660e6cd8e92b.txt",
+        "abdc4a823b1f78c397f47f3057557cbe.txt",
+        "ac2b6924a60a7a87aa4f69d519551495.txt",
+        "af4343c5b78b70b11082f2ea630bf69e.txt",
+        "c171d90db4c4ba56cdb1768065dafd0c.txt",
+        "d303055e96cd59949da15808191f1405.txt",
+        "d31aaca67fd8ef1827d17dabad15093.txt",
+        "d3ff56062272f3e6346e65609be6d72f.txt",
+        "d4c042d11f29dffa1082f2ea630bf69e.txt",
+        "db4c8bf323465e4c537d393009a79347.txt",
+        "f5643778dbcd653655a834a7aafb0236.txt",
+        "f5d7698b5a57d61226e0640b67de606.txt",
+        "f74a5dfc0094e2d5561dce3fe08634b7.txt",
+        "fd3627deb2476b0f1f942c57ac0e8959.txt"
+      ],
+      "training_seen_objects": [],
+      "selection_seed": 0,
+      "cross_mask_removal": true
+    },
+    "checkpoint_sha256": "6a740ce9f56afff49b28697fd10318b8440125fba0ff95f34f0196c37703cc0c",
+    "source_files": {
+      "data_utils/ShapeNetDataLoader.py": "1c6b728061c2dfc69c1898faf8aed97ce9c4f063e8b77f758f3a22240b74431c",
+      "models/pointnet2_part_seg_msg.py": "f6da4915bfac6267ae604ecd4edef4c4a85e5712faa0cd28152c0d7cf1ffe10e",
+      "models/pointnet2_utils.py": "760ffef3ff5c63d504c5fd6509490473fa544bbeb6e0942b60c849d5d13096ab",
+      "xai/config.py": "680e0bbe4b756fd51dd8e509b6602a629926b20580ddf5a2bd22f5dec6bc324b",
+      "xai/data.py": "cea5a0e9b4e12117d81fa14f8163eb49ded5ca2acf53177c76d6013639296c9f",
+      "xai/estimators/exact.py": "3e5c7f8108751ad23b53c2eccbfd9f8437d5cf0b936a809226769ee68f12813d",
+      "xai/estimators/kernel.py": "59312a4b9ccbc90495f945712a25a2659a62395cec3e16063f99d84bd7708a31",
+      "xai/game.py": "663a6c0e387c66a5199bdbd0056d759126b27af3c2ffab872e673063e78d3fd5",
+      "xai/integrity.py": "ce1684e3b64332216fc1d3578902687915b3df62bed8683f25a119d0f3cd4989",
+      "xai/masking.py": "130e8befb1b150aa006b6eeaaa150b156302da21d52b67274d0f9311aa9a4b58",
+      "xai/metrics.py": "88cd6189d8402f4d9638067348597db32b5bdb2292ddf2c94a89a1ce979eeff2",
+      "xai/model_io.py": "adf26fc744f7e2aa70307ccee7f997c72cd616a6562ff05b3db80b7e3bd91de6",
+      "xai/regions.py": "593889bebb7e3f754d82a9e21bca643718bbfe12a66defddbfa6f52e299a2397",
+      "xai/run.py": "9bb1f22206b551d54407f9e75aeb0a16bdb5d01654a78974634064548db19f0f",
+      "xai/storage.py": "d95da6690706b5aed453e6abd56bab88a9c378b01847585d9a9d35608867552a",
+      "xai/validation.py": "cd0ee8df4f5a72e09d167c2a4ecd0f781f2d957c638035614e8a11244aa7eb46"
+    },
+    "dependencies": {
+      "shap": "0.52.0",
+      "numpy": "2.4.4",
+      "scipy": "1.18.0",
+      "torch": "2.12.1+cu132"
+    },
+    "objects": [
+      {
+        "index": 0,
+        "name": "24e46e195f4907887a70e5e6aa241c88.txt",
+        "sha256": "c7e921630d151fb26849cd262e5f26addf67fffb44a5f5a8f3d289bbfaa4336b"
+      },
+      {
+        "index": 1,
+        "name": "36aaae334d636ec28043db94fbc8c982.txt",
+        "sha256": "c04a5624047786480092211d099e0ef7ce8704f9c9ff045efbff6fa7204a98a2"
+      },
+      {
+        "index": 2,
+        "name": "393ca71bd734f3071082f2ea630bf69e.txt",
+        "sha256": "e0c4f518c6c06247b7e17ac61797dca70d4908b9738fb11c4c4cfebb08928629"
+      },
+      {
+        "index": 3,
+        "name": "48f26ddc704fec2f379c6a1d59ef7283.txt",
+        "sha256": "51e41972a4cb8abd084e8cd790d214d213ad28b1a174f281607d173d8fd51b30"
+      },
+      {
+        "index": 4,
+        "name": "755dc44dae7791761082f2ea630bf69e.txt",
+        "sha256": "a5bee6d640f1f542d63dd9b1ab160439e598bc3d4637a10cf1677373fa5b2149"
+      },
+      {
+        "index": 5,
+        "name": "776eaffd7cbe7bc6b9e8bdc9c4a49aa2.txt",
+        "sha256": "68280d5063c0b426f0cf5374106f9213fe810734881859b9898613c5579152f8"
+      },
+      {
+        "index": 6,
+        "name": "90dbe261a4d56dcf1082f2ea630bf69e.txt",
+        "sha256": "ea94aa47b5e7b7166aff41f411b275756f56f1977316f4db51429e9c96ff3e46"
+      },
+      {
+        "index": 7,
+        "name": "97f85bc59f09a9f455c660e6cd8e92b.txt",
+        "sha256": "92686a15b8f7480bda0df9584a04356fb5a8dabeb6d921b9aa738d0b2946d5e3"
+      },
+      {
+        "index": 8,
+        "name": "abdc4a823b1f78c397f47f3057557cbe.txt",
+        "sha256": "b599c32f8224fa2215c7715fe9056da062dc33c4341fe1ecb88d47c1ceb09ff7"
+      },
+      {
+        "index": 9,
+        "name": "ac2b6924a60a7a87aa4f69d519551495.txt",
+        "sha256": "ddadf8d72d4b36864294e4b3438e5d5717a1495f4944672e1c581b4fc7958ca4"
+      },
+      {
+        "index": 10,
+        "name": "af4343c5b78b70b11082f2ea630bf69e.txt",
+        "sha256": "828cf1e564cc33d73b10b5981cf550b46f7567e12e94c896e72eb4106138b68c"
+      },
+      {
+        "index": 11,
+        "name": "c171d90db4c4ba56cdb1768065dafd0c.txt",
+        "sha256": "1d52a5070d6ad26237d6b694bd512574e0c186e220fbb98c5de6a8201a302189"
+      },
+      {
+        "index": 12,
+        "name": "d303055e96cd59949da15808191f1405.txt",
+        "sha256": "11ae032d8451b495273a9492da8216c62560da56a01e53a2f488ebb61ab78825"
+      },
+      {
+        "index": 13,
+        "name": "d31aaca67fd8ef1827d17dabad15093.txt",
+        "sha256": "e3cfc1bf782f267f777564d599cbb8bff058a1f05b54a473ae8134db8fb5ea5e"
+      },
+      {
+        "index": 14,
+        "name": "d3ff56062272f3e6346e65609be6d72f.txt",
+        "sha256": "bb2c25bce9d01b337f7e8b8d79343fee2434f2ccf162f449878a130441a639c8"
+      },
+      {
+        "index": 15,
+        "name": "d4c042d11f29dffa1082f2ea630bf69e.txt",
+        "sha256": "9fa01e1f0da9d4dcfe816ecb43e0cac51e9d9d7db374833eff9daadf68fadbce"
+      },
+      {
+        "index": 16,
+        "name": "db4c8bf323465e4c537d393009a79347.txt",
+        "sha256": "75177b4d28579e701d4739e1cf4df9844647a2a76baa84967056d2129a1e8d73"
+      },
+      {
+        "index": 17,
+        "name": "f5643778dbcd653655a834a7aafb0236.txt",
+        "sha256": "f34e637eece49eca502c8b5546127fd1c0146c9f5b6d8141a207c87d75365ea2"
+      },
+      {
+        "index": 18,
+        "name": "f5d7698b5a57d61226e0640b67de606.txt",
+        "sha256": "f28d5fb4e9c21e86131b24271d030c727cc3a46c2306eab1852750193d28e081"
+      },
+      {
+        "index": 19,
+        "name": "f74a5dfc0094e2d5561dce3fe08634b7.txt",
+        "sha256": "40fb062f685d031a79ba6263542c3b319715aecef4209a21f6c31a46bd18b159"
+      },
+      {
+        "index": 20,
+        "name": "fd3627deb2476b0f1f942c57ac0e8959.txt",
+        "sha256": "0f7fbc37d73429712e85b75275ab2f9ea60035f9b78dd8175c45acbba8f739f8"
+      }
+    ],
+    "category_map_sha256": "c3dc754527d6b4f9676dbbe34922ed7c85da3705b5072a45c788dee4d345b831",
+    "split_files": {
+      "shuffled_test_file_list.json": "5cbace3de0c18b3a33504d40c1ddb3baa6a9cf158f5c3cb60450b3cf715042ec",
+      "shuffled_train_file_list.json": "d09ab4826e3faf870cf130b772a0a52ddc1960261319210ff090413bb82b9e27",
+      "shuffled_val_file_list.json": "6f2c71ae3b3dbf60f6987770f14001bb1f5b90d4f2903f83a5fa9df012be2837"
+    },
+    "fps": "initial point index 0 for every cloud",
+    "scores": [
+      "iou",
+      "logprob_mean"
+    ],
+    "logprob_mode": "category",
+    "masking_methods": [
+      "centroid",
+      "retained_point"
+    ],
+    "cohorts": {
+      "24e46e195f4907887a70e5e6aa241c88.txt": "main",
+      "36aaae334d636ec28043db94fbc8c982.txt": "main",
+      "393ca71bd734f3071082f2ea630bf69e.txt": "main",
+      "48f26ddc704fec2f379c6a1d59ef7283.txt": "main",
+      "755dc44dae7791761082f2ea630bf69e.txt": "main",
+      "776eaffd7cbe7bc6b9e8bdc9c4a49aa2.txt": "main",
+      "90dbe261a4d56dcf1082f2ea630bf69e.txt": "main",
+      "97f85bc59f09a9f455c660e6cd8e92b.txt": "main",
+      "abdc4a823b1f78c397f47f3057557cbe.txt": "main",
+      "ac2b6924a60a7a87aa4f69d519551495.txt": "main",
+      "af4343c5b78b70b11082f2ea630bf69e.txt": "main",
+      "c171d90db4c4ba56cdb1768065dafd0c.txt": "main",
+      "d303055e96cd59949da15808191f1405.txt": "main",
+      "d31aaca67fd8ef1827d17dabad15093.txt": "main",
+      "d3ff56062272f3e6346e65609be6d72f.txt": "main",
+      "d4c042d11f29dffa1082f2ea630bf69e.txt": "main",
+      "db4c8bf323465e4c537d393009a79347.txt": "main",
+      "f5643778dbcd653655a834a7aafb0236.txt": "main",
+      "f5d7698b5a57d61226e0640b67de606.txt": "main",
+      "f74a5dfc0094e2d5561dce3fe08634b7.txt": "main",
+      "fd3627deb2476b0f1f942c57ac0e8959.txt": "main"
+    }
+  },
+  "provenance": {
+    "timestamp_utc": "2026-09-24T15:59:06.327492+00:00",
+    "torch_version": "2.12.1+cu132",
+    "cuda_version": "13.2",
+    "gpu_name": "NVIDIA RTX A6000",
+    "python_version": "3.14.6",
+    "hostname": "ailab08",
+    "git_commit": "not-a-git-checkout",
+    "checkpoint_sha256": "6a740ce9f56afff49b28697fd10318b8440125fba0ff95f34f0196c37703cc0c"
+  },
+  "notes": [
+    "Masking changes xyz; original point labels and row indices stay fixed.",
+    "Mean log-probability uses original true-part rows; mode=category.",
+    "IoU predictions are restricted to the category label set.",
+    "Retained-point has an origin fallback when all groups are hidden.",
+    "Trial examples were selected before the new SHAP runs.",
+    "No fixed scientific pass/fail gates."
+  ]
+}

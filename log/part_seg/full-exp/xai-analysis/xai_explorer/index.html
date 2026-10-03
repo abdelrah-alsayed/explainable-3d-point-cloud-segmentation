@@ -1,0 +1,1377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Point Cloud SHAP Explorer</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='5' cy='6' r='3' fill='%23b2182b'/%3E%3Ccircle cx='11' cy='10' r='3' fill='%232166ac'/%3E%3C/svg%3E">
+<script src="data/fonts.js"></script>
+<style>
+/* Layout: instrument panel. Settings column on the left in the order of the pipeline, results on the right. */
+:root {
+  --bg: #f3f4f6; --surface: #ffffff; --ink: #1a2130; --muted: #5c6677; --line: #d8dce3;
+  --accent: #4b3fae; --accent-soft: #ecebfa; --mid: #cfcbc4;
+  --neg: #2166ac; --neg2: #67a9cf; --pos2: #ef8a62; --pos: #b2182b;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-code: "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101319; --surface: #171b23; --ink: #e7eaf0; --muted: #9aa3b2; --line: #2a303b;
+    --accent: #a59cff; --accent-soft: #25223f; --mid: #4d4a46;
+    --neg: #4b93d6; --neg2: #86bddf; --pos2: #f09a76; --pos: #e0475a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101319; --surface: #171b23; --ink: #e7eaf0; --muted: #9aa3b2; --line: #2a303b;
+  --accent: #a59cff; --accent-soft: #25223f; --mid: #4d4a46;
+  --neg: #4b93d6; --neg2: #86bddf; --pos2: #f09a76; --pos: #e0475a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 14px/1.45 var(--font-body); padding-inline: 16px; padding-block: 16px 40px; }
+h1 { font-size: 20px; font-weight: 600; margin: 0; text-wrap: balance; }
+h2 { font-size: 13px; font-weight: 600; margin: 0; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.mono, .num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+.app { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 16px; }
+header.top { margin: 0 0 14px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+header.top p { margin: 0; color: var(--muted); }
+.theme-pick { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.theme-pick .seg button { font-size: 12px; padding: 3px 8px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; min-width: 0; }
+aside.panel { align-self: start; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); display: flex; flex-direction: column; gap: 12px; max-height: calc(100vh - 24px); overflow: auto; }
+.step { display: grid; gap: 5px; }
+.step > label, .step > .lbl { font-size: 12px; font-weight: 600; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; }
+.step > .lbl .n { color: var(--accent); font-family: var(--font-data); }
+.seg { display: flex; flex-wrap: wrap; gap: 4px; }
+.seg button { font: inherit; font-size: 13px; padding: 5px 9px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 6px; cursor: pointer; }
+.seg button:hover { border-color: var(--accent); }
+.seg button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.seg button:disabled { opacity: .45; cursor: not-allowed; }
+.seg button small { opacity: .75; font-family: var(--font-data); margin-left: 4px; }
+.fixed { font-family: var(--font-data); font-size: 13px; padding: 5px 9px; border: 1px dashed var(--line); border-radius: 6px; color: var(--muted); }
+select { font: inherit; font-size: 13px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); width: 100%; min-width: 0; }
+.row { display: flex; gap: 6px; align-items: center; }
+.row button { font: inherit; padding: 5px 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 6px; cursor: pointer; }
+button:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.hint { font-size: 12px; color: var(--muted); margin: 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 2px 0; width: 100%; }
+main { display: grid; gap: 16px; min-width: 0; }
+.path { font-family: var(--font-data); font-size: 12.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 6px; }
+.path b { color: var(--ink); font-weight: 500; }
+.path span.sep { opacity: .5; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(250px, 1fr); gap: 16px; }
+.viewer-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.canvas-wrap { position: relative; overflow: hidden; width: 100%; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 6px; background: var(--surface); touch-action: none; cursor: grab; }
+.canvas-wrap:active { cursor: grabbing; }
+.view-tools { position: absolute; top: 6px; right: 6px; display: flex; gap: 4px; z-index: 3; }
+.view-tools button { font: 13px/1 var(--font-body); min-width: 28px; height: 26px; padding: 0 7px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 5px; cursor: pointer; opacity: .85; }
+.view-tools button:hover { opacity: 1; border-color: var(--accent); }
+.canvas-wrap:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.canvas-wrap canvas { width: 100%; height: 100%; display: block; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--surface); font: 12px/1.35 var(--font-data); padding: 5px 7px; border-radius: 5px; white-space: nowrap; z-index: 2; }
+.legend { display: flex; align-items: center; gap: 8px; font-family: var(--font-data); font-size: 12px; color: var(--muted); margin-top: 8px; flex-wrap: wrap; }
+.legend .bar { height: 10px; flex: 1 1 140px; border-radius: 3px; min-width: 100px; }
+.legend .chip { display: inline-flex; align-items: center; gap: 5px; margin-right: 8px; }
+.legend .chip i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.stats { display: grid; gap: 12px; align-content: start; }
+.kv { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; font-size: 13px; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; font-family: var(--font-data); text-align: right; }
+.big { font: 600 26px/1.1 var(--font-data); }
+.flow { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; font-family: var(--font-data); }
+.flow .arrow { color: var(--muted); }
+.note { font-size: 12.5px; color: var(--muted); margin: 0; }
+.pill { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); margin-left: 4px; }
+.pill.warn { border-color: #d49a00; color: #a87900; }
+table.top { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+table.top th { text-align: left; color: var(--muted); font-weight: 500; border-bottom: 1px solid var(--line); padding: 3px 4px; }
+table.top td { padding: 3px 4px; border-bottom: 1px solid var(--line); font-family: var(--font-data); }
+table.top tr:hover td { background: var(--accent-soft); }
+table.top.nowrap td, table.top.nowrap th { white-space: nowrap; }
+.chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+.chart svg.small { max-width: 620px; }
+.chart text { fill: var(--muted); font: 11px var(--font-data); }
+.cmp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.cmp-grid .cell { display: grid; gap: 6px; align-content: start; }
+.cmp-grid .cell .t { font-size: 13px; font-weight: 600; }
+.cmp-grid .cell .s { font: 12px var(--font-data); color: var(--muted); }
+.twocol { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+.twocol.sum { grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); }
+.loading { padding: 40px; text-align: center; color: var(--muted); }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.tabs button { font: inherit; font-size: 14px; font-weight: 500; padding: 8px 14px; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--muted); cursor: pointer; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.step.off { opacity: .4; pointer-events: none; }
+.panel > h2 + .note, .panel > h2 + p { margin-top: 4px; }
+.panel .chart-body { margin-top: 10px; }
+.metrics { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12.5px; margin-top: 8px; }
+.metrics span { color: var(--muted); }
+.metrics b { font-family: var(--font-data); font-weight: 500; color: var(--ink); }
+table.heat { border-collapse: separate; border-spacing: 3px; font-size: 12.5px; }
+table.heat th { font-weight: 500; color: var(--muted); padding: 2px 6px; text-align: center; }
+table.heat th.r { text-align: right; }
+table.heat td { font-family: var(--font-data); text-align: center; padding: 6px 8px; border-radius: 4px; min-width: 56px; }
+.scroll-x { overflow-x: auto; max-width: 100%; }
+.wide { grid-column: 1 / -1; }
+.unit-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 4px; }
+.panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.save { font: inherit; font-size: 12px; padding: 3px 9px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); border-radius: 6px; cursor: pointer; white-space: nowrap; }
+.save:hover { border-color: var(--accent); color: var(--ink); }
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+.step-card { display: grid; gap: 6px; align-content: start; }
+.step-card .t { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-weight: 600; font-size: 13.5px; }
+.step-card .t .num { color: var(--accent); font-family: var(--font-data); margin-right: 6px; }
+.step-card .s { font-size: 12.5px; color: var(--muted); }
+.catlink { font: inherit; font-weight: 600; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.glance div { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; }
+.glance b { display: block; font: 600 20px var(--font-data); }
+.glance span { font-size: 12px; color: var(--muted); }
+.findings { margin: 6px 0 0; padding-left: 18px; display: grid; gap: 4px; font-size: 13.5px; }
+.inline-bar { display: inline-block; height: 8px; border-radius: 2px; background: var(--accent); vertical-align: middle; margin-right: 6px; }
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; }
+  aside.panel { position: static; max-height: none; }
+  .hero { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Point Cloud SHAP Explorer</h1>
+  <p>PointNet++ part segmentation · KernelSHAP over spatial groups · saved results only</p>
+  <div class="theme-pick"><span class="hint" id="h-font">Font</span><div class="seg" id="c-font"></div><span class="hint">Theme</span><div class="seg" id="c-theme"></div></div>
+</header>
+<div class="app">
+  <aside class="panel" aria-label="Settings">
+    <div class="step" id="s-category"><div class="lbl"><span>Category</span><span class="n">1</span></div><div class="seg" id="c-category"></div></div>
+    <div class="step" id="s-part"><div class="lbl"><span>Part</span><span class="n">2</span></div><div class="seg" id="c-part"></div></div>
+    <div class="step"><div class="lbl"><span>Model</span><span class="n">3</span></div><div class="seg" id="c-model"></div></div>
+    <div class="step" data-obj><div class="lbl"><span>Phase</span><span class="n">4</span></div><div class="seg" id="c-phase"></div><p class="hint" id="h-phase"></p></div>
+    <div class="step" data-obj><label for="c-object"><span>Object</span><span class="n">5</span></label>
+      <div class="row"><button type="button" id="b-prev" aria-label="Previous object">‹</button><select id="c-object"></select><button type="button" id="b-next" aria-label="Next object">›</button></div>
+      <p class="hint" id="h-object"></p></div>
+    <hr>
+    <div class="step"><div class="lbl"><span>Mask</span><span class="n">6</span></div><div class="seg" id="c-mask"></div></div>
+    <div class="step" data-obj><div class="lbl"><span>Coalitions</span><span class="n">7</span></div><div class="seg" id="c-coal"></div></div>
+    <div class="step" data-obj><div class="lbl"><span>SHAP seed</span><span class="n">8</span></div><div class="seg" id="c-seed"></div></div>
+    <div class="step" data-obj><div class="lbl"><span>Replacement seed</span><span class="n">9</span></div><div class="seg" id="c-rep"></div></div>
+    <hr>
+    <div class="step"><div class="lbl"><span>Score</span><span class="n">10</span></div><div class="seg" id="c-score"></div></div>
+    <hr>
+    <div class="step" data-obj><label for="c-compare"><span>Compare side by side</span></label><select id="c-compare"></select>
+      <p class="hint">Shows the same object with only one setting changed. All maps share one colour scale and one camera.</p></div>
+  </aside>
+  <main><div class="tabs" role="tablist" id="tabs"></div><div id="main" style="display:grid;gap:16px;min-width:0"><div class="panel loading">Loading data…</div></div></main>
+</div>
+
+<script src="data/index.js"></script>
+<script src="data/overview.js"></script>
+<script>
+"use strict";
+const CATS = (window.XAI_INDEX || []).map(c => c.name);
+const FONT_SETS = window.FONT_SETS || {};
+const MASKS = { centroid: "Origin mask", retained_point: "Retained-point mask" };
+const MASK_SHORT = { centroid: "origin", retained_point: "retained-point" };
+const MASK_HELP = { centroid: "hidden points move to (0, 0, 0)", retained_point: "hidden points copy a visible point" };
+const SCORES = { iou: "Part IoU", logprob_mean: "Mean log-probability" };
+const PHASES = { exact: "Exact", trial: "Trial", full: "Full" };
+const PHASE_HELP = {
+  exact: "8 groups, all 256 coalitions: KernelSHAP is compared with the exact Shapley values.",
+  trial: "32 groups, 10 objects: two budgets, three SHAP seeds, three replacement seeds.",
+  full: "32 groups, all test objects: 8,192 coalitions, SHAP seed 0, replacement seed 0."
+};
+const PART_COLORS = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300"];
+const MASK_COLORS = { centroid: "#2a78d6", retained_point: "#eb6834" };
+const MODEL_COLORS = { single: "#1baf7a", joint: "#4b3fae" };
+const SCORE_COLORS = { iou: "#1baf7a", logprob_mean: "#e87ba4" };
+const DEFAULT = { tab: "overview", category: "Airplane", model: "joint", phase: "trial", object: 172, mask: "centroid", coal: "8192",
+                  seed: 0, rep: 0, part: 3, score: "iou", view: "shap", compare: "seed", theme: "light", remx: "groups", qy: "mask", focus: "all", font: "plex" };
+let S = Object.assign({}, DEFAULT);
+try { const saved = JSON.parse(localStorage.getItem("xai-explorer-v3") || "null"); if (saved && typeof saved === "object" && !Array.isArray(saved)) for (const k of Object.keys(DEFAULT)) if (k in saved) S[k] = saved[k]; } catch (e) {}
+for (const [k, vals] of Object.entries({ tab: ["overview", "object", "steps", "summary"], theme: ["light", "dark", "system"], font: Object.keys(FONT_SETS) })) if (!vals.includes(S[k])) S[k] = DEFAULT[k];
+if (!CATS.includes(S.category)) S.category = CATS[0] || "Airplane";
+const cache = {};                 // derived values (group facts)
+const arrays = { f4: new Map(), i2: new Map(), u1: new Map(), u2: new Map() };  // decoded arrays, keyed by the full base64 string
+const camera = { yaw: 35 * Math.PI / 180, elev: 24 * Math.PI / 180, zoom: 1, panX: 0, panY: 0 };  // pan in units of the view's shorter side
+let hoverGroup = null;
+const $ = id => document.getElementById(id);
+
+/* ================= data access ================= */
+function D() { return window.XAI_DATA && window.XAI_DATA[S.category]; }
+function b64bytes(s) { const bin = atob(s); const u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return u; }
+function dec(s, type) {
+  const store = arrays[type], hit = store.get(s);
+  if (hit) return hit;
+  const u = b64bytes(s);
+  let out = type === "f4" ? new Float32Array(u.buffer) : type === "i2" ? new Int16Array(u.buffer) : type === "u2" ? new Uint16Array(u.buffer) : u;
+  if (type === "i2") { const f = new Float32Array(out.length); for (let i = 0; i < out.length; i++) f[i] = out[i] / 32767; out = f; }
+  store.set(s, out);
+  return out;
+}
+const objRec = i => D().objects[i];
+const nParts = () => D().parts.length;
+const mainObjects = () => D().objects.filter(o => !o.seen).map(o => o.i);
+function partVals(all, part) { const P = nParts(), K = all.length / P, v = new Float32Array(K); for (let g = 0; g < K; g++) v[g] = all[g * P + part]; return v; }
+function fullVals(model, mask, i, score, part) { return partVals(dec(D().full[model][mask][i][score], "f4"), part); }
+function trialVals(model, mask, i, key, score, part) { return partVals(dec(D().trial[model][mask][i][key][score], "f4"), part); }
+function options(st) {
+  const d = D(), o = {};
+  o.objects = st.phase === "exact" ? d.exactObjects : st.phase === "trial" ? d.trialObjects : d.objects.map(x => x.i);
+  o.coal = st.phase === "exact" ? ["exact", ...d.exactBudgets.map(String)] : st.phase === "trial" ? d.trialBudgets.map(String) : ["8192"];
+  o.seed = st.phase === "full" || st.coal === "exact" ? [0] : d.shapSeeds.slice();
+  const repOk = st.phase === "trial" && st.mask === "retained_point" && st.coal === String(Math.max(...d.trialBudgets)) && st.seed === d.shapSeeds[0];
+  o.rep = repOk ? d.replacementSeeds.slice() : [0];
+  return o;
+}
+const ENUMS = { tab: ["overview", "object", "steps", "summary"], focus: ["all", "part"], model: ["single", "joint"], phase: ["exact", "trial", "full"], mask: ["centroid", "retained_point"],
+                score: ["iou", "logprob_mean"], view: ["shap", "truth", "pred", "groups"], theme: ["light", "dark", "system"], font: ["plex", "cm"],
+                remx: ["groups", "points"], qy: ["mask", "own", "r2"] };
+function normalize(st) {
+  const d = D();
+  for (const [k, vals] of Object.entries(ENUMS)) if (!vals.includes(st[k])) st[k] = DEFAULT[k];
+  if (typeof st.compare !== "string") st.compare = DEFAULT.compare;
+  st.object = Number.isInteger(+st.object) ? +st.object : DEFAULT.object;
+  st.seed = Number.isInteger(+st.seed) ? +st.seed : 0;
+  st.rep = Number.isInteger(+st.rep) ? +st.rep : 0;
+  st.part = Number.isInteger(+st.part) ? +st.part : 0;
+  st.coal = String(st.coal);
+  const o = options(st);
+  if (!o.objects.includes(st.object)) st.object = o.objects.includes(172) ? 172 : o.objects[0];
+  if (!o.coal.includes(st.coal)) st.coal = o.coal.includes("8192") ? "8192" : o.coal[o.coal.length - 1];
+  if (!options(st).seed.includes(st.seed)) st.seed = options(st).seed[0];
+  if (!options(st).rep.includes(st.rep)) st.rep = 0;
+  if (!(st.part >= 0 && st.part < d.parts.length)) st.part = d.parts.length - 1;
+  return st;
+}
+function shapFor(st) {
+  const d = D(), si = st.score === "iou" ? 0 : 1;
+  let rec, arr, groups, vE, vF, r2 = null;
+  if (st.phase === "exact") {
+    rec = d.exact[st.model][st.mask][st.object];
+    arr = st.coal === "exact" ? rec.exact[st.score] : rec.runs[st.coal + "_" + st.seed][st.score];
+    groups = dec(rec.groups, "u1"); vE = rec.vEmpty[si][st.part]; vF = rec.vFull[si][st.part];
+  } else if (st.phase === "trial") {
+    rec = d.trial[st.model][st.mask][st.object][st.coal + "_" + st.seed + "_" + st.rep];
+    arr = rec[st.score]; groups = dec(objRec(st.object).groups, "u1"); vE = rec.vEmpty[si][st.part]; vF = rec.vFull[si][st.part];
+  } else {
+    rec = d.full[st.model][st.mask][st.object];
+    arr = rec[st.score]; groups = dec(objRec(st.object).groups, "u1"); vE = rec.vEmpty[si][st.part]; vF = rec.vFull[si][st.part];
+    r2 = rec.r2[st.score][st.part];
+  }
+  const vals = partVals(dec(arr, "f4"), st.part);
+  return { vals, groups, K: vals.length, vE, vF, r2 };
+}
+/* size of each group and the share of its points that belong to each true part */
+function groupFacts(i, groups) {
+  const key = "facts:" + S.category + ":" + i + ":" + groups.length + ":" + (groups === dec(objRec(i).groups, "u1") ? "32" : "8");
+  if (cache[key]) return cache[key];
+  const truth = dec(objRec(i).truth, "u1"), P = nParts();
+  let K = 0; for (const g of groups) K = Math.max(K, g + 1);
+  const size = new Float64Array(K), frac = Array.from({ length: K }, () => new Float64Array(P));
+  for (let n = 0; n < truth.length; n++) { size[groups[n]]++; if (truth[n] < P) frac[groups[n]][truth[n]]++; }
+  for (let g = 0; g < K; g++) for (let q = 0; q < P; q++) frac[g][q] /= size[g] || 1;
+  const pointShare = new Float64Array(P); for (const t of truth) if (t < P) pointShare[t]++;
+  for (let q = 0; q < P; q++) pointShare[q] /= truth.length;
+  return (cache[key] = { K, size, frac, pointShare });
+}
+
+/* ================= metrics ================= */
+function ranks(a) {
+  const idx = Array.from(a, (v, i) => i).sort((x, y) => a[x] - a[y]); const r = new Float64Array(a.length);
+  for (let i = 0; i < idx.length;) { let j = i; while (j + 1 < idx.length && a[idx[j + 1]] === a[idx[i]]) j++; const avg = (i + j) / 2 + 1; for (let k = i; k <= j; k++) r[idx[k]] = avg; i = j + 1; }
+  return r;
+}
+function spearman(a, b) {
+  const ra = ranks(a), rb = ranks(b), n = a.length; let ma = 0, mb = 0;
+  for (let i = 0; i < n; i++) { ma += ra[i]; mb += rb[i]; } ma /= n; mb /= n;
+  let sab = 0, saa = 0, sbb = 0;
+  for (let i = 0; i < n; i++) { const x = ra[i] - ma, y = rb[i] - mb; sab += x * y; saa += x * x; sbb += y * y; }
+  return saa && sbb ? sab / Math.sqrt(saa * sbb) : NaN;
+}
+const meanAbsDiff = (a, b) => { let s = 0; for (let i = 0; i < a.length; i++) s += Math.abs(a[i] - b[i]); return s / a.length; };
+const topK = (a, k) => Array.from(a, (v, i) => i).sort((x, y) => a[y] - a[x]).slice(0, k);
+const topOverlap = (a, b, k = 5) => { const sa = new Set(topK(a, k)); return topK(b, k).filter(g => sa.has(g)).length / k; };
+function signAgree(a, b) { let n = 0, s = 0; for (let i = 0; i < a.length; i++) { if (a[i] === 0 && b[i] === 0) continue; n++; if (Math.sign(a[i]) === Math.sign(b[i])) s++; } return n ? s / n : NaN; }
+function compareMetrics(a, b) { return { rho: spearman(a, b), mad: meanAbsDiff(a, b), top5: topOverlap(a, b, 5), sign: signAgree(a, b) }; }
+function credit(vals, facts) { const P = nParts(), out = new Float64Array(P); for (let g = 0; g < vals.length; g++) for (let q = 0; q < P; q++) out[q] += vals[g] * facts.frac[g][q]; return out; }
+function positiveShare(vals, facts, part) { let pos = 0, own = 0; for (let g = 0; g < vals.length; g++) if (vals[g] > 0) { pos += vals[g]; own += vals[g] * facts.frac[g][part]; } return pos > 0 ? own / pos : NaN; }
+function concentration(vals) {
+  const abs = Array.from(vals, Math.abs).sort((a, b) => b - a), tot = abs.reduce((a, b) => a + b, 0), cum = [];
+  let c = 0; for (const v of abs) { c += v; cum.push(tot ? c / tot : 0); }
+  return { cum, g80: cum.findIndex(v => v >= 0.8) + 1, top: tot ? abs[0] / tot : NaN };
+}
+const median = a => { const s = a.filter(v => Number.isFinite(v)).sort((x, y) => x - y); if (!s.length) return NaN; const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+/* quantile of sorted values, linear between neighbours (same as numpy.percentile) */
+const quantile = (s, q) => { const h = (s.length - 1) * q, i = Math.floor(h); return i + 1 < s.length ? s[i] + (h - i) * (s[i + 1] - s[i]) : s[i]; };
+const mean = a => { const s = a.filter(v => Number.isFinite(v)); return s.length ? s.reduce((x, y) => x + y, 0) / s.length : NaN; };
+const fmt = (v, n = 3) => { if (v === null || v === undefined || Number.isNaN(v)) return "–"; const s = Number(v).toFixed(n); return /^-0(\.0*)?$/.test(s) ? s.slice(1) : s; };   // never "-0.00"
+const pct = v => Number.isFinite(v) ? Math.round(v * 100) + "%" : "–";
+const fmtInt = v => Number(v).toLocaleString("en-US");
+function pairs(list) { const out = []; for (let i = 0; i < list.length; i++) for (let j = i + 1; j < list.length; j++) out.push([list[i], list[j]]); return out; }
+function interp(xs, ys, x) {
+  if (x <= xs[0]) return ys[0];
+  for (let i = 1; i < xs.length; i++) if (x <= xs[i]) { const t = (x - xs[i - 1]) / ((xs[i] - xs[i - 1]) || 1); return ys[i - 1] + t * (ys[i] - ys[i - 1]); }
+  return ys[ys.length - 1];
+}
+/* removal curve on groups or on hidden-point share; mean and range of the random orders */
+function removalSeries(r, mode) {
+  if (mode === "groups") {
+    const x = r.helpful.map((_, i) => i);
+    return { x, helpful: r.helpful, mean: x.map(i => mean(r.random.map(row => row[i]))),
+             lo: x.map(i => Math.min(...r.random.map(row => row[i]))), hi: x.map(i => Math.max(...r.random.map(row => row[i]))) };
+  }
+  const end = Math.min(r.helpfulFrac[r.helpfulFrac.length - 1], ...r.randomFrac.map(f => f[f.length - 1]));
+  const x = Array.from({ length: 41 }, (_, k) => end * k / 40);
+  const rnd = r.random.map((row, j) => x.map(v => interp(r.randomFrac[j], row, v)));
+  return { x: x.map(v => v * 100), helpful: x.map(v => interp(r.helpfulFrac, r.helpful, v)),
+           mean: x.map((_, k) => mean(rnd.map(row => row[k]))), lo: x.map((_, k) => Math.min(...rnd.map(row => row[k]))), hi: x.map((_, k) => Math.max(...rnd.map(row => row[k]))) };
+}
+/* AOPC (Samek et al. 2017): mean over the steps k = 0..L of (score with nothing hidden - score after k groups) */
+function aopc(curve) { let a = 0; for (const v of curve) a += curve[0] - v; return a / curve.length; }
+function aopcOf(r) { const s = aopc(r.helpful), rnd = mean(r.random.map(aopc)); return { shap: s, random: rnd, gap: s - rnd }; }
+function removalMetrics(se) {
+  const gap = se.x.map((_, k) => se.mean[k] - se.helpful[k]).slice(1);
+  const below = se.x.map((_, k) => se.helpful[k] < se.lo[k]).slice(1);
+  return { meanGap: mean(gap), below: below.filter(Boolean).length / (below.length || 1) };
+}
+
+/* ================= colours ================= */
+function css(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+function hexRgb(h) { h = h.replace("#", ""); if (h.length === 3) h = h.split("").map(c => c + c).join(""); const n = parseInt(h, 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; }
+function palette() {
+  return { stops: [css("--neg"), css("--neg2"), css("--mid"), css("--pos2"), css("--pos")].map(hexRgb),
+           surface: css("--surface"), ink: css("--ink"), muted: css("--muted"), line: css("--line"), accent: css("--accent") };
+}
+function divColor(v, lim, pal) {
+  const t = Math.max(-1, Math.min(1, lim > 0 ? v / lim : 0)) * 2 + 2;
+  const i = Math.min(3, Math.floor(t)), f = t - i, a = pal.stops[i], b = pal.stops[i + 1];
+  return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f, a[2] + (b[2] - a[2]) * f];
+}
+const rgb = c => `rgb(${c.map(Math.round).join(",")})`;
+function groupColor(g) { const h = (g * 137.508) % 360, s = 0.55, l = 0.52, k = n => (n + h / 30) % 12, a = s * Math.min(l, 1 - l), f = n => l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1))); return [f(0) * 255, f(8) * 255, f(4) * 255]; }
+
+/* ================= 3D viewer ================= */
+const viewers = [];
+class Viewer {
+  constructor(wrap, main) {
+    this.wrap = wrap; this.main = main; this.canvas = document.createElement("canvas"); wrap.appendChild(this.canvas);
+    this.ctx = this.canvas.getContext("2d");
+    if (main) { this.tip = document.createElement("div"); this.tip.className = "tip"; this.tip.hidden = true; wrap.appendChild(this.tip); }
+    // Taps and double-taps are detected here. The pointer is captured only once a drag starts:
+    // capturing on pointerdown makes the browser drop the dblclick event.
+    // left-drag rotates; Shift + drag, right-drag or middle-drag pans; the wheel zooms toward the pointer
+    let drag = null, lastTap = null, tapTimer = null;
+    wrap.addEventListener("contextmenu", e => e.preventDefault());
+    wrap.addEventListener("pointerdown", e => {
+      if (e.button > 2) return;
+      if (e.button === 1) e.preventDefault();          // no auto-scroll on middle click
+      drag = { x: e.clientX, y: e.clientY, sx: e.clientX, sy: e.clientY, moved: false, id: e.pointerId, pan: e.button !== 0 || e.shiftKey, tap: e.button === 0 };
+    });
+    wrap.addEventListener("pointermove", e => {
+      if (drag) {
+        if (!drag.moved && Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) > 3) {
+          drag.moved = true; try { wrap.setPointerCapture(drag.id); } catch (err) {}
+          if (this.tip) this.tip.hidden = true;
+        }
+        if (drag.moved) {
+          if (drag.pan) { const r = wrap.getBoundingClientRect(), D = Math.min(r.width, r.height) || 1; panCamera((e.clientX - drag.x) / D, (e.clientY - drag.y) / D); }
+          else rotateCamera((e.clientX - drag.x) * 0.01, (e.clientY - drag.y) * 0.01);
+          drag.x = e.clientX; drag.y = e.clientY;
+        }
+        return;
+      }
+      if (this.main) this.hover(e);
+    });
+    wrap.addEventListener("pointerup", e => {
+      if (!drag) return;
+      const d = drag; drag = null;
+      if (d.moved || !d.tap) return;
+      const now = performance.now();
+      if (lastTap && now - lastTap.t < 350 && Math.hypot(e.clientX - lastTap.x, e.clientY - lastTap.y) < 10) {
+        lastTap = null; clearTimeout(tapTimer); resetCamera(); return;
+      }
+      lastTap = { t: now, x: e.clientX, y: e.clientY };
+      if (this.onTap) { clearTimeout(tapTimer); tapTimer = setTimeout(() => this.onTap(), 360); }
+    });
+    wrap.addEventListener("pointercancel", () => { drag = null; });
+    wrap.addEventListener("pointerleave", () => { if (this.main && hoverGroup !== null && !drag) { hoverGroup = null; this.tip.hidden = true; drawAll(); syncBars(); } });
+    wrap.addEventListener("wheel", e => {
+      e.preventDefault();
+      const r = wrap.getBoundingClientRect(), D = Math.min(r.width, r.height) || 1;
+      zoomCamera(e.deltaY < 0 ? 1.1 : 1 / 1.1, (e.clientX - r.left - r.width / 2) / D, (e.clientY - r.top - r.height / 2) / D);
+    }, { passive: false });
+    wrap.tabIndex = 0; wrap.setAttribute("role", "img");
+    wrap.setAttribute("aria-label", "3D point cloud. Arrow keys rotate, Shift and arrow keys pan, plus and minus zoom, 0 resets the view.");
+    wrap.addEventListener("keydown", e => {
+      const k = e.key, step = 0.12, p = 0.05;
+      if (e.shiftKey && k.startsWith("Arrow")) panCamera(k === "ArrowLeft" ? -p : k === "ArrowRight" ? p : 0, k === "ArrowUp" ? -p : k === "ArrowDown" ? p : 0);
+      else if (k === "ArrowLeft") rotateCamera(-step, 0); else if (k === "ArrowRight") rotateCamera(step, 0);
+      else if (k === "ArrowUp") rotateCamera(0, -step); else if (k === "ArrowDown") rotateCamera(0, step);
+      else if (k === "+" || k === "=") zoomCamera(1.1); else if (k === "-" || k === "_") zoomCamera(1 / 1.1);
+      else if (k === "0" || k === "Home") resetCamera(); else return;
+      e.preventDefault(); e.stopPropagation();
+    });
+    // + / − / Reset buttons in the corner of every view
+    const tools = document.createElement("div"); tools.className = "view-tools";
+    for (const [label, title, fn] of [["+", "Zoom in", () => zoomCamera(1.2)], ["−", "Zoom out", () => zoomCamera(1 / 1.2)], ["Reset", "Reset rotation, zoom and pan", resetCamera]]) {
+      const b = document.createElement("button"); b.type = "button"; b.textContent = label; b.title = title; b.setAttribute("aria-label", title);
+      b.addEventListener("click", e => { e.stopPropagation(); fn(); });
+      tools.appendChild(b);
+    }
+    for (const t of ["pointerdown", "pointerup", "dblclick", "wheel"]) tools.addEventListener(t, e => e.stopPropagation());
+    wrap.appendChild(tools);
+    viewers.push(this);
+  }
+  // opts.show: 1 = draw this point row (filter); opts.fit: {c, r} to frame the view like another cloud
+  set(pts, cols, groups, info, opts = {}) {
+    this.pts = pts; this.cols = cols; this.groups = groups; this.info = info; this.show = opts.show || null; this.top = opts.top || null;
+    const f = opts.fit || fitOf(pts); this.c = f.c; this.r = f.r; this.draw();
+  }
+  draw() {
+    const c = this.canvas, r = this.wrap.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+    if (!r.width || !this.pts) return;
+    if (c.width !== Math.round(r.width * dpr) || c.height !== Math.round(r.height * dpr)) { c.width = Math.round(r.width * dpr); c.height = Math.round(r.height * dpr); }
+    this.proj = this.paint(this.ctx, c.width, c.height, hoverGroup); this.proj.dpr = dpr;
+  }
+  /* PNG of the current view at 3x the screen size, without hover highlight */
+  exportPNG(name) {
+    const r = this.wrap.getBoundingClientRect(), c = document.createElement("canvas");
+    c.width = Math.round(r.width * 3); c.height = Math.round(r.height * 3);
+    this.paint(c.getContext("2d"), c.width, c.height, null); downloadCanvas(c, name);
+  }
+  paint(ctx, W, H, hg) {
+    const pal = palette(); ctx.fillStyle = pal.surface; ctx.fillRect(0, 0, W, H);
+    const n = this.pts.length / 3, cy = Math.cos(camera.yaw), sy = Math.sin(camera.yaw), ce = Math.cos(camera.elev), se = Math.sin(camera.elev);
+    const scale = Math.min(W, H) * 0.5 / this.r * camera.zoom, px = new Float32Array(n), py = new Float32Array(n), dz = new Float32Array(n);
+    for (let i = 0; i < n; i++) {
+      const x = this.pts[3 * i] - this.c[0], y = this.pts[3 * i + 1] - this.c[1], z = this.pts[3 * i + 2] - this.c[2];
+      const sx = x * cy + z * sy, t = x * sy - z * cy, up = y * ce - t * se; dz[i] = y * se + t * ce;
+      px[i] = W / 2 + camera.panX * Math.min(W, H) + sx * scale; py[i] = H / 2 + camera.panY * Math.min(W, H) - up * scale;
+      if (this.show && !this.show[i]) { px[i] = NaN; py[i] = NaN; }   // filtered out: not drawn, not hoverable
+    }
+    let order = Array.from({ length: n }, (_, i) => i).filter(i => !this.show || this.show[i]).sort((a, b) => dz[a] - dz[b]);
+    if (this.top) order = order.filter(i => !this.top[i]).concat(order.filter(i => this.top[i]));   // marked points drawn last
+    const rad = Math.max(1.4, Math.min(W, H) / 230) * (this.main ? 1 : 0.9);
+    for (const i of order) {
+      const on = hg !== null && this.groups && this.groups[i] === hg, col = this.cols;
+      ctx.fillStyle = `rgb(${col[3 * i] | 0},${col[3 * i + 1] | 0},${col[3 * i + 2] | 0})`;
+      const big = this.top && this.top[i];
+      ctx.beginPath(); ctx.arc(px[i], py[i], on ? rad * 1.9 : big ? rad * 3.2 : rad, 0, 6.2832); ctx.fill();
+      if (big) { ctx.lineWidth = Math.max(1, rad * 0.5); ctx.strokeStyle = pal.ink; ctx.stroke(); }
+      if (on) { ctx.lineWidth = Math.max(1, rad * 0.45); ctx.strokeStyle = pal.ink; ctx.stroke(); }
+    }
+    return { px, py };
+  }
+  hover(e) {
+    if (!this.proj || !this.groups) return;
+    const r = this.wrap.getBoundingClientRect(), x = (e.clientX - r.left) * this.proj.dpr, y = (e.clientY - r.top) * this.proj.dpr;
+    let best = -1, bd = (12 * this.proj.dpr) ** 2;
+    for (let i = 0; i < this.proj.px.length; i++) { const d = (this.proj.px[i] - x) ** 2 + (this.proj.py[i] - y) ** 2; if (d < bd) { bd = d; best = i; } }
+    const g = best < 0 ? null : this.groups[best];
+    if (g !== hoverGroup) { hoverGroup = g; drawAll(); syncBars(); }
+    if (g === null) { this.tip.hidden = true; return; }
+    this.tip.textContent = this.info ? this.info(g, best) : "group " + g;
+    this.tip.hidden = false;
+    const mx = e.clientX - r.left, my = e.clientY - r.top, tw = this.tip.offsetWidth, th = this.tip.offsetHeight;
+    this.tip.style.left = Math.max(4, mx + 12 + tw > r.width ? mx - tw - 12 : mx + 12) + "px";
+    this.tip.style.top = Math.max(4, my - th - 10 < 0 ? my + 16 : my - th - 10) + "px";
+  }
+}
+function drawAll() { viewers.forEach(v => v.draw()); }
+function fitOf(pts) {
+  const lo = [Infinity, Infinity, Infinity], hi = [-Infinity, -Infinity, -Infinity];
+  for (let i = 0; i < pts.length; i++) { const a = i % 3; if (pts[i] < lo[a]) lo[a] = pts[i]; if (pts[i] > hi[a]) hi[a] = pts[i]; }
+  const c = lo.map((v, a) => (v + hi[a]) / 2); let r = 0;
+  for (let i = 0; i < pts.length; i += 3) r = Math.max(r, Math.hypot(pts[i] - c[0], pts[i + 1] - c[1], pts[i + 2] - c[2]));
+  return { c, r: r || 1 };
+}
+
+/* ================= saving images ================= */
+function fileBase() {
+  const d = D(), bits = [S.category, S.model, S.phase, "obj" + S.object, S.mask, S.coal === "exact" ? "exact" : S.coal,
+    S.phase === "full" || S.coal === "exact" ? null : "s" + S.seed, S.mask === "retained_point" ? "r" + S.rep : null, d.parts[S.part].name, S.score];
+  return bits.filter(b => b !== null).join("_").replace(/[^A-Za-z0-9_.-]+/g, "-");
+}
+function downloadCanvas(canvas, name) {
+  canvas.toBlob(blob => {
+    const a = document.createElement("a"), url = URL.createObjectURL(blob);
+    a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+  }, "image/png");
+}
+/* an SVG chart as an image: text styles come from CSS, so they are copied onto the clone first */
+function svgImage(svg) {
+  const vb = svg.viewBox.baseVal, w = vb.width, h = vb.height, clone = svg.cloneNode(true);
+  clone.setAttribute("xmlns", "http://www.w3.org/2000/svg"); clone.setAttribute("width", w); clone.setAttribute("height", h); clone.removeAttribute("style");
+  const src = svg.querySelectorAll("*"), dst = clone.querySelectorAll("*");
+  src.forEach((el, i) => {
+    const cs = getComputedStyle(el), t = dst[i];
+    if (el.tagName === "text") { t.setAttribute("fill", cs.fill); t.setAttribute("font-family", cs.fontFamily); t.setAttribute("font-size", cs.fontSize); t.setAttribute("font-weight", cs.fontWeight); }
+    if (el.style.opacity) t.setAttribute("opacity", el.style.opacity);
+    t.removeAttribute("style");
+  });
+  // an SVG drawn as an image cannot see the page fonts: put the faces of the chosen font inside it
+  const fs = FONT_SETS[S.font]; if (fs && fs.svg) { const st = document.createElementNS("http://www.w3.org/2000/svg", "style"); st.textContent = fs.svg; clone.insertBefore(st, clone.firstChild); }
+  const url = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+  return new Promise((ok, bad) => { const img = new Image(); img.onload = () => ok({ img, w, h }); img.onerror = bad; img.src = url; });
+}
+/* ---- export a region of the page (charts, tables, notes, metric lines, legends) as one PNG ---- */
+function collectBlocks(el, out = []) {
+  for (const c of el.children) {
+    const cl = c.classList, tag = c.tagName.toLowerCase();
+    if (cl.contains("seg") || cl.contains("canvas-wrap") || cl.contains("save") || cl.contains("view-tools") || tag === "button") continue;
+    if (tag === "svg") out.push({ kind: "svg", el: c });
+    else if (tag === "table") out.push({ kind: "table", el: c });
+    else if (cl.contains("legend")) out.push({ kind: "legend", items: [...c.querySelectorAll(".chip")].map(ch => {
+      const dot = ch.querySelector("i"), shape = ch.querySelector("svg [fill]");   // colour dot, or a small marker shape
+      return { color: dot ? getComputedStyle(dot).backgroundColor : shape ? shape.getAttribute("fill") : palette().muted, text: ch.textContent.trim() };
+    }) });
+    else if (cl.contains("metrics")) out.push({ kind: "text", text: [...c.children].map(x => x.textContent.trim().replace(/\s+/g, " ")).filter(Boolean).join("   ·   "), muted: false });
+    else if ((cl.contains("note") || cl.contains("s") || cl.contains("unit-label")) && !c.querySelector("svg,table")) out.push({ kind: "text", text: c.textContent.trim().replace(/\s+/g, " "), muted: true });
+    else collectBlocks(c, out);
+  }
+  return out;
+}
+function tableCanvas(table, scale) {
+  const tr = table.getBoundingClientRect(), c = document.createElement("canvas");
+  c.width = Math.ceil(tr.width * scale); c.height = Math.ceil(tr.height * scale);
+  const ctx = c.getContext("2d"); ctx.scale(scale, scale);
+  for (const cell of table.querySelectorAll("th, td")) {
+    const r = cell.getBoundingClientRect(), cs = getComputedStyle(cell), x = r.left - tr.left, y = r.top - tr.top;
+    const bg = cs.backgroundColor;
+    if (bg && bg !== "transparent" && !/rgba\(.*,\s*0\)$/.test(bg)) { ctx.fillStyle = bg; ctx.fillRect(x, y, r.width, r.height); }
+    for (const [side, x1, y1, x2, y2] of [["Top", x, y, x + r.width, y], ["Bottom", x, y + r.height, x + r.width, y + r.height], ["Left", x, y, x, y + r.height], ["Right", x + r.width, y, x + r.width, y + r.height]]) {
+      const w = parseFloat(cs["border" + side + "Width"]);
+      if (w > 0 && cs["border" + side + "Style"] !== "none") { ctx.strokeStyle = cs["border" + side + "Color"]; ctx.lineWidth = w; ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); }
+    }
+    const text = cell.textContent.trim().replace(/\s+/g, " "); if (!text) continue;
+    ctx.fillStyle = cs.color; ctx.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`; ctx.textBaseline = "middle";
+    const al = cs.textAlign, pl = parseFloat(cs.paddingLeft), pr = parseFloat(cs.paddingRight);
+    ctx.textAlign = al === "center" ? "center" : al === "right" || al === "end" ? "right" : "left";
+    ctx.fillText(text, ctx.textAlign === "center" ? x + r.width / 2 : ctx.textAlign === "right" ? x + r.width - pr : x + pl, y + r.height / 2);
+  }
+  return { img: c, w: tr.width, h: tr.height };
+}
+function wrapText(ctx, text, maxW) {
+  const words = text.split(" "), lines = []; let line = "";
+  for (const w of words) { const t = line ? line + " " + w : w; if (ctx.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t; }
+  if (line) lines.push(line); return lines;
+}
+async function exportRegion(el, title, name) {
+  const blocks = collectBlocks(el); if (!blocks.some(b => b.kind === "svg" || b.kind === "table")) return;
+  await Promise.all(["400 12px", "600 15px"].flatMap(w => [css("--font-body"), css("--font-data")].map(f => document.fonts.load(`${w} ${f}`))));   // canvas text needs loaded fonts
+  const pal = palette(), pad = 24, gap = 12, scale = 2;
+  for (const b of blocks) {
+    if (b.kind === "svg") { const r = b.el.getBoundingClientRect(); const i = await svgImage(b.el); b.img = i.img; b.w = r.width; b.h = r.height; }
+    if (b.kind === "table") Object.assign(b, tableCanvas(b.el, scale));
+  }
+  const m = document.createElement("canvas").getContext("2d"), body = css("--font-body"), data = css("--font-data");
+  m.font = "12px " + data;   // a legend is one line: the image is made wide enough for it
+  const legendW = Math.max(0, ...blocks.filter(b => b.kind === "legend").map(b => b.items.reduce((a, it) => a + 25 + m.measureText(it.text).width, 0)));
+  const W = Math.max(480, legendW, ...blocks.filter(b => b.w).map(b => b.w)) + 2 * pad;
+  // measure each line in the font it is drawn with (notes: body font; metric lines: the wider data font)
+  for (const b of blocks) if (b.kind === "text") { m.font = "12.5px " + (b.muted ? body : data); b.lines = wrapText(m, b.text, W - 2 * pad); b.h = b.lines.length * 18; }
+  for (const b of blocks) if (b.kind === "legend") b.h = 20;
+  const titleLines = (() => { m.font = "600 15px " + body; return wrapText(m, title, W - 2 * pad); })();
+  const H = pad + titleLines.length * 21 + gap + blocks.reduce((a, b) => a + b.h + gap, 0) + pad - gap;
+  const c = document.createElement("canvas"); c.width = Math.ceil(W * scale); c.height = Math.ceil(H * scale);
+  const ctx = c.getContext("2d"); ctx.scale(scale, scale); ctx.fillStyle = pal.surface; ctx.fillRect(0, 0, W, H);
+  let y = pad; ctx.textBaseline = "top";
+  ctx.fillStyle = pal.ink; ctx.font = "600 15px " + body; for (const l of titleLines) { ctx.fillText(l, pad, y); y += 21; } y += gap;
+  for (const b of blocks) {
+    if (b.kind === "svg" || b.kind === "table") ctx.drawImage(b.img, pad, y, b.w, b.h);
+    else if (b.kind === "text") { ctx.fillStyle = b.muted ? pal.muted : pal.ink; ctx.font = "12.5px " + (b.muted ? body : data); b.lines.forEach((l, k) => ctx.fillText(l, pad, y + k * 18)); }
+    else if (b.kind === "legend") { let x = pad; ctx.font = "12px " + data; for (const it of b.items) { ctx.fillStyle = it.color; ctx.fillRect(x, y + 3, 10, 10); ctx.fillStyle = pal.muted; ctx.fillText(it.text, x + 15, y + 1); x += 25 + ctx.measureText(it.text).width; } }
+    y += b.h + gap;
+  }
+  downloadCanvas(c, name);
+}
+const slug = t => t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+function saveName(title) { return (S.tab === "summary" ? S.category + "_" + S.model + "_" + S.mask + "_" + D().parts[S.part].name + "_" + S.score : fileBase()) + "_" + slug(title) + ".png"; }
+/* "Save image" buttons: one per saveable unit (a single graph inside a panel), otherwise one per panel.
+   Panels with 3D maps (compare, steps) save their maps one by one; their graphs are units too. */
+function addPanelSaves(root) {
+  root.querySelectorAll(".save-unit").forEach(u => {
+    const head = u.querySelector(".unit-head"); if (!head || head.querySelector(".save")) return;
+    head.appendChild(saveButton(() => exportRegion(u, u.dataset.title, saveName(u.dataset.title))));
+  });
+  root.querySelectorAll("section.panel.chart").forEach(sec => {
+    if (sec.querySelector(".cmp-grid, .steps-grid, .save-unit") || !sec.querySelector(".chart-body svg, .chart-body table")) return;
+    const head = sec.querySelector(".panel-head"); if (!head || head.querySelector(".save")) return;
+    const title = sec.querySelector("h2").textContent;
+    head.appendChild(saveButton(() => exportRegion(sec, title, saveName(title))));
+  });
+}
+function saveButton(onClick, label = "Save image") { const b = document.createElement("button"); b.type = "button"; b.className = "save"; b.textContent = label; b.addEventListener("click", onClick); return b; }
+function rotateCamera(dYaw, dElev) { camera.yaw += dYaw; camera.elev = Math.max(-1.5, Math.min(1.5, camera.elev + dElev)); drawAll(); }
+/* zoom by f; with an anchor (position relative to the view centre, in units of its shorter side) the point under it stays put */
+function zoomCamera(f, ax = 0, ay = 0) {
+  const z = Math.max(0.5, Math.min(8, camera.zoom * f)), k = z / camera.zoom;
+  camera.panX = ax - (ax - camera.panX) * k; camera.panY = ay - (ay - camera.panY) * k; camera.zoom = z; drawAll();
+}
+function panCamera(dx, dy) { camera.panX += dx; camera.panY += dy; drawAll(); }
+function resetCamera() { Object.assign(camera, { yaw: 35 * Math.PI / 180, elev: 24 * Math.PI / 180, zoom: 1, panX: 0, panY: 0 }); drawAll(); }
+function syncBars() {
+  document.querySelectorAll("[data-g]").forEach(el => {
+    const on = hoverGroup === null || +el.dataset.g === hoverGroup;
+    if (el.tagName === "TR") el.style.background = hoverGroup !== null && on ? "var(--accent-soft)" : "";
+    else el.style.opacity = on ? "" : "0.3";
+  });
+}
+function linkHover(root) {
+  root.querySelectorAll("[data-g]").forEach(el => {
+    el.addEventListener("mouseenter", () => { hoverGroup = +el.dataset.g; drawAll(); syncBars(); });
+    el.addEventListener("mouseleave", () => { hoverGroup = null; drawAll(); syncBars(); });
+  });
+}
+
+/* ================= SVG charts ================= */
+function axisTicks(lo, hi, n = 4) { return Array.from({ length: n + 1 }, (_, k) => lo + (hi - lo) * k / n); }
+/* round tick step (1, 2, 2.5 or 5 × 10^k) that gives at most n steps over the span */
+function niceStep(span, n = 4) {
+  const raw = (span || 1) / n, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  for (const m of [1, 2, 2.5, 5, 10]) if (m * mag >= raw * 0.999) return m * mag;
+  return 10 * mag;
+}
+/* the round values between lo and hi (inclusive) */
+function ticksIn(lo, hi, n = 4) {
+  const st = niceStep(hi - lo, n), out = [];
+  for (let v = Math.ceil(lo / st - 1e-9) * st; v <= hi + st * 1e-9; v += st) out.push(Math.abs(v) < st * 1e-9 ? 0 : v);
+  return out;
+}
+/* decimals needed to print the ticks of a range without noise */
+function tickDec(lo, hi, n = 4) { const st = niceStep(hi - lo, n); for (let d = 0; d < 7; d++) if (Math.abs(Math.round(st * 10 ** d) - st * 10 ** d) < 1e-6) return d; return 4; }
+/* axis range for the values: a little padding, then widened to round tick values.
+   Values that are never negative (IoU, counts) never get a negative axis. */
+function niceRange(vals, padFrac = 0.06, incl = null, n = 4) {
+  const fin = vals.filter(Number.isFinite);
+  let lo = Math.min(...fin), hi = Math.max(...fin);
+  if (incl !== null) { lo = Math.min(lo, incl); hi = Math.max(hi, incl); }
+  if (!Number.isFinite(lo)) { lo = 0; hi = 1; }
+  const nonNeg = lo >= 0, pad = (hi - lo) * padFrac || Math.abs(hi) * 0.1 || 0.1;
+  lo -= pad; hi += pad;
+  const st = niceStep(hi - lo, 2 * n); lo = Math.floor(lo / st + 1e-9) * st; hi = Math.ceil(hi / st - 1e-9) * st;   // ends on a half-tick at most
+  if (nonNeg && lo < 0) lo = 0;
+  return [lo, hi];
+}
+/* every axis includes 0: a range above 0 starts at 0 (its top rounded up to the next tick, so the top line has a label);
+   a range below 0 (mean log-probability) ends at 0 */
+function fromZero(lo, hi, n = 4) {
+  if (lo > 0) { const st = niceStep(hi, n); return [0, Math.ceil(hi / st - 1e-9) * st]; }
+  if (hi < 0) { const st = niceStep(-lo, n); return [Math.floor(lo / st + 1e-9) * st, 0]; }
+  return [lo, hi];
+}
+/* line chart: series {pts:[[x,y]], color, dash, w} or {band:[[x,lo,hi]], color} or {dots:[[x,y]], color} */
+function lineChart(o) {
+  { const [y0, y1] = fromZero(o.ylo, o.yhi), [x0, x1] = o.xticks ? [o.xmin, o.xmax] : fromZero(o.xmin, o.xmax, 6); o = { ...o, xmin: x0, xmax: x1, ylo: y0, yhi: y1 }; }   // x with named ticks (budgets) is not a number axis
+  const W = o.W || 560, H = o.H || 290, L = 56, R = 14, T = 12, B = 42;
+  const x = v => L + (v - o.xmin) / ((o.xmax - o.xmin) || 1) * (W - L - R), y = v => T + (o.yhi - v) / ((o.yhi - o.ylo) || 1) * (H - T - B);
+  const nd = tickDec(o.ylo, o.yhi), xd = tickDec(o.xmin, o.xmax, 6);
+  let s = `<svg class="small" viewBox="0 0 ${W} ${H}" ${o.xticks ? 'data-xcat="1"' : `data-xlo="${o.xmin}" data-xhi="${o.xmax}"`} data-ylo="${o.ylo}" data-yhi="${o.yhi}" role="img" aria-label="${o.ylab} against ${o.xlab}">`;
+  for (const v of ticksIn(o.ylo, o.yhi)) s += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="${o.pal.line}" stroke-width="0.8"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v, nd)}</text>`;
+  const xt = o.xticks || ticksIn(o.xmin, o.xmax, 6).map(v => [v, fmt(v, xd)]);
+  for (const [v, lab] of xt) s += `<text x="${x(v)}" y="${H - 24}" text-anchor="middle">${lab}</text>`;
+  s += `<text x="${(L + W - R) / 2}" y="${H - 5}" text-anchor="middle">${o.xlab}</text>`;
+  s += `<text transform="translate(12 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle">${o.ylab}</text>`;
+  if (o.zero && o.ylo < 0 && o.yhi > 0) s += `<line x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}" stroke="${o.pal.muted}" stroke-width="1"/>`;
+  for (const se of o.series) {
+    if (se.band) s += `<polygon points="${se.band.map(p => `${x(p[0])},${y(p[2])}`).concat(se.band.slice().reverse().map(p => `${x(p[0])},${y(p[1])}`)).join(" ")}" fill="${se.color}" opacity="${se.opacity || 0.16}"/>`;
+    if (se.pts) s += `<polyline points="${se.pts.map(([a, b]) => `${x(a)},${y(b)}`).join(" ")}" fill="none" stroke="${se.color}" stroke-width="${se.w || 2}" ${se.dash ? 'stroke-dasharray="6 5"' : ""} opacity="${se.opacity || 1}"/>`;
+    if (se.dots) for (const [a, b, t] of se.dots) s += `<circle cx="${x(a)}" cy="${y(b)}" r="${se.r || 4}" fill="${se.color}">${t ? `<title>${t}</title>` : ""}</circle>`;
+  }
+  return s + "</svg>";
+}
+/* lower axis end for rank agreement: at most -1, rounded down to 0.1, never above 0 */
+function lowAxis(cols) { const m = Math.min(0, ...cols.flatMap(c => c.values).filter(Number.isFinite)); return Math.max(-1, Math.floor(m * 10) / 10); }
+/* dot strip: columns of dots with a median bar; cols [{label, sub, values, color}] */
+function stripChart(cols, o) {
+  { const [y0, y1] = fromZero(o.ylo, o.yhi, 5); o = { ...o, ylo: y0, yhi: y1 }; }   // the value axis includes 0
+  const W = Math.max(360, 70 * cols.length + 70), H = o.H || 300, L = 56, R = 12, T = 14, B = 52, cw = (W - L - R) / cols.length;
+  const y = v => T + (o.yhi - v) / ((o.yhi - o.ylo) || 1) * (H - T - B), nd = tickDec(o.ylo, o.yhi, 5);
+  let s = `<svg viewBox="0 0 ${W} ${H}" style="max-width:${W * 1.25}px" data-ylo="${o.ylo}" data-yhi="${o.yhi}" role="img" aria-label="${o.ylab}">`;
+  for (const v of ticksIn(o.ylo, o.yhi, 5)) s += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="${o.pal.line}" stroke-width="0.8"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v, nd)}</text>`;
+  s += `<text transform="translate(12 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle">${o.ylab}</text>`;
+  cols.forEach((c, k) => {
+    const cx = L + cw * (k + 0.5), vals = c.values.filter(Number.isFinite), md = median(vals), nd = o.nd ?? 2;
+    const clip = v => Math.max(o.ylo, Math.min(o.yhi, v)), below = vals.filter(v => v < o.ylo).length;
+    vals.forEach((v, i) => { const j = ((i * 0.618034) % 1 - 0.5) * cw * 0.55; s += `<circle cx="${cx + j}" cy="${y(clip(v))}" r="2.6" fill="${c.color}" opacity="0.55"><title>${fmt(v, 3)}</title></circle>`; });
+    if (below) s += `<text x="${cx}" y="${y(o.ylo) - 4}" text-anchor="middle">${below} below</text>`;
+    if (Number.isFinite(md)) s += `<line x1="${cx - cw * 0.34}" x2="${cx + cw * 0.34}" y1="${y(clip(md))}" y2="${y(clip(md))}" stroke="${o.pal.ink}" stroke-width="2.4"/><text x="${cx}" y="${y(clip(md)) - 6}" text-anchor="middle" stroke="${o.pal.surface}" stroke-width="3" paint-order="stroke" style="fill:${o.pal.ink}">${fmt(md, nd)}</text>`;
+    s += `<text x="${cx}" y="${H - 30}" text-anchor="middle" style="fill:${o.pal.ink}">${c.label}</text>`;
+    if (c.sub) s += `<text x="${cx}" y="${H - 15}" text-anchor="middle">${c.sub}</text>`;
+    s += `<text x="${cx}" y="${H - 2}" text-anchor="middle">n=${vals.length}</text>`;
+  });
+  return s + "</svg>";
+}
+function scatterChart(pts, o) {
+  { const [x0, x1] = fromZero(o.xlo, o.xhi), [y0, y1] = fromZero(o.ylo, o.yhi); o = { ...o, xlo: x0, xhi: x1, ylo: y0, yhi: y1 }; }   // both axes include 0
+  const W = o.W || 360, H = o.H || 320, L = 56, R = 12, T = 12, B = 42;
+  const x = v => L + (v - o.xlo) / ((o.xhi - o.xlo) || 1) * (W - L - R), y = v => T + (o.yhi - v) / ((o.yhi - o.ylo) || 1) * (H - T - B);
+  const nx = tickDec(o.xlo, o.xhi), ny = tickDec(o.ylo, o.yhi);
+  let s = `<svg viewBox="0 0 ${W} ${H}" style="max-width:${o.maxw || 420}px" data-xlo="${o.xlo}" data-xhi="${o.xhi}" data-ylo="${o.ylo}" data-yhi="${o.yhi}" role="img" aria-label="${o.ylab} against ${o.xlab}">`;
+  for (const v of ticksIn(o.ylo, o.yhi)) s += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="${o.pal.line}" stroke-width="0.7"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v, ny)}</text>`;
+  for (const v of ticksIn(o.xlo, o.xhi)) s += `<text x="${x(v)}" y="${H - 24}" text-anchor="middle">${fmt(v, nx)}</text>`;
+  if (o.diag) { const a = Math.max(o.xlo, o.ylo), b = Math.min(o.xhi, o.yhi); s += `<line x1="${x(a)}" y1="${y(a)}" x2="${x(b)}" y2="${y(b)}" stroke="${o.pal.muted}" stroke-width="1.3" stroke-dasharray="4 4"/>`; }
+  s += `<text x="${(L + W - R) / 2}" y="${H - 5}" text-anchor="middle">${o.xlab}</text><text transform="translate(12 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle">${o.ylab}</text>`;
+  for (const p of pts) s += `<circle ${p.g !== undefined ? `data-g="${p.g}"` : ""} cx="${x(p.x)}" cy="${y(p.y)}" r="${o.r || 4}" fill="${p.color || o.pal.accent}" opacity="${o.opacity || 0.85}"><title>${p.title || ""}</title></circle>`;
+  return s + "</svg>";
+}
+function histChart(series, o) {
+  const bw = (o.hi - o.lo) / (o.bins || 20); o = { ...o, lo: Math.min(0, o.lo) };   // the x axis starts at 0; the bin width stays
+  const W = 560, H = 260, L = 50, R = 12, T = 12, B = 42, bins = Math.round((o.hi - o.lo) / bw);
+  const counts = series.map(se => { const c = new Array(bins).fill(0); se.values.forEach(v => { const k = Math.min(bins - 1, Math.max(0, Math.floor((v - o.lo) / bw))); c[k]++; }); return c; });
+  const cmax = Math.max(1, ...counts.flat()), ystep = Math.max(1, niceStep(cmax, 4)), ymax = Math.ceil(cmax / ystep) * ystep;
+  const x = v => L + (v - o.lo) / (o.hi - o.lo) * (W - L - R), y = v => T + (ymax - v) / ymax * (H - T - B);
+  let s = `<svg class="small" viewBox="0 0 ${W} ${H}" data-xlo="${o.lo}" data-xhi="${o.hi}" data-ylo="0" role="img" aria-label="${o.xlab} histogram">`;
+  for (let v = 0; v <= ymax; v += ystep) s += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="${o.pal.line}" stroke-width="0.7"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${v}</text>`;
+  for (const v of ticksIn(o.lo, o.hi)) s += `<text x="${x(v)}" y="${H - 24}" text-anchor="middle">${fmt(v, tickDec(o.lo, o.hi))}</text>`;
+  s += `<text x="${(L + W - R) / 2}" y="${H - 5}" text-anchor="middle">${o.xlab}</text><text transform="translate(12 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle">objects</text>`;
+  counts.forEach((c, j) => c.forEach((n, k) => { if (n) s += `<rect x="${x(o.lo + k * bw) + 1}" y="${y(n)}" width="${Math.max(1, x(o.lo + bw) - x(o.lo) - 2)}" height="${y(0) - y(n)}" fill="${series[j].color}" opacity="${series.length > 1 ? 0.55 : 0.85}"/>`; }));
+  return s + "</svg>";
+}
+function barChart(vals, order, lim, pal) {
+  const K = vals.length, W = 900, H = 230, L = 50, R = 8, T = 10, B = 26, bw = (W - L - R) / K;
+  const lo = Math.min(0, ...vals), hi = Math.max(0, ...vals), span = (hi - lo) || 1, y = v => T + (hi - v) / span * (H - T - B);
+  let s = `<svg viewBox="0 0 ${W} ${H}" data-xcat="1" data-ylo="${lo}" data-yhi="${hi}" role="img" aria-label="SHAP value of every group">`;
+  for (const t of [lo, 0, hi].filter((v, i, a) => a.indexOf(v) === i)) s += `<line x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}" stroke="${pal.line}" stroke-width="${t === 0 ? 1.4 : 0.8}"/><text x="${L - 6}" y="${y(t) + 4}" text-anchor="end">${fmt(t, 3)}</text>`;
+  order.forEach((g, k) => {
+    const v = vals[g], x = L + k * bw + bw * 0.12, y0 = y(Math.max(0, v)), h = Math.max(1, Math.abs(y(v) - y(0)));
+    s += `<g data-g="${g}"><rect x="${x}" y="${y0}" width="${bw * 0.76}" height="${h}" rx="2" fill="${rgb(divColor(v, lim, pal))}"/><rect x="${L + k * bw}" y="${T}" width="${bw}" height="${H - T - B}" fill="transparent"><title>group ${g}: ${fmt(v, 4)}</title></rect>`;
+    if (K <= 40) s += `<text x="${L + k * bw + bw / 2}" y="${H - 8}" text-anchor="middle">${g}</text>`;
+    s += `</g>`;
+  });
+  return s + `</svg>`;
+}
+function heatTable(mat, rows, cols, extra, pal, nd = 2) {
+  let mx = 0; mat.forEach(r => r.forEach(v => mx = Math.max(mx, Math.abs(v))));
+  const [ar, ag, ab] = hexRgb(pal.accent);
+  let h = `<div class="scroll-x"><table class="heat"><thead><tr><th></th>${cols.map(c => `<th>${c}</th>`).join("")}${extra ? `<th>${extra.label}</th>` : ""}</tr></thead><tbody>`;
+  mat.forEach((r, i) => {
+    h += `<tr><th class="r">${rows[i]}</th>` + r.map(v => { const a = mx ? Math.max(0, v) / mx : 0; return `<td style="background:rgba(${ar},${ag},${ab},${(a * 0.85).toFixed(3)});color:${a > 0.55 ? pal.surface : pal.ink}">${fmt(v, nd)}</td>`; }).join("");
+    if (extra) h += `<td style="border:1px solid ${pal.line}">${fmt(extra.values[i], nd)}</td>`;
+    h += "</tr>";
+  });
+  return h + "</tbody></table></div>";
+}
+function panel(title, note, body, cls = "") { const s = document.createElement("section"); s.className = "panel chart " + cls; s.innerHTML = `<div class="panel-head"><h2>${title}</h2></div>${note ? `<p class="note">${note}</p>` : ""}<div class="chart-body">${body}</div>`; return s; }
+function legend(items) { return `<div class="legend">${items.map(([c, l, dash]) => `<span class="chip"><i style="background:${c};${dash ? "border-radius:0;height:3px;width:14px" : ""}"></i>${l}</span>`).join("")}</div>`; }
+function metricsRow(items) { return `<div class="metrics">${items.map(([l, v]) => `<span>${l} <b>${v}</b></span>`).join("")}</div>`; }
+
+/* ================= controls ================= */
+function seg(el, items, current, onPick) {
+  el.innerHTML = "";
+  if (items.length === 1 && items[0].fixed) { const s = document.createElement("div"); s.className = "fixed"; s.textContent = items[0].label; el.appendChild(s); return; }
+  for (const it of items) {
+    const b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-pressed", String(it.value === current));
+    b.innerHTML = it.label + (it.small !== undefined ? `<small>${it.small}</small>` : ""); b.disabled = !!it.disabled;
+    b.addEventListener("click", () => onPick(it.value)); el.appendChild(b);
+  }
+}
+function set(k, v) {
+  if (!D() && k !== "category") return;          // ignore clicks while a category is loading
+  const prev = S.category; S[k] = v;
+  if (k === "category") { loadCategory(prev); return; }
+  if (k === "tab") syncHash();
+  render();
+}
+function syncHash() { try { history.replaceState(null, "", "#" + S.tab); } catch (e) {} }
+function save() { try { localStorage.setItem("xai-explorer-v3", JSON.stringify(S)); } catch (e) {} }
+const coalLabel = c => c === "exact" ? "Exact (all 256)" : fmtInt(+c);
+
+function renderControls() {
+  const d = D(), o = options(S);
+  seg($("tabs"), [["overview", "Overview"], ["object", "Object"], ["steps", "How a map is made"], ["summary", "Category summary"]].map(([v, l]) => ({ value: v, label: l })), S.tab, v => set("tab", v));
+  $("tabs").querySelectorAll("button").forEach(b => { b.setAttribute("role", "tab"); b.setAttribute("aria-selected", b.getAttribute("aria-pressed")); });
+  const allCats = S.tab === "overview", noObj = allCats || S.tab === "summary";
+  document.querySelectorAll("[data-obj]").forEach(el => { el.classList.toggle("off", noObj); el.inert = noObj; });
+  for (const id of ["s-category", "s-part"]) { const el = $(id); el.classList.toggle("off", allCats); el.inert = allCats; }
+  seg($("c-category"), CATS.map(c => ({ value: c, label: c })), S.category, v => set("category", v));
+  seg($("c-model"), Object.keys(d.models).map(m => ({ value: m, label: m === "single" ? "Single" : "Joint", small: "mIoU " + fmt(d.models[m].miou) })), S.model, v => set("model", v));
+  seg($("c-phase"), Object.keys(PHASES).map(p => ({ value: p, label: PHASES[p], small: p === "exact" ? d.exactObjects.length : p === "trial" ? d.trialObjects.length : d.objects.length })), S.phase, v => set("phase", v));
+  $("h-phase").textContent = S.tab === "summary" ? "Not used in the category summary." : PHASE_HELP[S.phase] + " Number = objects with results.";
+  const sel = $("c-object"); sel.innerHTML = "";
+  for (const i of o.objects) {
+    const r = objRec(i), m = r.models[S.model], miou = mean(m.iou);
+    const tags = [r.exact ? "exact" : "", r.trial ? "trial" : "", r.seen ? "seen in training" : ""].filter(Boolean).join(", ");
+    const opt = document.createElement("option"); opt.value = i; opt.textContent = `#${i} · mIoU ${fmt(miou)}${tags ? " · " + tags : ""}`;
+    if (i === S.object) opt.selected = true; sel.appendChild(opt);
+  }
+  const rec = objRec(S.object);
+  const phasesOf = ["exact", "trial", "full"].filter(p => p === "full" || rec[p]).map(p => PHASES[p]);
+  $("h-object").textContent = `Object #${S.object}: mIoU ${fmt(mean(rec.models[S.model].iou))} (${S.model} model). Phases: ${phasesOf.join(", ")}.` + (rec.seen ? " Seen during training; kept apart from the main results." : "");
+  seg($("c-mask"), Object.keys(MASKS).map(m => ({ value: m, label: m === "centroid" ? "Origin" : "Retained-point" })), S.mask, v => set("mask", v));
+  seg($("c-coal"), o.coal.length === 1 ? [{ fixed: true, label: coalLabel(o.coal[0]) + " (only option)" }] : o.coal.map(c => ({ value: c, label: coalLabel(c) })), S.coal, v => set("coal", v));
+  seg($("c-seed"), o.seed.length === 1 ? [{ fixed: true, label: `seed ${o.seed[0]}` + (S.coal === "exact" ? " (not used)" : " (only option)") }] : o.seed.map(s => ({ value: s, label: "seed " + s })), S.seed, v => set("seed", v));
+  seg($("c-rep"), o.rep.length === 1 ? [{ fixed: true, label: S.mask === "centroid" ? "not used by this mask" : "seed 0 (only option)" }] : o.rep.map(s => ({ value: s, label: "seed " + s })), S.rep, v => set("rep", v));
+  seg($("c-part"), d.parts.map((p, j) => ({ value: j, label: `<i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${PART_COLORS[j]};margin-right:5px"></i>${p.name}` })), S.part, v => set("part", v));
+  seg($("c-score"), Object.keys(SCORES).map(s => ({ value: s, label: SCORES[s] })), S.score, v => set("score", v));
+  const cmp = $("c-compare"); cmp.innerHTML = "";
+  const dims = compareDims();
+  for (const [k, lab] of [["none", "Nothing"], ...dims.map(x => [x.key, x.label + " (" + x.values.length + ")"])]) {
+    const opt = document.createElement("option"); opt.value = k; opt.textContent = lab; if (k === S.compare) opt.selected = true; cmp.appendChild(opt);
+  }
+  if (S.compare !== "none" && !dims.find(x => x.key === S.compare)) cmp.value = "none";
+  seg($("c-theme"), [["light", "Light"], ["dark", "Dark"], ["system", "System"]].map(([v, l]) => ({ value: v, label: l })), S.theme, v => { S.theme = v; applyTheme(); render(); });
+  seg($("c-font"), Object.entries(FONT_SETS).map(([v, f]) => ({ value: v, label: f.label })), S.font, v => { S.font = v; applyFont(); render(); });
+  $("h-font").hidden = $("c-font").hidden = !Object.keys(FONT_SETS).length;
+}
+function compareDims() {
+  const d = D(), o = options(S), dims = [];
+  // keep a variant only if nothing but the compared setting differs from the selection
+  // (the SHAP seed does not exist for the exact values, the replacement seed does not exist for the origin mask)
+  const same = (a, b, key) => ["object", "phase", "model", "mask", "coal", "seed", "rep", "part", "score"].every(k => {
+    if (k === key || a[k] === b[k]) return true;
+    if (k === "seed" && (a.coal === "exact" || b.coal === "exact")) return true;
+    if (k === "rep" && (a.mask === "centroid" || b.mask === "centroid")) return true;
+    return false;
+  });
+  const variants = (key, values, label, name) => {
+    const uniq = values.map(v => ({ v, st: normalize(Object.assign({}, S, { [key]: v })) }))
+                       .filter(x => x.st[key] === x.v && same(x.st, S, key)).map(x => x.st);
+    if (uniq.length > 1) dims.push({ key, label, values: uniq, name: st => name(st[key]) });
+  };
+  if (S.phase !== "full" && S.coal !== "exact") variants("seed", d.shapSeeds, "SHAP seed", v => "SHAP seed " + v);
+  variants("coal", o.coal, "Coalitions", v => coalLabel(v) + (v === "exact" ? "" : " coalitions"));
+  if (o.rep.length > 1) variants("rep", o.rep, "Replacement seed", v => "replacement seed " + v);
+  variants("mask", Object.keys(MASKS), "Mask", v => MASKS[v]);
+  variants("model", Object.keys(d.models), "Model", v => v === "single" ? "Single model" : "Joint model");
+  return dims;
+}
+
+/* ================= object tab ================= */
+function renderObject(m) {
+  const d = D(), rec = objRec(S.object), pts = dec(rec.points, "i2"), truth = dec(rec.truth, "u1");
+  const pred = dec(rec.models[S.model].pred, "u1"), sh = shapFor(S), pal = palette(), P = nParts();
+  const partName = d.parts[S.part].name, n = truth.length, facts = groupFacts(S.object, sh.groups);
+  const mainPart = g => { let b = 0; for (let j = 1; j < P; j++) if (facts.frac[g][j] > facts.frac[g][b]) b = j; return d.parts[b].name + " " + Math.round(100 * facts.frac[g][b]) + "%"; };
+  const dims = compareDims(), dim = dims.find(x => x.key === S.compare);
+  const cmpSets = dim ? dim.values.map(st => ({ st, sh: shapFor(st), name: dim.name(st) })) : [];
+  let lim = 0; for (const v of sh.vals) lim = Math.max(lim, Math.abs(v));
+  for (const c of cmpSets) for (const v of c.sh.vals) lim = Math.max(lim, Math.abs(v));
+  const sum = sh.vals.reduce((a, b) => a + b, 0), miou = mean(rec.models[S.model].iou);
+  const unit = S.score === "iou" ? "IoU" : "mean log-probability";
+
+  const path = [S.category, d.models[S.model].label, PHASES[S.phase] + " phase", "object #" + S.object, MASKS[S.mask],
+                coalLabel(S.coal) + (S.coal === "exact" ? "" : " coalitions"), S.coal === "exact" || S.phase === "full" ? null : "SHAP seed " + S.seed,
+                S.mask === "retained_point" ? "replacement seed " + S.rep : null, partName, SCORES[S.score]].filter(Boolean);
+  m.insertAdjacentHTML("beforeend", `<div class="path">${path.map((p, i) => (i ? '<span class="sep">›</span>' : "") + "<b>" + p + "</b>").join("")}</div>`);
+
+  const hero = document.createElement("div"); hero.className = "hero"; m.appendChild(hero);
+  const vp = document.createElement("section"); vp.className = "panel"; hero.appendChild(vp);
+  const show = S.focus === "part" ? Uint8Array.from(truth, t => t === S.part ? 1 : 0) : null;
+  vp.innerHTML = `<div class="viewer-head"><h2>${S.view === "shap" ? "SHAP map · " + partName + " · " + SCORES[S.score] : S.view === "truth" ? "True parts" : S.view === "pred" ? "Model prediction" : sh.K + " spatial groups"}</h2><div class="seg" id="c-view"></div></div><div class="viewer-head"><div class="seg" id="c-focus"></div><span id="save-main"></span></div><div class="canvas-wrap" id="w-main"></div><div class="legend" id="lg"></div>${show ? `<p class="note">Only the true ${partName} points are drawn (${show.reduce((a, b) => a + b, 0)} of ${n}). The SHAP values do not change: each group keeps its value.</p>` : ""}<p class="note">Every 3D view: drag to rotate · Shift + drag or right-drag to pan · scroll to zoom · double-click or Reset to reset · hover a point to see its group · keyboard: click a view, then arrows, Shift + arrows, + / −, 0.</p>`;
+  seg(vp.querySelector("#c-view"), [["shap", "SHAP map"], ["truth", "True parts"], ["pred", "Prediction"], ["groups", "Groups"]].map(([v, l]) => ({ value: v, label: l })), S.view, v => set("view", v));
+  seg(vp.querySelector("#c-focus"), [["all", "All points"], ["part", `Only ${partName} points`]].map(([v, l]) => ({ value: v, label: l })), S.focus, v => set("focus", v));
+  const mv = new Viewer(vp.querySelector("#w-main"), true), cols = new Float32Array(n * 3);
+  vp.querySelector("#save-main").appendChild(saveButton(() => mv.exportPNG(fileBase() + "_" + S.view + (show ? "_only-part" : "") + ".png")));
+  for (let i = 0; i < n; i++) {
+    const g = sh.groups[i];
+    const c = S.view === "shap" ? divColor(sh.vals[g], lim, pal) : S.view === "truth" ? hexRgb(PART_COLORS[truth[i]] || "#888888")
+            : S.view === "pred" ? hexRgb(PART_COLORS[pred[i]] || "#888888") : groupColor(g);
+    cols[3 * i] = c[0]; cols[3 * i + 1] = c[1]; cols[3 * i + 2] = c[2];
+  }
+  mv.set(pts, cols, sh.groups, g => `group ${g} · ${fmt(sh.vals[g], 4)} · ${facts.size[g]} points · ${mainPart(g)}`, { show, fit: fitOf(pts) });
+  const lg = vp.querySelector("#lg");
+  if (S.view === "shap") lg.innerHTML = `<span>−${fmt(lim)}</span><span class="bar" style="background:linear-gradient(90deg,${css("--neg")},${css("--neg2")},${css("--mid")},${css("--pos2")},${css("--pos")})"></span><span>+${fmt(lim)}</span><span>blue lowers the ${unit}, red raises it</span>`;
+  else if (S.view === "groups") lg.textContent = "Each colour is one group. Groups use only the geometry, never the labels.";
+  else lg.innerHTML = d.parts.map((p, j) => `<span class="chip"><i style="background:${PART_COLORS[j]}"></i>${p.name}</span>`).join("");
+
+  const top = Array.from(sh.vals, (v, g) => g).sort((a, b) => sh.vals[b] - sh.vals[a]);
+  const st = document.createElement("section"); st.className = "panel stats"; hero.appendChild(st);
+  st.innerHTML = `
+    <div><h2>Model on this object</h2>
+      <dl class="kv"><dt>Object mIoU</dt><dd>${fmt(miou)}</dd><dt>${partName} IoU</dt><dd>${fmt(rec.models[S.model].iou[S.part])}</dd>
+      <dt>${partName} mean log-prob.</dt><dd>${fmt(rec.models[S.model].logprob[S.part])}</dd></dl></div>
+    <div><h2>What SHAP shares out</h2>
+      <div class="flow"><span>${fmt(sh.vE)}</span><span class="arrow">→</span><span>${fmt(sh.vF)}</span></div>
+      <p class="note">${unit} with all groups hidden → all visible. The ${sh.K} SHAP values add up to the difference.</p>
+      <dl class="kv"><dt>Difference</dt><dd>${fmt(sh.vF - sh.vE, 4)}</dd><dt>Sum of SHAP values</dt><dd>${fmt(sum, 4)}</dd>
+      ${sh.r2 !== null ? `<dt>Additive R²</dt><dd>${fmt(sh.r2)}</dd>` : ""}</dl>
+      ${sh.r2 !== null ? `<p class="note">Additive R²: how well "all hidden + sum of the visible groups' SHAP values" reproduces the model score on the 8,192 saved coalitions (1 = perfectly additive).</p>` : ""}</div>
+    <div><h2>Largest groups</h2>
+      <table class="top"><thead><tr><th>Group</th><th>SHAP</th><th>Points</th><th>Mostly</th></tr></thead><tbody>
+      ${top.slice(0, 5).map(g => `<tr data-g="${g}"><td>${g}</td><td>${fmt(sh.vals[g], 4)}</td><td>${facts.size[g]}</td><td>${mainPart(g)}</td></tr>`).join("")}
+      </tbody></table></div>
+    <p class="note">${MASKS[S.mask]}: ${MASK_HELP[S.mask]}.</p>`;
+  linkHover(st);
+
+  const bc = panel(`All ${sh.K} groups, sorted by SHAP value`, "Numbers under the bars are group numbers. Hover a bar to find the group on the object.", `<div class="scroll-x"><div style="min-width:560px">${barChart(sh.vals, top, lim, pal)}</div></div>`, "wide");
+  m.appendChild(bc); linkHover(bc);
+
+  const row = document.createElement("div"); row.className = "twocol"; m.appendChild(row);
+  row.appendChild(creditPanel(sh, facts, pal));
+  row.appendChild(concentrationPanel(sh, pal));
+
+  if (dim) m.appendChild(comparePanel(dim, cmpSets, lim, pts, n, pal, show));
+  if (S.phase !== "exact") { const sp = stabilityPanel(pal); if (sp) m.appendChild(sp); }
+  const two = document.createElement("div"); two.className = "twocol"; m.appendChild(two);
+  if (S.phase === "exact") { two.appendChild(exactPanel(pal)); two.appendChild(convergencePanel(pal)); }
+  else two.appendChild(removalPanel(pal));
+}
+function creditPanel(sh, facts, pal) {
+  const d = D(), P = nParts(), names = d.parts.map(p => p.name);
+  // credit for every part of this object with the same settings
+  const mat = [], totals = [];
+  for (let j = 0; j < P; j++) { const s = shapFor(Object.assign({}, S, { part: j })); mat.push(Array.from(credit(s.vals, facts))); totals.push(s.vF - s.vE); }
+  const own = positiveShare(sh.vals, facts, S.part);
+  return panel("Where the credit comes from", `Each row is the part being explained. Each group's SHAP value is split over its points by their true part, so a row shows how much of the part's score comes from the points of each part. Rows add up to the total (all visible − all hidden).`,
+    heatTable(mat, names.map((n, j) => j === S.part ? `<b>${n}</b>` : n), names.map(n => "from " + n), { label: "total", values: totals }, pal) +
+    metricsRow([[`${names[S.part]}: share of positive credit on its own points`, pct(own)], [`share of the object's points that are ${names[S.part]}`, pct(facts.pointShare[S.part])]]));
+}
+function concentrationPanel(sh, pal) {
+  const c = concentration(sh.vals);
+  const body = lineChart({ pal, xmin: 0, xmax: sh.K, ylo: 0, yhi: 1, xlab: "number of groups (largest |SHAP| first)", ylab: "share of total |SHAP|",
+    xticks: axisTicks(0, sh.K, 4).map(v => [v, Math.round(v)]), W: 480, H: 260,
+    series: [{ pts: [[0, 0], ...c.cum.map((v, k) => [k + 1, v])], color: pal.accent, w: 2.4 }, { pts: [[0, 0.8], [sh.K, 0.8]], color: pal.muted, dash: true, w: 1 },
+             ...(c.g80 > 0 ? [{ dots: [[c.g80, c.cum[c.g80 - 1], `${c.g80} groups hold 80%`]], color: pal.ink }] : [])] });
+  return panel("How concentrated the explanation is", "A steep curve means a few groups carry most of the explanation. A straight diagonal would mean all groups matter equally.",
+    body + metricsRow(c.g80 > 0 ? [["groups for 80% of |SHAP|", `${c.g80} of ${sh.K}`], ["largest group's share", pct(c.top)]] : [["all SHAP values are 0", ""]]));
+}
+function partNameOf() { return D().parts[S.part].name; }
+function comparePanel(dim, sets, lim, pts, n, pal, show) {
+  const sec = panel(`Compare: ${dim.label.toLowerCase()}`, `Everything else stays as selected. Maps share one colour scale and one camera: rotating, zooming or panning any map moves all of them. Click a map to select it. Under each map: that map against the first one. Under the first map: the other maps against each other, so every pair is shown.`, `<div class="cmp-grid"></div>`, "wide");
+  const grid = sec.querySelector(".cmp-grid"), ref = sets[0].sh.vals;
+  // metrics line + scatter for one pair of maps (x = first map of the pair, y = second)
+  const pairBlock = ([a, b]) => {
+    const m = compareMetrics(a.sh.vals, b.sh.vals), [lo, hi] = niceRange([...a.sh.vals, ...b.sh.vals]);
+    const title = `${a.name} vs ${b.name}`;
+    return `<div class="save-unit" data-title="${dim.label}: ${title} · ${partNameOf()} · ${SCORES[S.score]}"><div class="unit-head"><div class="s">${a.st === sets[0].st ? "" : `<b style="color:var(--ink);font-weight:500">${title}</b> · `}rank agreement ${fmt(m.rho)} · mean |Δ| ${fmt(m.mad, 4)} · top-5 overlap ${Math.round(m.top5 * 5)}/5 · same sign ${pct(m.sign)}</div></div>` +
+      scatterChart(Array.from(a.sh.vals, (v, g) => ({ x: v, y: b.sh.vals[g], g, title: `group ${g}: ${fmt(v, 4)} → ${fmt(b.sh.vals[g], 4)}` })),
+        { pal, xlo: lo, xhi: hi, ylo: lo, yhi: hi, diag: true, xlab: a.name, ylab: b.name, W: 300, H: 280, maxw: 300, r: 3.5 }) + `</div>`;
+  };
+  // the pairs that do not involve the first map go under the first map (for 3 maps: the second against the third)
+  const others = pairs(sets.slice(1)).filter(([a, b]) => a.sh.K === b.sh.K);
+  for (const c of sets) {
+    const cell = document.createElement("div"); cell.className = "cell";
+    const same = c.sh.K === ref.length, mt = same ? compareMetrics(ref, c.sh.vals) : null, isRef = c === sets[0];
+    cell.innerHTML = `<div class="t" style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span>${c.name}${c.st[dim.key] === S[dim.key] ? ' <span class="pill">selected</span>' : ""}</span></div><div class="canvas-wrap"></div>
+      ${isRef ? (others.length ? others.map(pairBlock).join("") : `<div class="s">reference</div>`)
+              : same ? pairBlock([sets[0], c]) : `<div class="s">different number of groups</div>`}`;
+    grid.appendChild(cell);
+    const v = new Viewer(cell.querySelector(".canvas-wrap"), false), cc = new Float32Array(n * 3);
+    for (let i = 0; i < n; i++) { const col = divColor(c.sh.vals[c.sh.groups[i]], lim, pal); cc[3 * i] = col[0]; cc[3 * i + 1] = col[1]; cc[3 * i + 2] = col[2]; }
+    v.set(pts, cc, c.sh.groups, null, { show, fit: fitOf(pts) });
+    cell.querySelector(".t").appendChild(saveButton(() => v.exportPNG(fileBase() + "_compare-" + dim.key + "-" + String(c.st[dim.key]).replace(/[^A-Za-z0-9]+/g, "-") + ".png")));
+    // a tap selects the map (after a short wait, so that a double-tap can reset the view instead)
+    v.onTap = () => { if (c.st[dim.key] !== S[dim.key] && v.canvas.isConnected) { Object.assign(S, c.st); render(); } };
+  }
+  linkHover(sec);
+  return sec;
+}
+/* every stability comparison that exists for a trial object: seeds, budget, replacement seed */
+function stabilityRows(model, mask, i, score, part) {
+  const d = D(), rows = [], [b1, b2] = [Math.min(...d.trialBudgets), Math.max(...d.trialBudgets)];
+  const v = key => trialVals(model, mask, i, key, score, part), add = (group, label, a, b) => rows.push({ group, label, ...compareMetrics(v(a), v(b)) });
+  for (const b of [b1, b2]) for (const [s1, s2] of pairs(d.shapSeeds)) add(`SHAP seed, ${fmtInt(b)}`, `seed ${s1} vs ${s2}`, `${b}_${s1}_0`, `${b}_${s2}_0`);
+  for (const s of d.shapSeeds) add("Coalitions", `${fmtInt(b1)} vs ${fmtInt(b2)}, seed ${s}`, `${b1}_${s}_0`, `${b2}_${s}_0`);
+  if (mask === "retained_point") for (const [r1, r2] of pairs(d.replacementSeeds)) add(`Replacement seed, ${fmtInt(b2)}`, `seed ${r1} vs ${r2}`, `${b2}_0_${r1}`, `${b2}_0_${r2}`);
+  return rows;
+}
+function stabilityPanel(pal) {
+  const d = D();
+  if (!d.trialObjects.includes(S.object)) return panel("Stability of this map", "", `<p class="note">Seed and budget runs exist only for the ${d.trialObjects.length} trial objects: ${d.trialObjects.map(i => "#" + i).join(", ")}.</p>`, "wide");
+  const rows = stabilityRows(S.model, S.mask, S.object, S.score, d.parts.indexOf(d.parts[S.part]));
+  let t = `<div class="scroll-x"><table class="top nowrap"><thead><tr><th>What changes</th><th>Runs compared</th><th>Rank agreement</th><th>Mean |Δ|</th><th>Top-5 overlap</th><th>Same sign</th></tr></thead><tbody>`;
+  for (const r of rows) t += `<tr><td style="font-family:var(--font-body)">${r.group}</td><td>${r.label}</td><td><span class="inline-bar" style="width:${Math.max(2, r.rho * 90)}px"></span>${fmt(r.rho)}</td><td>${fmt(r.mad, 4)}</td><td>${Math.round(r.top5 * 5)}/5</td><td>${pct(r.sign)}</td></tr>`;
+  t += `</tbody></table></div>`;
+  const groups = [...new Set(rows.map(r => r.group))];
+  const medians = groups.map(g => [g, fmt(median(rows.filter(r => r.group === g).map(r => r.rho)))]);
+  return panel(`Stability of this map · ${MASKS[S.mask].toLowerCase()} · ${d.parts[S.part].name} · ${SCORES[S.score]}`,
+    "Trial runs of this object. Only the named setting changes; the rest stays fixed. Bar length = rank agreement, from 0 to 1.", t + metricsRow(medians.map(([g, v]) => ["median · " + g, v])), "wide");
+}
+function removalPanel(pal) {
+  const d = D(), rem = d.removal[S.model][S.mask][S.object], partId = d.parts[S.part].id, r = rem && rem[S.score] && rem[S.score][partId];
+  const head = "Removal check · hide the most helpful groups first";
+  if (!r || r.helpful.length < 2) return panel(head, "", `<p class="note">${rem ? "No group has a positive SHAP value here, so there is no removal curve." :
+      "The removal check was run only for the " + d.trialObjects.length + " trial objects (8,192 coalitions, SHAP seed 0, replacement seed 0). Choose one of them: " + d.trialObjects.map(i => "#" + i).join(", ") + "."}</p>`, "wide");
+  const se = removalSeries(r, S.remx), cr = r.cross ? removalSeries(r.cross, S.remx) : null, mt = removalMetrics(se), mc = cr ? removalMetrics(cr) : null;
+  const all = [...se.helpful, ...se.lo, ...se.hi, ...(cr ? [...cr.helpful, ...cr.lo, ...cr.hi] : [])], [lo, hi] = niceRange(all, 0.04);
+  const other = cr ? MASK_SHORT[r.cross.mask] : "";
+  const chart = (s, title) => lineChart({ pal, xmin: 0, xmax: s.x[s.x.length - 1], ylo: lo, yhi: hi, xlab: S.remx === "groups" ? "groups hidden" : "% of points hidden", ylab: SCORES[S.score], W: 520, H: 280,
+    series: [{ band: s.x.map((x, k) => [x, s.lo[k], s.hi[k]]), color: pal.muted }, { pts: s.x.map((x, k) => [x, s.mean[k]]), color: pal.muted, dash: true }, { pts: s.x.map((x, k) => [x, s.helpful[k]]), color: pal.accent, w: 2.6 }] });
+  const at = Math.min(5, r.helpful.length - 1), rs = removalSeries(r, "groups"), ao = aopcOf(r), ac = r.cross ? aopcOf(r.cross) : null;
+  const remLegend = legend([[pal.accent, "most helpful groups first (SHAP order)"], [pal.muted, "5 random orders: mean (dashed) and range"]]);
+  const sec = panel(head, `The ${MASKS[S.mask].toLowerCase()} map's ranking. Only groups with a positive SHAP value are hidden (${r.helpful.length - 1} here). This check always uses the run with 8,192 coalitions, SHAP seed 0, replacement seed 0; the Trial and Full files hold the same result.`,
+    `<div class="seg" id="c-remx" style="margin-bottom:8px"></div>
+     <div class="twocol"><div class="save-unit" data-title="Removal check · ${partNameOf()} · ${SCORES[S.score]} · ${MASK_SHORT[S.mask]}-mask ranking, hidden with the ${MASK_SHORT[S.mask]} mask"><div class="unit-head"><div class="note"><b>Hidden with the ${MASK_SHORT[S.mask]} mask</b> (its own mask)</div></div>${chart(se)}
+       ${metricsRow([["AOPC: SHAP order", fmt(ao.shap)], ["random", fmt(ao.random)], ["gap", (ao.gap >= 0 ? "+" : "") + fmt(ao.gap)]])}
+       ${metricsRow([[`after ${at} groups: SHAP order`, fmt(rs.helpful[at])], ["random mean", fmt(rs.mean[at])], ["steps below every random order", pct(mt.below)]])}${remLegend}</div>
+     ${cr ? `<div class="save-unit" data-title="Removal check · ${partNameOf()} · ${SCORES[S.score]} · ${MASK_SHORT[S.mask]}-mask ranking, hidden with the ${other} mask"><div class="unit-head"><div class="note"><b>Same ranking, hidden with the ${other} mask</b> (does the ranking transfer?)</div></div>${chart(cr)}
+       ${metricsRow([["AOPC: SHAP order", fmt(ac.shap)], ["random", fmt(ac.random)], ["gap", (ac.gap >= 0 ? "+" : "") + fmt(ac.gap)]])}
+       ${metricsRow([["steps below every random order", pct(mc.below)]])}${remLegend}</div>` : ""}</div>` +
+    `<p class="note">AOPC = the average drop of the score over all steps (the area above the curve divided by the number of steps), computed on the groups-hidden steps. A larger AOPC means a faster drop; the gap to the random orders shows how much better than chance the ranking is. % of points: groups have different sizes, so the curves can also be shown against the share of hidden points (interpolated, never extrapolated).</p>`, "wide");
+  seg(sec.querySelector("#c-remx"), [["groups", "x = groups hidden"], ["points", "x = % points hidden"]].map(([v, l]) => ({ value: v, label: l })), S.remx, v => set("remx", v));
+  return sec;
+}
+function exactPanel(pal) {
+  const d = D(), ex = partVals(dec(d.exact[S.model][S.mask][S.object].exact[S.score], "f4"), S.part);
+  const b = S.coal === "exact" ? String(d.exactBudgets[d.exactBudgets.length - 1]) : S.coal, s = S.coal === "exact" ? 0 : S.seed;
+  const kv = partVals(dec(d.exact[S.model][S.mask][S.object].runs[b + "_" + s][S.score], "f4"), S.part), [lo, hi] = niceRange([...ex, ...kv]);
+  const mt = compareMetrics(ex, kv);
+  return panel("Exact check · KernelSHAP against ExactSHAP", `KernelSHAP with ${fmtInt(+b)} coalitions, SHAP seed ${s}. Dots on the dashed line match the exact answer. 254 = every coalition except all hidden and all visible.`,
+    scatterChart(Array.from(ex, (v, g) => ({ x: v, y: kv[g], g, title: `group ${g}: exact ${fmt(v, 4)}, KernelSHAP ${fmt(kv[g], 4)}` })), { pal, xlo: lo, xhi: hi, ylo: lo, yhi: hi, diag: true, xlab: "ExactSHAP", ylab: "KernelSHAP", r: 5 }) +
+    metricsRow([["mean |error|", mt.mad.toExponential(1)], ["rank agreement", fmt(mt.rho)], ["top-3 overlap", `${Math.round(topOverlap(ex, kv, 3) * 3)}/3`]]));
+}
+function convergencePanel(pal) {
+  const d = D(), rec = d.exact[S.model][S.mask][S.object], ex = partVals(dec(rec.exact[S.score], "f4"), S.part);
+  const dots = [], rhoDots = [], meanPts = [], meanRho = [];
+  d.exactBudgets.forEach((b, k) => {
+    const errs = [], rhos = [];
+    d.shapSeeds.forEach(s => { const kv = partVals(dec(rec.runs[b + "_" + s][S.score], "f4"), S.part); errs.push(meanAbsDiff(ex, kv)); rhos.push(spearman(ex, kv)); });
+    errs.forEach((e, j) => dots.push([k, e, `${b} coalitions, seed ${j}: ${e.toExponential(2)}`])); rhos.forEach((r, j) => rhoDots.push([k, r, `${b}, seed ${j}: ${fmt(r)}`]));
+    meanPts.push([k, mean(errs)]); meanRho.push([k, mean(rhos)]);
+  });
+  const xt = d.exactBudgets.map((b, k) => [k, b]), ehi = niceRange([0, ...dots.map(p => p[1])], 0.05)[1];
+  return panel("How fast KernelSHAP reaches the exact answer", `Every dot is one SHAP seed (0, 1, 2). Line = mean. ${d.parts[S.part].name}, ${SCORES[S.score]}, ${MASKS[S.mask].toLowerCase()}.`,
+    `<div class="twocol"><div class="save-unit" data-title="Exact check · mean |error| against coalitions · ${d.parts[S.part].name} · ${SCORES[S.score]} · ${MASK_SHORT[S.mask]} mask"><div class="unit-head"><div class="note"><b>Mean |error| against the exact values</b></div></div>${lineChart({ pal, xmin: -0.3, xmax: d.exactBudgets.length - 0.7, ylo: 0, yhi: ehi, xlab: "coalitions", ylab: "mean |error|", xticks: xt, W: 360, H: 260,
+      series: [{ pts: meanPts, color: pal.accent }, { dots, color: pal.accent, r: 4.5 }] })}</div>
+    <div class="save-unit" data-title="Exact check · rank agreement with the exact values · ${d.parts[S.part].name} · ${SCORES[S.score]} · ${MASK_SHORT[S.mask]} mask"><div class="unit-head"><div class="note"><b>Rank agreement with the exact values</b></div></div>${lineChart({ pal, xmin: -0.3, xmax: d.exactBudgets.length - 0.7, ylo: Math.min(0.5, ...rhoDots.map(p => p[1])), yhi: 1.02, xlab: "coalitions", ylab: "rank agreement with exact", xticks: xt, W: 360, H: 260,
+      series: [{ pts: meanRho, color: pal.accent }, { dots: rhoDots, color: pal.accent, r: 4.5 }] })}</div></div>
+    <p class="note">This check uses 8 groups, so it shows that the calculation is right. It does not prove that 8,192 coalitions are exact for 32 groups.</p>`);
+}
+
+/* ================= overview tab: all categories ================= */
+const CHOICES = [["replacement", "Replacement seed", "#2a78d6", "circle"], ["seed", "SHAP seed (8,192)", "#eb6834", "square"],
+                 ["budget", "Coalitions 4,096 vs 8,192", "#1baf7a", "triangle"], ["model", "Model: single vs joint", "#eda100", "diamond"],
+                 ["mask", "Mask: origin vs retained", "#e87ba4", "down"]];
+function marker(shape, x, y, r, col, title) {
+  const t = `<title>${title}</title>`, st = `fill="${col}" stroke="${palette().ink}" stroke-width="0.8"`;
+  if (shape === "circle") return `<circle cx="${x}" cy="${y}" r="${r}" ${st}>${t}</circle>`;
+  if (shape === "square") return `<rect x="${x - r}" y="${y - r}" width="${2 * r}" height="${2 * r}" ${st}>${t}</rect>`;
+  const pts = shape === "triangle" ? [[x, y - r * 1.2], [x + r * 1.1, y + r * 0.8], [x - r * 1.1, y + r * 0.8]]
+            : shape === "down" ? [[x, y + r * 1.2], [x + r * 1.1, y - r * 0.8], [x - r * 1.1, y - r * 0.8]]
+            : [[x, y - r * 1.3], [x + r * 1.1, y], [x, y + r * 1.3], [x - r * 1.1, y]];
+  return `<polygon points="${pts.map(p => p.join(",")).join(" ")}" ${st}>${t}</polygon>`;
+}
+function goCategory(cat) {
+  const prev = S.category; S.tab = "object"; syncHash();
+  if (cat === prev) { render(); return; }
+  S.category = cat; loadCategory(prev);
+}
+function renderOverview(m) {
+  const O = window.XAI_OVERVIEW, pal = palette();
+  if (!O) { m.innerHTML = `<div class="panel loading">No overview data. Run build_overview.py next to this page.</div>`; return; }
+  const row = (c, mo = S.model, mk = S.mask, sc = S.score) => O.rows.find(r => r.category === c && r.model === mo && r.mask === mk && r.score === sc);
+  const rows = O.categories.map(c => row(c)), med = v => v ? v.med : NaN;
+  const cats = O.categories.map(c => O.cats[c]);
+  const nObj = cats.reduce((a, c) => a + c.objects, 0), nMain = cats.reduce((a, c) => a + c.main, 0), nSeen = nObj - nMain;
+  const trialRuns = cats.reduce((a, c) => a + c.trial * 14 * 2, 0), fullRuns = nObj * 2 * 2, exactFiles = O.categories.length * 2 * 2;
+  m.insertAdjacentHTML("beforeend", `<div class="path"><b>All ${O.categories.length} categories</b><span class="sep">›</span><b>${S.model === "single" ? "Single model (one category)" : "Joint model (14 categories)"}</b><span class="sep">›</span><b>${MASKS[S.mask]}</b><span class="sep">›</span><b>${SCORES[S.score]}</b><span class="sep">›</span><span>model, mask and score come from the left column</span></div>`);
+
+  // 1. the study at a glance
+  m.appendChild(panel("The study at a glance", "PointNet++ part segmentation, explained with KernelSHAP over 32 spatial groups of each object. Everything on this page comes from the saved results.",
+    `<div class="glance">
+      <div><b>${O.categories.length}</b><span>categories</span></div><div><b>2</b><span>models: single and joint</span></div>
+      <div><b>2</b><span>masks: origin and retained-point</span></div><div><b>2</b><span>scores: Part IoU and mean log-probability</span></div>
+      <div><b>${nObj}</b><span>test objects (${nMain} main${nSeen ? ` + ${nSeen} seen in training` : ""})</span></div><div><b>32</b><span>spatial groups per object</span></div></div>
+    <div class="scroll-x" style="margin-top:12px"><table class="top"><thead><tr><th>Phase</th><th>Question</th><th>Objects per category</th><th>Groups</th><th>Coalitions</th><th>SHAP seeds</th><th>Replacement seeds</th><th>Saved results</th></tr></thead><tbody>
+      <tr><td style="font-family:var(--font-body)"><b>Exact</b></td><td style="font-family:var(--font-body)">Is the calculation correct?</td><td>1</td><td>8</td><td>all 256; KernelSHAP 64, 128, 254</td><td>0, 1, 2</td><td>0</td><td>${exactFiles} files</td></tr>
+      <tr><td style="font-family:var(--font-body)"><b>Trial</b></td><td style="font-family:var(--font-body)">Which budget? Are the maps stable?</td><td>10</td><td>32</td><td>4,096 and 8,192</td><td>0, 1, 2</td><td>0, 1, 2 (retained-point, 8,192)</td><td>${fmtInt(trialRuns)} runs</td></tr>
+      <tr><td style="font-family:var(--font-body)"><b>Full</b></td><td style="font-family:var(--font-body)">The final maps</td><td>all test objects</td><td>32</td><td>8,192</td><td>0</td><td>0</td><td>${fmtInt(fullRuns)} runs</td></tr>
+    </tbody></table></div>`, "wide"));
+
+  // 2. headline table
+  const f2 = v => fmt(v, 2), f3 = v => fmt(v, 3);
+  let t = `<div class="scroll-x"><table class="top"><thead><tr><th>Category</th><th>Test objects</th><th>Parts</th><th>mIoU single / joint</th><th>Mask agreement</th><th>Model agreement</th><th>Seed agreement</th><th>AOPC gap</th><th>SHAP beats random</th><th>Additive R²</th><th>Groups for 80 %</th></tr></thead><tbody>`;
+  O.categories.forEach((c, k) => {
+    const r = rows[k], ci = O.cats[c];
+    t += `<tr><td style="font-family:var(--font-body)"><button type="button" class="catlink" data-cat="${c}" title="Open ${c} in the Object tab">${c}</button></td><td>${ci.main}</td><td>${ci.parts}</td><td>${f3(ci.miou.single)} / ${f3(ci.miou.joint)}</td>
+      <td>${f2(med(r.mask_agreement))}</td><td>${f2(med(r.model_agreement))}</td><td>${f3(med(r.seed_agreement))}</td><td>${f2(med(r.aopc_gap))}</td><td>${r.beats} of ${r.beats_of}</td><td>${f2(med(r.additive_r2))}</td><td>${fmt(med(r.groups80), 0)}</td></tr>`;
+  });
+  t += `</tbody></table></div>`;
+  const beats = rows.reduce((a, r) => a + r.beats, 0), of = rows.reduce((a, r) => a + r.beats_of, 0);
+  const seeds = rows.map(r => med(r.seed_agreement)), r2s = rows.map(r => med(r.additive_r2));
+  const lowest = rows.map(r => { const c = [["model", med(r.model_agreement)], ["mask", med(r.mask_agreement)]]; return c.sort((a, b) => a[1] - b[1])[0]; });
+  // the sentences follow the numbers of the chosen model, mask and score
+  const nCat = rows.length, bothBelow = rows.filter(r => Math.max(med(r.model_agreement), med(r.mask_agreement)) < med(r.seed_agreement) - 0.1).length;
+  const worse = rows.filter((r, k) => lowest[k][1] < med(r.seed_agreement)).length;
+  const findings = [
+    `${Math.min(...seeds) >= 0.9 ? "The maps are stable in every category" : "Stability"}: seed agreement is ${fmt(Math.min(...seeds), 2)} to ${fmt(Math.max(...seeds), 2)}.`,
+    `Removal check: the SHAP order beats random in ${beats === of ? "every case" : beats + " of " + of + " cases"}.`,
+    (bothBelow === nCat ? `The model and the mask both change the map much more than the seed, in every category.`
+      : `The model or the mask changes the map more than the seed in ${worse === nCat ? "every category" : worse + " of " + nCat + " categories"}. Both change it much more in ${bothBelow} of ${nCat}.`) +
+    (() => { const a = lowest.filter(x => x[0] === "mask").length, b = nCat - a;
+      return a === nCat ? " The mask changes it most in every category." : b === nCat ? " The model changes it most in every category."
+        : ` The mask changes it most in ${a} categories, the model in ${b}.`; })(),
+    `Additive R² for ${SCORES[S.score]}: ${fmt(Math.min(...r2s), 2)} to ${fmt(Math.max(...r2s), 2)} (1 = the sum of group values reproduces the model).`];
+  const hp = panel("All categories, main numbers", `Medians. Agreement = rank agreement of the 32 group values of two maps that differ in one choice (1 = same order). Seed agreement and the AOPC columns use the ${cats[0].trial} trial objects of each category; the other columns use all test objects. Click a category to open it.`,
+    t + `<h2 style="margin-top:14px">What this shows</h2><ul class="findings">${findings.map(f => `<li>${f}</li>`).join("")}</ul>`, "wide");
+  m.appendChild(hp);
+  hp.querySelectorAll(".catlink").forEach(b => b.addEventListener("click", () => goCategory(b.dataset.cat)));
+
+  // 3. ladder: which choice changes the map most, per category
+  const W = 940, rh = 58, L = 200, R = 24, T = 14, B = 40, H = T + rh * O.categories.length + B, x = v => L + Math.max(0, Math.min(1, v)) * (W - L - R);
+  let sv = `<svg viewBox="0 0 ${W} ${H}" data-xlo="0" role="img" aria-label="median rank agreement per choice and category">`;
+  for (const v of [0, 0.2, 0.4, 0.6, 0.8, 1]) sv += `<line x1="${x(v)}" x2="${x(v)}" y1="${T}" y2="${H - B + 6}" stroke="${pal.line}" stroke-width="0.8"/><text x="${x(v)}" y="${H - B + 22}" text-anchor="middle">${v}</text>`;
+  sv += `<text x="${(L + W - R) / 2}" y="${H - 4}" text-anchor="middle">median rank agreement of two maps that differ in one choice (bar = middle 50 %)</text>`;
+  O.categories.forEach((c, k) => {
+    const yc = T + rh * (k + 0.5), r = rows[k], rr = row(c, S.model, "retained_point", S.score);
+    sv += `<line x1="${L}" x2="${W - R}" y1="${yc}" y2="${yc}" stroke="${pal.line}" stroke-width="0.6"/>`;
+    sv += `<text x="${L - 12}" y="${yc - 3}" text-anchor="end" style="fill:${pal.ink};font-size:13px">${c}</text><text x="${L - 12}" y="${yc + 13}" text-anchor="end">${fmtInt(O.train[c])} training shapes</text>`;
+    const vals = { replacement: rr.replacement_agreement, seed: r.seed_agreement, budget: r.budget_agreement, model: r.model_agreement, mask: r.mask_agreement };
+    CHOICES.forEach(([key, label, col, shape], j) => {
+      const v = vals[key]; if (!v) return; const yy = yc + (j - 2) * 8;
+      sv += `<line x1="${x(v.q1)}" x2="${x(v.q3)}" y1="${yy}" y2="${yy}" stroke="${col}" stroke-width="3" opacity="0.45" stroke-linecap="round"/>` + marker(shape, x(v.med), yy, 5.5, col, `${c} · ${label}: median ${fmt(v.med)} (middle 50 %: ${fmt(v.q1)} to ${fmt(v.q3)}, n = ${v.n})`);
+    });
+  });
+  sv += `</svg>`;
+  m.appendChild(panel("Which choice changes the map most?", `One row per category. Each marker compares two maps that differ in one choice only; further left = the choice changes the map more. ${S.model === "single" ? "Single" : "Joint"} model, ${SCORES[S.score]}; seed and budget use the ${MASK_SHORT[S.mask]} mask, the replacement seed uses the retained-point mask. Seeds and budget: trial objects; model and mask: all test objects.`,
+    sv + `<div class="legend">${CHOICES.map(([, label, col, shape]) => `<span class="chip"><svg width="14" height="14" viewBox="0 0 14 14" style="width:14px;height:14px;display:inline">${marker(shape, 7, 7, 5, col, label)}</svg>${label}</span>`).join("")}</div>`, "wide"));
+
+  // 4. optional: model agreement against training-set size (log scale)
+  const pts = O.categories.map((c, k) => ({ c, x: Math.log10(O.train[c]), y: med(rows[k].model_agreement) }));
+  const [ylo, yhi] = fromZero(...niceRange(pts.map(p => p.y), 0.15)), xlo = Math.floor(Math.min(...pts.map(p => p.x)) * 10) / 10 - 0.1, xhi = Math.ceil(Math.max(...pts.map(p => p.x)) * 10) / 10 + 0.15;
+  const SW = 560, SH = 320, sL = 60, sR = 20, sT = 14, sB = 46, sx = v => sL + (v - xlo) / (xhi - xlo) * (SW - sL - sR), sy = v => sT + (yhi - v) / (yhi - ylo) * (SH - sT - sB);
+  let sc = `<svg class="small" viewBox="0 0 ${SW} ${SH}" data-xlog="1" data-ylo="${ylo}" role="img" aria-label="model agreement against training shapes">`;
+  for (const v of ticksIn(ylo, yhi)) sc += `<line x1="${sL}" x2="${SW - sR}" y1="${sy(v)}" y2="${sy(v)}" stroke="${pal.line}" stroke-width="0.7"/><text x="${sL - 6}" y="${sy(v) + 4}" text-anchor="end">${fmt(v, tickDec(ylo, yhi))}</text>`;
+  for (const v of [30, 100, 300, 1000, 3000]) if (Math.log10(v) >= xlo && Math.log10(v) <= xhi) sc += `<line x1="${sx(Math.log10(v))}" x2="${sx(Math.log10(v))}" y1="${sT}" y2="${SH - sB}" stroke="${pal.line}" stroke-width="0.7"/><text x="${sx(Math.log10(v))}" y="${SH - sB + 16}" text-anchor="middle">${fmtInt(v)}</text>`;
+  sc += `<text x="${(sL + SW - sR) / 2}" y="${SH - 6}" text-anchor="middle">training shapes of the category (log scale)</text><text transform="translate(14 ${(sT + SH - sB) / 2}) rotate(-90)" text-anchor="middle">single vs joint agreement</text>`;
+  // each label tries four spots around its dot and takes the first that touches no other label and no other dot
+  const dots = pts.map(p => ({ x: sx(p.x), y: sy(p.y) })), placed = [];
+  for (const p of [...pts].sort((a, b) => a.x - b.x)) {
+    const px = sx(p.x), py = sy(p.y), w = p.c.length * 7.2;
+    const spots = [{ x: px + 9, y: py - 8, a: "start" }, { x: px + 9, y: py + 20, a: "start" }, { x: px - 9 - w, y: py - 8, a: "end" }, { x: px - 9 - w, y: py + 20, a: "end" }];
+    const own = dots.find(d => d.x === px && d.y === py), others = dots.filter(d => d !== own);
+    const spot = spots.find(b => !placed.some(q => b.x < q.x + q.w + 10 && q.x < b.x + w + 10 && b.y - 13 < q.y && q.y - 13 < b.y)   // 10 px gap between labels
+                                 && !others.some(d => d.x > b.x - 7 && d.x < b.x + w + 7 && d.y > b.y - 18 && d.y < b.y + 6)) || spots[0];
+    placed.push({ x: spot.x, y: spot.y, w });
+    sc += `<circle cx="${px}" cy="${py}" r="6" fill="${pal.accent}"><title>${p.c}: ${fmtInt(O.train[p.c])} shapes, agreement ${fmt(p.y)}</title></circle><text x="${spot.a === "end" ? px - 9 : px + 9}" y="${spot.y}" text-anchor="${spot.a}" style="fill:${pal.ink};font-size:12px">${p.c}</text>`;
+  }
+  sc += `</svg>`;
+  const rc = spearman(Float64Array.from(pts.map(p => p.x)), Float64Array.from(pts.map(p => p.y)));
+  m.appendChild(panel("Do the two models agree more when there was more data?", `Median single-vs-joint rank agreement against the number of training shapes of the category. ${MASKS[S.mask]}, ${SCORES[S.score]}. Six points only: a hint, not proof.`,
+    sc + metricsRow([["rank correlation over the 6 categories", fmt(rc)]])));
+}
+
+/* ================= "how a map is made" tab ================= */
+const PREVIEW = { visible: "#1baf7a", hidden: "#eb6834" };
+function renderSteps(m) {
+  const d = D(), rec = objRec(S.object), pts = dec(rec.points, "i2"), truth = dec(rec.truth, "u1"), n = truth.length;
+  const pred = dec(rec.models[S.model].pred, "u1"), sh = shapFor(S), pal = palette(), partName = d.parts[S.part].name;
+  const exact = S.phase === "exact", groups = sh.groups, K = sh.K, fit = fitOf(pts);
+  // the preview hides the odd-numbered groups; the retained-point rows copy the saved donor rows
+  const repSeed = !exact && rec.preview[S.rep] ? S.rep : 0;
+  const donors = dec(exact ? d.exact[S.model][S.mask][S.object].preview : rec.preview[repSeed], "u2");
+  const hidden = Uint8Array.from(groups, g => g % 2 === 1), nHidden = hidden.reduce((a, b) => a + b, 0);
+  const origin = new Float32Array(pts), kept = new Float32Array(pts);
+  for (let i = 0, k = 0; i < n; i++) if (hidden[i]) { const j = donors[k++]; origin.set([0, 0, 0], 3 * i); kept.set([pts[3 * j], pts[3 * j + 1], pts[3 * j + 2]], 3 * i); }
+  const colour = f => { const c = new Float32Array(n * 3); for (let i = 0; i < n; i++) { const v = f(i); c[3 * i] = v[0]; c[3 * i + 1] = v[1]; c[3 * i + 2] = v[2]; } return c; };
+  const partCol = arr => colour(i => hexRgb(PART_COLORS[arr[i]] || "#888888"));
+  const maskCol = colour(i => hexRgb(hidden[i] ? PREVIEW.hidden : PREVIEW.visible));
+  let lim = 0; for (const v of sh.vals) lim = Math.max(lim, Math.abs(v));
+  const sum = sh.vals.reduce((a, b) => a + b, 0), unit = S.score === "iou" ? "IoU" : "mean log-probability";
+  const iou = rec.models[S.model].iou[S.part], miou = mean(rec.models[S.model].iou);
+  const cards = [
+    ["True parts", `The labels of the ${fmtInt(n)} sampled points. ${d.parts.map((p, j) => `<span style="color:${PART_COLORS[j]}">●</span> ${p.name}`).join(" ")}`, partCol(truth), "truth"],
+    ["Model prediction", `${d.models[S.model].label}. ${partName} IoU ${fmt(iou)}, object mIoU ${fmt(miou)}.`, partCol(pred), "prediction"],
+    [`${K} spatial groups`, `Nearby points form a group. The groups use only the geometry, never the labels. Each group is one player in SHAP.`, colour(i => groupColor(groups[i])), "groups"],
+    ["Hide groups · origin mask", `Example: the ${Math.floor(K / 2)} odd-numbered groups are hidden (orange, ${nHidden} points). Their points move to (0, 0, 0), so they pile up on one spot (the outlined orange dot).`, maskCol, "origin", origin],
+    [`Hide groups · retained-point mask`, `Same groups hidden. Each hidden point takes the position of a visible point (replacement seed ${repSeed}), so the hidden points lie on top of visible ones.`, maskCol, "retained", kept],
+    [`SHAP map · ${partName} · ${SCORES[S.score]}`, `One value per group, shown on the original positions. Red raises the ${unit}, blue lowers it. ${MASKS[S.mask]}${exact ? "" : ", " + coalLabel(S.coal) + " coalitions"}.`, colour(i => divColor(sh.vals[groups[i]], lim, pal)), "shap"]];
+  m.insertAdjacentHTML("beforeend", `<div class="path"><b>${S.category}</b><span class="sep">›</span><b>${d.models[S.model].label}</b><span class="sep">›</span><b>${PHASES[S.phase]} phase</b><span class="sep">›</span><b>object #${S.object}</b><span class="sep">›</span><b>${partName}</b><span class="sep">›</span><b>${SCORES[S.score]}</b></div>`);
+  const sec = panel("How a map is made, step by step", `The same object at every step. Rotating, zooming or panning any view moves all of them. The masked inputs are exactly what the model receives for this group pattern: the hidden rows and their replacement positions come from the study's own masking code. The model's score for this particular pattern was not saved, so it is not shown.`, `<div class="steps-grid"></div>`, "wide");
+  m.appendChild(sec);
+  const grid = sec.querySelector(".steps-grid");
+  cards.forEach(([title, note, cols, key, p], k) => {
+    const card = document.createElement("div"); card.className = "step-card";
+    card.innerHTML = `<div class="t"><span><span class="num">${k + 1}</span>${title}</span></div><div class="canvas-wrap"></div><div class="s">${note}</div>`;
+    grid.appendChild(card);
+    const v = new Viewer(card.querySelector(".canvas-wrap"), false);
+    v.set(p || pts, cols, groups, null, { fit, top: key === "origin" ? hidden : null });
+    card.querySelector(".t").appendChild(saveButton(() => v.exportPNG(fileBase() + "_step" + (k + 1) + "-" + key + ".png")));
+  });
+  m.appendChild(panel("From the hidden inputs to the SHAP values", "", `
+    <div class="steps-grid">
+      <div class="step-card"><div class="t"><span><span class="num">7</span>Score every tested pattern</span></div><div class="s">KernelSHAP tests ${exact ? "all 256 patterns of the 8 groups" : fmtInt(+S.coal) + " patterns like the one above"}. Each masked input goes through the model, and the score is the ${partName} ${unit}.</div>
+        <dl class="kv"><dt>All groups hidden</dt><dd>${fmt(sh.vE)}</dd><dt>All groups visible</dt><dd>${fmt(sh.vF)}</dd><dt>Difference</dt><dd>${fmt(sh.vF - sh.vE, 4)}</dd></dl></div>
+      <div class="step-card"><div class="t"><span><span class="num">8</span>Share the difference between the groups</span></div><div class="s">SHAP gives every group one value. Together they add up to the difference, so the map shows how the change from hidden to visible is shared.</div>
+        <dl class="kv"><dt>Sum of the ${K} SHAP values</dt><dd>${fmt(sum, 4)}</dd><dt>Largest group</dt><dd>${fmt(Math.max(...sh.vals), 4)}</dd><dt>Groups that raise the score</dt><dd>${Array.from(sh.vals).filter(v => v > 0).length} of ${K}</dd></dl></div>
+    </div>`, "wide"));
+}
+
+/* ================= category summary tab ================= */
+function renderSummary(m) {
+  const d = D(), pal = palette(), objs = mainObjects(), P = nParts(), names = d.parts.map(p => p.name);
+  const seen = d.objects.length - objs.length;
+  m.insertAdjacentHTML("beforeend", `<div class="path"><b>${S.category}</b><span class="sep">›</span><b>${d.models[S.model].label}</b><span class="sep">›</span><b>${MASKS[S.mask]}</b><span class="sep">›</span><b>${names[S.part]}</b><span class="sep">›</span><b>${SCORES[S.score]}</b><span class="sep">›</span><span>${objs.length} test objects${seen ? ` (${seen} training-seen objects left out)` : ""}; each panel says which settings it uses</span></div>`);
+
+  // 1. which choice changes the map most
+  const ladder = [];
+  const trialRho = (model, mask, pick) => { const out = []; for (const i of d.trialObjects) for (let p = 0; p < P; p++) stabilityRows(model, mask, i, S.score, p).filter(pick).forEach(r => out.push(r.rho)); return out; };
+  const b2 = Math.max(...d.trialBudgets);
+  ladder.push({ label: "Replacement seed", note: `trial, ${d.trialObjects.length} objects, retained-point`, v: trialRho(S.model, "retained_point", r => r.group.startsWith("Replacement")) });
+  ladder.push({ label: `SHAP seed (${fmtInt(b2)})`, note: `trial, ${MASK_SHORT[S.mask]}`, v: trialRho(S.model, S.mask, r => r.group === `SHAP seed, ${fmtInt(b2)}`) });
+  ladder.push({ label: "Coalitions 4,096 vs 8,192", note: `trial, ${MASK_SHORT[S.mask]}`, v: trialRho(S.model, S.mask, r => r.group === "Coalitions") });
+  const maskRho = [], modelRho = [];
+  for (const i of objs) for (let p = 0; p < P; p++) {
+    maskRho.push(spearman(fullVals(S.model, "centroid", i, S.score, p), fullVals(S.model, "retained_point", i, S.score, p)));
+    modelRho.push(spearman(fullVals("single", S.mask, i, S.score, p), fullVals("joint", S.mask, i, S.score, p)));
+  }
+  ladder.push({ label: "Model (single vs joint)", note: `full, ${objs.length} objects, ${MASK_SHORT[S.mask]}`, v: modelRho });
+  ladder.push({ label: "Mask (origin vs retained)", note: `full, ${objs.length} objects`, v: maskRho });
+  const medOr = v => { const x = median(v); return Number.isFinite(x) ? x : -2; };   // no data: last
+  ladder.sort((a, b) => medOr(b.v) - medOr(a.v));
+  const W = 760, rh = 34, L = 250, R = 70, H = ladder.length * rh + 30, x = v => L + Math.max(0, v) * (W - L - R);
+  let lsvg = `<svg viewBox="0 0 ${W} ${H}" style="max-width:900px" data-xlo="0" role="img" aria-label="median rank agreement per choice">`;
+  for (const t of [0, 0.25, 0.5, 0.75, 1]) lsvg += `<line x1="${x(t)}" x2="${x(t)}" y1="0" y2="${H - 22}" stroke="${pal.line}" stroke-width="0.8"/><text x="${x(t)}" y="${H - 6}" text-anchor="middle">${t}</text>`;
+  ladder.forEach((l, k) => {
+    const q = l.v.filter(Number.isFinite).sort((a, b) => a - b), yy = k * rh + 16;
+    if (!q.length) { lsvg += `<text x="0" y="${yy + 1}" style="fill:${pal.ink};font-size:12px">${l.label}</text><text x="${L}" y="${yy + 1}">no data</text>`; return; }
+    const md = median(q), q1 = quantile(q, 0.25), q3 = quantile(q, 0.75);
+    lsvg += `<text x="0" y="${yy + 1}" style="fill:${pal.ink};font-size:12px">${l.label}</text><text x="0" y="${yy + 14}">${l.note}</text>`;
+    lsvg += `<line x1="${x(q1)}" x2="${x(q3)}" y1="${yy}" y2="${yy}" stroke="${pal.accent}" stroke-width="6" opacity="0.3" stroke-linecap="round"/><circle cx="${x(md)}" cy="${yy}" r="6" fill="${pal.accent}"/><text x="${x(md) + 10}" y="${yy - 8}" style="fill:${pal.ink}">${fmt(md)}</text>`;
+  });
+  lsvg += `</svg>`;
+  m.appendChild(panel("Which choice changes the map most?", `Median rank agreement of two maps that differ in one choice only (1 = same order of groups). Band = middle 50% of the comparisons. ${d.models[S.model].label}, ${SCORES[S.score]}, all parts pooled. Seed and budget use the ${d.trialObjects.length} trial objects; model and mask use all test objects.`, lsvg, "wide"));
+
+  const grid = document.createElement("div"); grid.className = "twocol sum"; m.appendChild(grid);
+  // 2. model quality
+  const mi = { single: [], joint: [] }; for (const i of objs) for (const mm of ["single", "joint"]) mi[mm].push(mean(objRec(i).models[mm].iou));
+  const allm = [...mi.single, ...mi.joint], [hlo, hhi] = [Math.min(...allm), 1];
+  const perPart = d.parts.map((p, j) => [p.name, fmt(mean(objs.map(i => objRec(i).models.single.iou[j]))), fmt(mean(objs.map(i => objRec(i).models.joint.iou[j])))]);
+  grid.appendChild(panel("How good is the segmentation?", "Object mIoU on the test objects, both models.",
+    histChart([{ values: mi.single, color: MODEL_COLORS.single }, { values: mi.joint, color: MODEL_COLORS.joint }], { pal, lo: Math.floor(hlo * 20) / 20, hi: hhi, bins: 20, xlab: "object mIoU" }) +
+    legend([[MODEL_COLORS.single, `single · mean ${fmt(mean(mi.single))}`], [MODEL_COLORS.joint, `joint · mean ${fmt(mean(mi.joint))}`]]) +
+    `<table class="top" style="margin-top:8px"><thead><tr><th>Part</th><th>Single IoU</th><th>Joint IoU</th></tr></thead><tbody>${perPart.map(r => `<tr><td style="font-family:var(--font-body)">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("")}</tbody></table>`));
+  grid.appendChild(panel("Single against joint, per object", "Each dot is one object. Above the line = the joint model is better on it.",
+    scatterChart(objs.map((i, k) => ({ x: mi.single[k], y: mi.joint[k], title: `#${i}: single ${fmt(mi.single[k])}, joint ${fmt(mi.joint[k])}` })), { pal, xlo: hlo - 0.02, xhi: 1, ylo: hlo - 0.02, yhi: 1, diag: true, xlab: "single model mIoU", ylab: "joint model mIoU", r: 3.2, opacity: 0.6 })));
+
+  // 3. mask agreement and model agreement per part
+  const byPart = (fn) => d.parts.map((p, j) => objs.map(i => fn(i, j)));
+  const maskBy = { iou: byPart((i, j) => spearman(fullVals(S.model, "centroid", i, "iou", j), fullVals(S.model, "retained_point", i, "iou", j))),
+                   logprob_mean: byPart((i, j) => spearman(fullVals(S.model, "centroid", i, "logprob_mean", j), fullVals(S.model, "retained_point", i, "logprob_mean", j))) };
+  const cols = []; d.parts.forEach((p, j) => { cols.push({ label: p.name, sub: "IoU", values: maskBy.iou[j], color: SCORE_COLORS.iou }); cols.push({ label: "", sub: "log-prob", values: maskBy.logprob_mean[j], color: SCORE_COLORS.logprob_mean }); });
+  grid.appendChild(panel("Do the two masks agree?", `Rank agreement between the origin-mask map and the retained-point map of the same object. ${d.models[S.model].label}. Green = Part IoU, pink = mean log-probability.`,
+    stripChart(cols, { pal, ylo: lowAxis(cols), yhi: 1, ylab: "rank agreement, origin vs retained" })));
+  const mcols = []; d.parts.forEach((p, j) => Object.keys(MASKS).forEach((mk, k) => mcols.push({ label: k ? "" : p.name, sub: mk === "centroid" ? "origin" : "retained", values: objs.map(i => spearman(fullVals("single", mk, i, S.score, j), fullVals("joint", mk, i, S.score, j))), color: MASK_COLORS[mk] })));
+  grid.appendChild(panel("Do the two models agree?", `Rank agreement between the single-model map and the joint-model map of the same object. ${SCORES[S.score]}.`,
+    stripChart(mcols, { pal, ylo: lowAxis(mcols), yhi: 1, ylab: "rank agreement, single vs joint" })));
+
+  // 4. stability over trial objects
+  const scols = [];
+  const kinds = [[`SHAP seed, ${fmtInt(Math.min(...d.trialBudgets))}`, "seed@" + (Math.min(...d.trialBudgets) / 1024) + "k"], [`SHAP seed, ${fmtInt(b2)}`, "seed@" + (b2 / 1024) + "k"], ["Coalitions", "4k vs 8k"], [`Replacement seed, ${fmtInt(b2)}`, "repl.@8k"]];
+  kinds.forEach(([g, lab]) => Object.keys(MASKS).forEach(mk => { if (g.startsWith("Replacement") && mk === "centroid") return;
+    scols.push({ label: lab, sub: mk === "centroid" ? "origin" : "retained", values: trialRho(S.model, mk, r => r.group === g), color: MASK_COLORS[mk] }); }));
+  grid.appendChild(panel("How stable are the maps? (trial objects)", `Rank agreement between two runs that differ only in the named setting. ${d.trialObjects.length} trial objects × ${P} parts × seed pairs. ${d.models[S.model].label}, ${SCORES[S.score]}.`,
+    stripChart(scols, { pal, ylo: Math.floor(Math.min(0.7, ...scols.flatMap(c => c.values).filter(Number.isFinite)) * 20) / 20, yhi: 1, ylab: "rank agreement", nd: 3 })));
+
+  // 5. additive R^2
+  const rcols = []; d.parts.forEach((p, j) => Object.keys(MASKS).forEach((mk, k) => rcols.push({ label: k ? "" : p.name, sub: mk === "centroid" ? "origin" : "retained", values: objs.map(i => d.full[S.model][mk][i].r2[S.score][j]).filter(v => v !== null), color: MASK_COLORS[mk] })));
+  const rlo = Math.min(0, ...rcols.flatMap(c => c.values));
+  grid.appendChild(panel("How additive is the model? (additive R²)", `How well "all hidden + sum of SHAP values of the visible groups" reproduces the model score on the 8,192 saved coalitions. 1 = the model behaves like a sum of group effects; low = strong interactions, so a single number per group is a rough summary. ${d.models[S.model].label}, ${SCORES[S.score]}.`,
+    stripChart(rcols, { pal, ylo: Math.max(-1, rlo), yhi: 1, ylab: "additive R²" })));
+
+  // 6. part credit, both masks
+  const creditMat = mk => d.parts.map((p, j) => { const acc = new Float64Array(P); for (const i of objs) { const f = groupFacts(i, dec(objRec(i).groups, "u1")), c = credit(fullVals(S.model, mk, i, S.score, j), f); for (let q = 0; q < P; q++) acc[q] += c[q] / objs.length; } return Array.from(acc); });
+  grid.appendChild(panel("Where the credit comes from (mean over objects)", `Each row = the part explained; columns = the true part of the points that carry the credit. ${d.models[S.model].label}, ${SCORES[S.score]}.`,
+    Object.keys(MASKS).map(mk => `<div class="note" style="margin:6px 0 2px"><b>${MASKS[mk]}</b></div>` + heatTable(creditMat(mk), names, names.map(n => "from " + n), null, pal)).join("")));
+
+  // 7. concentration
+  const ccols = []; d.parts.forEach((p, j) => Object.keys(MASKS).forEach((mk, k) => ccols.push({ label: k ? "" : p.name, sub: mk === "centroid" ? "origin" : "retained", values: objs.map(i => concentration(fullVals(S.model, mk, i, S.score, j)).g80), color: MASK_COLORS[mk] })));
+  grid.appendChild(panel("How many groups carry 80% of the explanation?", `Out of ${d.groups} groups. Fewer = a sharper, more focused map. ${d.models[S.model].label}, ${SCORES[S.score]}.`,
+    stripChart(ccols, { pal, ylo: 0, yhi: d.groups, ylab: "groups for 80% of |SHAP|", nd: 0 })));
+
+  // 8. removal over trial objects
+  const rem = d.removal[S.model][S.mask], pid = d.parts[S.part].id, curves = d.trialObjects.map(i => rem[i] && rem[i][S.score][pid]).filter(r => r && r.helpful.length > 1);
+  if (curves.length) {
+    const len = Math.min(...curves.map(r => r.helpful.length)), series = [];
+    curves.forEach(r => { const s = removalSeries(r, "groups"); series.push({ pts: s.x.slice(0, len).map((x, k) => [x, s.mean[k]]), color: pal.muted, w: 1, opacity: 0.45 }); series.push({ pts: s.x.slice(0, len).map((x, k) => [x, s.helpful[k]]), color: pal.accent, w: 1, opacity: 0.45 }); });
+    const avgH = Array.from({ length: len }, (_, k) => mean(curves.map(r => r.helpful[k]))), avgR = Array.from({ length: len }, (_, k) => mean(curves.map(r => mean(r.random.map(row => row[k])))));
+    series.push({ pts: avgR.map((v, k) => [k, v]), color: pal.ink, dash: true, w: 2.4 }, { pts: avgH.map((v, k) => [k, v]), color: pal.accent, w: 3 });
+    const [lo, hi] = niceRange(series.flatMap(s => s.pts.map(p => p[1])), 0.04);
+    let win = 0, tot = 0; for (const i of d.trialObjects) for (const p of d.parts) { const r = rem[i] && rem[i][S.score][p.id]; if (!r || r.helpful.length < 2) continue; const k = Math.min(5, r.helpful.length - 1); tot++; if (r.helpful[k] < mean(r.random.map(row => row[k]))) win++; }
+    grid.appendChild(panel("Removal check over the trial objects", `${names[S.part]}, ${MASKS[S.mask].toLowerCase()}, ${SCORES[S.score]}. Thin lines = one object each; thick = mean. Cut at ${len - 1} groups (the shortest curve).`,
+      lineChart({ pal, xmin: 0, xmax: len - 1, ylo: lo, yhi: hi, xlab: "groups hidden", ylab: SCORES[S.score], series, W: 540, H: 290 }) +
+      legend([[pal.accent, "most helpful first (SHAP order)"], [pal.ink, "random orders (mean)"]]) +
+      metricsRow([["after 5 groups, SHAP order is lower than the random mean in", `${win} of ${tot} cases`], ["", "(all parts, trial objects)"]])));
+  }
+
+  // 8b. AOPC over the trial objects: one table, both masks, selected model and score
+  {
+    let rowsH = "", beatAll = 0, totAll = 0;
+    for (const p of d.parts) for (const mk of Object.keys(MASKS)) {
+      const vals = d.trialObjects.map(i => { const r = d.removal[S.model][mk][i] && d.removal[S.model][mk][i][S.score][p.id]; return r && r.helpful.length > 1 ? aopcOf(r) : null; }).filter(Boolean);
+      if (!vals.length) continue;
+      const beat = vals.filter(v => v.gap > 0).length; beatAll += beat; totAll += vals.length;
+      rowsH += `<tr><td style="font-family:var(--font-body)">${mk === "centroid" ? p.name : ""}</td><td style="font-family:var(--font-body)">${MASK_SHORT[mk]}</td><td>${fmt(median(vals.map(v => v.shap)))}</td><td>${fmt(median(vals.map(v => v.random)))}</td><td>${fmt(median(vals.map(v => v.gap)))}</td><td>${beat} of ${vals.length}</td></tr>`;
+    }
+    if (totAll) grid.appendChild(panel("Removal check: AOPC over the trial objects",
+      `AOPC = the average score drop while hiding the most helpful groups first (larger = faster drop). Median over the ${d.trialObjects.length} trial objects. ${d.models[S.model].label}, ${SCORES[S.score]}.`,
+      `<div class="scroll-x"><table class="top"><thead><tr><th>Part</th><th>Mask</th><th>AOPC, SHAP order</th><th>AOPC, random</th><th>Gap</th><th>SHAP beats random</th></tr></thead><tbody>${rowsH}</tbody></table></div>` +
+      metricsRow([["SHAP order beats random in", `${beatAll} of ${totAll} cases`]])));
+  }
+
+  // 9. explanation against prediction quality
+  const ys = { mask: ["rank agreement of the two masks", (i, j) => spearman(fullVals(S.model, "centroid", i, S.score, j), fullVals(S.model, "retained_point", i, S.score, j))],
+               own: ["share of positive credit on the part's own points", (i, j) => positiveShare(fullVals(S.model, S.mask, i, S.score, j), groupFacts(i, dec(objRec(i).groups, "u1")), j)],
+               r2: ["additive R²", (i, j) => d.full[S.model][S.mask][i].r2[S.score][j]] };
+  const [ylab, fy] = ys[S.qy] || ys.mask;
+  const qp = objs.map(i => ({ x: objRec(i).models[S.model].iou[S.part], y: fy(i, S.part), title: `#${i}` })).filter(p => Number.isFinite(p.y) && p.y !== null);
+  const [qxlo, qxhi] = niceRange(qp.map(p => p.x), 0.04), [qylo, qyhi] = niceRange(qp.map(p => p.y), 0.04);
+  const rq = spearman(Float64Array.from(qp.map(p => p.x)), Float64Array.from(qp.map(p => p.y)));
+  const qs = panel("Is the explanation different when the prediction is poor?", `Each dot is one object. x = the model's ${names[S.part]} IoU. ${d.models[S.model].label}, ${SCORES[S.score]}${S.qy === "mask" ? "" : ", " + MASKS[S.mask].toLowerCase()}.`,
+    `<div class="seg" id="c-qy" style="margin-bottom:8px"></div>` + scatterChart(qp, { pal, xlo: qxlo, xhi: Math.min(1.02, qxhi), ylo: qylo, yhi: qyhi, xlab: `${names[S.part]} IoU (prediction quality)`, ylab, r: 3.2, opacity: 0.6, W: 420, maxw: 520 }) +
+    metricsRow([["rank correlation between the two", fmt(rq)], ["objects", qp.length]]));
+  grid.appendChild(qs);
+  seg(qs.querySelector("#c-qy"), [["mask", "mask agreement"], ["own", "own-part credit"], ["r2", "additive R²"]].map(([v, l]) => ({ value: v, label: l })), S.qy, v => set("qy", v));
+}
+
+/* ================= render, theme, loading ================= */
+function render() {
+  if (!D()) return;
+  const a = document.activeElement, box = a && a.tagName === "BUTTON" && a.parentElement && a.parentElement.id ? a.parentElement.id : null;
+  normalize(S); applyFont(); save(); renderControls();
+  const m = $("main"); m.innerHTML = ""; viewers.length = 0; hoverGroup = null;
+  if (S.tab === "overview") renderOverview(m); else if (S.tab === "summary") renderSummary(m); else if (S.tab === "steps") renderSteps(m); else renderObject(m);
+  addPanelSaves(m);
+  drawAll();
+  if (box) { const el = document.getElementById(box); const b = el && (el.querySelector('button[aria-pressed="true"]') || el.querySelector("button")); if (b) b.focus({ preventScroll: true }); }
+}
+/* the font set: CSS font stacks of the page; saved images take the same faces (see svgImage and exportRegion) */
+function applyFont() { const f = FONT_SETS[S.font]; if (!f) return; const r = document.documentElement; r.dataset.font = S.font; for (const k of ["body", "data", "code"]) r.style.setProperty("--font-" + k, f[k]); }
+function applyTheme() { if (S.theme === "system") document.documentElement.removeAttribute("data-theme"); else document.documentElement.setAttribute("data-theme", S.theme); }
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => render());
+const pending = {};          // category -> script element being loaded
+function loadCategory(prev) {
+  const cat = S.category;
+  if (window.XAI_DATA && window.XAI_DATA[cat]) { render(); return; }
+  $("main").innerHTML = `<div class="panel loading">Loading ${cat}…</div>`;
+  document.querySelectorAll("#c-category button").forEach(b => b.setAttribute("aria-pressed", String(b.textContent === cat)));
+  if (pending[cat]) return;                     // already on its way
+  const sc = document.createElement("script"); sc.src = "data/" + cat + ".js"; pending[cat] = sc;
+  sc.onload = () => { delete pending[cat]; if (S.category === cat) render(); };
+  sc.onerror = () => {
+    delete pending[cat]; sc.remove();
+    if (S.category !== cat) return;
+    const back = prev && window.XAI_DATA && window.XAI_DATA[prev] ? prev : null;
+    if (back) { S.category = back; render(); }
+    $("main").insertAdjacentHTML("afterbegin", `<div class="panel loading" role="alert">Could not load data/${cat}.js. Run build_data.py next to this page.${back ? " Showing " + back + " instead." : ""}</div>`);
+  };
+  document.head.appendChild(sc);
+}
+$("c-object").addEventListener("change", e => set("object", +e.target.value));
+document.addEventListener("keydown", e => {        // arrow keys step through objects when no field has focus
+  if (S.tab !== "object" || e.altKey || e.ctrlKey || e.metaKey) return;
+  const t = e.target; if (t && (t.tagName === "SELECT" || t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.classList.contains("canvas-wrap"))) return;
+  if (e.key === "ArrowRight") { step(1); e.preventDefault(); } else if (e.key === "ArrowLeft") { step(-1); e.preventDefault(); }
+});
+$("c-compare").addEventListener("change", e => set("compare", e.target.value));
+function step(dir) { if (!D()) return; const o = options(S).objects, k = o.indexOf(S.object); set("object", o[(k + dir + o.length) % o.length]); }
+$("b-prev").addEventListener("click", () => step(-1));
+$("b-next").addEventListener("click", () => step(1));
+let rz; window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(drawAll, 80); });
+if (["#overview", "#summary", "#object", "#steps"].includes(location.hash)) S.tab = location.hash.slice(1);
+window.addEventListener("hashchange", () => { const h = location.hash.slice(1); if (["overview", "summary", "object", "steps"].includes(h) && h !== S.tab) set("tab", h); });
+// read-only hook for automated tests
+window.__explorer = { state: () => JSON.parse(JSON.stringify(S)), dims: () => (D() ? compareDims().map(x => ({ key: x.key, values: x.values })) : []), dec, options: () => options(S), camera,
+  viewers: () => viewers.map(v => ({ n: v.pts ? v.pts.length / 3 : 0, shown: v.show ? v.show.reduce((a, b) => a + b, 0) : (v.pts ? v.pts.length / 3 : 0), atOrigin: v.pts ? Array.from({ length: v.pts.length / 3 }, (_, i) => i).filter(i => v.pts[3 * i] === 0 && v.pts[3 * i + 1] === 0 && v.pts[3 * i + 2] === 0).length : 0 })) };
+applyTheme(); applyFont();
+if (!CATS.length) $("main").innerHTML = `<div class="panel loading">No data found. Run build_data.py next to this page.</div>`;
+else loadCategory();
+</script>
+</body>
+</html>

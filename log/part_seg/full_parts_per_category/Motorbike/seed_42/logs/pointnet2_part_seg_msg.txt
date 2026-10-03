@@ -1,0 +1,871 @@
+2026-09-08 22:55:04,532 - Model - INFO - PARAMETER ...
+2026-09-08 22:55:04,532 - Model - INFO - Namespace(model='pointnet2_part_seg_msg', batch_size=16, epoch=100, learning_rate=0.001, gpu='1', optimizer='Adam', log_dir='full_parts_per_category/Motorbike/seed_42', decay_rate=0.0001, npoint=2048, step_size=20, lr_decay=0.5, seed=42, categories=['Motorbike'], samples_per_category=None, subset_seed=0, test_samples_per_category=None, test_subset_seed=0, full_parts_only=True, num_parts=None)
+2026-09-08 22:55:04,582 - Model - INFO - The number of training data is: 70
+2026-09-08 22:55:04,582 - Model - INFO - The number of test data is: 34
+2026-09-08 22:55:04,733 - Model - INFO - No existing model, starting training from scratch...
+2026-09-08 22:55:05,316 - Model - INFO - Epoch 1 (1/100):
+2026-09-08 22:55:05,316 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:09,169 - Model - INFO - Train accuracy is: 0.14735
+2026-09-08 22:55:10,072 - Model - INFO - eval mIoU of Motorbike      0.115490
+2026-09-08 22:55:10,073 - Model - INFO - Epoch 1 test Accuracy: 0.692943  Class avg mIOU: 0.115490   Inctance avg mIOU: 0.115490
+2026-09-08 22:55:10,073 - Model - INFO - Save model...
+2026-09-08 22:55:10,073 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:55:10,105 - Model - INFO - Saving model....
+2026-09-08 22:55:10,106 - Model - INFO - Best accuracy is: 0.69294
+2026-09-08 22:55:10,106 - Model - INFO - Best class avg mIOU is: 0.11549
+2026-09-08 22:55:10,106 - Model - INFO - Best inctance avg mIOU is: 0.11549
+2026-09-08 22:55:10,106 - Model - INFO - Epoch 2 (2/100):
+2026-09-08 22:55:10,106 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:11,970 - Model - INFO - Train accuracy is: 0.52969
+2026-09-08 22:55:12,854 - Model - INFO - eval mIoU of Motorbike      0.115773
+2026-09-08 22:55:12,854 - Model - INFO - Epoch 2 test Accuracy: 0.694638  Class avg mIOU: 0.115773   Inctance avg mIOU: 0.115773
+2026-09-08 22:55:12,854 - Model - INFO - Save model...
+2026-09-08 22:55:12,854 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:55:12,889 - Model - INFO - Saving model....
+2026-09-08 22:55:12,889 - Model - INFO - Best accuracy is: 0.69464
+2026-09-08 22:55:12,889 - Model - INFO - Best class avg mIOU is: 0.11577
+2026-09-08 22:55:12,890 - Model - INFO - Best inctance avg mIOU is: 0.11577
+2026-09-08 22:55:12,890 - Model - INFO - Epoch 3 (3/100):
+2026-09-08 22:55:12,890 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:14,751 - Model - INFO - Train accuracy is: 0.64029
+2026-09-08 22:55:15,639 - Model - INFO - eval mIoU of Motorbike      0.031293
+2026-09-08 22:55:15,639 - Model - INFO - Epoch 3 test Accuracy: 0.187759  Class avg mIOU: 0.031293   Inctance avg mIOU: 0.031293
+2026-09-08 22:55:15,640 - Model - INFO - Best accuracy is: 0.69464
+2026-09-08 22:55:15,640 - Model - INFO - Best class avg mIOU is: 0.11577
+2026-09-08 22:55:15,640 - Model - INFO - Best inctance avg mIOU is: 0.11577
+2026-09-08 22:55:15,640 - Model - INFO - Epoch 4 (4/100):
+2026-09-08 22:55:15,640 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:17,504 - Model - INFO - Train accuracy is: 0.67085
+2026-09-08 22:55:18,386 - Model - INFO - eval mIoU of Motorbike      0.031408
+2026-09-08 22:55:18,386 - Model - INFO - Epoch 4 test Accuracy: 0.188448  Class avg mIOU: 0.031408   Inctance avg mIOU: 0.031408
+2026-09-08 22:55:18,386 - Model - INFO - Best accuracy is: 0.69464
+2026-09-08 22:55:18,386 - Model - INFO - Best class avg mIOU is: 0.11577
+2026-09-08 22:55:18,386 - Model - INFO - Best inctance avg mIOU is: 0.11577
+2026-09-08 22:55:18,386 - Model - INFO - Epoch 5 (5/100):
+2026-09-08 22:55:18,386 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:20,247 - Model - INFO - Train accuracy is: 0.71099
+2026-09-08 22:55:21,132 - Model - INFO - eval mIoU of Motorbike      0.031106
+2026-09-08 22:55:21,132 - Model - INFO - Epoch 5 test Accuracy: 0.186638  Class avg mIOU: 0.031106   Inctance avg mIOU: 0.031106
+2026-09-08 22:55:21,133 - Model - INFO - Best accuracy is: 0.69464
+2026-09-08 22:55:21,133 - Model - INFO - Best class avg mIOU is: 0.11577
+2026-09-08 22:55:21,133 - Model - INFO - Best inctance avg mIOU is: 0.11577
+2026-09-08 22:55:21,133 - Model - INFO - Epoch 6 (6/100):
+2026-09-08 22:55:21,133 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:22,992 - Model - INFO - Train accuracy is: 0.73310
+2026-09-08 22:55:23,876 - Model - INFO - eval mIoU of Motorbike      0.031372
+2026-09-08 22:55:23,876 - Model - INFO - Epoch 6 test Accuracy: 0.188232  Class avg mIOU: 0.031372   Inctance avg mIOU: 0.031372
+2026-09-08 22:55:23,876 - Model - INFO - Best accuracy is: 0.69464
+2026-09-08 22:55:23,876 - Model - INFO - Best class avg mIOU is: 0.11577
+2026-09-08 22:55:23,876 - Model - INFO - Best inctance avg mIOU is: 0.11577
+2026-09-08 22:55:23,876 - Model - INFO - Epoch 7 (7/100):
+2026-09-08 22:55:23,876 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:25,734 - Model - INFO - Train accuracy is: 0.75143
+2026-09-08 22:55:26,619 - Model - INFO - eval mIoU of Motorbike      0.031719
+2026-09-08 22:55:26,619 - Model - INFO - Epoch 7 test Accuracy: 0.190315  Class avg mIOU: 0.031719   Inctance avg mIOU: 0.031719
+2026-09-08 22:55:26,620 - Model - INFO - Best accuracy is: 0.69464
+2026-09-08 22:55:26,620 - Model - INFO - Best class avg mIOU is: 0.11577
+2026-09-08 22:55:26,620 - Model - INFO - Best inctance avg mIOU is: 0.11577
+2026-09-08 22:55:26,620 - Model - INFO - Epoch 8 (8/100):
+2026-09-08 22:55:26,620 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:28,475 - Model - INFO - Train accuracy is: 0.76729
+2026-09-08 22:55:29,366 - Model - INFO - eval mIoU of Motorbike      0.166078
+2026-09-08 22:55:29,366 - Model - INFO - Epoch 8 test Accuracy: 0.386029  Class avg mIOU: 0.166078   Inctance avg mIOU: 0.166078
+2026-09-08 22:55:29,367 - Model - INFO - Save model...
+2026-09-08 22:55:29,367 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:55:29,413 - Model - INFO - Saving model....
+2026-09-08 22:55:29,413 - Model - INFO - Best accuracy is: 0.69464
+2026-09-08 22:55:29,413 - Model - INFO - Best class avg mIOU is: 0.16608
+2026-09-08 22:55:29,413 - Model - INFO - Best inctance avg mIOU is: 0.16608
+2026-09-08 22:55:29,413 - Model - INFO - Epoch 9 (9/100):
+2026-09-08 22:55:29,413 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:31,276 - Model - INFO - Train accuracy is: 0.78720
+2026-09-08 22:55:32,158 - Model - INFO - eval mIoU of Motorbike      0.152175
+2026-09-08 22:55:32,158 - Model - INFO - Epoch 9 test Accuracy: 0.463350  Class avg mIOU: 0.152175   Inctance avg mIOU: 0.152175
+2026-09-08 22:55:32,158 - Model - INFO - Best accuracy is: 0.69464
+2026-09-08 22:55:32,158 - Model - INFO - Best class avg mIOU is: 0.16608
+2026-09-08 22:55:32,158 - Model - INFO - Best inctance avg mIOU is: 0.16608
+2026-09-08 22:55:32,158 - Model - INFO - Epoch 10 (10/100):
+2026-09-08 22:55:32,158 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:34,021 - Model - INFO - Train accuracy is: 0.80018
+2026-09-08 22:55:34,905 - Model - INFO - eval mIoU of Motorbike      0.356143
+2026-09-08 22:55:34,906 - Model - INFO - Epoch 10 test Accuracy: 0.608729  Class avg mIOU: 0.356143   Inctance avg mIOU: 0.356143
+2026-09-08 22:55:34,906 - Model - INFO - Save model...
+2026-09-08 22:55:34,906 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:55:34,953 - Model - INFO - Saving model....
+2026-09-08 22:55:34,954 - Model - INFO - Best accuracy is: 0.69464
+2026-09-08 22:55:34,954 - Model - INFO - Best class avg mIOU is: 0.35614
+2026-09-08 22:55:34,954 - Model - INFO - Best inctance avg mIOU is: 0.35614
+2026-09-08 22:55:34,954 - Model - INFO - Epoch 11 (11/100):
+2026-09-08 22:55:34,954 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:36,808 - Model - INFO - Train accuracy is: 0.81085
+2026-09-08 22:55:37,696 - Model - INFO - eval mIoU of Motorbike      0.460663
+2026-09-08 22:55:37,696 - Model - INFO - Epoch 11 test Accuracy: 0.670094  Class avg mIOU: 0.460663   Inctance avg mIOU: 0.460663
+2026-09-08 22:55:37,696 - Model - INFO - Save model...
+2026-09-08 22:55:37,696 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:55:37,743 - Model - INFO - Saving model....
+2026-09-08 22:55:37,744 - Model - INFO - Best accuracy is: 0.69464
+2026-09-08 22:55:37,744 - Model - INFO - Best class avg mIOU is: 0.46066
+2026-09-08 22:55:37,744 - Model - INFO - Best inctance avg mIOU is: 0.46066
+2026-09-08 22:55:37,744 - Model - INFO - Epoch 12 (12/100):
+2026-09-08 22:55:37,744 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:39,606 - Model - INFO - Train accuracy is: 0.82106
+2026-09-08 22:55:40,489 - Model - INFO - eval mIoU of Motorbike      0.554244
+2026-09-08 22:55:40,489 - Model - INFO - Epoch 12 test Accuracy: 0.766975  Class avg mIOU: 0.554244   Inctance avg mIOU: 0.554244
+2026-09-08 22:55:40,489 - Model - INFO - Save model...
+2026-09-08 22:55:40,489 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:55:40,534 - Model - INFO - Saving model....
+2026-09-08 22:55:40,534 - Model - INFO - Best accuracy is: 0.76697
+2026-09-08 22:55:40,534 - Model - INFO - Best class avg mIOU is: 0.55424
+2026-09-08 22:55:40,534 - Model - INFO - Best inctance avg mIOU is: 0.55424
+2026-09-08 22:55:40,534 - Model - INFO - Epoch 13 (13/100):
+2026-09-08 22:55:40,534 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:42,399 - Model - INFO - Train accuracy is: 0.83248
+2026-09-08 22:55:43,287 - Model - INFO - eval mIoU of Motorbike      0.653791
+2026-09-08 22:55:43,287 - Model - INFO - Epoch 13 test Accuracy: 0.813836  Class avg mIOU: 0.653791   Inctance avg mIOU: 0.653791
+2026-09-08 22:55:43,287 - Model - INFO - Save model...
+2026-09-08 22:55:43,287 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:55:43,333 - Model - INFO - Saving model....
+2026-09-08 22:55:43,334 - Model - INFO - Best accuracy is: 0.81384
+2026-09-08 22:55:43,334 - Model - INFO - Best class avg mIOU is: 0.65379
+2026-09-08 22:55:43,334 - Model - INFO - Best inctance avg mIOU is: 0.65379
+2026-09-08 22:55:43,334 - Model - INFO - Epoch 14 (14/100):
+2026-09-08 22:55:43,334 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:45,194 - Model - INFO - Train accuracy is: 0.83329
+2026-09-08 22:55:46,082 - Model - INFO - eval mIoU of Motorbike      0.628630
+2026-09-08 22:55:46,082 - Model - INFO - Epoch 14 test Accuracy: 0.814884  Class avg mIOU: 0.628630   Inctance avg mIOU: 0.628630
+2026-09-08 22:55:46,082 - Model - INFO - Best accuracy is: 0.81488
+2026-09-08 22:55:46,082 - Model - INFO - Best class avg mIOU is: 0.65379
+2026-09-08 22:55:46,082 - Model - INFO - Best inctance avg mIOU is: 0.65379
+2026-09-08 22:55:46,082 - Model - INFO - Epoch 15 (15/100):
+2026-09-08 22:55:46,082 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:47,941 - Model - INFO - Train accuracy is: 0.83949
+2026-09-08 22:55:48,826 - Model - INFO - eval mIoU of Motorbike      0.662352
+2026-09-08 22:55:48,826 - Model - INFO - Epoch 15 test Accuracy: 0.839126  Class avg mIOU: 0.662352   Inctance avg mIOU: 0.662352
+2026-09-08 22:55:48,827 - Model - INFO - Save model...
+2026-09-08 22:55:48,827 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:55:48,873 - Model - INFO - Saving model....
+2026-09-08 22:55:48,873 - Model - INFO - Best accuracy is: 0.83913
+2026-09-08 22:55:48,873 - Model - INFO - Best class avg mIOU is: 0.66235
+2026-09-08 22:55:48,873 - Model - INFO - Best inctance avg mIOU is: 0.66235
+2026-09-08 22:55:48,873 - Model - INFO - Epoch 16 (16/100):
+2026-09-08 22:55:48,873 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:50,740 - Model - INFO - Train accuracy is: 0.84171
+2026-09-08 22:55:51,625 - Model - INFO - eval mIoU of Motorbike      0.689000
+2026-09-08 22:55:51,625 - Model - INFO - Epoch 16 test Accuracy: 0.853473  Class avg mIOU: 0.689000   Inctance avg mIOU: 0.689000
+2026-09-08 22:55:51,625 - Model - INFO - Save model...
+2026-09-08 22:55:51,625 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:55:51,672 - Model - INFO - Saving model....
+2026-09-08 22:55:51,672 - Model - INFO - Best accuracy is: 0.85347
+2026-09-08 22:55:51,672 - Model - INFO - Best class avg mIOU is: 0.68900
+2026-09-08 22:55:51,672 - Model - INFO - Best inctance avg mIOU is: 0.68900
+2026-09-08 22:55:51,672 - Model - INFO - Epoch 17 (17/100):
+2026-09-08 22:55:51,672 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:53,539 - Model - INFO - Train accuracy is: 0.84603
+2026-09-08 22:55:54,428 - Model - INFO - eval mIoU of Motorbike      0.708826
+2026-09-08 22:55:54,428 - Model - INFO - Epoch 17 test Accuracy: 0.848992  Class avg mIOU: 0.708826   Inctance avg mIOU: 0.708826
+2026-09-08 22:55:54,428 - Model - INFO - Save model...
+2026-09-08 22:55:54,428 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:55:54,475 - Model - INFO - Saving model....
+2026-09-08 22:55:54,475 - Model - INFO - Best accuracy is: 0.85347
+2026-09-08 22:55:54,475 - Model - INFO - Best class avg mIOU is: 0.70883
+2026-09-08 22:55:54,475 - Model - INFO - Best inctance avg mIOU is: 0.70883
+2026-09-08 22:55:54,475 - Model - INFO - Epoch 18 (18/100):
+2026-09-08 22:55:54,475 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:56,341 - Model - INFO - Train accuracy is: 0.85028
+2026-09-08 22:55:57,229 - Model - INFO - eval mIoU of Motorbike      0.709482
+2026-09-08 22:55:57,229 - Model - INFO - Epoch 18 test Accuracy: 0.863870  Class avg mIOU: 0.709482   Inctance avg mIOU: 0.709482
+2026-09-08 22:55:57,230 - Model - INFO - Save model...
+2026-09-08 22:55:57,230 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:55:57,277 - Model - INFO - Saving model....
+2026-09-08 22:55:57,277 - Model - INFO - Best accuracy is: 0.86387
+2026-09-08 22:55:57,277 - Model - INFO - Best class avg mIOU is: 0.70948
+2026-09-08 22:55:57,278 - Model - INFO - Best inctance avg mIOU is: 0.70948
+2026-09-08 22:55:57,278 - Model - INFO - Epoch 19 (19/100):
+2026-09-08 22:55:57,278 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:55:59,153 - Model - INFO - Train accuracy is: 0.85698
+2026-09-08 22:56:00,046 - Model - INFO - eval mIoU of Motorbike      0.689621
+2026-09-08 22:56:00,046 - Model - INFO - Epoch 19 test Accuracy: 0.861328  Class avg mIOU: 0.689621   Inctance avg mIOU: 0.689621
+2026-09-08 22:56:00,046 - Model - INFO - Best accuracy is: 0.86387
+2026-09-08 22:56:00,046 - Model - INFO - Best class avg mIOU is: 0.70948
+2026-09-08 22:56:00,046 - Model - INFO - Best inctance avg mIOU is: 0.70948
+2026-09-08 22:56:00,046 - Model - INFO - Epoch 20 (20/100):
+2026-09-08 22:56:00,046 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:56:01,919 - Model - INFO - Train accuracy is: 0.85218
+2026-09-08 22:56:02,806 - Model - INFO - eval mIoU of Motorbike      0.687437
+2026-09-08 22:56:02,806 - Model - INFO - Epoch 20 test Accuracy: 0.846436  Class avg mIOU: 0.687437   Inctance avg mIOU: 0.687437
+2026-09-08 22:56:02,807 - Model - INFO - Best accuracy is: 0.86387
+2026-09-08 22:56:02,807 - Model - INFO - Best class avg mIOU is: 0.70948
+2026-09-08 22:56:02,807 - Model - INFO - Best inctance avg mIOU is: 0.70948
+2026-09-08 22:56:02,807 - Model - INFO - Epoch 21 (21/100):
+2026-09-08 22:56:02,807 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:04,671 - Model - INFO - Train accuracy is: 0.86034
+2026-09-08 22:56:05,558 - Model - INFO - eval mIoU of Motorbike      0.701753
+2026-09-08 22:56:05,558 - Model - INFO - Epoch 21 test Accuracy: 0.853587  Class avg mIOU: 0.701753   Inctance avg mIOU: 0.701753
+2026-09-08 22:56:05,559 - Model - INFO - Best accuracy is: 0.86387
+2026-09-08 22:56:05,559 - Model - INFO - Best class avg mIOU is: 0.70948
+2026-09-08 22:56:05,559 - Model - INFO - Best inctance avg mIOU is: 0.70948
+2026-09-08 22:56:05,559 - Model - INFO - Epoch 22 (22/100):
+2026-09-08 22:56:05,559 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:07,420 - Model - INFO - Train accuracy is: 0.86074
+2026-09-08 22:56:08,312 - Model - INFO - eval mIoU of Motorbike      0.706679
+2026-09-08 22:56:08,312 - Model - INFO - Epoch 22 test Accuracy: 0.865866  Class avg mIOU: 0.706679   Inctance avg mIOU: 0.706679
+2026-09-08 22:56:08,313 - Model - INFO - Best accuracy is: 0.86587
+2026-09-08 22:56:08,313 - Model - INFO - Best class avg mIOU is: 0.70948
+2026-09-08 22:56:08,313 - Model - INFO - Best inctance avg mIOU is: 0.70948
+2026-09-08 22:56:08,313 - Model - INFO - Epoch 23 (23/100):
+2026-09-08 22:56:08,313 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:10,171 - Model - INFO - Train accuracy is: 0.86472
+2026-09-08 22:56:11,059 - Model - INFO - eval mIoU of Motorbike      0.704041
+2026-09-08 22:56:11,059 - Model - INFO - Epoch 23 test Accuracy: 0.853487  Class avg mIOU: 0.704041   Inctance avg mIOU: 0.704041
+2026-09-08 22:56:11,059 - Model - INFO - Best accuracy is: 0.86587
+2026-09-08 22:56:11,059 - Model - INFO - Best class avg mIOU is: 0.70948
+2026-09-08 22:56:11,059 - Model - INFO - Best inctance avg mIOU is: 0.70948
+2026-09-08 22:56:11,059 - Model - INFO - Epoch 24 (24/100):
+2026-09-08 22:56:11,059 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:12,915 - Model - INFO - Train accuracy is: 0.86786
+2026-09-08 22:56:13,804 - Model - INFO - eval mIoU of Motorbike      0.700267
+2026-09-08 22:56:13,804 - Model - INFO - Epoch 24 test Accuracy: 0.842343  Class avg mIOU: 0.700267   Inctance avg mIOU: 0.700267
+2026-09-08 22:56:13,804 - Model - INFO - Best accuracy is: 0.86587
+2026-09-08 22:56:13,804 - Model - INFO - Best class avg mIOU is: 0.70948
+2026-09-08 22:56:13,804 - Model - INFO - Best inctance avg mIOU is: 0.70948
+2026-09-08 22:56:13,804 - Model - INFO - Epoch 25 (25/100):
+2026-09-08 22:56:13,804 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:15,665 - Model - INFO - Train accuracy is: 0.86794
+2026-09-08 22:56:16,546 - Model - INFO - eval mIoU of Motorbike      0.712128
+2026-09-08 22:56:16,546 - Model - INFO - Epoch 25 test Accuracy: 0.866785  Class avg mIOU: 0.712128   Inctance avg mIOU: 0.712128
+2026-09-08 22:56:16,546 - Model - INFO - Save model...
+2026-09-08 22:56:16,546 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:56:16,592 - Model - INFO - Saving model....
+2026-09-08 22:56:16,593 - Model - INFO - Best accuracy is: 0.86679
+2026-09-08 22:56:16,593 - Model - INFO - Best class avg mIOU is: 0.71213
+2026-09-08 22:56:16,593 - Model - INFO - Best inctance avg mIOU is: 0.71213
+2026-09-08 22:56:16,593 - Model - INFO - Epoch 26 (26/100):
+2026-09-08 22:56:16,593 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:18,460 - Model - INFO - Train accuracy is: 0.86916
+2026-09-08 22:56:19,343 - Model - INFO - eval mIoU of Motorbike      0.707313
+2026-09-08 22:56:19,343 - Model - INFO - Epoch 26 test Accuracy: 0.868006  Class avg mIOU: 0.707313   Inctance avg mIOU: 0.707313
+2026-09-08 22:56:19,343 - Model - INFO - Best accuracy is: 0.86801
+2026-09-08 22:56:19,343 - Model - INFO - Best class avg mIOU is: 0.71213
+2026-09-08 22:56:19,343 - Model - INFO - Best inctance avg mIOU is: 0.71213
+2026-09-08 22:56:19,343 - Model - INFO - Epoch 27 (27/100):
+2026-09-08 22:56:19,343 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:21,207 - Model - INFO - Train accuracy is: 0.86707
+2026-09-08 22:56:22,092 - Model - INFO - eval mIoU of Motorbike      0.708721
+2026-09-08 22:56:22,092 - Model - INFO - Epoch 27 test Accuracy: 0.874426  Class avg mIOU: 0.708721   Inctance avg mIOU: 0.708721
+2026-09-08 22:56:22,092 - Model - INFO - Best accuracy is: 0.87443
+2026-09-08 22:56:22,092 - Model - INFO - Best class avg mIOU is: 0.71213
+2026-09-08 22:56:22,092 - Model - INFO - Best inctance avg mIOU is: 0.71213
+2026-09-08 22:56:22,092 - Model - INFO - Epoch 28 (28/100):
+2026-09-08 22:56:22,092 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:23,955 - Model - INFO - Train accuracy is: 0.87547
+2026-09-08 22:56:24,840 - Model - INFO - eval mIoU of Motorbike      0.715287
+2026-09-08 22:56:24,840 - Model - INFO - Epoch 28 test Accuracy: 0.869729  Class avg mIOU: 0.715287   Inctance avg mIOU: 0.715287
+2026-09-08 22:56:24,840 - Model - INFO - Save model...
+2026-09-08 22:56:24,840 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:56:24,884 - Model - INFO - Saving model....
+2026-09-08 22:56:24,884 - Model - INFO - Best accuracy is: 0.87443
+2026-09-08 22:56:24,884 - Model - INFO - Best class avg mIOU is: 0.71529
+2026-09-08 22:56:24,884 - Model - INFO - Best inctance avg mIOU is: 0.71529
+2026-09-08 22:56:24,884 - Model - INFO - Epoch 29 (29/100):
+2026-09-08 22:56:24,884 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:26,744 - Model - INFO - Train accuracy is: 0.87591
+2026-09-08 22:56:27,631 - Model - INFO - eval mIoU of Motorbike      0.709623
+2026-09-08 22:56:27,631 - Model - INFO - Epoch 29 test Accuracy: 0.864617  Class avg mIOU: 0.709623   Inctance avg mIOU: 0.709623
+2026-09-08 22:56:27,631 - Model - INFO - Best accuracy is: 0.87443
+2026-09-08 22:56:27,631 - Model - INFO - Best class avg mIOU is: 0.71529
+2026-09-08 22:56:27,631 - Model - INFO - Best inctance avg mIOU is: 0.71529
+2026-09-08 22:56:27,631 - Model - INFO - Epoch 30 (30/100):
+2026-09-08 22:56:27,631 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:29,494 - Model - INFO - Train accuracy is: 0.87859
+2026-09-08 22:56:30,380 - Model - INFO - eval mIoU of Motorbike      0.698640
+2026-09-08 22:56:30,380 - Model - INFO - Epoch 30 test Accuracy: 0.866010  Class avg mIOU: 0.698640   Inctance avg mIOU: 0.698640
+2026-09-08 22:56:30,380 - Model - INFO - Best accuracy is: 0.87443
+2026-09-08 22:56:30,380 - Model - INFO - Best class avg mIOU is: 0.71529
+2026-09-08 22:56:30,380 - Model - INFO - Best inctance avg mIOU is: 0.71529
+2026-09-08 22:56:30,380 - Model - INFO - Epoch 31 (31/100):
+2026-09-08 22:56:30,380 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:32,245 - Model - INFO - Train accuracy is: 0.88184
+2026-09-08 22:56:33,123 - Model - INFO - eval mIoU of Motorbike      0.716380
+2026-09-08 22:56:33,123 - Model - INFO - Epoch 31 test Accuracy: 0.867245  Class avg mIOU: 0.716380   Inctance avg mIOU: 0.716380
+2026-09-08 22:56:33,123 - Model - INFO - Save model...
+2026-09-08 22:56:33,123 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:56:33,169 - Model - INFO - Saving model....
+2026-09-08 22:56:33,170 - Model - INFO - Best accuracy is: 0.87443
+2026-09-08 22:56:33,170 - Model - INFO - Best class avg mIOU is: 0.71638
+2026-09-08 22:56:33,170 - Model - INFO - Best inctance avg mIOU is: 0.71638
+2026-09-08 22:56:33,170 - Model - INFO - Epoch 32 (32/100):
+2026-09-08 22:56:33,170 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:35,031 - Model - INFO - Train accuracy is: 0.87626
+2026-09-08 22:56:35,917 - Model - INFO - eval mIoU of Motorbike      0.726399
+2026-09-08 22:56:35,917 - Model - INFO - Epoch 32 test Accuracy: 0.876336  Class avg mIOU: 0.726399   Inctance avg mIOU: 0.726399
+2026-09-08 22:56:35,918 - Model - INFO - Save model...
+2026-09-08 22:56:35,918 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:56:35,963 - Model - INFO - Saving model....
+2026-09-08 22:56:35,964 - Model - INFO - Best accuracy is: 0.87634
+2026-09-08 22:56:35,964 - Model - INFO - Best class avg mIOU is: 0.72640
+2026-09-08 22:56:35,964 - Model - INFO - Best inctance avg mIOU is: 0.72640
+2026-09-08 22:56:35,964 - Model - INFO - Epoch 33 (33/100):
+2026-09-08 22:56:35,964 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:37,824 - Model - INFO - Train accuracy is: 0.87783
+2026-09-08 22:56:38,707 - Model - INFO - eval mIoU of Motorbike      0.713917
+2026-09-08 22:56:38,708 - Model - INFO - Epoch 33 test Accuracy: 0.874856  Class avg mIOU: 0.713917   Inctance avg mIOU: 0.713917
+2026-09-08 22:56:38,708 - Model - INFO - Best accuracy is: 0.87634
+2026-09-08 22:56:38,708 - Model - INFO - Best class avg mIOU is: 0.72640
+2026-09-08 22:56:38,708 - Model - INFO - Best inctance avg mIOU is: 0.72640
+2026-09-08 22:56:38,708 - Model - INFO - Epoch 34 (34/100):
+2026-09-08 22:56:38,708 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:40,569 - Model - INFO - Train accuracy is: 0.88741
+2026-09-08 22:56:41,452 - Model - INFO - eval mIoU of Motorbike      0.702297
+2026-09-08 22:56:41,452 - Model - INFO - Epoch 34 test Accuracy: 0.847987  Class avg mIOU: 0.702297   Inctance avg mIOU: 0.702297
+2026-09-08 22:56:41,452 - Model - INFO - Best accuracy is: 0.87634
+2026-09-08 22:56:41,452 - Model - INFO - Best class avg mIOU is: 0.72640
+2026-09-08 22:56:41,452 - Model - INFO - Best inctance avg mIOU is: 0.72640
+2026-09-08 22:56:41,452 - Model - INFO - Epoch 35 (35/100):
+2026-09-08 22:56:41,452 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:43,315 - Model - INFO - Train accuracy is: 0.88326
+2026-09-08 22:56:44,205 - Model - INFO - eval mIoU of Motorbike      0.735751
+2026-09-08 22:56:44,206 - Model - INFO - Epoch 35 test Accuracy: 0.877255  Class avg mIOU: 0.735751   Inctance avg mIOU: 0.735751
+2026-09-08 22:56:44,206 - Model - INFO - Save model...
+2026-09-08 22:56:44,206 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:56:44,242 - Model - INFO - Saving model....
+2026-09-08 22:56:44,243 - Model - INFO - Best accuracy is: 0.87725
+2026-09-08 22:56:44,243 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:56:44,243 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:56:44,243 - Model - INFO - Epoch 36 (36/100):
+2026-09-08 22:56:44,243 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:46,113 - Model - INFO - Train accuracy is: 0.88589
+2026-09-08 22:56:46,999 - Model - INFO - eval mIoU of Motorbike      0.732868
+2026-09-08 22:56:46,999 - Model - INFO - Epoch 36 test Accuracy: 0.880529  Class avg mIOU: 0.732868   Inctance avg mIOU: 0.732868
+2026-09-08 22:56:47,000 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:56:47,000 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:56:47,000 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:56:47,000 - Model - INFO - Epoch 37 (37/100):
+2026-09-08 22:56:47,000 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:48,865 - Model - INFO - Train accuracy is: 0.88603
+2026-09-08 22:56:49,752 - Model - INFO - eval mIoU of Motorbike      0.720027
+2026-09-08 22:56:49,752 - Model - INFO - Epoch 37 test Accuracy: 0.866757  Class avg mIOU: 0.720027   Inctance avg mIOU: 0.720027
+2026-09-08 22:56:49,753 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:56:49,753 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:56:49,753 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:56:49,753 - Model - INFO - Epoch 38 (38/100):
+2026-09-08 22:56:49,753 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:51,619 - Model - INFO - Train accuracy is: 0.88611
+2026-09-08 22:56:52,506 - Model - INFO - eval mIoU of Motorbike      0.720780
+2026-09-08 22:56:52,506 - Model - INFO - Epoch 38 test Accuracy: 0.876939  Class avg mIOU: 0.720780   Inctance avg mIOU: 0.720780
+2026-09-08 22:56:52,506 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:56:52,506 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:56:52,506 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:56:52,506 - Model - INFO - Epoch 39 (39/100):
+2026-09-08 22:56:52,506 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:54,372 - Model - INFO - Train accuracy is: 0.88843
+2026-09-08 22:56:55,261 - Model - INFO - eval mIoU of Motorbike      0.724314
+2026-09-08 22:56:55,261 - Model - INFO - Epoch 39 test Accuracy: 0.872932  Class avg mIOU: 0.724314   Inctance avg mIOU: 0.724314
+2026-09-08 22:56:55,261 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:56:55,261 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:56:55,261 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:56:55,261 - Model - INFO - Epoch 40 (40/100):
+2026-09-08 22:56:55,261 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:56:57,126 - Model - INFO - Train accuracy is: 0.89052
+2026-09-08 22:56:58,014 - Model - INFO - eval mIoU of Motorbike      0.726241
+2026-09-08 22:56:58,014 - Model - INFO - Epoch 40 test Accuracy: 0.859404  Class avg mIOU: 0.726241   Inctance avg mIOU: 0.726241
+2026-09-08 22:56:58,014 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:56:58,014 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:56:58,014 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:56:58,014 - Model - INFO - Epoch 41 (41/100):
+2026-09-08 22:56:58,014 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:56:59,878 - Model - INFO - Train accuracy is: 0.88535
+2026-09-08 22:57:00,763 - Model - INFO - eval mIoU of Motorbike      0.727289
+2026-09-08 22:57:00,763 - Model - INFO - Epoch 41 test Accuracy: 0.861831  Class avg mIOU: 0.727289   Inctance avg mIOU: 0.727289
+2026-09-08 22:57:00,763 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:00,763 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:57:00,763 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:57:00,763 - Model - INFO - Epoch 42 (42/100):
+2026-09-08 22:57:00,763 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:02,630 - Model - INFO - Train accuracy is: 0.89565
+2026-09-08 22:57:03,519 - Model - INFO - eval mIoU of Motorbike      0.709212
+2026-09-08 22:57:03,519 - Model - INFO - Epoch 42 test Accuracy: 0.857522  Class avg mIOU: 0.709212   Inctance avg mIOU: 0.709212
+2026-09-08 22:57:03,519 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:03,519 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:57:03,519 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:57:03,519 - Model - INFO - Epoch 43 (43/100):
+2026-09-08 22:57:03,520 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:05,387 - Model - INFO - Train accuracy is: 0.89024
+2026-09-08 22:57:06,270 - Model - INFO - eval mIoU of Motorbike      0.729379
+2026-09-08 22:57:06,270 - Model - INFO - Epoch 43 test Accuracy: 0.875618  Class avg mIOU: 0.729379   Inctance avg mIOU: 0.729379
+2026-09-08 22:57:06,270 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:06,270 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:57:06,270 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:57:06,270 - Model - INFO - Epoch 44 (44/100):
+2026-09-08 22:57:06,270 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:08,130 - Model - INFO - Train accuracy is: 0.89523
+2026-09-08 22:57:09,016 - Model - INFO - eval mIoU of Motorbike      0.720613
+2026-09-08 22:57:09,016 - Model - INFO - Epoch 44 test Accuracy: 0.875316  Class avg mIOU: 0.720613   Inctance avg mIOU: 0.720613
+2026-09-08 22:57:09,016 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:09,016 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:57:09,016 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:57:09,016 - Model - INFO - Epoch 45 (45/100):
+2026-09-08 22:57:09,016 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:10,874 - Model - INFO - Train accuracy is: 0.89473
+2026-09-08 22:57:11,763 - Model - INFO - eval mIoU of Motorbike      0.724247
+2026-09-08 22:57:11,763 - Model - INFO - Epoch 45 test Accuracy: 0.873851  Class avg mIOU: 0.724247   Inctance avg mIOU: 0.724247
+2026-09-08 22:57:11,763 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:11,763 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:57:11,763 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:57:11,763 - Model - INFO - Epoch 46 (46/100):
+2026-09-08 22:57:11,763 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:13,624 - Model - INFO - Train accuracy is: 0.89564
+2026-09-08 22:57:14,509 - Model - INFO - eval mIoU of Motorbike      0.696651
+2026-09-08 22:57:14,509 - Model - INFO - Epoch 46 test Accuracy: 0.858183  Class avg mIOU: 0.696651   Inctance avg mIOU: 0.696651
+2026-09-08 22:57:14,510 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:14,510 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:57:14,510 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:57:14,510 - Model - INFO - Epoch 47 (47/100):
+2026-09-08 22:57:14,510 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:16,376 - Model - INFO - Train accuracy is: 0.89831
+2026-09-08 22:57:17,261 - Model - INFO - eval mIoU of Motorbike      0.718599
+2026-09-08 22:57:17,261 - Model - INFO - Epoch 47 test Accuracy: 0.869500  Class avg mIOU: 0.718599   Inctance avg mIOU: 0.718599
+2026-09-08 22:57:17,261 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:17,261 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:57:17,262 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:57:17,262 - Model - INFO - Epoch 48 (48/100):
+2026-09-08 22:57:17,262 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:19,121 - Model - INFO - Train accuracy is: 0.89919
+2026-09-08 22:57:20,004 - Model - INFO - eval mIoU of Motorbike      0.714570
+2026-09-08 22:57:20,005 - Model - INFO - Epoch 48 test Accuracy: 0.870361  Class avg mIOU: 0.714570   Inctance avg mIOU: 0.714570
+2026-09-08 22:57:20,005 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:20,005 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:57:20,005 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:57:20,005 - Model - INFO - Epoch 49 (49/100):
+2026-09-08 22:57:20,005 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:21,867 - Model - INFO - Train accuracy is: 0.89626
+2026-09-08 22:57:22,753 - Model - INFO - eval mIoU of Motorbike      0.717672
+2026-09-08 22:57:22,753 - Model - INFO - Epoch 49 test Accuracy: 0.855713  Class avg mIOU: 0.717672   Inctance avg mIOU: 0.717672
+2026-09-08 22:57:22,753 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:22,753 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:57:22,753 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:57:22,753 - Model - INFO - Epoch 50 (50/100):
+2026-09-08 22:57:22,753 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:24,610 - Model - INFO - Train accuracy is: 0.89954
+2026-09-08 22:57:25,498 - Model - INFO - eval mIoU of Motorbike      0.691362
+2026-09-08 22:57:25,498 - Model - INFO - Epoch 50 test Accuracy: 0.838896  Class avg mIOU: 0.691362   Inctance avg mIOU: 0.691362
+2026-09-08 22:57:25,498 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:25,498 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:57:25,498 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:57:25,498 - Model - INFO - Epoch 51 (51/100):
+2026-09-08 22:57:25,498 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:27,358 - Model - INFO - Train accuracy is: 0.89368
+2026-09-08 22:57:28,241 - Model - INFO - eval mIoU of Motorbike      0.711561
+2026-09-08 22:57:28,241 - Model - INFO - Epoch 51 test Accuracy: 0.852855  Class avg mIOU: 0.711561   Inctance avg mIOU: 0.711561
+2026-09-08 22:57:28,241 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:28,241 - Model - INFO - Best class avg mIOU is: 0.73575
+2026-09-08 22:57:28,241 - Model - INFO - Best inctance avg mIOU is: 0.73575
+2026-09-08 22:57:28,242 - Model - INFO - Epoch 52 (52/100):
+2026-09-08 22:57:28,242 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:30,104 - Model - INFO - Train accuracy is: 0.89786
+2026-09-08 22:57:30,998 - Model - INFO - eval mIoU of Motorbike      0.736501
+2026-09-08 22:57:30,998 - Model - INFO - Epoch 52 test Accuracy: 0.871151  Class avg mIOU: 0.736501   Inctance avg mIOU: 0.736501
+2026-09-08 22:57:30,998 - Model - INFO - Save model...
+2026-09-08 22:57:30,998 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:57:31,044 - Model - INFO - Saving model....
+2026-09-08 22:57:31,044 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:31,044 - Model - INFO - Best class avg mIOU is: 0.73650
+2026-09-08 22:57:31,044 - Model - INFO - Best inctance avg mIOU is: 0.73650
+2026-09-08 22:57:31,045 - Model - INFO - Epoch 53 (53/100):
+2026-09-08 22:57:31,045 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:32,921 - Model - INFO - Train accuracy is: 0.90301
+2026-09-08 22:57:33,803 - Model - INFO - eval mIoU of Motorbike      0.730814
+2026-09-08 22:57:33,803 - Model - INFO - Epoch 53 test Accuracy: 0.875316  Class avg mIOU: 0.730814   Inctance avg mIOU: 0.730814
+2026-09-08 22:57:33,804 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:33,804 - Model - INFO - Best class avg mIOU is: 0.73650
+2026-09-08 22:57:33,804 - Model - INFO - Best inctance avg mIOU is: 0.73650
+2026-09-08 22:57:33,804 - Model - INFO - Epoch 54 (54/100):
+2026-09-08 22:57:33,804 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:35,669 - Model - INFO - Train accuracy is: 0.90476
+2026-09-08 22:57:36,556 - Model - INFO - eval mIoU of Motorbike      0.704847
+2026-09-08 22:57:36,556 - Model - INFO - Epoch 54 test Accuracy: 0.857192  Class avg mIOU: 0.704847   Inctance avg mIOU: 0.704847
+2026-09-08 22:57:36,556 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:36,556 - Model - INFO - Best class avg mIOU is: 0.73650
+2026-09-08 22:57:36,556 - Model - INFO - Best inctance avg mIOU is: 0.73650
+2026-09-08 22:57:36,556 - Model - INFO - Epoch 55 (55/100):
+2026-09-08 22:57:36,556 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:38,422 - Model - INFO - Train accuracy is: 0.89720
+2026-09-08 22:57:39,311 - Model - INFO - eval mIoU of Motorbike      0.732505
+2026-09-08 22:57:39,311 - Model - INFO - Epoch 55 test Accuracy: 0.854679  Class avg mIOU: 0.732505   Inctance avg mIOU: 0.732505
+2026-09-08 22:57:39,311 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:39,311 - Model - INFO - Best class avg mIOU is: 0.73650
+2026-09-08 22:57:39,311 - Model - INFO - Best inctance avg mIOU is: 0.73650
+2026-09-08 22:57:39,311 - Model - INFO - Epoch 56 (56/100):
+2026-09-08 22:57:39,311 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:41,178 - Model - INFO - Train accuracy is: 0.90247
+2026-09-08 22:57:42,067 - Model - INFO - eval mIoU of Motorbike      0.730974
+2026-09-08 22:57:42,067 - Model - INFO - Epoch 56 test Accuracy: 0.863741  Class avg mIOU: 0.730974   Inctance avg mIOU: 0.730974
+2026-09-08 22:57:42,067 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:42,067 - Model - INFO - Best class avg mIOU is: 0.73650
+2026-09-08 22:57:42,067 - Model - INFO - Best inctance avg mIOU is: 0.73650
+2026-09-08 22:57:42,067 - Model - INFO - Epoch 57 (57/100):
+2026-09-08 22:57:42,067 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:43,928 - Model - INFO - Train accuracy is: 0.89822
+2026-09-08 22:57:44,814 - Model - INFO - eval mIoU of Motorbike      0.716629
+2026-09-08 22:57:44,814 - Model - INFO - Epoch 57 test Accuracy: 0.868064  Class avg mIOU: 0.716629   Inctance avg mIOU: 0.716629
+2026-09-08 22:57:44,815 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:44,815 - Model - INFO - Best class avg mIOU is: 0.73650
+2026-09-08 22:57:44,815 - Model - INFO - Best inctance avg mIOU is: 0.73650
+2026-09-08 22:57:44,815 - Model - INFO - Epoch 58 (58/100):
+2026-09-08 22:57:44,815 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:46,679 - Model - INFO - Train accuracy is: 0.90572
+2026-09-08 22:57:47,566 - Model - INFO - eval mIoU of Motorbike      0.740942
+2026-09-08 22:57:47,566 - Model - INFO - Epoch 58 test Accuracy: 0.874684  Class avg mIOU: 0.740942   Inctance avg mIOU: 0.740942
+2026-09-08 22:57:47,566 - Model - INFO - Save model...
+2026-09-08 22:57:47,566 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:57:47,613 - Model - INFO - Saving model....
+2026-09-08 22:57:47,614 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:47,614 - Model - INFO - Best class avg mIOU is: 0.74094
+2026-09-08 22:57:47,614 - Model - INFO - Best inctance avg mIOU is: 0.74094
+2026-09-08 22:57:47,614 - Model - INFO - Epoch 59 (59/100):
+2026-09-08 22:57:47,614 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:49,475 - Model - INFO - Train accuracy is: 0.90657
+2026-09-08 22:57:50,361 - Model - INFO - eval mIoU of Motorbike      0.738599
+2026-09-08 22:57:50,361 - Model - INFO - Epoch 59 test Accuracy: 0.875503  Class avg mIOU: 0.738599   Inctance avg mIOU: 0.738599
+2026-09-08 22:57:50,361 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:50,361 - Model - INFO - Best class avg mIOU is: 0.74094
+2026-09-08 22:57:50,361 - Model - INFO - Best inctance avg mIOU is: 0.74094
+2026-09-08 22:57:50,361 - Model - INFO - Epoch 60 (60/100):
+2026-09-08 22:57:50,361 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:57:52,228 - Model - INFO - Train accuracy is: 0.90321
+2026-09-08 22:57:53,115 - Model - INFO - eval mIoU of Motorbike      0.724274
+2026-09-08 22:57:53,115 - Model - INFO - Epoch 60 test Accuracy: 0.871912  Class avg mIOU: 0.724274   Inctance avg mIOU: 0.724274
+2026-09-08 22:57:53,115 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:53,116 - Model - INFO - Best class avg mIOU is: 0.74094
+2026-09-08 22:57:53,116 - Model - INFO - Best inctance avg mIOU is: 0.74094
+2026-09-08 22:57:53,116 - Model - INFO - Epoch 61 (61/100):
+2026-09-08 22:57:53,116 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:57:54,980 - Model - INFO - Train accuracy is: 0.90326
+2026-09-08 22:57:55,862 - Model - INFO - eval mIoU of Motorbike      0.738465
+2026-09-08 22:57:55,862 - Model - INFO - Epoch 61 test Accuracy: 0.874512  Class avg mIOU: 0.738465   Inctance avg mIOU: 0.738465
+2026-09-08 22:57:55,862 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:55,862 - Model - INFO - Best class avg mIOU is: 0.74094
+2026-09-08 22:57:55,862 - Model - INFO - Best inctance avg mIOU is: 0.74094
+2026-09-08 22:57:55,862 - Model - INFO - Epoch 62 (62/100):
+2026-09-08 22:57:55,862 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:57:57,727 - Model - INFO - Train accuracy is: 0.90781
+2026-09-08 22:57:58,611 - Model - INFO - eval mIoU of Motorbike      0.733529
+2026-09-08 22:57:58,611 - Model - INFO - Epoch 62 test Accuracy: 0.870720  Class avg mIOU: 0.733529   Inctance avg mIOU: 0.733529
+2026-09-08 22:57:58,611 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:57:58,611 - Model - INFO - Best class avg mIOU is: 0.74094
+2026-09-08 22:57:58,611 - Model - INFO - Best inctance avg mIOU is: 0.74094
+2026-09-08 22:57:58,611 - Model - INFO - Epoch 63 (63/100):
+2026-09-08 22:57:58,611 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:00,472 - Model - INFO - Train accuracy is: 0.90707
+2026-09-08 22:58:01,360 - Model - INFO - eval mIoU of Motorbike      0.735818
+2026-09-08 22:58:01,360 - Model - INFO - Epoch 63 test Accuracy: 0.874325  Class avg mIOU: 0.735818   Inctance avg mIOU: 0.735818
+2026-09-08 22:58:01,360 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:01,360 - Model - INFO - Best class avg mIOU is: 0.74094
+2026-09-08 22:58:01,360 - Model - INFO - Best inctance avg mIOU is: 0.74094
+2026-09-08 22:58:01,360 - Model - INFO - Epoch 64 (64/100):
+2026-09-08 22:58:01,360 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:03,221 - Model - INFO - Train accuracy is: 0.90790
+2026-09-08 22:58:04,105 - Model - INFO - eval mIoU of Motorbike      0.726490
+2026-09-08 22:58:04,105 - Model - INFO - Epoch 64 test Accuracy: 0.872271  Class avg mIOU: 0.726490   Inctance avg mIOU: 0.726490
+2026-09-08 22:58:04,105 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:04,105 - Model - INFO - Best class avg mIOU is: 0.74094
+2026-09-08 22:58:04,105 - Model - INFO - Best inctance avg mIOU is: 0.74094
+2026-09-08 22:58:04,105 - Model - INFO - Epoch 65 (65/100):
+2026-09-08 22:58:04,105 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:05,962 - Model - INFO - Train accuracy is: 0.90928
+2026-09-08 22:58:06,849 - Model - INFO - eval mIoU of Motorbike      0.726476
+2026-09-08 22:58:06,849 - Model - INFO - Epoch 65 test Accuracy: 0.870103  Class avg mIOU: 0.726476   Inctance avg mIOU: 0.726476
+2026-09-08 22:58:06,849 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:06,849 - Model - INFO - Best class avg mIOU is: 0.74094
+2026-09-08 22:58:06,849 - Model - INFO - Best inctance avg mIOU is: 0.74094
+2026-09-08 22:58:06,849 - Model - INFO - Epoch 66 (66/100):
+2026-09-08 22:58:06,849 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:08,713 - Model - INFO - Train accuracy is: 0.90881
+2026-09-08 22:58:09,603 - Model - INFO - eval mIoU of Motorbike      0.727954
+2026-09-08 22:58:09,603 - Model - INFO - Epoch 66 test Accuracy: 0.865306  Class avg mIOU: 0.727954   Inctance avg mIOU: 0.727954
+2026-09-08 22:58:09,603 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:09,603 - Model - INFO - Best class avg mIOU is: 0.74094
+2026-09-08 22:58:09,603 - Model - INFO - Best inctance avg mIOU is: 0.74094
+2026-09-08 22:58:09,603 - Model - INFO - Epoch 67 (67/100):
+2026-09-08 22:58:09,603 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:11,467 - Model - INFO - Train accuracy is: 0.90871
+2026-09-08 22:58:12,354 - Model - INFO - eval mIoU of Motorbike      0.726667
+2026-09-08 22:58:12,354 - Model - INFO - Epoch 67 test Accuracy: 0.858312  Class avg mIOU: 0.726667   Inctance avg mIOU: 0.726667
+2026-09-08 22:58:12,355 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:12,355 - Model - INFO - Best class avg mIOU is: 0.74094
+2026-09-08 22:58:12,355 - Model - INFO - Best inctance avg mIOU is: 0.74094
+2026-09-08 22:58:12,355 - Model - INFO - Epoch 68 (68/100):
+2026-09-08 22:58:12,355 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:14,221 - Model - INFO - Train accuracy is: 0.90909
+2026-09-08 22:58:15,104 - Model - INFO - eval mIoU of Motorbike      0.741119
+2026-09-08 22:58:15,104 - Model - INFO - Epoch 68 test Accuracy: 0.866742  Class avg mIOU: 0.741119   Inctance avg mIOU: 0.741119
+2026-09-08 22:58:15,105 - Model - INFO - Save model...
+2026-09-08 22:58:15,105 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:58:15,152 - Model - INFO - Saving model....
+2026-09-08 22:58:15,152 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:15,152 - Model - INFO - Best class avg mIOU is: 0.74112
+2026-09-08 22:58:15,152 - Model - INFO - Best inctance avg mIOU is: 0.74112
+2026-09-08 22:58:15,152 - Model - INFO - Epoch 69 (69/100):
+2026-09-08 22:58:15,152 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:17,019 - Model - INFO - Train accuracy is: 0.90687
+2026-09-08 22:58:17,906 - Model - INFO - eval mIoU of Motorbike      0.739586
+2026-09-08 22:58:17,906 - Model - INFO - Epoch 69 test Accuracy: 0.873190  Class avg mIOU: 0.739586   Inctance avg mIOU: 0.739586
+2026-09-08 22:58:17,906 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:17,906 - Model - INFO - Best class avg mIOU is: 0.74112
+2026-09-08 22:58:17,906 - Model - INFO - Best inctance avg mIOU is: 0.74112
+2026-09-08 22:58:17,906 - Model - INFO - Epoch 70 (70/100):
+2026-09-08 22:58:17,906 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:19,767 - Model - INFO - Train accuracy is: 0.91006
+2026-09-08 22:58:20,655 - Model - INFO - eval mIoU of Motorbike      0.726677
+2026-09-08 22:58:20,655 - Model - INFO - Epoch 70 test Accuracy: 0.868408  Class avg mIOU: 0.726677   Inctance avg mIOU: 0.726677
+2026-09-08 22:58:20,655 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:20,655 - Model - INFO - Best class avg mIOU is: 0.74112
+2026-09-08 22:58:20,655 - Model - INFO - Best inctance avg mIOU is: 0.74112
+2026-09-08 22:58:20,655 - Model - INFO - Epoch 71 (71/100):
+2026-09-08 22:58:20,655 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:22,519 - Model - INFO - Train accuracy is: 0.91219
+2026-09-08 22:58:23,409 - Model - INFO - eval mIoU of Motorbike      0.722217
+2026-09-08 22:58:23,409 - Model - INFO - Epoch 71 test Accuracy: 0.865349  Class avg mIOU: 0.722217   Inctance avg mIOU: 0.722217
+2026-09-08 22:58:23,409 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:23,409 - Model - INFO - Best class avg mIOU is: 0.74112
+2026-09-08 22:58:23,409 - Model - INFO - Best inctance avg mIOU is: 0.74112
+2026-09-08 22:58:23,409 - Model - INFO - Epoch 72 (72/100):
+2026-09-08 22:58:23,409 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:25,274 - Model - INFO - Train accuracy is: 0.91150
+2026-09-08 22:58:26,163 - Model - INFO - eval mIoU of Motorbike      0.727820
+2026-09-08 22:58:26,163 - Model - INFO - Epoch 72 test Accuracy: 0.871754  Class avg mIOU: 0.727820   Inctance avg mIOU: 0.727820
+2026-09-08 22:58:26,164 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:26,164 - Model - INFO - Best class avg mIOU is: 0.74112
+2026-09-08 22:58:26,164 - Model - INFO - Best inctance avg mIOU is: 0.74112
+2026-09-08 22:58:26,164 - Model - INFO - Epoch 73 (73/100):
+2026-09-08 22:58:26,164 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:28,024 - Model - INFO - Train accuracy is: 0.91280
+2026-09-08 22:58:28,908 - Model - INFO - eval mIoU of Motorbike      0.731053
+2026-09-08 22:58:28,908 - Model - INFO - Epoch 73 test Accuracy: 0.873521  Class avg mIOU: 0.731053   Inctance avg mIOU: 0.731053
+2026-09-08 22:58:28,908 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:28,908 - Model - INFO - Best class avg mIOU is: 0.74112
+2026-09-08 22:58:28,908 - Model - INFO - Best inctance avg mIOU is: 0.74112
+2026-09-08 22:58:28,908 - Model - INFO - Epoch 74 (74/100):
+2026-09-08 22:58:28,908 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:30,769 - Model - INFO - Train accuracy is: 0.90760
+2026-09-08 22:58:31,657 - Model - INFO - eval mIoU of Motorbike      0.729827
+2026-09-08 22:58:31,657 - Model - INFO - Epoch 74 test Accuracy: 0.869557  Class avg mIOU: 0.729827   Inctance avg mIOU: 0.729827
+2026-09-08 22:58:31,657 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:31,657 - Model - INFO - Best class avg mIOU is: 0.74112
+2026-09-08 22:58:31,657 - Model - INFO - Best inctance avg mIOU is: 0.74112
+2026-09-08 22:58:31,657 - Model - INFO - Epoch 75 (75/100):
+2026-09-08 22:58:31,657 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:33,517 - Model - INFO - Train accuracy is: 0.90935
+2026-09-08 22:58:34,402 - Model - INFO - eval mIoU of Motorbike      0.723366
+2026-09-08 22:58:34,402 - Model - INFO - Epoch 75 test Accuracy: 0.862779  Class avg mIOU: 0.723366   Inctance avg mIOU: 0.723366
+2026-09-08 22:58:34,403 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:34,403 - Model - INFO - Best class avg mIOU is: 0.74112
+2026-09-08 22:58:34,403 - Model - INFO - Best inctance avg mIOU is: 0.74112
+2026-09-08 22:58:34,403 - Model - INFO - Epoch 76 (76/100):
+2026-09-08 22:58:34,403 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:36,264 - Model - INFO - Train accuracy is: 0.90851
+2026-09-08 22:58:37,154 - Model - INFO - eval mIoU of Motorbike      0.724489
+2026-09-08 22:58:37,155 - Model - INFO - Epoch 76 test Accuracy: 0.862333  Class avg mIOU: 0.724489   Inctance avg mIOU: 0.724489
+2026-09-08 22:58:37,155 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:37,155 - Model - INFO - Best class avg mIOU is: 0.74112
+2026-09-08 22:58:37,155 - Model - INFO - Best inctance avg mIOU is: 0.74112
+2026-09-08 22:58:37,155 - Model - INFO - Epoch 77 (77/100):
+2026-09-08 22:58:37,155 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:39,018 - Model - INFO - Train accuracy is: 0.91283
+2026-09-08 22:58:39,907 - Model - INFO - eval mIoU of Motorbike      0.737191
+2026-09-08 22:58:39,907 - Model - INFO - Epoch 77 test Accuracy: 0.866096  Class avg mIOU: 0.737191   Inctance avg mIOU: 0.737191
+2026-09-08 22:58:39,908 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:39,908 - Model - INFO - Best class avg mIOU is: 0.74112
+2026-09-08 22:58:39,908 - Model - INFO - Best inctance avg mIOU is: 0.74112
+2026-09-08 22:58:39,908 - Model - INFO - Epoch 78 (78/100):
+2026-09-08 22:58:39,908 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:41,772 - Model - INFO - Train accuracy is: 0.91264
+2026-09-08 22:58:42,660 - Model - INFO - eval mIoU of Motorbike      0.738697
+2026-09-08 22:58:42,660 - Model - INFO - Epoch 78 test Accuracy: 0.870907  Class avg mIOU: 0.738697   Inctance avg mIOU: 0.738697
+2026-09-08 22:58:42,661 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:42,661 - Model - INFO - Best class avg mIOU is: 0.74112
+2026-09-08 22:58:42,661 - Model - INFO - Best inctance avg mIOU is: 0.74112
+2026-09-08 22:58:42,661 - Model - INFO - Epoch 79 (79/100):
+2026-09-08 22:58:42,661 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:44,527 - Model - INFO - Train accuracy is: 0.91118
+2026-09-08 22:58:45,412 - Model - INFO - eval mIoU of Motorbike      0.722878
+2026-09-08 22:58:45,412 - Model - INFO - Epoch 79 test Accuracy: 0.873937  Class avg mIOU: 0.722878   Inctance avg mIOU: 0.722878
+2026-09-08 22:58:45,413 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:45,413 - Model - INFO - Best class avg mIOU is: 0.74112
+2026-09-08 22:58:45,413 - Model - INFO - Best inctance avg mIOU is: 0.74112
+2026-09-08 22:58:45,413 - Model - INFO - Epoch 80 (80/100):
+2026-09-08 22:58:45,413 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:58:47,279 - Model - INFO - Train accuracy is: 0.91482
+2026-09-08 22:58:48,164 - Model - INFO - eval mIoU of Motorbike      0.742203
+2026-09-08 22:58:48,164 - Model - INFO - Epoch 80 test Accuracy: 0.873909  Class avg mIOU: 0.742203   Inctance avg mIOU: 0.742203
+2026-09-08 22:58:48,164 - Model - INFO - Save model...
+2026-09-08 22:58:48,165 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:58:48,211 - Model - INFO - Saving model....
+2026-09-08 22:58:48,211 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:48,211 - Model - INFO - Best class avg mIOU is: 0.74220
+2026-09-08 22:58:48,211 - Model - INFO - Best inctance avg mIOU is: 0.74220
+2026-09-08 22:58:48,211 - Model - INFO - Epoch 81 (81/100):
+2026-09-08 22:58:48,211 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:58:50,074 - Model - INFO - Train accuracy is: 0.91220
+2026-09-08 22:58:50,956 - Model - INFO - eval mIoU of Motorbike      0.729784
+2026-09-08 22:58:50,956 - Model - INFO - Epoch 81 test Accuracy: 0.870246  Class avg mIOU: 0.729784   Inctance avg mIOU: 0.729784
+2026-09-08 22:58:50,956 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:50,956 - Model - INFO - Best class avg mIOU is: 0.74220
+2026-09-08 22:58:50,956 - Model - INFO - Best inctance avg mIOU is: 0.74220
+2026-09-08 22:58:50,956 - Model - INFO - Epoch 82 (82/100):
+2026-09-08 22:58:50,956 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:58:52,820 - Model - INFO - Train accuracy is: 0.91518
+2026-09-08 22:58:53,710 - Model - INFO - eval mIoU of Motorbike      0.731282
+2026-09-08 22:58:53,710 - Model - INFO - Epoch 82 test Accuracy: 0.872358  Class avg mIOU: 0.731282   Inctance avg mIOU: 0.731282
+2026-09-08 22:58:53,711 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:53,711 - Model - INFO - Best class avg mIOU is: 0.74220
+2026-09-08 22:58:53,711 - Model - INFO - Best inctance avg mIOU is: 0.74220
+2026-09-08 22:58:53,711 - Model - INFO - Epoch 83 (83/100):
+2026-09-08 22:58:53,711 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:58:55,576 - Model - INFO - Train accuracy is: 0.91140
+2026-09-08 22:58:56,464 - Model - INFO - eval mIoU of Motorbike      0.744730
+2026-09-08 22:58:56,465 - Model - INFO - Epoch 83 test Accuracy: 0.876810  Class avg mIOU: 0.744730   Inctance avg mIOU: 0.744730
+2026-09-08 22:58:56,465 - Model - INFO - Save model...
+2026-09-08 22:58:56,465 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:58:56,509 - Model - INFO - Saving model....
+2026-09-08 22:58:56,510 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:56,510 - Model - INFO - Best class avg mIOU is: 0.74473
+2026-09-08 22:58:56,510 - Model - INFO - Best inctance avg mIOU is: 0.74473
+2026-09-08 22:58:56,510 - Model - INFO - Epoch 84 (84/100):
+2026-09-08 22:58:56,510 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:58:58,376 - Model - INFO - Train accuracy is: 0.91269
+2026-09-08 22:58:59,260 - Model - INFO - eval mIoU of Motorbike      0.747525
+2026-09-08 22:58:59,260 - Model - INFO - Epoch 84 test Accuracy: 0.875330  Class avg mIOU: 0.747525   Inctance avg mIOU: 0.747525
+2026-09-08 22:58:59,261 - Model - INFO - Save model...
+2026-09-08 22:58:59,261 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Motorbike/seed_42/checkpoints/best_model.pth
+2026-09-08 22:58:59,307 - Model - INFO - Saving model....
+2026-09-08 22:58:59,307 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:58:59,307 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:58:59,307 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:58:59,307 - Model - INFO - Epoch 85 (85/100):
+2026-09-08 22:58:59,307 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:01,165 - Model - INFO - Train accuracy is: 0.91258
+2026-09-08 22:59:02,049 - Model - INFO - eval mIoU of Motorbike      0.741062
+2026-09-08 22:59:02,049 - Model - INFO - Epoch 85 test Accuracy: 0.877039  Class avg mIOU: 0.741062   Inctance avg mIOU: 0.741062
+2026-09-08 22:59:02,050 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:02,050 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:02,050 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:02,050 - Model - INFO - Epoch 86 (86/100):
+2026-09-08 22:59:02,050 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:03,914 - Model - INFO - Train accuracy is: 0.91583
+2026-09-08 22:59:04,798 - Model - INFO - eval mIoU of Motorbike      0.733972
+2026-09-08 22:59:04,798 - Model - INFO - Epoch 86 test Accuracy: 0.868940  Class avg mIOU: 0.733972   Inctance avg mIOU: 0.733972
+2026-09-08 22:59:04,798 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:04,799 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:04,799 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:04,799 - Model - INFO - Epoch 87 (87/100):
+2026-09-08 22:59:04,799 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:06,666 - Model - INFO - Train accuracy is: 0.91174
+2026-09-08 22:59:07,548 - Model - INFO - eval mIoU of Motorbike      0.742453
+2026-09-08 22:59:07,548 - Model - INFO - Epoch 87 test Accuracy: 0.875029  Class avg mIOU: 0.742453   Inctance avg mIOU: 0.742453
+2026-09-08 22:59:07,548 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:07,548 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:07,548 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:07,548 - Model - INFO - Epoch 88 (88/100):
+2026-09-08 22:59:07,548 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:09,415 - Model - INFO - Train accuracy is: 0.91218
+2026-09-08 22:59:10,303 - Model - INFO - eval mIoU of Motorbike      0.734290
+2026-09-08 22:59:10,303 - Model - INFO - Epoch 88 test Accuracy: 0.870175  Class avg mIOU: 0.734290   Inctance avg mIOU: 0.734290
+2026-09-08 22:59:10,303 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:10,303 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:10,303 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:10,303 - Model - INFO - Epoch 89 (89/100):
+2026-09-08 22:59:10,303 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:12,173 - Model - INFO - Train accuracy is: 0.91743
+2026-09-08 22:59:13,059 - Model - INFO - eval mIoU of Motorbike      0.737760
+2026-09-08 22:59:13,059 - Model - INFO - Epoch 89 test Accuracy: 0.874153  Class avg mIOU: 0.737760   Inctance avg mIOU: 0.737760
+2026-09-08 22:59:13,059 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:13,059 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:13,059 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:13,059 - Model - INFO - Epoch 90 (90/100):
+2026-09-08 22:59:13,059 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:14,923 - Model - INFO - Train accuracy is: 0.91524
+2026-09-08 22:59:15,806 - Model - INFO - eval mIoU of Motorbike      0.735029
+2026-09-08 22:59:15,806 - Model - INFO - Epoch 90 test Accuracy: 0.870117  Class avg mIOU: 0.735029   Inctance avg mIOU: 0.735029
+2026-09-08 22:59:15,807 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:15,807 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:15,807 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:15,807 - Model - INFO - Epoch 91 (91/100):
+2026-09-08 22:59:15,807 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:17,667 - Model - INFO - Train accuracy is: 0.91557
+2026-09-08 22:59:18,559 - Model - INFO - eval mIoU of Motorbike      0.742037
+2026-09-08 22:59:18,559 - Model - INFO - Epoch 91 test Accuracy: 0.872989  Class avg mIOU: 0.742037   Inctance avg mIOU: 0.742037
+2026-09-08 22:59:18,559 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:18,559 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:18,559 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:18,559 - Model - INFO - Epoch 92 (92/100):
+2026-09-08 22:59:18,559 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:20,422 - Model - INFO - Train accuracy is: 0.91259
+2026-09-08 22:59:21,303 - Model - INFO - eval mIoU of Motorbike      0.743204
+2026-09-08 22:59:21,303 - Model - INFO - Epoch 92 test Accuracy: 0.871482  Class avg mIOU: 0.743204   Inctance avg mIOU: 0.743204
+2026-09-08 22:59:21,303 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:21,303 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:21,304 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:21,304 - Model - INFO - Epoch 93 (93/100):
+2026-09-08 22:59:21,304 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:23,172 - Model - INFO - Train accuracy is: 0.91526
+2026-09-08 22:59:24,055 - Model - INFO - eval mIoU of Motorbike      0.746576
+2026-09-08 22:59:24,055 - Model - INFO - Epoch 93 test Accuracy: 0.869428  Class avg mIOU: 0.746576   Inctance avg mIOU: 0.746576
+2026-09-08 22:59:24,055 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:24,055 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:24,055 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:24,055 - Model - INFO - Epoch 94 (94/100):
+2026-09-08 22:59:24,055 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:25,924 - Model - INFO - Train accuracy is: 0.91482
+2026-09-08 22:59:26,805 - Model - INFO - eval mIoU of Motorbike      0.737799
+2026-09-08 22:59:26,805 - Model - INFO - Epoch 94 test Accuracy: 0.868150  Class avg mIOU: 0.737799   Inctance avg mIOU: 0.737799
+2026-09-08 22:59:26,806 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:26,806 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:26,806 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:26,806 - Model - INFO - Epoch 95 (95/100):
+2026-09-08 22:59:26,806 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:28,670 - Model - INFO - Train accuracy is: 0.91679
+2026-09-08 22:59:29,555 - Model - INFO - eval mIoU of Motorbike      0.742061
+2026-09-08 22:59:29,555 - Model - INFO - Epoch 95 test Accuracy: 0.872630  Class avg mIOU: 0.742061   Inctance avg mIOU: 0.742061
+2026-09-08 22:59:29,555 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:29,555 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:29,555 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:29,555 - Model - INFO - Epoch 96 (96/100):
+2026-09-08 22:59:29,555 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:31,416 - Model - INFO - Train accuracy is: 0.91621
+2026-09-08 22:59:32,299 - Model - INFO - eval mIoU of Motorbike      0.736922
+2026-09-08 22:59:32,299 - Model - INFO - Epoch 96 test Accuracy: 0.872257  Class avg mIOU: 0.736922   Inctance avg mIOU: 0.736922
+2026-09-08 22:59:32,300 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:32,300 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:32,300 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:32,300 - Model - INFO - Epoch 97 (97/100):
+2026-09-08 22:59:32,300 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:34,159 - Model - INFO - Train accuracy is: 0.91872
+2026-09-08 22:59:35,044 - Model - INFO - eval mIoU of Motorbike      0.734488
+2026-09-08 22:59:35,044 - Model - INFO - Epoch 97 test Accuracy: 0.872659  Class avg mIOU: 0.734488   Inctance avg mIOU: 0.734488
+2026-09-08 22:59:35,044 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:35,044 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:35,044 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:35,044 - Model - INFO - Epoch 98 (98/100):
+2026-09-08 22:59:35,044 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:36,902 - Model - INFO - Train accuracy is: 0.91399
+2026-09-08 22:59:37,789 - Model - INFO - eval mIoU of Motorbike      0.742026
+2026-09-08 22:59:37,789 - Model - INFO - Epoch 98 test Accuracy: 0.871683  Class avg mIOU: 0.742026   Inctance avg mIOU: 0.742026
+2026-09-08 22:59:37,790 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:37,790 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:37,790 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:37,790 - Model - INFO - Epoch 99 (99/100):
+2026-09-08 22:59:37,790 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:39,651 - Model - INFO - Train accuracy is: 0.91653
+2026-09-08 22:59:40,536 - Model - INFO - eval mIoU of Motorbike      0.745968
+2026-09-08 22:59:40,536 - Model - INFO - Epoch 99 test Accuracy: 0.868365  Class avg mIOU: 0.745968   Inctance avg mIOU: 0.745968
+2026-09-08 22:59:40,537 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:40,537 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:40,537 - Model - INFO - Best inctance avg mIOU is: 0.74753
+2026-09-08 22:59:40,537 - Model - INFO - Epoch 100 (100/100):
+2026-09-08 22:59:40,537 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:59:42,400 - Model - INFO - Train accuracy is: 0.91575
+2026-09-08 22:59:43,286 - Model - INFO - eval mIoU of Motorbike      0.745239
+2026-09-08 22:59:43,286 - Model - INFO - Epoch 100 test Accuracy: 0.874785  Class avg mIOU: 0.745239   Inctance avg mIOU: 0.745239
+2026-09-08 22:59:43,286 - Model - INFO - Best accuracy is: 0.88053
+2026-09-08 22:59:43,286 - Model - INFO - Best class avg mIOU is: 0.74753
+2026-09-08 22:59:43,286 - Model - INFO - Best inctance avg mIOU is: 0.74753

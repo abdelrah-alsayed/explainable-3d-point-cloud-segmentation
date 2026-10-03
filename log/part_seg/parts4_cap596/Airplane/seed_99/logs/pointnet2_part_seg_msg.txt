@@ -1,0 +1,859 @@
+2026-06-19 10:55:55,599 - Model - INFO - PARAMETER ...
+2026-06-19 10:55:55,599 - Model - INFO - Namespace(model='pointnet2_part_seg_msg', batch_size=16, epoch=100, learning_rate=0.001, gpu='0', optimizer='Adam', log_dir='parts4_cap596/Airplane/seed_99', decay_rate=0.0001, npoint=2048, step_size=20, lr_decay=0.5, seed=99, categories=['Airplane'], samples_per_category=596, subset_seed=0, test_samples_per_category=118, test_subset_seed=0, full_parts_only=False, num_parts=4)
+2026-06-19 10:55:55,654 - Model - INFO - The number of training data is: 596
+2026-06-19 10:55:55,654 - Model - INFO - The number of test data is: 118
+2026-06-19 10:55:55,899 - Model - INFO - No existing model, starting training from scratch...
+2026-06-19 10:55:56,078 - Model - INFO - Epoch 1 (1/100):
+2026-06-19 10:55:56,078 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:56:05,099 - Model - INFO - Train accuracy is: 0.78570
+2026-06-19 10:56:06,538 - Model - INFO - eval mIoU of Airplane       0.340128
+2026-06-19 10:56:06,538 - Model - INFO - Epoch 1 test Accuracy: 0.402762  Class avg mIOU: 0.340128   Inctance avg mIOU: 0.340128
+2026-06-19 10:56:06,538 - Model - INFO - Save model...
+2026-06-19 10:56:06,538 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 10:56:06,571 - Model - INFO - Saving model....
+2026-06-19 10:56:06,571 - Model - INFO - Best accuracy is: 0.40276
+2026-06-19 10:56:06,571 - Model - INFO - Best class avg mIOU is: 0.34013
+2026-06-19 10:56:06,571 - Model - INFO - Best inctance avg mIOU is: 0.34013
+2026-06-19 10:56:06,571 - Model - INFO - Epoch 2 (2/100):
+2026-06-19 10:56:06,571 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:56:15,206 - Model - INFO - Train accuracy is: 0.89801
+2026-06-19 10:56:16,622 - Model - INFO - eval mIoU of Airplane       0.811959
+2026-06-19 10:56:16,622 - Model - INFO - Epoch 2 test Accuracy: 0.906631  Class avg mIOU: 0.811959   Inctance avg mIOU: 0.811959
+2026-06-19 10:56:16,622 - Model - INFO - Save model...
+2026-06-19 10:56:16,622 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 10:56:16,670 - Model - INFO - Saving model....
+2026-06-19 10:56:16,670 - Model - INFO - Best accuracy is: 0.90663
+2026-06-19 10:56:16,670 - Model - INFO - Best class avg mIOU is: 0.81196
+2026-06-19 10:56:16,670 - Model - INFO - Best inctance avg mIOU is: 0.81196
+2026-06-19 10:56:16,670 - Model - INFO - Epoch 3 (3/100):
+2026-06-19 10:56:16,670 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:56:25,309 - Model - INFO - Train accuracy is: 0.90475
+2026-06-19 10:56:26,735 - Model - INFO - eval mIoU of Airplane       0.805255
+2026-06-19 10:56:26,735 - Model - INFO - Epoch 3 test Accuracy: 0.901744  Class avg mIOU: 0.805255   Inctance avg mIOU: 0.805255
+2026-06-19 10:56:26,735 - Model - INFO - Best accuracy is: 0.90663
+2026-06-19 10:56:26,735 - Model - INFO - Best class avg mIOU is: 0.81196
+2026-06-19 10:56:26,735 - Model - INFO - Best inctance avg mIOU is: 0.81196
+2026-06-19 10:56:26,735 - Model - INFO - Epoch 4 (4/100):
+2026-06-19 10:56:26,735 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:56:35,385 - Model - INFO - Train accuracy is: 0.90975
+2026-06-19 10:56:36,789 - Model - INFO - eval mIoU of Airplane       0.817900
+2026-06-19 10:56:36,790 - Model - INFO - Epoch 4 test Accuracy: 0.907392  Class avg mIOU: 0.817900   Inctance avg mIOU: 0.817900
+2026-06-19 10:56:36,790 - Model - INFO - Save model...
+2026-06-19 10:56:36,790 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 10:56:36,836 - Model - INFO - Saving model....
+2026-06-19 10:56:36,836 - Model - INFO - Best accuracy is: 0.90739
+2026-06-19 10:56:36,836 - Model - INFO - Best class avg mIOU is: 0.81790
+2026-06-19 10:56:36,836 - Model - INFO - Best inctance avg mIOU is: 0.81790
+2026-06-19 10:56:36,836 - Model - INFO - Epoch 5 (5/100):
+2026-06-19 10:56:36,836 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:56:45,510 - Model - INFO - Train accuracy is: 0.91361
+2026-06-19 10:56:46,927 - Model - INFO - eval mIoU of Airplane       0.805246
+2026-06-19 10:56:46,928 - Model - INFO - Epoch 5 test Accuracy: 0.902758  Class avg mIOU: 0.805246   Inctance avg mIOU: 0.805246
+2026-06-19 10:56:46,928 - Model - INFO - Best accuracy is: 0.90739
+2026-06-19 10:56:46,928 - Model - INFO - Best class avg mIOU is: 0.81790
+2026-06-19 10:56:46,928 - Model - INFO - Best inctance avg mIOU is: 0.81790
+2026-06-19 10:56:46,928 - Model - INFO - Epoch 6 (6/100):
+2026-06-19 10:56:46,928 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:56:55,565 - Model - INFO - Train accuracy is: 0.91369
+2026-06-19 10:56:56,980 - Model - INFO - eval mIoU of Airplane       0.829366
+2026-06-19 10:56:56,980 - Model - INFO - Epoch 6 test Accuracy: 0.913922  Class avg mIOU: 0.829366   Inctance avg mIOU: 0.829366
+2026-06-19 10:56:56,980 - Model - INFO - Save model...
+2026-06-19 10:56:56,980 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 10:56:57,026 - Model - INFO - Saving model....
+2026-06-19 10:56:57,027 - Model - INFO - Best accuracy is: 0.91392
+2026-06-19 10:56:57,027 - Model - INFO - Best class avg mIOU is: 0.82937
+2026-06-19 10:56:57,027 - Model - INFO - Best inctance avg mIOU is: 0.82937
+2026-06-19 10:56:57,027 - Model - INFO - Epoch 7 (7/100):
+2026-06-19 10:56:57,027 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:57:05,691 - Model - INFO - Train accuracy is: 0.91392
+2026-06-19 10:57:07,108 - Model - INFO - eval mIoU of Airplane       0.812669
+2026-06-19 10:57:07,108 - Model - INFO - Epoch 7 test Accuracy: 0.908402  Class avg mIOU: 0.812669   Inctance avg mIOU: 0.812669
+2026-06-19 10:57:07,108 - Model - INFO - Best accuracy is: 0.91392
+2026-06-19 10:57:07,108 - Model - INFO - Best class avg mIOU is: 0.82937
+2026-06-19 10:57:07,108 - Model - INFO - Best inctance avg mIOU is: 0.82937
+2026-06-19 10:57:07,108 - Model - INFO - Epoch 8 (8/100):
+2026-06-19 10:57:07,108 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:57:15,780 - Model - INFO - Train accuracy is: 0.91623
+2026-06-19 10:57:17,198 - Model - INFO - eval mIoU of Airplane       0.826328
+2026-06-19 10:57:17,198 - Model - INFO - Epoch 8 test Accuracy: 0.910947  Class avg mIOU: 0.826328   Inctance avg mIOU: 0.826328
+2026-06-19 10:57:17,198 - Model - INFO - Best accuracy is: 0.91392
+2026-06-19 10:57:17,198 - Model - INFO - Best class avg mIOU is: 0.82937
+2026-06-19 10:57:17,198 - Model - INFO - Best inctance avg mIOU is: 0.82937
+2026-06-19 10:57:17,198 - Model - INFO - Epoch 9 (9/100):
+2026-06-19 10:57:17,198 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:57:25,835 - Model - INFO - Train accuracy is: 0.91992
+2026-06-19 10:57:27,247 - Model - INFO - eval mIoU of Airplane       0.839196
+2026-06-19 10:57:27,247 - Model - INFO - Epoch 9 test Accuracy: 0.918920  Class avg mIOU: 0.839196   Inctance avg mIOU: 0.839196
+2026-06-19 10:57:27,247 - Model - INFO - Save model...
+2026-06-19 10:57:27,247 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 10:57:27,294 - Model - INFO - Saving model....
+2026-06-19 10:57:27,294 - Model - INFO - Best accuracy is: 0.91892
+2026-06-19 10:57:27,294 - Model - INFO - Best class avg mIOU is: 0.83920
+2026-06-19 10:57:27,294 - Model - INFO - Best inctance avg mIOU is: 0.83920
+2026-06-19 10:57:27,294 - Model - INFO - Epoch 10 (10/100):
+2026-06-19 10:57:27,294 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:57:35,951 - Model - INFO - Train accuracy is: 0.92073
+2026-06-19 10:57:37,376 - Model - INFO - eval mIoU of Airplane       0.836412
+2026-06-19 10:57:37,376 - Model - INFO - Epoch 10 test Accuracy: 0.915805  Class avg mIOU: 0.836412   Inctance avg mIOU: 0.836412
+2026-06-19 10:57:37,376 - Model - INFO - Best accuracy is: 0.91892
+2026-06-19 10:57:37,376 - Model - INFO - Best class avg mIOU is: 0.83920
+2026-06-19 10:57:37,376 - Model - INFO - Best inctance avg mIOU is: 0.83920
+2026-06-19 10:57:37,376 - Model - INFO - Epoch 11 (11/100):
+2026-06-19 10:57:37,376 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:57:46,011 - Model - INFO - Train accuracy is: 0.92221
+2026-06-19 10:57:47,413 - Model - INFO - eval mIoU of Airplane       0.838957
+2026-06-19 10:57:47,413 - Model - INFO - Epoch 11 test Accuracy: 0.919388  Class avg mIOU: 0.838957   Inctance avg mIOU: 0.838957
+2026-06-19 10:57:47,413 - Model - INFO - Best accuracy is: 0.91939
+2026-06-19 10:57:47,413 - Model - INFO - Best class avg mIOU is: 0.83920
+2026-06-19 10:57:47,413 - Model - INFO - Best inctance avg mIOU is: 0.83920
+2026-06-19 10:57:47,413 - Model - INFO - Epoch 12 (12/100):
+2026-06-19 10:57:47,413 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:57:56,065 - Model - INFO - Train accuracy is: 0.91998
+2026-06-19 10:57:57,485 - Model - INFO - eval mIoU of Airplane       0.832511
+2026-06-19 10:57:57,485 - Model - INFO - Epoch 12 test Accuracy: 0.917166  Class avg mIOU: 0.832511   Inctance avg mIOU: 0.832511
+2026-06-19 10:57:57,486 - Model - INFO - Best accuracy is: 0.91939
+2026-06-19 10:57:57,486 - Model - INFO - Best class avg mIOU is: 0.83920
+2026-06-19 10:57:57,486 - Model - INFO - Best inctance avg mIOU is: 0.83920
+2026-06-19 10:57:57,486 - Model - INFO - Epoch 13 (13/100):
+2026-06-19 10:57:57,486 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:58:06,112 - Model - INFO - Train accuracy is: 0.92064
+2026-06-19 10:58:07,528 - Model - INFO - eval mIoU of Airplane       0.837699
+2026-06-19 10:58:07,528 - Model - INFO - Epoch 13 test Accuracy: 0.919880  Class avg mIOU: 0.837699   Inctance avg mIOU: 0.837699
+2026-06-19 10:58:07,528 - Model - INFO - Best accuracy is: 0.91988
+2026-06-19 10:58:07,528 - Model - INFO - Best class avg mIOU is: 0.83920
+2026-06-19 10:58:07,528 - Model - INFO - Best inctance avg mIOU is: 0.83920
+2026-06-19 10:58:07,529 - Model - INFO - Epoch 14 (14/100):
+2026-06-19 10:58:07,529 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:58:16,159 - Model - INFO - Train accuracy is: 0.92282
+2026-06-19 10:58:17,583 - Model - INFO - eval mIoU of Airplane       0.837544
+2026-06-19 10:58:17,583 - Model - INFO - Epoch 14 test Accuracy: 0.918378  Class avg mIOU: 0.837544   Inctance avg mIOU: 0.837544
+2026-06-19 10:58:17,583 - Model - INFO - Best accuracy is: 0.91988
+2026-06-19 10:58:17,583 - Model - INFO - Best class avg mIOU is: 0.83920
+2026-06-19 10:58:17,583 - Model - INFO - Best inctance avg mIOU is: 0.83920
+2026-06-19 10:58:17,583 - Model - INFO - Epoch 15 (15/100):
+2026-06-19 10:58:17,583 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:58:26,237 - Model - INFO - Train accuracy is: 0.92344
+2026-06-19 10:58:27,648 - Model - INFO - eval mIoU of Airplane       0.834403
+2026-06-19 10:58:27,649 - Model - INFO - Epoch 15 test Accuracy: 0.916984  Class avg mIOU: 0.834403   Inctance avg mIOU: 0.834403
+2026-06-19 10:58:27,649 - Model - INFO - Best accuracy is: 0.91988
+2026-06-19 10:58:27,649 - Model - INFO - Best class avg mIOU is: 0.83920
+2026-06-19 10:58:27,649 - Model - INFO - Best inctance avg mIOU is: 0.83920
+2026-06-19 10:58:27,649 - Model - INFO - Epoch 16 (16/100):
+2026-06-19 10:58:27,649 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:58:36,323 - Model - INFO - Train accuracy is: 0.92434
+2026-06-19 10:58:37,730 - Model - INFO - eval mIoU of Airplane       0.838062
+2026-06-19 10:58:37,730 - Model - INFO - Epoch 16 test Accuracy: 0.919074  Class avg mIOU: 0.838062   Inctance avg mIOU: 0.838062
+2026-06-19 10:58:37,730 - Model - INFO - Best accuracy is: 0.91988
+2026-06-19 10:58:37,730 - Model - INFO - Best class avg mIOU is: 0.83920
+2026-06-19 10:58:37,730 - Model - INFO - Best inctance avg mIOU is: 0.83920
+2026-06-19 10:58:37,730 - Model - INFO - Epoch 17 (17/100):
+2026-06-19 10:58:37,730 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:58:46,375 - Model - INFO - Train accuracy is: 0.92605
+2026-06-19 10:58:47,892 - Model - INFO - eval mIoU of Airplane       0.838269
+2026-06-19 10:58:47,892 - Model - INFO - Epoch 17 test Accuracy: 0.918800  Class avg mIOU: 0.838269   Inctance avg mIOU: 0.838269
+2026-06-19 10:58:47,892 - Model - INFO - Best accuracy is: 0.91988
+2026-06-19 10:58:47,892 - Model - INFO - Best class avg mIOU is: 0.83920
+2026-06-19 10:58:47,892 - Model - INFO - Best inctance avg mIOU is: 0.83920
+2026-06-19 10:58:47,892 - Model - INFO - Epoch 18 (18/100):
+2026-06-19 10:58:47,892 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:58:56,517 - Model - INFO - Train accuracy is: 0.92518
+2026-06-19 10:58:57,939 - Model - INFO - eval mIoU of Airplane       0.837415
+2026-06-19 10:58:57,939 - Model - INFO - Epoch 18 test Accuracy: 0.918292  Class avg mIOU: 0.837415   Inctance avg mIOU: 0.837415
+2026-06-19 10:58:57,940 - Model - INFO - Best accuracy is: 0.91988
+2026-06-19 10:58:57,940 - Model - INFO - Best class avg mIOU is: 0.83920
+2026-06-19 10:58:57,940 - Model - INFO - Best inctance avg mIOU is: 0.83920
+2026-06-19 10:58:57,940 - Model - INFO - Epoch 19 (19/100):
+2026-06-19 10:58:57,940 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:59:06,576 - Model - INFO - Train accuracy is: 0.92589
+2026-06-19 10:59:07,991 - Model - INFO - eval mIoU of Airplane       0.846002
+2026-06-19 10:59:07,991 - Model - INFO - Epoch 19 test Accuracy: 0.923609  Class avg mIOU: 0.846002   Inctance avg mIOU: 0.846002
+2026-06-19 10:59:07,991 - Model - INFO - Save model...
+2026-06-19 10:59:07,991 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 10:59:08,037 - Model - INFO - Saving model....
+2026-06-19 10:59:08,037 - Model - INFO - Best accuracy is: 0.92361
+2026-06-19 10:59:08,037 - Model - INFO - Best class avg mIOU is: 0.84600
+2026-06-19 10:59:08,038 - Model - INFO - Best inctance avg mIOU is: 0.84600
+2026-06-19 10:59:08,038 - Model - INFO - Epoch 20 (20/100):
+2026-06-19 10:59:08,038 - Model - INFO - Learning rate:0.001000
+2026-06-19 10:59:16,699 - Model - INFO - Train accuracy is: 0.92525
+2026-06-19 10:59:18,124 - Model - INFO - eval mIoU of Airplane       0.832806
+2026-06-19 10:59:18,125 - Model - INFO - Epoch 20 test Accuracy: 0.916951  Class avg mIOU: 0.832806   Inctance avg mIOU: 0.832806
+2026-06-19 10:59:18,125 - Model - INFO - Best accuracy is: 0.92361
+2026-06-19 10:59:18,125 - Model - INFO - Best class avg mIOU is: 0.84600
+2026-06-19 10:59:18,125 - Model - INFO - Best inctance avg mIOU is: 0.84600
+2026-06-19 10:59:18,125 - Model - INFO - Epoch 21 (21/100):
+2026-06-19 10:59:18,125 - Model - INFO - Learning rate:0.000500
+2026-06-19 10:59:26,735 - Model - INFO - Train accuracy is: 0.92742
+2026-06-19 10:59:28,158 - Model - INFO - eval mIoU of Airplane       0.843923
+2026-06-19 10:59:28,158 - Model - INFO - Epoch 21 test Accuracy: 0.922169  Class avg mIOU: 0.843923   Inctance avg mIOU: 0.843923
+2026-06-19 10:59:28,158 - Model - INFO - Best accuracy is: 0.92361
+2026-06-19 10:59:28,158 - Model - INFO - Best class avg mIOU is: 0.84600
+2026-06-19 10:59:28,158 - Model - INFO - Best inctance avg mIOU is: 0.84600
+2026-06-19 10:59:28,158 - Model - INFO - Epoch 22 (22/100):
+2026-06-19 10:59:28,159 - Model - INFO - Learning rate:0.000500
+2026-06-19 10:59:36,798 - Model - INFO - Train accuracy is: 0.93002
+2026-06-19 10:59:38,211 - Model - INFO - eval mIoU of Airplane       0.844398
+2026-06-19 10:59:38,211 - Model - INFO - Epoch 22 test Accuracy: 0.922711  Class avg mIOU: 0.844398   Inctance avg mIOU: 0.844398
+2026-06-19 10:59:38,211 - Model - INFO - Best accuracy is: 0.92361
+2026-06-19 10:59:38,211 - Model - INFO - Best class avg mIOU is: 0.84600
+2026-06-19 10:59:38,211 - Model - INFO - Best inctance avg mIOU is: 0.84600
+2026-06-19 10:59:38,211 - Model - INFO - Epoch 23 (23/100):
+2026-06-19 10:59:38,211 - Model - INFO - Learning rate:0.000500
+2026-06-19 10:59:46,848 - Model - INFO - Train accuracy is: 0.93034
+2026-06-19 10:59:48,279 - Model - INFO - eval mIoU of Airplane       0.839922
+2026-06-19 10:59:48,279 - Model - INFO - Epoch 23 test Accuracy: 0.919645  Class avg mIOU: 0.839922   Inctance avg mIOU: 0.839922
+2026-06-19 10:59:48,280 - Model - INFO - Best accuracy is: 0.92361
+2026-06-19 10:59:48,280 - Model - INFO - Best class avg mIOU is: 0.84600
+2026-06-19 10:59:48,280 - Model - INFO - Best inctance avg mIOU is: 0.84600
+2026-06-19 10:59:48,280 - Model - INFO - Epoch 24 (24/100):
+2026-06-19 10:59:48,280 - Model - INFO - Learning rate:0.000500
+2026-06-19 10:59:56,941 - Model - INFO - Train accuracy is: 0.93137
+2026-06-19 10:59:58,360 - Model - INFO - eval mIoU of Airplane       0.841690
+2026-06-19 10:59:58,360 - Model - INFO - Epoch 24 test Accuracy: 0.920770  Class avg mIOU: 0.841690   Inctance avg mIOU: 0.841690
+2026-06-19 10:59:58,360 - Model - INFO - Best accuracy is: 0.92361
+2026-06-19 10:59:58,360 - Model - INFO - Best class avg mIOU is: 0.84600
+2026-06-19 10:59:58,361 - Model - INFO - Best inctance avg mIOU is: 0.84600
+2026-06-19 10:59:58,361 - Model - INFO - Epoch 25 (25/100):
+2026-06-19 10:59:58,361 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:00:07,019 - Model - INFO - Train accuracy is: 0.93215
+2026-06-19 11:00:08,436 - Model - INFO - eval mIoU of Airplane       0.848788
+2026-06-19 11:00:08,436 - Model - INFO - Epoch 25 test Accuracy: 0.924556  Class avg mIOU: 0.848788   Inctance avg mIOU: 0.848788
+2026-06-19 11:00:08,436 - Model - INFO - Save model...
+2026-06-19 11:00:08,436 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 11:00:08,482 - Model - INFO - Saving model....
+2026-06-19 11:00:08,483 - Model - INFO - Best accuracy is: 0.92456
+2026-06-19 11:00:08,483 - Model - INFO - Best class avg mIOU is: 0.84879
+2026-06-19 11:00:08,483 - Model - INFO - Best inctance avg mIOU is: 0.84879
+2026-06-19 11:00:08,483 - Model - INFO - Epoch 26 (26/100):
+2026-06-19 11:00:08,483 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:00:17,161 - Model - INFO - Train accuracy is: 0.93135
+2026-06-19 11:00:18,567 - Model - INFO - eval mIoU of Airplane       0.839517
+2026-06-19 11:00:18,567 - Model - INFO - Epoch 26 test Accuracy: 0.919856  Class avg mIOU: 0.839517   Inctance avg mIOU: 0.839517
+2026-06-19 11:00:18,567 - Model - INFO - Best accuracy is: 0.92456
+2026-06-19 11:00:18,567 - Model - INFO - Best class avg mIOU is: 0.84879
+2026-06-19 11:00:18,567 - Model - INFO - Best inctance avg mIOU is: 0.84879
+2026-06-19 11:00:18,567 - Model - INFO - Epoch 27 (27/100):
+2026-06-19 11:00:18,567 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:00:27,203 - Model - INFO - Train accuracy is: 0.93316
+2026-06-19 11:00:28,604 - Model - INFO - eval mIoU of Airplane       0.848721
+2026-06-19 11:00:28,605 - Model - INFO - Epoch 27 test Accuracy: 0.923973  Class avg mIOU: 0.848721   Inctance avg mIOU: 0.848721
+2026-06-19 11:00:28,605 - Model - INFO - Best accuracy is: 0.92456
+2026-06-19 11:00:28,605 - Model - INFO - Best class avg mIOU is: 0.84879
+2026-06-19 11:00:28,605 - Model - INFO - Best inctance avg mIOU is: 0.84879
+2026-06-19 11:00:28,605 - Model - INFO - Epoch 28 (28/100):
+2026-06-19 11:00:28,605 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:00:37,222 - Model - INFO - Train accuracy is: 0.93205
+2026-06-19 11:00:38,642 - Model - INFO - eval mIoU of Airplane       0.850547
+2026-06-19 11:00:38,642 - Model - INFO - Epoch 28 test Accuracy: 0.926207  Class avg mIOU: 0.850547   Inctance avg mIOU: 0.850547
+2026-06-19 11:00:38,643 - Model - INFO - Save model...
+2026-06-19 11:00:38,643 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 11:00:38,689 - Model - INFO - Saving model....
+2026-06-19 11:00:38,689 - Model - INFO - Best accuracy is: 0.92621
+2026-06-19 11:00:38,689 - Model - INFO - Best class avg mIOU is: 0.85055
+2026-06-19 11:00:38,689 - Model - INFO - Best inctance avg mIOU is: 0.85055
+2026-06-19 11:00:38,689 - Model - INFO - Epoch 29 (29/100):
+2026-06-19 11:00:38,689 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:00:47,381 - Model - INFO - Train accuracy is: 0.93262
+2026-06-19 11:00:48,791 - Model - INFO - eval mIoU of Airplane       0.847559
+2026-06-19 11:00:48,791 - Model - INFO - Epoch 29 test Accuracy: 0.924776  Class avg mIOU: 0.847559   Inctance avg mIOU: 0.847559
+2026-06-19 11:00:48,791 - Model - INFO - Best accuracy is: 0.92621
+2026-06-19 11:00:48,791 - Model - INFO - Best class avg mIOU is: 0.85055
+2026-06-19 11:00:48,791 - Model - INFO - Best inctance avg mIOU is: 0.85055
+2026-06-19 11:00:48,791 - Model - INFO - Epoch 30 (30/100):
+2026-06-19 11:00:48,791 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:00:57,414 - Model - INFO - Train accuracy is: 0.93220
+2026-06-19 11:00:58,845 - Model - INFO - eval mIoU of Airplane       0.845840
+2026-06-19 11:00:58,845 - Model - INFO - Epoch 30 test Accuracy: 0.924201  Class avg mIOU: 0.845840   Inctance avg mIOU: 0.845840
+2026-06-19 11:00:58,845 - Model - INFO - Best accuracy is: 0.92621
+2026-06-19 11:00:58,845 - Model - INFO - Best class avg mIOU is: 0.85055
+2026-06-19 11:00:58,845 - Model - INFO - Best inctance avg mIOU is: 0.85055
+2026-06-19 11:00:58,845 - Model - INFO - Epoch 31 (31/100):
+2026-06-19 11:00:58,845 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:01:07,505 - Model - INFO - Train accuracy is: 0.93234
+2026-06-19 11:01:08,923 - Model - INFO - eval mIoU of Airplane       0.845338
+2026-06-19 11:01:08,923 - Model - INFO - Epoch 31 test Accuracy: 0.922686  Class avg mIOU: 0.845338   Inctance avg mIOU: 0.845338
+2026-06-19 11:01:08,923 - Model - INFO - Best accuracy is: 0.92621
+2026-06-19 11:01:08,923 - Model - INFO - Best class avg mIOU is: 0.85055
+2026-06-19 11:01:08,923 - Model - INFO - Best inctance avg mIOU is: 0.85055
+2026-06-19 11:01:08,923 - Model - INFO - Epoch 32 (32/100):
+2026-06-19 11:01:08,923 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:01:17,550 - Model - INFO - Train accuracy is: 0.93311
+2026-06-19 11:01:18,958 - Model - INFO - eval mIoU of Airplane       0.834772
+2026-06-19 11:01:18,958 - Model - INFO - Epoch 32 test Accuracy: 0.912122  Class avg mIOU: 0.834772   Inctance avg mIOU: 0.834772
+2026-06-19 11:01:18,958 - Model - INFO - Best accuracy is: 0.92621
+2026-06-19 11:01:18,958 - Model - INFO - Best class avg mIOU is: 0.85055
+2026-06-19 11:01:18,958 - Model - INFO - Best inctance avg mIOU is: 0.85055
+2026-06-19 11:01:18,958 - Model - INFO - Epoch 33 (33/100):
+2026-06-19 11:01:18,959 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:01:27,623 - Model - INFO - Train accuracy is: 0.93257
+2026-06-19 11:01:29,033 - Model - INFO - eval mIoU of Airplane       0.847283
+2026-06-19 11:01:29,033 - Model - INFO - Epoch 33 test Accuracy: 0.922069  Class avg mIOU: 0.847283   Inctance avg mIOU: 0.847283
+2026-06-19 11:01:29,034 - Model - INFO - Best accuracy is: 0.92621
+2026-06-19 11:01:29,034 - Model - INFO - Best class avg mIOU is: 0.85055
+2026-06-19 11:01:29,034 - Model - INFO - Best inctance avg mIOU is: 0.85055
+2026-06-19 11:01:29,034 - Model - INFO - Epoch 34 (34/100):
+2026-06-19 11:01:29,034 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:01:37,672 - Model - INFO - Train accuracy is: 0.93329
+2026-06-19 11:01:39,073 - Model - INFO - eval mIoU of Airplane       0.848759
+2026-06-19 11:01:39,074 - Model - INFO - Epoch 34 test Accuracy: 0.925525  Class avg mIOU: 0.848759   Inctance avg mIOU: 0.848759
+2026-06-19 11:01:39,074 - Model - INFO - Best accuracy is: 0.92621
+2026-06-19 11:01:39,074 - Model - INFO - Best class avg mIOU is: 0.85055
+2026-06-19 11:01:39,074 - Model - INFO - Best inctance avg mIOU is: 0.85055
+2026-06-19 11:01:39,074 - Model - INFO - Epoch 35 (35/100):
+2026-06-19 11:01:39,074 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:01:47,701 - Model - INFO - Train accuracy is: 0.93398
+2026-06-19 11:01:49,105 - Model - INFO - eval mIoU of Airplane       0.849515
+2026-06-19 11:01:49,105 - Model - INFO - Epoch 35 test Accuracy: 0.925094  Class avg mIOU: 0.849515   Inctance avg mIOU: 0.849515
+2026-06-19 11:01:49,105 - Model - INFO - Best accuracy is: 0.92621
+2026-06-19 11:01:49,105 - Model - INFO - Best class avg mIOU is: 0.85055
+2026-06-19 11:01:49,105 - Model - INFO - Best inctance avg mIOU is: 0.85055
+2026-06-19 11:01:49,105 - Model - INFO - Epoch 36 (36/100):
+2026-06-19 11:01:49,105 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:01:57,737 - Model - INFO - Train accuracy is: 0.93200
+2026-06-19 11:01:59,167 - Model - INFO - eval mIoU of Airplane       0.840842
+2026-06-19 11:01:59,168 - Model - INFO - Epoch 36 test Accuracy: 0.921254  Class avg mIOU: 0.840842   Inctance avg mIOU: 0.840842
+2026-06-19 11:01:59,168 - Model - INFO - Best accuracy is: 0.92621
+2026-06-19 11:01:59,168 - Model - INFO - Best class avg mIOU is: 0.85055
+2026-06-19 11:01:59,168 - Model - INFO - Best inctance avg mIOU is: 0.85055
+2026-06-19 11:01:59,168 - Model - INFO - Epoch 37 (37/100):
+2026-06-19 11:01:59,168 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:02:07,805 - Model - INFO - Train accuracy is: 0.93214
+2026-06-19 11:02:09,220 - Model - INFO - eval mIoU of Airplane       0.845508
+2026-06-19 11:02:09,221 - Model - INFO - Epoch 37 test Accuracy: 0.923890  Class avg mIOU: 0.845508   Inctance avg mIOU: 0.845508
+2026-06-19 11:02:09,221 - Model - INFO - Best accuracy is: 0.92621
+2026-06-19 11:02:09,221 - Model - INFO - Best class avg mIOU is: 0.85055
+2026-06-19 11:02:09,221 - Model - INFO - Best inctance avg mIOU is: 0.85055
+2026-06-19 11:02:09,221 - Model - INFO - Epoch 38 (38/100):
+2026-06-19 11:02:09,221 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:02:17,822 - Model - INFO - Train accuracy is: 0.93363
+2026-06-19 11:02:19,241 - Model - INFO - eval mIoU of Airplane       0.846044
+2026-06-19 11:02:19,241 - Model - INFO - Epoch 38 test Accuracy: 0.922818  Class avg mIOU: 0.846044   Inctance avg mIOU: 0.846044
+2026-06-19 11:02:19,241 - Model - INFO - Best accuracy is: 0.92621
+2026-06-19 11:02:19,241 - Model - INFO - Best class avg mIOU is: 0.85055
+2026-06-19 11:02:19,241 - Model - INFO - Best inctance avg mIOU is: 0.85055
+2026-06-19 11:02:19,241 - Model - INFO - Epoch 39 (39/100):
+2026-06-19 11:02:19,241 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:02:27,888 - Model - INFO - Train accuracy is: 0.93346
+2026-06-19 11:02:29,296 - Model - INFO - eval mIoU of Airplane       0.837550
+2026-06-19 11:02:29,296 - Model - INFO - Epoch 39 test Accuracy: 0.918916  Class avg mIOU: 0.837550   Inctance avg mIOU: 0.837550
+2026-06-19 11:02:29,296 - Model - INFO - Best accuracy is: 0.92621
+2026-06-19 11:02:29,297 - Model - INFO - Best class avg mIOU is: 0.85055
+2026-06-19 11:02:29,297 - Model - INFO - Best inctance avg mIOU is: 0.85055
+2026-06-19 11:02:29,297 - Model - INFO - Epoch 40 (40/100):
+2026-06-19 11:02:29,297 - Model - INFO - Learning rate:0.000500
+2026-06-19 11:02:37,937 - Model - INFO - Train accuracy is: 0.93334
+2026-06-19 11:02:39,351 - Model - INFO - eval mIoU of Airplane       0.850638
+2026-06-19 11:02:39,351 - Model - INFO - Epoch 40 test Accuracy: 0.926414  Class avg mIOU: 0.850638   Inctance avg mIOU: 0.850638
+2026-06-19 11:02:39,351 - Model - INFO - Save model...
+2026-06-19 11:02:39,351 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 11:02:39,397 - Model - INFO - Saving model....
+2026-06-19 11:02:39,398 - Model - INFO - Best accuracy is: 0.92641
+2026-06-19 11:02:39,398 - Model - INFO - Best class avg mIOU is: 0.85064
+2026-06-19 11:02:39,398 - Model - INFO - Best inctance avg mIOU is: 0.85064
+2026-06-19 11:02:39,398 - Model - INFO - Epoch 41 (41/100):
+2026-06-19 11:02:39,398 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:02:48,091 - Model - INFO - Train accuracy is: 0.93628
+2026-06-19 11:02:49,506 - Model - INFO - eval mIoU of Airplane       0.846659
+2026-06-19 11:02:49,506 - Model - INFO - Epoch 41 test Accuracy: 0.923994  Class avg mIOU: 0.846659   Inctance avg mIOU: 0.846659
+2026-06-19 11:02:49,506 - Model - INFO - Best accuracy is: 0.92641
+2026-06-19 11:02:49,506 - Model - INFO - Best class avg mIOU is: 0.85064
+2026-06-19 11:02:49,506 - Model - INFO - Best inctance avg mIOU is: 0.85064
+2026-06-19 11:02:49,506 - Model - INFO - Epoch 42 (42/100):
+2026-06-19 11:02:49,506 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:02:58,139 - Model - INFO - Train accuracy is: 0.93713
+2026-06-19 11:02:59,549 - Model - INFO - eval mIoU of Airplane       0.855185
+2026-06-19 11:02:59,549 - Model - INFO - Epoch 42 test Accuracy: 0.927863  Class avg mIOU: 0.855185   Inctance avg mIOU: 0.855185
+2026-06-19 11:02:59,549 - Model - INFO - Save model...
+2026-06-19 11:02:59,549 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 11:02:59,595 - Model - INFO - Saving model....
+2026-06-19 11:02:59,596 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:02:59,596 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:02:59,596 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:02:59,596 - Model - INFO - Epoch 43 (43/100):
+2026-06-19 11:02:59,596 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:03:08,264 - Model - INFO - Train accuracy is: 0.93740
+2026-06-19 11:03:09,687 - Model - INFO - eval mIoU of Airplane       0.851613
+2026-06-19 11:03:09,687 - Model - INFO - Epoch 43 test Accuracy: 0.925996  Class avg mIOU: 0.851613   Inctance avg mIOU: 0.851613
+2026-06-19 11:03:09,687 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:03:09,687 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:03:09,687 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:03:09,687 - Model - INFO - Epoch 44 (44/100):
+2026-06-19 11:03:09,687 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:03:18,363 - Model - INFO - Train accuracy is: 0.93806
+2026-06-19 11:03:19,777 - Model - INFO - eval mIoU of Airplane       0.847952
+2026-06-19 11:03:19,777 - Model - INFO - Epoch 44 test Accuracy: 0.924010  Class avg mIOU: 0.847952   Inctance avg mIOU: 0.847952
+2026-06-19 11:03:19,777 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:03:19,777 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:03:19,777 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:03:19,777 - Model - INFO - Epoch 45 (45/100):
+2026-06-19 11:03:19,777 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:03:28,444 - Model - INFO - Train accuracy is: 0.93853
+2026-06-19 11:03:29,857 - Model - INFO - eval mIoU of Airplane       0.848228
+2026-06-19 11:03:29,857 - Model - INFO - Epoch 45 test Accuracy: 0.924635  Class avg mIOU: 0.848228   Inctance avg mIOU: 0.848228
+2026-06-19 11:03:29,857 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:03:29,857 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:03:29,857 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:03:29,857 - Model - INFO - Epoch 46 (46/100):
+2026-06-19 11:03:29,857 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:03:38,498 - Model - INFO - Train accuracy is: 0.93864
+2026-06-19 11:03:39,907 - Model - INFO - eval mIoU of Airplane       0.849943
+2026-06-19 11:03:39,908 - Model - INFO - Epoch 46 test Accuracy: 0.924296  Class avg mIOU: 0.849943   Inctance avg mIOU: 0.849943
+2026-06-19 11:03:39,908 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:03:39,908 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:03:39,908 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:03:39,908 - Model - INFO - Epoch 47 (47/100):
+2026-06-19 11:03:39,908 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:03:48,534 - Model - INFO - Train accuracy is: 0.93849
+2026-06-19 11:03:49,939 - Model - INFO - eval mIoU of Airplane       0.848229
+2026-06-19 11:03:49,939 - Model - INFO - Epoch 47 test Accuracy: 0.923377  Class avg mIOU: 0.848229   Inctance avg mIOU: 0.848229
+2026-06-19 11:03:49,939 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:03:49,939 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:03:49,939 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:03:49,939 - Model - INFO - Epoch 48 (48/100):
+2026-06-19 11:03:49,939 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:03:58,577 - Model - INFO - Train accuracy is: 0.93848
+2026-06-19 11:04:00,000 - Model - INFO - eval mIoU of Airplane       0.850072
+2026-06-19 11:04:00,000 - Model - INFO - Epoch 48 test Accuracy: 0.922314  Class avg mIOU: 0.850072   Inctance avg mIOU: 0.850072
+2026-06-19 11:04:00,000 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:04:00,000 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:04:00,000 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:04:00,000 - Model - INFO - Epoch 49 (49/100):
+2026-06-19 11:04:00,000 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:04:08,639 - Model - INFO - Train accuracy is: 0.93885
+2026-06-19 11:04:10,047 - Model - INFO - eval mIoU of Airplane       0.851994
+2026-06-19 11:04:10,047 - Model - INFO - Epoch 49 test Accuracy: 0.924432  Class avg mIOU: 0.851994   Inctance avg mIOU: 0.851994
+2026-06-19 11:04:10,047 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:04:10,047 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:04:10,047 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:04:10,047 - Model - INFO - Epoch 50 (50/100):
+2026-06-19 11:04:10,047 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:04:18,691 - Model - INFO - Train accuracy is: 0.93860
+2026-06-19 11:04:20,115 - Model - INFO - eval mIoU of Airplane       0.850637
+2026-06-19 11:04:20,115 - Model - INFO - Epoch 50 test Accuracy: 0.924569  Class avg mIOU: 0.850637   Inctance avg mIOU: 0.850637
+2026-06-19 11:04:20,115 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:04:20,115 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:04:20,115 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:04:20,115 - Model - INFO - Epoch 51 (51/100):
+2026-06-19 11:04:20,115 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:04:28,788 - Model - INFO - Train accuracy is: 0.93905
+2026-06-19 11:04:30,197 - Model - INFO - eval mIoU of Airplane       0.850288
+2026-06-19 11:04:30,197 - Model - INFO - Epoch 51 test Accuracy: 0.925214  Class avg mIOU: 0.850288   Inctance avg mIOU: 0.850288
+2026-06-19 11:04:30,198 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:04:30,198 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:04:30,198 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:04:30,198 - Model - INFO - Epoch 52 (52/100):
+2026-06-19 11:04:30,198 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:04:38,830 - Model - INFO - Train accuracy is: 0.93863
+2026-06-19 11:04:40,274 - Model - INFO - eval mIoU of Airplane       0.843193
+2026-06-19 11:04:40,274 - Model - INFO - Epoch 52 test Accuracy: 0.921130  Class avg mIOU: 0.843193   Inctance avg mIOU: 0.843193
+2026-06-19 11:04:40,274 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:04:40,274 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:04:40,274 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:04:40,274 - Model - INFO - Epoch 53 (53/100):
+2026-06-19 11:04:40,275 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:04:48,893 - Model - INFO - Train accuracy is: 0.93875
+2026-06-19 11:04:50,321 - Model - INFO - eval mIoU of Airplane       0.820391
+2026-06-19 11:04:50,321 - Model - INFO - Epoch 53 test Accuracy: 0.899580  Class avg mIOU: 0.820391   Inctance avg mIOU: 0.820391
+2026-06-19 11:04:50,321 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:04:50,321 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:04:50,321 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:04:50,321 - Model - INFO - Epoch 54 (54/100):
+2026-06-19 11:04:50,321 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:04:58,984 - Model - INFO - Train accuracy is: 0.93720
+2026-06-19 11:05:00,392 - Model - INFO - eval mIoU of Airplane       0.850991
+2026-06-19 11:05:00,392 - Model - INFO - Epoch 54 test Accuracy: 0.925727  Class avg mIOU: 0.850991   Inctance avg mIOU: 0.850991
+2026-06-19 11:05:00,392 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:05:00,392 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:05:00,393 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:05:00,393 - Model - INFO - Epoch 55 (55/100):
+2026-06-19 11:05:00,393 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:05:09,045 - Model - INFO - Train accuracy is: 0.93980
+2026-06-19 11:05:10,457 - Model - INFO - eval mIoU of Airplane       0.848344
+2026-06-19 11:05:10,457 - Model - INFO - Epoch 55 test Accuracy: 0.922868  Class avg mIOU: 0.848344   Inctance avg mIOU: 0.848344
+2026-06-19 11:05:10,457 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:05:10,457 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:05:10,457 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:05:10,457 - Model - INFO - Epoch 56 (56/100):
+2026-06-19 11:05:10,457 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:05:19,104 - Model - INFO - Train accuracy is: 0.93916
+2026-06-19 11:05:20,527 - Model - INFO - eval mIoU of Airplane       0.845882
+2026-06-19 11:05:20,527 - Model - INFO - Epoch 56 test Accuracy: 0.921383  Class avg mIOU: 0.845882   Inctance avg mIOU: 0.845882
+2026-06-19 11:05:20,527 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:05:20,527 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:05:20,527 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:05:20,527 - Model - INFO - Epoch 57 (57/100):
+2026-06-19 11:05:20,527 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:05:29,150 - Model - INFO - Train accuracy is: 0.93890
+2026-06-19 11:05:30,563 - Model - INFO - eval mIoU of Airplane       0.852528
+2026-06-19 11:05:30,563 - Model - INFO - Epoch 57 test Accuracy: 0.927585  Class avg mIOU: 0.852528   Inctance avg mIOU: 0.852528
+2026-06-19 11:05:30,563 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:05:30,563 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:05:30,563 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:05:30,563 - Model - INFO - Epoch 58 (58/100):
+2026-06-19 11:05:30,563 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:05:39,205 - Model - INFO - Train accuracy is: 0.94017
+2026-06-19 11:05:40,639 - Model - INFO - eval mIoU of Airplane       0.847288
+2026-06-19 11:05:40,639 - Model - INFO - Epoch 58 test Accuracy: 0.921341  Class avg mIOU: 0.847288   Inctance avg mIOU: 0.847288
+2026-06-19 11:05:40,639 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:05:40,639 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:05:40,639 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:05:40,639 - Model - INFO - Epoch 59 (59/100):
+2026-06-19 11:05:40,639 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:05:49,284 - Model - INFO - Train accuracy is: 0.94025
+2026-06-19 11:05:50,712 - Model - INFO - eval mIoU of Airplane       0.851346
+2026-06-19 11:05:50,712 - Model - INFO - Epoch 59 test Accuracy: 0.926965  Class avg mIOU: 0.851346   Inctance avg mIOU: 0.851346
+2026-06-19 11:05:50,712 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:05:50,712 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:05:50,712 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:05:50,712 - Model - INFO - Epoch 60 (60/100):
+2026-06-19 11:05:50,712 - Model - INFO - Learning rate:0.000250
+2026-06-19 11:05:59,324 - Model - INFO - Train accuracy is: 0.93997
+2026-06-19 11:06:00,765 - Model - INFO - eval mIoU of Airplane       0.852768
+2026-06-19 11:06:00,765 - Model - INFO - Epoch 60 test Accuracy: 0.925276  Class avg mIOU: 0.852768   Inctance avg mIOU: 0.852768
+2026-06-19 11:06:00,765 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:06:00,765 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:06:00,765 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:06:00,765 - Model - INFO - Epoch 61 (61/100):
+2026-06-19 11:06:00,765 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:06:09,462 - Model - INFO - Train accuracy is: 0.94112
+2026-06-19 11:06:10,874 - Model - INFO - eval mIoU of Airplane       0.853679
+2026-06-19 11:06:10,874 - Model - INFO - Epoch 61 test Accuracy: 0.926828  Class avg mIOU: 0.853679   Inctance avg mIOU: 0.853679
+2026-06-19 11:06:10,875 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:06:10,875 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:06:10,875 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:06:10,875 - Model - INFO - Epoch 62 (62/100):
+2026-06-19 11:06:10,875 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:06:19,508 - Model - INFO - Train accuracy is: 0.94204
+2026-06-19 11:06:20,917 - Model - INFO - eval mIoU of Airplane       0.853344
+2026-06-19 11:06:20,917 - Model - INFO - Epoch 62 test Accuracy: 0.926824  Class avg mIOU: 0.853344   Inctance avg mIOU: 0.853344
+2026-06-19 11:06:20,917 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:06:20,918 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:06:20,918 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:06:20,918 - Model - INFO - Epoch 63 (63/100):
+2026-06-19 11:06:20,918 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:06:29,566 - Model - INFO - Train accuracy is: 0.94336
+2026-06-19 11:06:30,978 - Model - INFO - eval mIoU of Airplane       0.853803
+2026-06-19 11:06:30,978 - Model - INFO - Epoch 63 test Accuracy: 0.927130  Class avg mIOU: 0.853803   Inctance avg mIOU: 0.853803
+2026-06-19 11:06:30,978 - Model - INFO - Best accuracy is: 0.92786
+2026-06-19 11:06:30,978 - Model - INFO - Best class avg mIOU is: 0.85518
+2026-06-19 11:06:30,978 - Model - INFO - Best inctance avg mIOU is: 0.85518
+2026-06-19 11:06:30,978 - Model - INFO - Epoch 64 (64/100):
+2026-06-19 11:06:30,978 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:06:39,655 - Model - INFO - Train accuracy is: 0.94235
+2026-06-19 11:06:41,065 - Model - INFO - eval mIoU of Airplane       0.855276
+2026-06-19 11:06:41,065 - Model - INFO - Epoch 64 test Accuracy: 0.928852  Class avg mIOU: 0.855276   Inctance avg mIOU: 0.855276
+2026-06-19 11:06:41,066 - Model - INFO - Save model...
+2026-06-19 11:06:41,066 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 11:06:41,112 - Model - INFO - Saving model....
+2026-06-19 11:06:41,112 - Model - INFO - Best accuracy is: 0.92885
+2026-06-19 11:06:41,112 - Model - INFO - Best class avg mIOU is: 0.85528
+2026-06-19 11:06:41,112 - Model - INFO - Best inctance avg mIOU is: 0.85528
+2026-06-19 11:06:41,112 - Model - INFO - Epoch 65 (65/100):
+2026-06-19 11:06:41,112 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:06:49,739 - Model - INFO - Train accuracy is: 0.94296
+2026-06-19 11:06:51,144 - Model - INFO - eval mIoU of Airplane       0.851019
+2026-06-19 11:06:51,144 - Model - INFO - Epoch 65 test Accuracy: 0.927105  Class avg mIOU: 0.851019   Inctance avg mIOU: 0.851019
+2026-06-19 11:06:51,145 - Model - INFO - Best accuracy is: 0.92885
+2026-06-19 11:06:51,145 - Model - INFO - Best class avg mIOU is: 0.85528
+2026-06-19 11:06:51,145 - Model - INFO - Best inctance avg mIOU is: 0.85528
+2026-06-19 11:06:51,145 - Model - INFO - Epoch 66 (66/100):
+2026-06-19 11:06:51,145 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:06:59,789 - Model - INFO - Train accuracy is: 0.94269
+2026-06-19 11:07:01,193 - Model - INFO - eval mIoU of Airplane       0.856550
+2026-06-19 11:07:01,193 - Model - INFO - Epoch 66 test Accuracy: 0.929886  Class avg mIOU: 0.856550   Inctance avg mIOU: 0.856550
+2026-06-19 11:07:01,193 - Model - INFO - Save model...
+2026-06-19 11:07:01,193 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 11:07:01,240 - Model - INFO - Saving model....
+2026-06-19 11:07:01,240 - Model - INFO - Best accuracy is: 0.92989
+2026-06-19 11:07:01,240 - Model - INFO - Best class avg mIOU is: 0.85655
+2026-06-19 11:07:01,240 - Model - INFO - Best inctance avg mIOU is: 0.85655
+2026-06-19 11:07:01,240 - Model - INFO - Epoch 67 (67/100):
+2026-06-19 11:07:01,240 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:07:09,923 - Model - INFO - Train accuracy is: 0.94350
+2026-06-19 11:07:11,338 - Model - INFO - eval mIoU of Airplane       0.854399
+2026-06-19 11:07:11,338 - Model - INFO - Epoch 67 test Accuracy: 0.927056  Class avg mIOU: 0.854399   Inctance avg mIOU: 0.854399
+2026-06-19 11:07:11,338 - Model - INFO - Best accuracy is: 0.92989
+2026-06-19 11:07:11,338 - Model - INFO - Best class avg mIOU is: 0.85655
+2026-06-19 11:07:11,338 - Model - INFO - Best inctance avg mIOU is: 0.85655
+2026-06-19 11:07:11,338 - Model - INFO - Epoch 68 (68/100):
+2026-06-19 11:07:11,339 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:07:20,022 - Model - INFO - Train accuracy is: 0.94375
+2026-06-19 11:07:21,433 - Model - INFO - eval mIoU of Airplane       0.856378
+2026-06-19 11:07:21,433 - Model - INFO - Epoch 68 test Accuracy: 0.929212  Class avg mIOU: 0.856378   Inctance avg mIOU: 0.856378
+2026-06-19 11:07:21,433 - Model - INFO - Best accuracy is: 0.92989
+2026-06-19 11:07:21,433 - Model - INFO - Best class avg mIOU is: 0.85655
+2026-06-19 11:07:21,433 - Model - INFO - Best inctance avg mIOU is: 0.85655
+2026-06-19 11:07:21,433 - Model - INFO - Epoch 69 (69/100):
+2026-06-19 11:07:21,433 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:07:30,104 - Model - INFO - Train accuracy is: 0.94377
+2026-06-19 11:07:31,546 - Model - INFO - eval mIoU of Airplane       0.860576
+2026-06-19 11:07:31,546 - Model - INFO - Epoch 69 test Accuracy: 0.931599  Class avg mIOU: 0.860576   Inctance avg mIOU: 0.860576
+2026-06-19 11:07:31,546 - Model - INFO - Save model...
+2026-06-19 11:07:31,546 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 11:07:31,593 - Model - INFO - Saving model....
+2026-06-19 11:07:31,593 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:07:31,593 - Model - INFO - Best class avg mIOU is: 0.86058
+2026-06-19 11:07:31,593 - Model - INFO - Best inctance avg mIOU is: 0.86058
+2026-06-19 11:07:31,593 - Model - INFO - Epoch 70 (70/100):
+2026-06-19 11:07:31,593 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:07:40,237 - Model - INFO - Train accuracy is: 0.94352
+2026-06-19 11:07:41,661 - Model - INFO - eval mIoU of Airplane       0.857075
+2026-06-19 11:07:41,661 - Model - INFO - Epoch 70 test Accuracy: 0.929563  Class avg mIOU: 0.857075   Inctance avg mIOU: 0.857075
+2026-06-19 11:07:41,661 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:07:41,661 - Model - INFO - Best class avg mIOU is: 0.86058
+2026-06-19 11:07:41,661 - Model - INFO - Best inctance avg mIOU is: 0.86058
+2026-06-19 11:07:41,661 - Model - INFO - Epoch 71 (71/100):
+2026-06-19 11:07:41,661 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:07:50,284 - Model - INFO - Train accuracy is: 0.94392
+2026-06-19 11:07:51,702 - Model - INFO - eval mIoU of Airplane       0.857995
+2026-06-19 11:07:51,702 - Model - INFO - Epoch 71 test Accuracy: 0.929402  Class avg mIOU: 0.857995   Inctance avg mIOU: 0.857995
+2026-06-19 11:07:51,702 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:07:51,702 - Model - INFO - Best class avg mIOU is: 0.86058
+2026-06-19 11:07:51,702 - Model - INFO - Best inctance avg mIOU is: 0.86058
+2026-06-19 11:07:51,702 - Model - INFO - Epoch 72 (72/100):
+2026-06-19 11:07:51,702 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:08:00,321 - Model - INFO - Train accuracy is: 0.94437
+2026-06-19 11:08:01,721 - Model - INFO - eval mIoU of Airplane       0.859703
+2026-06-19 11:08:01,721 - Model - INFO - Epoch 72 test Accuracy: 0.930689  Class avg mIOU: 0.859703   Inctance avg mIOU: 0.859703
+2026-06-19 11:08:01,721 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:08:01,721 - Model - INFO - Best class avg mIOU is: 0.86058
+2026-06-19 11:08:01,721 - Model - INFO - Best inctance avg mIOU is: 0.86058
+2026-06-19 11:08:01,721 - Model - INFO - Epoch 73 (73/100):
+2026-06-19 11:08:01,722 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:08:10,366 - Model - INFO - Train accuracy is: 0.94343
+2026-06-19 11:08:11,788 - Model - INFO - eval mIoU of Airplane       0.853126
+2026-06-19 11:08:11,788 - Model - INFO - Epoch 73 test Accuracy: 0.926741  Class avg mIOU: 0.853126   Inctance avg mIOU: 0.853126
+2026-06-19 11:08:11,789 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:08:11,789 - Model - INFO - Best class avg mIOU is: 0.86058
+2026-06-19 11:08:11,789 - Model - INFO - Best inctance avg mIOU is: 0.86058
+2026-06-19 11:08:11,789 - Model - INFO - Epoch 74 (74/100):
+2026-06-19 11:08:11,789 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:08:20,401 - Model - INFO - Train accuracy is: 0.94428
+2026-06-19 11:08:21,799 - Model - INFO - eval mIoU of Airplane       0.856814
+2026-06-19 11:08:21,799 - Model - INFO - Epoch 74 test Accuracy: 0.929195  Class avg mIOU: 0.856814   Inctance avg mIOU: 0.856814
+2026-06-19 11:08:21,799 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:08:21,799 - Model - INFO - Best class avg mIOU is: 0.86058
+2026-06-19 11:08:21,799 - Model - INFO - Best inctance avg mIOU is: 0.86058
+2026-06-19 11:08:21,799 - Model - INFO - Epoch 75 (75/100):
+2026-06-19 11:08:21,800 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:08:30,413 - Model - INFO - Train accuracy is: 0.94405
+2026-06-19 11:08:31,830 - Model - INFO - eval mIoU of Airplane       0.861036
+2026-06-19 11:08:31,830 - Model - INFO - Epoch 75 test Accuracy: 0.929956  Class avg mIOU: 0.861036   Inctance avg mIOU: 0.861036
+2026-06-19 11:08:31,830 - Model - INFO - Save model...
+2026-06-19 11:08:31,830 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 11:08:31,876 - Model - INFO - Saving model....
+2026-06-19 11:08:31,877 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:08:31,877 - Model - INFO - Best class avg mIOU is: 0.86104
+2026-06-19 11:08:31,877 - Model - INFO - Best inctance avg mIOU is: 0.86104
+2026-06-19 11:08:31,877 - Model - INFO - Epoch 76 (76/100):
+2026-06-19 11:08:31,877 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:08:40,478 - Model - INFO - Train accuracy is: 0.94386
+2026-06-19 11:08:41,896 - Model - INFO - eval mIoU of Airplane       0.861904
+2026-06-19 11:08:41,896 - Model - INFO - Epoch 76 test Accuracy: 0.929750  Class avg mIOU: 0.861904   Inctance avg mIOU: 0.861904
+2026-06-19 11:08:41,896 - Model - INFO - Save model...
+2026-06-19 11:08:41,897 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 11:08:41,942 - Model - INFO - Saving model....
+2026-06-19 11:08:41,943 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:08:41,943 - Model - INFO - Best class avg mIOU is: 0.86190
+2026-06-19 11:08:41,943 - Model - INFO - Best inctance avg mIOU is: 0.86190
+2026-06-19 11:08:41,943 - Model - INFO - Epoch 77 (77/100):
+2026-06-19 11:08:41,943 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:08:50,592 - Model - INFO - Train accuracy is: 0.94399
+2026-06-19 11:08:52,020 - Model - INFO - eval mIoU of Airplane       0.859234
+2026-06-19 11:08:52,020 - Model - INFO - Epoch 77 test Accuracy: 0.929725  Class avg mIOU: 0.859234   Inctance avg mIOU: 0.859234
+2026-06-19 11:08:52,020 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:08:52,020 - Model - INFO - Best class avg mIOU is: 0.86190
+2026-06-19 11:08:52,020 - Model - INFO - Best inctance avg mIOU is: 0.86190
+2026-06-19 11:08:52,020 - Model - INFO - Epoch 78 (78/100):
+2026-06-19 11:08:52,020 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:09:00,657 - Model - INFO - Train accuracy is: 0.94448
+2026-06-19 11:09:02,077 - Model - INFO - eval mIoU of Airplane       0.856677
+2026-06-19 11:09:02,077 - Model - INFO - Epoch 78 test Accuracy: 0.928082  Class avg mIOU: 0.856677   Inctance avg mIOU: 0.856677
+2026-06-19 11:09:02,077 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:09:02,077 - Model - INFO - Best class avg mIOU is: 0.86190
+2026-06-19 11:09:02,077 - Model - INFO - Best inctance avg mIOU is: 0.86190
+2026-06-19 11:09:02,077 - Model - INFO - Epoch 79 (79/100):
+2026-06-19 11:09:02,077 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:09:10,688 - Model - INFO - Train accuracy is: 0.94450
+2026-06-19 11:09:12,095 - Model - INFO - eval mIoU of Airplane       0.854441
+2026-06-19 11:09:12,095 - Model - INFO - Epoch 79 test Accuracy: 0.926518  Class avg mIOU: 0.854441   Inctance avg mIOU: 0.854441
+2026-06-19 11:09:12,095 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:09:12,095 - Model - INFO - Best class avg mIOU is: 0.86190
+2026-06-19 11:09:12,095 - Model - INFO - Best inctance avg mIOU is: 0.86190
+2026-06-19 11:09:12,095 - Model - INFO - Epoch 80 (80/100):
+2026-06-19 11:09:12,095 - Model - INFO - Learning rate:0.000125
+2026-06-19 11:09:20,711 - Model - INFO - Train accuracy is: 0.94458
+2026-06-19 11:09:22,129 - Model - INFO - eval mIoU of Airplane       0.851687
+2026-06-19 11:09:22,129 - Model - INFO - Epoch 80 test Accuracy: 0.927995  Class avg mIOU: 0.851687   Inctance avg mIOU: 0.851687
+2026-06-19 11:09:22,129 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:09:22,129 - Model - INFO - Best class avg mIOU is: 0.86190
+2026-06-19 11:09:22,129 - Model - INFO - Best inctance avg mIOU is: 0.86190
+2026-06-19 11:09:22,129 - Model - INFO - Epoch 81 (81/100):
+2026-06-19 11:09:22,129 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:09:30,788 - Model - INFO - Train accuracy is: 0.94536
+2026-06-19 11:09:32,199 - Model - INFO - eval mIoU of Airplane       0.858880
+2026-06-19 11:09:32,199 - Model - INFO - Epoch 81 test Accuracy: 0.930350  Class avg mIOU: 0.858880   Inctance avg mIOU: 0.858880
+2026-06-19 11:09:32,199 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:09:32,199 - Model - INFO - Best class avg mIOU is: 0.86190
+2026-06-19 11:09:32,199 - Model - INFO - Best inctance avg mIOU is: 0.86190
+2026-06-19 11:09:32,199 - Model - INFO - Epoch 82 (82/100):
+2026-06-19 11:09:32,199 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:09:40,829 - Model - INFO - Train accuracy is: 0.94557
+2026-06-19 11:09:42,255 - Model - INFO - eval mIoU of Airplane       0.856477
+2026-06-19 11:09:42,255 - Model - INFO - Epoch 82 test Accuracy: 0.928905  Class avg mIOU: 0.856477   Inctance avg mIOU: 0.856477
+2026-06-19 11:09:42,255 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:09:42,255 - Model - INFO - Best class avg mIOU is: 0.86190
+2026-06-19 11:09:42,255 - Model - INFO - Best inctance avg mIOU is: 0.86190
+2026-06-19 11:09:42,255 - Model - INFO - Epoch 83 (83/100):
+2026-06-19 11:09:42,255 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:09:50,891 - Model - INFO - Train accuracy is: 0.94632
+2026-06-19 11:09:52,312 - Model - INFO - eval mIoU of Airplane       0.859377
+2026-06-19 11:09:52,312 - Model - INFO - Epoch 83 test Accuracy: 0.930436  Class avg mIOU: 0.859377   Inctance avg mIOU: 0.859377
+2026-06-19 11:09:52,312 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:09:52,312 - Model - INFO - Best class avg mIOU is: 0.86190
+2026-06-19 11:09:52,312 - Model - INFO - Best inctance avg mIOU is: 0.86190
+2026-06-19 11:09:52,312 - Model - INFO - Epoch 84 (84/100):
+2026-06-19 11:09:52,312 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:10:00,946 - Model - INFO - Train accuracy is: 0.94724
+2026-06-19 11:10:02,364 - Model - INFO - eval mIoU of Airplane       0.860160
+2026-06-19 11:10:02,364 - Model - INFO - Epoch 84 test Accuracy: 0.929671  Class avg mIOU: 0.860160   Inctance avg mIOU: 0.860160
+2026-06-19 11:10:02,364 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:10:02,364 - Model - INFO - Best class avg mIOU is: 0.86190
+2026-06-19 11:10:02,364 - Model - INFO - Best inctance avg mIOU is: 0.86190
+2026-06-19 11:10:02,364 - Model - INFO - Epoch 85 (85/100):
+2026-06-19 11:10:02,364 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:10:11,046 - Model - INFO - Train accuracy is: 0.94619
+2026-06-19 11:10:12,452 - Model - INFO - eval mIoU of Airplane       0.861642
+2026-06-19 11:10:12,452 - Model - INFO - Epoch 85 test Accuracy: 0.931318  Class avg mIOU: 0.861642   Inctance avg mIOU: 0.861642
+2026-06-19 11:10:12,453 - Model - INFO - Best accuracy is: 0.93160
+2026-06-19 11:10:12,453 - Model - INFO - Best class avg mIOU is: 0.86190
+2026-06-19 11:10:12,453 - Model - INFO - Best inctance avg mIOU is: 0.86190
+2026-06-19 11:10:12,453 - Model - INFO - Epoch 86 (86/100):
+2026-06-19 11:10:12,453 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:10:21,092 - Model - INFO - Train accuracy is: 0.94674
+2026-06-19 11:10:22,493 - Model - INFO - eval mIoU of Airplane       0.862674
+2026-06-19 11:10:22,493 - Model - INFO - Epoch 86 test Accuracy: 0.932493  Class avg mIOU: 0.862674   Inctance avg mIOU: 0.862674
+2026-06-19 11:10:22,493 - Model - INFO - Save model...
+2026-06-19 11:10:22,493 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 11:10:22,530 - Model - INFO - Saving model....
+2026-06-19 11:10:22,531 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:10:22,531 - Model - INFO - Best class avg mIOU is: 0.86267
+2026-06-19 11:10:22,531 - Model - INFO - Best inctance avg mIOU is: 0.86267
+2026-06-19 11:10:22,531 - Model - INFO - Epoch 87 (87/100):
+2026-06-19 11:10:22,531 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:10:31,208 - Model - INFO - Train accuracy is: 0.94608
+2026-06-19 11:10:32,624 - Model - INFO - eval mIoU of Airplane       0.860621
+2026-06-19 11:10:32,624 - Model - INFO - Epoch 87 test Accuracy: 0.929567  Class avg mIOU: 0.860621   Inctance avg mIOU: 0.860621
+2026-06-19 11:10:32,625 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:10:32,625 - Model - INFO - Best class avg mIOU is: 0.86267
+2026-06-19 11:10:32,625 - Model - INFO - Best inctance avg mIOU is: 0.86267
+2026-06-19 11:10:32,625 - Model - INFO - Epoch 88 (88/100):
+2026-06-19 11:10:32,625 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:10:41,286 - Model - INFO - Train accuracy is: 0.94614
+2026-06-19 11:10:42,686 - Model - INFO - eval mIoU of Airplane       0.857656
+2026-06-19 11:10:42,687 - Model - INFO - Epoch 88 test Accuracy: 0.928988  Class avg mIOU: 0.857656   Inctance avg mIOU: 0.857656
+2026-06-19 11:10:42,687 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:10:42,687 - Model - INFO - Best class avg mIOU is: 0.86267
+2026-06-19 11:10:42,687 - Model - INFO - Best inctance avg mIOU is: 0.86267
+2026-06-19 11:10:42,687 - Model - INFO - Epoch 89 (89/100):
+2026-06-19 11:10:42,687 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:10:51,344 - Model - INFO - Train accuracy is: 0.94557
+2026-06-19 11:10:52,760 - Model - INFO - eval mIoU of Airplane       0.855579
+2026-06-19 11:10:52,760 - Model - INFO - Epoch 89 test Accuracy: 0.927114  Class avg mIOU: 0.855579   Inctance avg mIOU: 0.855579
+2026-06-19 11:10:52,760 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:10:52,760 - Model - INFO - Best class avg mIOU is: 0.86267
+2026-06-19 11:10:52,760 - Model - INFO - Best inctance avg mIOU is: 0.86267
+2026-06-19 11:10:52,760 - Model - INFO - Epoch 90 (90/100):
+2026-06-19 11:10:52,760 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:11:01,435 - Model - INFO - Train accuracy is: 0.94663
+2026-06-19 11:11:02,854 - Model - INFO - eval mIoU of Airplane       0.855802
+2026-06-19 11:11:02,854 - Model - INFO - Epoch 90 test Accuracy: 0.927561  Class avg mIOU: 0.855802   Inctance avg mIOU: 0.855802
+2026-06-19 11:11:02,854 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:11:02,854 - Model - INFO - Best class avg mIOU is: 0.86267
+2026-06-19 11:11:02,854 - Model - INFO - Best inctance avg mIOU is: 0.86267
+2026-06-19 11:11:02,854 - Model - INFO - Epoch 91 (91/100):
+2026-06-19 11:11:02,854 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:11:11,531 - Model - INFO - Train accuracy is: 0.94758
+2026-06-19 11:11:12,938 - Model - INFO - eval mIoU of Airplane       0.857701
+2026-06-19 11:11:12,938 - Model - INFO - Epoch 91 test Accuracy: 0.928694  Class avg mIOU: 0.857701   Inctance avg mIOU: 0.857701
+2026-06-19 11:11:12,938 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:11:12,938 - Model - INFO - Best class avg mIOU is: 0.86267
+2026-06-19 11:11:12,938 - Model - INFO - Best inctance avg mIOU is: 0.86267
+2026-06-19 11:11:12,938 - Model - INFO - Epoch 92 (92/100):
+2026-06-19 11:11:12,938 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:11:21,621 - Model - INFO - Train accuracy is: 0.94690
+2026-06-19 11:11:23,036 - Model - INFO - eval mIoU of Airplane       0.856137
+2026-06-19 11:11:23,036 - Model - INFO - Epoch 92 test Accuracy: 0.928285  Class avg mIOU: 0.856137   Inctance avg mIOU: 0.856137
+2026-06-19 11:11:23,036 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:11:23,037 - Model - INFO - Best class avg mIOU is: 0.86267
+2026-06-19 11:11:23,037 - Model - INFO - Best inctance avg mIOU is: 0.86267
+2026-06-19 11:11:23,037 - Model - INFO - Epoch 93 (93/100):
+2026-06-19 11:11:23,037 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:11:31,663 - Model - INFO - Train accuracy is: 0.94723
+2026-06-19 11:11:33,075 - Model - INFO - eval mIoU of Airplane       0.858399
+2026-06-19 11:11:33,075 - Model - INFO - Epoch 93 test Accuracy: 0.929154  Class avg mIOU: 0.858399   Inctance avg mIOU: 0.858399
+2026-06-19 11:11:33,076 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:11:33,076 - Model - INFO - Best class avg mIOU is: 0.86267
+2026-06-19 11:11:33,076 - Model - INFO - Best inctance avg mIOU is: 0.86267
+2026-06-19 11:11:33,076 - Model - INFO - Epoch 94 (94/100):
+2026-06-19 11:11:33,076 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:11:41,724 - Model - INFO - Train accuracy is: 0.94743
+2026-06-19 11:11:43,133 - Model - INFO - eval mIoU of Airplane       0.857368
+2026-06-19 11:11:43,133 - Model - INFO - Epoch 94 test Accuracy: 0.928756  Class avg mIOU: 0.857368   Inctance avg mIOU: 0.857368
+2026-06-19 11:11:43,134 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:11:43,134 - Model - INFO - Best class avg mIOU is: 0.86267
+2026-06-19 11:11:43,134 - Model - INFO - Best inctance avg mIOU is: 0.86267
+2026-06-19 11:11:43,134 - Model - INFO - Epoch 95 (95/100):
+2026-06-19 11:11:43,134 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:11:51,764 - Model - INFO - Train accuracy is: 0.94720
+2026-06-19 11:11:53,169 - Model - INFO - eval mIoU of Airplane       0.862791
+2026-06-19 11:11:53,169 - Model - INFO - Epoch 95 test Accuracy: 0.932191  Class avg mIOU: 0.862791   Inctance avg mIOU: 0.862791
+2026-06-19 11:11:53,170 - Model - INFO - Save model...
+2026-06-19 11:11:53,170 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 11:11:53,206 - Model - INFO - Saving model....
+2026-06-19 11:11:53,206 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:11:53,206 - Model - INFO - Best class avg mIOU is: 0.86279
+2026-06-19 11:11:53,206 - Model - INFO - Best inctance avg mIOU is: 0.86279
+2026-06-19 11:11:53,206 - Model - INFO - Epoch 96 (96/100):
+2026-06-19 11:11:53,206 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:12:01,838 - Model - INFO - Train accuracy is: 0.94764
+2026-06-19 11:12:03,255 - Model - INFO - eval mIoU of Airplane       0.858080
+2026-06-19 11:12:03,255 - Model - INFO - Epoch 96 test Accuracy: 0.929261  Class avg mIOU: 0.858080   Inctance avg mIOU: 0.858080
+2026-06-19 11:12:03,256 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:12:03,256 - Model - INFO - Best class avg mIOU is: 0.86279
+2026-06-19 11:12:03,256 - Model - INFO - Best inctance avg mIOU is: 0.86279
+2026-06-19 11:12:03,256 - Model - INFO - Epoch 97 (97/100):
+2026-06-19 11:12:03,256 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:12:11,913 - Model - INFO - Train accuracy is: 0.94651
+2026-06-19 11:12:13,326 - Model - INFO - eval mIoU of Airplane       0.859705
+2026-06-19 11:12:13,326 - Model - INFO - Epoch 97 test Accuracy: 0.930304  Class avg mIOU: 0.859705   Inctance avg mIOU: 0.859705
+2026-06-19 11:12:13,326 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:12:13,326 - Model - INFO - Best class avg mIOU is: 0.86279
+2026-06-19 11:12:13,326 - Model - INFO - Best inctance avg mIOU is: 0.86279
+2026-06-19 11:12:13,326 - Model - INFO - Epoch 98 (98/100):
+2026-06-19 11:12:13,327 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:12:21,939 - Model - INFO - Train accuracy is: 0.94729
+2026-06-19 11:12:23,364 - Model - INFO - eval mIoU of Airplane       0.860546
+2026-06-19 11:12:23,364 - Model - INFO - Epoch 98 test Accuracy: 0.931206  Class avg mIOU: 0.860546   Inctance avg mIOU: 0.860546
+2026-06-19 11:12:23,364 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:12:23,364 - Model - INFO - Best class avg mIOU is: 0.86279
+2026-06-19 11:12:23,364 - Model - INFO - Best inctance avg mIOU is: 0.86279
+2026-06-19 11:12:23,364 - Model - INFO - Epoch 99 (99/100):
+2026-06-19 11:12:23,364 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:12:32,015 - Model - INFO - Train accuracy is: 0.94782
+2026-06-19 11:12:33,440 - Model - INFO - eval mIoU of Airplane       0.857435
+2026-06-19 11:12:33,440 - Model - INFO - Epoch 99 test Accuracy: 0.927341  Class avg mIOU: 0.857435   Inctance avg mIOU: 0.857435
+2026-06-19 11:12:33,440 - Model - INFO - Best accuracy is: 0.93249
+2026-06-19 11:12:33,440 - Model - INFO - Best class avg mIOU is: 0.86279
+2026-06-19 11:12:33,440 - Model - INFO - Best inctance avg mIOU is: 0.86279
+2026-06-19 11:12:33,440 - Model - INFO - Epoch 100 (100/100):
+2026-06-19 11:12:33,440 - Model - INFO - Learning rate:0.000063
+2026-06-19 11:12:42,068 - Model - INFO - Train accuracy is: 0.94766
+2026-06-19 11:12:43,471 - Model - INFO - eval mIoU of Airplane       0.865150
+2026-06-19 11:12:43,471 - Model - INFO - Epoch 100 test Accuracy: 0.932613  Class avg mIOU: 0.865150   Inctance avg mIOU: 0.865150
+2026-06-19 11:12:43,471 - Model - INFO - Save model...
+2026-06-19 11:12:43,471 - Model - INFO - Saving at log/part_seg/parts4_cap596/Airplane/seed_99/checkpoints/best_model.pth
+2026-06-19 11:12:43,517 - Model - INFO - Saving model....
+2026-06-19 11:12:43,517 - Model - INFO - Best accuracy is: 0.93261
+2026-06-19 11:12:43,517 - Model - INFO - Best class avg mIOU is: 0.86515
+2026-06-19 11:12:43,517 - Model - INFO - Best inctance avg mIOU is: 0.86515

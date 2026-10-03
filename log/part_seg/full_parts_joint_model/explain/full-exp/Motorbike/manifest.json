@@ -1,0 +1,369 @@
+{
+  "study_id": "3d5f7d1cdf0318c5942d3ed3c7ad0c9e2f3542f6d0b49b3a0b1740d58349a569",
+  "identity": {
+    "schema": 2,
+    "config": {
+      "category": "Motorbike",
+      "log_dir": "log/part_seg/full_parts_joint_model",
+      "output_dir": "log/part_seg/full_parts_joint_model/explain/full-exp/Motorbike",
+      "npoints": 2048,
+      "num_parts_filter": 6,
+      "test_count": 34,
+      "subset_seed": 0,
+      "sample_seed": 0,
+      "region_seed": 0,
+      "groups": 32,
+      "trial_objects": [
+        0,
+        1,
+        2,
+        5,
+        7,
+        8,
+        13,
+        16,
+        21,
+        27
+      ],
+      "example_objects": [
+        16,
+        21,
+        27
+      ],
+      "exact_objects": [
+        21
+      ],
+      "exact_groups": 8,
+      "exact_budgets": [
+        64,
+        128,
+        254
+      ],
+      "trial_budgets": [
+        4096,
+        8192
+      ],
+      "kernel_seeds": [
+        0,
+        1,
+        2
+      ],
+      "replacement_seeds": [
+        0,
+        1,
+        2
+      ],
+      "batch_size": 8,
+      "score_chunk_size": 64,
+      "random_removal_orders": 5,
+      "device": "auto",
+      "logprob_mode": "category",
+      "object_names": [
+        "365c1f92a54c8cb52a45a87054fa7272.txt",
+        "3d37db1d974499287395d58407f193ba.txt",
+        "3fd1bff496b369f71765540024eb9fef.txt",
+        "40b7a63fd9ede0cf48272812609617e2.txt",
+        "41cc9674e700c3fdb37378f3c85478b4.txt",
+        "47054c1839830834a88e8cb97b773125.txt",
+        "49edb54e97458de8d373c34785838ee4.txt",
+        "4a2f0b20ef680347395d58407f193ba.txt",
+        "532e6f88a9975a27b37378f3c85478b4.txt",
+        "54f016b47a5864cd5dde04c96fd8146.txt",
+        "55caf44a43f2c04d468bac13e007a6e9.txt",
+        "5bb3597d49c58017b37378f3c85478b4.txt",
+        "61b17f12bec91d057395d58407f193ba.txt",
+        "6819949f5625ca12d0f568c31c1cd62a.txt",
+        "70d9cc5115bfedeeab548456bc75847f.txt",
+        "73fd19410ce60b83d5dde04c96fd8146.txt",
+        "7b4eb8cbc470d0d6d5dde04c96fd8146.txt",
+        "7c4fc3a05d5fc8b1d0f568c31c1cd62a.txt",
+        "7d75e8200565ffa7b37378f3c85478b4.txt",
+        "80011e85cd42668ad373c34785838ee4.txt",
+        "8032295bd3851d75468bac13e007a6e9.txt",
+        "80e717f07645a4a0b37378f3c85478b4.txt",
+        "8134a965cc0b134bb37378f3c85478b4.txt",
+        "832c4a316c419228b37378f3c85478b4.txt",
+        "90a521e0def2631fd5dde04c96fd8146.txt",
+        "973d75ed9c12836f3d033e6cf82ec72c.txt",
+        "992fbae5178edcbc4e31d0cb4d7568.txt",
+        "9dd4ae1c34af4766b4f2746c8140d6d6.txt",
+        "9e9300a6e1caec217395d58407f193ba.txt",
+        "9f9de88a95b56660b37378f3c85478b4.txt",
+        "a0a40a9d5aabd6a7d5dde04c96fd8146.txt",
+        "b767982d38b5171e429f1c522640e6f0.txt",
+        "bae59e64a50d3aa2f68f798d07e007b6.txt",
+        "bcbcfdad5e0e1d9ba88e8cb97b773125.txt"
+      ],
+      "training_seen_objects": [],
+      "selection_seed": 0,
+      "cross_mask_removal": true
+    },
+    "checkpoint_sha256": "5dbfa730646d8e163baaee092c51287394bdc028167a63ba2cf757d0719299d5",
+    "source_files": {
+      "data_utils/ShapeNetDataLoader.py": "1c6b728061c2dfc69c1898faf8aed97ce9c4f063e8b77f758f3a22240b74431c",
+      "models/pointnet2_part_seg_msg.py": "f6da4915bfac6267ae604ecd4edef4c4a85e5712faa0cd28152c0d7cf1ffe10e",
+      "models/pointnet2_utils.py": "760ffef3ff5c63d504c5fd6509490473fa544bbeb6e0942b60c849d5d13096ab",
+      "xai/config.py": "680e0bbe4b756fd51dd8e509b6602a629926b20580ddf5a2bd22f5dec6bc324b",
+      "xai/data.py": "cea5a0e9b4e12117d81fa14f8163eb49ded5ca2acf53177c76d6013639296c9f",
+      "xai/estimators/exact.py": "3e5c7f8108751ad23b53c2eccbfd9f8437d5cf0b936a809226769ee68f12813d",
+      "xai/estimators/kernel.py": "59312a4b9ccbc90495f945712a25a2659a62395cec3e16063f99d84bd7708a31",
+      "xai/game.py": "663a6c0e387c66a5199bdbd0056d759126b27af3c2ffab872e673063e78d3fd5",
+      "xai/integrity.py": "ce1684e3b64332216fc1d3578902687915b3df62bed8683f25a119d0f3cd4989",
+      "xai/masking.py": "130e8befb1b150aa006b6eeaaa150b156302da21d52b67274d0f9311aa9a4b58",
+      "xai/metrics.py": "88cd6189d8402f4d9638067348597db32b5bdb2292ddf2c94a89a1ce979eeff2",
+      "xai/model_io.py": "adf26fc744f7e2aa70307ccee7f997c72cd616a6562ff05b3db80b7e3bd91de6",
+      "xai/regions.py": "593889bebb7e3f754d82a9e21bca643718bbfe12a66defddbfa6f52e299a2397",
+      "xai/run.py": "9bb1f22206b551d54407f9e75aeb0a16bdb5d01654a78974634064548db19f0f",
+      "xai/storage.py": "d95da6690706b5aed453e6abd56bab88a9c378b01847585d9a9d35608867552a",
+      "xai/validation.py": "cd0ee8df4f5a72e09d167c2a4ecd0f781f2d957c638035614e8a11244aa7eb46"
+    },
+    "dependencies": {
+      "shap": "0.52.0",
+      "numpy": "2.4.4",
+      "scipy": "1.18.0",
+      "torch": "2.12.1+cu132"
+    },
+    "objects": [
+      {
+        "index": 0,
+        "name": "365c1f92a54c8cb52a45a87054fa7272.txt",
+        "sha256": "91ce4b05875607cee7d8e67b267699eeed02f3eff2d8da681a3827b82bc9e526"
+      },
+      {
+        "index": 1,
+        "name": "3d37db1d974499287395d58407f193ba.txt",
+        "sha256": "70755255ba862954a63e256d850ec48374821224fa9cbccff96cca00757ac8bc"
+      },
+      {
+        "index": 2,
+        "name": "3fd1bff496b369f71765540024eb9fef.txt",
+        "sha256": "3756999bca7ae5d273b845a1aa2aad6d280e5fbbec91e399aa148ab1137dc45d"
+      },
+      {
+        "index": 3,
+        "name": "40b7a63fd9ede0cf48272812609617e2.txt",
+        "sha256": "7b89b9fa46345e2f302b5d91ebdcde5ff3768274aef26a8176169aec113e4f51"
+      },
+      {
+        "index": 4,
+        "name": "41cc9674e700c3fdb37378f3c85478b4.txt",
+        "sha256": "609c07a490351f13b0adba305d9c7b8c7d8490b7f236f9434d0e0d81eea69128"
+      },
+      {
+        "index": 5,
+        "name": "47054c1839830834a88e8cb97b773125.txt",
+        "sha256": "91cd323e88b38e8ae1ddbca33b1ac6233b9921596bf8380be2dfb363d05ad44f"
+      },
+      {
+        "index": 6,
+        "name": "49edb54e97458de8d373c34785838ee4.txt",
+        "sha256": "1863297c598b32d481afe127cce629db55e96319144c1ef70c50e5036d0ba59b"
+      },
+      {
+        "index": 7,
+        "name": "4a2f0b20ef680347395d58407f193ba.txt",
+        "sha256": "b3f5f57c831a3ebe35bc0a47f42779c76bcdf20533fdaf0085c888437a17ae0d"
+      },
+      {
+        "index": 8,
+        "name": "532e6f88a9975a27b37378f3c85478b4.txt",
+        "sha256": "d70fb9bfc93ffd242d2e6c767db4b53393b034e911a7b772841e1c05e0d4e39f"
+      },
+      {
+        "index": 9,
+        "name": "54f016b47a5864cd5dde04c96fd8146.txt",
+        "sha256": "98c31da2cc352b351b5e8a0731e8a4a75178c9d60c3fd42e7aa3283e270e892c"
+      },
+      {
+        "index": 10,
+        "name": "55caf44a43f2c04d468bac13e007a6e9.txt",
+        "sha256": "9e7654594a2fa9a79483352f6d97ae1d88cdbe1b0b7c2b245f4a105d1fe6109a"
+      },
+      {
+        "index": 11,
+        "name": "5bb3597d49c58017b37378f3c85478b4.txt",
+        "sha256": "0ffaa5aae4d6e0011dbe53f5858f4cdf929e19befe2e8f8dab4d8e2d79488dd0"
+      },
+      {
+        "index": 12,
+        "name": "61b17f12bec91d057395d58407f193ba.txt",
+        "sha256": "9a941d93fb4955cae510fd1e036174b85975d0cc6c86662f2e5ac3293ed83d86"
+      },
+      {
+        "index": 13,
+        "name": "6819949f5625ca12d0f568c31c1cd62a.txt",
+        "sha256": "2c1471b247ddb3db9187e47f1d82ea9acb01b2831b89fe3f17101b82ce907423"
+      },
+      {
+        "index": 14,
+        "name": "70d9cc5115bfedeeab548456bc75847f.txt",
+        "sha256": "51fa20da3694a1e7e5a857910bc554e7831f5389e048ae8d0f967fb865797115"
+      },
+      {
+        "index": 15,
+        "name": "73fd19410ce60b83d5dde04c96fd8146.txt",
+        "sha256": "278ca8bd2d78370906ac5ebdb2cc5944d1b7901396408e5ff6916692d1e65980"
+      },
+      {
+        "index": 16,
+        "name": "7b4eb8cbc470d0d6d5dde04c96fd8146.txt",
+        "sha256": "fec601f1eda4300fea0962c11006a838698356cad749e5fc3d9e56aaf3893299"
+      },
+      {
+        "index": 17,
+        "name": "7c4fc3a05d5fc8b1d0f568c31c1cd62a.txt",
+        "sha256": "f42a26f67f1567629fb977bfb318558037dc75e1d2c2350494f86136e7ec3106"
+      },
+      {
+        "index": 18,
+        "name": "7d75e8200565ffa7b37378f3c85478b4.txt",
+        "sha256": "73d2f87344859d9e9094a8fdef1b6e20b0c5429d263e2427ccfc772d239aa598"
+      },
+      {
+        "index": 19,
+        "name": "80011e85cd42668ad373c34785838ee4.txt",
+        "sha256": "2ab30bc59bbbd7e07d3889ba09f82f2fec60835341d2050ed0b5f1867a27f041"
+      },
+      {
+        "index": 20,
+        "name": "8032295bd3851d75468bac13e007a6e9.txt",
+        "sha256": "d88f39751b3f6b076852fdbcd8a787b0223af144727e5fb898617eb1dbe4bec8"
+      },
+      {
+        "index": 21,
+        "name": "80e717f07645a4a0b37378f3c85478b4.txt",
+        "sha256": "bd3550fb9cd19b84438ec03a9bd603969cdc950beda6a0a86d1e8f602547f51d"
+      },
+      {
+        "index": 22,
+        "name": "8134a965cc0b134bb37378f3c85478b4.txt",
+        "sha256": "8d48067afa109786a2597402846feb90645a22f19f894fb8d275e34b9754d2ec"
+      },
+      {
+        "index": 23,
+        "name": "832c4a316c419228b37378f3c85478b4.txt",
+        "sha256": "1faea0b60f8e0db31d0e91960df772934a7e62a8edfa3489a698ffb160a123dd"
+      },
+      {
+        "index": 24,
+        "name": "90a521e0def2631fd5dde04c96fd8146.txt",
+        "sha256": "b94b2c03fb1aa0e8d099da213fb8bf47123322ca1a9321840ec0785c2c5e5f34"
+      },
+      {
+        "index": 25,
+        "name": "973d75ed9c12836f3d033e6cf82ec72c.txt",
+        "sha256": "ab2f369d90f309ced1ac98f2410e6b0bb5021b9cb59c96d0d162a228016cb1d0"
+      },
+      {
+        "index": 26,
+        "name": "992fbae5178edcbc4e31d0cb4d7568.txt",
+        "sha256": "30fe4f1b662199018e26e3043b32e30d683c3b80c1b229f8efca5eb40dad9378"
+      },
+      {
+        "index": 27,
+        "name": "9dd4ae1c34af4766b4f2746c8140d6d6.txt",
+        "sha256": "60019ed6ea4f66c7bba7269f87688bb91288657cefa24a5f4403636d04859c12"
+      },
+      {
+        "index": 28,
+        "name": "9e9300a6e1caec217395d58407f193ba.txt",
+        "sha256": "bcfe0a730ab1561e1665d9161a00a97587bdae306d36113345f178ccbdd8b5d6"
+      },
+      {
+        "index": 29,
+        "name": "9f9de88a95b56660b37378f3c85478b4.txt",
+        "sha256": "d23a43ec4d11ca90c89418303f71de0ff74567a117a5e3ae7f4877315477b7b7"
+      },
+      {
+        "index": 30,
+        "name": "a0a40a9d5aabd6a7d5dde04c96fd8146.txt",
+        "sha256": "508737b90dec4e2717234ba4220f446c495bd68e748d204cad7ea8d439caccc3"
+      },
+      {
+        "index": 31,
+        "name": "b767982d38b5171e429f1c522640e6f0.txt",
+        "sha256": "556d11d6e7c5e4025297f37b4591364c224bf1d86e098d11ef49a787a5ed2185"
+      },
+      {
+        "index": 32,
+        "name": "bae59e64a50d3aa2f68f798d07e007b6.txt",
+        "sha256": "3ebfbcc73ca146cabb5a8e72d0bf533e8785a1f352f0f4f9014e87857c56628f"
+      },
+      {
+        "index": 33,
+        "name": "bcbcfdad5e0e1d9ba88e8cb97b773125.txt",
+        "sha256": "64d6d7ed06a10b165e95586d95dccbb375ad696728f343911c7d857ab0490a3c"
+      }
+    ],
+    "category_map_sha256": "c3dc754527d6b4f9676dbbe34922ed7c85da3705b5072a45c788dee4d345b831",
+    "split_files": {
+      "shuffled_test_file_list.json": "5cbace3de0c18b3a33504d40c1ddb3baa6a9cf158f5c3cb60450b3cf715042ec",
+      "shuffled_train_file_list.json": "d09ab4826e3faf870cf130b772a0a52ddc1960261319210ff090413bb82b9e27",
+      "shuffled_val_file_list.json": "6f2c71ae3b3dbf60f6987770f14001bb1f5b90d4f2903f83a5fa9df012be2837"
+    },
+    "fps": "initial point index 0 for every cloud",
+    "scores": [
+      "iou",
+      "logprob_mean"
+    ],
+    "logprob_mode": "category",
+    "masking_methods": [
+      "centroid",
+      "retained_point"
+    ],
+    "cohorts": {
+      "365c1f92a54c8cb52a45a87054fa7272.txt": "main",
+      "3d37db1d974499287395d58407f193ba.txt": "main",
+      "3fd1bff496b369f71765540024eb9fef.txt": "main",
+      "40b7a63fd9ede0cf48272812609617e2.txt": "main",
+      "41cc9674e700c3fdb37378f3c85478b4.txt": "main",
+      "47054c1839830834a88e8cb97b773125.txt": "main",
+      "49edb54e97458de8d373c34785838ee4.txt": "main",
+      "4a2f0b20ef680347395d58407f193ba.txt": "main",
+      "532e6f88a9975a27b37378f3c85478b4.txt": "main",
+      "54f016b47a5864cd5dde04c96fd8146.txt": "main",
+      "55caf44a43f2c04d468bac13e007a6e9.txt": "main",
+      "5bb3597d49c58017b37378f3c85478b4.txt": "main",
+      "61b17f12bec91d057395d58407f193ba.txt": "main",
+      "6819949f5625ca12d0f568c31c1cd62a.txt": "main",
+      "70d9cc5115bfedeeab548456bc75847f.txt": "main",
+      "73fd19410ce60b83d5dde04c96fd8146.txt": "main",
+      "7b4eb8cbc470d0d6d5dde04c96fd8146.txt": "main",
+      "7c4fc3a05d5fc8b1d0f568c31c1cd62a.txt": "main",
+      "7d75e8200565ffa7b37378f3c85478b4.txt": "main",
+      "80011e85cd42668ad373c34785838ee4.txt": "main",
+      "8032295bd3851d75468bac13e007a6e9.txt": "main",
+      "80e717f07645a4a0b37378f3c85478b4.txt": "main",
+      "8134a965cc0b134bb37378f3c85478b4.txt": "main",
+      "832c4a316c419228b37378f3c85478b4.txt": "main",
+      "90a521e0def2631fd5dde04c96fd8146.txt": "main",
+      "973d75ed9c12836f3d033e6cf82ec72c.txt": "main",
+      "992fbae5178edcbc4e31d0cb4d7568.txt": "main",
+      "9dd4ae1c34af4766b4f2746c8140d6d6.txt": "main",
+      "9e9300a6e1caec217395d58407f193ba.txt": "main",
+      "9f9de88a95b56660b37378f3c85478b4.txt": "main",
+      "a0a40a9d5aabd6a7d5dde04c96fd8146.txt": "main",
+      "b767982d38b5171e429f1c522640e6f0.txt": "main",
+      "bae59e64a50d3aa2f68f798d07e007b6.txt": "main",
+      "bcbcfdad5e0e1d9ba88e8cb97b773125.txt": "main"
+    }
+  },
+  "provenance": {
+    "timestamp_utc": "2026-09-24T15:58:01.452917+00:00",
+    "torch_version": "2.12.1+cu132",
+    "cuda_version": "13.2",
+    "gpu_name": "NVIDIA RTX A6000",
+    "python_version": "3.14.6",
+    "hostname": "ailab08",
+    "git_commit": "not-a-git-checkout",
+    "checkpoint_sha256": "5dbfa730646d8e163baaee092c51287394bdc028167a63ba2cf757d0719299d5"
+  },
+  "notes": [
+    "Masking changes xyz; original point labels and row indices stay fixed.",
+    "Mean log-probability uses original true-part rows; mode=category.",
+    "IoU predictions are restricted to the category label set.",
+    "Retained-point has an origin fallback when all groups are hidden.",
+    "Trial examples were selected before the new SHAP runs.",
+    "No fixed scientific pass/fail gates."
+  ]
+}

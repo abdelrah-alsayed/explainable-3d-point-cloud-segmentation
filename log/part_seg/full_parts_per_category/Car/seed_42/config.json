@@ -1,0 +1,41 @@
+{
+  "args": {
+    "model": "pointnet2_part_seg_msg",
+    "batch_size": 16,
+    "epoch": 100,
+    "learning_rate": 0.001,
+    "gpu": "1",
+    "optimizer": "Adam",
+    "log_dir": "full_parts_per_category/Car/seed_42",
+    "decay_rate": 0.0001,
+    "npoint": 2048,
+    "step_size": 20,
+    "lr_decay": 0.5,
+    "seed": 42,
+    "categories": [
+      "Car"
+    ],
+    "samples_per_category": null,
+    "subset_seed": 0,
+    "test_samples_per_category": null,
+    "test_subset_seed": 0,
+    "full_parts_only": true,
+    "num_parts": null
+  },
+  "seed": 42,
+  "git_commit": "unknown",
+  "torch_version": "2.12.1+cu132",
+  "cuda_version": "13.2",
+  "gpu_name": "NVIDIA RTX A2000 12GB",
+  "num_categories": 1,
+  "categories": [
+    "Car"
+  ],
+  "samples_per_category": null,
+  "subset_seed": 0,
+  "test_samples_per_category": null,
+  "test_subset_seed": 0,
+  "full_parts_only": true,
+  "num_parts": null,
+  "timestamp": "2026-09-08T20:15:31.021167"
+}

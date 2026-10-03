@@ -1,0 +1,841 @@
+2026-06-19 23:40:34,470 - Model - INFO - PARAMETER ...
+2026-06-19 23:40:34,470 - Model - INFO - Namespace(model='pointnet2_part_seg_msg', batch_size=16, epoch=100, learning_rate=0.001, gpu='0', optimizer='Adam', log_dir='parts3_cap626/Lamp/seed_1000', decay_rate=0.0001, npoint=2048, step_size=20, lr_decay=0.5, seed=1000, categories=['Lamp'], samples_per_category=626, subset_seed=0, test_samples_per_category=159, test_subset_seed=0, full_parts_only=False, num_parts=3)
+2026-06-19 23:40:34,522 - Model - INFO - The number of training data is: 626
+2026-06-19 23:40:34,523 - Model - INFO - The number of test data is: 159
+2026-06-19 23:40:34,755 - Model - INFO - No existing model, starting training from scratch...
+2026-06-19 23:40:34,966 - Model - INFO - Epoch 1 (1/100):
+2026-06-19 23:40:34,966 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:40:44,386 - Model - INFO - Train accuracy is: 0.75485
+2026-06-19 23:40:46,157 - Model - INFO - eval mIoU of Lamp           0.613010
+2026-06-19 23:40:46,157 - Model - INFO - Epoch 1 test Accuracy: 0.801721  Class avg mIOU: 0.613010   Inctance avg mIOU: 0.613010
+2026-06-19 23:40:46,157 - Model - INFO - Save model...
+2026-06-19 23:40:46,157 - Model - INFO - Saving at log/part_seg/parts3_cap626/Lamp/seed_1000/checkpoints/best_model.pth
+2026-06-19 23:40:46,192 - Model - INFO - Saving model....
+2026-06-19 23:40:46,192 - Model - INFO - Best accuracy is: 0.80172
+2026-06-19 23:40:46,192 - Model - INFO - Best class avg mIOU is: 0.61301
+2026-06-19 23:40:46,192 - Model - INFO - Best inctance avg mIOU is: 0.61301
+2026-06-19 23:40:46,192 - Model - INFO - Epoch 2 (2/100):
+2026-06-19 23:40:46,192 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:40:55,272 - Model - INFO - Train accuracy is: 0.88900
+2026-06-19 23:40:57,040 - Model - INFO - eval mIoU of Lamp           0.839419
+2026-06-19 23:40:57,040 - Model - INFO - Epoch 2 test Accuracy: 0.909812  Class avg mIOU: 0.839419   Inctance avg mIOU: 0.839419
+2026-06-19 23:40:57,040 - Model - INFO - Save model...
+2026-06-19 23:40:57,040 - Model - INFO - Saving at log/part_seg/parts3_cap626/Lamp/seed_1000/checkpoints/best_model.pth
+2026-06-19 23:40:57,088 - Model - INFO - Saving model....
+2026-06-19 23:40:57,088 - Model - INFO - Best accuracy is: 0.90981
+2026-06-19 23:40:57,088 - Model - INFO - Best class avg mIOU is: 0.83942
+2026-06-19 23:40:57,088 - Model - INFO - Best inctance avg mIOU is: 0.83942
+2026-06-19 23:40:57,088 - Model - INFO - Epoch 3 (3/100):
+2026-06-19 23:40:57,088 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:41:06,198 - Model - INFO - Train accuracy is: 0.90009
+2026-06-19 23:41:07,965 - Model - INFO - eval mIoU of Lamp           0.863633
+2026-06-19 23:41:07,965 - Model - INFO - Epoch 3 test Accuracy: 0.922965  Class avg mIOU: 0.863633   Inctance avg mIOU: 0.863633
+2026-06-19 23:41:07,965 - Model - INFO - Save model...
+2026-06-19 23:41:07,965 - Model - INFO - Saving at log/part_seg/parts3_cap626/Lamp/seed_1000/checkpoints/best_model.pth
+2026-06-19 23:41:08,012 - Model - INFO - Saving model....
+2026-06-19 23:41:08,012 - Model - INFO - Best accuracy is: 0.92297
+2026-06-19 23:41:08,012 - Model - INFO - Best class avg mIOU is: 0.86363
+2026-06-19 23:41:08,012 - Model - INFO - Best inctance avg mIOU is: 0.86363
+2026-06-19 23:41:08,012 - Model - INFO - Epoch 4 (4/100):
+2026-06-19 23:41:08,012 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:41:17,119 - Model - INFO - Train accuracy is: 0.90517
+2026-06-19 23:41:18,874 - Model - INFO - eval mIoU of Lamp           0.842869
+2026-06-19 23:41:18,874 - Model - INFO - Epoch 4 test Accuracy: 0.920908  Class avg mIOU: 0.842869   Inctance avg mIOU: 0.842869
+2026-06-19 23:41:18,874 - Model - INFO - Best accuracy is: 0.92297
+2026-06-19 23:41:18,874 - Model - INFO - Best class avg mIOU is: 0.86363
+2026-06-19 23:41:18,874 - Model - INFO - Best inctance avg mIOU is: 0.86363
+2026-06-19 23:41:18,875 - Model - INFO - Epoch 5 (5/100):
+2026-06-19 23:41:18,875 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:41:27,984 - Model - INFO - Train accuracy is: 0.91352
+2026-06-19 23:41:29,739 - Model - INFO - eval mIoU of Lamp           0.840085
+2026-06-19 23:41:29,739 - Model - INFO - Epoch 5 test Accuracy: 0.904871  Class avg mIOU: 0.840085   Inctance avg mIOU: 0.840085
+2026-06-19 23:41:29,739 - Model - INFO - Best accuracy is: 0.92297
+2026-06-19 23:41:29,739 - Model - INFO - Best class avg mIOU is: 0.86363
+2026-06-19 23:41:29,739 - Model - INFO - Best inctance avg mIOU is: 0.86363
+2026-06-19 23:41:29,739 - Model - INFO - Epoch 6 (6/100):
+2026-06-19 23:41:29,739 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:41:38,816 - Model - INFO - Train accuracy is: 0.91536
+2026-06-19 23:41:40,558 - Model - INFO - eval mIoU of Lamp           0.848888
+2026-06-19 23:41:40,558 - Model - INFO - Epoch 6 test Accuracy: 0.921430  Class avg mIOU: 0.848888   Inctance avg mIOU: 0.848888
+2026-06-19 23:41:40,558 - Model - INFO - Best accuracy is: 0.92297
+2026-06-19 23:41:40,558 - Model - INFO - Best class avg mIOU is: 0.86363
+2026-06-19 23:41:40,559 - Model - INFO - Best inctance avg mIOU is: 0.86363
+2026-06-19 23:41:40,559 - Model - INFO - Epoch 7 (7/100):
+2026-06-19 23:41:40,559 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:41:49,670 - Model - INFO - Train accuracy is: 0.91205
+2026-06-19 23:41:51,429 - Model - INFO - eval mIoU of Lamp           0.867992
+2026-06-19 23:41:51,429 - Model - INFO - Epoch 7 test Accuracy: 0.925548  Class avg mIOU: 0.867992   Inctance avg mIOU: 0.867992
+2026-06-19 23:41:51,429 - Model - INFO - Save model...
+2026-06-19 23:41:51,429 - Model - INFO - Saving at log/part_seg/parts3_cap626/Lamp/seed_1000/checkpoints/best_model.pth
+2026-06-19 23:41:51,476 - Model - INFO - Saving model....
+2026-06-19 23:41:51,476 - Model - INFO - Best accuracy is: 0.92555
+2026-06-19 23:41:51,476 - Model - INFO - Best class avg mIOU is: 0.86799
+2026-06-19 23:41:51,476 - Model - INFO - Best inctance avg mIOU is: 0.86799
+2026-06-19 23:41:51,476 - Model - INFO - Epoch 8 (8/100):
+2026-06-19 23:41:51,477 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:42:00,579 - Model - INFO - Train accuracy is: 0.91541
+2026-06-19 23:42:02,356 - Model - INFO - eval mIoU of Lamp           0.863267
+2026-06-19 23:42:02,356 - Model - INFO - Epoch 8 test Accuracy: 0.928757  Class avg mIOU: 0.863267   Inctance avg mIOU: 0.863267
+2026-06-19 23:42:02,356 - Model - INFO - Best accuracy is: 0.92876
+2026-06-19 23:42:02,356 - Model - INFO - Best class avg mIOU is: 0.86799
+2026-06-19 23:42:02,356 - Model - INFO - Best inctance avg mIOU is: 0.86799
+2026-06-19 23:42:02,356 - Model - INFO - Epoch 9 (9/100):
+2026-06-19 23:42:02,356 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:42:11,485 - Model - INFO - Train accuracy is: 0.90849
+2026-06-19 23:42:13,248 - Model - INFO - eval mIoU of Lamp           0.854702
+2026-06-19 23:42:13,248 - Model - INFO - Epoch 9 test Accuracy: 0.919034  Class avg mIOU: 0.854702   Inctance avg mIOU: 0.854702
+2026-06-19 23:42:13,248 - Model - INFO - Best accuracy is: 0.92876
+2026-06-19 23:42:13,248 - Model - INFO - Best class avg mIOU is: 0.86799
+2026-06-19 23:42:13,248 - Model - INFO - Best inctance avg mIOU is: 0.86799
+2026-06-19 23:42:13,248 - Model - INFO - Epoch 10 (10/100):
+2026-06-19 23:42:13,248 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:42:22,353 - Model - INFO - Train accuracy is: 0.92479
+2026-06-19 23:42:24,112 - Model - INFO - eval mIoU of Lamp           0.869829
+2026-06-19 23:42:24,112 - Model - INFO - Epoch 10 test Accuracy: 0.931825  Class avg mIOU: 0.869829   Inctance avg mIOU: 0.869829
+2026-06-19 23:42:24,112 - Model - INFO - Save model...
+2026-06-19 23:42:24,112 - Model - INFO - Saving at log/part_seg/parts3_cap626/Lamp/seed_1000/checkpoints/best_model.pth
+2026-06-19 23:42:24,159 - Model - INFO - Saving model....
+2026-06-19 23:42:24,159 - Model - INFO - Best accuracy is: 0.93182
+2026-06-19 23:42:24,159 - Model - INFO - Best class avg mIOU is: 0.86983
+2026-06-19 23:42:24,159 - Model - INFO - Best inctance avg mIOU is: 0.86983
+2026-06-19 23:42:24,159 - Model - INFO - Epoch 11 (11/100):
+2026-06-19 23:42:24,159 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:42:33,277 - Model - INFO - Train accuracy is: 0.92391
+2026-06-19 23:42:35,040 - Model - INFO - eval mIoU of Lamp           0.848390
+2026-06-19 23:42:35,040 - Model - INFO - Epoch 11 test Accuracy: 0.912797  Class avg mIOU: 0.848390   Inctance avg mIOU: 0.848390
+2026-06-19 23:42:35,040 - Model - INFO - Best accuracy is: 0.93182
+2026-06-19 23:42:35,040 - Model - INFO - Best class avg mIOU is: 0.86983
+2026-06-19 23:42:35,040 - Model - INFO - Best inctance avg mIOU is: 0.86983
+2026-06-19 23:42:35,040 - Model - INFO - Epoch 12 (12/100):
+2026-06-19 23:42:35,040 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:42:44,142 - Model - INFO - Train accuracy is: 0.92019
+2026-06-19 23:42:45,887 - Model - INFO - eval mIoU of Lamp           0.836341
+2026-06-19 23:42:45,887 - Model - INFO - Epoch 12 test Accuracy: 0.912736  Class avg mIOU: 0.836341   Inctance avg mIOU: 0.836341
+2026-06-19 23:42:45,888 - Model - INFO - Best accuracy is: 0.93182
+2026-06-19 23:42:45,888 - Model - INFO - Best class avg mIOU is: 0.86983
+2026-06-19 23:42:45,888 - Model - INFO - Best inctance avg mIOU is: 0.86983
+2026-06-19 23:42:45,888 - Model - INFO - Epoch 13 (13/100):
+2026-06-19 23:42:45,888 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:42:54,964 - Model - INFO - Train accuracy is: 0.92675
+2026-06-19 23:42:56,731 - Model - INFO - eval mIoU of Lamp           0.858862
+2026-06-19 23:42:56,731 - Model - INFO - Epoch 13 test Accuracy: 0.925124  Class avg mIOU: 0.858862   Inctance avg mIOU: 0.858862
+2026-06-19 23:42:56,731 - Model - INFO - Best accuracy is: 0.93182
+2026-06-19 23:42:56,731 - Model - INFO - Best class avg mIOU is: 0.86983
+2026-06-19 23:42:56,731 - Model - INFO - Best inctance avg mIOU is: 0.86983
+2026-06-19 23:42:56,731 - Model - INFO - Epoch 14 (14/100):
+2026-06-19 23:42:56,731 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:43:05,860 - Model - INFO - Train accuracy is: 0.92817
+2026-06-19 23:43:07,645 - Model - INFO - eval mIoU of Lamp           0.858029
+2026-06-19 23:43:07,645 - Model - INFO - Epoch 14 test Accuracy: 0.924212  Class avg mIOU: 0.858029   Inctance avg mIOU: 0.858029
+2026-06-19 23:43:07,645 - Model - INFO - Best accuracy is: 0.93182
+2026-06-19 23:43:07,645 - Model - INFO - Best class avg mIOU is: 0.86983
+2026-06-19 23:43:07,645 - Model - INFO - Best inctance avg mIOU is: 0.86983
+2026-06-19 23:43:07,645 - Model - INFO - Epoch 15 (15/100):
+2026-06-19 23:43:07,645 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:43:16,761 - Model - INFO - Train accuracy is: 0.93260
+2026-06-19 23:43:18,525 - Model - INFO - eval mIoU of Lamp           0.845821
+2026-06-19 23:43:18,525 - Model - INFO - Epoch 15 test Accuracy: 0.918319  Class avg mIOU: 0.845821   Inctance avg mIOU: 0.845821
+2026-06-19 23:43:18,525 - Model - INFO - Best accuracy is: 0.93182
+2026-06-19 23:43:18,525 - Model - INFO - Best class avg mIOU is: 0.86983
+2026-06-19 23:43:18,525 - Model - INFO - Best inctance avg mIOU is: 0.86983
+2026-06-19 23:43:18,525 - Model - INFO - Epoch 16 (16/100):
+2026-06-19 23:43:18,525 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:43:27,618 - Model - INFO - Train accuracy is: 0.92994
+2026-06-19 23:43:29,391 - Model - INFO - eval mIoU of Lamp           0.855598
+2026-06-19 23:43:29,391 - Model - INFO - Epoch 16 test Accuracy: 0.923383  Class avg mIOU: 0.855598   Inctance avg mIOU: 0.855598
+2026-06-19 23:43:29,391 - Model - INFO - Best accuracy is: 0.93182
+2026-06-19 23:43:29,391 - Model - INFO - Best class avg mIOU is: 0.86983
+2026-06-19 23:43:29,391 - Model - INFO - Best inctance avg mIOU is: 0.86983
+2026-06-19 23:43:29,391 - Model - INFO - Epoch 17 (17/100):
+2026-06-19 23:43:29,391 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:43:38,560 - Model - INFO - Train accuracy is: 0.93381
+2026-06-19 23:43:40,319 - Model - INFO - eval mIoU of Lamp           0.863525
+2026-06-19 23:43:40,320 - Model - INFO - Epoch 17 test Accuracy: 0.923496  Class avg mIOU: 0.863525   Inctance avg mIOU: 0.863525
+2026-06-19 23:43:40,320 - Model - INFO - Best accuracy is: 0.93182
+2026-06-19 23:43:40,320 - Model - INFO - Best class avg mIOU is: 0.86983
+2026-06-19 23:43:40,320 - Model - INFO - Best inctance avg mIOU is: 0.86983
+2026-06-19 23:43:40,320 - Model - INFO - Epoch 18 (18/100):
+2026-06-19 23:43:40,320 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:43:49,428 - Model - INFO - Train accuracy is: 0.93246
+2026-06-19 23:43:51,193 - Model - INFO - eval mIoU of Lamp           0.840794
+2026-06-19 23:43:51,193 - Model - INFO - Epoch 18 test Accuracy: 0.919974  Class avg mIOU: 0.840794   Inctance avg mIOU: 0.840794
+2026-06-19 23:43:51,193 - Model - INFO - Best accuracy is: 0.93182
+2026-06-19 23:43:51,193 - Model - INFO - Best class avg mIOU is: 0.86983
+2026-06-19 23:43:51,193 - Model - INFO - Best inctance avg mIOU is: 0.86983
+2026-06-19 23:43:51,193 - Model - INFO - Epoch 19 (19/100):
+2026-06-19 23:43:51,193 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:44:00,353 - Model - INFO - Train accuracy is: 0.92955
+2026-06-19 23:44:02,121 - Model - INFO - eval mIoU of Lamp           0.861143
+2026-06-19 23:44:02,121 - Model - INFO - Epoch 19 test Accuracy: 0.923401  Class avg mIOU: 0.861143   Inctance avg mIOU: 0.861143
+2026-06-19 23:44:02,121 - Model - INFO - Best accuracy is: 0.93182
+2026-06-19 23:44:02,121 - Model - INFO - Best class avg mIOU is: 0.86983
+2026-06-19 23:44:02,121 - Model - INFO - Best inctance avg mIOU is: 0.86983
+2026-06-19 23:44:02,121 - Model - INFO - Epoch 20 (20/100):
+2026-06-19 23:44:02,122 - Model - INFO - Learning rate:0.001000
+2026-06-19 23:44:11,227 - Model - INFO - Train accuracy is: 0.93135
+2026-06-19 23:44:12,984 - Model - INFO - eval mIoU of Lamp           0.863356
+2026-06-19 23:44:12,984 - Model - INFO - Epoch 20 test Accuracy: 0.928431  Class avg mIOU: 0.863356   Inctance avg mIOU: 0.863356
+2026-06-19 23:44:12,984 - Model - INFO - Best accuracy is: 0.93182
+2026-06-19 23:44:12,984 - Model - INFO - Best class avg mIOU is: 0.86983
+2026-06-19 23:44:12,984 - Model - INFO - Best inctance avg mIOU is: 0.86983
+2026-06-19 23:44:12,984 - Model - INFO - Epoch 21 (21/100):
+2026-06-19 23:44:12,984 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:44:22,093 - Model - INFO - Train accuracy is: 0.93518
+2026-06-19 23:44:23,850 - Model - INFO - eval mIoU of Lamp           0.871997
+2026-06-19 23:44:23,850 - Model - INFO - Epoch 21 test Accuracy: 0.932783  Class avg mIOU: 0.871997   Inctance avg mIOU: 0.871997
+2026-06-19 23:44:23,850 - Model - INFO - Save model...
+2026-06-19 23:44:23,850 - Model - INFO - Saving at log/part_seg/parts3_cap626/Lamp/seed_1000/checkpoints/best_model.pth
+2026-06-19 23:44:23,901 - Model - INFO - Saving model....
+2026-06-19 23:44:23,901 - Model - INFO - Best accuracy is: 0.93278
+2026-06-19 23:44:23,901 - Model - INFO - Best class avg mIOU is: 0.87200
+2026-06-19 23:44:23,901 - Model - INFO - Best inctance avg mIOU is: 0.87200
+2026-06-19 23:44:23,901 - Model - INFO - Epoch 22 (22/100):
+2026-06-19 23:44:23,901 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:44:33,027 - Model - INFO - Train accuracy is: 0.93988
+2026-06-19 23:44:34,775 - Model - INFO - eval mIoU of Lamp           0.872034
+2026-06-19 23:44:34,775 - Model - INFO - Epoch 22 test Accuracy: 0.927624  Class avg mIOU: 0.872034   Inctance avg mIOU: 0.872034
+2026-06-19 23:44:34,775 - Model - INFO - Save model...
+2026-06-19 23:44:34,775 - Model - INFO - Saving at log/part_seg/parts3_cap626/Lamp/seed_1000/checkpoints/best_model.pth
+2026-06-19 23:44:34,822 - Model - INFO - Saving model....
+2026-06-19 23:44:34,822 - Model - INFO - Best accuracy is: 0.93278
+2026-06-19 23:44:34,822 - Model - INFO - Best class avg mIOU is: 0.87203
+2026-06-19 23:44:34,822 - Model - INFO - Best inctance avg mIOU is: 0.87203
+2026-06-19 23:44:34,822 - Model - INFO - Epoch 23 (23/100):
+2026-06-19 23:44:34,822 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:44:43,922 - Model - INFO - Train accuracy is: 0.93918
+2026-06-19 23:44:45,682 - Model - INFO - eval mIoU of Lamp           0.860373
+2026-06-19 23:44:45,682 - Model - INFO - Epoch 23 test Accuracy: 0.923361  Class avg mIOU: 0.860373   Inctance avg mIOU: 0.860373
+2026-06-19 23:44:45,683 - Model - INFO - Best accuracy is: 0.93278
+2026-06-19 23:44:45,683 - Model - INFO - Best class avg mIOU is: 0.87203
+2026-06-19 23:44:45,683 - Model - INFO - Best inctance avg mIOU is: 0.87203
+2026-06-19 23:44:45,683 - Model - INFO - Epoch 24 (24/100):
+2026-06-19 23:44:45,683 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:44:54,848 - Model - INFO - Train accuracy is: 0.94143
+2026-06-19 23:44:56,608 - Model - INFO - eval mIoU of Lamp           0.869949
+2026-06-19 23:44:56,608 - Model - INFO - Epoch 24 test Accuracy: 0.931269  Class avg mIOU: 0.869949   Inctance avg mIOU: 0.869949
+2026-06-19 23:44:56,609 - Model - INFO - Best accuracy is: 0.93278
+2026-06-19 23:44:56,609 - Model - INFO - Best class avg mIOU is: 0.87203
+2026-06-19 23:44:56,609 - Model - INFO - Best inctance avg mIOU is: 0.87203
+2026-06-19 23:44:56,609 - Model - INFO - Epoch 25 (25/100):
+2026-06-19 23:44:56,609 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:45:05,751 - Model - INFO - Train accuracy is: 0.94214
+2026-06-19 23:45:07,503 - Model - INFO - eval mIoU of Lamp           0.874291
+2026-06-19 23:45:07,503 - Model - INFO - Epoch 25 test Accuracy: 0.933170  Class avg mIOU: 0.874291   Inctance avg mIOU: 0.874291
+2026-06-19 23:45:07,503 - Model - INFO - Save model...
+2026-06-19 23:45:07,503 - Model - INFO - Saving at log/part_seg/parts3_cap626/Lamp/seed_1000/checkpoints/best_model.pth
+2026-06-19 23:45:07,550 - Model - INFO - Saving model....
+2026-06-19 23:45:07,551 - Model - INFO - Best accuracy is: 0.93317
+2026-06-19 23:45:07,551 - Model - INFO - Best class avg mIOU is: 0.87429
+2026-06-19 23:45:07,551 - Model - INFO - Best inctance avg mIOU is: 0.87429
+2026-06-19 23:45:07,551 - Model - INFO - Epoch 26 (26/100):
+2026-06-19 23:45:07,551 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:45:16,675 - Model - INFO - Train accuracy is: 0.94410
+2026-06-19 23:45:18,435 - Model - INFO - eval mIoU of Lamp           0.864723
+2026-06-19 23:45:18,436 - Model - INFO - Epoch 26 test Accuracy: 0.928637  Class avg mIOU: 0.864723   Inctance avg mIOU: 0.864723
+2026-06-19 23:45:18,436 - Model - INFO - Best accuracy is: 0.93317
+2026-06-19 23:45:18,436 - Model - INFO - Best class avg mIOU is: 0.87429
+2026-06-19 23:45:18,436 - Model - INFO - Best inctance avg mIOU is: 0.87429
+2026-06-19 23:45:18,436 - Model - INFO - Epoch 27 (27/100):
+2026-06-19 23:45:18,436 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:45:27,560 - Model - INFO - Train accuracy is: 0.94515
+2026-06-19 23:45:29,326 - Model - INFO - eval mIoU of Lamp           0.863865
+2026-06-19 23:45:29,326 - Model - INFO - Epoch 27 test Accuracy: 0.927295  Class avg mIOU: 0.863865   Inctance avg mIOU: 0.863865
+2026-06-19 23:45:29,326 - Model - INFO - Best accuracy is: 0.93317
+2026-06-19 23:45:29,326 - Model - INFO - Best class avg mIOU is: 0.87429
+2026-06-19 23:45:29,326 - Model - INFO - Best inctance avg mIOU is: 0.87429
+2026-06-19 23:45:29,326 - Model - INFO - Epoch 28 (28/100):
+2026-06-19 23:45:29,326 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:45:38,412 - Model - INFO - Train accuracy is: 0.94777
+2026-06-19 23:45:40,179 - Model - INFO - eval mIoU of Lamp           0.876940
+2026-06-19 23:45:40,179 - Model - INFO - Epoch 28 test Accuracy: 0.934985  Class avg mIOU: 0.876940   Inctance avg mIOU: 0.876940
+2026-06-19 23:45:40,179 - Model - INFO - Save model...
+2026-06-19 23:45:40,179 - Model - INFO - Saving at log/part_seg/parts3_cap626/Lamp/seed_1000/checkpoints/best_model.pth
+2026-06-19 23:45:40,224 - Model - INFO - Saving model....
+2026-06-19 23:45:40,224 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:45:40,225 - Model - INFO - Best class avg mIOU is: 0.87694
+2026-06-19 23:45:40,225 - Model - INFO - Best inctance avg mIOU is: 0.87694
+2026-06-19 23:45:40,225 - Model - INFO - Epoch 29 (29/100):
+2026-06-19 23:45:40,225 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:45:49,400 - Model - INFO - Train accuracy is: 0.94910
+2026-06-19 23:45:51,166 - Model - INFO - eval mIoU of Lamp           0.861735
+2026-06-19 23:45:51,166 - Model - INFO - Epoch 29 test Accuracy: 0.921629  Class avg mIOU: 0.861735   Inctance avg mIOU: 0.861735
+2026-06-19 23:45:51,167 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:45:51,167 - Model - INFO - Best class avg mIOU is: 0.87694
+2026-06-19 23:45:51,167 - Model - INFO - Best inctance avg mIOU is: 0.87694
+2026-06-19 23:45:51,167 - Model - INFO - Epoch 30 (30/100):
+2026-06-19 23:45:51,167 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:46:00,342 - Model - INFO - Train accuracy is: 0.94782
+2026-06-19 23:46:02,091 - Model - INFO - eval mIoU of Lamp           0.865631
+2026-06-19 23:46:02,092 - Model - INFO - Epoch 30 test Accuracy: 0.928303  Class avg mIOU: 0.865631   Inctance avg mIOU: 0.865631
+2026-06-19 23:46:02,092 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:46:02,092 - Model - INFO - Best class avg mIOU is: 0.87694
+2026-06-19 23:46:02,092 - Model - INFO - Best inctance avg mIOU is: 0.87694
+2026-06-19 23:46:02,092 - Model - INFO - Epoch 31 (31/100):
+2026-06-19 23:46:02,092 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:46:11,228 - Model - INFO - Train accuracy is: 0.94815
+2026-06-19 23:46:13,012 - Model - INFO - eval mIoU of Lamp           0.861103
+2026-06-19 23:46:13,012 - Model - INFO - Epoch 31 test Accuracy: 0.923653  Class avg mIOU: 0.861103   Inctance avg mIOU: 0.861103
+2026-06-19 23:46:13,012 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:46:13,012 - Model - INFO - Best class avg mIOU is: 0.87694
+2026-06-19 23:46:13,012 - Model - INFO - Best inctance avg mIOU is: 0.87694
+2026-06-19 23:46:13,012 - Model - INFO - Epoch 32 (32/100):
+2026-06-19 23:46:13,012 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:46:22,128 - Model - INFO - Train accuracy is: 0.94829
+2026-06-19 23:46:23,878 - Model - INFO - eval mIoU of Lamp           0.862211
+2026-06-19 23:46:23,878 - Model - INFO - Epoch 32 test Accuracy: 0.919900  Class avg mIOU: 0.862211   Inctance avg mIOU: 0.862211
+2026-06-19 23:46:23,878 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:46:23,878 - Model - INFO - Best class avg mIOU is: 0.87694
+2026-06-19 23:46:23,878 - Model - INFO - Best inctance avg mIOU is: 0.87694
+2026-06-19 23:46:23,878 - Model - INFO - Epoch 33 (33/100):
+2026-06-19 23:46:23,878 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:46:32,963 - Model - INFO - Train accuracy is: 0.94846
+2026-06-19 23:46:34,726 - Model - INFO - eval mIoU of Lamp           0.867097
+2026-06-19 23:46:34,727 - Model - INFO - Epoch 33 test Accuracy: 0.929159  Class avg mIOU: 0.867097   Inctance avg mIOU: 0.867097
+2026-06-19 23:46:34,727 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:46:34,727 - Model - INFO - Best class avg mIOU is: 0.87694
+2026-06-19 23:46:34,727 - Model - INFO - Best inctance avg mIOU is: 0.87694
+2026-06-19 23:46:34,727 - Model - INFO - Epoch 34 (34/100):
+2026-06-19 23:46:34,727 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:46:43,849 - Model - INFO - Train accuracy is: 0.94474
+2026-06-19 23:46:45,604 - Model - INFO - eval mIoU of Lamp           0.862428
+2026-06-19 23:46:45,604 - Model - INFO - Epoch 34 test Accuracy: 0.922468  Class avg mIOU: 0.862428   Inctance avg mIOU: 0.862428
+2026-06-19 23:46:45,605 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:46:45,605 - Model - INFO - Best class avg mIOU is: 0.87694
+2026-06-19 23:46:45,605 - Model - INFO - Best inctance avg mIOU is: 0.87694
+2026-06-19 23:46:45,605 - Model - INFO - Epoch 35 (35/100):
+2026-06-19 23:46:45,605 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:46:54,689 - Model - INFO - Train accuracy is: 0.94419
+2026-06-19 23:46:56,449 - Model - INFO - eval mIoU of Lamp           0.874203
+2026-06-19 23:46:56,449 - Model - INFO - Epoch 35 test Accuracy: 0.931232  Class avg mIOU: 0.874203   Inctance avg mIOU: 0.874203
+2026-06-19 23:46:56,449 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:46:56,449 - Model - INFO - Best class avg mIOU is: 0.87694
+2026-06-19 23:46:56,449 - Model - INFO - Best inctance avg mIOU is: 0.87694
+2026-06-19 23:46:56,449 - Model - INFO - Epoch 36 (36/100):
+2026-06-19 23:46:56,449 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:47:05,574 - Model - INFO - Train accuracy is: 0.94513
+2026-06-19 23:47:07,333 - Model - INFO - eval mIoU of Lamp           0.869082
+2026-06-19 23:47:07,333 - Model - INFO - Epoch 36 test Accuracy: 0.932777  Class avg mIOU: 0.869082   Inctance avg mIOU: 0.869082
+2026-06-19 23:47:07,334 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:47:07,334 - Model - INFO - Best class avg mIOU is: 0.87694
+2026-06-19 23:47:07,334 - Model - INFO - Best inctance avg mIOU is: 0.87694
+2026-06-19 23:47:07,334 - Model - INFO - Epoch 37 (37/100):
+2026-06-19 23:47:07,334 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:47:16,455 - Model - INFO - Train accuracy is: 0.95126
+2026-06-19 23:47:18,212 - Model - INFO - eval mIoU of Lamp           0.875227
+2026-06-19 23:47:18,212 - Model - INFO - Epoch 37 test Accuracy: 0.934788  Class avg mIOU: 0.875227   Inctance avg mIOU: 0.875227
+2026-06-19 23:47:18,212 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:47:18,212 - Model - INFO - Best class avg mIOU is: 0.87694
+2026-06-19 23:47:18,212 - Model - INFO - Best inctance avg mIOU is: 0.87694
+2026-06-19 23:47:18,212 - Model - INFO - Epoch 38 (38/100):
+2026-06-19 23:47:18,212 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:47:27,328 - Model - INFO - Train accuracy is: 0.94825
+2026-06-19 23:47:29,090 - Model - INFO - eval mIoU of Lamp           0.878489
+2026-06-19 23:47:29,090 - Model - INFO - Epoch 38 test Accuracy: 0.930600  Class avg mIOU: 0.878489   Inctance avg mIOU: 0.878489
+2026-06-19 23:47:29,090 - Model - INFO - Save model...
+2026-06-19 23:47:29,090 - Model - INFO - Saving at log/part_seg/parts3_cap626/Lamp/seed_1000/checkpoints/best_model.pth
+2026-06-19 23:47:29,137 - Model - INFO - Saving model....
+2026-06-19 23:47:29,138 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:47:29,138 - Model - INFO - Best class avg mIOU is: 0.87849
+2026-06-19 23:47:29,138 - Model - INFO - Best inctance avg mIOU is: 0.87849
+2026-06-19 23:47:29,138 - Model - INFO - Epoch 39 (39/100):
+2026-06-19 23:47:29,138 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:47:38,240 - Model - INFO - Train accuracy is: 0.94752
+2026-06-19 23:47:40,003 - Model - INFO - eval mIoU of Lamp           0.871704
+2026-06-19 23:47:40,004 - Model - INFO - Epoch 39 test Accuracy: 0.928791  Class avg mIOU: 0.871704   Inctance avg mIOU: 0.871704
+2026-06-19 23:47:40,004 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:47:40,004 - Model - INFO - Best class avg mIOU is: 0.87849
+2026-06-19 23:47:40,004 - Model - INFO - Best inctance avg mIOU is: 0.87849
+2026-06-19 23:47:40,004 - Model - INFO - Epoch 40 (40/100):
+2026-06-19 23:47:40,004 - Model - INFO - Learning rate:0.000500
+2026-06-19 23:47:49,114 - Model - INFO - Train accuracy is: 0.95292
+2026-06-19 23:47:50,870 - Model - INFO - eval mIoU of Lamp           0.871130
+2026-06-19 23:47:50,871 - Model - INFO - Epoch 40 test Accuracy: 0.929611  Class avg mIOU: 0.871130   Inctance avg mIOU: 0.871130
+2026-06-19 23:47:50,871 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:47:50,871 - Model - INFO - Best class avg mIOU is: 0.87849
+2026-06-19 23:47:50,871 - Model - INFO - Best inctance avg mIOU is: 0.87849
+2026-06-19 23:47:50,871 - Model - INFO - Epoch 41 (41/100):
+2026-06-19 23:47:50,871 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:48:00,011 - Model - INFO - Train accuracy is: 0.95654
+2026-06-19 23:48:01,765 - Model - INFO - eval mIoU of Lamp           0.876093
+2026-06-19 23:48:01,765 - Model - INFO - Epoch 41 test Accuracy: 0.931733  Class avg mIOU: 0.876093   Inctance avg mIOU: 0.876093
+2026-06-19 23:48:01,765 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:48:01,765 - Model - INFO - Best class avg mIOU is: 0.87849
+2026-06-19 23:48:01,765 - Model - INFO - Best inctance avg mIOU is: 0.87849
+2026-06-19 23:48:01,766 - Model - INFO - Epoch 42 (42/100):
+2026-06-19 23:48:01,766 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:48:10,853 - Model - INFO - Train accuracy is: 0.95776
+2026-06-19 23:48:12,608 - Model - INFO - eval mIoU of Lamp           0.870573
+2026-06-19 23:48:12,609 - Model - INFO - Epoch 42 test Accuracy: 0.929466  Class avg mIOU: 0.870573   Inctance avg mIOU: 0.870573
+2026-06-19 23:48:12,609 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:48:12,609 - Model - INFO - Best class avg mIOU is: 0.87849
+2026-06-19 23:48:12,609 - Model - INFO - Best inctance avg mIOU is: 0.87849
+2026-06-19 23:48:12,609 - Model - INFO - Epoch 43 (43/100):
+2026-06-19 23:48:12,609 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:48:21,702 - Model - INFO - Train accuracy is: 0.95174
+2026-06-19 23:48:23,446 - Model - INFO - eval mIoU of Lamp           0.864368
+2026-06-19 23:48:23,446 - Model - INFO - Epoch 43 test Accuracy: 0.921863  Class avg mIOU: 0.864368   Inctance avg mIOU: 0.864368
+2026-06-19 23:48:23,446 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:48:23,446 - Model - INFO - Best class avg mIOU is: 0.87849
+2026-06-19 23:48:23,446 - Model - INFO - Best inctance avg mIOU is: 0.87849
+2026-06-19 23:48:23,446 - Model - INFO - Epoch 44 (44/100):
+2026-06-19 23:48:23,446 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:48:32,547 - Model - INFO - Train accuracy is: 0.95525
+2026-06-19 23:48:34,295 - Model - INFO - eval mIoU of Lamp           0.872013
+2026-06-19 23:48:34,295 - Model - INFO - Epoch 44 test Accuracy: 0.925551  Class avg mIOU: 0.872013   Inctance avg mIOU: 0.872013
+2026-06-19 23:48:34,295 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:48:34,295 - Model - INFO - Best class avg mIOU is: 0.87849
+2026-06-19 23:48:34,295 - Model - INFO - Best inctance avg mIOU is: 0.87849
+2026-06-19 23:48:34,295 - Model - INFO - Epoch 45 (45/100):
+2026-06-19 23:48:34,296 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:48:43,429 - Model - INFO - Train accuracy is: 0.95794
+2026-06-19 23:48:45,206 - Model - INFO - eval mIoU of Lamp           0.878719
+2026-06-19 23:48:45,206 - Model - INFO - Epoch 45 test Accuracy: 0.933701  Class avg mIOU: 0.878719   Inctance avg mIOU: 0.878719
+2026-06-19 23:48:45,207 - Model - INFO - Save model...
+2026-06-19 23:48:45,207 - Model - INFO - Saving at log/part_seg/parts3_cap626/Lamp/seed_1000/checkpoints/best_model.pth
+2026-06-19 23:48:45,253 - Model - INFO - Saving model....
+2026-06-19 23:48:45,254 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:48:45,254 - Model - INFO - Best class avg mIOU is: 0.87872
+2026-06-19 23:48:45,254 - Model - INFO - Best inctance avg mIOU is: 0.87872
+2026-06-19 23:48:45,254 - Model - INFO - Epoch 46 (46/100):
+2026-06-19 23:48:45,254 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:48:54,365 - Model - INFO - Train accuracy is: 0.95877
+2026-06-19 23:48:56,118 - Model - INFO - eval mIoU of Lamp           0.874988
+2026-06-19 23:48:56,118 - Model - INFO - Epoch 46 test Accuracy: 0.933652  Class avg mIOU: 0.874988   Inctance avg mIOU: 0.874988
+2026-06-19 23:48:56,119 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:48:56,119 - Model - INFO - Best class avg mIOU is: 0.87872
+2026-06-19 23:48:56,119 - Model - INFO - Best inctance avg mIOU is: 0.87872
+2026-06-19 23:48:56,119 - Model - INFO - Epoch 47 (47/100):
+2026-06-19 23:48:56,119 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:49:05,203 - Model - INFO - Train accuracy is: 0.95938
+2026-06-19 23:49:06,945 - Model - INFO - eval mIoU of Lamp           0.868343
+2026-06-19 23:49:06,945 - Model - INFO - Epoch 47 test Accuracy: 0.927212  Class avg mIOU: 0.868343   Inctance avg mIOU: 0.868343
+2026-06-19 23:49:06,945 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:49:06,945 - Model - INFO - Best class avg mIOU is: 0.87872
+2026-06-19 23:49:06,945 - Model - INFO - Best inctance avg mIOU is: 0.87872
+2026-06-19 23:49:06,945 - Model - INFO - Epoch 48 (48/100):
+2026-06-19 23:49:06,945 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:49:16,038 - Model - INFO - Train accuracy is: 0.95876
+2026-06-19 23:49:17,803 - Model - INFO - eval mIoU of Lamp           0.867843
+2026-06-19 23:49:17,804 - Model - INFO - Epoch 48 test Accuracy: 0.928665  Class avg mIOU: 0.867843   Inctance avg mIOU: 0.867843
+2026-06-19 23:49:17,804 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:49:17,804 - Model - INFO - Best class avg mIOU is: 0.87872
+2026-06-19 23:49:17,804 - Model - INFO - Best inctance avg mIOU is: 0.87872
+2026-06-19 23:49:17,804 - Model - INFO - Epoch 49 (49/100):
+2026-06-19 23:49:17,804 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:49:26,913 - Model - INFO - Train accuracy is: 0.95758
+2026-06-19 23:49:28,654 - Model - INFO - eval mIoU of Lamp           0.871292
+2026-06-19 23:49:28,654 - Model - INFO - Epoch 49 test Accuracy: 0.931137  Class avg mIOU: 0.871292   Inctance avg mIOU: 0.871292
+2026-06-19 23:49:28,655 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:49:28,655 - Model - INFO - Best class avg mIOU is: 0.87872
+2026-06-19 23:49:28,655 - Model - INFO - Best inctance avg mIOU is: 0.87872
+2026-06-19 23:49:28,655 - Model - INFO - Epoch 50 (50/100):
+2026-06-19 23:49:28,655 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:49:37,756 - Model - INFO - Train accuracy is: 0.95826
+2026-06-19 23:49:39,504 - Model - INFO - eval mIoU of Lamp           0.878955
+2026-06-19 23:49:39,505 - Model - INFO - Epoch 50 test Accuracy: 0.933330  Class avg mIOU: 0.878955   Inctance avg mIOU: 0.878955
+2026-06-19 23:49:39,505 - Model - INFO - Save model...
+2026-06-19 23:49:39,505 - Model - INFO - Saving at log/part_seg/parts3_cap626/Lamp/seed_1000/checkpoints/best_model.pth
+2026-06-19 23:49:39,551 - Model - INFO - Saving model....
+2026-06-19 23:49:39,552 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:49:39,552 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:49:39,552 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:49:39,552 - Model - INFO - Epoch 51 (51/100):
+2026-06-19 23:49:39,552 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:49:48,632 - Model - INFO - Train accuracy is: 0.95798
+2026-06-19 23:49:50,398 - Model - INFO - eval mIoU of Lamp           0.869137
+2026-06-19 23:49:50,398 - Model - INFO - Epoch 51 test Accuracy: 0.929614  Class avg mIOU: 0.869137   Inctance avg mIOU: 0.869137
+2026-06-19 23:49:50,398 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:49:50,398 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:49:50,398 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:49:50,398 - Model - INFO - Epoch 52 (52/100):
+2026-06-19 23:49:50,398 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:49:59,514 - Model - INFO - Train accuracy is: 0.95914
+2026-06-19 23:50:01,280 - Model - INFO - eval mIoU of Lamp           0.872625
+2026-06-19 23:50:01,280 - Model - INFO - Epoch 52 test Accuracy: 0.928653  Class avg mIOU: 0.872625   Inctance avg mIOU: 0.872625
+2026-06-19 23:50:01,281 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:50:01,281 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:50:01,281 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:50:01,281 - Model - INFO - Epoch 53 (53/100):
+2026-06-19 23:50:01,281 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:50:10,355 - Model - INFO - Train accuracy is: 0.95826
+2026-06-19 23:50:12,119 - Model - INFO - eval mIoU of Lamp           0.875942
+2026-06-19 23:50:12,119 - Model - INFO - Epoch 53 test Accuracy: 0.931297  Class avg mIOU: 0.875942   Inctance avg mIOU: 0.875942
+2026-06-19 23:50:12,119 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:50:12,119 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:50:12,119 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:50:12,119 - Model - INFO - Epoch 54 (54/100):
+2026-06-19 23:50:12,119 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:50:21,216 - Model - INFO - Train accuracy is: 0.96049
+2026-06-19 23:50:22,973 - Model - INFO - eval mIoU of Lamp           0.873798
+2026-06-19 23:50:22,973 - Model - INFO - Epoch 54 test Accuracy: 0.932316  Class avg mIOU: 0.873798   Inctance avg mIOU: 0.873798
+2026-06-19 23:50:22,973 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:50:22,973 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:50:22,973 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:50:22,973 - Model - INFO - Epoch 55 (55/100):
+2026-06-19 23:50:22,973 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:50:32,117 - Model - INFO - Train accuracy is: 0.95954
+2026-06-19 23:50:33,920 - Model - INFO - eval mIoU of Lamp           0.870887
+2026-06-19 23:50:33,920 - Model - INFO - Epoch 55 test Accuracy: 0.925336  Class avg mIOU: 0.870887   Inctance avg mIOU: 0.870887
+2026-06-19 23:50:33,920 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:50:33,920 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:50:33,920 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:50:33,920 - Model - INFO - Epoch 56 (56/100):
+2026-06-19 23:50:33,920 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:50:43,021 - Model - INFO - Train accuracy is: 0.95980
+2026-06-19 23:50:44,792 - Model - INFO - eval mIoU of Lamp           0.874681
+2026-06-19 23:50:44,792 - Model - INFO - Epoch 56 test Accuracy: 0.931767  Class avg mIOU: 0.874681   Inctance avg mIOU: 0.874681
+2026-06-19 23:50:44,793 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:50:44,793 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:50:44,793 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:50:44,793 - Model - INFO - Epoch 57 (57/100):
+2026-06-19 23:50:44,793 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:50:53,912 - Model - INFO - Train accuracy is: 0.96264
+2026-06-19 23:50:55,662 - Model - INFO - eval mIoU of Lamp           0.862440
+2026-06-19 23:50:55,662 - Model - INFO - Epoch 57 test Accuracy: 0.927440  Class avg mIOU: 0.862440   Inctance avg mIOU: 0.862440
+2026-06-19 23:50:55,662 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:50:55,663 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:50:55,663 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:50:55,663 - Model - INFO - Epoch 58 (58/100):
+2026-06-19 23:50:55,663 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:51:04,797 - Model - INFO - Train accuracy is: 0.96317
+2026-06-19 23:51:06,559 - Model - INFO - eval mIoU of Lamp           0.873677
+2026-06-19 23:51:06,559 - Model - INFO - Epoch 58 test Accuracy: 0.930750  Class avg mIOU: 0.873677   Inctance avg mIOU: 0.873677
+2026-06-19 23:51:06,559 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:51:06,559 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:51:06,559 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:51:06,559 - Model - INFO - Epoch 59 (59/100):
+2026-06-19 23:51:06,559 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:51:15,717 - Model - INFO - Train accuracy is: 0.95999
+2026-06-19 23:51:17,491 - Model - INFO - eval mIoU of Lamp           0.875781
+2026-06-19 23:51:17,491 - Model - INFO - Epoch 59 test Accuracy: 0.931601  Class avg mIOU: 0.875781   Inctance avg mIOU: 0.875781
+2026-06-19 23:51:17,491 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:51:17,491 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:51:17,491 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:51:17,491 - Model - INFO - Epoch 60 (60/100):
+2026-06-19 23:51:17,491 - Model - INFO - Learning rate:0.000250
+2026-06-19 23:51:26,614 - Model - INFO - Train accuracy is: 0.96239
+2026-06-19 23:51:28,354 - Model - INFO - eval mIoU of Lamp           0.870820
+2026-06-19 23:51:28,354 - Model - INFO - Epoch 60 test Accuracy: 0.927839  Class avg mIOU: 0.870820   Inctance avg mIOU: 0.870820
+2026-06-19 23:51:28,354 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:51:28,354 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:51:28,354 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:51:28,354 - Model - INFO - Epoch 61 (61/100):
+2026-06-19 23:51:28,355 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:51:37,444 - Model - INFO - Train accuracy is: 0.96496
+2026-06-19 23:51:39,208 - Model - INFO - eval mIoU of Lamp           0.876660
+2026-06-19 23:51:39,208 - Model - INFO - Epoch 61 test Accuracy: 0.933563  Class avg mIOU: 0.876660   Inctance avg mIOU: 0.876660
+2026-06-19 23:51:39,208 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:51:39,208 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:51:39,208 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:51:39,208 - Model - INFO - Epoch 62 (62/100):
+2026-06-19 23:51:39,208 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:51:48,368 - Model - INFO - Train accuracy is: 0.96546
+2026-06-19 23:51:50,120 - Model - INFO - eval mIoU of Lamp           0.875884
+2026-06-19 23:51:50,120 - Model - INFO - Epoch 62 test Accuracy: 0.930842  Class avg mIOU: 0.875884   Inctance avg mIOU: 0.875884
+2026-06-19 23:51:50,121 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:51:50,121 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:51:50,121 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:51:50,121 - Model - INFO - Epoch 63 (63/100):
+2026-06-19 23:51:50,121 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:51:59,217 - Model - INFO - Train accuracy is: 0.96597
+2026-06-19 23:52:00,974 - Model - INFO - eval mIoU of Lamp           0.876940
+2026-06-19 23:52:00,975 - Model - INFO - Epoch 63 test Accuracy: 0.933327  Class avg mIOU: 0.876940   Inctance avg mIOU: 0.876940
+2026-06-19 23:52:00,975 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:52:00,975 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:52:00,975 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:52:00,975 - Model - INFO - Epoch 64 (64/100):
+2026-06-19 23:52:00,975 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:52:10,073 - Model - INFO - Train accuracy is: 0.96504
+2026-06-19 23:52:11,813 - Model - INFO - eval mIoU of Lamp           0.870103
+2026-06-19 23:52:11,813 - Model - INFO - Epoch 64 test Accuracy: 0.926712  Class avg mIOU: 0.870103   Inctance avg mIOU: 0.870103
+2026-06-19 23:52:11,813 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:52:11,814 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:52:11,814 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:52:11,814 - Model - INFO - Epoch 65 (65/100):
+2026-06-19 23:52:11,814 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:52:20,946 - Model - INFO - Train accuracy is: 0.96539
+2026-06-19 23:52:22,710 - Model - INFO - eval mIoU of Lamp           0.870953
+2026-06-19 23:52:22,710 - Model - INFO - Epoch 65 test Accuracy: 0.930566  Class avg mIOU: 0.870953   Inctance avg mIOU: 0.870953
+2026-06-19 23:52:22,710 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:52:22,710 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:52:22,710 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:52:22,710 - Model - INFO - Epoch 66 (66/100):
+2026-06-19 23:52:22,710 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:52:31,855 - Model - INFO - Train accuracy is: 0.96624
+2026-06-19 23:52:33,607 - Model - INFO - eval mIoU of Lamp           0.874074
+2026-06-19 23:52:33,608 - Model - INFO - Epoch 66 test Accuracy: 0.932390  Class avg mIOU: 0.874074   Inctance avg mIOU: 0.874074
+2026-06-19 23:52:33,608 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:52:33,608 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:52:33,608 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:52:33,608 - Model - INFO - Epoch 67 (67/100):
+2026-06-19 23:52:33,608 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:52:42,708 - Model - INFO - Train accuracy is: 0.96773
+2026-06-19 23:52:44,481 - Model - INFO - eval mIoU of Lamp           0.870105
+2026-06-19 23:52:44,482 - Model - INFO - Epoch 67 test Accuracy: 0.928895  Class avg mIOU: 0.870105   Inctance avg mIOU: 0.870105
+2026-06-19 23:52:44,482 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:52:44,482 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:52:44,482 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:52:44,482 - Model - INFO - Epoch 68 (68/100):
+2026-06-19 23:52:44,482 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:52:53,592 - Model - INFO - Train accuracy is: 0.96594
+2026-06-19 23:52:55,373 - Model - INFO - eval mIoU of Lamp           0.873210
+2026-06-19 23:52:55,373 - Model - INFO - Epoch 68 test Accuracy: 0.929764  Class avg mIOU: 0.873210   Inctance avg mIOU: 0.873210
+2026-06-19 23:52:55,373 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:52:55,373 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:52:55,373 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:52:55,373 - Model - INFO - Epoch 69 (69/100):
+2026-06-19 23:52:55,373 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:53:04,471 - Model - INFO - Train accuracy is: 0.96414
+2026-06-19 23:53:06,238 - Model - INFO - eval mIoU of Lamp           0.864028
+2026-06-19 23:53:06,238 - Model - INFO - Epoch 69 test Accuracy: 0.922858  Class avg mIOU: 0.864028   Inctance avg mIOU: 0.864028
+2026-06-19 23:53:06,238 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:53:06,238 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:53:06,238 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:53:06,238 - Model - INFO - Epoch 70 (70/100):
+2026-06-19 23:53:06,238 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:53:15,325 - Model - INFO - Train accuracy is: 0.96629
+2026-06-19 23:53:17,092 - Model - INFO - eval mIoU of Lamp           0.871365
+2026-06-19 23:53:17,092 - Model - INFO - Epoch 70 test Accuracy: 0.927888  Class avg mIOU: 0.871365   Inctance avg mIOU: 0.871365
+2026-06-19 23:53:17,092 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:53:17,092 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:53:17,093 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:53:17,093 - Model - INFO - Epoch 71 (71/100):
+2026-06-19 23:53:17,093 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:53:26,186 - Model - INFO - Train accuracy is: 0.96696
+2026-06-19 23:53:27,956 - Model - INFO - eval mIoU of Lamp           0.875548
+2026-06-19 23:53:27,957 - Model - INFO - Epoch 71 test Accuracy: 0.930182  Class avg mIOU: 0.875548   Inctance avg mIOU: 0.875548
+2026-06-19 23:53:27,957 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:53:27,957 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:53:27,957 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:53:27,957 - Model - INFO - Epoch 72 (72/100):
+2026-06-19 23:53:27,957 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:53:37,079 - Model - INFO - Train accuracy is: 0.96800
+2026-06-19 23:53:38,834 - Model - INFO - eval mIoU of Lamp           0.875434
+2026-06-19 23:53:38,834 - Model - INFO - Epoch 72 test Accuracy: 0.933062  Class avg mIOU: 0.875434   Inctance avg mIOU: 0.875434
+2026-06-19 23:53:38,834 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:53:38,834 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:53:38,834 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:53:38,834 - Model - INFO - Epoch 73 (73/100):
+2026-06-19 23:53:38,834 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:53:47,941 - Model - INFO - Train accuracy is: 0.96844
+2026-06-19 23:53:49,708 - Model - INFO - eval mIoU of Lamp           0.873196
+2026-06-19 23:53:49,708 - Model - INFO - Epoch 73 test Accuracy: 0.932636  Class avg mIOU: 0.873196   Inctance avg mIOU: 0.873196
+2026-06-19 23:53:49,708 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:53:49,708 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:53:49,708 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:53:49,708 - Model - INFO - Epoch 74 (74/100):
+2026-06-19 23:53:49,708 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:53:58,807 - Model - INFO - Train accuracy is: 0.96838
+2026-06-19 23:54:00,576 - Model - INFO - eval mIoU of Lamp           0.870619
+2026-06-19 23:54:00,576 - Model - INFO - Epoch 74 test Accuracy: 0.928852  Class avg mIOU: 0.870619   Inctance avg mIOU: 0.870619
+2026-06-19 23:54:00,576 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:54:00,576 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:54:00,576 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:54:00,576 - Model - INFO - Epoch 75 (75/100):
+2026-06-19 23:54:00,576 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:54:09,680 - Model - INFO - Train accuracy is: 0.97003
+2026-06-19 23:54:11,441 - Model - INFO - eval mIoU of Lamp           0.876861
+2026-06-19 23:54:11,442 - Model - INFO - Epoch 75 test Accuracy: 0.931518  Class avg mIOU: 0.876861   Inctance avg mIOU: 0.876861
+2026-06-19 23:54:11,442 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:54:11,442 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:54:11,442 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:54:11,442 - Model - INFO - Epoch 76 (76/100):
+2026-06-19 23:54:11,442 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:54:20,564 - Model - INFO - Train accuracy is: 0.96870
+2026-06-19 23:54:22,342 - Model - INFO - eval mIoU of Lamp           0.873442
+2026-06-19 23:54:22,342 - Model - INFO - Epoch 76 test Accuracy: 0.930775  Class avg mIOU: 0.873442   Inctance avg mIOU: 0.873442
+2026-06-19 23:54:22,342 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:54:22,342 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:54:22,342 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:54:22,342 - Model - INFO - Epoch 77 (77/100):
+2026-06-19 23:54:22,342 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:54:31,463 - Model - INFO - Train accuracy is: 0.96894
+2026-06-19 23:54:33,226 - Model - INFO - eval mIoU of Lamp           0.874895
+2026-06-19 23:54:33,226 - Model - INFO - Epoch 77 test Accuracy: 0.933354  Class avg mIOU: 0.874895   Inctance avg mIOU: 0.874895
+2026-06-19 23:54:33,226 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:54:33,226 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:54:33,226 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:54:33,226 - Model - INFO - Epoch 78 (78/100):
+2026-06-19 23:54:33,226 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:54:42,340 - Model - INFO - Train accuracy is: 0.96606
+2026-06-19 23:54:44,107 - Model - INFO - eval mIoU of Lamp           0.872404
+2026-06-19 23:54:44,107 - Model - INFO - Epoch 78 test Accuracy: 0.930035  Class avg mIOU: 0.872404   Inctance avg mIOU: 0.872404
+2026-06-19 23:54:44,107 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:54:44,107 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:54:44,107 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:54:44,107 - Model - INFO - Epoch 79 (79/100):
+2026-06-19 23:54:44,107 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:54:53,215 - Model - INFO - Train accuracy is: 0.96651
+2026-06-19 23:54:54,980 - Model - INFO - eval mIoU of Lamp           0.875287
+2026-06-19 23:54:54,980 - Model - INFO - Epoch 79 test Accuracy: 0.933222  Class avg mIOU: 0.875287   Inctance avg mIOU: 0.875287
+2026-06-19 23:54:54,980 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:54:54,980 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:54:54,980 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:54:54,980 - Model - INFO - Epoch 80 (80/100):
+2026-06-19 23:54:54,980 - Model - INFO - Learning rate:0.000125
+2026-06-19 23:55:04,117 - Model - INFO - Train accuracy is: 0.96920
+2026-06-19 23:55:05,887 - Model - INFO - eval mIoU of Lamp           0.874940
+2026-06-19 23:55:05,887 - Model - INFO - Epoch 80 test Accuracy: 0.933919  Class avg mIOU: 0.874940   Inctance avg mIOU: 0.874940
+2026-06-19 23:55:05,887 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:55:05,887 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:55:05,887 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:55:05,887 - Model - INFO - Epoch 81 (81/100):
+2026-06-19 23:55:05,887 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:55:14,989 - Model - INFO - Train accuracy is: 0.96904
+2026-06-19 23:55:16,746 - Model - INFO - eval mIoU of Lamp           0.874516
+2026-06-19 23:55:16,746 - Model - INFO - Epoch 81 test Accuracy: 0.933575  Class avg mIOU: 0.874516   Inctance avg mIOU: 0.874516
+2026-06-19 23:55:16,746 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:55:16,746 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:55:16,747 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:55:16,747 - Model - INFO - Epoch 82 (82/100):
+2026-06-19 23:55:16,747 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:55:25,854 - Model - INFO - Train accuracy is: 0.97016
+2026-06-19 23:55:27,607 - Model - INFO - eval mIoU of Lamp           0.876796
+2026-06-19 23:55:27,607 - Model - INFO - Epoch 82 test Accuracy: 0.934128  Class avg mIOU: 0.876796   Inctance avg mIOU: 0.876796
+2026-06-19 23:55:27,608 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:55:27,608 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:55:27,608 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:55:27,608 - Model - INFO - Epoch 83 (83/100):
+2026-06-19 23:55:27,608 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:55:36,704 - Model - INFO - Train accuracy is: 0.97133
+2026-06-19 23:55:38,464 - Model - INFO - eval mIoU of Lamp           0.877907
+2026-06-19 23:55:38,464 - Model - INFO - Epoch 83 test Accuracy: 0.934466  Class avg mIOU: 0.877907   Inctance avg mIOU: 0.877907
+2026-06-19 23:55:38,465 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:55:38,465 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:55:38,465 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:55:38,465 - Model - INFO - Epoch 84 (84/100):
+2026-06-19 23:55:38,465 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:55:47,573 - Model - INFO - Train accuracy is: 0.97018
+2026-06-19 23:55:49,331 - Model - INFO - eval mIoU of Lamp           0.873557
+2026-06-19 23:55:49,331 - Model - INFO - Epoch 84 test Accuracy: 0.931849  Class avg mIOU: 0.873557   Inctance avg mIOU: 0.873557
+2026-06-19 23:55:49,331 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:55:49,331 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:55:49,331 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:55:49,331 - Model - INFO - Epoch 85 (85/100):
+2026-06-19 23:55:49,331 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:55:58,416 - Model - INFO - Train accuracy is: 0.97166
+2026-06-19 23:56:00,190 - Model - INFO - eval mIoU of Lamp           0.873704
+2026-06-19 23:56:00,190 - Model - INFO - Epoch 85 test Accuracy: 0.932092  Class avg mIOU: 0.873704   Inctance avg mIOU: 0.873704
+2026-06-19 23:56:00,190 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:56:00,190 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:56:00,190 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:56:00,190 - Model - INFO - Epoch 86 (86/100):
+2026-06-19 23:56:00,190 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:56:09,303 - Model - INFO - Train accuracy is: 0.97022
+2026-06-19 23:56:11,050 - Model - INFO - eval mIoU of Lamp           0.868675
+2026-06-19 23:56:11,050 - Model - INFO - Epoch 86 test Accuracy: 0.925876  Class avg mIOU: 0.868675   Inctance avg mIOU: 0.868675
+2026-06-19 23:56:11,051 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:56:11,051 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:56:11,051 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:56:11,051 - Model - INFO - Epoch 87 (87/100):
+2026-06-19 23:56:11,051 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:56:20,130 - Model - INFO - Train accuracy is: 0.97122
+2026-06-19 23:56:21,899 - Model - INFO - eval mIoU of Lamp           0.869737
+2026-06-19 23:56:21,900 - Model - INFO - Epoch 87 test Accuracy: 0.930572  Class avg mIOU: 0.869737   Inctance avg mIOU: 0.869737
+2026-06-19 23:56:21,900 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:56:21,900 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:56:21,900 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:56:21,900 - Model - INFO - Epoch 88 (88/100):
+2026-06-19 23:56:21,900 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:56:31,022 - Model - INFO - Train accuracy is: 0.97114
+2026-06-19 23:56:32,810 - Model - INFO - eval mIoU of Lamp           0.864833
+2026-06-19 23:56:32,811 - Model - INFO - Epoch 88 test Accuracy: 0.927132  Class avg mIOU: 0.864833   Inctance avg mIOU: 0.864833
+2026-06-19 23:56:32,811 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:56:32,811 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:56:32,811 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:56:32,811 - Model - INFO - Epoch 89 (89/100):
+2026-06-19 23:56:32,811 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:56:41,893 - Model - INFO - Train accuracy is: 0.97110
+2026-06-19 23:56:43,658 - Model - INFO - eval mIoU of Lamp           0.872070
+2026-06-19 23:56:43,658 - Model - INFO - Epoch 89 test Accuracy: 0.932200  Class avg mIOU: 0.872070   Inctance avg mIOU: 0.872070
+2026-06-19 23:56:43,659 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:56:43,659 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:56:43,659 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:56:43,659 - Model - INFO - Epoch 90 (90/100):
+2026-06-19 23:56:43,659 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:56:52,770 - Model - INFO - Train accuracy is: 0.97092
+2026-06-19 23:56:54,533 - Model - INFO - eval mIoU of Lamp           0.870994
+2026-06-19 23:56:54,534 - Model - INFO - Epoch 90 test Accuracy: 0.927618  Class avg mIOU: 0.870994   Inctance avg mIOU: 0.870994
+2026-06-19 23:56:54,534 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:56:54,534 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:56:54,534 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:56:54,534 - Model - INFO - Epoch 91 (91/100):
+2026-06-19 23:56:54,534 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:57:03,621 - Model - INFO - Train accuracy is: 0.97170
+2026-06-19 23:57:05,386 - Model - INFO - eval mIoU of Lamp           0.875639
+2026-06-19 23:57:05,387 - Model - INFO - Epoch 91 test Accuracy: 0.932851  Class avg mIOU: 0.875639   Inctance avg mIOU: 0.875639
+2026-06-19 23:57:05,387 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:57:05,387 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:57:05,387 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:57:05,387 - Model - INFO - Epoch 92 (92/100):
+2026-06-19 23:57:05,387 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:57:14,495 - Model - INFO - Train accuracy is: 0.97216
+2026-06-19 23:57:16,246 - Model - INFO - eval mIoU of Lamp           0.866183
+2026-06-19 23:57:16,246 - Model - INFO - Epoch 92 test Accuracy: 0.925600  Class avg mIOU: 0.866183   Inctance avg mIOU: 0.866183
+2026-06-19 23:57:16,246 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:57:16,246 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:57:16,246 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:57:16,246 - Model - INFO - Epoch 93 (93/100):
+2026-06-19 23:57:16,246 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:57:25,373 - Model - INFO - Train accuracy is: 0.97104
+2026-06-19 23:57:27,144 - Model - INFO - eval mIoU of Lamp           0.865436
+2026-06-19 23:57:27,144 - Model - INFO - Epoch 93 test Accuracy: 0.929040  Class avg mIOU: 0.865436   Inctance avg mIOU: 0.865436
+2026-06-19 23:57:27,145 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:57:27,145 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:57:27,145 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:57:27,145 - Model - INFO - Epoch 94 (94/100):
+2026-06-19 23:57:27,145 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:57:36,246 - Model - INFO - Train accuracy is: 0.97187
+2026-06-19 23:57:37,999 - Model - INFO - eval mIoU of Lamp           0.864208
+2026-06-19 23:57:37,999 - Model - INFO - Epoch 94 test Accuracy: 0.926383  Class avg mIOU: 0.864208   Inctance avg mIOU: 0.864208
+2026-06-19 23:57:37,999 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:57:37,999 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:57:37,999 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:57:37,999 - Model - INFO - Epoch 95 (95/100):
+2026-06-19 23:57:37,999 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:57:47,132 - Model - INFO - Train accuracy is: 0.97230
+2026-06-19 23:57:48,892 - Model - INFO - eval mIoU of Lamp           0.874554
+2026-06-19 23:57:48,892 - Model - INFO - Epoch 95 test Accuracy: 0.933585  Class avg mIOU: 0.874554   Inctance avg mIOU: 0.874554
+2026-06-19 23:57:48,892 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:57:48,892 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:57:48,892 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:57:48,892 - Model - INFO - Epoch 96 (96/100):
+2026-06-19 23:57:48,892 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:57:57,970 - Model - INFO - Train accuracy is: 0.97292
+2026-06-19 23:57:59,725 - Model - INFO - eval mIoU of Lamp           0.872887
+2026-06-19 23:57:59,725 - Model - INFO - Epoch 96 test Accuracy: 0.933244  Class avg mIOU: 0.872887   Inctance avg mIOU: 0.872887
+2026-06-19 23:57:59,725 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:57:59,725 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:57:59,725 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:57:59,725 - Model - INFO - Epoch 97 (97/100):
+2026-06-19 23:57:59,725 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:58:08,854 - Model - INFO - Train accuracy is: 0.97128
+2026-06-19 23:58:10,620 - Model - INFO - eval mIoU of Lamp           0.866466
+2026-06-19 23:58:10,620 - Model - INFO - Epoch 97 test Accuracy: 0.928659  Class avg mIOU: 0.866466   Inctance avg mIOU: 0.866466
+2026-06-19 23:58:10,620 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:58:10,620 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:58:10,620 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:58:10,620 - Model - INFO - Epoch 98 (98/100):
+2026-06-19 23:58:10,620 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:58:19,746 - Model - INFO - Train accuracy is: 0.97167
+2026-06-19 23:58:21,486 - Model - INFO - eval mIoU of Lamp           0.873426
+2026-06-19 23:58:21,486 - Model - INFO - Epoch 98 test Accuracy: 0.931558  Class avg mIOU: 0.873426   Inctance avg mIOU: 0.873426
+2026-06-19 23:58:21,486 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:58:21,486 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:58:21,486 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:58:21,486 - Model - INFO - Epoch 99 (99/100):
+2026-06-19 23:58:21,486 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:58:30,575 - Model - INFO - Train accuracy is: 0.97270
+2026-06-19 23:58:32,328 - Model - INFO - eval mIoU of Lamp           0.866062
+2026-06-19 23:58:32,328 - Model - INFO - Epoch 99 test Accuracy: 0.925517  Class avg mIOU: 0.866062   Inctance avg mIOU: 0.866062
+2026-06-19 23:58:32,328 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:58:32,328 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:58:32,328 - Model - INFO - Best inctance avg mIOU is: 0.87896
+2026-06-19 23:58:32,328 - Model - INFO - Epoch 100 (100/100):
+2026-06-19 23:58:32,328 - Model - INFO - Learning rate:0.000063
+2026-06-19 23:58:41,420 - Model - INFO - Train accuracy is: 0.97261
+2026-06-19 23:58:43,170 - Model - INFO - eval mIoU of Lamp           0.876180
+2026-06-19 23:58:43,170 - Model - INFO - Epoch 100 test Accuracy: 0.932537  Class avg mIOU: 0.876180   Inctance avg mIOU: 0.876180
+2026-06-19 23:58:43,171 - Model - INFO - Best accuracy is: 0.93498
+2026-06-19 23:58:43,171 - Model - INFO - Best class avg mIOU is: 0.87896
+2026-06-19 23:58:43,171 - Model - INFO - Best inctance avg mIOU is: 0.87896

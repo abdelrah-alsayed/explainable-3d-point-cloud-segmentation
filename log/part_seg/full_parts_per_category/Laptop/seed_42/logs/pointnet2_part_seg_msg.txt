@@ -1,0 +1,832 @@
+2026-09-08 22:33:58,505 - Model - INFO - PARAMETER ...
+2026-09-08 22:33:58,505 - Model - INFO - Namespace(model='pointnet2_part_seg_msg', batch_size=16, epoch=100, learning_rate=0.001, gpu='1', optimizer='Adam', log_dir='full_parts_per_category/Laptop/seed_42', decay_rate=0.0001, npoint=2048, step_size=20, lr_decay=0.5, seed=42, categories=['Laptop'], samples_per_category=None, subset_seed=0, test_samples_per_category=None, test_subset_seed=0, full_parts_only=True, num_parts=None)
+2026-09-08 22:33:58,555 - Model - INFO - The number of training data is: 367
+2026-09-08 22:33:58,555 - Model - INFO - The number of test data is: 83
+2026-09-08 22:33:58,984 - Model - INFO - No existing model, starting training from scratch...
+2026-09-08 22:33:59,570 - Model - INFO - Epoch 1 (1/100):
+2026-09-08 22:33:59,570 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:34:12,371 - Model - INFO - Train accuracy is: 0.75955
+2026-09-08 22:34:14,101 - Model - INFO - eval mIoU of Laptop         0.835816
+2026-09-08 22:34:14,101 - Model - INFO - Epoch 1 test Accuracy: 0.907332  Class avg mIOU: 0.835816   Inctance avg mIOU: 0.835816
+2026-09-08 22:34:14,101 - Model - INFO - Save model...
+2026-09-08 22:34:14,101 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Laptop/seed_42/checkpoints/best_model.pth
+2026-09-08 22:34:14,133 - Model - INFO - Saving model....
+2026-09-08 22:34:14,133 - Model - INFO - Best accuracy is: 0.90733
+2026-09-08 22:34:14,133 - Model - INFO - Best class avg mIOU is: 0.83582
+2026-09-08 22:34:14,133 - Model - INFO - Best inctance avg mIOU is: 0.83582
+2026-09-08 22:34:14,133 - Model - INFO - Epoch 2 (2/100):
+2026-09-08 22:34:14,133 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:34:25,030 - Model - INFO - Train accuracy is: 0.97489
+2026-09-08 22:34:26,743 - Model - INFO - eval mIoU of Laptop         0.927909
+2026-09-08 22:34:26,743 - Model - INFO - Epoch 2 test Accuracy: 0.964714  Class avg mIOU: 0.927909   Inctance avg mIOU: 0.927909
+2026-09-08 22:34:26,743 - Model - INFO - Save model...
+2026-09-08 22:34:26,743 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Laptop/seed_42/checkpoints/best_model.pth
+2026-09-08 22:34:26,788 - Model - INFO - Saving model....
+2026-09-08 22:34:26,788 - Model - INFO - Best accuracy is: 0.96471
+2026-09-08 22:34:26,788 - Model - INFO - Best class avg mIOU is: 0.92791
+2026-09-08 22:34:26,788 - Model - INFO - Best inctance avg mIOU is: 0.92791
+2026-09-08 22:34:26,789 - Model - INFO - Epoch 3 (3/100):
+2026-09-08 22:34:26,789 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:34:37,694 - Model - INFO - Train accuracy is: 0.97577
+2026-09-08 22:34:39,404 - Model - INFO - eval mIoU of Laptop         0.948076
+2026-09-08 22:34:39,404 - Model - INFO - Epoch 3 test Accuracy: 0.975757  Class avg mIOU: 0.948076   Inctance avg mIOU: 0.948076
+2026-09-08 22:34:39,404 - Model - INFO - Save model...
+2026-09-08 22:34:39,404 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Laptop/seed_42/checkpoints/best_model.pth
+2026-09-08 22:34:39,450 - Model - INFO - Saving model....
+2026-09-08 22:34:39,451 - Model - INFO - Best accuracy is: 0.97576
+2026-09-08 22:34:39,451 - Model - INFO - Best class avg mIOU is: 0.94808
+2026-09-08 22:34:39,451 - Model - INFO - Best inctance avg mIOU is: 0.94808
+2026-09-08 22:34:39,451 - Model - INFO - Epoch 4 (4/100):
+2026-09-08 22:34:39,451 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:34:50,341 - Model - INFO - Train accuracy is: 0.97734
+2026-09-08 22:34:52,054 - Model - INFO - eval mIoU of Laptop         0.951145
+2026-09-08 22:34:52,054 - Model - INFO - Epoch 4 test Accuracy: 0.977610  Class avg mIOU: 0.951145   Inctance avg mIOU: 0.951145
+2026-09-08 22:34:52,054 - Model - INFO - Save model...
+2026-09-08 22:34:52,054 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Laptop/seed_42/checkpoints/best_model.pth
+2026-09-08 22:34:52,098 - Model - INFO - Saving model....
+2026-09-08 22:34:52,098 - Model - INFO - Best accuracy is: 0.97761
+2026-09-08 22:34:52,098 - Model - INFO - Best class avg mIOU is: 0.95114
+2026-09-08 22:34:52,098 - Model - INFO - Best inctance avg mIOU is: 0.95114
+2026-09-08 22:34:52,098 - Model - INFO - Epoch 5 (5/100):
+2026-09-08 22:34:52,098 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:35:03,018 - Model - INFO - Train accuracy is: 0.97645
+2026-09-08 22:35:04,730 - Model - INFO - eval mIoU of Laptop         0.948432
+2026-09-08 22:35:04,730 - Model - INFO - Epoch 5 test Accuracy: 0.976115  Class avg mIOU: 0.948432   Inctance avg mIOU: 0.948432
+2026-09-08 22:35:04,730 - Model - INFO - Best accuracy is: 0.97761
+2026-09-08 22:35:04,730 - Model - INFO - Best class avg mIOU is: 0.95114
+2026-09-08 22:35:04,730 - Model - INFO - Best inctance avg mIOU is: 0.95114
+2026-09-08 22:35:04,730 - Model - INFO - Epoch 6 (6/100):
+2026-09-08 22:35:04,730 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:35:15,635 - Model - INFO - Train accuracy is: 0.97665
+2026-09-08 22:35:17,352 - Model - INFO - eval mIoU of Laptop         0.951946
+2026-09-08 22:35:17,353 - Model - INFO - Epoch 6 test Accuracy: 0.978086  Class avg mIOU: 0.951946   Inctance avg mIOU: 0.951946
+2026-09-08 22:35:17,353 - Model - INFO - Save model...
+2026-09-08 22:35:17,353 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Laptop/seed_42/checkpoints/best_model.pth
+2026-09-08 22:35:17,398 - Model - INFO - Saving model....
+2026-09-08 22:35:17,398 - Model - INFO - Best accuracy is: 0.97809
+2026-09-08 22:35:17,398 - Model - INFO - Best class avg mIOU is: 0.95195
+2026-09-08 22:35:17,398 - Model - INFO - Best inctance avg mIOU is: 0.95195
+2026-09-08 22:35:17,398 - Model - INFO - Epoch 7 (7/100):
+2026-09-08 22:35:17,398 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:35:28,293 - Model - INFO - Train accuracy is: 0.97742
+2026-09-08 22:35:30,009 - Model - INFO - eval mIoU of Laptop         0.950206
+2026-09-08 22:35:30,009 - Model - INFO - Epoch 7 test Accuracy: 0.977010  Class avg mIOU: 0.950206   Inctance avg mIOU: 0.950206
+2026-09-08 22:35:30,009 - Model - INFO - Best accuracy is: 0.97809
+2026-09-08 22:35:30,009 - Model - INFO - Best class avg mIOU is: 0.95195
+2026-09-08 22:35:30,009 - Model - INFO - Best inctance avg mIOU is: 0.95195
+2026-09-08 22:35:30,009 - Model - INFO - Epoch 8 (8/100):
+2026-09-08 22:35:30,009 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:35:40,902 - Model - INFO - Train accuracy is: 0.97603
+2026-09-08 22:35:42,618 - Model - INFO - eval mIoU of Laptop         0.953516
+2026-09-08 22:35:42,618 - Model - INFO - Epoch 8 test Accuracy: 0.979122  Class avg mIOU: 0.953516   Inctance avg mIOU: 0.953516
+2026-09-08 22:35:42,618 - Model - INFO - Save model...
+2026-09-08 22:35:42,618 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Laptop/seed_42/checkpoints/best_model.pth
+2026-09-08 22:35:42,663 - Model - INFO - Saving model....
+2026-09-08 22:35:42,664 - Model - INFO - Best accuracy is: 0.97912
+2026-09-08 22:35:42,664 - Model - INFO - Best class avg mIOU is: 0.95352
+2026-09-08 22:35:42,664 - Model - INFO - Best inctance avg mIOU is: 0.95352
+2026-09-08 22:35:42,664 - Model - INFO - Epoch 9 (9/100):
+2026-09-08 22:35:42,664 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:35:53,564 - Model - INFO - Train accuracy is: 0.97765
+2026-09-08 22:35:55,282 - Model - INFO - eval mIoU of Laptop         0.948438
+2026-09-08 22:35:55,282 - Model - INFO - Epoch 9 test Accuracy: 0.976151  Class avg mIOU: 0.948438   Inctance avg mIOU: 0.948438
+2026-09-08 22:35:55,282 - Model - INFO - Best accuracy is: 0.97912
+2026-09-08 22:35:55,282 - Model - INFO - Best class avg mIOU is: 0.95352
+2026-09-08 22:35:55,282 - Model - INFO - Best inctance avg mIOU is: 0.95352
+2026-09-08 22:35:55,282 - Model - INFO - Epoch 10 (10/100):
+2026-09-08 22:35:55,282 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:36:06,186 - Model - INFO - Train accuracy is: 0.97785
+2026-09-08 22:36:07,902 - Model - INFO - eval mIoU of Laptop         0.953568
+2026-09-08 22:36:07,902 - Model - INFO - Epoch 10 test Accuracy: 0.979022  Class avg mIOU: 0.953568   Inctance avg mIOU: 0.953568
+2026-09-08 22:36:07,902 - Model - INFO - Save model...
+2026-09-08 22:36:07,902 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Laptop/seed_42/checkpoints/best_model.pth
+2026-09-08 22:36:07,947 - Model - INFO - Saving model....
+2026-09-08 22:36:07,947 - Model - INFO - Best accuracy is: 0.97912
+2026-09-08 22:36:07,947 - Model - INFO - Best class avg mIOU is: 0.95357
+2026-09-08 22:36:07,947 - Model - INFO - Best inctance avg mIOU is: 0.95357
+2026-09-08 22:36:07,947 - Model - INFO - Epoch 11 (11/100):
+2026-09-08 22:36:07,947 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:36:18,877 - Model - INFO - Train accuracy is: 0.97808
+2026-09-08 22:36:20,584 - Model - INFO - eval mIoU of Laptop         0.957476
+2026-09-08 22:36:20,585 - Model - INFO - Epoch 11 test Accuracy: 0.980169  Class avg mIOU: 0.957476   Inctance avg mIOU: 0.957476
+2026-09-08 22:36:20,585 - Model - INFO - Save model...
+2026-09-08 22:36:20,585 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Laptop/seed_42/checkpoints/best_model.pth
+2026-09-08 22:36:20,630 - Model - INFO - Saving model....
+2026-09-08 22:36:20,630 - Model - INFO - Best accuracy is: 0.98017
+2026-09-08 22:36:20,630 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:36:20,630 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:36:20,630 - Model - INFO - Epoch 12 (12/100):
+2026-09-08 22:36:20,630 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:36:31,529 - Model - INFO - Train accuracy is: 0.97767
+2026-09-08 22:36:33,249 - Model - INFO - eval mIoU of Laptop         0.950432
+2026-09-08 22:36:33,249 - Model - INFO - Epoch 12 test Accuracy: 0.977280  Class avg mIOU: 0.950432   Inctance avg mIOU: 0.950432
+2026-09-08 22:36:33,249 - Model - INFO - Best accuracy is: 0.98017
+2026-09-08 22:36:33,249 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:36:33,249 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:36:33,249 - Model - INFO - Epoch 13 (13/100):
+2026-09-08 22:36:33,249 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:36:44,161 - Model - INFO - Train accuracy is: 0.97746
+2026-09-08 22:36:45,880 - Model - INFO - eval mIoU of Laptop         0.949061
+2026-09-08 22:36:45,880 - Model - INFO - Epoch 13 test Accuracy: 0.976692  Class avg mIOU: 0.949061   Inctance avg mIOU: 0.949061
+2026-09-08 22:36:45,880 - Model - INFO - Best accuracy is: 0.98017
+2026-09-08 22:36:45,881 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:36:45,881 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:36:45,881 - Model - INFO - Epoch 14 (14/100):
+2026-09-08 22:36:45,881 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:36:56,793 - Model - INFO - Train accuracy is: 0.97796
+2026-09-08 22:36:58,509 - Model - INFO - eval mIoU of Laptop         0.952965
+2026-09-08 22:36:58,509 - Model - INFO - Epoch 14 test Accuracy: 0.978657  Class avg mIOU: 0.952965   Inctance avg mIOU: 0.952965
+2026-09-08 22:36:58,509 - Model - INFO - Best accuracy is: 0.98017
+2026-09-08 22:36:58,509 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:36:58,509 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:36:58,509 - Model - INFO - Epoch 15 (15/100):
+2026-09-08 22:36:58,509 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:37:09,453 - Model - INFO - Train accuracy is: 0.97815
+2026-09-08 22:37:11,166 - Model - INFO - eval mIoU of Laptop         0.950312
+2026-09-08 22:37:11,166 - Model - INFO - Epoch 15 test Accuracy: 0.977374  Class avg mIOU: 0.950312   Inctance avg mIOU: 0.950312
+2026-09-08 22:37:11,166 - Model - INFO - Best accuracy is: 0.98017
+2026-09-08 22:37:11,166 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:37:11,166 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:37:11,166 - Model - INFO - Epoch 16 (16/100):
+2026-09-08 22:37:11,166 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:37:22,073 - Model - INFO - Train accuracy is: 0.97834
+2026-09-08 22:37:23,785 - Model - INFO - eval mIoU of Laptop         0.954883
+2026-09-08 22:37:23,785 - Model - INFO - Epoch 16 test Accuracy: 0.979780  Class avg mIOU: 0.954883   Inctance avg mIOU: 0.954883
+2026-09-08 22:37:23,785 - Model - INFO - Best accuracy is: 0.98017
+2026-09-08 22:37:23,785 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:37:23,785 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:37:23,785 - Model - INFO - Epoch 17 (17/100):
+2026-09-08 22:37:23,785 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:37:34,701 - Model - INFO - Train accuracy is: 0.97897
+2026-09-08 22:37:36,416 - Model - INFO - eval mIoU of Laptop         0.951828
+2026-09-08 22:37:36,416 - Model - INFO - Epoch 17 test Accuracy: 0.978210  Class avg mIOU: 0.951828   Inctance avg mIOU: 0.951828
+2026-09-08 22:37:36,416 - Model - INFO - Best accuracy is: 0.98017
+2026-09-08 22:37:36,416 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:37:36,416 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:37:36,416 - Model - INFO - Epoch 18 (18/100):
+2026-09-08 22:37:36,416 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:37:47,323 - Model - INFO - Train accuracy is: 0.97776
+2026-09-08 22:37:49,036 - Model - INFO - eval mIoU of Laptop         0.953095
+2026-09-08 22:37:49,037 - Model - INFO - Epoch 18 test Accuracy: 0.978727  Class avg mIOU: 0.953095   Inctance avg mIOU: 0.953095
+2026-09-08 22:37:49,037 - Model - INFO - Best accuracy is: 0.98017
+2026-09-08 22:37:49,037 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:37:49,037 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:37:49,037 - Model - INFO - Epoch 19 (19/100):
+2026-09-08 22:37:49,037 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:37:59,922 - Model - INFO - Train accuracy is: 0.97815
+2026-09-08 22:38:01,632 - Model - INFO - eval mIoU of Laptop         0.950560
+2026-09-08 22:38:01,632 - Model - INFO - Epoch 19 test Accuracy: 0.977616  Class avg mIOU: 0.950560   Inctance avg mIOU: 0.950560
+2026-09-08 22:38:01,632 - Model - INFO - Best accuracy is: 0.98017
+2026-09-08 22:38:01,632 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:38:01,632 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:38:01,632 - Model - INFO - Epoch 20 (20/100):
+2026-09-08 22:38:01,632 - Model - INFO - Learning rate:0.001000
+2026-09-08 22:38:12,551 - Model - INFO - Train accuracy is: 0.97810
+2026-09-08 22:38:14,266 - Model - INFO - eval mIoU of Laptop         0.956877
+2026-09-08 22:38:14,266 - Model - INFO - Epoch 20 test Accuracy: 0.980422  Class avg mIOU: 0.956877   Inctance avg mIOU: 0.956877
+2026-09-08 22:38:14,266 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:38:14,266 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:38:14,266 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:38:14,266 - Model - INFO - Epoch 21 (21/100):
+2026-09-08 22:38:14,266 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:38:25,166 - Model - INFO - Train accuracy is: 0.97867
+2026-09-08 22:38:26,880 - Model - INFO - eval mIoU of Laptop         0.951506
+2026-09-08 22:38:26,880 - Model - INFO - Epoch 21 test Accuracy: 0.977921  Class avg mIOU: 0.951506   Inctance avg mIOU: 0.951506
+2026-09-08 22:38:26,880 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:38:26,880 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:38:26,880 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:38:26,880 - Model - INFO - Epoch 22 (22/100):
+2026-09-08 22:38:26,880 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:38:37,771 - Model - INFO - Train accuracy is: 0.98000
+2026-09-08 22:38:39,504 - Model - INFO - eval mIoU of Laptop         0.949328
+2026-09-08 22:38:39,504 - Model - INFO - Epoch 22 test Accuracy: 0.976562  Class avg mIOU: 0.949328   Inctance avg mIOU: 0.949328
+2026-09-08 22:38:39,504 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:38:39,504 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:38:39,504 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:38:39,504 - Model - INFO - Epoch 23 (23/100):
+2026-09-08 22:38:39,504 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:38:50,405 - Model - INFO - Train accuracy is: 0.97961
+2026-09-08 22:38:52,119 - Model - INFO - eval mIoU of Laptop         0.950996
+2026-09-08 22:38:52,119 - Model - INFO - Epoch 23 test Accuracy: 0.977680  Class avg mIOU: 0.950996   Inctance avg mIOU: 0.950996
+2026-09-08 22:38:52,119 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:38:52,119 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:38:52,119 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:38:52,119 - Model - INFO - Epoch 24 (24/100):
+2026-09-08 22:38:52,119 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:39:03,026 - Model - INFO - Train accuracy is: 0.97919
+2026-09-08 22:39:04,737 - Model - INFO - eval mIoU of Laptop         0.952920
+2026-09-08 22:39:04,737 - Model - INFO - Epoch 24 test Accuracy: 0.978733  Class avg mIOU: 0.952920   Inctance avg mIOU: 0.952920
+2026-09-08 22:39:04,737 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:39:04,737 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:39:04,737 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:39:04,737 - Model - INFO - Epoch 25 (25/100):
+2026-09-08 22:39:04,737 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:39:15,656 - Model - INFO - Train accuracy is: 0.97861
+2026-09-08 22:39:17,372 - Model - INFO - eval mIoU of Laptop         0.952192
+2026-09-08 22:39:17,372 - Model - INFO - Epoch 25 test Accuracy: 0.978257  Class avg mIOU: 0.952192   Inctance avg mIOU: 0.952192
+2026-09-08 22:39:17,373 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:39:17,373 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:39:17,373 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:39:17,373 - Model - INFO - Epoch 26 (26/100):
+2026-09-08 22:39:17,373 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:39:28,270 - Model - INFO - Train accuracy is: 0.97958
+2026-09-08 22:39:29,987 - Model - INFO - eval mIoU of Laptop         0.952468
+2026-09-08 22:39:29,987 - Model - INFO - Epoch 26 test Accuracy: 0.978474  Class avg mIOU: 0.952468   Inctance avg mIOU: 0.952468
+2026-09-08 22:39:29,987 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:39:29,987 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:39:29,987 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:39:29,987 - Model - INFO - Epoch 27 (27/100):
+2026-09-08 22:39:29,987 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:39:40,882 - Model - INFO - Train accuracy is: 0.97971
+2026-09-08 22:39:42,592 - Model - INFO - eval mIoU of Laptop         0.952877
+2026-09-08 22:39:42,592 - Model - INFO - Epoch 27 test Accuracy: 0.978645  Class avg mIOU: 0.952877   Inctance avg mIOU: 0.952877
+2026-09-08 22:39:42,592 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:39:42,592 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:39:42,592 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:39:42,592 - Model - INFO - Epoch 28 (28/100):
+2026-09-08 22:39:42,592 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:39:53,494 - Model - INFO - Train accuracy is: 0.97975
+2026-09-08 22:39:55,205 - Model - INFO - eval mIoU of Laptop         0.954942
+2026-09-08 22:39:55,205 - Model - INFO - Epoch 28 test Accuracy: 0.979786  Class avg mIOU: 0.954942   Inctance avg mIOU: 0.954942
+2026-09-08 22:39:55,205 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:39:55,205 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:39:55,205 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:39:55,205 - Model - INFO - Epoch 29 (29/100):
+2026-09-08 22:39:55,205 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:40:06,113 - Model - INFO - Train accuracy is: 0.97849
+2026-09-08 22:40:07,825 - Model - INFO - eval mIoU of Laptop         0.951398
+2026-09-08 22:40:07,825 - Model - INFO - Epoch 29 test Accuracy: 0.977951  Class avg mIOU: 0.951398   Inctance avg mIOU: 0.951398
+2026-09-08 22:40:07,825 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:40:07,825 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:40:07,825 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:40:07,825 - Model - INFO - Epoch 30 (30/100):
+2026-09-08 22:40:07,825 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:40:18,709 - Model - INFO - Train accuracy is: 0.97886
+2026-09-08 22:40:20,415 - Model - INFO - eval mIoU of Laptop         0.954824
+2026-09-08 22:40:20,415 - Model - INFO - Epoch 30 test Accuracy: 0.979686  Class avg mIOU: 0.954824   Inctance avg mIOU: 0.954824
+2026-09-08 22:40:20,415 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:40:20,415 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:40:20,416 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:40:20,416 - Model - INFO - Epoch 31 (31/100):
+2026-09-08 22:40:20,416 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:40:31,309 - Model - INFO - Train accuracy is: 0.97893
+2026-09-08 22:40:33,020 - Model - INFO - eval mIoU of Laptop         0.952034
+2026-09-08 22:40:33,020 - Model - INFO - Epoch 31 test Accuracy: 0.978333  Class avg mIOU: 0.952034   Inctance avg mIOU: 0.952034
+2026-09-08 22:40:33,020 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:40:33,020 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:40:33,020 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:40:33,020 - Model - INFO - Epoch 32 (32/100):
+2026-09-08 22:40:33,020 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:40:43,888 - Model - INFO - Train accuracy is: 0.97952
+2026-09-08 22:40:45,601 - Model - INFO - eval mIoU of Laptop         0.954683
+2026-09-08 22:40:45,601 - Model - INFO - Epoch 32 test Accuracy: 0.979351  Class avg mIOU: 0.954683   Inctance avg mIOU: 0.954683
+2026-09-08 22:40:45,602 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:40:45,602 - Model - INFO - Best class avg mIOU is: 0.95748
+2026-09-08 22:40:45,602 - Model - INFO - Best inctance avg mIOU is: 0.95748
+2026-09-08 22:40:45,602 - Model - INFO - Epoch 33 (33/100):
+2026-09-08 22:40:45,602 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:40:56,491 - Model - INFO - Train accuracy is: 0.97946
+2026-09-08 22:40:58,201 - Model - INFO - eval mIoU of Laptop         0.957596
+2026-09-08 22:40:58,201 - Model - INFO - Epoch 33 test Accuracy: 0.979845  Class avg mIOU: 0.957596   Inctance avg mIOU: 0.957596
+2026-09-08 22:40:58,202 - Model - INFO - Save model...
+2026-09-08 22:40:58,202 - Model - INFO - Saving at log/part_seg/full_parts_per_category/Laptop/seed_42/checkpoints/best_model.pth
+2026-09-08 22:40:58,247 - Model - INFO - Saving model....
+2026-09-08 22:40:58,247 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:40:58,247 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:40:58,247 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:40:58,247 - Model - INFO - Epoch 34 (34/100):
+2026-09-08 22:40:58,247 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:41:09,124 - Model - INFO - Train accuracy is: 0.97957
+2026-09-08 22:41:10,832 - Model - INFO - eval mIoU of Laptop         0.953774
+2026-09-08 22:41:10,832 - Model - INFO - Epoch 34 test Accuracy: 0.979045  Class avg mIOU: 0.953774   Inctance avg mIOU: 0.953774
+2026-09-08 22:41:10,832 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:41:10,833 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:41:10,833 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:41:10,833 - Model - INFO - Epoch 35 (35/100):
+2026-09-08 22:41:10,833 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:41:21,719 - Model - INFO - Train accuracy is: 0.97891
+2026-09-08 22:41:23,423 - Model - INFO - eval mIoU of Laptop         0.954426
+2026-09-08 22:41:23,423 - Model - INFO - Epoch 35 test Accuracy: 0.979763  Class avg mIOU: 0.954426   Inctance avg mIOU: 0.954426
+2026-09-08 22:41:23,423 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:41:23,423 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:41:23,423 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:41:23,423 - Model - INFO - Epoch 36 (36/100):
+2026-09-08 22:41:23,423 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:41:34,318 - Model - INFO - Train accuracy is: 0.97943
+2026-09-08 22:41:36,030 - Model - INFO - eval mIoU of Laptop         0.950031
+2026-09-08 22:41:36,030 - Model - INFO - Epoch 36 test Accuracy: 0.977098  Class avg mIOU: 0.950031   Inctance avg mIOU: 0.950031
+2026-09-08 22:41:36,030 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:41:36,030 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:41:36,030 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:41:36,030 - Model - INFO - Epoch 37 (37/100):
+2026-09-08 22:41:36,030 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:41:46,909 - Model - INFO - Train accuracy is: 0.97955
+2026-09-08 22:41:48,621 - Model - INFO - eval mIoU of Laptop         0.955046
+2026-09-08 22:41:48,621 - Model - INFO - Epoch 37 test Accuracy: 0.979851  Class avg mIOU: 0.955046   Inctance avg mIOU: 0.955046
+2026-09-08 22:41:48,622 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:41:48,622 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:41:48,622 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:41:48,622 - Model - INFO - Epoch 38 (38/100):
+2026-09-08 22:41:48,622 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:41:59,531 - Model - INFO - Train accuracy is: 0.97907
+2026-09-08 22:42:01,244 - Model - INFO - eval mIoU of Laptop         0.954234
+2026-09-08 22:42:01,244 - Model - INFO - Epoch 38 test Accuracy: 0.979510  Class avg mIOU: 0.954234   Inctance avg mIOU: 0.954234
+2026-09-08 22:42:01,244 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:42:01,244 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:42:01,244 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:42:01,244 - Model - INFO - Epoch 39 (39/100):
+2026-09-08 22:42:01,244 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:42:12,147 - Model - INFO - Train accuracy is: 0.97962
+2026-09-08 22:42:13,854 - Model - INFO - eval mIoU of Laptop         0.955163
+2026-09-08 22:42:13,854 - Model - INFO - Epoch 39 test Accuracy: 0.980004  Class avg mIOU: 0.955163   Inctance avg mIOU: 0.955163
+2026-09-08 22:42:13,854 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:42:13,854 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:42:13,854 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:42:13,855 - Model - INFO - Epoch 40 (40/100):
+2026-09-08 22:42:13,855 - Model - INFO - Learning rate:0.000500
+2026-09-08 22:42:24,728 - Model - INFO - Train accuracy is: 0.97871
+2026-09-08 22:42:26,439 - Model - INFO - eval mIoU of Laptop         0.955591
+2026-09-08 22:42:26,439 - Model - INFO - Epoch 40 test Accuracy: 0.980075  Class avg mIOU: 0.955591   Inctance avg mIOU: 0.955591
+2026-09-08 22:42:26,439 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:42:26,439 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:42:26,439 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:42:26,439 - Model - INFO - Epoch 41 (41/100):
+2026-09-08 22:42:26,439 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:42:37,357 - Model - INFO - Train accuracy is: 0.97997
+2026-09-08 22:42:39,068 - Model - INFO - eval mIoU of Laptop         0.955588
+2026-09-08 22:42:39,068 - Model - INFO - Epoch 41 test Accuracy: 0.979898  Class avg mIOU: 0.955588   Inctance avg mIOU: 0.955588
+2026-09-08 22:42:39,068 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:42:39,068 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:42:39,068 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:42:39,068 - Model - INFO - Epoch 42 (42/100):
+2026-09-08 22:42:39,068 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:42:49,981 - Model - INFO - Train accuracy is: 0.97987
+2026-09-08 22:42:51,689 - Model - INFO - eval mIoU of Laptop         0.955645
+2026-09-08 22:42:51,689 - Model - INFO - Epoch 42 test Accuracy: 0.980180  Class avg mIOU: 0.955645   Inctance avg mIOU: 0.955645
+2026-09-08 22:42:51,689 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:42:51,689 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:42:51,689 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:42:51,689 - Model - INFO - Epoch 43 (43/100):
+2026-09-08 22:42:51,689 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:43:02,604 - Model - INFO - Train accuracy is: 0.97995
+2026-09-08 22:43:04,323 - Model - INFO - eval mIoU of Laptop         0.954642
+2026-09-08 22:43:04,323 - Model - INFO - Epoch 43 test Accuracy: 0.979586  Class avg mIOU: 0.954642   Inctance avg mIOU: 0.954642
+2026-09-08 22:43:04,323 - Model - INFO - Best accuracy is: 0.98042
+2026-09-08 22:43:04,323 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:43:04,323 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:43:04,323 - Model - INFO - Epoch 44 (44/100):
+2026-09-08 22:43:04,323 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:43:15,203 - Model - INFO - Train accuracy is: 0.98005
+2026-09-08 22:43:16,918 - Model - INFO - eval mIoU of Laptop         0.957025
+2026-09-08 22:43:16,918 - Model - INFO - Epoch 44 test Accuracy: 0.980781  Class avg mIOU: 0.957025   Inctance avg mIOU: 0.957025
+2026-09-08 22:43:16,918 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:43:16,918 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:43:16,918 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:43:16,918 - Model - INFO - Epoch 45 (45/100):
+2026-09-08 22:43:16,918 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:43:27,814 - Model - INFO - Train accuracy is: 0.97933
+2026-09-08 22:43:29,527 - Model - INFO - eval mIoU of Laptop         0.954856
+2026-09-08 22:43:29,527 - Model - INFO - Epoch 45 test Accuracy: 0.979863  Class avg mIOU: 0.954856   Inctance avg mIOU: 0.954856
+2026-09-08 22:43:29,527 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:43:29,527 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:43:29,527 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:43:29,527 - Model - INFO - Epoch 46 (46/100):
+2026-09-08 22:43:29,527 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:43:40,423 - Model - INFO - Train accuracy is: 0.98015
+2026-09-08 22:43:42,139 - Model - INFO - eval mIoU of Laptop         0.952096
+2026-09-08 22:43:42,139 - Model - INFO - Epoch 46 test Accuracy: 0.978298  Class avg mIOU: 0.952096   Inctance avg mIOU: 0.952096
+2026-09-08 22:43:42,139 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:43:42,139 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:43:42,139 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:43:42,139 - Model - INFO - Epoch 47 (47/100):
+2026-09-08 22:43:42,139 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:43:53,027 - Model - INFO - Train accuracy is: 0.97945
+2026-09-08 22:43:54,737 - Model - INFO - eval mIoU of Laptop         0.954648
+2026-09-08 22:43:54,737 - Model - INFO - Epoch 47 test Accuracy: 0.978910  Class avg mIOU: 0.954648   Inctance avg mIOU: 0.954648
+2026-09-08 22:43:54,738 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:43:54,738 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:43:54,738 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:43:54,738 - Model - INFO - Epoch 48 (48/100):
+2026-09-08 22:43:54,738 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:44:05,623 - Model - INFO - Train accuracy is: 0.98003
+2026-09-08 22:44:07,335 - Model - INFO - eval mIoU of Laptop         0.954536
+2026-09-08 22:44:07,335 - Model - INFO - Epoch 48 test Accuracy: 0.978951  Class avg mIOU: 0.954536   Inctance avg mIOU: 0.954536
+2026-09-08 22:44:07,335 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:44:07,335 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:44:07,335 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:44:07,335 - Model - INFO - Epoch 49 (49/100):
+2026-09-08 22:44:07,335 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:44:18,224 - Model - INFO - Train accuracy is: 0.98032
+2026-09-08 22:44:19,934 - Model - INFO - eval mIoU of Laptop         0.953782
+2026-09-08 22:44:19,934 - Model - INFO - Epoch 49 test Accuracy: 0.979157  Class avg mIOU: 0.953782   Inctance avg mIOU: 0.953782
+2026-09-08 22:44:19,934 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:44:19,934 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:44:19,934 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:44:19,934 - Model - INFO - Epoch 50 (50/100):
+2026-09-08 22:44:19,934 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:44:30,815 - Model - INFO - Train accuracy is: 0.98036
+2026-09-08 22:44:32,529 - Model - INFO - eval mIoU of Laptop         0.955770
+2026-09-08 22:44:32,529 - Model - INFO - Epoch 50 test Accuracy: 0.980198  Class avg mIOU: 0.955770   Inctance avg mIOU: 0.955770
+2026-09-08 22:44:32,529 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:44:32,529 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:44:32,529 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:44:32,529 - Model - INFO - Epoch 51 (51/100):
+2026-09-08 22:44:32,529 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:44:43,438 - Model - INFO - Train accuracy is: 0.98012
+2026-09-08 22:44:45,151 - Model - INFO - eval mIoU of Laptop         0.955469
+2026-09-08 22:44:45,152 - Model - INFO - Epoch 51 test Accuracy: 0.979675  Class avg mIOU: 0.955469   Inctance avg mIOU: 0.955469
+2026-09-08 22:44:45,152 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:44:45,152 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:44:45,152 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:44:45,152 - Model - INFO - Epoch 52 (52/100):
+2026-09-08 22:44:45,152 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:44:56,052 - Model - INFO - Train accuracy is: 0.98068
+2026-09-08 22:44:57,769 - Model - INFO - eval mIoU of Laptop         0.953822
+2026-09-08 22:44:57,769 - Model - INFO - Epoch 52 test Accuracy: 0.979110  Class avg mIOU: 0.953822   Inctance avg mIOU: 0.953822
+2026-09-08 22:44:57,769 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:44:57,769 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:44:57,769 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:44:57,769 - Model - INFO - Epoch 53 (53/100):
+2026-09-08 22:44:57,769 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:45:08,647 - Model - INFO - Train accuracy is: 0.98062
+2026-09-08 22:45:10,360 - Model - INFO - eval mIoU of Laptop         0.955511
+2026-09-08 22:45:10,360 - Model - INFO - Epoch 53 test Accuracy: 0.979880  Class avg mIOU: 0.955511   Inctance avg mIOU: 0.955511
+2026-09-08 22:45:10,360 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:45:10,360 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:45:10,360 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:45:10,360 - Model - INFO - Epoch 54 (54/100):
+2026-09-08 22:45:10,360 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:45:21,272 - Model - INFO - Train accuracy is: 0.97990
+2026-09-08 22:45:22,990 - Model - INFO - eval mIoU of Laptop         0.953231
+2026-09-08 22:45:22,990 - Model - INFO - Epoch 54 test Accuracy: 0.978951  Class avg mIOU: 0.953231   Inctance avg mIOU: 0.953231
+2026-09-08 22:45:22,990 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:45:22,990 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:45:22,990 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:45:22,990 - Model - INFO - Epoch 55 (55/100):
+2026-09-08 22:45:22,990 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:45:33,890 - Model - INFO - Train accuracy is: 0.97969
+2026-09-08 22:45:35,594 - Model - INFO - eval mIoU of Laptop         0.955930
+2026-09-08 22:45:35,594 - Model - INFO - Epoch 55 test Accuracy: 0.980216  Class avg mIOU: 0.955930   Inctance avg mIOU: 0.955930
+2026-09-08 22:45:35,594 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:45:35,594 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:45:35,594 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:45:35,594 - Model - INFO - Epoch 56 (56/100):
+2026-09-08 22:45:35,594 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:45:46,496 - Model - INFO - Train accuracy is: 0.98040
+2026-09-08 22:45:48,206 - Model - INFO - eval mIoU of Laptop         0.953610
+2026-09-08 22:45:48,206 - Model - INFO - Epoch 56 test Accuracy: 0.979116  Class avg mIOU: 0.953610   Inctance avg mIOU: 0.953610
+2026-09-08 22:45:48,206 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:45:48,206 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:45:48,206 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:45:48,206 - Model - INFO - Epoch 57 (57/100):
+2026-09-08 22:45:48,206 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:45:59,114 - Model - INFO - Train accuracy is: 0.98042
+2026-09-08 22:46:00,833 - Model - INFO - eval mIoU of Laptop         0.954569
+2026-09-08 22:46:00,833 - Model - INFO - Epoch 57 test Accuracy: 0.979445  Class avg mIOU: 0.954569   Inctance avg mIOU: 0.954569
+2026-09-08 22:46:00,833 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:46:00,833 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:46:00,833 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:46:00,833 - Model - INFO - Epoch 58 (58/100):
+2026-09-08 22:46:00,833 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:46:11,760 - Model - INFO - Train accuracy is: 0.98061
+2026-09-08 22:46:13,474 - Model - INFO - eval mIoU of Laptop         0.948302
+2026-09-08 22:46:13,474 - Model - INFO - Epoch 58 test Accuracy: 0.976192  Class avg mIOU: 0.948302   Inctance avg mIOU: 0.948302
+2026-09-08 22:46:13,474 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:46:13,474 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:46:13,474 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:46:13,474 - Model - INFO - Epoch 59 (59/100):
+2026-09-08 22:46:13,474 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:46:24,387 - Model - INFO - Train accuracy is: 0.98052
+2026-09-08 22:46:26,101 - Model - INFO - eval mIoU of Laptop         0.952162
+2026-09-08 22:46:26,101 - Model - INFO - Epoch 59 test Accuracy: 0.978492  Class avg mIOU: 0.952162   Inctance avg mIOU: 0.952162
+2026-09-08 22:46:26,101 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:46:26,101 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:46:26,101 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:46:26,101 - Model - INFO - Epoch 60 (60/100):
+2026-09-08 22:46:26,101 - Model - INFO - Learning rate:0.000250
+2026-09-08 22:46:37,001 - Model - INFO - Train accuracy is: 0.98047
+2026-09-08 22:46:38,719 - Model - INFO - eval mIoU of Laptop         0.952715
+2026-09-08 22:46:38,719 - Model - INFO - Epoch 60 test Accuracy: 0.978533  Class avg mIOU: 0.952715   Inctance avg mIOU: 0.952715
+2026-09-08 22:46:38,719 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:46:38,720 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:46:38,720 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:46:38,720 - Model - INFO - Epoch 61 (61/100):
+2026-09-08 22:46:38,720 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:46:49,611 - Model - INFO - Train accuracy is: 0.98050
+2026-09-08 22:46:51,318 - Model - INFO - eval mIoU of Laptop         0.954042
+2026-09-08 22:46:51,318 - Model - INFO - Epoch 61 test Accuracy: 0.979227  Class avg mIOU: 0.954042   Inctance avg mIOU: 0.954042
+2026-09-08 22:46:51,318 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:46:51,318 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:46:51,318 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:46:51,318 - Model - INFO - Epoch 62 (62/100):
+2026-09-08 22:46:51,318 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:47:02,212 - Model - INFO - Train accuracy is: 0.98101
+2026-09-08 22:47:03,917 - Model - INFO - eval mIoU of Laptop         0.954383
+2026-09-08 22:47:03,917 - Model - INFO - Epoch 62 test Accuracy: 0.979451  Class avg mIOU: 0.954383   Inctance avg mIOU: 0.954383
+2026-09-08 22:47:03,917 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:47:03,917 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:47:03,917 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:47:03,917 - Model - INFO - Epoch 63 (63/100):
+2026-09-08 22:47:03,917 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:47:14,826 - Model - INFO - Train accuracy is: 0.98099
+2026-09-08 22:47:16,530 - Model - INFO - eval mIoU of Laptop         0.953685
+2026-09-08 22:47:16,530 - Model - INFO - Epoch 63 test Accuracy: 0.979069  Class avg mIOU: 0.953685   Inctance avg mIOU: 0.953685
+2026-09-08 22:47:16,531 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:47:16,531 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:47:16,531 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:47:16,531 - Model - INFO - Epoch 64 (64/100):
+2026-09-08 22:47:16,531 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:47:27,466 - Model - INFO - Train accuracy is: 0.98117
+2026-09-08 22:47:29,182 - Model - INFO - eval mIoU of Laptop         0.954644
+2026-09-08 22:47:29,182 - Model - INFO - Epoch 64 test Accuracy: 0.979539  Class avg mIOU: 0.954644   Inctance avg mIOU: 0.954644
+2026-09-08 22:47:29,182 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:47:29,182 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:47:29,182 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:47:29,182 - Model - INFO - Epoch 65 (65/100):
+2026-09-08 22:47:29,182 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:47:40,085 - Model - INFO - Train accuracy is: 0.98074
+2026-09-08 22:47:41,799 - Model - INFO - eval mIoU of Laptop         0.953765
+2026-09-08 22:47:41,799 - Model - INFO - Epoch 65 test Accuracy: 0.979192  Class avg mIOU: 0.953765   Inctance avg mIOU: 0.953765
+2026-09-08 22:47:41,799 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:47:41,799 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:47:41,799 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:47:41,799 - Model - INFO - Epoch 66 (66/100):
+2026-09-08 22:47:41,799 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:47:52,713 - Model - INFO - Train accuracy is: 0.98049
+2026-09-08 22:47:54,419 - Model - INFO - eval mIoU of Laptop         0.953065
+2026-09-08 22:47:54,419 - Model - INFO - Epoch 66 test Accuracy: 0.978745  Class avg mIOU: 0.953065   Inctance avg mIOU: 0.953065
+2026-09-08 22:47:54,419 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:47:54,419 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:47:54,419 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:47:54,419 - Model - INFO - Epoch 67 (67/100):
+2026-09-08 22:47:54,419 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:48:05,317 - Model - INFO - Train accuracy is: 0.98124
+2026-09-08 22:48:07,031 - Model - INFO - eval mIoU of Laptop         0.952006
+2026-09-08 22:48:07,031 - Model - INFO - Epoch 67 test Accuracy: 0.978280  Class avg mIOU: 0.952006   Inctance avg mIOU: 0.952006
+2026-09-08 22:48:07,031 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:48:07,032 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:48:07,032 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:48:07,032 - Model - INFO - Epoch 68 (68/100):
+2026-09-08 22:48:07,032 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:48:17,946 - Model - INFO - Train accuracy is: 0.98124
+2026-09-08 22:48:19,658 - Model - INFO - eval mIoU of Laptop         0.953399
+2026-09-08 22:48:19,658 - Model - INFO - Epoch 68 test Accuracy: 0.978969  Class avg mIOU: 0.953399   Inctance avg mIOU: 0.953399
+2026-09-08 22:48:19,658 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:48:19,658 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:48:19,658 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:48:19,658 - Model - INFO - Epoch 69 (69/100):
+2026-09-08 22:48:19,658 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:48:30,567 - Model - INFO - Train accuracy is: 0.98096
+2026-09-08 22:48:32,279 - Model - INFO - eval mIoU of Laptop         0.953449
+2026-09-08 22:48:32,279 - Model - INFO - Epoch 69 test Accuracy: 0.978827  Class avg mIOU: 0.953449   Inctance avg mIOU: 0.953449
+2026-09-08 22:48:32,279 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:48:32,279 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:48:32,279 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:48:32,279 - Model - INFO - Epoch 70 (70/100):
+2026-09-08 22:48:32,279 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:48:43,191 - Model - INFO - Train accuracy is: 0.98083
+2026-09-08 22:48:44,897 - Model - INFO - eval mIoU of Laptop         0.954771
+2026-09-08 22:48:44,897 - Model - INFO - Epoch 70 test Accuracy: 0.979557  Class avg mIOU: 0.954771   Inctance avg mIOU: 0.954771
+2026-09-08 22:48:44,897 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:48:44,897 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:48:44,897 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:48:44,897 - Model - INFO - Epoch 71 (71/100):
+2026-09-08 22:48:44,897 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:48:55,814 - Model - INFO - Train accuracy is: 0.98113
+2026-09-08 22:48:57,525 - Model - INFO - eval mIoU of Laptop         0.953194
+2026-09-08 22:48:57,525 - Model - INFO - Epoch 71 test Accuracy: 0.978916  Class avg mIOU: 0.953194   Inctance avg mIOU: 0.953194
+2026-09-08 22:48:57,525 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:48:57,526 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:48:57,526 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:48:57,526 - Model - INFO - Epoch 72 (72/100):
+2026-09-08 22:48:57,526 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:49:08,414 - Model - INFO - Train accuracy is: 0.98157
+2026-09-08 22:49:10,129 - Model - INFO - eval mIoU of Laptop         0.953677
+2026-09-08 22:49:10,129 - Model - INFO - Epoch 72 test Accuracy: 0.979104  Class avg mIOU: 0.953677   Inctance avg mIOU: 0.953677
+2026-09-08 22:49:10,129 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:49:10,129 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:49:10,129 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:49:10,129 - Model - INFO - Epoch 73 (73/100):
+2026-09-08 22:49:10,129 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:49:21,029 - Model - INFO - Train accuracy is: 0.98067
+2026-09-08 22:49:22,741 - Model - INFO - eval mIoU of Laptop         0.954384
+2026-09-08 22:49:22,741 - Model - INFO - Epoch 73 test Accuracy: 0.979422  Class avg mIOU: 0.954384   Inctance avg mIOU: 0.954384
+2026-09-08 22:49:22,741 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:49:22,741 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:49:22,741 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:49:22,741 - Model - INFO - Epoch 74 (74/100):
+2026-09-08 22:49:22,741 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:49:33,637 - Model - INFO - Train accuracy is: 0.98042
+2026-09-08 22:49:35,351 - Model - INFO - eval mIoU of Laptop         0.952716
+2026-09-08 22:49:35,351 - Model - INFO - Epoch 74 test Accuracy: 0.978633  Class avg mIOU: 0.952716   Inctance avg mIOU: 0.952716
+2026-09-08 22:49:35,351 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:49:35,351 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:49:35,351 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:49:35,351 - Model - INFO - Epoch 75 (75/100):
+2026-09-08 22:49:35,351 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:49:46,237 - Model - INFO - Train accuracy is: 0.98083
+2026-09-08 22:49:47,947 - Model - INFO - eval mIoU of Laptop         0.954657
+2026-09-08 22:49:47,947 - Model - INFO - Epoch 75 test Accuracy: 0.979569  Class avg mIOU: 0.954657   Inctance avg mIOU: 0.954657
+2026-09-08 22:49:47,947 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:49:47,947 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:49:47,947 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:49:47,947 - Model - INFO - Epoch 76 (76/100):
+2026-09-08 22:49:47,947 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:49:58,850 - Model - INFO - Train accuracy is: 0.98138
+2026-09-08 22:50:00,562 - Model - INFO - eval mIoU of Laptop         0.952692
+2026-09-08 22:50:00,562 - Model - INFO - Epoch 76 test Accuracy: 0.978651  Class avg mIOU: 0.952692   Inctance avg mIOU: 0.952692
+2026-09-08 22:50:00,562 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:50:00,562 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:50:00,562 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:50:00,562 - Model - INFO - Epoch 77 (77/100):
+2026-09-08 22:50:00,562 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:50:11,446 - Model - INFO - Train accuracy is: 0.98179
+2026-09-08 22:50:13,158 - Model - INFO - eval mIoU of Laptop         0.954621
+2026-09-08 22:50:13,158 - Model - INFO - Epoch 77 test Accuracy: 0.979516  Class avg mIOU: 0.954621   Inctance avg mIOU: 0.954621
+2026-09-08 22:50:13,158 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:50:13,159 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:50:13,159 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:50:13,159 - Model - INFO - Epoch 78 (78/100):
+2026-09-08 22:50:13,159 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:50:24,069 - Model - INFO - Train accuracy is: 0.98127
+2026-09-08 22:50:25,786 - Model - INFO - eval mIoU of Laptop         0.951955
+2026-09-08 22:50:25,786 - Model - INFO - Epoch 78 test Accuracy: 0.977145  Class avg mIOU: 0.951955   Inctance avg mIOU: 0.951955
+2026-09-08 22:50:25,786 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:50:25,787 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:50:25,787 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:50:25,787 - Model - INFO - Epoch 79 (79/100):
+2026-09-08 22:50:25,787 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:50:36,708 - Model - INFO - Train accuracy is: 0.98170
+2026-09-08 22:50:38,415 - Model - INFO - eval mIoU of Laptop         0.952722
+2026-09-08 22:50:38,415 - Model - INFO - Epoch 79 test Accuracy: 0.978257  Class avg mIOU: 0.952722   Inctance avg mIOU: 0.952722
+2026-09-08 22:50:38,415 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:50:38,415 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:50:38,415 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:50:38,415 - Model - INFO - Epoch 80 (80/100):
+2026-09-08 22:50:38,415 - Model - INFO - Learning rate:0.000125
+2026-09-08 22:50:49,313 - Model - INFO - Train accuracy is: 0.98139
+2026-09-08 22:50:51,031 - Model - INFO - eval mIoU of Laptop         0.955518
+2026-09-08 22:50:51,031 - Model - INFO - Epoch 80 test Accuracy: 0.980551  Class avg mIOU: 0.955518   Inctance avg mIOU: 0.955518
+2026-09-08 22:50:51,031 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:50:51,031 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:50:51,031 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:50:51,031 - Model - INFO - Epoch 81 (81/100):
+2026-09-08 22:50:51,031 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:51:01,915 - Model - INFO - Train accuracy is: 0.98126
+2026-09-08 22:51:03,626 - Model - INFO - eval mIoU of Laptop         0.954013
+2026-09-08 22:51:03,626 - Model - INFO - Epoch 81 test Accuracy: 0.979575  Class avg mIOU: 0.954013   Inctance avg mIOU: 0.954013
+2026-09-08 22:51:03,626 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:51:03,626 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:51:03,626 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:51:03,626 - Model - INFO - Epoch 82 (82/100):
+2026-09-08 22:51:03,626 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:51:14,509 - Model - INFO - Train accuracy is: 0.98149
+2026-09-08 22:51:16,224 - Model - INFO - eval mIoU of Laptop         0.956805
+2026-09-08 22:51:16,224 - Model - INFO - Epoch 82 test Accuracy: 0.980769  Class avg mIOU: 0.956805   Inctance avg mIOU: 0.956805
+2026-09-08 22:51:16,225 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:51:16,225 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:51:16,225 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:51:16,225 - Model - INFO - Epoch 83 (83/100):
+2026-09-08 22:51:16,225 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:51:27,125 - Model - INFO - Train accuracy is: 0.98191
+2026-09-08 22:51:28,837 - Model - INFO - eval mIoU of Laptop         0.952241
+2026-09-08 22:51:28,837 - Model - INFO - Epoch 83 test Accuracy: 0.978410  Class avg mIOU: 0.952241   Inctance avg mIOU: 0.952241
+2026-09-08 22:51:28,837 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:51:28,837 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:51:28,837 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:51:28,837 - Model - INFO - Epoch 84 (84/100):
+2026-09-08 22:51:28,837 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:51:39,721 - Model - INFO - Train accuracy is: 0.98214
+2026-09-08 22:51:41,435 - Model - INFO - eval mIoU of Laptop         0.957081
+2026-09-08 22:51:41,435 - Model - INFO - Epoch 84 test Accuracy: 0.980504  Class avg mIOU: 0.957081   Inctance avg mIOU: 0.957081
+2026-09-08 22:51:41,435 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:51:41,435 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:51:41,435 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:51:41,435 - Model - INFO - Epoch 85 (85/100):
+2026-09-08 22:51:41,435 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:51:52,357 - Model - INFO - Train accuracy is: 0.98149
+2026-09-08 22:51:54,068 - Model - INFO - eval mIoU of Laptop         0.952219
+2026-09-08 22:51:54,068 - Model - INFO - Epoch 85 test Accuracy: 0.978474  Class avg mIOU: 0.952219   Inctance avg mIOU: 0.952219
+2026-09-08 22:51:54,069 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:51:54,069 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:51:54,069 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:51:54,069 - Model - INFO - Epoch 86 (86/100):
+2026-09-08 22:51:54,069 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:52:04,971 - Model - INFO - Train accuracy is: 0.98243
+2026-09-08 22:52:06,684 - Model - INFO - eval mIoU of Laptop         0.951279
+2026-09-08 22:52:06,685 - Model - INFO - Epoch 86 test Accuracy: 0.977751  Class avg mIOU: 0.951279   Inctance avg mIOU: 0.951279
+2026-09-08 22:52:06,685 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:52:06,685 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:52:06,685 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:52:06,685 - Model - INFO - Epoch 87 (87/100):
+2026-09-08 22:52:06,685 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:52:17,568 - Model - INFO - Train accuracy is: 0.98202
+2026-09-08 22:52:19,278 - Model - INFO - eval mIoU of Laptop         0.953632
+2026-09-08 22:52:19,278 - Model - INFO - Epoch 87 test Accuracy: 0.979310  Class avg mIOU: 0.953632   Inctance avg mIOU: 0.953632
+2026-09-08 22:52:19,278 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:52:19,278 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:52:19,278 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:52:19,278 - Model - INFO - Epoch 88 (88/100):
+2026-09-08 22:52:19,278 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:52:30,155 - Model - INFO - Train accuracy is: 0.98147
+2026-09-08 22:52:31,859 - Model - INFO - eval mIoU of Laptop         0.952671
+2026-09-08 22:52:31,859 - Model - INFO - Epoch 88 test Accuracy: 0.978492  Class avg mIOU: 0.952671   Inctance avg mIOU: 0.952671
+2026-09-08 22:52:31,859 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:52:31,859 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:52:31,859 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:52:31,859 - Model - INFO - Epoch 89 (89/100):
+2026-09-08 22:52:31,859 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:52:42,784 - Model - INFO - Train accuracy is: 0.98148
+2026-09-08 22:52:44,492 - Model - INFO - eval mIoU of Laptop         0.955368
+2026-09-08 22:52:44,492 - Model - INFO - Epoch 89 test Accuracy: 0.979569  Class avg mIOU: 0.955368   Inctance avg mIOU: 0.955368
+2026-09-08 22:52:44,492 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:52:44,492 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:52:44,492 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:52:44,492 - Model - INFO - Epoch 90 (90/100):
+2026-09-08 22:52:44,492 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:52:55,372 - Model - INFO - Train accuracy is: 0.98246
+2026-09-08 22:52:57,084 - Model - INFO - eval mIoU of Laptop         0.954590
+2026-09-08 22:52:57,084 - Model - INFO - Epoch 90 test Accuracy: 0.979039  Class avg mIOU: 0.954590   Inctance avg mIOU: 0.954590
+2026-09-08 22:52:57,084 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:52:57,084 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:52:57,084 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:52:57,084 - Model - INFO - Epoch 91 (91/100):
+2026-09-08 22:52:57,084 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:53:07,954 - Model - INFO - Train accuracy is: 0.98188
+2026-09-08 22:53:09,664 - Model - INFO - eval mIoU of Laptop         0.953400
+2026-09-08 22:53:09,664 - Model - INFO - Epoch 91 test Accuracy: 0.978304  Class avg mIOU: 0.953400   Inctance avg mIOU: 0.953400
+2026-09-08 22:53:09,664 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:53:09,664 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:53:09,664 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:53:09,664 - Model - INFO - Epoch 92 (92/100):
+2026-09-08 22:53:09,664 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:53:20,534 - Model - INFO - Train accuracy is: 0.98202
+2026-09-08 22:53:22,238 - Model - INFO - eval mIoU of Laptop         0.953277
+2026-09-08 22:53:22,238 - Model - INFO - Epoch 92 test Accuracy: 0.978145  Class avg mIOU: 0.953277   Inctance avg mIOU: 0.953277
+2026-09-08 22:53:22,238 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:53:22,238 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:53:22,238 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:53:22,238 - Model - INFO - Epoch 93 (93/100):
+2026-09-08 22:53:22,238 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:53:33,139 - Model - INFO - Train accuracy is: 0.98262
+2026-09-08 22:53:34,847 - Model - INFO - eval mIoU of Laptop         0.952348
+2026-09-08 22:53:34,847 - Model - INFO - Epoch 93 test Accuracy: 0.977539  Class avg mIOU: 0.952348   Inctance avg mIOU: 0.952348
+2026-09-08 22:53:34,847 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:53:34,847 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:53:34,847 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:53:34,847 - Model - INFO - Epoch 94 (94/100):
+2026-09-08 22:53:34,847 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:53:45,727 - Model - INFO - Train accuracy is: 0.98214
+2026-09-08 22:53:47,439 - Model - INFO - eval mIoU of Laptop         0.953079
+2026-09-08 22:53:47,439 - Model - INFO - Epoch 94 test Accuracy: 0.978074  Class avg mIOU: 0.953079   Inctance avg mIOU: 0.953079
+2026-09-08 22:53:47,440 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:53:47,440 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:53:47,440 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:53:47,440 - Model - INFO - Epoch 95 (95/100):
+2026-09-08 22:53:47,440 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:53:58,309 - Model - INFO - Train accuracy is: 0.98230
+2026-09-08 22:54:00,026 - Model - INFO - eval mIoU of Laptop         0.950786
+2026-09-08 22:54:00,026 - Model - INFO - Epoch 95 test Accuracy: 0.977068  Class avg mIOU: 0.950786   Inctance avg mIOU: 0.950786
+2026-09-08 22:54:00,026 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:54:00,026 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:54:00,026 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:54:00,026 - Model - INFO - Epoch 96 (96/100):
+2026-09-08 22:54:00,026 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:54:10,939 - Model - INFO - Train accuracy is: 0.98226
+2026-09-08 22:54:12,648 - Model - INFO - eval mIoU of Laptop         0.954535
+2026-09-08 22:54:12,648 - Model - INFO - Epoch 96 test Accuracy: 0.979333  Class avg mIOU: 0.954535   Inctance avg mIOU: 0.954535
+2026-09-08 22:54:12,648 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:54:12,648 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:54:12,648 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:54:12,648 - Model - INFO - Epoch 97 (97/100):
+2026-09-08 22:54:12,648 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:54:23,563 - Model - INFO - Train accuracy is: 0.98299
+2026-09-08 22:54:25,272 - Model - INFO - eval mIoU of Laptop         0.953672
+2026-09-08 22:54:25,272 - Model - INFO - Epoch 97 test Accuracy: 0.979116  Class avg mIOU: 0.953672   Inctance avg mIOU: 0.953672
+2026-09-08 22:54:25,272 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:54:25,272 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:54:25,272 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:54:25,272 - Model - INFO - Epoch 98 (98/100):
+2026-09-08 22:54:25,272 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:54:36,146 - Model - INFO - Train accuracy is: 0.98241
+2026-09-08 22:54:37,854 - Model - INFO - eval mIoU of Laptop         0.954018
+2026-09-08 22:54:37,854 - Model - INFO - Epoch 98 test Accuracy: 0.978798  Class avg mIOU: 0.954018   Inctance avg mIOU: 0.954018
+2026-09-08 22:54:37,854 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:54:37,854 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:54:37,854 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:54:37,854 - Model - INFO - Epoch 99 (99/100):
+2026-09-08 22:54:37,854 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:54:48,738 - Model - INFO - Train accuracy is: 0.98249
+2026-09-08 22:54:50,450 - Model - INFO - eval mIoU of Laptop         0.953513
+2026-09-08 22:54:50,450 - Model - INFO - Epoch 99 test Accuracy: 0.979022  Class avg mIOU: 0.953513   Inctance avg mIOU: 0.953513
+2026-09-08 22:54:50,450 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:54:50,450 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:54:50,450 - Model - INFO - Best inctance avg mIOU is: 0.95760
+2026-09-08 22:54:50,450 - Model - INFO - Epoch 100 (100/100):
+2026-09-08 22:54:50,450 - Model - INFO - Learning rate:0.000063
+2026-09-08 22:55:01,351 - Model - INFO - Train accuracy is: 0.98279
+2026-09-08 22:55:03,061 - Model - INFO - eval mIoU of Laptop         0.952564
+2026-09-08 22:55:03,061 - Model - INFO - Epoch 100 test Accuracy: 0.978263  Class avg mIOU: 0.952564   Inctance avg mIOU: 0.952564
+2026-09-08 22:55:03,061 - Model - INFO - Best accuracy is: 0.98078
+2026-09-08 22:55:03,061 - Model - INFO - Best class avg mIOU is: 0.95760
+2026-09-08 22:55:03,061 - Model - INFO - Best inctance avg mIOU is: 0.95760
